@@ -240,11 +240,11 @@ class LandingController extends Controller
         $data['info'] = [
             [
                 $title['title'] = "TIPOS DE CARTA PODER",
-                $description['description'] = "Realizamos todo tipo de Poder Especial o un Poder General. Apostillados para toda Latinoamérica."
+                $description['description'] = "Realizamos todo tipo de Poder Especial o Poder General Apostillados para toda Latinoamérica."
             ],
             [
                 $title['title'] = "SOLICITE UN PODER PARA:",
-                $description['description'] = 'Gestionar sus bienes, tramites bancarios. <br> Carta Poder para viaje de menor. <br> Carta poder para compra o venta de propiedades. <br> Carta poder para solicitar créditos. <br> Carta poder para gestión de pasaporte. <br> Carta poder para pleitos y cobranzas.'
+                $description['description'] = '- Gestionar sus bienes, tramites bancarios. <br>- Carta Poder para viaje de menor. <br>- Carta poder para compra o venta de propiedades. <br>- Carta poder para solicitar créditos. <br>- Carta poder para gestión de pasaporte. <br>- Carta poder para pleitos y cobranzas.'
             ],
             [
                 $title['title'] = "¿DONDE HACER UNA CARTA PODER EN NEW YORK?",
