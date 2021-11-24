@@ -70,6 +70,23 @@
     <a href="tel:+{{$tlfhidden??'19082249594'}}" class="btn btn-lg btn-warning" >LLAMAR: <b>{{$tlfshow??'NJ (908) 224-9594'}}</b> </a>
   </div>
 </section>
+
+@if ($info != null)
+  <section class="container mt-5">
+    <div class="row">
+      @foreach ($info as $i)
+      <div class="col-sm-6 col-md-4 mb-2">
+        <div class="card" style="width: 100%; height: 100%; background-color:rgb(247, 247, 247)">
+          <div class="card-body text-center" style="color: rgb(102, 102, 102)">
+            <h6 class="card-title"><b>{{ $i['0'] }}</b></h6>
+            <p class="card-text">{!!  $i['1'] !!}</p>
+          </div>
+        </div>
+      </div>
+      @endforeach
+    </div>
+  </section>
+@endif
   
 <section class="row justify-content-md-center py-4">
 @if($service=='General')
@@ -112,7 +129,7 @@
       <li>Certificados de defunción.</li>
     </ul>
     </div>
-  @else
+  @elseif($service != null)
     <h4 class="text-center py-4 px-4">{!!$service!!}</h4>
   @endif
   </section>

@@ -115,7 +115,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249594 ';
         $data['tlfshow'] = '908 224-9594';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }
 
@@ -130,7 +130,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249596';
         $data['tlfshow'] = '908 224-9596';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }  
 
@@ -145,7 +145,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249259';
         $data['tlfshow'] = '908 224-9259';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }  
 
@@ -160,7 +160,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249258';
         $data['tlfshow'] = '908 224-9258';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }   
 
@@ -175,7 +175,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249552';
         $data['tlfshow'] = '908 224-9552';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }
 
@@ -192,7 +192,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281520';
         $data['tlfshow'] = '347 428-1520';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }
 
@@ -207,7 +207,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281519';
         $data['tlfshow'] = '347 428-1519';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }  
 
@@ -222,14 +222,14 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281517';
         $data['tlfshow'] = '347 428-1517';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }  
 
     public function nypod() {
         $data['oficina'] = 'New York';
         $data['header']  = 'Poderes <br> en New York'; 
-        $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
+        $data['service'] = null;
         $data['imgup']   = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -237,7 +237,20 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281516';
         $data['tlfshow'] = '347 428-1516';
-        $data['text_description'] = null;
+        $data['info'] = [
+            [
+                $title['title'] = "TIPOS DE CARTA PODER",
+                $description['description'] = "Realizamos todo tipo de Poder Especial o un Poder General. Apostillados para toda Latinoamérica."
+            ],
+            [
+                $title['title'] = "SOLICITE UN PODER PARA:",
+                $description['description'] = 'Gestionar sus bienes, tramites bancarios. <br> Carta Poder para viaje de menor. <br> Carta poder para compra o venta de propiedades. <br> Carta poder para solicitar créditos. <br> Carta poder para gestión de pasaporte. <br> Carta poder para pleitos y cobranzas.'
+            ],
+            [
+                $title['title'] = "¿DONDE HACER UNA CARTA PODER EN NEW YORK?",
+                $description['description'] = "Llámenos y agende una cita en nuestras oficinas ubicadas en New York"
+            ]
+        ];
         return view('landing.general',$data);
     }   
 
@@ -252,7 +265,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281518';
         $data['tlfshow'] = '347 428-1518';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }  
 
@@ -271,7 +284,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13054229149';
         $data['tlfshow'] = '305 422 9149';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }
 
@@ -286,7 +299,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13053177811';
         $data['tlfshow'] = '305 317 7811';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }  
 
@@ -301,7 +314,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13053177819';
         $data['tlfshow'] = '305 317 7819';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }  
 
@@ -316,7 +329,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13053177826';
         $data['tlfshow'] = '305 317 7826';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }   
 
@@ -331,7 +344,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13053177820';
         $data['tlfshow'] = '305 317 7820';
-        $data['text_description'] = null;
+        $data['info'] = null;
         return view('landing.general',$data);
     }  
 }
