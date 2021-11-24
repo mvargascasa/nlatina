@@ -19,4 +19,8 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
+    #Change domain without -www
+    RewriteCond %{HTTP_HOST} ^www.notarialatina.com$
+    RewriteRule ^/?$ "https\:\/\/notarialatina\.com\/" [R=301,L]
+
 </IfModule>
