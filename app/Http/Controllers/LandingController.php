@@ -1,0 +1,340 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class LandingController extends Controller
+{
+
+    public function apostilla(){
+        $data['oficina'] = 'New York';
+        $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
+        $data['service'] = 'General'; // General Imprime todos los servicios
+        $data['imgup'] = 'img/newyork-landing-notaria-latina.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
+        $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
+        $data['dirlink'] = 'https://g.page/notariapublicalatina';
+        $data['dirmap']  = 'img/map.jpg';
+        $data['tlfhidden'] = '17187665041';
+        $data['tlfshow'] = '718 766-5041';
+        return view('landing.general',$data);
+    }
+
+    public function notaria()
+    {
+        return view('landing.notaria');
+    }
+
+    public function thank(Request $request)
+    {
+        return view('landing.thank');
+    }
+
+    public function thankpost(Request $request)
+    {
+        // falta capturar URL que solicita
+        
+        $interest = $request->interest ?? 'General';
+        $sendoffices = '';
+        if ($interest == 'General')             $sendoffices = ',newyork@notarialatina.com';
+        if ($interest == 'Landing New York')    $sendoffices = ',newyork@notarialatina.com';
+        if ($interest == 'Landing New Jersey')  $sendoffices = ',newjersey@notarialatina.com';
+        if ($interest == 'Landing Florida')     $sendoffices = ',florida@notarialatina.com';
+
+        if(isset($request->aaa) && isset($request->bbb) && isset($request->ddd)){
+
+            $message = "<br><strong>Nuevo Lead Landing</strong>
+            <br> Nombre: ". strip_tags($request->aaa)."
+            <br> Telef: ".  strip_tags($request->bbb)."
+            <br> Interes: ".strip_tags($interest)."
+            <br> Mensaje: ".strip_tags($request->ddd)."
+            <br> Fuente: GoogleAds ";
+        
+            $header='';
+            $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
+            $header .= "Reply-To: ".'info@notarialatina.com'."\r\n";
+            $header .= "MIME-Version: 1.0\r\n";
+            $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);    
+        }
+
+        if(isset($request->fname)){
+            $message = "<br><strong>Nuevo Lead Landing</strong>
+            <br> Nombre: ". strip_tags($request->fname)."
+            <br> Telef: ".  strip_tags($request->tlf)."
+            <br> Interes: ".strip_tags($interest)."
+            <br> Mensaje: ".strip_tags($request->message)."
+            <br> Fuente: GoogleAds ";
+        
+            $header='';
+            $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
+            $header .= "Reply-To: ".'info@notarialatina.com'."\r\n";
+            $header .= "MIME-Version: 1.0\r\n";
+            $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);    
+
+        }
+
+        return view('landing.thank');
+    }
+
+    public function thankpostnj (Request $request)
+    {    
+        $interest = $request->interest ?? 'General';
+
+        $sendoffices = ',newyork@notarialatina.com';
+        if ($interest == 'General')             $sendoffices = ',newyork@notarialatina.com';
+        if ($interest == 'Landing New York')    $sendoffices = ',newyork@notarialatina.com';
+        if ($interest == 'Landing New Jersey')  $sendoffices = ',newjersey@notarialatina.com';
+        if ($interest == 'Landing Florida')     $sendoffices = ',florida@notarialatina.com';
+
+            $message = "<br><strong>Nuevo Lead Landing</strong>
+                        <br> Nombre: ". strip_tags($request->aaa)."
+                        <br> Telef: ".  strip_tags($request->bbb)."
+                        <br> Interes: ".  strip_tags($interest)."
+                        <br> Mensaje: ".strip_tags($request->ddd)."
+                        <br> Fuente: GoogleAds ";
+                    
+            $header='';
+            $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
+            $header .= "Reply-To: ".'info@notarialatina.com'."\r\n";
+            $header .= "MIME-Version: 1.0\r\n";
+            $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);      
+
+        return view('landing.thank');
+    }    
+
+    // New Jersey
+    public function newjersey() {
+        $data['oficina'] = 'New Jersey';
+        $data['header'] = 'Notaría Pública <br> <b>New Jersey</b> <br> Gestión Fácil y Rápida';
+        $data['service'] = 'General';// General Imprime todos los servicios
+        $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
+        $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
+        $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
+        $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
+        $data['tlfhidden'] = '19082249594 ';
+        $data['tlfshow'] = '908 224-9594';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }
+
+    public function njweb() {
+        $data['oficina'] = 'New Jersey';
+        $data['header'] = 'Notaría Pública <br> New Jersey <br> Gestión Fácil y Rápida';
+        $data['service'] = 'General';// General Imprime todos los servicios
+        $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
+        $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
+        $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
+        $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
+        $data['tlfhidden'] = '19082249596';
+        $data['tlfshow'] = '908 224-9596';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }  
+
+    public function njtrad() {
+        $data['oficina'] = 'New Jersey';
+        $data['header'] = 'Servicio de Traducción <br> en New Jersey';  
+        $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español'; 
+        $data['imgup'] = 'img/landing-traducciones.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
+        $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
+        $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
+        $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
+        $data['tlfhidden'] = '19082249259';
+        $data['tlfshow'] = '908 224-9259';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }  
+
+    public function njpod() {
+        $data['oficina'] = 'New Jersey';
+        $data['header']  = 'Poderes <br> en New Jersey'; 
+        $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';        
+        $data['imgup'] = 'img/landing-poderes.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
+        $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
+        $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
+        $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
+        $data['tlfhidden'] = '19082249258';
+        $data['tlfshow'] = '908 224-9258';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }   
+
+    public function njapos() {
+        $data['oficina'] = 'New Jersey';
+        $data['header'] = 'Apostillas <br> en New Jersey';
+        $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
+        $data['imgup'] = 'img/landing-apostillas-nj.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
+        $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
+        $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
+        $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
+        $data['tlfhidden'] = '19082249552';
+        $data['tlfshow'] = '908 224-9552';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }
+
+
+    // New York
+    public function newyork() {
+        $data['oficina'] = 'New York';
+        $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
+        $data['service'] = 'General';// General Imprime todos los servicios
+        $data['imgup'] = 'img/newyork-landing-notaria-latina.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
+        $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
+        $data['dirlink'] = 'https://g.page/notariapublicalatina';
+        $data['dirmap']  = 'img/map.jpg';
+        $data['tlfhidden'] = '13474281520';
+        $data['tlfshow'] = '347 428-1520';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }
+
+    public function nyweb() {
+        $data['oficina'] = 'New York';
+        $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
+        $data['service'] = 'General';// General Imprime todos los servicios
+        $data['imgup'] = 'img/newyork-landing-notaria-latina.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
+        $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
+        $data['dirlink'] = 'https://g.page/notariapublicalatina';
+        $data['dirmap']  = 'img/map.jpg';
+        $data['tlfhidden'] = '13474281519';
+        $data['tlfshow'] = '347 428-1519';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }  
+
+    public function nytrad() {
+        $data['oficina'] = 'New York';
+        $data['header'] = 'Servicio de Traducción <br> en New York';  
+        $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
+        $data['imgup'] = 'img/landing-traducciones.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
+        $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
+        $data['dirlink'] = 'https://g.page/notariapublicalatina';
+        $data['dirmap']  = 'img/map.jpg';
+        $data['tlfhidden'] = '13474281517';
+        $data['tlfshow'] = '347 428-1517';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }  
+
+    public function nypod() {
+        $data['oficina'] = 'New York';
+        $data['header']  = 'Poderes <br> en New York'; 
+        $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
+        $data['imgup']   = 'img/landing-poderes.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
+        $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
+        $data['dirlink'] = 'https://g.page/notariapublicalatina';
+        $data['dirmap']  = 'img/map.jpg';
+        $data['tlfhidden'] = '13474281516';
+        $data['tlfshow'] = '347 428-1516';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }   
+
+    public function nyapos() {
+        $data['oficina'] = 'New York';
+        $data['header'] = 'Apostillas <br> en New York';
+        $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
+        $data['imgup'] = 'img/landing-apostillas-ny.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
+        $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
+        $data['dirlink'] = 'https://g.page/notariapublicalatina';
+        $data['dirmap']  = 'img/map.jpg';
+        $data['tlfhidden'] = '13474281518';
+        $data['tlfshow'] = '347 428-1518';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }  
+
+    
+
+
+    // Florida
+    public function florida() {
+        $data['oficina'] = 'Florida';
+        $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
+        $data['service'] = 'General';// General Imprime todos los servicios
+        $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-florida.jpg';
+        $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
+        $data['dirlink'] = 'https://g.page/notarialatina';
+        $data['dirmap']  = 'img/map-florida-notaria.jpg';
+        $data['tlfhidden'] = '13054229149';
+        $data['tlfshow'] = '305 422 9149';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }
+
+    public function flweb() {
+        $data['oficina'] = 'Florida';
+        $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
+        $data['service'] = 'General';// General Imprime todos los servicios
+        $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-florida.jpg';
+        $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
+        $data['dirlink'] = 'https://g.page/notarialatina';
+        $data['dirmap']  = 'img/map-florida-notaria.jpg';
+        $data['tlfhidden'] = '13053177811';
+        $data['tlfshow'] = '305 317 7811';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }  
+
+    public function fltrad() {
+        $data['oficina'] = 'Florida';
+        $data['header'] = 'Servicio de Traducción <br> en Florida';  
+        $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
+        $data['imgup'] = 'img/landing-traducciones.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-florida.jpg';
+        $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
+        $data['dirlink'] = 'https://g.page/notarialatina';
+        $data['dirmap']  = 'img/map-florida-notaria.jpg';
+        $data['tlfhidden'] = '13053177819';
+        $data['tlfshow'] = '305 317 7819';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }  
+
+    public function flpod() {
+        $data['oficina'] = 'Florida';
+        $data['header']  = 'Poderes <br> en Florida'; 
+        $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
+        $data['imgup']   = 'img/landing-poderes.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-florida.jpg';
+        $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
+        $data['dirlink'] = 'https://g.page/notarialatina';
+        $data['dirmap']  = 'img/map-florida-notaria.jpg';
+        $data['tlfhidden'] = '13053177826';
+        $data['tlfshow'] = '305 317 7826';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }   
+
+    public function flapos() {
+        $data['oficina'] = 'Florida';
+        $data['header'] = 'Apostillas <br> en Florida';
+        $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
+        $data['imgup'] = 'img/landing-apostillas-fl.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-latina-florida.jpg';
+        $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
+        $data['dirlink'] = 'https://g.page/notarialatina';
+        $data['dirmap']  = 'img/map-florida-notaria.jpg';
+        $data['tlfhidden'] = '13053177820';
+        $data['tlfshow'] = '305 317 7820';
+        $data['text_description'] = null;
+        return view('landing.general',$data);
+    }  
+}
