@@ -20,4 +20,8 @@
     RewriteRule ^ index.php [L]
 
     #Hola
+    #Prueba
+    #De
+    #Comentario
+    
 </IfModule>
