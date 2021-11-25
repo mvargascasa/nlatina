@@ -152,7 +152,7 @@ class LandingController extends Controller
     public function njpod() {
         $data['oficina'] = 'New Jersey';
         $data['header']  = 'Poderes <br> en New Jersey'; 
-        $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';        
+        $data['service'] = null;//'Realizamos todo tipo de Poderes Generales y Poderes Especiales';        
         $data['imgup'] = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -160,7 +160,20 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249258';
         $data['tlfshow'] = '908 224-9258';
-        $data['info'] = null;
+        $data['info'] = [
+            [
+                $title['title'] = "TIPOS DE CARTA PODER",
+                $description['description'] = "Realizamos todo tipo de Poder Especial o Poder General Apostillados para toda Latinoamérica."
+            ],
+            [
+                $title['title'] = "SOLICITE UN PODER PARA:",
+                $description['description'] = '- Gestionar sus bienes, tramites bancarios. <br>- Carta Poder para viaje de menor. <br>- Carta poder para compra o venta de propiedades. <br>- Carta poder para solicitar créditos. <br>- Carta poder para gestión de pasaporte. <br>- Carta poder para pleitos y cobranzas.'
+            ],
+            [
+                $title['title'] = "¿DONDE HACER UNA CARTA PODER EN NEW JERSEY?",
+                $description['description'] = "Llámenos y agende una cita en nuestras oficinas ubicadas en New Jersey"
+            ]
+        ];
         return view('landing.general',$data);
     }   
 
@@ -321,15 +334,28 @@ class LandingController extends Controller
     public function flpod() {
         $data['oficina'] = 'Florida';
         $data['header']  = 'Poderes <br> en Florida'; 
-        $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
+        $data['service'] = null; //'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['imgup']   = 'img/landing-poderes.jpg';
-        $data['imgdown'] = 'img/oficina-notaria-latina-florida.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
         $data['dirlink'] = 'https://g.page/notarialatina';
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13053177826';
         $data['tlfshow'] = '305 317 7826';
-        $data['info'] = null;
+        $data['info'] = [
+            [
+                $title['title'] = "TIPOS DE CARTA PODER",
+                $description['description'] = "Realizamos todo tipo de Poder Especial o Poder General Apostillados para toda Latinoamérica."
+            ],
+            [
+                $title['title'] = "SOLICITE UN PODER PARA:",
+                $description['description'] = '- Gestionar sus bienes, tramites bancarios. <br>- Carta Poder para viaje de menor. <br>- Carta poder para compra o venta de propiedades. <br>- Carta poder para solicitar créditos. <br>- Carta poder para gestión de pasaporte. <br>- Carta poder para pleitos y cobranzas.'
+            ],
+            [
+                $title['title'] = "¿DONDE HACER UNA CARTA PODER EN FLORIDA?",
+                $description['description'] = "Llámenos y agende una cita en nuestras oficinas ubicadas en Florida"
+            ]
+        ];
         return view('landing.general',$data);
     }   
 
