@@ -306,7 +306,7 @@ class LandingController extends Controller
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
-        $data['imgdown'] = 'img/oficina-notaria-latina-florida.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
         $data['dirlink'] = 'https://g.page/notarialatina';
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
@@ -321,7 +321,7 @@ class LandingController extends Controller
         $data['header'] = 'Servicio de Traducción <br> en Florida';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
         $data['imgup'] = 'img/landing-traducciones.jpg';
-        $data['imgdown'] = 'img/oficina-notaria-latina-florida.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
         $data['dirlink'] = 'https://g.page/notarialatina';
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
@@ -364,7 +364,7 @@ class LandingController extends Controller
         $data['header'] = 'Apostillas <br> en Florida';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
         $data['imgup'] = 'img/landing-apostillas-fl.jpg';
-        $data['imgdown'] = 'img/oficina-notaria-latina-florida.jpg';
+        $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
         $data['dirlink'] = 'https://g.page/notarialatina';
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
