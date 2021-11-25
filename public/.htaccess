@@ -20,7 +20,7 @@
     RewriteRule ^ index.php [L]
 
     #Change domain without -www
-        RewriteCond %{HTTP_HOST} ^www\.notarialatina\.com$
-        RewriteRule ^/?$ "https\:\/\/notarialatina\.com\/" [R=301,L]
+    RewriteCond %{HTTP_HOST} ^www.notarialatina.com [NC]
+    RewriteRule ^(.*)$ https://notarialatina.com/$1 [L,R=301]
 
 </IfModule>
