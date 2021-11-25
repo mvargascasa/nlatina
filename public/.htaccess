@@ -4,10 +4,6 @@
     </IfModule>
 
     RewriteEngine On
-    
-    RewriteCond %{REQUEST_URI} !^/(robots\.txt|favicon\.ico|sitemap\.xml)$
-    RewriteCond %{HTTP_HOST} !^notarialatina\.com$ [NC]
-    RewriteRule ^(.*)$ https://notarialatina.com/$1 [R=301,L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
