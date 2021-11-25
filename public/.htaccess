@@ -4,11 +4,8 @@
     </IfModule>
 
     RewriteEngine On
-
-    #Change domain without -www
-    Options +FollowSymLinks
-    RewriteCond %{HTTP_HOST} ^www\.notarialatina\.com$ [NC]
-    RewriteRule ^(.*)$ http://notarialatina.com/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^www.notarialatina.com
+    RewriteRule (.*) https://notarialatina.com/$1 [R=301,L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
