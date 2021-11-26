@@ -61,10 +61,10 @@
   <img id="prisection" src="" class="card-img" alt="Notaria Pública en {{ $oficina }}" style="max-height: 90vh;min-height: 40vh;  object-fit: cover;">
   <div class="card-img-overlay my-auto" style="background:rgba(2, 2, 2, 0.5)">
     <div class="d-sm-block d-md-none text-center" style="margin-top: 20%;">
-        <div class="font-italic" style="font-size: 22px; font-weight: 600">{!!$header!!}</div>
+        <div class="font-italic"><h1 style="font-size: 22px; font-weight: 600">{!!$header!!}</h1></div>
     </div>    
     <div class="text-center d-none d-sm-none d-md-block" style="margin-top: 10%;">
-      <div class="font-italic" style="font-size: 60px; font-weight: 600">{!!$header!!}</div>
+      <div class="font-italic"><h1 style="font-size: 60px; font-weight: 600">{!!$header!!}</h1></div>
     </div>
   </div>
 </section>
