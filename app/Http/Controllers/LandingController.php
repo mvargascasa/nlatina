@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class LandingController extends Controller
 {
 
@@ -117,7 +118,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249594 ';
         $data['tlfshow'] = '908 224-9594';
-        $data['info'] = null;
+        $data['landing'] = 'General';
         return view('landing.general',$data);
     }
 
@@ -134,7 +135,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249596';
         $data['tlfshow'] = '908 224-9596';
-        $data['info'] = null;
+        $data['landing'] = 'General Web';
         return view('landing.general',$data);
     }  
 
@@ -151,7 +152,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249259';
         $data['tlfshow'] = '908 224-9259';
-        $data['info'] = null;
+        $data['landing'] = 'Traducciones';
         return view('landing.general',$data);
     }  
 
@@ -160,7 +161,7 @@ class LandingController extends Controller
         $data['header']  = 'Poderes <br> en New Jersey'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = $data['service'];
-        $data['keywords'] = 'New Jersey, Poderes Especiales, Poderes Generales, Trámites Bancarios, Carta Poder,  Menor de edad, Compra Venta Propiedades, Créditos, Pasaporte, Pleitos, Cobranzas';
+        $data['keywords'] = 'New Jersey, Poderes Especiales, Poderes Generales, Trámites Bancarios, Carta Poder, Menor de edad, Compra Venta Propiedades, Créditos, Pasaporte, Pleitos, Cobranzas';
         $data['imgup'] = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -168,20 +169,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249258';
         $data['tlfshow'] = '908 224-9258';
-        $data['info'] = [
-            [
-                $title['title'] = "TIPOS DE CARTA PODER",
-                $description['description'] = "Realizamos todo tipo de Poder Especial o Poder General Apostillados para toda Latinoamérica."
-            ],
-            [
-                $title['title'] = "SOLICITE UN PODER PARA:",
-                $description['description'] = '- Gestionar sus bienes, tramites bancarios. <br>- Carta Poder para viaje de menor. <br>- Carta poder para compra o venta de propiedades. <br>- Carta poder para solicitar créditos. <br>- Carta poder para gestión de pasaporte. <br>- Carta poder para pleitos y cobranzas.'
-            ],
-            [
-                $title['title'] = "¿DONDE HACER UNA CARTA PODER EN NEW JERSEY?",
-                $description['description'] = "Llámenos y agende una cita en nuestras oficinas ubicadas en New Jersey"
-            ]
-        ];
+        $data['landing'] = "Poderes"; 
         return view('landing.general',$data);
     }   
 
@@ -198,7 +186,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-newjersey-notaria.jpg';
         $data['tlfhidden'] = '19082249552';
         $data['tlfshow'] = '908 224-9552';
-        $data['info'] = null;
+        $data['landing'] = 'Apostillas';
         return view('landing.general',$data);
     }
 
@@ -217,7 +205,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281520';
         $data['tlfshow'] = '347 428-1520';
-        $data['info'] = null;
+        $data['landing'] = 'General';
         return view('landing.general',$data);
     }
 
@@ -234,7 +222,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281519';
         $data['tlfshow'] = '347 428-1519';
-        $data['info'] = null;
+        $data['landing'] = 'General Web';
         return view('landing.general',$data);
     }  
 
@@ -251,7 +239,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281517';
         $data['tlfshow'] = '347 428-1517';
-        $data['info'] = null;
+        $data['landing'] = 'Traducciones';
         return view('landing.general',$data);
     }  
 
@@ -268,20 +256,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281516';
         $data['tlfshow'] = '347 428-1516';
-        $data['info'] = [
-            [
-                $title['title'] = "TIPOS DE CARTA PODER",
-                $description['description'] = "Realizamos todo tipo de Poder Especial o Poder General Apostillados para toda Latinoamérica."
-            ],
-            [
-                $title['title'] = "SOLICITE UN PODER PARA:",
-                $description['description'] = '- Gestionar sus bienes, tramites bancarios. <br>- Carta Poder para viaje de menor. <br>- Carta poder para compra o venta de propiedades. <br>- Carta poder para solicitar créditos. <br>- Carta poder para gestión de pasaporte. <br>- Carta poder para pleitos y cobranzas.'
-            ],
-            [
-                $title['title'] = "¿DONDE HACER UNA CARTA PODER EN NEW YORK?",
-                $description['description'] = "Llámenos y agende una cita en nuestras oficinas ubicadas en New York"
-            ]
-        ];
+        $data['landing'] = 'Poderes'; 
         return view('landing.general',$data);
     }   
 
@@ -298,7 +273,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281518';
         $data['tlfshow'] = '347 428-1518';
-        $data['info'] = null;
+        $data['landing'] = 'Apostillas';
         return view('landing.general',$data);
     }  
 
@@ -319,7 +294,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13054229149';
         $data['tlfshow'] = '305 422 9149';
-        $data['info'] = null;
+        $data['landing'] = 'General';
         return view('landing.general',$data);
     }
 
@@ -336,7 +311,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13053177811';
         $data['tlfshow'] = '305 317 7811';
-        $data['info'] = null;
+        $data['landing'] = 'General Web';
         return view('landing.general',$data);
     }  
 
@@ -353,7 +328,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13053177819';
         $data['tlfshow'] = '305 317 7819';
-        $data['info'] = null;
+        $data['landing'] = 'Traducciones';
         return view('landing.general',$data);
     }  
 
@@ -370,20 +345,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13053177826';
         $data['tlfshow'] = '305 317 7826';
-        $data['info'] = [
-            [
-                $title['title'] = "TIPOS DE CARTA PODER",
-                $description['description'] = "Realizamos todo tipo de Poder Especial o Poder General Apostillados para toda Latinoamérica."
-            ],
-            [
-                $title['title'] = "SOLICITE UN PODER PARA:",
-                $description['description'] = '- Gestionar sus bienes, tramites bancarios. <br>- Carta Poder para viaje de menor. <br>- Carta poder para compra o venta de propiedades. <br>- Carta poder para solicitar créditos. <br>- Carta poder para gestión de pasaporte. <br>- Carta poder para pleitos y cobranzas.'
-            ],
-            [
-                $title['title'] = "¿DONDE HACER UNA CARTA PODER EN FLORIDA?",
-                $description['description'] = "Llámenos y agende una cita en nuestras oficinas ubicadas en Florida"
-            ]
-        ];
+        $data['landing'] = 'Poderes';
         return view('landing.general',$data);
     }   
 
@@ -400,7 +362,7 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map-florida-notaria.jpg';
         $data['tlfhidden'] = '13053177820';
         $data['tlfshow'] = '305 317 7820';
-        $data['info'] = null;
+        $data['landing'] = 'Apostillas';
         return view('landing.general',$data);
     }  
 }

@@ -75,19 +75,47 @@
   </div>
 </section>
 
-@if ($info != null)
+@if ($landing == "Poderes")
   <section class="container mt-5">
     <div class="row">
-      @foreach ($info as $i)
       <div class="col-sm-6 col-md-4 mb-2">
         <div class="card" style="width: 100%; height: 100%; background-color:rgb(247, 247, 247)">
           <div class="card-body text-center" style="color: rgb(102, 102, 102)">
-            <h6 class="card-title"><b>{{ $i['0'] }}</b></h6>
-            <p class="card-text">{!!  $i['1'] !!}</p>
+            <h6 class="card-title"><b>TIPOS DE CARTA PODER</b></h6>
+            <p class="card-text">
+              Realizamos todo tipo de Poder Especial o Poder General Apostillados
+              para toda Latinoamérica
+            </p>
           </div>
         </div>
       </div>
-      @endforeach
+      <div class="col-sm-6 col-md-4 mb-2">
+        <div class="card" style="width: 100%; height: 100%; background-color:rgb(247, 247, 247)">
+          <div class="card-body" style="color: rgb(102, 102, 102)">
+            <h6 class="card-title text-center"><b>SOLICITE UN PODER PARA:</b></h6>
+            <p class="card-text">
+              <ul>
+                <li>Gestionar sus bienes, trámites bancarios</li>
+                <li>Carta poder para viaje de menor</li>
+                <li>Carta poder para compra o venta de propiedades</li>
+                <li>Carta poder para solicitar créditos</li>
+                <li>Carta poder para gestión de pasaporte</li>
+                <li>Carta poder para pleitos y cobranzas</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 mb-2">
+        <div class="card" style="width: 100%; height: 100%; background-color:rgb(247, 247, 247)">
+          <div class="card-body text-center" style="color: rgb(102, 102, 102)">
+            <h6 class="card-title"><b>¿DONDE HACER UNA CARTA PODER EN <p style="text-transform: uppercase">{{ $oficina }}?</p></b></h6>
+            <p class="card-text">
+              Llámenos y agende una cita en nuestras oficinas ubicadas en {{ $oficina }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 @endif
@@ -133,7 +161,7 @@
       <li>Certificados de defunción.</li>
     </ul>
     </div>
-  @elseif($info == null)
+  @elseif($landing != "Poderes")
     <h4 class="text-center py-4 px-4">{!!$service!!}</h4>
   @endif
   </section>
@@ -141,7 +169,7 @@
 
 <section class="row quienes-somos text-white  m-0">
   <div class="card col-12 p-0" style="border-radius:0;border:0" >
-    <img src="{{asset($imgdown)}}" class="card-img" style="height: 100%;object-fit: cover;" alt="..." >
+    <img src="{{asset($imgdown)}}" class="card-img" style="height: 100%;object-fit: cover;" alt="Oficina en {{ $oficina }}" >
   </div>
 </section>
 
@@ -157,7 +185,7 @@
   </div>
   <div class="col-12 col-md-6  text-center pb-4 ">
     <a href="{{$dirlink}}" target="_blank">
-      <img id="dirmap" src="" alt="">
+      <img id="dirmap" src="" alt="Direccion en {{ $oficina }}">
     </a>
   </div>
 </section>
