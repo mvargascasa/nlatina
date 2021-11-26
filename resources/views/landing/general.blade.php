@@ -2,6 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  @if ($meta_description != null)
+  <meta name="description" content="{{$meta_description}}">    
+  @endif
+  @if ($keywords != null)
+  <meta name="keywords" content="{{ $keywords }}">
+  @endif
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -38,7 +44,7 @@
 <header>
   <nav class="navbar navbar-dark navfoot">
     <a class="navbar-brand pl-3" href="#">
-      <img src="{{asset('img/marca-notaria-latina.png')}}" width="140" height="30" alt="">
+      <img src="{{asset('img/marca-notaria-latina.png')}}" width="140" height="30" alt="Notaria Latina">
     </a>
       <div class="d-flex justify-content-end pr-3">
         <ul class="navbar-nav mr-auto">
@@ -52,7 +58,7 @@
 
 
 <section class="card text-white" style="border-radius:0;border:0" >
-  <img id="prisection" src="" class="card-img" alt="..." style="max-height: 90vh;min-height: 40vh;  object-fit: cover;">
+  <img id="prisection" src="" class="card-img" alt="Notaria Pública en {{ $oficina }}" style="max-height: 90vh;min-height: 40vh;  object-fit: cover;">
   <div class="card-img-overlay my-auto" style="background:rgba(2, 2, 2, 0.5)">
     <div class="d-sm-block d-md-none text-center" style="margin-top: 20%;">
         <div class="font-italic" style="font-size: 22px; font-weight: 600">{!!$header!!}</div>
@@ -63,8 +69,6 @@
   </div>
 </section>
 
-
-  
 <section class="row quienes-somos text-white p-4 align-middle">
   <div class="col-12 text-center align-middle py-4">
     <a href="tel:+{{$tlfhidden??'19082249594'}}" class="btn btn-lg btn-warning" >LLAMAR: <b>{{$tlfshow??'NJ (908) 224-9594'}}</b> </a>
@@ -129,7 +133,7 @@
       <li>Certificados de defunción.</li>
     </ul>
     </div>
-  @elseif($service != null)
+  @elseif($info == null)
     <h4 class="text-center py-4 px-4">{!!$service!!}</h4>
   @endif
   </section>

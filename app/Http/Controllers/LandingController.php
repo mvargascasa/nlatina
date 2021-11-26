@@ -108,6 +108,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Notaría Pública <br> <b>New Jersey</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -123,6 +125,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Notaría Pública <br> New Jersey <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -138,6 +142,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Servicio de Traducción <br> en New Jersey';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español'; 
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/landing-traducciones.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -152,7 +158,9 @@ class LandingController extends Controller
     public function njpod() {
         $data['oficina'] = 'New Jersey';
         $data['header']  = 'Poderes <br> en New Jersey'; 
-        $data['service'] = null;//'Realizamos todo tipo de Poderes Generales y Poderes Especiales';        
+        $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
+        $data['meta_description'] = $data['service'];
+        $data['keywords'] = 'New Jersey, Poderes Especiales, Poderes Generales, Trámites Bancarios, Carta Poder,  Menor de edad, Compra Venta Propiedades, Créditos, Pasaporte, Pleitos, Cobranzas';
         $data['imgup'] = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -181,6 +189,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Apostillas <br> en New Jersey';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/landing-apostillas-nj.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -198,6 +208,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/newyork-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -213,6 +225,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/newyork-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -228,6 +242,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Servicio de Traducción <br> en New York';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/landing-traducciones.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -242,7 +258,9 @@ class LandingController extends Controller
     public function nypod() {
         $data['oficina'] = 'New York';
         $data['header']  = 'Poderes <br> en New York'; 
-        $data['service'] = null;
+        $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
+        $data['meta_description'] = 'Contamos con servicios para Poderes Generales y Especiales';
+        $data['keywords'] = 'Poder Especial en New York, Poder General en New York, Bienes, Carta Poder New York, Compra o Venta Propiedades New York, Carta Poder Créditos New York, Pasaportes New York';
         $data['imgup']   = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -271,6 +289,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Apostillas <br> en New York';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/landing-apostillas-ny.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -290,6 +310,8 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
@@ -305,6 +327,8 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
@@ -320,6 +344,8 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Servicio de Traducción <br> en Florida';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/landing-traducciones.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
@@ -334,7 +360,9 @@ class LandingController extends Controller
     public function flpod() {
         $data['oficina'] = 'Florida';
         $data['header']  = 'Poderes <br> en Florida'; 
-        $data['service'] = null; //'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
+        $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup']   = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
@@ -363,6 +391,8 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Apostillas <br> en Florida';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
+        $data['meta_description'] = null;
+        $data['keywords'] = null;
         $data['imgup'] = 'img/landing-apostillas-fl.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
