@@ -1,6 +1,8 @@
 @extends('landing.a-layout')
 @section('header')
     <title>Servicios de Notaría en Linea - Notaria Latina</title>
+    <meta name="description" content="Servicios de notaría, Gestión Fácil en línea, Entregas en 24 horas en Estados Unidos">
+    <meta name="keywords" content="Servicio de notaría en Estados Unidos, Apostillas en Estados Unidos, Cartas Poder Estados Unidos, Traducciones Estados Unidos">
 @endsection
 
 @section('content')
