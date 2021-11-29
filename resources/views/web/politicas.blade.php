@@ -19,7 +19,7 @@
 
 
 <div class="container p-4">
-    <p dir="ltr"><strong>POL&Iacute;TICAS DE PRIVACIDAD</strong></p>
+    <h1 dir="ltr"><strong>POL&Iacute;TICAS DE PRIVACIDAD</strong></h1>
     
     <p>&nbsp;</p>
     
