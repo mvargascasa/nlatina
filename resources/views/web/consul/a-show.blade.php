@@ -1,14 +1,14 @@
 @extends('layouts.web')
 @section('header')
-<title>Consulado de {{$consul->country}} en New York - Notaría Latina</title>
-<meta name="description"        content="Información para Ciudadanos de {{$consul->country}} en New York sobre Trámites Consulares, Apostillas, Poderes, Renovación de Pasaportes."/>
-<meta name="keywords"           content="Consulado de {{$consul->country}}, Migrante de {{$consul->country}}, Tramites Consulares, Apostillas, Poderes, Renovación de Pasaportes" />
+    <title>Consulado de {{$consul->country}} en New York - Notaría Latina</title>
+    <meta name="description"        content="Información para Ciudadanos de {{$consul->country}} en New York sobre Trámites Consulares, Apostillas, Poderes, Renovación de Pasaportes."/>
+    <meta name="keywords"           content="Consulado de {{$consul->country}}, Migrante de {{$consul->country}}, Tramites Consulares, Apostillas, Poderes, Renovación de Pasaportes" />
 
-<meta property="og:url"         content="https://notarialatina.com" />
-<meta property="og:type"        content="website" />
-<meta property="og:title"       content="Consulado de {{$consul->country}} en New York - Notaría Latina" />
-<meta property="og:description" content="Información para Ciudadanos de {{$consul->country}} en New York sobre Trámites Consulares, Apostillas, Poderes, Renovación de Pasaportes." />
-<meta property="og:image"       content="https://notarialatina.com/img/meta-notaria-latina-queens-new-york.jpg" />
+    <meta property="og:url"         content="https://notarialatina.com" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="Consulado de {{$consul->country}} en New York - Notaría Latina" />
+    <meta property="og:description" content="Información para Ciudadanos de {{$consul->country}} en New York sobre Trámites Consulares, Apostillas, Poderes, Renovación de Pasaportes." />
+    <meta property="og:image"       content="https://notarialatina.com/img/meta-notaria-latina-queens-new-york.jpg" />
 @endsection
 
 @section('content')

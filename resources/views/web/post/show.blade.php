@@ -23,7 +23,7 @@
             <h1 class="font-weight-bold heading-title" >{{$post->name}}</h1>
             <div class="row">
                 <div class="col-12" style="white-space: pre-wrap;">
-                <img class="p-4 float-right" width="500" src='{{url('uploads/i600_'.$post->imgsmall)}}'>
+                <img class="p-4 float-right" width="500" alt="Imagen {{ $post->name }}" src='{{url('uploads/i600_'.$post->imgsmall)}}'>
                 <?php echo htmlspecialchars_decode($post->body)?>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                         <div class="col-12 col-md-4">
                             <div class="card my-2">
                                 <a href="{{route('post.slug',$lpost->slug)}}" class="stretched-link">
-                                    <img src="{{url('uploads/'.$lpost->imgdir)}}" class="card-img-top" alt="..." style="object-fit: cover;height: 150px !important;">
+                                    <img src="{{url('uploads/'.$lpost->imgdir)}}" class="card-img-top" alt="{{ $post->name }}" style="object-fit: cover;height: 150px !important;">
                                 </a>
                                 <div class="card-body p-2" style="position:relative;">
                                 <span class="d-block text-muted font-weight-bold text-truncate "
