@@ -1,7 +1,5 @@
 @extends('layouts.web')
-
 @section('header')
-
     <title>Políticas de Privacidad - Notaría Latina</title>
     <meta name="description" content="Notaría Latina - Notario Público en Queens New York. Gestión en Línea en todo EE.UU. Poderes, Apostillas, Traducciones, Autorizaciones de Viaje, Affidavit."/>
     <meta name="keywords" content="notaria latina, notario publico, notario cerca de mi, notario publico near me, traducción de documentos near me, apostillar documentos near me, notaría nueva york, notary public queens" />
@@ -11,8 +9,6 @@
     <meta property="og:title"              content="Notaría Latina - Notario Público en Queens New York." />
     <meta property="og:description"        content="Gestión en Línea en todo EE.UU. Poderes, Apostillas, Traducciones, Autorizaciones de Viaje, Affidavit." />
     <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
-    
-
 @endsection
 
 @section('content')

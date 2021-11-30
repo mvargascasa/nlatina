@@ -1,5 +1,4 @@
 @extends('layouts.web')
-
 @section('header')
     <title>Notaría Latina en New York - {{$post->name}}</title>
     <meta name="description" content="{{$post->metadescrip}}"/>

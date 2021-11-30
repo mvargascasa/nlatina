@@ -6,7 +6,7 @@
   <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+  <link rel="stylesheet" href="{{asset('css/styles.min.css?v=1')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
   <meta name="facebook-domain-verification" content="lz9luqstj366xp6jboc5k6mt4m4ssm" />
 
