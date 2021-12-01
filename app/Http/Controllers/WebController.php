@@ -42,8 +42,6 @@ class WebController extends Controller
         
         $posts = Post::where('status','PUBLICADO')->orderBy('id','desc')->limit(3)->get();
 
-        echo "<script>console.log($consul)</script>";
-
         if($consul){
             return view('web.consul.a-show',compact('consul','posts',));
         }else{
