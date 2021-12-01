@@ -1,7 +1,3 @@
-RewriteEngine on
-    RewriteCond %{HTTP_HOST} ^www\.notarialatina\.com$
-    RewriteRule ^/?$ "https\:\/\/notarialatina\.com\/" [R=301,L]
-
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
