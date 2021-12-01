@@ -285,8 +285,8 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = null;
-        $data['keywords'] = null;
+        $data['meta_description'] = 'Servicios de apostillas - Cartas Poder - Traducciones de diferentes documentos en Florida';
+        $data['keywords'] = 'apostillas en florida, cartas poder en florida, traducciones florida';
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
