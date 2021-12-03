@@ -132,27 +132,29 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-sm-3">
-            <div class="testimotionals">
-                <div class="card">
-                <div class="layer"></div>
-                <div class="content">
-                    <div class="image">
-                        <img  width="100px" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="">
+            <a href="{{ route('web.partner') }}">
+                <div class="testimotionals">
+                    <div class="card">
+                    <div class="layer"></div>
+                    <div class="content">
+                        <div class="image">
+                            <img  width="100px" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="">
+                        </div>
+                        <h5><b>SAMUEL ABAD</b></h5>
+                        <p>Abogado Laboral</p>
+                        <h6><b>ECUADOR <img src="img/partners/ecuador.png"/></b></h6>
+                        <div class="row mt-5">
+                            <div class="col-sm-6">
+                                <p><i class="fas fa-phone-alt"></i>+15116188585</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px"></i>Email</p>
+                            </div>
+                        </div>
                     </div>
-                    <h5><b>SAMUEL ABAD</b></h5>
-                    <p>Abogado Laboral</p>
-                    <h6><b>ECUADOR <img src="img/partners/ecuador.png"/></b></h6>
-                    <div class="row mt-5">
-                        <div class="col-sm-6">
-                            <p><i class="fas fa-phone-alt"></i>+15116188585</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px"></i>Email</p>
-                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
+            </a>
         </div>
         <div class="col-sm-3">
             <div class="testimotionals">
@@ -223,6 +225,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary mt-5" style="background-color: rgb(50, 1, 50)" href="">CARGAR MÁS CONTACTOS</a>
     </div>
 </div>
 @endsection
