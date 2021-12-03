@@ -16,8 +16,8 @@
             background:rgb(255, 255, 255);
             padding:20px;
             box-sizing:border-box;
-            text-align:center;
-            box-shadow:0 10px 40px rgba(0,0,0,.5)
+            text-align:justify;
+            /* box-shadow:0 10px 40px rgba(0,0,0,.5) */
         }
 
         .testimotionals .card .layer {
@@ -40,42 +40,49 @@
             top:0;
         }
 
-        .testimotionals .card .content p {
+        .testimotionals .card .content h5{
+            margin-top: 10px;
             font-size:14px;
-            line-height:24px;
+            color:rgb(160, 85, 85);
+        }
+        .testimotionals .card:hover .content h5{
+            font-size:14px;
+            color:rgb(255, 255, 255);
+        }
+
+        .testimotionals .card .content p{
+            font-size:14px;
             color:rgb(0, 0, 0);
         }
-        .testimotionals .card:hover .content p {
+        .testimotionals .card:hover .content p{
             font-size:14px;
-            line-height:24px;
+            color:rgb(255, 255, 255);
+        }
+
+        .testimotionals .card .content h6{
+            font-size:14px;
+            color:rgb(0, 0, 0);
+        }
+        .testimotionals .card:hover .content h6{
+            font-size:14px;
+            color:rgb(255, 255, 255);
+        }
+
+        .testimotionals .card .content .row p{
+            font-size:11px;
+            color:rgb(0, 0, 0);
+        }
+        .testimotionals .card:hover .row p{
+            font-size:11px;
             color:rgb(255, 255, 255);
         }
 
         .testimotionals .card .content .image {
-            width:45%; 
-            height:60%;
-            /* margin:0 auto; */
-            /* border-radius:50%; */
+            width:100%; 
+            height:100%;
             overflow:hidden;
-            /* border: 4px solid white; */
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
         
-        }
-
-        .testimotionals .card .conte nt .details h2 {
-            font-size:18px;
-            color:white;
-        }
-        .testimotionals .card .content .details h2 span {
-            font-size:18px;
-            color:purple;
-            transition:0.5s;
-        }
-
-        .testimotionals .card:hover .content .details h2 span {
-            color:white;
-            position:relative
-        }
     </style>
 @endsection
 
@@ -132,9 +139,16 @@
                     <div class="image">
                         <img  width="100px" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <div class="details">
-                    <h2> Someone famous <br> <span>Backend developer</span></h2>
+                    <h5><b>SAMUEL ABAD</b></h5>
+                    <p>Abogado Laboral</p>
+                    <h6><b>ECUADOR <img src="img/partners/ecuador.png"/></b></h6>
+                    <div class="row mt-5">
+                        <div class="col-sm-6">
+                            <p><i class="fas fa-phone-alt"></i>+15116188585</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px"></i>Email</p>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -148,9 +162,16 @@
                     <div class="image">
                         <img  width="100px" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <div class="details">
-                    <h2> Someone famous <br> <span>Backend developer</span></h2>
+                    <h5><b>SAMUEL ABAD</b></h5>
+                    <p>Abogado Laboral</p>
+                    <h6><b>ECUADOR <img src="img/partners/ecuador.png"/></b></h6>
+                    <div class="row mt-5">
+                        <div class="col-sm-6">
+                            <p><i class="fas fa-phone-alt"></i>+15116188585</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px"></i>Email</p>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -164,9 +185,16 @@
                     <div class="image">
                         <img  width="100px" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <div class="details">
-                    <h2> Someone famous <br> <span>Backend developer</span></h2>
+                    <h5><b>SAMUEL ABAD</b></h5>
+                    <p>Abogado Laboral</p>
+                    <h6><b>ECUADOR <img src="img/partners/ecuador.png"/></b></h6>
+                    <div class="row mt-5">
+                        <div class="col-sm-6">
+                            <p><i class="fas fa-phone-alt"></i>+15116188585</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px"></i>Email</p>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -180,9 +208,16 @@
                     <div class="image">
                         <img  width="100px" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                    <div class="details">
-                    <h2> Someone famous <br> <span>Backend developer</span></h2>
+                    <h5><b>SAMUEL ABAD</b></h5>
+                    <p>Abogado Laboral</p>
+                    <h6><b>ECUADOR <img src="img/partners/ecuador.png"/></b></h6>
+                    <div class="row mt-5">
+                        <div class="col-sm-6">
+                            <p><i class="fas fa-phone-alt"></i>+15116188585</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px"></i>Email</p>
+                        </div>
                     </div>
                 </div>
                 </div>
