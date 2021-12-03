@@ -27,7 +27,7 @@
             height:100%;
             width:100%;
             left:0;
-            background:linear-gradient(to left , rgb(50, 1, 50), rgb(50, 1, 50));
+            background:linear-gradient(to left , #002542, #002542);
             transition:0.5s;
         }
 
@@ -227,7 +227,15 @@
         </div>
     </div>
     <div class="d-flex justify-content-center">
-        <a class="btn btn-primary mt-5" style="background-color: rgb(50, 1, 50)" href="">CARGAR MÁS CONTACTOS</a>
+        <a class="btn btn-primary mt-5" style="background-color: #002542" href="">CARGAR MÁS CONTACTOS</a>
     </div>
 </div>
+@endsection
+
+@section('script')
+<script>
+    window.addEventListener('load', (event) => {
+        document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-PARTNERS.jpg')}}')";
+    });
+  </script>
 @endsection

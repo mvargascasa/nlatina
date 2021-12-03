@@ -3,7 +3,7 @@
     <title>Socios de Casa Credito Promotora - Nombre del socio*</title>
     <style>
         .bg-header{
-            background-color: rgb(50, 1, 50);
+            background-color: #002542;
             width: 100%;
             height: 300px;
             position: absolute;
@@ -12,7 +12,7 @@
             position: relative;
         }
         .form{
-            background-color: rgb(50, 1, 50);
+            background-color: #002542;
             text-align: center;
         }
         input, textarea{
@@ -75,7 +75,7 @@
                 <p>Ingles</p>
             </div>
             <div class="col-sm-4 border-left">
-                <div style="color: rgb(241, 132, 15)">
+                <div style="color: #9A7A2E">
                     <h6><b>Otras especialidades</b></h6>
                     <p>Derecho penal</p>
                     <p>Derecho laboral</p>
@@ -89,7 +89,7 @@
                         <input class="mb-4" type="text" id="nombre" placeholder="Nombre">
                         <input class="mb-4" type="number" id="nombre" placeholder="Telefono">
                         <textarea class="mb-4" id="mensaje" rows="4" placeholder="Mensaje"></textarea>
-                        <button class="btn btn-warning mb-3" type="submit">Enviar</button>
+                        <button class="btn mb-3" style="background-color: #FEC02F" type="submit">Enviar</button>
                     </form>
                 </div>
             </div>
