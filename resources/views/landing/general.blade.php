@@ -192,7 +192,7 @@
 
 
 <section class="row quienes-somos text-white m-0">  
-      <div class="col-12 col-md-6 pb-5 px-5 mx-auto">
+      <div class="col-12 col-md-6 pb-5 px-3 mx-auto">
           <div class="card-body text-center">  
             <h2 class="font-italic font-weight-bold">Solicitar Tramite</h2>      
             <small> Envíe el formulario y un asesor le contactará breve. </small>     
@@ -202,8 +202,44 @@
               <div class="form-group pt-4">
                 <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombres"  maxlength="40" minlength="2" autocomplete="off" required>
               </div>
-              <div class="form-group">
-                <input id="bbb" name="bbb" type="text" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" required>
+              <div class="row">
+                <div class="col-sm-7">
+                  <div class="row">
+                    <div class="col-sm-7 mb-3">
+                      <select id="pais" name="cod_pais" class="form-control" required>
+                        <option value="">País de residencia</option>
+                        <option value="+54">Argentina</option>
+                        <option value="+591">Bolivia</option>
+                        <option value="+57">Colombia</option>
+                        <option value="+506">Costa Rica</option>
+                        <option value="+593">Ecuador</option>
+                        <option value="+503">El Salvador</option>
+                        <option value="+34">España</option>
+                        <option value="+502">Guatemala</option>
+                        <option value="+504">Honduras</option>
+                        <option value="+52">México</option>
+                        <option value="+505">Nicaragua</option>
+                        <option value="+507">Panamá</option>
+                        <option value="+595">Paraguay</option>
+                        <option value="+51">Perú</option>
+                        <option value="+1 787">Puerto Rico</option>
+                        <option value="+1 809">República Dominicana</option>
+                        <option value="+598">Uruguay</option>
+                        <option value="+58">Venezuela</option>                    
+                      </select>                                        
+                    </div>
+                    <div class="col-sm-5">
+                      <div class="form-group">
+                        <input type="text" id="telf" class="form-control" readonly/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-5">
+                  <div class="form-group">
+                    <input id="bbb" name="bbb" type="text" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" required>
+                  </div>
+                </div>
               </div>
               <div class="form-group">
                 <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
@@ -223,6 +259,27 @@
       document.getElementById('dirmap').src = "{{asset($dirmap)}}";
       console.log('ok');
   });
+
+  var pais = document.getElementById('pais');
+  var telf = document.getElementById('telf');
+
+  pais.onchange = function(e) {
+	  telf.value = this.value;
+	  if((this.value).trim() != '') {
+    telf.disabled = false;
+	} else {
+		telf.disabled = true;
+	}
+}
+
+// telf.onkeyup = function(e) {
+// 	var nums_v = this.value.match(/\d+/g);
+// 	if (nums_v != null) {
+// 		this.value = '+'+((nums_v).toString().replace(/\,/, ''));
+// 	} else {
+// 		this.value = pais.value;
+// 	}
+// }
 </script>
 
 </body>
