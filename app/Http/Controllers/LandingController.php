@@ -114,8 +114,7 @@ class LandingController extends Controller
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
                         <br> Nombre: ". strip_tags($request->aaa)."
-                        <br> Telef: ".  strip_tags($request->bbb)."
-                        <br> Código de País: " . strip_tags($request->get('cod_pais'))."
+                        <br> Telef: ".strip_tags($request->get('cod_pais'))." ".  strip_tags($request->bbb)."
                         <br> País: " .strip_tags($pais)."
                         <br> Interes: ".  strip_tags($interest)."
                         <br> Mensaje: ".strip_tags($request->ddd)." 
