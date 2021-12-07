@@ -109,7 +109,9 @@ class PartnerController extends Controller
                 break;
         }
 
-        $to = 'hserrano@notarialatina.com, notariapublicalatina@gmail.com';
+        $toPrincipal = 'hserrano@notarialatina.com';
+        $toSecundario = ', notariapublicalatina@gmail.com';
+        $toTerciario = ', sebas31051999@gmail.com';
         $subject = 'Suscripción de Partner - Abogado';
         $message = "<br><h2 style='color: #002542'><strong>Suscripción Abogado - Notaria Latina</strong></h2>
                     <br><strong>Nombre:</strong> " . strip_tags($request->nombre). " " . strip_tags($request->apellido)."
@@ -122,7 +124,7 @@ class PartnerController extends Controller
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
                 'Content-type:text/html;charset=UTF-8';
         
-        mail($to, $subject, $message, $header);
+        mail($toPrincipal.$toSecundario, $subject, $message, $header);
 
         return view('web.thankpartner');
         
