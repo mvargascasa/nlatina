@@ -215,6 +215,7 @@
                         <option value="+593">Ecuador</option>
                         <option value="+503">El Salvador</option>
                         <option value="+34">España</option>
+                        <option value="+1">Estados Unidos</option>
                         <option value="+502">Guatemala</option>
                         <option value="+504">Honduras</option>
                         <option value="+52">México</option>

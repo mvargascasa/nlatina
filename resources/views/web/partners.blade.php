@@ -82,6 +82,27 @@
             height:100%;
             overflow:hidden;
         }
+
+        .form{
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 5%;
+        }
+
+        @media screen and (max-width: 580px){
+            .form{
+                margin-left: 0%;
+                margin-right: 0%;
+            }
+
+            .titulo{
+                margin-top: 15%;
+            }
+        }
+
+        .titulo{
+            font-size: 30px;
+        }
         
     </style>
 @endsection
@@ -90,8 +111,56 @@
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
-            <div class="col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title" >ABOGADOS LATINOS <br> A SU SERVICIO</h1>
+            <div class="col-sm-6 col-12 text-white text-center">
+              <h1 class="font-weight-bold heading-title titulo">¡Abogados en Latinoamérica <br> a su alcance!</h1>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center form" style="background-color: #002542;">
+                    <h4 class="text-white pt-4 px-4" style="margin: 10px 10px 10px 10px;">¿Eres abogado y quieres anunciarte en Estados Unidos?</h4>
+                    <p class="text-white">Únete hoy e impulsa tus servicios</p>
+                    <form>        
+                        <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
+                            <input type="text" class="form-control" placeholder="Nombre" required>
+                        </div>
+                        <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
+                            <input type="text" class="form-control" placeholder="Apellido" required>
+                        </div>
+                        <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
+                            <input type="text" class="form-control" placeholder="Especialidad" required>
+                        </div>
+                        <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
+                            <select id="pais" name="cod_pais" class="form-control" required>
+                                <option value="">País de residencia</option>
+                                <option value="+54">Argentina</option>
+                                <option value="+591">Bolivia</option>
+                                <option value="+57">Colombia</option>
+                                <option value="+506">Costa Rica</option>
+                                <option value="+593">Ecuador</option>
+                                <option value="+503">El Salvador</option>
+                                <option value="+34">España</option>
+                                <option value="+1">Estados Unidos</option>
+                                <option value="+502">Guatemala</option>
+                                <option value="+504">Honduras</option>
+                                <option value="+52">México</option>
+                                <option value="+505">Nicaragua</option>
+                                <option value="+507">Panamá</option>
+                                <option value="+595">Paraguay</option>
+                                <option value="+51">Perú</option>
+                                <option value="+1 787">Puerto Rico</option>
+                                <option value="+1 809">República Dominicana</option>
+                                <option value="+598">Uruguay</option>
+                                <option value="+58">Venezuela</option>                    
+                              </select>  
+                            <input style="margin-left: 3px" type="number" class="form-control" placeholder="Teléfono" required>
+                        </div>
+                        <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-4 pb-4" style="margin-left: 5%; margin-right: 5%">
+                            <button type="submit" class="btn btn-primary btn-block">Sí, me uno!</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

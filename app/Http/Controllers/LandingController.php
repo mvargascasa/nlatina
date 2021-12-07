@@ -88,6 +88,7 @@ class LandingController extends Controller
             case '+593': $pais = "Ecuador"; break;
             case '+503': $pais = "El Salvador"; break;
             case '+34': $pais = "España"; break;
+            case '+1': $pais = "Estados Unidos"; break;
             case '+502': $pais = "Guatemala"; break;
             case '+504': $pais = "Honduras"; break;
             case '+52': $pais = "México"; break;

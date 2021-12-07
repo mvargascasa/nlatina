@@ -73,7 +73,7 @@ Route::get('/contratos', function () {    return view('web.contratos');    })->n
 Route::get('/poderes-especiales', function () {    return view('web.poderesp');    })->name('web.poderesp');
 Route::get('/revocatorias', function () {    return view('web.revocatorias');    })->name('web.revocatorias');
 Route::get('/testamentos', function () {    return view('web.testamentos');    })->name('web.testamentos');
-Route::get('/socios', function () { return view('web.partners');})->name('web.partners');
+Route::get('/socios', 'PartnerController@index')->name('web.partners');
 Route::get('/socios/1', function () { return view('web.partner');})->name('web.partner');
 
 Route::get('/suscripcion', function () {    return view('web.x-contactenos');    })->name('web.suscripcion');
