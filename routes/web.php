@@ -75,6 +75,9 @@ Route::get('/revocatorias', function () {    return view('web.revocatorias');   
 Route::get('/testamentos', function () {    return view('web.testamentos');    })->name('web.testamentos');
 Route::get('/socios', 'PartnerController@index')->name('web.partners');
 Route::get('/socios/1', function () { return view('web.partner');})->name('web.partner');
+Route::post('/suscripcion-partner', 'PartnerController@sendEmail')->name('partner.suscripcion');
+
+Route::get('/thankpartner', function(){return view('web.thankpartner');});
 
 Route::get('/suscripcion', function () {    return view('web.x-contactenos');    })->name('web.suscripcion');
 Route::get('/contactenos', function () {    return view('web.x-contactenos');    })->name('web.contactenos');

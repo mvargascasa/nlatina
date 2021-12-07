@@ -118,15 +118,16 @@
                 <div class="text-center form" style="background-color: #002542;">
                     <h4 class="text-white pt-4 px-4" style="margin: 10px 10px 10px 10px;">¿Eres abogado y quieres anunciarte en Estados Unidos?</h4>
                     <p class="text-white">Únete hoy e impulsa tus servicios</p>
-                    <form>        
+                    <form action="{{ route('partner.suscripcion') }}" method="POST">        
+                        @csrf
                         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-                            <input type="text" class="form-control" placeholder="Nombre" required>
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre" autocomplete="off" required>
                         </div>
                         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-                            <input type="text" class="form-control" placeholder="Apellido" required>
+                            <input type="text" class="form-control" placeholder="Apellido" name="apellido" autocomplete="off" required>
                         </div>
                         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
-                            <input type="text" class="form-control" placeholder="Especialidad" required>
+                            <input type="text" class="form-control" placeholder="Especialidad" name="especialidad" autocomplete="off" required>
                         </div>
                         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
                             <select id="pais" name="cod_pais" class="form-control" required>
@@ -151,10 +152,10 @@
                                 <option value="+598">Uruguay</option>
                                 <option value="+58">Venezuela</option>                    
                               </select>  
-                            <input style="margin-left: 3px" type="number" class="form-control" placeholder="Teléfono" required>
+                            <input style="margin-left: 3px" type="number" class="form-control" placeholder="Teléfono" name="telefono" autocomplete="off" required>
                         </div>
                         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
-                            <input type="email" class="form-control" placeholder="Email" required>
+                            <input type="email" class="form-control" placeholder="Email" name="email" autocomplete="off" required>
                         </div>
                         <div class="mb-4 pb-4" style="margin-left: 5%; margin-right: 5%">
                             <button type="submit" class="btn btn-block" style="background-color: #FEC02F">Sí, me uno!</button>
