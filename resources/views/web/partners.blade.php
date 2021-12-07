@@ -157,7 +157,7 @@
                             <input type="email" class="form-control" placeholder="Email" required>
                         </div>
                         <div class="mb-4 pb-4" style="margin-left: 5%; margin-right: 5%">
-                            <button type="submit" class="btn btn-primary btn-block">Sí, me uno!</button>
+                            <button type="submit" class="btn btn-block" style="background-color: #FEC02F">Sí, me uno!</button>
                         </div>
                     </form>
                 </div>
