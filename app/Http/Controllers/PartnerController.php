@@ -109,22 +109,21 @@ class PartnerController extends Controller
                 break;
         }
 
-        $toPrincipal = 'hserrano@notarialatina.com';
-        $toSecundario = ', notariapublicalatina@gmail.com';
-        $toTerciario = ', sebas31051999@gmail.com';
         $subject = 'Suscripción de Partner - Abogado';
-        $message = "<br><h2 style='color: #002542'><strong>Suscripción Abogado - Notaria Latina</strong></h2>
-                    <br><strong>Nombre:</strong> " . strip_tags($request->nombre). " " . strip_tags($request->apellido)."
-                    <br><strong>Especialidad:</strong> " . strip_tags($request->especialidad)."
-                    <br><strong>Pais:</strong> " . strip_tags($pais)."
-                    <br><strong>Telefono:</strong> " . strip_tags($request->get('cod_pais')) . " " . strip_tags($request->telefono)."
-                    <br><strong>Email:</strong> " . strip_tags($request->email)."
+        $message = "<br><strong>Suscripción Abogado - Notaria Latina</strong>
+                    <br>Nombre: " . strip_tags($request->nombre). " " . strip_tags($request->apellido)."
+                    <br>Especialidad: " . strip_tags($request->especialidad)."
+                    <br>Pais: " . strip_tags($pais)."
+                    <br>Telefono: " . strip_tags($request->get('cod_pais')) . " " . strip_tags($request->telefono)."
+                    <br>Email: " . strip_tags($request->email)."
         ";
 
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
-                'Content-type:text/html;charset=UTF-8';
+                'MIME-Version: 1.0' . "\r\n".
+                'Content-type:text/html;charset=UTF-8' . "\r\n"
+                ;
         
-        mail($toPrincipal.$toSecundario, $subject, $message, $header);
+        mail("hserrano@notarialatina.com,notariapublicalatina@gmail.com", $subject, $message, $header);
 
         return view('web.thankpartner');
         
