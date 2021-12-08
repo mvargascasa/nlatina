@@ -65,12 +65,11 @@ class LandingController extends Controller
             mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);    
         }
 
-        //CORREO notariapublicalatina@gmail.com
-
         if(isset($request->fname)){
             $message = "<br><strong>Nuevo Lead Landing</strong>
             <br> Nombre: ". strip_tags($request->fname)."
-            <br> Telef: ".  strip_tags($request->tlf)."
+            <br> Telef: ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->tlf)."
+            <br> País: ". strip_tags($pais)."
             <br> Interes: ".strip_tags($interest)."
             <br> Mensaje: ".strip_tags($request->message)."
             <br> Fuente: GoogleAds ";
@@ -80,7 +79,6 @@ class LandingController extends Controller
             $header .= "MIME-Version: 1.0\r\n";
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);    
-
         }
 
         return view('landing.thank');
