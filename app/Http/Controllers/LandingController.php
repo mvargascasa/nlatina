@@ -62,7 +62,7 @@ class LandingController extends Controller
             $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
             $header .= "MIME-Version: 1.0\r\n";
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            mail('notariapublicalatina@gmail.com,sebas31051999@gmail.com,sebas25211@hotmail.com,sebastian.armijos.est@tecazuay.edu.ec','Lead Landing: '.strip_tags($request->aaa), $message, $header);    
+            mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);    
         }
 
         //CORREO notariapublicalatina@gmail.com
@@ -110,7 +110,7 @@ class LandingController extends Controller
             $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
             $header .= "MIME-Version: 1.0\r\n";
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            mail('notariapublicalatina@gmail.com,sebas25211@hotmail.com,sebas31051999@gmail.com,sebastian.armijos.est@tecazuay.edu.ec','Lead Landing: '.strip_tags($request->aaa), $message, $header);      
+            mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);      
         return view('landing.thank');
     }    
 
