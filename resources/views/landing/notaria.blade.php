@@ -38,7 +38,7 @@
             <form method="POST" action="{{route('landing.thankpost')}}" onsubmit="gtag('event', 'enviar', { 'event_category': 'suscripcion', 'event_label': 'LandingPage', value': '0'});">
                 @csrf
               <div class="form-group pt-4">
-                <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombres" maxlength="40" minlength="2" autocomplete="off" required>
+                <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombre y Apellido" maxlength="40" minlength="2" autocomplete="off" required>
               </div>
               <div class="d-flex">
                 <div class="form-group flex-fill mr-1">
