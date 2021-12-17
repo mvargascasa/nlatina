@@ -103,6 +103,16 @@
         .titulo{
             font-size: 30px;
         }
+
+        .emptyRegister{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #texto{
+            align-items: center;
+        }
         
     </style>
 @endsection
@@ -208,8 +218,8 @@
 </div>
 
 <div class="container mt-5 contenido">
-    <div class="row">
-        @if ($partners)
+    @if (count($partners) > 0)
+        <div class="row">
             @foreach ($partners as $partner)
                 <div class="col-sm-3">
                     <a href="{{ route('web.partner', $partner->id) }}">
@@ -237,17 +247,17 @@
                     </a>
                 </div>
             @endforeach
+        </div>
         @else
-            <div class="row">
-                <div class="text-center">
-                    <h3>No se encontraron registros</h3>
-                </div>
+            <div class="row d-flex text-align-center justify-content-center">
+                <div class="alert alert-warning">
+                    <h4>No se encontraron registros</h4>
+                </div>        
             </div>
         @endif
-    </div>
-    <div class="d-flex justify-content-center">
+    {{-- <div class="d-flex justify-content-center">
         <a class="btn btn-primary mt-5" style="background-color: #002542" href="">CARGAR MÁS CONTACTOS</a>
-    </div>
+    </div> --}}
 </div>
 @endsection
 
