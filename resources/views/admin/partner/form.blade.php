@@ -98,7 +98,7 @@
                         <div class="form-row pt-4">
                             <div class="col-md-6">
                                 <div class="image-wrapper">
-                                    <img id="picture" src="{{ asset('img/partners/user.png') }}" alt="">
+                                    <img id="picture" src="{{ asset('img/user.png') }}" alt="">
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
