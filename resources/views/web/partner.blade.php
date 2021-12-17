@@ -36,17 +36,17 @@
     <div class="container">
         <div class="row mt-4">
             <div class="col-sm-6">
-                <img class="float-right" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="Imagen 1">
+                <img class="float-right" src="{{asset('storage/' .$partner->img_profile )}}" alt="Imagen 1" width="250" height="310">
             </div>
             <div class="col-sm-6 mt-3 info-header">
-                <h3><b>Samuel Abad</b></h3>
-                <p>Director Local</p>
-                <p>Baker y McKenzie Asociados</p>
-                <p>Especialidad Derecho Penal</p>
+                <h3><b>{{ $partner->name }} {{ $partner->lastname }}</b></h3>
+                <p>{{ $partner->country_residence}}</p>
+                {{-- <p>Baker y McKenzie Asociados</p> --}}
+                <p>{{ $partner->specialty }}</p>
                 <br>
                 <div class="row">
-                    <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>+15116188585</p>
-                    <p class="float-right ml-5"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>Email</p>
+                    <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ $partner->phone }}</p>
+                    <p class="float-right ml-5"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p>
                 </div>
             </div>
         </div>
@@ -55,7 +55,10 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-7 text-justify">
                 <h6><b>Biografia</b></h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ipsum hic asperiores beatae nemo laborum molestiae qui accusantium iusto quis, fuga quod dolorem nulla perspiciatis ex saepe error pariatur inventore.</p>
+                <div>
+                    {!! $partner->biography_html !!}
+                </div>
+                {{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ipsum hic asperiores beatae nemo laborum molestiae qui accusantium iusto quis, fuga quod dolorem nulla perspiciatis ex saepe error pariatur inventore.</p>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus beatae ullam necessitatibus labore repellat ad vel libero aperiam, vitae voluptatibus animi natus aut. Sapiente impedit, ab nulla omnis ex molestias?</p>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet cupiditate reprehenderit molestiae accusantium architecto atque neque iure rerum eaque distinctio, reiciendis minima excepturi, adipisci nisi ex ipsum dolorem assumenda aliquid.</p>
                 <h6><b>Enfoque de practica</b></h6>
@@ -72,7 +75,7 @@
                 <p>Universidad de Edimburgo (2001)</p>
                 <p>Universidad de Edimburgo</p>
                 <h6><b>Idiomas</b></h6>
-                <p>Ingles</p>
+                <p>Ingles</p> --}}
             </div>
             <div class="col-sm-4 border-left">
                 <div style="color: #9A7A2E">

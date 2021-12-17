@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PartnerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +10,7 @@ Route::get('/test', 'LandingController@test');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// CATEGORIES
 Route::get('/home/categories', 'CategoryController@index')->name('category.index');
 Route::get('/home/category/create', 'CategoryController@create')->name('category.create');
 Route::post('/home/category/store', 'CategoryController@store')->name('category.store');
@@ -16,12 +18,20 @@ Route::get('/home/category/{category}', 'CategoryController@edit')->name('catego
 Route::put('/home/category/{category}', 'CategoryController@update')->name('category.update');
 Route::delete('/home/category/{category}', 'CategoryController@destroy')->name('category.destroy');
 
+// POST - BLOG
 Route::get('/home/posts', 'PostController@index')->name('post.index');
 Route::get('/home/post/create', 'PostController@create')->name('post.create');
 Route::post('/home/post/store', 'PostController@store')->name('post.store');
 Route::get('/home/post/{post}', 'PostController@edit')->name('post.edit');
 Route::put('/home/post/{post}', 'PostController@update')->name('post.update');
 Route::delete('/home/post/{post}', 'PostController@destroy')->name('post.destroy');
+
+//PARTNERS
+Route::get('/home/partners', 'PartnerController@index')->name('partner.index');
+Route::get('/home/partners/create', 'PartnerController@create')->name('partner.form');
+Route::post('/home/partners/store', 'PartnerController@store')->name('partner.store');
+Route::get('/home/partners/{partner}/edit', 'PartnerController@edit')->name('partner.edit');
+Route::put('/home/partners/{partner}', 'PartnerController@update')->name('partner.update');
 
 // THANK
 Route::get('/thank', 'LandingController@thank')->name('landing.thank');
@@ -73,8 +83,8 @@ Route::get('/contratos', function () {    return view('web.contratos');    })->n
 Route::get('/poderes-especiales', function () {    return view('web.poderesp');    })->name('web.poderesp');
 Route::get('/revocatorias', function () {    return view('web.revocatorias');    })->name('web.revocatorias');
 Route::get('/testamentos', function () {    return view('web.testamentos');    })->name('web.testamentos');
-Route::get('/socios', 'PartnerController@index')->name('web.partners');
-Route::get('/socios/1', function () { return view('web.partner');})->name('web.partner');
+Route::get('/socios', 'PartnerController@showAllPartners')->name('web.partners');
+Route::get('/socios/{partner}', 'PartnerController@showPartner')->name('web.partner');
 Route::post('/suscripcion-partner', 'PartnerController@sendEmail')->name('partner.suscripcion');
 
 Route::get('/thankpartner', function(){return view('web.thankpartner');});

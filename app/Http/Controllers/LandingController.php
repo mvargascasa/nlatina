@@ -186,8 +186,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Apostillas <br> en New Jersey';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
-        $data['meta_description'] = null;
-        $data['keywords'] = null;
+        $data['meta_description'] = 'Apostillamos todo tipo de documentos como Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos en New Jersey';
+        $data['keywords'] = 'apostillar, apostillar documentos, apostillas en new jersey, apostillar documentos en new jersey, apostille near me, apostillar cerca de mi, apostille in new jersey, apostillado de actas, apostillar acta de nacimiento new jersey, apostillar carta poder new jersey, apostillar certificado de matrimonio new jersey, carta poder apostillada';
         $data['imgup'] = 'img/landing-apostillas-nj.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -257,7 +257,7 @@ class LandingController extends Controller
         $data['header']  = 'Poderes <br> en New York'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = 'Contamos con servicios para Poderes Generales y Especiales';
-        $data['keywords'] = 'Poder Especial en New York, Poder General en New York, Bienes, Carta Poder New York, Compra o Venta Propiedades New York, Carta Poder Créditos New York, Pasaportes New York';
+        $data['keywords'] = 'carta poder, carta poder new york, poder especial en new york, poder general en new york, bienes, compra o venta propiedades new york, carta poder créditos new york, pasaportes new york';
         $data['imgup']   = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -273,8 +273,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Apostillas <br> en New York';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
-        $data['meta_description'] = null;
-        $data['keywords'] = null;
+        $data['meta_description'] = 'Apostillamos todo tipo de documentos como Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos en New York';
+        $data['keywords'] = 'apostillar, apostillar documentos, apostillar documentos en new york, apostillar cerca de mi, apostillar acta de nacimiento new york, apostillar carta poder new york, apostillar certificado de matrimonio new york, apostillar actas de divorcio new york';
         $data['imgup'] = 'img/landing-apostillas-ny.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -362,8 +362,8 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Apostillas <br> en Florida';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
-        $data['meta_description'] = null;
-        $data['keywords'] = null;
+        $data['meta_description'] = 'Apostillamos todo tipo de documentos como: Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos en Florida';
+        $data['keywords'] = 'apostillar, apostillar documentos, apostillar documentos en florida, apostillar cerca de mi, apostillar acta de nacimiento florida, apostillar carta poder florida, apostillar certificado de matrimonio florida, apostillar actas de divorcio florida';
         $data['imgup'] = 'img/landing-apostillas-fl.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';

@@ -174,127 +174,76 @@
 <div class="row">
     <div class="col-sm-12 col-12 d-flex justify-content-center">
         <div style="display: inline-block" class="mr-2">
-            <p><b>ORDENAR POR:</b></p>
+            <p><b>BUSCAR POR:</b></p>
         </div>
-        <div class="dropdown mr-2" style="display: inline-block">
-            <button class="btn btn-secondary dropdown-toggle bg-light text-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            País
-            </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Ecuador</a>
-          <a class="dropdown-item" href="#">Venezuela</a>
-          <a class="dropdown-item" href="#">Colombia</a>
-        </div>
-      </div>
-      <div class="dropdown" style="display: inline-block">
-        <button class="btn btn-secondary dropdown-toggle bg-light text-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Especialidad
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Especialidad 1</a>
-          <a class="dropdown-item" href="#">Especialidad 2</a>
-          <a class="dropdown-item" href="#">Especialidad 3</a>
-        </div>
-      </div>
+        
+        <form action="" method="GET">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <select class="form-control" name="country" id="country">
+                        <option value="">País</option>
+                        @foreach ($countries as $country)
+                            <option value="{{ $country->country_residence }}">{{ $country->country_residence}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <select class="form-control" name="specialty" id="specialty">
+                        <option value="">Especialidad</option>
+                        @foreach ($specialties as $specialty)
+                            <option value="{{ $specialty->specialty }}">{{ $specialty->specialty}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="submit" href="">Buscar</button>
+            </div>
+            </div>
+        </form>
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-5 contenido">
     <div class="row">
-        <div class="col-sm-3">
-            <a href="{{ route('web.partner') }}">
-                <div class="testimotionals">
-                    <div class="card">
-                    <div class="layer"></div>
-                    <div class="content">
-                        <div class="image">
-                            <img  width="100px" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="">
-                        </div>
-                        <h5><b>SAMUEL ABAD</b></h5>
-                        <p>Abogado Laboral</p>
-                        <h6><b>ECUADOR <img src="img/partners/ecuador.png"/></b></h6>
-                        <div class="row mt-5">
-                            <div class="col-sm-6">
-                                <p><i class="fas fa-phone-alt"></i>+15116188585</p>
+        @if ($partners)
+            @foreach ($partners as $partner)
+                <div class="col-sm-3">
+                    <a href="{{ route('web.partner', $partner->id) }}">
+                        <div class="testimotionals">
+                            <div class="card mb-3">
+                            <div class="layer"></div>
+                            <div class="content">
+                                <div class="image">
+                                    <img width="100px" height="150px" src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
+                                </div>
+                                <h5><b>{{ $partner->name }} {{ $partner->lastname }}</b></h5>
+                                <p>{{ $partner->specialty }}</p>
+                                <h6><b>{{ $partner->country_residence }} <img src="{{ asset('img/partners/ecuador.png') }}"/></b></h6>
+                                <div class="row mt-5">
+                                    <div class="col-sm-6">
+                                        <p><i class="fas fa-phone-alt"></i>{{ $partner->phone }}</p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ $partner->email }}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px"></i>Email</p>
                             </div>
                         </div>
-                    </div>
-                    </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        <div class="col-sm-3">
-            <div class="testimotionals">
-                <div class="card">
-                <div class="layer"></div>
-                <div class="content">
-                    <div class="image">
-                        <img  width="100px" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="">
-                    </div>
-                    <h5><b>SAMUEL ABAD</b></h5>
-                    <p>Abogado Laboral</p>
-                    <h6><b>ECUADOR <img src="img/partners/ecuador.png"/></b></h6>
-                    <div class="row mt-5">
-                        <div class="col-sm-6">
-                            <p><i class="fas fa-phone-alt"></i>+15116188585</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px"></i>Email</p>
-                        </div>
-                    </div>
-                </div>
+            @endforeach
+        @else
+            <div class="row">
+                <div class="text-center">
+                    <h3>No se encontraron registros</h3>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="testimotionals">
-                <div class="card">
-                <div class="layer"></div>
-                <div class="content">
-                    <div class="image">
-                        <img  width="100px" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="">
-                    </div>
-                    <h5><b>SAMUEL ABAD</b></h5>
-                    <p>Abogado Laboral</p>
-                    <h6><b>ECUADOR <img src="img/partners/ecuador.png"/></b></h6>
-                    <div class="row mt-5">
-                        <div class="col-sm-6">
-                            <p><i class="fas fa-phone-alt"></i>+15116188585</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px"></i>Email</p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="testimotionals">
-                <div class="card">
-                <div class="layer"></div>
-                <div class="content">
-                    <div class="image">
-                        <img  width="100px" src="https://abogadosecuador.com.ec/web/images/abogado-gabriel-mauricio-ponce-hernandez-abogado-en-quito.jpg" alt="">
-                    </div>
-                    <h5><b>SAMUEL ABAD</b></h5>
-                    <p>Abogado Laboral</p>
-                    <h6><b>ECUADOR <img src="img/partners/ecuador.png"/></b></h6>
-                    <div class="row mt-5">
-                        <div class="col-sm-6">
-                            <p><i class="fas fa-phone-alt"></i>+15116188585</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px"></i>Email</p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
+        @endif
     </div>
     <div class="d-flex justify-content-center">
         <a class="btn btn-primary mt-5" style="background-color: #002542" href="">CARGAR MÁS CONTACTOS</a>

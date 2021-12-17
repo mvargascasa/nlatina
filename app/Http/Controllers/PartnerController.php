@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Partner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PartnerController extends Controller
 {
+ 
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +16,8 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        return view('web.partners');
+        $partners = Partner::all();
+        return view('admin.partner.index', compact('partners'));
     }
 
     /**
@@ -23,7 +27,7 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.partner.form');
     }
 
     /**
@@ -34,7 +38,36 @@ class PartnerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'name' => 'required',
+            'lastname' => 'required',
+            'specialty' => 'required',
+            'country_residence' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'img_profile' => 'required | image',
+            'biography_html' => 'required',
+            'status' => 'required'
+        ]);
+
+        $url = Storage::put('partners', $request->file('img_profile'));
+
+        $partner = new Partner();
+
+        $partner->name = $request->name;
+        $partner->lastname = $request->lastname;
+        $partner->specialty = $request->specialty;
+        $partner->country_residence = $request->country_residence;
+        $partner->phone = $request->phone;
+        $partner->email = $request->email;
+        $partner->biography_html = $request->biography_html;
+        $partner->img_profile = $url;
+        $partner->status = $request->status;
+
+        $partner->save();
+
+        return redirect()->route('partner.index');
     }
 
     /**
@@ -54,9 +87,9 @@ class PartnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Partner $partner)
     {
-        //
+        return view('admin.partner.edit', compact('partner'));
     }
 
     /**
@@ -66,9 +99,40 @@ class PartnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Partner $partner)
     {
-        //
+
+        if($request->img_profile == null){
+            $request->img_profile = $partner->img_profile;
+        } else {
+            $url = Storage::put('partners', $request->file('img_profile'));
+            $partner->img_profile = $url;
+        }
+        
+        $request->validate([
+            'name' => 'required',
+            'lastname' => 'required',
+            'specialty' => 'required',
+            'country_residence' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'img_profile' => 'image',
+            'biography_html' => 'required',
+            'status' => 'required'
+        ]);
+        
+        $partner->name = $request->name;
+        $partner->lastname = $request->lastname;
+        $partner->specialty = $request->specialty;
+        $partner->country_residence = $request->country_residence;
+        $partner->phone = $request->phone;
+        $partner->email = $request->email;
+        $partner->biography_html = $request->biography_html;
+        $partner->status = $request->status;
+        
+        $partner->save();
+        
+        return redirect()->route('partner.index');
     }
 
     /**
@@ -128,4 +192,34 @@ class PartnerController extends Controller
         return view('web.thankpartner');
         
     }
+
+    public function showAllPartners(Request $request){
+
+        $countries = Partner::select('country_residence')
+                    ->distinct()
+                    ->get();
+
+        $specialties = Partner::select('specialty')
+                    ->distinct()
+                    ->get();            
+
+        $country = $request->get('country');
+        $specialty = $request->get('specialty');
+        
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'specialty', 'country_residence', 'phone', 'email'])
+                    ->where('status', 'PUBLICADO')
+                    ->orderBy('id', 'DESC')
+                    ->country($country)
+                    ->specialty($specialty)
+                    ->distinct()
+                    ->get();
+        
+        return view('web.partners', compact('partners', 'countries', 'specialties'));
+    }
+
+    public function showPartner($id){
+        $partner = Partner::find($id); 
+        return view('web.partner', compact('partner'));
+    }
+
 }
