@@ -58,9 +58,9 @@ Route::get('/landing/newyork-poderes', 'LandingController@nypod')->name('office.
 
 Route::get('/landing/florida', 'LandingController@florida')->name('office.fl');
 Route::get('/landing/florida-web', 'LandingController@flweb')->name('office.flweb');
-Route::get('/landing/florida-traducciones', 'LandingController@fltrad')->name('office.fltrad');
-Route::get('/landing/florida-apostillas', 'LandingController@flapos')->name('office.flapos');
-Route::get('/landing/florida-poderes', 'LandingController@flpod')->name('office.flpod');
+Route::get('/landing/florida-traducciones', 'LandingController@fltrad')->name('office.fltrad'); //FALTA ESTA DE INDEXAR
+Route::get('/landing/florida-apostillas', 'LandingController@flapos')->name('office.flapos'); //FALTA ESTA DE INDEXAR
+Route::get('/landing/florida-poderes', 'LandingController@flpod')->name('office.flpod'); //FALTA ESTA DE INDEXAR
 
 //WEBSITE
 Route::get('/', 'WebController@index')->name('web.index');
