@@ -112,7 +112,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     </li>
                     
 @php
-$consuls = \App\Consulate::orderBy('country')->get();
+$consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 @endphp
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="javascript:void(0)"
