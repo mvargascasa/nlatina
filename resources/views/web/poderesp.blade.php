@@ -2,7 +2,7 @@
 @section('header')
 <title>Poderes Especiales Notarizados y Apostillados en Queens New York - Notaria Latina</title> 
 <meta name="description"        content="Un Poder Especial, es un documento legal que se utiliza para otorgar control a una actividad especifica sobre sus activos a otra persona en el caso de que usted no pudiera estar presente.">       
-<meta name="keywords"           content="Poderes Especiales Notarizados y Apostillados  en Queens New York, Poderes Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens" />
+<meta name="keywords"           content="Poderes Especiales Notarizados y Apostillados  en Queens New York, Poderes Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un poder especial, para que sirve un poder especial, tramitar carta poder en new york, poder especial en new york, realizar poder especial cerca de mi" />
 
 <meta property="og:url"         content="{{route('web.poderesp')}}" />
 <meta property="og:type"        content="article" />
@@ -66,7 +66,7 @@
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
             <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-red">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+            <li class="text-red">Por motivos de covid-19 puede existir retraso en los tiempos de entrega.</li>
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>

@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
-<title>Certificaciones de Documentos Notarizados y Apostillados en Queens New York - Notaria Latina</title> 
+<title>Certificaciones de Documentos en Queens New York - Notaria Latina</title> 
 <meta name="description" content="Las certificaciones son documentos firmados y sellados por un notario, que le proporciona autenticidad a nuestros documentos, pueden ser utilizados en todo aquel trámite legale donde se requiera total veracidad.">       
-<meta name="keywords" content="Certificaciones de Documentos Notarizados y Apostillados en Queens New York, Certificaciones de Documentos near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens" />
+<meta name="keywords" content="Certificaciones de Documentos Notarizados y Apostillados en Queens New York, Certificaciones de Documentos near me, notaria, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es una certificacion, para que sirve una certificacion, certificar acta de nacimiento en new york, certificar acta de matrimonio en new york, certificar declaracion jurada en new york, certificar documentos cerca de mi, notarizar certificacion en new york" />
 
 <meta property="og:url"                content="{{route('web.certificaciones')}}" />
 <meta property="og:type"               content="article" />
@@ -38,7 +38,7 @@
 
             <h3>Para que me sirven las certificaciones?</h3>
             <p class="text-muted">Al ser la certificación un documento que le proporciona autenticidad a nuestros documentos, pueden ser utilizados
-                en todo aquel trámite legale donde se requiera total veracidad.</p>
+                en todo aquel trámite legal donde se requiera total veracidad.</p>
             <p class="text-muted">Esta certificación nos sirve para realizar tanto trámites nacionales como internacionales.</p>
             <p class="text-muted">Es importante que certifique documentos que puedan estar en deterioro para evitar gestionar este documento desde un
                 inicion. Esto le evitará contratiempos a la hora de realizar trámites y gestiones importantes.</p>

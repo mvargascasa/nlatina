@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('header')
-<title>Notaría Pública en Queens New York que ofrece servicios de Apostillas - Notaria Latina</title> 
+<title>Servicios de Apostillas en Queens New York - Notaria Latina</title> 
 <meta name="description"        content="Somos una Notaría en Queens New York que ofrece servicios de Apostillas, Poderes, Traducciones, Affidávit, Autorizaciones de Viaje, Cartas de Invitación.">       
 <meta name="keywords"           content="Notaría Pública y Apostilla en Queens New York, Notaría Pública y Apostilla near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens" />
 

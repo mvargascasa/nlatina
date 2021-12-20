@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
-<title>Autorizaciones de Viaje Notarizadas y Apostillados en Queens New York - Notaria Latina</title> 
+<title>Autorizaciones de Viaje en Queens New York - Notaria Latina</title> 
 <meta name="description" content="Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres.">       
-<meta name="keywords" content="Autorizaciones de Viaje Notarizadas y Apostillados en Queens New York, Autorizaciones de Viaje Notarizadas y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens" />
+<meta name="keywords" content="Autorizaciones de Viaje Notarizadas y Apostillados en Queens New York, Autorizaciones de Viaje Notarizadas y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es una autorizacion de viaje, travel authorization, para que sirve una autorizacion de viaje, autorizacion de viaje menor de edad, requisitos autorizacion de viaje, autorizacion de viaje cerca de mi, autorizacion de viaje en new york, travel authorization in new york" />
 
 <meta property="og:url"                content="{{route('web.autorizaciones')}}" />
 <meta property="og:type"               content="article" />

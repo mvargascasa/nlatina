@@ -2,7 +2,7 @@
 @section('header')
 <title>Testamentos Notarizados y Apostillados en Queens New York - Notaria Latina</title> 
 <meta name="description"        content="Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte.">       
-<meta name="keywords"           content="Testamentos Notarizados y Apostillados en Queens New York, Testamentos Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens" />
+<meta name="keywords"           content="Testamentos Notarizados y Apostillados en Queens New York, Testamentos Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un testamento, para que sirve un testamento, requisitos para testamento, realizar un testamento en new york, notarizar testamento en new york" />
 
 <meta property="og:url"         content="{{route('web.testamentos')}}" />
 <meta property="og:type"        content="article" />

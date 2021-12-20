@@ -3,7 +3,7 @@
 @php
     $currentPage = Request::get('page');
 @endphp
-<title>Blog de Noticias e Información sobre Trámites Consulares en New York - Página {{ $currentPage}}</title>
+<title>Blog de Noticias sobre Trámites Consulares en New York - Página {{ $currentPage}}</title>
 <meta name="description"        content="Noticias e Información para Ciudadanos de Latinos en New York, Trámites Consulares, Apostillas, Poderes, Renovación de Pasaportes. Página {{ $currentPage }}"/>
 <meta name="keywords"           content="Noticias en New York, Tramites Consulares en New York, Apostillas en New York, Poderes en New York, Renovación de Pasaportes en New York" />
 <meta property="og:url"         content="{{route('post.index')}}" />

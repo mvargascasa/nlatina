@@ -1,8 +1,9 @@
 @extends('layouts.web')
 @section('header')
 <title>Affidávit Notarizados y Apostillados en Queens New York - Notaria Latina</title> 
+<meta name="title" content="Affidávit Notarizados y Apostillas en Queens New York - Notaria Latina">
 <meta name="description" content="Una declaración jurada o Affidávit es una manifestación escrita o verbal cuya veracidad es asegurada mediante un juramento ante una autoridad judicial o administrativa.">       
-<meta name="keywords" content="Affidávit Notarizados y Apostillados en Queens New York, Affidávit Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens" />
+<meta name="keywords" content="Affidávit Notarizados y Apostillados en Queens New York, Affidávit Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un affidavit, para que sirve un affidavit, como hacer una declaracion jurada, requisitos affidavit, obtener affidavit en new york, declaracion jurada en new york" />
 
 <meta property="og:url"                content="{{route('web.affidavit')}}" />
 <meta property="og:type"               content="article" />

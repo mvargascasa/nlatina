@@ -2,7 +2,7 @@
 @section('header')
 <title>Apostillas en Queens New York - Notaria Latina</title> 
 <meta name="description" content="Autentificamos sus documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos.">       
-<meta name="keywords" content="Apostillas en Queens New York, Affidávit near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens" />
+<meta name="keywords" content="Apostillas en Queens New York, Affidávit near me, notaria latina, apostillar, apostillar cerca de mi, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es una apostilla, para que sirve apostillar un documento, apostillar documentos cerca de mi, requisitos para apostillar un documento, apostillar en new york, apostillar acta de nacimiento new york, apostillar poder en new york, apostillar carta poder en new york" />
 
 <meta property="og:url"                content="{{route('web.apostillas')}}" />
 <meta property="og:type"               content="article" />

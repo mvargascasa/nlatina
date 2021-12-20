@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
-<title>Contacto para Servicios de Notaría Pública y Apostillas en Queens New York - Notaria Latina</title> 
+<title>Contáctanos en Queens New York - Notaria Latina</title> 
 <meta name="description"        content="Notaría Pública en Queens New York, Ubicada en Roosevelt Avenue 67-03, Teléfono: +1(718)766-5041. Contactenos y le bridaremos Asesoría en Línea.">       
-<meta name="keywords"           content="Notaría Pública y Apostilla en Queens New York, Notaría Pública y Apostilla near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens" />
+<meta name="keywords"           content="Notaría Pública y Apostilla en Queens New York, Notaría Pública y Apostilla near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, notaria cerca de mi" />
 
 <meta property="og:url"         content="{{route('web.contactenos')}}" />
 <meta property="og:type"        content="website" />

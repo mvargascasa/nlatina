@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
-<title>Cartas de Invitación Notarizadas y Apostilladas en Queens New York - Notaria Latina</title> 
+<title>Cartas de Invitación Notarizadas en Queens New York - Notaria Latina</title> 
 <meta name="description"        content="Las cartas de invitación son un requisito válido que se presenta ante el consulado que lo requiera para la gestión de la visa de turista; la carta tiene que ser genuina y contener datos reales.">       
-<meta name="keywords"           content="Cartas de Invitación Notarizadas y Apostilladas en Queens New York, Cartas de Invitación near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens" />
+<meta name="keywords"           content="Cartas de Invitación Notarizadas y Apostilladas en Queens New York, Cartas de Invitación near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es una carta de invitacion, para que sirve la carta de invitacion, donde puedo realizar una carta de invitacion, realizar carta de invitacion cerca de mi, tramitar carta de invitacion cerca de mi, tramitar carta de invitacion en new york" />
 
 <meta property="og:url"         content="{{route('web.invitacion')}}" />
 <meta property="og:type"        content="article" />

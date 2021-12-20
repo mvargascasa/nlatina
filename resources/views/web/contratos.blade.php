@@ -2,7 +2,7 @@
 @section('header')
 <title>Contratos Notarizados y Apostillados en Queens New York - Notaria Latina</title> 
 <meta name="description"        content="Los contratos notarizados son un documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada.">       
-<meta name="keywords"           content="Contratos Notarizados y Apostillados en Queens New York, Contratos Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens" />
+<meta name="keywords"           content="Contratos Notarizados y Apostillados en Queens New York, Contratos Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un contrato, tipos de contrato, requisitos para realizar un contrato, realizar contrato en new york, tramitar contrato new york, tramitar contraro cerca de mi" />
 
 <meta property="og:url"         content="{{route('web.contratos')}}" />
 <meta property="og:type"        content="article" />
