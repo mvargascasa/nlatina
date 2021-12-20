@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Mail;
 class WebController extends Controller
 {
     public function index() {
-        $indexPosts = Post::where('status','PUBLICADO')->latest()->limit(6)->get();
+        $indexPosts = Post::select('name', 'body', 'slug', 'created_at')
+            ->where('status','PUBLICADO')
+            ->latest()
+            ->limit(6)
+            ->get();
         return view('index',compact('indexPosts'));  
     }
     public function apostillas()
