@@ -2,6 +2,7 @@
 @section('header')
     <title>Notaría Latina en New York - {{$post->name}}</title>
     <meta name="description" content="{{$post->metadescrip}}"/>
+    <meta name="keywords" content="{{ $post->keywords }}">
     <meta property="og:url"                content="{{route('post.slug',$post->slug)}}" />
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="Notaría Latina - {{$post->name}}" />
