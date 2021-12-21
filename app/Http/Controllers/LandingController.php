@@ -119,7 +119,7 @@ class LandingController extends Controller
         $data['header'] = 'Notaría Pública <br> <b>New Jersey</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = '¿Necesitas apostillar un documento en New Jersey? ¿Tramitar una carta poder general o especial? ¿Traducir un certificado? Notaria Latina lo hace por ti, contáctate con nosotros y te asesoraremos con personal calificado.';
-        $data['keywords'] = 'notaria en new jersey, apostillar documentos en new jersey, notarizar carta poder en new jersey, poder especial en new jersey, poder general en new jersey, tramitar carta poder new jersey, traducir documentos en new jersey';
+        $data['keywords'] = 'notaria en new jersey, apostillar documentos en new jersey, notarizar carta poder en new jersey, poder especial en new jersey, poder general en new jersey, tramitar carta poder new jersey, traducir documentos en new jersey, traduccion de certificados, poder notarial new jersey, poderes notariales new jersey, carta poder legal new jersey, donde hacer una carta poder new jersey';
         $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -136,7 +136,7 @@ class LandingController extends Controller
         $data['header'] = 'Notaría Pública <br> New Jersey <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = '¿Estas buscando apostillar un documento, una carta poder o traducir un certificado? Notaria Latina ofrece estos y otros servicios en New Jersey. Contáctanos y te asesoraremos en tus trámites';
-        $data['keywords'] = 'notaria, notaria en new jersey, notarizar documentos en new jersey, apostillar certificado de nacimiento new jersey, apostillar poderes new jersey, apostillar carta poder en new jersey, traducir documentos en new jersey';
+        $data['keywords'] = 'notaria, notaría cerca, notaria new jersey, notaria en new jersey, notarizar documentos en new jersey, apostillar certificado de nacimiento new jersey, apostillar poderes new jersey, apostillar carta poder en new jersey, traducir documentos new jersey';
         $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -153,7 +153,7 @@ class LandingController extends Controller
         $data['header'] = 'Servicio de Traducción <br> en New Jersey';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español'; 
         $data['meta_description'] = '¿Necesitas traducir un tipo de documento en New Jersey pero no sabes donde hacerlo? Notaria Latina esta a tu servicio!. Contamos con personal calificado para ayudarte en tus trámites. Contáctanos';
-        $data['keywords'] = 'traducir documentos, traducir documentos en new jersey, traducir acta de nacimiento en new jersey, traducir diploma en new jersey, traducir certificado de matrimonio en new jersey, traducir documento de divorcio en new jersey, traducir certificado de defuncion en new jersey, traducir documentos legales en new jersey, donde puedo traducir documentos en new jersey';
+        $data['keywords'] = 'servicio de traduccion new jersey, agencia de traduccion new jersey, traducir documentos new jersey, traductor certificado new jersey, traducir certificados new jersey, traduccion certificada new jersey, notario traductor new jersey, traductor jurado new jersey, traducir licencia de conducir, traducir acta de nacimiento, traducir documentos en new jersey, traducir acta de nacimiento en new jersey, traducir diploma en new jersey, traducir certificado de matrimonio en new jersey, traducir documento de divorcio en new jersey, traducir certificado de defuncion en new jersey, traducir documentos legales en new jersey, donde puedo traducir documentos en new jersey';
         $data['imgup'] = 'img/landing-traducciones.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -187,7 +187,7 @@ class LandingController extends Controller
         $data['header'] = 'Apostillas <br> en New Jersey';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
         $data['meta_description'] = 'Apostillamos todo tipo de documentos como Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos en New Jersey';
-        $data['keywords'] = 'apostillar, apostillar documentos, apostillas en new jersey, apostillar documentos en new jersey, apostille near me, apostillar cerca de mi, apostille in new jersey, apostillado de actas, apostillar acta de nacimiento new jersey, apostillar carta poder new jersey, apostillar certificado de matrimonio new jersey, carta poder apostillada';
+        $data['keywords'] = 'apostillar, apostillar documentos, apostillas en new jersey, apostillar partida de nacimiento, apostillar documentos en new jersey, apostille near me, apostillar cerca de mi, apostille in new jersey, apostillado de actas, apostillar acta de nacimiento new jersey, apostillar carta poder new jersey, apostillar certificado de matrimonio new jersey, carta poder apostillada, donde apostillar documentos en new jersey';
         $data['imgup'] = 'img/landing-apostillas-nj.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -206,7 +206,7 @@ class LandingController extends Controller
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = '¿Necesitas apostillar un documento en New York? ¿Tramitar una carta poder? ¿Traducir un certificado? Notaria Latina lo hace por ti, contáctate con nosotros y te asesoraremos con personal calificado.';
-        $data['keywords'] = 'notaria, notaria en new york, apostillar documentos en new york, apostillar carta poder en new york, notarizar documentos en new york, servicio de traducciones en new york, traducir documentos en new york';
+        $data['keywords'] = 'notaría, notaria near me, notaría pública, notaria en new york, notarizar documentos, notarizar documentos en new york, carta poder notariada, notaría cerca, notario cerca, notaría ecuador, notaria publico cercano';
         $data['imgup'] = 'img/newyork-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -223,7 +223,7 @@ class LandingController extends Controller
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = '¿Estas buscando apostillar un documento, una carta poder o traducir un certificado? Notaria Latina ofrece estos y otros servicios en New York. Contáctanos y te asesoraremos en tus trámites';
-        $data['keywords'] = 'notarizar documentos en new york, apostillar documentos en new york, carta poder en new york, traduccion de documentos new york, notaria en new york, servicios notariales en new york';
+        $data['keywords'] = 'notarias, departamento estado, notaria latina, notaria publica, carta poder para viajar un menor, carta de invitacion a usa, requisitos para carta de invitacion, permiso para salir del pais, apostillar documentos, notarizar documentos en new york, apostillar documentos en new york, carta poder en new york, traduccion de documentos new york, notaria en new york, servicios notariales en new york';
         $data['imgup'] = 'img/newyork-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -257,7 +257,7 @@ class LandingController extends Controller
         $data['header']  = 'Poderes <br> en New York'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = 'Notaria Latina cuenta con servicios para Poderes Generales y Especiales. ¡Contáctanos!';
-        $data['keywords'] = 'carta poder, carta poder new york, notarizar carta poder en new york,  poder especial en new york, poder general en new york, bienes, compra o venta propiedades new york, carta poder créditos new york, pasaportes new york';
+        $data['keywords'] = 'carta poder, carta poder new york, carta poder simple, carta poder legal, poder general, notarizar carta poder,  poder especial, notaria ecuatoriana, carta notariada, carta poder para viajar un menor';
         $data['imgup']   = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -295,7 +295,7 @@ class LandingController extends Controller
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = '¿Necesitas apostillar un documento en Florida? ¿Tramitar un poder general o especial? ¿Traducir un certificado? Notaria Latina lo hace por ti, contáctate con nosotros y te asesoraremos con personal calificado.';
-        $data['keywords'] = 'apostillas en florida, cartas poder en florida, traducciones florida, notaria en florida, notarizar documentos en florida';
+        $data['keywords'] = 'apostillas en florida, cartas poder en florida, traducciones florida, notaria en florida, notarizar documentos en florida, notaria en florida, notario publico florida, servicios notariales florida, notarias cerca, notaria latina';
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
@@ -312,7 +312,7 @@ class LandingController extends Controller
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = '¿Estas buscando apostillar un documento, una carta poder o traducir un certificado? Notaria Latina ofrece estos y otros servicios en New Jersey. Contáctanos y te asesoraremos en tus trámites';
-        $data['keywords'] = 'notaria, notaria en florida, notarizar documentos en florida, apostillar certificado de nacimiento florida, apostillar poderes florida, apostillar carta poder en florida, traducir documentos en florida';
+        $data['keywords'] = 'florida, notaria, direccion de notarias florida, documentos notarias florida, notaria en florida, notario publico cerca de mi, notarios publicos, notario publico mas cercano cerca de mi, notarizar documentos en florida, apostillar certificado de nacimiento florida, apostillar poderes florida, apostillar carta poder en florida, traducir documentos en florida';
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
@@ -329,7 +329,7 @@ class LandingController extends Controller
         $data['header'] = 'Servicio de Traducción <br> en Florida';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
         $data['meta_description'] = '¿Necesitas traducir un documento notarial en New Jersey pero no sabes donde hacerlo? Notaria Latina esta a tu servicio!. Contamos con personal calificado para ayudarte en tus trámites. Ponte en contacto con nosotros y te asesoraremos.';
-        $data['keywords'] = 'traducir documentos, traducir documentos en florida, traducir acta de nacimiento en florida, traducir diploma en florida, traducir certificado de matrimonio en florida, traducir documento de divorcio en florida, traducir certificado de defuncion en florida, traducir documentos legales en florida, donde puedo traducir documentos en florida';
+        $data['keywords'] = 'traducir documentos, traducir documentos en florida, traducir acta de nacimiento en florida, traducir diploma en florida, traducir certificado de matrimonio en florida, traducir documento de divorcio en florida, traducir certificado de defuncion en florida, traducir documentos legales en florida, donde puedo traducir documentos en florida, interprete traductor florida, traductor técnico florida, notario traductor florida, traducciones notariadas florida, traductor certificado florida';
         $data['imgup'] = 'img/landing-traducciones.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
@@ -363,7 +363,7 @@ class LandingController extends Controller
         $data['header'] = 'Apostillas <br> en Florida';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
         $data['meta_description'] = 'Apostillamos todo tipo de documentos como: Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos en Florida';
-        $data['keywords'] = 'apostillar, apostillar documentos, apostillar documentos en florida, apostillar cerca de mi, apostillar acta de nacimiento florida, apostillar carta poder florida, apostillar certificado de matrimonio florida, apostillar actas de divorcio florida';
+        $data['keywords'] = 'apostillar, apostillamiento, apostillar documentos, apostillar documentos en florida, apostillar cerca de mi, apostillar acta de nacimiento florida, apostillar carta poder florida, apostillar certificado de matrimonio florida, apostillar actas de divorcio florida, apostillado de actas florida, apostillar pasaporte florida, como apostillar florida';
         $data['imgup'] = 'img/landing-apostillas-fl.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
