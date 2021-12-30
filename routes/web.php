@@ -4,6 +4,8 @@ use App\Http\Controllers\PartnerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\Partner\LoginController;
+// use App\Http\Controllers\Partner\HomeController;
 
 Auth::routes(['register' => false]);
 Route::get('/test', 'LandingController@test');
@@ -30,7 +32,7 @@ Route::delete('/home/post/{post}', 'PostController@destroy')->name('post.destroy
 Route::get('/home/partners', 'PartnerController@index')->name('partner.index');
 Route::get('/home/partners/create', 'PartnerController@create')->name('partner.form');
 Route::post('/home/partners/store', 'PartnerController@store')->name('partner.store');
-Route::get('/home/partners/{partner}/edit', 'PartnerController@edit')->name('partner.edit');
+Route::get('/home/partners/{partner}/show', 'PartnerController@show')->name('partner.show');
 Route::put('/home/partners/{partner}', 'PartnerController@update')->name('partner.update');
 
 // THANK
@@ -71,6 +73,18 @@ Route::get('blog','WebController@showblog')->name('post.blog');
 Route::get('consulados','WebController@consulados')->name('consul.index');
 Route::get('consulado/{slug}','WebController@consulado')->name('consul.slug');
 
+Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
+    Route::get('/home', 'HomeController@index')->name('socios.index')->middleware('auth:partner');
+    Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform'); // MOSTRAR FORMULARIO DE LOGIN
+    Route::post('/login', 'LoginController@loginSocios')->name('socios.login');
+    Route::post('/registro', 'RegisterController@register')->name('socios.registro'); //REGISTRO DEL SOCIO - WEB
+    Route::get('/edit/{partner}', 'HomeController@edit')->name('socios.edit')->middleware('auth:partner');
+    Route::put('/update/{partner}', 'HomeController@update')->name('socios.update')->middleware('auth:partner');
+    Route::post('/logout', 'LoginController@logoutSocios')->name('socios.logout');
+});
+// Route::get('/actualizar-informacion/{partner}', 'PartnerController@edit')->name('socios.edit');
+
+
 Route::get('/apostillas', function () {    return view('web.apostillas');    })->name('web.apostillas');
 Route::get('/poderes', function () {    return view('web.poderes');    })->name('web.poderes');
 Route::get('/traducciones', function () {    return view('web.traducciones');    })->name('web.traducciones');
@@ -83,9 +97,9 @@ Route::get('/contratos', function () {    return view('web.contratos');    })->n
 Route::get('/poderes-especiales', function () {    return view('web.poderesp');    })->name('web.poderesp');
 Route::get('/revocatorias', function () {    return view('web.revocatorias');    })->name('web.revocatorias');
 Route::get('/testamentos', function () {    return view('web.testamentos');    })->name('web.testamentos');
-Route::get('/socios', 'PartnerController@showAllPartners')->name('web.partners');
-Route::get('/socios/{partner}', 'PartnerController@showPartner')->name('web.partner');
-Route::post('/suscripcion-partner', 'PartnerController@sendEmail')->name('partner.suscripcion');
+Route::get('/socios/politicas-de-privacidad', function(){ return view('web.politicasocios');})->name('web.socios.politicas');
+Route::get('/socios', 'WebController@showAllPartners')->name('web.showallpartners');
+Route::get('/socios/{partner}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
 
 Route::get('/thankpartner', function(){return view('web.thankpartner');});
 

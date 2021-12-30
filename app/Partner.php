@@ -2,11 +2,15 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Partner extends Model
+class Partner extends Authenticatable
 {
-    // protected $table = "partners";
+    use Notifiable;
+
+    protected $table = "partners";
 
     protected $fillable = [
         'id', 
@@ -15,11 +19,16 @@ class Partner extends Model
         'specialty', 
         'country_residence',
         'phone', 
-        'email', 
+        'email',
+        'password', 
         'biography_html',
         'status', 
         'created_at', 
         'updated_at'
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token'
     ];
 
     //SCOPE
@@ -35,5 +44,3 @@ class Partner extends Model
         }
     }
 }
-
-

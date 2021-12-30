@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Consulate;
 use App\Mail\SendLead;
+use App\Partner;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -57,6 +58,34 @@ class WebController extends Controller
     {
         $consuls = Consulate::orderBy('country')->get();
         return view('web.consul.all',compact('consuls'));
+    }
+
+    public function showAllPartners(Request $request){
+        $countries = Partner::select('country_residence')
+        ->distinct()
+        ->get();
+
+        $specialties = Partner::select('specialty')
+                ->distinct()
+                ->get();            
+
+        $country = $request->get('country');
+        $specialty = $request->get('specialty');
+
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'specialty', 'country_residence', 'phone', 'email'])
+                ->where('status', 'PUBLICADO')
+                ->orderBy('id', 'DESC')
+                ->country($country)
+                ->specialty($specialty)
+                ->distinct()
+                ->get();
+
+        return view('web.partners', compact('partners', 'countries', 'specialties'));
+    }
+
+    public function showPartner($id){
+        $partner = Partner::find($id); 
+        return view('web.partner', compact('partner'));
     }
 
 }

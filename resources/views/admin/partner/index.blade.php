@@ -12,7 +12,8 @@
             <div class="card">
                 <div class="card-header font-weight-bold">
                     PARTNERS
-                    <a class="btn btn-sm btn-primary float-right" href="{{ route('partner.form') }}">Nuevo Partner</a>
+                    {{-- {{ route('partner.form') }} --}}
+                    <a class="btn btn-sm btn-primary float-right" href="#">Nuevo Partner</a>
                 </div>
 
                 <div class="card-body">
@@ -48,7 +49,7 @@
                             <td>{{ $partner->country_residence }}</td>
                             <td>{{ $partner->status}}</td>
                             <td>
-                                <a href="{{ route('partner.edit', $partner ) }}" class="btn btn-info">Editar</a>
+                                <a href="{{ route('partner.show', $partner ) }}" class="btn btn-info">Editar</a>
                             </td>
                         </tr>
                         @endforeach

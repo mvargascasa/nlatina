@@ -19,6 +19,9 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
+            if($guard == "partner"){
+                return route('socios.index');
+            }
             return redirect(RouteServiceProvider::HOME);
         }
 

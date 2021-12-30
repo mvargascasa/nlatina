@@ -128,7 +128,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
                   
                 <li class="nav-item"> <a class="nav-link" href="{{route('post.blog')}}">Blog</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('web.partners') }}">Partners</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('web.showallpartners') }}">Partners</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('web.nosotros')}}">Sobre Nosotros</a> </li>
                   <li class="nav-item"> <a class="nav-link" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
                   </li>
