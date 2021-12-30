@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function register(Request $request){
+    public function registerSocio(Request $request){
         
         $request->validate([
             'name' => 'required',

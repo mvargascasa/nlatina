@@ -4,6 +4,7 @@ use App\Http\Controllers\PartnerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Partner\RegisterController;
 // use App\Http\Controllers\Partner\LoginController;
 // use App\Http\Controllers\Partner\HomeController;
 
@@ -77,7 +78,7 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
     Route::get('/home', 'HomeController@index')->name('socios.index')->middleware('auth:partner');
     Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform'); // MOSTRAR FORMULARIO DE LOGIN
     Route::post('/login', 'LoginController@loginSocios')->name('socios.login');
-    Route::post('/registro', 'RegisterController@register')->name('socios.registro'); //REGISTRO DEL SOCIO - WEB
+    Route::post('/registro', 'App\Http\Controllers\Partner\RegisterController@registerSocio')->name('socios.registro'); //REGISTRO DEL SOCIO - WEB
     Route::get('/edit/{partner}', 'HomeController@edit')->name('socios.edit')->middleware('auth:partner');
     Route::put('/update/{partner}', 'HomeController@update')->name('socios.update')->middleware('auth:partner');
     Route::post('/logout', 'LoginController@logoutSocios')->name('socios.logout');
