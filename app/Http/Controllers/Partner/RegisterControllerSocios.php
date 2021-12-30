@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Partner;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class RegisterControllerSocios extends Controller
 {
     public function registerSocio(Request $request){
         
@@ -16,11 +16,6 @@ class RegisterController extends Controller
             'email' => 'required|unique:partners,email|min:5|max:191',
             'password' => 'required|string|min:8|max:255'
         ]);
-
-        // $url = Storage::put('partners', $request->file('img_profile'));  ESTAS VALIDACIONES VAN A AFECTAR EN LA PARTE DEL ADMINISTRADOR DE PARTNERS
-
-        // $partner = new Partner();
-        // // $cod_pais = $request->get('cod_pais'); //OBTENER EL CODIGO DEL PAIS EN EL REQUEST PARA ENVIARLO POR EL MAIL
         
         $partner = Partner::create([
             'name' => $request['name'],
