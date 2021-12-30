@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Partner;
 use Illuminate\Http\Request;
 
-class RegisterControllerSocios extends Controller
+class RegisterController extends Controller
 {
 
     public function __construct()
@@ -38,7 +38,7 @@ class RegisterControllerSocios extends Controller
 
         $partner->save();
     
-        $this->sendEmail($partner);
+        // $this->sendEmail($partner);
 
         return redirect()->route('partner.showform')->with('success', 'Register complete!');
     }
