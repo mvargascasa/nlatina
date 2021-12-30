@@ -38,11 +38,9 @@ class RegisterController extends Controller
     public function sendEmail(Partner $partner){
 
         $subject = 'Registro de Socio - Abogado';
-        $message = "<br><strong><h1>Un nuevo socio se ha registrado en nuestra página - Notaria Latina</h1></strong>
-                    <br>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname)."
-                    <br>Email: " . strip_tags($partner->email)."
-                    <br>
-                    <div style='background-color:black'><img width='50' src='http://localhost/awebnot-master/public/img/marca-notaria-latina.png'></div>
+        $message = "<br><strong><h3>Un nuevo socio se ha registrado en nuestra página - Notaria Latina</h3></strong>
+                    <br><h4>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname)."</h4>
+                    <br><h4>Email: " . strip_tags($partner->email)."</h4>
         ";
 
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
