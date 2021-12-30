@@ -4,7 +4,6 @@ use App\Http\Controllers\PartnerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Partner\RegisterController;
 // use App\Http\Controllers\Partner\LoginController;
 // use App\Http\Controllers\Partner\HomeController;
 

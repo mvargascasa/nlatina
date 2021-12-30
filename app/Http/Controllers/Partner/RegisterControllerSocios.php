@@ -13,7 +13,7 @@ class RegisterControllerSocios extends Controller
     {
         $this->middleware('guest');
     }
-    
+
     public function registerSocio(Request $request){
         
         $request->validate([
@@ -23,16 +23,24 @@ class RegisterControllerSocios extends Controller
             'password' => 'required|string|min:8|max:255'
         ]);
         
-        $partner = Partner::create([
-            'name' => $request['name'],
-            'lastname' => $request['lastname'],
-            'email'=> $request['email'],
-            'password'=> bcrypt($request['password']),
-        ]);
+        // $partner = Partner::create([
+        //     'name' => $request['name'],
+        //     'lastname' => $request['lastname'],
+        //     'email'=> $request['email'],
+        //     'password'=> bcrypt($request['password']),
+        // ]);
+
+        $partner = new Partner();
+        $partner->name = $request->name;
+        $partner->lastname = $request->lastname;
+        $partner->email = $request->email;
+        $partner->password = $request->password;
+
+        $partner->save();
     
         $this->sendEmail($partner);
 
-        return redirect()->route('partner.showform')->with('succes', 'Register complete!');
+        return redirect()->route('partner.showform')->with('success', 'Register complete!');
     }
 
     public function sendEmail(Partner $partner){
