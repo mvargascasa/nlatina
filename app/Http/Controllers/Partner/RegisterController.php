@@ -39,8 +39,8 @@ class RegisterController extends Controller
 
         $subject = 'Registro de Socio - Abogado';
         $message = "<br><strong><h3>Un nuevo socio se ha registrado en nuestra página - Notaria Latina</h3></strong>
-                    <br><h4>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname)."</h4>
-                    <br><h4>Email: " . strip_tags($partner->email)."</h4>
+                    <br>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname)."
+                    <br>Email: " . strip_tags($partner->email)."
         ";
 
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
@@ -48,8 +48,8 @@ class RegisterController extends Controller
                 'Content-type:text/html;charset=UTF-8' . "\r\n"
                 ;
         
-        mail("sebas25211@hotmail.com", $subject, $message, $header);
+        mail("notariapublicalatina@gmail.com,hserrano@notarialatina.com", $subject, $message, $header);
 
-        //notariapublicalatina@gmail.com,hserrano@notarialatina.com
+        
     }
 }
