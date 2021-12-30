@@ -39,7 +39,7 @@ class RegisterController extends Controller
 
         $subject = 'Registro de Socio - Abogado';
         $message = "<br><strong>Un nuevo socio se ha registrado en nuestra página - Notaria Latina</strong>
-                    <br>Nombre: " . strip_tags($partner->nombre). " " . strip_tags($partner->apellido)."
+                    <br>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname)."
                     <br>Email: " . strip_tags($partner->email)."
         ";
 
