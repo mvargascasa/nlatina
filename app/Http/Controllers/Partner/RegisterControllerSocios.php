@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class RegisterControllerSocios extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+    
     public function registerSocio(Request $request){
         
         $request->validate([
