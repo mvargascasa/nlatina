@@ -77,7 +77,7 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
     Route::get('/home', 'HomeController@index')->name('socios.index')->middleware('auth:partner');
     Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform'); // MOSTRAR FORMULARIO DE LOGIN
     Route::post('/login', 'LoginController@loginSocios')->name('socios.login');
-    Route::post('/registro', 'RegisterController@registerSocio')->name('socios.registro'); //REGISTRO DEL SOCIO - WEB
+    Route::post('/registro', 'RegisterController@register')->name('socios.registro'); //REGISTRO DEL SOCIO - WEB
     Route::get('/edit/{partner}', 'HomeController@edit')->name('socios.edit')->middleware('auth:partner');
     Route::put('/update/{partner}', 'HomeController@update')->name('socios.update')->middleware('auth:partner');
     Route::post('/logout', 'LoginController@logoutSocios')->name('socios.logout');

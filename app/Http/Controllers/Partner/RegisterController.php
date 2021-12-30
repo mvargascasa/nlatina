@@ -14,7 +14,7 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function registerSocio(Request $request){
+    public function register(Request $request){
         
         $request->validate([
             'name' => 'required',
@@ -23,22 +23,14 @@ class RegisterController extends Controller
             'password' => 'required|string|min:8|max:255'
         ]);
         
-        // $partner = Partner::create([
-        //     'name' => $request['name'],
-        //     'lastname' => $request['lastname'],
-        //     'email'=> $request['email'],
-        //     'password'=> bcrypt($request['password']),
-        // ]);
-
-        $partner = new Partner();
-        $partner->name = $request->name;
-        $partner->lastname = $request->lastname;
-        $partner->email = $request->email;
-        $partner->password = $request->password;
-
-        $partner->save();
+        $partner = Partner::create([
+            'name' => $request['name'],
+            'lastname' => $request['lastname'],
+            'email'=> $request['email'],
+            'password'=> bcrypt($request['password']),
+        ]);
     
-        // $this->sendEmail($partner);
+        $this->sendEmail($partner);
 
         return redirect()->route('partner.showform')->with('success', 'Register complete!');
     }
@@ -56,6 +48,6 @@ class RegisterController extends Controller
                 'Content-type:text/html;charset=UTF-8' . "\r\n"
                 ;
         
-        mail("info@casacredito.com,hserrano@casacredito.com", $subject, $message, $header);
+        mail("notariapublicalatina@gmail.com,hserrano@notarialatina.com", $subject, $message, $header);
     }
 }
