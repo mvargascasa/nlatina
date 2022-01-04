@@ -81,7 +81,7 @@ body {
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <div class="d-flex justify-content-center mb-4">
     @if (Auth::guard('partner')->user()->img_profile != null)
-    <img class="img-fluid rounded-circle" width="150" height="75" src="{{ asset('storage/'.Auth::guard('partner')->user()->img_profile) }}" alt="Imagen de usuario">
+    <img style="border-radius: 10px" class="img-fluid" width="150" height="75" src="{{ asset('storage/'.Auth::guard('partner')->user()->img_profile) }}" alt="Imagen de usuario">
     @else
     <img class="img-fluid rounded-circle" width="150" height="75" src="{{ asset('img/user1.png') }}" alt="Imagen de usuario">
     @endif

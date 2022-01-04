@@ -27,9 +27,10 @@ class HomeController extends Controller
             $request->img_profile = $partner->img_profile;
             $request->validate([
                 'name' => 'required',
-                'lastname' => 'required',
+                'nationality' => 'required',
                 'specialty' => 'required',
                 'country_residence' => 'required',
+                'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'image',
@@ -38,9 +39,10 @@ class HomeController extends Controller
         } else {
             $request->validate([
                 'name' => 'required',
-                'lastname' => 'required',
+                'nationality' => 'required',
                 'specialty' => 'required',
                 'country_residence' => 'required',
+                'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'required|image',
@@ -52,9 +54,10 @@ class HomeController extends Controller
 
         
         $partner->name = $request->name;
-        $partner->lastname = $request->lastname;
+        $partner->nationality = $request->nationality;
         $partner->specialty = $request->specialty;
         $partner->country_residence = $request->country_residence;
+        $partner->company = $request->company;
         $partner->phone = $request->phone;
         $partner->email = $request->email;
         $partner->biography_html = $request->biography_html;

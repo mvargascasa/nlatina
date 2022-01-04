@@ -11,7 +11,7 @@
         .container{
             position: relative;
         }
-        .form{
+        .formContact{
             background-color: #002542;
             text-align: center;
         }
@@ -28,6 +28,23 @@
                 color: black;
             }
         }
+
+        #nombre, #telefono, #mensaje{
+            margin-bottom: 15px;
+        }
+
+        form{
+            padding: 15px;
+        }
+
+        #country_residence{
+            margin-right: 2.5px;
+        }
+
+        #telefono{
+            margin-left: 2.5px;
+        }
+
     </style>
 @endsection
 
@@ -44,7 +61,6 @@
             <div class="col-sm-6 mt-3 info-header">
                 <h3><b>{{ $partner->name }} {{ $partner->lastname }}</b></h3>
                 <p>{{ $partner->country_residence}}</p>
-                {{-- <p>Baker y McKenzie Asociados</p> --}}
                 <p>{{ $partner->specialty }}</p>
                 <br>
                 <div class="row">
@@ -63,20 +79,45 @@
                 </div>
             </div>
             <div class="col-sm-4 border-left">
-                <div style="color: #9A7A2E">
-                    <h6><b>Otras especialidades</b></h6>
-                    <p>Derecho penal</p>
-                    <p>Derecho laboral</p>
-                    <p>Familia</p>
-                    <p>Fraude</p>
-                    <p>Propiedad intelectual</p>
-                </div>
-                <div class="form mt-4 rounded">
+                @if (count($specialties) > 0)
+                    <div style="color: #9A7A2E">
+                        <h6><b>Otras especialidades</b></h6>
+                        @foreach ($specialties as $specialty)
+                            <p>{{ $specialty->specialty }}</p>
+                        @endforeach
+                    </div>
+                @endif
+                <div class="formContact mt-4 rounded">
                     <h5 class="text-white text-center p-3">Realice aquí una consulta</h5>
-                    <form>
-                        <input class="mb-4" type="text" id="nombre" placeholder="Nombre y Apellido">
-                        <input class="mb-4" type="number" id="nombre" placeholder="Telefono">
-                        <textarea class="mb-4" id="mensaje" rows="4" placeholder="Mensaje"></textarea>
+                    <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
+                        @csrf
+                        <input class="form-control" type="text" id="nombre" placeholder="Nombre y Apellido" name="name" autocomplete="off" required>
+                        <div class="d-flex">
+                            <select name="country_residence" id="country_residence" class="form-control" required>
+                                <option value="">País de residencia</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="El Salvador">El Salvador</option>
+                                <option value="España">España</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Guatemala">Guatemala</option>
+                                <option value="Honduras">Honduras</option>
+                                <option value="México">México</option>
+                                <option value="Nicaragua">Nicaragua</option>
+                                <option value="Panamá">Panamá</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Perú">Perú</option>
+                                <option value="Puerto Rico">Puerto Rico</option>
+                                <option value="República Dominicana">República Dominicana</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Venezuela">Venezuela</option>
+                            </select>
+                            <input class="form-control" type="number" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
+                        </div>
+                        <textarea class="form-control" id="mensaje" rows="4" placeholder="Mensaje" name="mensaje" autocomplete="off" required></textarea>
                         <button class="btn mb-3" style="background-color: #FEC02F" type="submit">Enviar</button>
                     </form>
                 </div>

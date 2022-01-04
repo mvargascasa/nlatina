@@ -100,6 +100,7 @@ Route::get('/testamentos', function () {    return view('web.testamentos');    }
 Route::get('/socios/politicas-de-privacidad', function(){ return view('web.politicasocios');})->name('web.socios.politicas');
 Route::get('/socios', 'WebController@showAllPartners')->name('web.showallpartners');
 Route::get('/socios/{partner}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
+Route::post('/socios-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');
 
 Route::get('/thankpartner', function(){return view('web.thankpartner');});
 

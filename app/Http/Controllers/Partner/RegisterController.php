@@ -18,14 +18,18 @@ class RegisterController extends Controller
         
         $request->validate([
             'name' => 'required',
-            'lastname' => 'required',
-            'email' => 'required|unique:partners,email|min:5|max:191',
+            'nationality' => 'required',
+            'phone' => 'required',
+            'company' => 'required',
+            'email' => 'required|unique:partners,email|min:10|max:191',
             'password' => 'required|string|min:8|max:255'
         ]);
         
         $partner = Partner::create([
             'name' => $request['name'],
-            'lastname' => $request['lastname'],
+            'nationality' => $request['nationality'],
+            'phone' => $request['phone'],
+            'company' => $request['company'],
             'email'=> $request['email'],
             'password'=> bcrypt($request['password']),
         ]);
@@ -36,11 +40,16 @@ class RegisterController extends Controller
     }
 
     public function sendEmail(Partner $partner){
-
+        $to = "sebas31051999@gmail.com";
         $subject = 'Registro de Socio - Abogado';
         $message = "<br><strong><h3>Un nuevo socio se ha registrado en nuestra página - Notaria Latina</h3></strong>
-                    <br>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname)."
+                    <br>Nombre: " . strip_tags($partner->name). "
+                    <br>Nacionalidad: " . strip_tags($partner->nationality) ."
+                    <br>Teléfono: " . strip_tags($partner->phone) ."
                     <br>Email: " . strip_tags($partner->email)."
+                    <br>Empresa: " . strip_tags($partner->company)."
+                    <br>
+                    <img style='background-color: black; border-radius: 10px; padding: 10px; margin-top:20px' src='https://notarialatina.com/img/marca-notaria-latina.png' alt='IMAGEN NOTARIA LATINA'>
         ";
 
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
@@ -48,7 +57,7 @@ class RegisterController extends Controller
                 'Content-type:text/html;charset=UTF-8' . "\r\n"
                 ;
         
-        mail("notariapublicalatina@gmail.com,hserrano@notarialatina.com", $subject, $message, $header);
-        
+        mail($to, $subject, $message, $header);
+        //notariapublicalatina@gmail.com,hserrano@notarialatina.com
     }
 }

@@ -15,9 +15,10 @@ class Partner extends Authenticatable
     protected $fillable = [
         'id', 
         'name', 
-        'lastname', 
-        'specialty', 
+        'specialty',
+        'nationality', 
         'country_residence',
+        'company',
         'phone', 
         'email',
         'password', 

@@ -15,7 +15,7 @@
                                 @csrf
                                 @method('put')
 
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             {!! Form::hidden('name', $partner->name) !!}
@@ -26,9 +26,9 @@
                                             {!! Form::hidden('lastname', $partner->lastname) !!}
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             {!! Form::hidden('specialty', $partner->specialty) !!}
@@ -39,9 +39,9 @@
                                             {!! Form::hidden('country_residence', $partner->country_residence) !!}
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             {!! Form::hidden('phone', $partner->phone) !!}
@@ -52,15 +52,15 @@
                                             {!! Form::hidden('email', $partner->email) !!}
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-row">
+                                </div> --}}
+                                {{-- <div class="form-row">
                                     <div class="form-group col-md-6">
                                         {!! Form::hidden('img_profile', $partner->img_profile) !!}
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     {!! Form::hidden('biography_html', $partner->biography_html) !!}
-                                </div>
+                                </div> --}}
                                 <div class="d-flex">
                                     <div>
                                         {{-- {!! Form::label('status', 'Estado') !!} --}}
@@ -80,7 +80,11 @@
         <div class="mt-5 border p-5">
             <div class="row">
                 <div class="col-sm-4">
-                    <img class="img-fluid" width="300" height="250" src="{{ asset('storage/'.$partner->img_profile) }}" alt="No se pudo cargar la imagen">
+                    @isset($partner->img_profile)
+                        <img class="img-fluid" width="300" height="250" src="{{ asset('storage/'.$partner->img_profile) }}" alt="No se pudo cargar la imagen">
+                    @else
+                        <img class="img-fluid" src="{{ asset('img/user.webp') }}" width="300" height="250" alt="No se pudo cargar la imagen">
+                    @endisset
                 </div>
                 <div class="col-sm-8">
                     <h4 class="mt-4">Nombre: {{ $partner->name}} {{$partner->lastname}}</h4>
@@ -91,10 +95,20 @@
                         Email: {{ $partner->email}}
                     </h5>
                     <h5 class="mt-4">
-                        País de residencia: {{ $partner->country_residence}}
+                        País de residencia: 
+                        @isset($partner->country_residence)
+                        {{ $partner->country_residence}}
+                        @else
+                        <b>Sin información</b>
+                        @endisset
                     </h5>
                     <h5 class="mt-4">
-                        Especialidad: {{ $partner->specialty}}
+                        Especialidad: 
+                        @isset($partner->specialty)
+                        {{ $partner->specialty}}
+                        @else
+                        <b>Sin información</b>
+                        @endisset
                     </h5>
                 </div>
             </div>
@@ -102,7 +116,11 @@
                 <h3>Biografía</h3>
             </div>
             <div class="row mt-4">
-                {!! $partner->biography_html !!}
+                @isset($partner->biography_html)
+                    {!! $partner->biography_html !!}
+                @else
+                    <p><b>Sin información</b></p>
+                @endisset
             </div>
         </div>
     </div>

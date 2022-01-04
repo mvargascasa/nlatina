@@ -87,6 +87,7 @@
             margin-left: 20%;
             margin-right: 20%;
             margin-top: 5%;
+            margin-bottom: 10px;
         }
 
         @media screen and (max-width: 580px){
@@ -113,6 +114,14 @@
         #texto{
             align-items: center;
         }
+
+        #telefono{
+            margin-left: 2.5px;
+        }
+
+        #nacionalidad{
+            margin-right: 2.5px;
+        }
         
     </style>
 @endsection
@@ -132,37 +141,67 @@
                     <form action="{{ route('socios.registro') }}" method="POST">        
                         @csrf
                         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-                            <input type="text" class="form-control" placeholder="Nombre" name="name" autocomplete="off" value="{{ old('name')}}">
+                            <input type="text" class="form-control" placeholder="Nombre y Apellido" name="name" autocomplete="off" value="{{ old('name')}}" required>
                         </div>
-                        <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-                            @error('name')
+                        @error('name')
+                            <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
                                 <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
+                            </div>
+                        @enderror
                         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-                            <input type="text" class="form-control" placeholder="Apellido" name="lastname" autocomplete="off" value="{{ old('lastname') }}">
+                            <select name="nationality" id="nacionalidad" class="form-control" required>
+                                <option value="">Nacionalidad</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="El Salvador">El Salvador</option>
+                                <option value="España">España</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Guatemala">Guatemala</option>
+                                <option value="Honduras">Honduras</option>
+                                <option value="México">México</option>
+                                <option value="Nicaragua">Nicaragua</option>
+                                <option value="Panamá">Panamá</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Perú">Perú</option>
+                                <option value="Puerto Rico">Puerto Rico</option>
+                                <option value="República Dominicana">República Dominicana</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Venezuela">Venezuela</option>  
+                            </select>
+                            <input type="number" name="phone" class="form-control" id="telefono" placeholder="Teléfono" autocomplete="off" value="{{ old('phone') }}" required>
                         </div>
-                        <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-                            @error('lastname')
+                        @error('nationality')
+                            <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
                                 <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            </div>
+                        @enderror
+                        @error('phone')
+                            <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
+                                <span class="text-danger">{{ $message }}</span>
+                            </div>
+                        @enderror
+                        <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
+                            <input type="text" class="form-control" placeholder="Empresa" name="company" autocomplete="off" value="{{ old('company') }}" required>
                         </div>
                         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
-                            <input type="email" class="form-control" placeholder="Email" name="email" autocomplete="off" value="{{ old('email') }}">
+                            <input type="email" class="form-control" placeholder="Email" name="email" autocomplete="off" value="{{ old('email') }}" required>
                         </div>
-                        <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-                            @error('email')
+                        @error('email')
+                            <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
                                 <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
+                            </div>
+                        @enderror
                         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
-                            <input type="password" class="form-control" placeholder="Contraseña" name="password" autocomplete="off" {{ old('password') }}>
+                            <input type="password" class="form-control" placeholder="Contraseña" name="password" autocomplete="off" {{ old('password') }} required>
                         </div>
-                        <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-                            @error('password')
+                        @error('password')
+                            <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
                                 <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
+                            </div>
+                        @enderror
                         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
                             <button type="submit" class="btn btn-block" style="background-color: #FEC02F">Sí, me uno!</button>
                         </div>

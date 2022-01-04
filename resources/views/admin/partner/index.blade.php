@@ -25,7 +25,6 @@
 
                     <table id="example" class="table table-sm" style="width:100%">
                         <tr>
-                            <th>ID</th>
                             <th>IMG</th>
                             <th>NOMBRE</th>
                             <th>ESPECIALIDAD</th>
@@ -36,17 +35,31 @@
 
                         @foreach ($partners as $partner)
                         <tr>
-                            <td>{{ $partner->id }}</td>
                             <td>
-                                
-                                <img src="{{ asset('storage/'.$partner->img_profile)}}" width="80px" height="80px">
+                                @isset($partner->img_profile)
+                                    <img src="{{ asset('storage/'.$partner->img_profile)}}" width="80px" height="80px">
+                                @else
+                                    <img src="{{ asset('img/user.webp') }}" width="80px" height="80px" alt="">
+                                @endisset  
                                     {{-- @isset($cat->imgdir)
                                         <img src="{{url('img/i300_'.$cat->imgcat)}}" width="50">
                                     @endif --}}
                             </td>
                             <td>{{ $partner->name }} {{ $partner->lastname }}</td>
-                            <td>{{ $partner->specialty}}</td>
-                            <td>{{ $partner->country_residence }}</td>
+                            <td>
+                                @isset($partner->specialty)
+                                    {{ $partner->specialty}}
+                                @else
+                                    <b>Sin información</b> 
+                                @endisset
+                            </td>
+                            <td>
+                                @isset($partner->country_residence)
+                                    {{ $partner->country_residence}}
+                                @else
+                                    <b>Sin información</b> 
+                                @endisset
+                            </td>
                             <td>{{ $partner->status}}</td>
                             <td>
                                 <a href="{{ route('partner.show', $partner ) }}" class="btn btn-info">Editar</a>

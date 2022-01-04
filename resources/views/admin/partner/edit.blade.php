@@ -10,8 +10,9 @@
         .image-wrapper img{
             position: absolute;
             object-fit: contain;
-            width: 80%;
-            height: 80%;
+            width: 30%;
+            height: 70%;
+            box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         }
     </style>
 @endsection
@@ -43,7 +44,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::label('name', 'Nombre') !!}
+                                        {!! Form::label('name', 'Nombre y Apellido') !!}
                                         {!! Form::text('name', $partner->name, ['class' => 'form-control']) !!}
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
@@ -52,26 +53,35 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::label('lastname', 'Apellido') !!}
-                                        {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control']) !!}
-                                    @error('lastname')
+                                        {!! Form::label('specialty', 'Especialidad') !!}
+                                        {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control']) !!}
+                                        @error('specialty')
                                         <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
-
+                            
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('specialty', 'Especialidad') !!}
-                                        {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control']) !!}
-                                    @error('specialty')
+                                        {!! Form::label('company', 'Empresa') !!}
+                                        {!! Form::text('company', $partner->company, ['class' => 'form-control']) !!}
+                                    @error('company')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        {!! Form::label('nationality', 'Nacionalidad') !!}
+                                        {!! Form::select('nationality', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->nationality, ['class' => 'form-control']) !!}
+                                    @error('nationality')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
                                     <div class="form-group">
                                         {!! Form::label('country_residence', 'Pais de residencia') !!}
                                     @if ($partner->country_residence != null)
@@ -111,9 +121,9 @@
                                 <div class="col-md-6">
                                     <div class="image-wrapper d-flex justify-content-center">
                                         @if ($partner->img_profile != null)
-                                            <img id="picture" width="250px" class="img-fluid" src="{{ asset('storage/'.$partner->img_profile) }}" alt="No se pudo cargar la imagen">
+                                            <img id="picture" class="img-fluid" src="{{ asset('storage/'.$partner->img_profile) }}" alt="No se pudo cargar la imagen">
                                         @else
-                                            <img id="picture" class="img-fluid" src="{{ asset('img/user_edit.png') }}" alt="No se pudo cargar la imagen">
+                                           <img id="picture" class="img-fluid" src="{{ asset('img/user.webp') }}" alt="No se pudo cargar la imagen">
                                         @endif                    
                                     </div>
                                 </div>
