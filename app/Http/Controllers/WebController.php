@@ -94,7 +94,7 @@ class WebController extends Controller
     }
 
     public function sendEmailContact(Request $request, Partner $partner){
-        $to = "sebas31051999@gmail.com";
+        $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com";
         $subject = 'Lead para Socio Abogado - Notaria Latina';
         $message = "<br><strong><h3>Datos del cliente</h3></strong>
                     <br>Nombre: " . strip_tags($request->name). "
