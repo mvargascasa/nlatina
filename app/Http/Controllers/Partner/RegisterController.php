@@ -49,7 +49,6 @@ class RegisterController extends Controller
                 ;
         
         mail("notariapublicalatina@gmail.com,hserrano@notarialatina.com", $subject, $message, $header);
-
         
     }
 }

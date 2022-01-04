@@ -33,12 +33,12 @@
                         <p class="text-center fw-bold mx-3 mb-0">Inicio de Sesión</p>
                     </div>
                     <div class="form-outline mb-4">
-                        <input type="email" id="form3Example3" class="form-control form-control-lg"
+                        <input type="email" id="form3Example3" class="form-control form-control-lg" value="{{ old('email') }}"
                             placeholder="Ingrese su correo electrónico" name="email" required autocomplete="off"/>
                         <label class="form-label" for="form3Example3">{{ __('Correo Electrónico')}}</label>
                     </div>
                     <div class="form-outline mb-3">
-                        <input type="password" id="form3Example4" class="form-control form-control-lg"
+                        <input type="password" id="form3Example4" class="form-control form-control-lg" value="{{ old('password') }}"
                         placeholder="Ingrese su contraseña" name="password" required/>
                         <label class="form-label" for="form3Example4">Contraseña</label>
                     </div>

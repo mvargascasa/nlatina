@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Partner;
 
 use App\Http\Controllers\Controller;
 use App\Partner;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    use ThrottlesLogins;
     
     public function showLoginFormSocios(){
         return view('admin.partner.login', [
@@ -22,7 +24,16 @@ class LoginController extends Controller
         
         $this->validator($request);
 
+        if($this->hasTooManyLoginAttempts($request)){
+            $this->fireLockoutEvent($request);
+
+            return $this->sendLockoutResponse($request);
+        }
+
         if(Auth::guard('partner')->attempt($request->only('email', 'password'), $request->filled('remember'))){
+            
+            $request->session()->regenerate();
+
             $partner = Partner::where('email', $request->email)->first();
             // return auth('partner')->user(); //ESTO ME DEVUELVE EL USUARIO QUE INICIO SESION
             return redirect()
@@ -30,11 +41,17 @@ class LoginController extends Controller
             ->with('status', 'You are logged in!');
         }
 
+        $this->incrementLoginAttempts($request);
+
         return $this->loginFailed();
     }
 
-    public function logoutSocios(){
+    public function logout(Request $request){
+
         Auth::guard('partner')->logout();
+        
+        $request->session()->invalidate();
+
         return redirect()->route('partner.showform');
     }
 
@@ -58,4 +75,7 @@ class LoginController extends Controller
         ->with('error', 'Login Failed, please try again!');
     }
 
+    public function username(){
+        return 'email';
+    }
 }

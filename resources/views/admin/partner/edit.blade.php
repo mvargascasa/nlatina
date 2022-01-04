@@ -18,8 +18,12 @@
 
 @section('content')
 <div class="container">
+
     <div class="col-12 mt-4">
-        <div class="row justify-content-center">
+        <img style="background-color: black; border-radius: 10px; padding: 10px;" src="{{ asset('img/marca-notaria-latina.png') }}" alt="">
+        <h4 style="color: rgb(97, 97, 250); margin-top: 10px; text-align: center">Inscripción para formar parte de nuestro directorio de partners.</h4>
+        <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte gratis en Estados Unidos</p>
+        <div class="row justify-content-center mt-3">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header font-weight-bold">ACTUALIZAR DATOS</div>
@@ -109,7 +113,7 @@
                                         @if ($partner->img_profile != null)
                                             <img id="picture" width="250px" class="img-fluid" src="{{ asset('storage/'.$partner->img_profile) }}" alt="No se pudo cargar la imagen">
                                         @else
-                                            <img id="picture" class="img-fluid" src="{{ asset('img/user1.png') }}" alt="No se pudo cargar la imagen">
+                                            <img id="picture" class="img-fluid" src="{{ asset('img/user_edit.png') }}" alt="No se pudo cargar la imagen">
                                         @endif                    
                                     </div>
                                 </div>
@@ -123,20 +127,18 @@
                             </div>
 
                             <div class="form-group">
-                                {!! Form::label('biography_html', 'Biografia') !!}
+                                {!! Form::label('biography_html', 'Biografia (Descripción de trayectoria y experiencia en su área)') !!}
                                 {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4']) !!}
                                 @error('biography_html')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="d-flex">
+                            <div class="d-flex flex-column float-right">
                                 <div class="form-group">
-                                    {!! Form::submit('Guardar mi información',  ['class' => 'btn btn-primary']) !!}
+                                    {!! Form::submit('Aceptar y Registrarme',  ['class' => 'btn btn-primary']) !!}
                                 </div>
+                                <a style="text-decoration: none; color: black; text-align: end; font-size: 10px" href="#">Términos y condiciones</a>
                                 {!! Form::close() !!}  
-                                <div class="mx-1">
-                                    <a class="btn btn-danger" href="{{ route('socios.index') }}">Cancelar</a>
-                                </div>  
                             </div>
                     </div>
                 </div>

@@ -75,12 +75,12 @@ Route::get('consulado/{slug}','WebController@consulado')->name('consul.slug');
 
 Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
     Route::get('/home', 'HomeController@index')->name('socios.index')->middleware('auth:partner');
-    Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform'); // MOSTRAR FORMULARIO DE LOGIN
+    Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform')->middleware('guest:partner'); // MOSTRAR FORMULARIO DE LOGIN
     Route::post('/login', 'LoginController@loginSocios')->name('socios.login');
     Route::post('/registro', 'RegisterController@register')->name('socios.registro'); //REGISTRO DEL SOCIO - WEB
     Route::get('/edit/{partner}', 'HomeController@edit')->name('socios.edit')->middleware('auth:partner');
     Route::put('/update/{partner}', 'HomeController@update')->name('socios.update')->middleware('auth:partner');
-    Route::post('/logout', 'LoginController@logoutSocios')->name('socios.logout');
+    Route::post('/logout', 'LoginController@logout')->name('socios.logout')->middleware('auth:partner');
 });
 // Route::get('/actualizar-informacion/{partner}', 'PartnerController@edit')->name('socios.edit');
 

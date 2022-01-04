@@ -20,7 +20,7 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             if($guard == "partner"){
-                return route('socios.index');
+                return redirect()->route('socios.index');
             }
             return redirect(RouteServiceProvider::HOME);
         }

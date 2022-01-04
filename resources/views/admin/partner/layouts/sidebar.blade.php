@@ -60,6 +60,11 @@ body {
   padding: 16px;
 }
 
+.btnLogout{
+  position: absolute;
+  bottom: 0px;
+}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
@@ -81,12 +86,14 @@ body {
     <img class="img-fluid rounded-circle" width="150" height="75" src="{{ asset('img/user1.png') }}" alt="Imagen de usuario">
     @endif
   </div>
-  <a href="{{ route('socios.index') }}">Inicio</a>
-  <a href="{{ route('socios.edit', Auth::guard('partner')->user()) }}">Perfil</a>
-  <div>
+  <a href="{{ route('web.index') }}"><img width="30" height="30" src="{{ asset('img/partners/marca-notaria-latina.png') }}" alt=""> Notaria Latina</a>
+  <a href="{{ route('socios.index') }}"><img width="25" height="25" src="{{ asset('img/partners/home_logo.png') }}" alt=""> Inicio</a>
+  <a href="{{ route('socios.edit', Auth::guard('partner')->user()) }}"><img width="25" height="25" src="{{ asset('img/partners/user.png') }}" alt=""> Perfil</a>
+  <div class="btnLogout">
     <a href="{{ route('socios.logout') }}"
        onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
+    <img width="25" height="25" src="{{ asset('img/partners/logout.png') }}" alt="">
         {{ __('Cerrar Sesión') }}
     </a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -95,10 +102,8 @@ body {
   </div>
 </div>
 
-<div id="main">
+<div id="main" style="background-color: rgb(244, 244, 252)">
   <button class="openbtn" onclick="openNav()">☰ Menú</button>  
-  {{-- <h2>Collapsed Sidebar</h2>
-  <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p> --}}
     @yield('content')
 
 </div>
