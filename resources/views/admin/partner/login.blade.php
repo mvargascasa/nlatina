@@ -16,8 +16,7 @@
 <body>
     <div class="container mt-5 pt-2">
         <div class="header">
-            <h1>INICIO DE SESIÓN</h1>
-            <p>Ahora puedes iniciar sesión y completar tu información para que los demás puedan encontrarte</p>
+            <h1 style="color: rgb(23, 10, 49)">INICIO DE SESIÓN</h1>
         </div>
         <section class="vh-100">
             <div class="container-fluid h-custom mt-5">
@@ -30,7 +29,7 @@
                 <form action="{{ route('socios.login') }}" method="POST">
                     @csrf
                     <div class="divider d-flex align-items-center my-4">
-                        <p class="text-center fw-bold mx-3 mb-0">Inicio de Sesión</p>
+                        <p class="text-center fw-bold mx-3 mb-0">ABOGADOS DE NOTARIA LATINA</p>
                     </div>
                     <div class="form-outline mb-4">
                         <input type="email" id="form3Example3" class="form-control form-control-lg" value="{{ old('email') }}"
@@ -41,6 +40,9 @@
                         <input type="password" id="form3Example4" class="form-control form-control-lg" value="{{ old('password') }}"
                         placeholder="Ingrese su contraseña" name="password" required/>
                         <label class="form-label" for="form3Example4">Contraseña</label>
+                    </div>
+                    <div>
+                        <a href="{{ route('socio.show.password.form')}}">Se me olvido mi contraseña</a>
                     </div>
                     @error('email')
                         <div>

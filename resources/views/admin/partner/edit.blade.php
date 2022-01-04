@@ -24,6 +24,7 @@
         <img style="background-color: black; border-radius: 10px; padding: 10px;" src="{{ asset('img/marca-notaria-latina.png') }}" alt="">
         <h4 style="color: rgb(97, 97, 250); margin-top: 10px; text-align: center">Inscripción para formar parte de nuestro directorio de partners.</h4>
         <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte gratis en Estados Unidos</p>
+        <p style="text-align: center; color: red">*Es necesario llenar todos los campos para que tus datos puedan publicarse en nuestro sitio web</p>
         <div class="row justify-content-center mt-3">
             <div class="col-12">
                 <div class="card">

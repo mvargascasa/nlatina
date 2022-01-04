@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Partner;
 use App\Http\Controllers\Controller;
 use App\Partner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -36,7 +37,9 @@ class RegisterController extends Controller
     
         $this->sendEmail($partner);
 
-        return redirect()->route('partner.showform')->with('success', 'Register complete!');
+        Auth::guard('partner')->login($partner);
+
+        return redirect()->route('socios.edit', compact('partner'))->with('success', 'Register complete!');
     }
 
     public function sendEmail(Partner $partner){
