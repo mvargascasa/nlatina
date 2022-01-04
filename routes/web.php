@@ -81,6 +81,7 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
     Route::get('/edit/{partner}', 'HomeController@edit')->name('socios.edit')->middleware('auth:partner');
     Route::put('/update/{partner}', 'HomeController@update')->name('socios.update')->middleware('auth:partner');
     Route::post('/logout', 'LoginController@logout')->name('socios.logout')->middleware('auth:partner');
+    Route::get('/forgot-password', 'ForgotPasswordController@showLinkRequestForm')->name('socio.show.password.form');
 });
 // Route::get('/actualizar-informacion/{partner}', 'PartnerController@edit')->name('socios.edit');
 

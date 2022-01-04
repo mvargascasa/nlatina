@@ -42,7 +42,7 @@
                         <label class="form-label" for="form3Example4">Contraseña</label>
                     </div>
                     <div>
-                        <a href="{{ route('socio.show.password.form')}}">Se me olvido mi contraseña</a>
+                        {{-- <a href="{{ route('socio.show.password.form')}}">Se me olvido mi contraseña</a> --}}
                     </div>
                     @error('email')
                         <div>
