@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PartnerController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -122,6 +123,11 @@ Route::get('/paraguay', function () {    return view('web.consul.paraguay');    
 Route::get('/peru', function () {    return view('web.consul.peru');    })->name('web.peru');
 Route::get('/uruguay', function () {    return view('web.consul.uruguay');    })->name('web.uruguay');
 Route::get('/venezuela', function () {    return view('web.consul.venezuela');    })->name('web.venezuela');
+
+//PRUEBA RUTA PARA ACTIVAR STORAGE LINK
+Route::get('/linkstorage', function(){
+    Artisan::call('storage:link');
+})->middleware('auth:web');
 
 
 
