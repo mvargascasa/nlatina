@@ -124,11 +124,6 @@ Route::get('/peru', function () {    return view('web.consul.peru');    })->name
 Route::get('/uruguay', function () {    return view('web.consul.uruguay');    })->name('web.uruguay');
 Route::get('/venezuela', function () {    return view('web.consul.venezuela');    })->name('web.venezuela');
 
-//PRUEBA RUTA PARA ACTIVAR STORAGE LINK
-Route::get('/linkstorage', function(){
-    Artisan::call('storage:link');
-})->middleware('auth:web');
-
 
 
 
