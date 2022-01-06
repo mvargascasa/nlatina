@@ -54,7 +54,7 @@ class RegisterController extends Controller
     }
 
     public function sendEmail(Partner $partner){
-        $to = "sebas31051999@gmail.com";
+        $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com";
         $subject = 'Registro de Socio - Abogado';
         $message = "<br><strong><h3>Un nuevo socio se ha registrado en nuestra página - Notaria Latina</h3></strong>
                     <br>Nombre: " . strip_tags($partner->name). "
