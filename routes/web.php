@@ -91,10 +91,6 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
 
 });
 // Route::get('/actualizar-informacion/{partner}', 'PartnerController@edit')->name('socios.edit');
-Route::get('/cacheclear', function(){
-    Artisan::call('cache:clear');
-    return "Cache cleared";
-});
 
 
 Route::get('/apostillas', function () {    return view('web.apostillas');    })->name('web.apostillas');
