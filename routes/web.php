@@ -90,6 +90,10 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
     Route::post('/password/reset', 'ResetPasswordController@reset')->name('socio.password.update');
 
 });
+
+Route::get('cacheclear', function(){
+    Artisan::call('cache:clear');
+});
 // Route::get('/actualizar-informacion/{partner}', 'PartnerController@edit')->name('socios.edit');
 
 
