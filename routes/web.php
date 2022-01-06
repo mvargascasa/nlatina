@@ -88,6 +88,10 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
 
     Route::get('/password/reset/{token}/{email}', 'ResetPasswordController@showResetForm')->name('socio.password.reset');
     Route::post('/password/reset', 'ResetPasswordController@reset')->name('socio.password.update');
+
+    Route::get('/cacheclear', function(){
+        Artisan::call('cache:clear');
+    })->middleware('auth:partner');
 });
 // Route::get('/actualizar-informacion/{partner}', 'PartnerController@edit')->name('socios.edit');
 
@@ -128,11 +132,6 @@ Route::get('/paraguay', function () {    return view('web.consul.paraguay');    
 Route::get('/peru', function () {    return view('web.consul.peru');    })->name('web.peru');
 Route::get('/uruguay', function () {    return view('web.consul.uruguay');    })->name('web.uruguay');
 Route::get('/venezuela', function () {    return view('web.consul.venezuela');    })->name('web.venezuela');
-
-Route::get('/cacheclear', function(){
-    Artisan::call('cache:clear');
-})->middleware('auth:partner');
-
 
 
 Route::get('getvisits', function () {
