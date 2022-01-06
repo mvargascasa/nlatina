@@ -3,6 +3,9 @@
 namespace App;
 
 // use Illuminate\Database\Eloquent\Model;
+
+use App\Notifications\PartnerResetPasswordNotification;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -23,7 +26,8 @@ class Partner extends Authenticatable
         'email',
         'password', 
         'biography_html',
-        'status', 
+        'status',
+        // 'confirmation_code', 
         'created_at', 
         'updated_at'
     ];
@@ -31,6 +35,11 @@ class Partner extends Authenticatable
     protected $hidden = [
         'password', 'remember_token'
     ];
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PartnerResetPasswordNotification($token));
+    }
 
     //SCOPE
     public function scopeCountry($query, $country){

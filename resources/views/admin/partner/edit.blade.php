@@ -21,7 +21,7 @@
 <div class="container">
 
     <div class="col-12 mt-4">
-        <img style="background-color: black; border-radius: 10px; padding: 10px;" src="{{ asset('img/marca-notaria-latina.png') }}" alt="">
+        <img style="border-radius: 10px; padding: 10px; width: 300px" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt="">
         <h4 style="color: rgb(97, 97, 250); margin-top: 10px; text-align: center">Inscripción para formar parte de nuestro directorio de partners.</h4>
         <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte gratis en Estados Unidos</p>
         <p style="text-align: center; color: red">*Es necesario llenar todos los campos para que tus datos puedan publicarse en nuestro sitio web</p>
@@ -146,7 +146,7 @@
                             </div>
                             <div class="d-flex flex-column float-right">
                                 <div class="form-group">
-                                    {!! Form::submit('Aceptar y Registrarme',  ['class' => 'btn btn-primary']) !!}
+                                    {!! Form::submit('Aceptar y Registrarme',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b']) !!}
                                 </div>
                                 <a style="text-decoration: none; color: black; text-align: end; font-size: 10px" href="#">Términos y condiciones</a>
                                 {!! Form::close() !!}  

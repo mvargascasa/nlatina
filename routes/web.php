@@ -79,10 +79,15 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
     Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform')->middleware('guest:partner'); // MOSTRAR FORMULARIO DE LOGIN
     Route::post('/login', 'LoginController@loginSocios')->name('socios.login');
     Route::post('/registro', 'RegisterController@register')->name('socios.registro'); //REGISTRO DEL SOCIO - WEB
-    Route::get('/edit/{partner}', 'HomeController@edit')->name('socios.edit')->middleware('auth:partner');
+    Route::get('/edit/{partner}', 'HomeController@edit')->name('socios.edit')->middleware(['auth:partner', 'verified']);
     Route::put('/update/{partner}', 'HomeController@update')->name('socios.update')->middleware('auth:partner');
     Route::post('/logout', 'LoginController@logout')->name('socios.logout')->middleware('auth:partner');
-    Route::get('/forgot-password', 'ForgotPasswordController@showLinkRequestForm')->name('socio.show.password.form');
+
+    Route::get('/password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('socio.password.request');
+    Route::post('/password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('socio.password.email');
+
+    Route::get('/password/reset/{token}/{email}', 'ResetPasswordController@showResetForm')->name('socio.password.reset');
+    Route::post('/password/reset', 'ResetPasswordController@reset')->name('socio.password.update');
 });
 // Route::get('/actualizar-informacion/{partner}', 'PartnerController@edit')->name('socios.edit');
 

@@ -7,6 +7,7 @@ use App\Partner;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -21,6 +22,8 @@ class LoginController extends Controller
     }
 
     public function loginSocios(Request $request){
+
+        $remember = $request->filled('remember');
         
         $this->validator($request);
 
@@ -30,7 +33,7 @@ class LoginController extends Controller
             return $this->sendLockoutResponse($request);
         }
 
-        if(Auth::guard('partner')->attempt($request->only('email', 'password'), $request->filled('remember'))){
+        if(Auth::guard('partner')->attempt($request->only('email', 'password'), $remember)){
             
             $request->session()->regenerate();
 
@@ -43,7 +46,10 @@ class LoginController extends Controller
 
         $this->incrementLoginAttempts($request);
 
-        return $this->loginFailed();
+        throw ValidationException::withMessages([
+            'email' => 'Correo y/o contraseña incorrectos'
+        ]);
+        
     }
 
     public function logout(Request $request){
@@ -62,12 +68,13 @@ class LoginController extends Controller
         ];
 
         $messages = [
-            'email.exists' => 'These credentials do not match our records',
+            'email.exists' => '¡Ups! Algo salió mal, intentalo nuevamente',
         ];
 
         $request->validate($rules, $messages);
     }
 
+    //Este metodo no esta siendo utilizado
     public function loginFailed(){
         return redirect()
         ->back()
