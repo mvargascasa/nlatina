@@ -21,7 +21,7 @@
 <div class="container">
 
     <div class="col-12 mt-4">
-        <img style="border-radius: 10px; padding: 10px; width: 300px" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt="">
+        <img style="border-radius: 10px; padding: 10px; width: 250px" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt="">
         <h4 style="color: rgb(97, 97, 250); margin-top: 10px; text-align: center">Inscripción para formar parte de nuestro directorio de partners.</h4>
         <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte gratis en Estados Unidos</p>
         <p style="text-align: center; color: red">*Es necesario llenar todos los campos para que tus datos puedan publicarse en nuestro sitio web</p>
@@ -124,7 +124,7 @@
                                         @if ($partner->img_profile != null)
                                             <img id="picture" class="img-fluid" src="{{ asset('storage/'.$partner->img_profile) }}" alt="No se pudo cargar la imagen">
                                         @else
-                                           <img id="picture" class="img-fluid" src="{{ asset('img/user.webp') }}" alt="No se pudo cargar la imagen">
+                                           <img id="picture" class="img-fluid" src="{{ asset('img/partners/foto-perfil.jpg') }}" alt="No se pudo cargar la imagen">
                                         @endif                    
                                     </div>
                                 </div>
@@ -134,6 +134,9 @@
                                     @error('img_profile')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
+                                    <hr>
+                                    <p style="color: #00223b">Al momento de subir tu foto de perfil puedes tomar como referencia la siguiente imagen</p>
+                                    <i style="color: #00223b; font-weight: bold">"Recuerda que tu imagen es muestra de la calidad de tus servicios"</i>
                                 </div>
                             </div>
 
