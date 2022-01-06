@@ -129,7 +129,9 @@ Route::get('/peru', function () {    return view('web.consul.peru');    })->name
 Route::get('/uruguay', function () {    return view('web.consul.uruguay');    })->name('web.uruguay');
 Route::get('/venezuela', function () {    return view('web.consul.venezuela');    })->name('web.venezuela');
 
-
+Route::get('/cacheclear', function(){
+    Artisan::call('cache:clear');
+})->middleware('auth:partner');
 
 
 
