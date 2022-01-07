@@ -38,6 +38,7 @@
                 </button>.
             </form>
             <p class="mt-3" style="font-weight: bold">Si ya estabas registrado y no recibiste ningun correo, de igual manera da click en el enlace para enviar un link a tu correo y verificar tu cuenta</p>
+            <p style="font-weight: bold">Si el correo no llega a tu Bandeja de Entrada, no olvides revisar tu carpeta de spam</p>
         </div>
     </div>
 
