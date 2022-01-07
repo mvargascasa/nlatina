@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Partner;
 
 use App\Http\Controllers\Controller;
 use App\Partner;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -35,16 +36,12 @@ class RegisterController extends Controller
             'company' => $request['company'],
             'email'=> $request['email'],
             'password'=> bcrypt($request['password']),
-            // 'confirmation_code' => Str::random(25)
         ]);
+
+        event(new Registered($partner));
     
         //Envia correo a los administradores de que se ha registrado un nuevo usuario
         $this->sendEmail($partner);
-
-        //Send verification email
-        // Mail::send('admin.partners.confirmation_code', $request, function ($message) use ($request){
-        //     $message->to($request->email, $request->name)->subject('Por favor confirma tu correo electronico');
-        // });
 
         $this->sendEmailPartner($partner);
 
@@ -54,7 +51,7 @@ class RegisterController extends Controller
     }
 
     public function sendEmail(Partner $partner){
-        $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com";
+        $to = "sebas31051999@gmail.com";
         $subject = 'Registro de Socio - Abogado';
         $message = "<br><strong><h3>Un nuevo socio se ha registrado en nuestra página - Notaria Latina</h3></strong>
                     <br>Nombre: " . strip_tags($partner->name). "

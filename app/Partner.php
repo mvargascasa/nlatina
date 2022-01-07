@@ -4,12 +4,13 @@ namespace App;
 
 // use Illuminate\Database\Eloquent\Model;
 
+use App\Notifications\PartnerEmailVerificationNotification;
 use App\Notifications\PartnerResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Partner extends Authenticatable
+class Partner extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -27,7 +28,6 @@ class Partner extends Authenticatable
         'password', 
         'biography_html',
         'status',
-        // 'confirmation_code', 
         'created_at', 
         'updated_at'
     ];
@@ -36,10 +36,19 @@ class Partner extends Authenticatable
         'password', 'remember_token'
     ];
 
+    protected $casts = [
+        'email_verified_at' => 'datetime'
+    ];
+
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new PartnerResetPasswordNotification($token));
     }
+
+    // public function sendEmailVerificationNotification()
+    // {
+    //     $this->notify(new PartnerEmailVerificationNotification());
+    // }
 
     //SCOPE
     public function scopeCountry($query, $country){

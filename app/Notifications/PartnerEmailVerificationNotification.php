@@ -7,19 +7,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class PartnerResetPasswordNotification extends Notification
+class PartnerEmailVerificationNotification extends Notification
 {
     use Queueable;
 
-    public $token;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($token)
+    public function __construct()
     {
-        $this->token = $token;
+        //
     }
 
     /**
@@ -42,11 +41,11 @@ class PartnerResetPasswordNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Solicitud de restablecimiento de contraseña')
-                    ->greeting('Hola ' . $notifiable->name)
-                    ->line('Te hemos enviado este correo para verificar tu cuenta y puedas restablecer tu contraseña, solamente da click en el siguiente botón')
-                    ->action('Restablecer contraseña', route('socio.password.reset', [$this->token, $notifiable->email]))
-                    ->line('Notaria Latina');
+                ->subject('Verificación de correo')
+                ->greeting('Hola ' . $notifiable->name)
+                ->line('Te hemos enviado este link para verificar tu correo y puedas acceder a tu cuenta, solamente da click en el siguiente botón')
+                ->action('Verificar correo', route('verification.verify'))
+                ->line('Notaria Latina');
     }
 
     /**

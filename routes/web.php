@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\Partner\HomeController;
 
 Auth::routes(['register' => false]);
+
 Route::get('/test', 'LandingController@test');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -75,13 +76,13 @@ Route::get('consulados','WebController@consulados')->name('consul.index');
 Route::get('consulado/{slug}','WebController@consulado')->name('consul.slug');
 
 Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
-    Route::get('/home', 'HomeController@index')->name('socios.index')->middleware('auth:partner');
+    Route::get('/home', 'HomeController@index')->name('socios.index')->middleware(['auth:partner', 'verified']);
     Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform')->middleware('guest:partner'); // MOSTRAR FORMULARIO DE LOGIN
     Route::post('/login', 'LoginController@loginSocios')->name('socios.login');
     Route::post('/registro', 'RegisterController@register')->name('socios.registro'); //REGISTRO DEL SOCIO - WEB
     Route::get('/edit/{partner}', 'HomeController@edit')->name('socios.edit')->middleware(['auth:partner', 'verified']);
-    Route::put('/update/{partner}', 'HomeController@update')->name('socios.update')->middleware('auth:partner');
-    Route::post('/logout', 'LoginController@logout')->name('socios.logout')->middleware('auth:partner');
+    Route::put('/update/{partner}', 'HomeController@update')->name('socios.update')->middleware(['auth:partner', 'verified']);
+    Route::post('/logout', 'LoginController@logout')->name('socios.logout')->middleware(['auth:partner', 'verified']);
 
     Route::get('/password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('socio.password.request');
     Route::post('/password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('socio.password.email');
@@ -89,6 +90,9 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
     Route::get('/password/reset/{token}/{email}', 'ResetPasswordController@showResetForm')->name('socio.password.reset');
     Route::post('/password/reset', 'ResetPasswordController@reset')->name('socio.password.update');
 
+    Route::get('/email/verify', 'VerificationController@show')->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify')->middleware(['signed']);
+    Route::post('/email/resend', 'VerificationController@resend')->name('verification.resend');
 });
 
 // Route::get('cacheclear', function(){

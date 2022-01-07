@@ -41,9 +41,10 @@
 
                             @csrf
                             @method('put')
-
+                            <p style="font-weight: bold">Información Personal</p>
+                            <hr>
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group">
                                         {!! Form::label('name', 'Nombre y Apellido') !!}
                                         {!! Form::text('name', $partner->name, ['class' => 'form-control']) !!}
@@ -52,36 +53,28 @@
                                     @enderror
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        {!! Form::label('specialty', 'Especialidad') !!}
-                                        {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control']) !!}
-                                        @error('specialty')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('company', 'Empresa') !!}
-                                        {!! Form::text('company', $partner->company, ['class' => 'form-control']) !!}
-                                    @error('company')
+                                        {!! Form::label('email', 'Email') !!}
+                                        {!! Form::email('email', $partner->email, ['class' => 'form-control']) !!}
+                                    @error('email')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
+                                {{-- <div class="col-sm-4">
+                                    @php
+                                     $contra = decrypt($partner->password);
+                                     $partner->password = $contra;
+                                    @endphp
                                     <div class="form-group">
-                                        {!! Form::label('nationality', 'Nacionalidad') !!}
-                                        {!! Form::select('nationality', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->nationality, ['class' => 'form-control']) !!}
-                                    @error('nationality')
+                                        {!! Form::label('password', 'Contraseña') !!}
+                                        {!! Form::input('password', 'password', $partner->password, ['class' => 'form-control']) !!}
+                                    @error('password')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         {!! Form::label('country_residence', 'Pais de residencia') !!}
@@ -96,22 +89,47 @@
                                     </div>
                                 </div>
                             </div>
-
+                            
                             <div class="row">
-                                <div class="col-sm-6">
+                                
+                                <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('phone', 'Telefono') !!}
-                                        {!! Form::number('phone', $partner->phone, ['class' => 'form-control']) !!}
-                                    @error('phone')
+                                        {!! Form::label('nationality', 'Nacionalidad') !!}
+                                        {!! Form::select('nationality', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->nationality, ['class' => 'form-control']) !!}
+                                    @error('nationality')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                            </div>
+
+                            <p style="font-weight: bold">Información Profesional</p>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('email', 'Email') !!}
-                                        {!! Form::email('email', $partner->email, ['class' => 'form-control']) !!}
-                                    @error('email')
+                                        {!! Form::label('company', 'Empresa') !!}
+                                        {!! Form::text('company', $partner->company, ['class' => 'form-control']) !!}
+                                    @error('company')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        {!! Form::label('specialty', 'Especialidad') !!}
+                                        {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control']) !!}
+                                        @error('specialty')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        {!! Form::label('phone', 'Telefono') !!}
+                                        {!! Form::number('phone', $partner->phone, ['class' => 'form-control']) !!}
+                                    @error('phone')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     </div>
