@@ -1,5 +1,7 @@
 @extends('admin.partner.layouts.sidebar')
 
+@section('title-socios', 'Editar Socios - Notaria Latina')
+
 @section('scripts')
     <style>
         .image-wrapper{
@@ -18,6 +20,11 @@
 @endsection
 
 @section('content')
+@if (Auth::guard('partner')->user()->id != $partner->id)
+    <div class="display-4 d-flex justify-content-center align-items-center">
+        <span class="text-danger">No estas autorizado para ver este contenido</span>
+    </div>
+@else
 <div class="container">
 
     <div class="col-12 mt-4">
@@ -32,8 +39,11 @@
 
                     <div class="card-body">
                         @if (session('status'))
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 {{ session('status') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                         @endif
 
@@ -62,19 +72,6 @@
                                     @enderror
                                     </div>
                                 </div>
-                                {{-- <div class="col-sm-4">
-                                    @php
-                                     $contra = decrypt($partner->password);
-                                     $partner->password = $contra;
-                                    @endphp
-                                    <div class="form-group">
-                                        {!! Form::label('password', 'Contraseña') !!}
-                                        {!! Form::input('password', 'password', $partner->password, ['class' => 'form-control']) !!}
-                                    @error('password')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                    </div>
-                                </div> --}}
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         {!! Form::label('country_residence', 'Pais de residencia') !!}
@@ -89,23 +86,21 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
-                                
+
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         {!! Form::label('nationality', 'Nacionalidad') !!}
                                         {!! Form::select('nationality', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->nationality, ['class' => 'form-control']) !!}
-                                    @error('nationality')
+                                        @error('nationality')
                                         <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
-
                             <p style="font-weight: bold">Información Profesional</p>
                             <hr>
-
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
@@ -169,7 +164,7 @@
                                 <div class="form-group">
                                     {!! Form::submit('Aceptar y Registrarme',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b']) !!}
                                 </div>
-                                <a style="text-decoration: none; color: black; text-align: end; font-size: 10px" href="#">Términos y condiciones</a>
+                                <a style="text-decoration: none; color: black; text-align: end; font-size: 10px" href="{{ route('web.socios.politicas') }}">Términos y condiciones</a>
                                 {!! Form::close() !!}  
                             </div>
                     </div>
@@ -178,6 +173,7 @@
         </div>
     </div>
 </div>   
+@endif
 @endsection
 
 @section('end-scripts')

@@ -3,6 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+<title>@yield('title-socios')</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
 <style>
 body {
   font-family: "Lato", sans-serif;
@@ -107,6 +109,10 @@ body {
     @yield('content')
 
 </div>
+
+<script defer src="{{asset('js/jquery-3.4.1.min.js')}}" ></script>
+<script defer src="{{asset('js/popper.min.js')}}"></script>
+<script defer src="{{asset('js/bootstrap.min.js')}}"></script>
 
 @yield('end-scripts')
 

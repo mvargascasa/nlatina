@@ -69,6 +69,7 @@
                     </table>
                 </div>
             </div>
+            {{ $partners->links() }}
         </div>
     </div>
 </div>
