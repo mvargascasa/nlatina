@@ -124,5 +124,15 @@
             </div>
         </div>
         @endif
+        @if (session('report'))
+            @php
+                echo "
+                    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+                    <script>
+                        swal('Hemos enviado tu información', 'Nos pondremos en contacto lo antes posible!', 'success');
+                    </script>
+                    ";    
+            @endphp
+        @endif
     </div>
 @endsection

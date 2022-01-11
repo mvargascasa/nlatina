@@ -100,6 +100,7 @@ class WebController extends Controller
                     <br>Nombre: " . strip_tags($request->name). "
                     <br>País de residencia: " . strip_tags($request->country_residence) ."
                     <br>Teléfono: " . strip_tags($request->phone) ."
+                    <br>Mensaje: " . strip_tags($request->mensaje) . "
                     <br>
                     <br><strong><h3>Socio al cual consulta</h3></strong>
                     <br>Nombre: " . strip_tags($partner->name) ."
@@ -116,6 +117,10 @@ class WebController extends Controller
                 ;
         
         mail($to, $subject, $message, $header);
+
+        $request->session()->flash('report', 'Se ha enviado el correo');
+
+        return back();
     }
 
 }
