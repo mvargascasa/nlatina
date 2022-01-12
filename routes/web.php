@@ -95,9 +95,9 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
     Route::post('/email/resend', 'VerificationController@resend')->name('verification.resend');
 });
 
-// Route::get('cacheclear', function(){
-//     Artisan::call('cache:clear');
-// });
+Route::get('cacheclear', function(){
+    Artisan::call('cache:clear');
+});
 
 Route::get('/apostillas', function () {    return view('web.apostillas');    })->name('web.apostillas');
 Route::get('/poderes', function () {    return view('web.poderes');    })->name('web.poderes');
