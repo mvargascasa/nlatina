@@ -273,7 +273,8 @@
                                 </div>
                                 <h5><b>{{ $partner->name }} {{ $partner->lastname }}</b></h5>
                                 <p>{{ $partner->specialty }}</p>
-                                <h6><b>{{ $partner->country_residence }} <img src="{{ asset('img/partners/ecuador.png') }}"/></b></h6>
+                                <h6><b>{{ $partner->country_residence }}</b></h6> 
+                                {{-- <img src="{{ asset('img/partners/ecuador.png') }}"/> --}}
                                 <div class="row mt-5">
                                     <div class="col-sm-6">
                                         <p><i class="fas fa-phone-alt"></i>{{ $partner->phone }}</p>
