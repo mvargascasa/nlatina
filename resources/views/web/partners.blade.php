@@ -269,18 +269,20 @@
                             <div class="layer"></div>
                             <div class="content">
                                 <div class="image">
-                                    <img width="100px" height="150px" src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
+                                    <img width="125px" height="150px" src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
                                 </div>
                                 <h5><b>{{ $partner->name }} {{ $partner->lastname }}</b></h5>
                                 <p>{{ $partner->specialty }}</p>
-                                <h6><b>{{ $partner->country_residence }}</b></h6> 
-                                {{-- <img src="{{ asset('img/partners/ecuador.png') }}"/> --}}
-                                <div class="row mt-5">
-                                    <div class="col-sm-6">
-                                        <p><i class="fas fa-phone-alt"></i>{{ $partner->phone }}</p>
+                                <h6><b>{{ $partner->nationality }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->nationality)).'.png') }}"/></b></h6>
+                                <div class="row mt-4">
+                                    <div class="col-sm-12">
+                                        <p><i class="fas fa-phone-alt"></i> {{ $partner->phone }}</p>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <p class="float-right"><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ $partner->email }}</p>
+                                    <br>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ $partner->email }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -292,7 +294,7 @@
         </div>
         @else
             <div class="row d-flex text-align-center justify-content-center">
-                <div class="alert alert-warning">
+                <div class="alert alert-success">
                     <h4>No se encontraron registros</h4>
                 </div>        
             </div>
