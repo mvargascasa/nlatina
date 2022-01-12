@@ -71,7 +71,14 @@
         </div>
 
         <div class="row mt-5">
-            <div class="col-sm-2">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-7 text-justify border-right">
+                <h6><b>Biografia</b></h6>
+                <div>
+                    {!! $partner->biography_html !!}
+                </div>
+            </div>
+            <div class="col-sm-4">
                 @if (count($specialties) > 0)
                     <div style="color: #9A7A2E">
                         <h6><b>Otras especialidades</b></h6>
@@ -80,14 +87,6 @@
                         @endforeach
                     </div>
                 @endif
-            </div>
-            <div class="col-sm-7 text-justify border-left border-right">
-                <h6><b>Biografia</b></h6>
-                <div>
-                    {!! $partner->biography_html !!}
-                </div>
-            </div>
-            <div class="col-sm-3">
                 <div class="formContact mt-4 rounded">
                     <h5 class="text-white text-center p-3">Realice aquí una consulta</h5>
                     <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
