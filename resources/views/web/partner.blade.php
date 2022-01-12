@@ -64,21 +64,14 @@
                 <p>{{ $partner->specialty }}</p>
                 <br>
                 <div class="row">
-                    <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ $partner->phone }}</p>
+                    <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
                     <p class="float-right ml-5"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p>
                 </div>
             </div>
         </div>
 
         <div class="row mt-5">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-7 text-justify">
-                <h6><b>Biografia</b></h6>
-                <div>
-                    {!! $partner->biography_html !!}
-                </div>
-            </div>
-            <div class="col-sm-4 border-left">
+            <div class="col-sm-2">
                 @if (count($specialties) > 0)
                     <div style="color: #9A7A2E">
                         <h6><b>Otras especialidades</b></h6>
@@ -87,6 +80,14 @@
                         @endforeach
                     </div>
                 @endif
+            </div>
+            <div class="col-sm-7 text-justify border-left border-right">
+                <h6><b>Biografia</b></h6>
+                <div>
+                    {!! $partner->biography_html !!}
+                </div>
+            </div>
+            <div class="col-sm-3">
                 <div class="formContact mt-4 rounded">
                     <h5 class="text-white text-center p-3">Realice aquí una consulta</h5>
                     <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">

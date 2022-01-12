@@ -74,6 +74,18 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
+                                        {!! Form::label('nationality', 'Nacionalidad') !!}
+                                        {!! Form::select('nationality', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->nationality, ['class' => 'form-control']) !!}
+                                        @error('nationality')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
                                         {!! Form::label('country_residence', 'Pais de residencia') !!}
                                     @if ($partner->country_residence != null)
                                         {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->country_residence, ['class' => 'form-control']) !!}    
@@ -85,17 +97,30 @@
                                     @enderror
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row">
-
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('nationality', 'Nacionalidad') !!}
-                                        {!! Form::select('nationality', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->nationality, ['class' => 'form-control']) !!}
-                                        @error('nationality')
+                                        {!! Form::label('city', 'Ciudad') !!}
+                                        @if ($partner->city != null)
+                                        {!! Form::text('city', $partner->city, ['class' => 'form-control']) !!}    
+                                        @else
+                                        {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                                        @endif
+                                    @error('city')
                                         <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                    @enderror
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        {!! Form::label('state', 'Estado / Provincia') !!}
+                                        @if ($partner->state != null)
+                                        {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
+                                        @else
+                                        {!! Form::text('state', null, ['class' => 'form-control']) !!}
+                                        @endif
+                                    @error('city')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                     </div>
                                 </div>
                             </div>
@@ -121,12 +146,29 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="form-group">
-                                        {!! Form::label('phone', 'Telefono') !!}
-                                        {!! Form::number('phone', $partner->phone, ['class' => 'form-control']) !!}
-                                    @error('phone')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                {!! Form::label('codigo_pais', 'Codigo') !!}
+                                                @if ($partner->codigo_pais != null)
+                                                {!! Form::number('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'readonly' => 'readonly']) !!}
+                                                @else
+                                                {!! Form::number('codigo_pais', null, ['class' => 'form-control', 'readonly' => 'readonly']) !!}
+                                                @endif
+                                            @error('codigo_pais')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="form-group">
+                                                {!! Form::label('phone', 'Telefono') !!}
+                                                {!! Form::number('phone', $partner->phone, ['class' => 'form-control']) !!}
+                                            @error('phone')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -182,7 +224,6 @@
         document.addEventListener("DOMContentLoaded", function(event) {
             CKEDITOR.replace('biography_html');
         });
-
         function showPreview(event){
             if(event.target.files.length > 0){
                 var src = URL.createObjectURL(event.target.files[0]);
@@ -190,6 +231,33 @@
                 preview.src = src;
                 preview.style.display = "block";
             }
+        }
+
+        var selectPaisResidencia = document.getElementById('country_residence');
+        var inputCodPais = document.getElementById('codigo_pais');
+        
+        selectPaisResidencia.onchange  = function(e){
+            switch (selectPaisResidencia.value) {
+                case "Argentina":codigo = "+54";break;
+                case "Bolivia":codigo = "+591";break;
+                case "Colombia":codigo = "+57";break;
+                case "Costa Rica":codigo = "+506";break;
+                case "Ecuador":codigo = "+593";break;
+                case "El Salvador":codigo = "+503";break;
+                case "España":codigo = "+34";break;
+                case "Guatemala":codigo = "+502";break;
+                case "Honduras":codigo = "+504";break;
+                case "México":codigo = "+52";break;
+                case "Nicaragua":codigo = "+505";break;
+                case "Panamá":codigo = "+507";break;
+                case "Paraguay":codigo = "+595";break;
+                case "Perú":codigo = "+51";break;
+                case "Puerto Rico":codigo = "+1 787";break;
+                case "República Dominicana":codigo = "+1 809";break;
+                case "Uruguay":codigo = "+598";break;
+                case "Venezuela":codigo = "+58";break;
+            }
+            inputCodPais.value = codigo;
         }
     </script>
 @endsection

@@ -74,7 +74,7 @@ class WebController extends Controller
         $country = $request->get('country');
         $specialty = $request->get('specialty');
 
-        $partners = Partner::select(['id', 'img_profile', 'name', 'specialty', 'nationality', 'phone', 'email'])
+        $partners = Partner::select(['id', 'img_profile', 'name', 'codigo_pais', 'specialty', 'nationality', 'phone', 'email'])
                 ->where('status', 'PUBLICADO')
                 ->orderBy('id', 'DESC')
                 ->country($country)
@@ -88,13 +88,14 @@ class WebController extends Controller
     public function showPartner($id){
         $specialties = Partner::select('specialty')
                     ->distinct()
+                    ->limit(5)
                     ->get();
         $partner = Partner::find($id); 
         return view('web.partner', compact('partner', 'specialties'));
     }
 
     public function sendEmailContact(Request $request, Partner $partner){
-        $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com";
+        $to = "partners@notarialatina.com,hserrano@notarialatina.com";
         $subject = 'Lead para Socio Abogado - Notaria Latina';
         $message = "<br><strong><h3>Datos del cliente</h3></strong>
                     <br>Nombre: " . strip_tags($request->name). "

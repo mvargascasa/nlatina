@@ -81,6 +81,8 @@
             width:100%; 
             height:100%;
             overflow:hidden;
+            display: flex;
+            justify-content: center;
         }
 
         .form{
@@ -276,7 +278,7 @@
                                 <h6><b>{{ $partner->nationality }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->nationality)).'.png') }}"/></b></h6>
                                 <div class="row mt-4">
                                     <div class="col-sm-12">
-                                        <p><i class="fas fa-phone-alt"></i> {{ $partner->phone }}</p>
+                                        <p><i class="fas fa-phone-alt"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
                                     </div>
                                     <br>
                                 </div>
