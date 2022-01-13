@@ -32,6 +32,7 @@ class HomeController extends Controller
                 'country_residence' => 'required',
                 'city' => 'required',
                 'state' => 'required',
+                // 'address' => 'required',
                 'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
@@ -48,6 +49,7 @@ class HomeController extends Controller
                 'country_residence' => 'required',
                 'city' => 'required',
                 'state' => 'required',
+                // 'address' => 'required',
                 'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
@@ -69,7 +71,11 @@ class HomeController extends Controller
         $partner->country_residence = $request->country_residence;
         $partner->city = $request->city;
         $partner->state = $request->state;
-        $partner->codigo_pais = $codigo_pais;
+        // $partner->address = $request->address;
+        // $partner->link_facebook = $request->link_facebook;
+        // $partner->link_instagram = $request->link_instagram;
+        // $partner->link_linkedin = $request->link_linkedin;
+        $partner->codigo_pais = $request->codigo_pais;
         $partner->company = $request->company;
         $partner->phone = $request->phone;
         $partner->email = $request->email;

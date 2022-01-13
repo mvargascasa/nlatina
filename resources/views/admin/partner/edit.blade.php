@@ -118,12 +118,27 @@
                                         @else
                                         {!! Form::text('state', null, ['class' => 'form-control']) !!}
                                         @endif
-                                    @error('city')
+                                    @error('state')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     </div>
                                 </div>
                             </div>
+                            {{-- <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        {!! Form::label('address', 'Dirección') !!}
+                                        @if ($partner->address != null)
+                                        {!! Form::text('address', $partner->address, ['class' => 'form-control']) !!}
+                                        @else
+                                        {!! Form::text('address', null, ['class' => 'form-control']) !!}
+                                        @endif
+                                    @error('address')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    </div>
+                                </div>
+                            </div> --}}
                             <p style="font-weight: bold">Información Profesional</p>
                             <hr>
                             <div class="row">
@@ -147,20 +162,20 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="row">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-5">
                                             <div class="form-group">
-                                                {!! Form::label('codigo_pais', 'Código') !!}
+                                                {!! Form::label('codigo_pais', 'Código País') !!}
                                                 @if ($partner->codigo_pais != null)
-                                                {!! Form::number('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'readonly' => 'readonly']) !!}
+                                                {!! Form::number('codigo_pais', $partner->codigo_pais , ['class' => 'form-control']) !!}
                                                 @else
-                                                {!! Form::number('codigo_pais', null, ['class' => 'form-control', 'readonly' => 'readonly']) !!}
+                                                {!! Form::number('codigo_pais', null, ['class' => 'form-control'        ]) !!}
                                                 @endif
                                             @error('codigo_pais')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             </div>
                                         </div>
-                                        <div class="col-sm-8">
+                                        <div class="col-sm-7">
                                             <div class="form-group">
                                                 {!! Form::label('phone', 'Telefono') !!}
                                                 {!! Form::number('phone', $partner->phone, ['class' => 'form-control']) !!}
