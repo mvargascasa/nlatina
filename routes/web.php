@@ -76,7 +76,7 @@ Route::get('consulados','WebController@consulados')->name('consul.index');
 Route::get('consulado/{slug}','WebController@consulado')->name('consul.slug');
 
 Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
-    Route::get('/home', 'HomeController@index')->name('socios.index')->middleware(['auth:partner', 'verified']);
+    Route::get('/', 'HomeController@index')->name('socios.index')->middleware(['auth:partner', 'verified']);
     Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform')->middleware('guest:partner'); // MOSTRAR FORMULARIO DE LOGIN
     Route::post('/login', 'LoginController@loginSocios')->name('socios.login');
     Route::post('/registro', 'RegisterController@register')->name('socios.registro'); //REGISTRO DEL SOCIO - WEB
@@ -95,7 +95,7 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
     Route::post('/email/resend', 'VerificationController@resend')->name('verification.resend');
 });
 
-Route::get('cacheclear', function(){
+Route::get('/ruta/escondida/cacheclear', function(){
     Artisan::call('cache:clear');
 });
 

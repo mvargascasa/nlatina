@@ -33,5 +33,5 @@ class ResetPasswordController extends Controller
         return Auth::guard('partner');
     }
 
-    protected $redirectTo = "/socios/login";
+    protected $redirectTo = "/partners/login";
 }
