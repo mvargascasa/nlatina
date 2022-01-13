@@ -149,7 +149,7 @@
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                {!! Form::label('codigo_pais', 'Codigo') !!}
+                                                {!! Form::label('codigo_pais', 'Código') !!}
                                                 @if ($partner->codigo_pais != null)
                                                 {!! Form::number('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'readonly' => 'readonly']) !!}
                                                 @else
@@ -197,7 +197,7 @@
 
                             <div class="form-group">
                                 {!! Form::label('biography_html', 'Biografia (Descripción de trayectoria y experiencia en su área)') !!}
-                                {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4', 'onkeyup' => 'countChars(this);']) !!}
+                                {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4']) !!}
                                 @error('biography_html')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -252,8 +252,8 @@
                 case "Panamá":codigo = "+507";break;
                 case "Paraguay":codigo = "+595";break;
                 case "Perú":codigo = "+51";break;
-                case "Puerto Rico":codigo = "+1 787";break;
-                case "República Dominicana":codigo = "+1 809";break;
+                case "Puerto Rico":codigo = "+1787";break;
+                case "República Dominicana":codigo = "+1809";break;
                 case "Uruguay":codigo = "+598";break;
                 case "Venezuela":codigo = "+58";break;
             }
