@@ -11,7 +11,7 @@ class VerificationController extends Controller
 {
     use VerifiesEmails, RedirectsUsers;
 
-    protected $redirectTo = "/socios/login";
+    protected $redirectTo = "/partners/login";
 
     public function __construct()
     {

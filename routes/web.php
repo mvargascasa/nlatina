@@ -75,7 +75,7 @@ Route::get('blog','WebController@showblog')->name('post.blog');
 Route::get('consulados','WebController@consulados')->name('consul.index');
 Route::get('consulado/{slug}','WebController@consulado')->name('consul.slug');
 
-Route::group(['namespace' => 'Partner', 'prefix' => 'socios'], function(){
+Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
     Route::get('/home', 'HomeController@index')->name('socios.index')->middleware(['auth:partner', 'verified']);
     Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform')->middleware('guest:partner'); // MOSTRAR FORMULARIO DE LOGIN
     Route::post('/login', 'LoginController@loginSocios')->name('socios.login');
@@ -111,10 +111,10 @@ Route::get('/contratos', function () {    return view('web.contratos');    })->n
 Route::get('/poderes-especiales', function () {    return view('web.poderesp');    })->name('web.poderesp');
 Route::get('/revocatorias', function () {    return view('web.revocatorias');    })->name('web.revocatorias');
 Route::get('/testamentos', function () {    return view('web.testamentos');    })->name('web.testamentos');
-Route::get('/socios/politicas-de-privacidad', function(){ return view('web.politicasocios');})->name('web.socios.politicas');
-Route::get('/socios', 'WebController@showAllPartners')->name('web.showallpartners');
-Route::get('/socios/{partner}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
-Route::post('/socios-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');
+Route::get('/partners/politicas-de-privacidad', function(){ return view('web.politicasocios');})->name('web.socios.politicas');
+Route::get('/partners', 'WebController@showAllPartners')->name('web.showallpartners');
+Route::get('/partners/{partner}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
+Route::post('/partners-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');
 
 Route::get('/thankpartner', function(){return view('web.thankpartner');});
 

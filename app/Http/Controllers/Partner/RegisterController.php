@@ -51,16 +51,17 @@ class RegisterController extends Controller
     }
 
     public function sendEmail(Partner $partner){
+        $codigo_pais = $this->getCodigoPais($partner->nationality);
         $to = "partners@notarialatina.com,hserrano@notarialatina.com";
-        $subject = 'Registro de Socio - Abogado';
-        $message = "<br><strong><h3>Un nuevo socio se ha registrado en nuestra página - Notaria Latina</h3></strong>
+        $subject = 'Registro de Partner - Abogado';
+        $message = "<br><strong><h2>Un nuevo partner se ha registrado en nuestra página - Notaria Latina</h2></strong>
                     <br>Nombre: " . strip_tags($partner->name). "
                     <br>Nacionalidad: " . strip_tags($partner->nationality) ."
-                    <br>Teléfono: " . strip_tags($partner->phone) ."
+                    <br>Teléfono: ". strip_tags($codigo_pais) . " " .  strip_tags($partner->phone) ."
                     <br>Email: " . strip_tags($partner->email)."
                     <br>Empresa: " . strip_tags($partner->company)."
                     <br>
-                    <img style='background-color: black; border-radius: 10px; padding: 10px; margin-top:20px' src='https://notarialatina.com/img/marca-notaria-latina.png' alt='IMAGEN NOTARIA LATINA'>
+                    <img style='margin-top:20px; width:210px; height:75px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";
 
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
@@ -101,5 +102,33 @@ class RegisterController extends Controller
 
         mail($partner->email, $subject, $message, $header);
 
+    }
+
+    public function getCodigoPais($pais){
+        switch ($pais) {
+            case 'Argentina': $codigo_pais = "+54"; break;
+            case 'Bolivia': $codigo_pais = "+591"; break;
+            case 'Colombia': $codigo_pais = "+57"; break;
+            case 'Costa Rica': $codigo_pais = "+506"; break;
+            case 'Ecuador': $codigo_pais = "+593"; break;
+            case 'El Salvador': $codigo_pais = "+503"; break;
+            case 'España': $codigo_pais = "+34"; break;
+            case 'Estados Unidos': $codigo_pais = "+1"; break;
+            case 'Guatemala': $codigo_pais = "+502"; break;
+            case 'Honduras': $codigo_pais = "+504"; break;
+            case 'México': $codigo_pais = "+52"; break;
+            case 'Nicaragua': $codigo_pais = "+505"; break;
+            case 'Panamá': $codigo_pais = "+507"; break;
+            case 'Paraguay': $codigo_pais = "+595"; break;
+            case 'Perú': $codigo_pais = "+51"; break;
+            case 'Puerto Rico': $codigo_pais = "+1 787"; break;
+            case 'República Dominicana': $codigo_pais = "+1 809"; break;
+            case 'Uruguay': $codigo_pais = "+598"; break;
+            case 'Venezuela': $codigo_pais = "+58"; break;
+            default:
+                # code...
+                break;
+        }
+        return $codigo_pais;
     }
 }

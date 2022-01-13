@@ -129,7 +129,7 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('company', 'Empresa') !!}
+                                        {!! Form::label('company', 'Empresa y/o Nombre del titular') !!}
                                         {!! Form::text('company', $partner->company, ['class' => 'form-control']) !!}
                                     @error('company')
                                         <span class="text-danger">{{ $message }}</span>
@@ -197,7 +197,7 @@
 
                             <div class="form-group">
                                 {!! Form::label('biography_html', 'Biografia (Descripción de trayectoria y experiencia en su área)') !!}
-                                {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4']) !!}
+                                {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4', 'onkeyup' => 'countChars(this);']) !!}
                                 @error('biography_html')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -219,7 +219,7 @@
 @endsection
 
 @section('end-scripts')
-    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             CKEDITOR.replace('biography_html');

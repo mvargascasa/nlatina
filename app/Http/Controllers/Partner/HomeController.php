@@ -60,7 +60,7 @@ class HomeController extends Controller
             $partner->img_profile = $url;
         }
 
-        $codigo_pais = $this->getCodigoPais($request->country_residence);
+        $codigo_pais = $this->getPaisByCodigo($request->country_residence);
 
         
         $partner->name = $request->name;
@@ -81,7 +81,7 @@ class HomeController extends Controller
         
     }
 
-    public function getCodigoPais($pais){
+    public function getPaisByCodigo($pais){
         switch ($pais) {
             case 'Argentina': $codigo_pais = "+54"; break;
             case 'Bolivia': $codigo_pais = "+591"; break;

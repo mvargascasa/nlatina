@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('header')
-    <title>Socios de Casa Credito Promotora</title>
+    <title>Abogados y Notarias en Latinoamérica a su alcance</title>
     <meta name="description" content="Socios de Casa Credito Promotora">
     <style>
         .testimotionals {
@@ -53,6 +53,7 @@
         .testimotionals .card .content p{
             font-size:14px;
             color:rgb(0, 0, 0);
+            text-align: left; /*LE AGREGUE ESTO PARA QUE SE JUSTIFIQUE A LA IZQUIERDA*/
         }
         .testimotionals .card:hover .content p{
             font-size:14px;
@@ -134,7 +135,7 @@
     <div>
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-sm-6 col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title titulo">¡Abogados en Latinoamérica <br> a su alcance!</h1>
+              <h1 class="font-weight-bold heading-title titulo">¡Abogados y Notarias<br>en Latinoamérica a su alcance!</h1>
             </div>
             <div class="col-sm-6">
                 <div class="text-center form" style="background-color: #002542;">
