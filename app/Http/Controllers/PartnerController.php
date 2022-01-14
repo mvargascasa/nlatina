@@ -78,11 +78,14 @@ class PartnerController extends Controller
      */
     public function update(Request $request, Partner $partner)
     {        
+        // return $request;
         $request->validate([
-            'status' => 'required'
+            'status' => 'required',
+            'specialty' => 'required'
         ]);
         
         $partner->status = $request->status;
+        $partner->specialty = $request->specialty;
         
         $partner->save();
         

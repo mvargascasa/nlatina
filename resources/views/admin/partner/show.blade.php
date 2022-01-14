@@ -5,79 +5,12 @@
 @endsection
 
 @section('content')
-    <div class="container mt-5">
+    <div class="container mt-5 ">
         <h1>Perfil del Socio {{ $partner->name}}</h1>
-            <div class="row"> 
-                <div class="col-sm-4 float-end">
-                    <div class="form-group">
-                        {!! Form::open(['route' => ['partner.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'POST']) !!}
-
-                                @csrf
-                                @method('put')
-
-                                {{-- <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            {!! Form::hidden('name', $partner->name) !!}
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            {!! Form::hidden('lastname', $partner->lastname) !!}
-                                        </div>
-                                    </div>
-                                </div> --}}
-
-                                {{-- <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            {!! Form::hidden('specialty', $partner->specialty) !!}
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            {!! Form::hidden('country_residence', $partner->country_residence) !!}
-                                        </div>
-                                    </div>
-                                </div> --}}
-
-                                {{-- <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            {!! Form::hidden('phone', $partner->phone) !!}
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            {!! Form::hidden('email', $partner->email) !!}
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                {{-- <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        {!! Form::hidden('img_profile', $partner->img_profile) !!}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    {!! Form::hidden('biography_html', $partner->biography_html) !!}
-                                </div> --}}
-                                <div class="d-flex">
-                                    <div>
-                                        {{-- {!! Form::label('status', 'Estado') !!} --}}
-                                        {!! Form::select('status',[null => 'SELECCIONE', 'NO PUBLICADO' => 'NO PUBLICADO','PUBLICADO' => 'PUBLICADO'], $partner->status,    ['class' => 'form-control custom-select']) !!}
-                                    @error('status')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                    </div>
-                                    <div class="form-group mx-3">
-                                        {!! Form::submit('Guardar',  ['class' => 'btn btn-primary']) !!}
-                                    </div>
-                                    {!! Form::close() !!}  
-                                </div>            
-                </div>
-            </div>
-        </div>
-        <div class="mt-5 border p-5">
+        <div class="form-group mt-5 border p-5">
+            {!! Form::open(['route' => ['partner.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'POST']) !!}
+            @csrf
+            @method('put')
             <div class="row">
                 <div class="col-sm-4">
                     @isset($partner->img_profile)
@@ -87,6 +20,18 @@
                     @endisset
                 </div>
                 <div class="col-sm-8">
+                    <div class="d-flex">
+                        <div>
+                            {!! Form::select('status',[null => 'SELECCIONE', 'NO PUBLICADO' => 'NO PUBLICADO','PUBLICADO' => 'PUBLICADO'], $partner->status,    ['class' => 'form-control custom-select']) !!}
+                        @error('status')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                        </div>
+                        <div class="form-group mx-3">
+                            {!! Form::submit('Guardar',  ['class' => 'btn btn-primary']) !!}
+                        </div>
+                    </div>
+                    
                     <h4 class="mt-4">Nombre: {{ $partner->name}} {{$partner->lastname}}</h4>
                     <h5 class="mt-4">
                         Teléfono: {{ $partner->phone}}
@@ -102,14 +47,19 @@
                         <b>Sin información</b>
                         @endisset
                     </h5>
-                    <h5 class="mt-4">
-                        Especialidad: 
-                        @isset($partner->specialty)
-                        {{ $partner->specialty}}
-                        @else
-                        <b>Sin información</b>
-                        @endisset
-                    </h5>
+                        <div class="form-group">
+                            {!! Form::label('specialty', 'Especialidad(es)') !!}
+                            @isset ($partner->specialty)
+                            {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control']) !!}
+                            @else
+                            {!! Form::text('specialty', null, ['class' => 'form-control']) !!}
+                            @endisset   
+                            @error('specialty')
+                                <div>
+                                    <span class="text-danger">{{ $message }}</span>
+                                </div>
+                            @enderror   
+                        </div>
                 </div>
             </div>
             <div class="row mt-4">
@@ -122,6 +72,8 @@
                     <p><b>Sin información</b></p>
                 @endisset
             </div>
+            {{-- {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!} --}}
+            {!! Form::close() !!}  
         </div>
     </div>
 @endsection
