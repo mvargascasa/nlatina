@@ -34,6 +34,11 @@
         .testimotionals .card .content {
             z-index:2; 
             position:relative;
+            color: black;
+        }
+
+        .testimotionals .card .content:hover {
+            color: white;
         }
 
         .testimotionals .card:hover  .layer{
@@ -275,14 +280,17 @@
                                     <img width="125px" height="150px" src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
                                 </div>
                                 <h5><b>{{ $partner->name }} {{ $partner->lastname }}</b></h5>
-                                <p>{{ $partner->specialty }}</p>
-                                <h6><b>{{ $partner->nationality }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->nationality)).'.png') }}"/></b></h6>
+                                {{-- <p>{{ $partner->specialty }}</p> --}}
+                                @foreach ($partner->specialties as $specialty)
+                                • {{ $specialty->name_specialty }}
+                                @endforeach
+                                <h6 class="mt-2"><b>{{ $partner->nationality }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->nationality)).'.png') }}"/></b></h6>
                                 <div class="row mt-4">
                                     <div class="col-sm-12">
                                         <p><i class="fas fa-phone-alt"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
                                     </div>
                                     <br>
-                                </div>
+                                </div>	
                                 <div class="row">
                                     <div class="col">
                                         <p><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ $partner->email }}</p>
