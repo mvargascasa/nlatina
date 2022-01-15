@@ -86,12 +86,8 @@ class WebController extends Controller
     }
 
     public function showPartner($id){
-        $specialties = Partner::select('specialty')
-                    ->distinct()
-                    ->limit(5)
-                    ->get();
         $partner = Partner::find($id); 
-        return view('web.partner', compact('partner', 'specialties'));
+        return view('web.partner', compact('partner'));
     }
 
     public function sendEmailContact(Request $request, Partner $partner){

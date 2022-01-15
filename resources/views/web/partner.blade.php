@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('header')
-    <title>Socios de Casa Credito Promotora - Nombre del socio*</title>
+    <title>Partners de Casa Credito Promotora</title>
     <style>
         .bg-header{
             background-color: #002542;
@@ -45,6 +45,10 @@
             margin-left: 2.5px;
         }
 
+        .social{
+            color: #9A7A2E;
+        }
+
     </style>
 @endsection
 
@@ -61,7 +65,7 @@
             <div class="col-sm-6 mt-3 info-header">
                 <h3><b>{{ $partner->name }} {{ $partner->lastname }}</b></h3>
                 <p>{{ $partner->country_residence}}</p>
-                <p>{{ $partner->specialty }}</p>
+                <p>{{ $partner->company }}</p>
                 <br>
                 <div class="row">
                     <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
@@ -77,16 +81,42 @@
                 <div>
                     {!! $partner->biography_html !!}
                 </div>
+                <div style="color: #9A7A2E">
+                    <h6><b>Área</b></h6>
+                    @foreach ($partner->specialties as $specialty)
+                        <p><i class="fas fa-check"></i> {{$specialty->name_specialty }}</p>
+                    @endforeach
+                </div>
+                <div style="color: #9A7A2E">
+                    <h6><b>Especialidades</b></h6>
+                    <p>{{ $partner->specialty }}</p>
+                </div>
             </div>
             <div class="col-sm-4">
-                @if (count($specialties) > 0)
-                    <div style="color: #9A7A2E">
-                        <h6><b>Otras especialidades</b></h6>
-                        @foreach ($specialties as $specialty)
-                            <p>{{ $specialty->specialty }}</p>
-                        @endforeach
-                    </div>
-                @endif
+                <div style="color: #9A7A2E">
+                    @isset($partner->address)
+                        <h6 style="font-weight: bold"><i class="fas fa-map-marker-alt"></i> Dirección</h6>
+                        <p>{{ $partner->address}}</p>
+                    @endisset
+                    @isset($partner->website)
+                        <h6 style="font-weight: bold"><i class="fas fa-globe"></i> Sitio web</h6>
+                        <a target="_blank" style="color: #9A7A2E" href="{{$partner->website}}">{{ $partner->website }}</a>
+                    @endisset
+                    @if($partner->link_facebook != null || $partner->link_instagram != null || $partner->link_linkedin != null)
+                        <h6 style="font-weight: bold; margin-top: 10px">Redes Sociales</h6>
+                        <div style="margin-top: 20px">
+                            @isset ($partner->link_facebook)
+                                <a target="_blank" class="social" href="{{$partner->link_facebook}}"><i class="fab fa-facebook-square fa-2x"></i></a>
+                            @endisset
+                            @isset($partner->link_instagram)
+                                <a target="_blank" class="social" href="{{$partner->link_instagram}}"><i class="fab fa-instagram fa-2x"></i></a>
+                            @endisset
+                            @isset($partner->link_linkedin)
+                                <a target="_blank" class="social" href="{{ $partner->link_linkedin}}"><i class="fab fa-linkedin fa-2x"></i></a>
+                            @endisset
+                        </div>
+                    @endif
+                </div>
                 <div class="formContact mt-4 rounded">
                     <h5 class="text-white text-center p-3">Realice aquí una consulta</h5>
                     <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">

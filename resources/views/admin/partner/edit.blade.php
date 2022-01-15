@@ -47,7 +47,7 @@
                             </div>
                         @endif
 
-                        {!! Form::open(['route' => ['socios.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'POST']) !!}
+                        {!! Form::model($partner, ['route' => ['socios.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'put']) !!}
 
                             @csrf
                             @method('put')
@@ -99,19 +99,6 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('city', 'Ciudad') !!}
-                                        @if ($partner->city != null)
-                                        {!! Form::text('city', $partner->city, ['class' => 'form-control']) !!}    
-                                        @else
-                                        {!! Form::text('city', null, ['class' => 'form-control']) !!}
-                                        @endif
-                                    @error('city')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="form-group">
                                         {!! Form::label('state', 'Estado / Provincia') !!}
                                         @if ($partner->state != null)
                                         {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
@@ -123,8 +110,21 @@
                                     @enderror
                                     </div>
                                 </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        {!! Form::label('city', 'Ciudad') !!}
+                                        @if ($partner->city != null)
+                                        {!! Form::text('city', $partner->city, ['class' => 'form-control']) !!}    
+                                        @else
+                                        {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                                        @endif
+                                    @error('city')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    </div>
+                                </div>
                             </div>
-                            {{-- <div class="row">
+                            <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         {!! Form::label('address', 'Dirección') !!}
@@ -138,29 +138,7 @@
                                     @enderror
                                     </div>
                                 </div>
-                            </div> --}}
-                            <p style="font-weight: bold">Información Profesional</p>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        {!! Form::label('company', 'Empresa y/o Nombre del titular') !!}
-                                        {!! Form::text('company', $partner->company, ['class' => 'form-control']) !!}
-                                    @error('company')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        {!! Form::label('specialty', 'Especialidad') !!}
-                                        {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control']) !!}
-                                        @error('specialty')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <div class="row">
                                         <div class="col-sm-5">
                                             <div class="form-group">
@@ -168,7 +146,7 @@
                                                 @if ($partner->codigo_pais != null)
                                                 {!! Form::number('codigo_pais', $partner->codigo_pais , ['class' => 'form-control']) !!}
                                                 @else
-                                                {!! Form::number('codigo_pais', null, ['class' => 'form-control'        ]) !!}
+                                                {!! Form::number('codigo_pais', null, ['class' => 'form-control']) !!}
                                                 @endif
                                             @error('codigo_pais')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -187,7 +165,102 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <p style="font-weight: bold">Redes Sociales</p>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        {!! Form::label('link_facebook', 'Link de perfil de Facebook') !!} <i class="fab fa-facebook-square"></i>
+                                        @if ($partner->link_facebook != null)
+                                        {!! Form::text('link_facebook', $partner->link_facebook, ['class' => 'form-control']) !!}
+                                        @else
+                                        {!! Form::text('link_facebook', null, ['class' => 'form-control']) !!}
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        {!! Form::label('link_instagram', 'Link de perfil de Instagram') !!} <i class="fab fa-instagram"></i>
+                                        @if ($partner->link_instagram != null)
+                                        {!! Form::text('link_instagram', $partner->link_instagram, ['class' => 'form-control']) !!}
+                                        @else
+                                        {!! Form::text('link_instagram', null, ['class' => 'form-control']) !!}
+                                        @endif
+                                    </div>                            
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        {!! Form::label('link_linkedin', 'Link de perfil de LinkedIn') !!} <i class="fab fa-linkedin"></i>
+                                        @if ($partner->link_linkedin != null)
+                                        {!! Form::text('link_linkedin', $partner->link_linkedin, ['class' => 'form-control']) !!}
+                                        @else
+                                        {!! Form::text('link_linkedin', null, ['class' => 'form-control']) !!}
+                                        @endif
+                                    </div>                            
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        {!! Form::label('website', 'Sitio Web') !!} <i class="fas fa-globe"></i>
+                                        @if ($partner->website != null)
+                                        {!! Form::text('website', $partner->website, ['class' => 'form-control']) !!}
+                                        @else
+                                        {!! Form::text('website', null, ['class' => 'form-control']) !!}
+                                        @endif
+                                    </div>  
+                                </div>
+                            </div>
+
+                            <p style="font-weight: bold">Información Profesional</p>
+                            <hr>
                             
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        {!! Form::label('company', 'Empresa y/o Nombre del titular') !!}
+                                        {!! Form::text('company', $partner->company, ['class' => 'form-control']) !!}
+                                    @error('company')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+                            {{--EMPIEZA CHECKBOXES--}}
+                            <p>Área de especialización <b>(Escoja entre 1 a 3 opciones)</b></p>
+                            <div class="form-group">
+                                <div class="row">
+                                        @foreach ($specialties as $specialty)
+                                        <div class="col-sm-4">
+                                            <label for="specialties">
+                                                {!! Form::checkbox('specialties[]', $specialty->id, null) !!}
+                                                {{ $specialty->name_specialty}}
+                                            </label>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                    @error('specialties')
+                                    <div>
+                                        <span class="text-danger">{{ $message }}</span>
+                                    </div>
+                                    @enderror
+                            </div>
+                            {{--TERMINA CHECKBOXES--}}
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        {!! Form::label('specialty', 'Especialidad(es)') !!} <b>(Descripción más detallada sus especialidades)</b>
+                                        {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control']) !!}
+                                        @error('specialty')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-row pt-4">
                                 <div class="col-md-6">
                                     <div class="image-wrapper d-flex justify-content-center">
@@ -211,7 +284,7 @@
                             </div>
 
                             <div class="form-group">
-                                {!! Form::label('biography_html', 'Biografia (Descripción de trayectoria y experiencia en su área)') !!}
+                                {!! Form::label('biography_html', 'Biografia') !!} <b>(Descripción de trayectoria y experiencia en su área)</b>
                                 {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4']) !!}
                                 @error('biography_html')
                                     <span class="text-danger">{{ $message }}</span>
@@ -273,6 +346,30 @@
                 case "Venezuela":codigo = "+58";break;
             }
             inputCodPais.value = codigo;
+        }
+
+        var divOtherSpecialty = document.getElementById('otherSpecialty');
+        var inputAnotherArea = document.getElementById('input_another_area');
+
+        function carg(elemento) {
+            d = elemento.value;
+            var valueAnotherArea = "";
+
+            switch (d) {
+                case "Derecho Constitucional":valueAnotherArea = d;break;
+                case "Derecho Administrativo":valueAnotherArea = d;break;
+                case "Derecho Procesal":valueAnotherArea = d;break;
+                case "Derecho Penal":valueAnotherArea = d;break;
+                case "Derecho Laboral":valueAnotherArea = d;break;
+                case "Derecho Tributario":valueAnotherArea = d;break;
+                case "Derecho Internacional Público":valueAnotherArea = d;break;
+                case "Derecho Mercantil":valueAnotherArea = d;break;
+                case "Derecho Civil":valueAnotherArea = d;break;
+                case "Derecho Internacional Privado":valueAnotherArea = d;break;
+                case "Derecho Internacional Privado":valueAnotherArea = valueAnotherArea;break;
+            }
+
+            inputAnotherArea.value = valueAnotherArea;
         }
     </script>
 @endsection

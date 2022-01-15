@@ -72,7 +72,6 @@
                     <p><b>Sin información</b></p>
                 @endisset
             </div>
-            {{-- {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!} --}}
             {!! Form::close() !!}  
         </div>
     </div>

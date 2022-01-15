@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Partner;
 
 use App\Http\Controllers\Controller;
 use App\Partner;
+use App\Specialty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -16,8 +17,9 @@ class HomeController extends Controller
     }
 
     public function edit(Partner $partner)
-    {
-        return view('admin.partner.edit', compact('partner'));
+    { 
+        $specialties = Specialty::all();
+        return view('admin.partner.edit', compact('partner', 'specialties'));
     }
     
     public function update(Partner $partner, Request $request)
@@ -29,34 +31,38 @@ class HomeController extends Controller
                 'name' => 'required',
                 'nationality' => 'required',
                 'specialty' => 'required',
+                'specialties' => 'required|max:3',
                 'country_residence' => 'required',
                 'city' => 'required',
                 'state' => 'required',
-                // 'address' => 'required',
+                'address' => 'required',
                 'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'image',
                 'biography_html' => 'required|min:700',
             ], [
-                'biography_html.min' => 'La biografia debe tener al menos 700 caracteres'
+                'biography_html.min' => 'La biografia debe tener al menos 700 caracteres',
+                'specialties.max' => 'No debe seleccionar más de tres campos'
             ]);
         } else {
             $request->validate([
                 'name' => 'required',
                 'nationality' => 'required',
                 'specialty' => 'required',
+                'specialties' => 'required|max:3 ',
                 'country_residence' => 'required',
                 'city' => 'required',
                 'state' => 'required',
-                // 'address' => 'required',
+                'address' => 'required',
                 'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'required|image',
                 'biography_html' => 'required|min:700',
             ], [
-                'biography_html.min' => 'La biografia debe tener al menos 700 caracteres'
+                'biography_html.min' => 'La biografia debe tener al menos 700 caracteres',
+                'specialties.max' => 'No debe seleccionar más de tres campos'
             ]);
             $url = Storage::put('partners', $request->file('img_profile'));
             $partner->img_profile = $url;
@@ -64,6 +70,10 @@ class HomeController extends Controller
 
         $codigo_pais = $this->getPaisByCodigo($request->country_residence);
 
+        if($request->specialties){
+            $partner->specialties()->detach();
+            $partner->specialties()->attach($request->specialties);
+        }
         
         $partner->name = $request->name;
         $partner->nationality = $request->nationality;
@@ -71,10 +81,11 @@ class HomeController extends Controller
         $partner->country_residence = $request->country_residence;
         $partner->city = $request->city;
         $partner->state = $request->state;
-        // $partner->address = $request->address;
-        // $partner->link_facebook = $request->link_facebook;
-        // $partner->link_instagram = $request->link_instagram;
-        // $partner->link_linkedin = $request->link_linkedin;
+        $partner->address = $request->address;
+        $partner->link_facebook = $request->link_facebook;
+        $partner->link_instagram = $request->link_instagram;
+        $partner->link_linkedin = $request->link_linkedin;
+        $partner->website = $request->website;
         $partner->codigo_pais = $request->codigo_pais;
         $partner->company = $request->company;
         $partner->phone = $request->phone;

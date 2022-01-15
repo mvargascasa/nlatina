@@ -24,6 +24,11 @@ class Partner extends Authenticatable implements MustVerifyEmail
         'country_residence',
         'city',
         'state',
+        'address',
+        'link_facebook',
+        'link_instagram',
+        'link_linkedin',
+        'website',
         'codigo_pais',
         'company',
         'phone', 
@@ -47,12 +52,7 @@ class Partner extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new PartnerResetPasswordNotification($token));
     }
-
-    // public function sendEmailVerificationNotification()
-    // {
-    //     $this->notify(new PartnerEmailVerificationNotification());
-    // }
-
+    
     //SCOPE
     public function scopeCountry($query, $country){
         if ($country) {
@@ -64,5 +64,9 @@ class Partner extends Authenticatable implements MustVerifyEmail
         if ($specialty) {
             return $query->where('specialty', 'LIKE', "%$specialty%");
         }
+    }
+
+    public function specialties(){
+        return $this->belongsToMany(Specialty::class);
     }
 }
