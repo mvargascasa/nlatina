@@ -231,7 +231,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
-                        {!! Form::label('specialty', 'Especialidad(es)') !!}
+                        {!! Form::label('specialty', 'Especialidad(es)') !!} <b>(Descripción más detallada)</b>
                         @isset ($partner->specialty)
                         {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control']) !!}
                         @else
