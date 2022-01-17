@@ -91,6 +91,8 @@ class WebController extends Controller
     }
 
     public function sendEmailContact(Request $request, Partner $partner){
+
+        //ENVIO A NOTARIA LATINA
         $to = "partners@notarialatina.com,hserrano@notarialatina.com";
         $subject = 'Lead para Socio Abogado - Notaria Latina';
         $message = "<br><strong><h3>Datos del cliente</h3></strong>
@@ -105,7 +107,7 @@ class WebController extends Controller
                     <br>Teléfono: " . strip_tags($partner->phone) ."
                     <br>Email: " . strip_tags($partner->email) ."
                     <br>
-                    <img style='background-color: black; border-radius: 10px; padding: 10px; margin-top:20px' src='https://notarialatina.com/img/marca-notaria-latina.png' alt='IMAGEN NOTARIA LATINA'>
+                    <img style='margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";
 
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
@@ -115,9 +117,30 @@ class WebController extends Controller
         
         mail($to, $subject, $message, $header);
 
+        //ENVIO AL PARTNER
+        $toPartner = $partner->email;
+        $subjectPartner = 'Nuevo Cliente - Notaria Latina';
+        $messagePartner = "<br><strong><h3>Un nuevo cliente a consultado por tus servicios</h3></strong>
+                    <br><strong><h3>Datos del cliente</h3></strong>
+                    <br>Nombre: " . strip_tags($request->name). "
+                    <br>País de residencia: " . strip_tags($request->country_residence) ."
+                    <br>Teléfono: " . strip_tags($request->phone) ."
+                    <br>Mensaje: " . strip_tags($request->mensaje) . "
+                    <br>
+                    <img style='margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+        ";
+
+        $headerPartner = 'From: <partners@notarialatina.com>' . "\r\n" .
+                'MIME-Version: 1.0' . "\r\n".
+                'Content-type:text/html;charset=UTF-8' . "\r\n"
+                ;
+        
+        mail($toPartner, $subjectPartner, $messagePartner, $headerPartner);
+
         $request->session()->flash('report', 'Se ha enviado el correo');
 
         return back();
     }
 
+    //partners@notarialatina.com,hserrano@notarialatina.com
 }
