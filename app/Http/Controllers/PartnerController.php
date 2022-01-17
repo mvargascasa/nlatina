@@ -96,6 +96,18 @@ class PartnerController extends Controller
         //     'specialty' => 'required',
         //     'biography_html' => 'required'
         // ]);
+        if($request->img_profile == null && $partner->img_profile != null){
+            $request->img_profile = $partner->img_profile;
+            $request->validate([
+                'img_profile' => 'image',
+            ]);
+        } else {
+            $request->validate([
+                'img_profile' => 'required|image',
+            ]);
+            $url = Storage::put('partners', $request->file('img_profile'));
+            $partner->img_profile = $url;
+        }
 
         if($request->specialties){
             $partner->specialties()->detach();

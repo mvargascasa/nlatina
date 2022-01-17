@@ -13,11 +13,20 @@
             @method('put')
             <div class="row">
                 <div class="col-sm-3">
-                    @isset($partner->img_profile)
-                        <img class="img-fluid" width="200" height="150" src="{{ asset('storage/'.$partner->img_profile) }}" alt="No se pudo cargar la imagen">
-                    @else
-                        <img class="img-fluid" src="{{ asset('img/user.webp') }}" width="200" height="150" alt="No se pudo cargar la imagen">
-                    @endisset
+                    <div>
+                        @isset($partner->img_profile)
+                            <img id="picture" class="img-fluid" width="200" height="150" src="{{ asset('storage/'.$partner->img_profile) }}" alt="No se pudo cargar la imagen">
+                        @else
+                            <img id="picture" class="img-fluid" src="{{ asset('img/user.webp') }}" width="200" height="150" alt="No se pudo cargar la imagen">
+                        @endisset
+                    </div>
+                    <div class="form-group col-md-6">
+                        {!! Form::label('img_profile', 'Imagen de perfil') !!}
+                        {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);']) !!}
+                        @error('img_profile')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
                 <div class="col-sm-9">
                     <div class="d-flex">
@@ -270,6 +279,15 @@
         document.addEventListener("DOMContentLoaded", function(event) {
             CKEDITOR.replace('biography_html');
         });
+
+        function showPreview(event){
+            if(event.target.files.length > 0){
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview  = document.getElementById("picture");
+                preview.src = src;
+                preview.style.display = "block";
+            }
+        }
 
         var selectPaisResidencia = document.getElementById('country_residence');
         var inputCodPais = document.getElementById('codigo_pais');
