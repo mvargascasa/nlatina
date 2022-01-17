@@ -348,29 +348,29 @@
             inputCodPais.value = codigo;
         }
 
-        var divOtherSpecialty = document.getElementById('otherSpecialty');
-        var inputAnotherArea = document.getElementById('input_another_area');
+        // var divOtherSpecialty = document.getElementById('otherSpecialty');
+        // var inputAnotherArea = document.getElementById('input_another_area');
 
-        function carg(elemento) {
-            d = elemento.value;
-            var valueAnotherArea = "";
+        // function carg(elemento) {
+        //     d = elemento.value;
+        //     var valueAnotherArea = "";
 
-            switch (d) {
-                case "Derecho Constitucional":valueAnotherArea = d;break;
-                case "Derecho Administrativo":valueAnotherArea = d;break;
-                case "Derecho Procesal":valueAnotherArea = d;break;
-                case "Derecho Penal":valueAnotherArea = d;break;
-                case "Derecho Laboral":valueAnotherArea = d;break;
-                case "Derecho Tributario":valueAnotherArea = d;break;
-                case "Derecho Internacional Público":valueAnotherArea = d;break;
-                case "Derecho Mercantil":valueAnotherArea = d;break;
-                case "Derecho Civil":valueAnotherArea = d;break;
-                case "Derecho Internacional Privado":valueAnotherArea = d;break;
-                case "Derecho Internacional Privado":valueAnotherArea = valueAnotherArea;break;
-            }
+        //     switch (d) {
+        //         case "Derecho Constitucional":valueAnotherArea = d;break;
+        //         case "Derecho Administrativo":valueAnotherArea = d;break;
+        //         case "Derecho Procesal":valueAnotherArea = d;break;
+        //         case "Derecho Penal":valueAnotherArea = d;break;
+        //         case "Derecho Laboral":valueAnotherArea = d;break;
+        //         case "Derecho Tributario":valueAnotherArea = d;break;
+        //         case "Derecho Internacional Público":valueAnotherArea = d;break;
+        //         case "Derecho Mercantil":valueAnotherArea = d;break;
+        //         case "Derecho Civil":valueAnotherArea = d;break;
+        //         case "Derecho Internacional Privado":valueAnotherArea = d;break;
+        //         case "Derecho Internacional Privado":valueAnotherArea = valueAnotherArea;break;
+        //     }
 
-            inputAnotherArea.value = valueAnotherArea;
-        }
+        //     inputAnotherArea.value = valueAnotherArea;
+        // }
     </script>
 @endsection
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Partner;
+use App\Specialty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -55,7 +56,8 @@ class PartnerController extends Controller
      */
     public function show(Partner $partner)
     {
-        return view('admin.partner.show', compact('partner'));
+        $specialties = Specialty::all();
+        return view('admin.partner.show', compact('partner', 'specialties'));
     }
 
     /**
@@ -79,13 +81,44 @@ class PartnerController extends Controller
     public function update(Request $request, Partner $partner)
     {        
         // return $request;
-        $request->validate([
-            'status' => 'required',
-            'specialty' => 'required'
-        ]);
+        // $request->validate([
+        //     'status' => 'required',
+        //     'name' => 'required',
+        //     'email' => 'required',
+        //     'nationality' => 'required',
+        //     'country_residence' => 'required',
+        //     'phone' => 'required',
+        //     'state' => 'required',
+        //     'city' => 'required',
+        //     'address' => 'address',
+        //     'company' => 'required',
+        //     'specialties' => 'required|max:3',
+        //     'specialty' => 'required',
+        //     'biography_html' => 'required'
+        // ]);
+
+        if($request->specialties){
+            $partner->specialties()->detach();
+            $partner->specialties()->attach($request->specialties);
+        }
         
         $partner->status = $request->status;
+        $partner->name = $request->name;
+        $partner->email = $request->email;
+        $partner->nationality = $request->nationality;
+        $partner->country_residence = $request->country_residence;
+        $partner->codigo_pais = $request->codigo_pais;
+        $partner->phone = $request->phone;
+        $partner->state = $request->state;
+        $partner->city = $request->city;
+        $partner->address = $request->address;
+        $partner->link_facebook = $request->link_facebook;
+        $partner->link_instagram = $request->link_instagram;
+        $partner->link_linkedin = $request->link_linkedin;
+        $partner->website = $request->website;
+        $partner->company = $request->company;
         $partner->specialty = $request->specialty;
+        $partner->biography_html = $request->biography_html;
         
         $partner->save();
         

@@ -309,5 +309,17 @@
             document.getElementById('prisection').style.backgroundImage = "url('{{url('img/oficina-notaria-florida.jpg')}}')";
             document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/FONDO-N.jpg')}}')";
         });
+
+        var pais = document.getElementById('pais');
+        var telf = document.getElementById('telf');
+
+        pais.onchange = function(e) {
+        telf.value = this.value;
+            if((this.value).trim() != '') {
+                telf.disabled = false;
+            } else {
+                telf.disabled = true;
+            }
+        }
     </script>
 @endsection
