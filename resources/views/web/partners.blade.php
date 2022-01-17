@@ -282,7 +282,9 @@
                                 <h5><b>{{ $partner->name }} {{ $partner->lastname }}</b></h5>
                                 {{-- <p>{{ $partner->specialty }}</p> --}}
                                 @foreach ($partner->specialties as $specialty)
-                                • {{ $specialty->name_specialty }}
+                                <div class="d-inline" style="font-size: 14px">
+                                    • {{ $specialty->name_specialty }}
+                                </div>
                                 @endforeach
                                 <h6 class="mt-2"><b>{{ $partner->nationality }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->nationality)).'.png') }}"/></b></h6>
                                 <div class="row mt-4">
@@ -293,7 +295,7 @@
                                 </div>	
                                 <div class="row">
                                     <div class="col">
-                                        <p><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ $partner->email }}</p>
+                                        <p style="font-size: 10px"><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ $partner->email }}</p>
                                     </div>
                                 </div>
                             </div>
