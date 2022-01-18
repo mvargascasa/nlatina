@@ -1,8 +1,8 @@
 @extends('layouts.web')
 
 @section('header')
-    <title>Notaria Latina en Florida</title>
-    <meta name="description" content="Notaria Latina en New Jersey">
+    <title>Notaria Latina en {{ $data['oficina'] }}</title>
+    <meta name="description" content="Notaria Latina en {{ $data['oficina'] }}">
     <style>
         @media screen and (max-width: 580px){
             .titulo{
@@ -15,8 +15,14 @@
                 padding-top: 0;
                 margin-left: 10%;
             }
+            #sectionthree{
+                min-width: 110vw;
+                min-height: 170vh;
+            }
+            #imgApostille{
+                padding-top: 5%;
+            }
         }
-
         .titulo{
             color: white;
             font-weight: bold;
@@ -33,14 +39,26 @@
         .checks > .row > .col > p{
             color: #143b6b;
         }
+        #sectionthree{
+            width: 100vw;
+            height: 55vh;
+        }
+        .fifth-row{
+            margin-top: 5%;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 @endsection
+
+@section('phoneNumberHidden', $data['telfHidden'])
+@section('phoneNumber', $data['telfShow'])
 
 @section('content')
     <section id="prisection" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <div class="row justify-content-center align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col text-center">
-                <h1 class="font-weight-bold heading-title titulo">Notaría Pública Latina <br> en Florida</h1>
+                <h1 class="font-weight-bold heading-title titulo">Notaría Pública Latina <br> en {{ $data['oficina'] }}</h1>
                 <p class="text-white heading-title" style="font-size: 25px">Gestión rápida y segura!</p>
                 <button class="btn" style="background-color: #9A7A2E">Iniciar Trámite</button>
             </div>
@@ -48,12 +66,12 @@
     </section>
 
     <div class="row" style="background-color: #122944;">
-        <div class="col-sm-6 first-row" style="color: #ffffff; padding-left:15%; padding-top: 3%; margin-right: 0px;">
+        <div class="col-sm-6 first-row" style="color: #ffffff; padding-left:15%; padding-top: 4%; margin-right: 0px;">
             <h2 style="font-weight: bold">¿Por qué elegirnos?</h2>
             <p style="font-size: 15px;">Brindamos el mejor servicio y asesoría en trámmites de notaría para Latinos en Estados Unidos.</p>
             <div>
-                <img width="50px" src="{{ asset('img/docverify-approved-enotary-small.png') }}" alt="Notaria Latina en Florida">
-                <img src="{{ asset('img/logo.png') }}" alt="Notaria Latina en Florida">
+                <img width="50px" src="{{ asset('img/docverify-approved-enotary-small.png') }}" alt="Notaria Latina en {{ $data['oficina'] }}">
+                <img src="{{ asset('img/logo.png') }}" alt="Notaria Latina en {{ $data['oficina'] }}">
             </div>
         </div>
         
@@ -63,17 +81,17 @@
     </div>
     
     <div class="row" id="sectionthree" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
-        <div class="col-sm-6" style="padding-top: 50px">
-            <img class="img-fluid" src="{{ asset('img/oficinas/APOSTILLAS_Mesa de trabajo 1.png') }}" alt="">
+        <div class="col-sm-6 d-flex justify-content-center align-items-center" id="imgApostille">
+            <img style="width: 80%" class="img-fluid" src="{{ asset($data['imgapostilla']) }}" alt="">
         </div>
         <div class="col-sm-6 second-row">
-            <div class="row" style="padding-top: 90px; padding-right: 50px">
+            <div class="row" style="padding-top: 9%; padding-right: 50px">
                 <div class="col-sm-6">
                     <div class="d-flex">
                         <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-20.png')}}" alt="">
-                        <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Cartas Poder Florida</p>
+                        <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Cartas Poder {{ $data['oficina'] }}</p>
                     </div>
-                    <p style="font-size: 14px; color: #ffffff">Realizamos Poderes Especiales y Poderes Generales con su respectiva Apostilla. Cartas Poder desde Florida hacia Latinoamérica</p>
+                    <p style="font-size: 14px; color: #ffffff">Realizamos Poderes Especiales y Poderes Generales con su respectiva Apostilla. Cartas Poder desde {{ $data['oficina'] }} hacia Latinoamérica</p>
                 </div>
                 <div class="col-sm-6">
                     <div class="d-flex">
@@ -87,7 +105,7 @@
                 <div class="col-sm-6">
                     <div class="d-flex">
                         <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-19.png')}}" alt="">
-                        <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">¿Cómo apostillar en Florida?</p>
+                        <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">¿Cómo apostillar en {{ $data['oficina'] }}?</p>
                     </div>
                     <p style="font-size: 14px; color: #ffffff">El documento que porte la apostilla tiene validez legal en cualquiera de los países miembros del convenio de la Haya.</p>
                 </div>
@@ -104,13 +122,13 @@
 
     <div class="row justify-content-center align-items-center" style="padding-top: 50px">
         <div class="text-center">
-            <i><p style="font-weight: bold; font-size: 20px">¿Necesitas realizar un trámite de Notaría <br> en Florida?</p></i>
-            <p style="font-size: 15px">¡Contáctanos!¡Estamos seguros que podemos ayudarte!</p>
+            <i><p style="font-weight: bold; font-size: 20px">¿Necesitas realizar un trámite de Notaría <br> en {{ $data['oficina'] }}?</p></i>
+            <p style="font-size: 15px">¡Contáctanos! ¡Estamos seguros que podemos ayudarte!</p>
         </div>
     </div>
     <div class="row">
         <hr>
-        <button class="btn btn-warning rounded-pill" style="font-weight: bold">LLAMAR</button>
+        <a class="btn btn-warning rounded-pill" style="font-weight: bold" href="tel:{{$data['telfHidden']}}">LLAMAR {{$data['telfShow']}}</a>
         <hr>
     </div>
 
@@ -157,12 +175,12 @@
 
     <div class="row">
         <div class="col-sm-6 fifth-row" style="padding-left: 10%; padding-top: 4%; padding-bottom: 4%">
-            <h3 style="font-weight: bold"><i>APOSTILLAS EN FLORIDA</i></h3>
-            <p>¡Apostillamos todo tipo de documentos para Florida!</p>
+            <h3 style="font-weight: bold"><i>APOSTILLAS EN {{ Str::upper($data['oficina']) }}</i></h3>
+            <p>¡Apostillamos todo tipo de documentos para {{ $data['oficina'] }}!</p>
             <p class="text-muted">Apostille actas de nacimiento, actas de matrimonio, certificados, poderes, traducciones, diplomas, contratos, testamentos</p>
         </div>
         <div class="col-sm-6">
-
+            <img class="img-fluid" src="{{$data['imgdown']}}" alt="Notaria Latina en {{$data['oficina']}}">
         </div>
     </div>
 
@@ -171,9 +189,9 @@
             <div class="card-body text-center">  
               <h2 class="font-italic font-weight-bold">Solicitar Tramite</h2>      
               <small> Envíe el formulario y un asesor le contactará breve. </small>     
-              <form method="POST" action="{{route('landing.thankpostnj')}}">
+              <form method="POST" action="{{route('send.email.oficinas')}}">
                   @csrf
-                {{-- <input type="hidden" id="interest" name="interest" value="Landing {{$oficina}}"> --}}
+                <input type="hidden" id="interest" name="interest" value="Oficina {{$data['oficina']}}">
                 <div class="form-group pt-4">
                   <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombre y Apellido"  maxlength="40" minlength="2" autocomplete="off" required>
                 </div>
@@ -227,11 +245,11 @@
   </section>
 
   <div class="row">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.404392613644!2d-80.25914568497105!3d26.150956283461554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90638fe895e7b%3A0xaa63cebf0d7899!2s2104%20N%20University%20Dr%2C%20Sunrise%2C%20FL%2033322%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1642375956270!5m2!1ses!2sec" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="{{$data['urlmap']}}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
 
   <div class="mt-5 checks">
-      <h6 class="text-center" style="font-size:25px">Documentos que requieren una apostilla en Florida</h6>
+      <h6 class="text-center" style="font-size:25px">Documentos que requieren una apostilla en {{ $data['oficina'] }}</h6>
       <p style="padding-left: 15%; font-size: 18px; margin-top: 15px">Documentos Personales</p>
       <div class="row" style="padding-left:15%; padding-right:15%;">
         <div class="col-12 col-sm-3">
@@ -300,13 +318,23 @@
         </div>
       </div>
   </div>
+  @if (session('report'))
+        @php
+            echo "
+                <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+                <script>
+                    swal('Hemos enviado tu información', 'Nos pondremos en contacto lo antes posible!', 'success');
+                </script>
+                ";    
+        @endphp
+    @endif
 
 @endsection
 
 @section('script')
     <script>
         window.addEventListener('load', (event) => {
-            document.getElementById('prisection').style.backgroundImage = "url('{{url('img/oficina-notaria-florida.jpg')}}')";
+            document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgup'])}})";
             document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/FONDO-N.jpg')}}')";
         });
 

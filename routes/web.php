@@ -121,7 +121,12 @@ Route::post('/partners-contacto/{partner}', 'WebController@sendEmailContact')->n
 Route::get('/thankpartner', function(){return view('web.thankpartner');});
 
 //OFICINAS
-Route::get('/florida', function(){ return view('web.oficina');})->name('web.oficina.newjersey');
+Route::get('/newjersey', 'WebController@oficinasnj')->name('web.oficina.newjersey');
+Route::get('/florida', 'WebController@oficinasfl')->name('web.oficina.florida');
+
+//SEND-EMAIL-OFICINA
+Route::post('/sendmail-oficina', 'WebController@sendEmailOficina')->name('send.email.oficinas');
+
 
 Route::get('/suscripcion', function () {    return view('web.x-contactenos');    })->name('web.suscripcion');
 Route::get('/contactenos', function () {    return view('web.x-contactenos');    })->name('web.contactenos');
@@ -153,4 +158,3 @@ Route::get('getleads', function () {
 
 
 Route::get('testmail', 'WebController@testmail');
-

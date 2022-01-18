@@ -10,6 +10,9 @@
     <meta property="og:image"              content="{{url('uploads/i600_'.$post->imgsmall)}}" />
 @endsection
 
+@section('phoneNumberHidden', '+18007428602')
+@section('phoneNumber', '800-742-8602')
+
 @section('content')
 
     <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">

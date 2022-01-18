@@ -90,7 +90,15 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
               <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative; background-color: #333;">
                   <li class="nav-item"> <a class="nav-link" href="{{route('web.index')}}">Inicio</a> </li>
-
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Oficinas
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                          <li><a class="dropdown-item" href="{{ route('web.oficina.newjersey') }}">New Jersey</a></li>
+                          <li><a class="dropdown-item" href="{{ route('web.oficina.florida') }}">Florida</a></li>
+                      </ul>
+                  </li>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                     id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
@@ -136,9 +144,10 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
           </div>
       </nav>
         <div  class="p-2" style=" position: absolute;right: 20px;">
-                <a class="text-warning" href="tel:+18007428602" style="font-weight: bols;"
+                <a class="text-warning" href="tel:@yield('phoneNumberHidden')" style="font-weight: bols;"
                 onclick="gtag_report_conversion('tel:+18007428602');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
-                    <i class="fa fa-phone-square-alt"></i> 800-742-8602
+                    <i class="fa fa-phone-square-alt"></i> @yield('phoneNumber')
+                    {{--800-742-8602--}}
                 </a>
         </div>
       </header>

@@ -11,6 +11,8 @@
 <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 
 @endsection
+@section('phoneNumberHidden', '+18007428602')
+@section('phoneNumber', '800-742-8602')
 
 @section('content')
 
