@@ -173,7 +173,7 @@ class WebController extends Controller
 
     public function sendEmailOficina(Request $request){
         $pais = $this->getPaisByCodigo($request->cod_pais);
-        $to = "sebas31051999@gmail.com";
+        $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com";
         $subject = "Lead " . strip_tags($request->interest);
         $message = "<br><strong><h3>Datos del Lead</h3></strong>
                 <br>Nombre: " . strip_tags($request->aaa). "
