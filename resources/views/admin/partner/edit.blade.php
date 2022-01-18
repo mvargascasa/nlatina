@@ -253,7 +253,11 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         {!! Form::label('specialty', 'Especialidad(es)') !!} <b>(Descripción más detallada sus especialidades)</b>
-                                        {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control']) !!}
+                                        {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control', 'onkeyup' => 'countChars();']) !!}
+                                        <div class="d-flex">
+                                            <p id="charNum">0 caracteres</p>
+                                            <span class="text-success" style="margin-left: 5px">(Mínimo: 150 caracteres - Máximo: 200 caracteres)</span>
+                                        </div>
                                         @error('specialty')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -309,6 +313,8 @@
 @section('end-scripts')
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
+        window.addEventListener('load', countChars());
+
         document.addEventListener("DOMContentLoaded", function(event) {
             CKEDITOR.replace('biography_html');
         });
@@ -346,6 +352,11 @@
                 case "Venezuela":codigo = "+58";break;
             }
             inputCodPais.value = codigo;
+        }
+
+        function countChars(){
+            obj = document.getElementById('specialty');
+            document.getElementById("charNum").innerHTML = obj.value.length+' caracteres';
         }
     </script>
 @endsection
