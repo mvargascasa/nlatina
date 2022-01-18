@@ -289,7 +289,7 @@
                                     • {{ $specialty->name_specialty }}
                                 </div>
                                 @endforeach
-                                <h6 class="mt-2"><b>{{ $partner->nationality }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->nationality)).'.png') }}"/></b></h6>
+                                <h6 class="mt-2"><b>{{$partner->state}} - {{ $partner->country_residence }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png') }}"/></b></h6>
                                 <div class="row mt-4">
                                     <div class="col-sm-12">
                                         <p><i class="fas fa-phone-alt"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>

@@ -75,7 +75,7 @@ class WebController extends Controller
         $country = $request->get('country');
         $specialty = $request->get('specialty');
 
-        $partners = Partner::select(['id', 'img_profile', 'name', 'codigo_pais', 'specialty', 'nationality', 'phone', 'email'])
+        $partners = Partner::select(['id', 'img_profile', 'name', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email'])
                 ->where('status', 'PUBLICADO')
                 ->orderBy('id', 'DESC')
                 ->country($country)
@@ -101,7 +101,7 @@ class WebController extends Controller
         $data['telfWpp'] = '19088009046';
         $data['telfShow'] = '908-800-9046';
         $data['imgapostilla'] = 'img/oficinas/apostillanj.png';
-        $data['imgup'] = 'img/oficina-notaria-latina-newjersey.jpg';
+        $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficinas/CHICA-APOST.png';
         $data['widthimgdown'] = '70%';
         $data['heightimgdown'] = '25rem';
