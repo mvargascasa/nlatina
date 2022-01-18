@@ -234,14 +234,14 @@
 </div>
 <hr style="width: 50%">
 <div class="row">
-    <div class="col-sm-12 col-12 d-flex justify-content-center">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
         <div style="display: inline-block" class="mr-2">
             <p><b>BUSCAR POR:</b></p>
         </div>
         
         <form action="{{ route('web.showallpartners') }}" method="GET">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-4">
                 <div class="form-group">
                     <select class="form-control" name="country" id="country">
                         <option value="">País</option>
@@ -251,12 +251,12 @@
                     </select>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-lg-4">
                 <div class="form-group">
                     <select class="form-control" name="specialty" id="specialty">
                         <option value="">Especialidad</option>
                         @foreach ($specialties as $specialty)
-                            <option value="{{ $specialty->specialty }}">{{ $specialty->specialty}}</option>
+                            <option value="{{ $specialty->name_specialty }}">{{ $specialty->name_specialty}}</option>
                         @endforeach
                     </select>
                 </div>

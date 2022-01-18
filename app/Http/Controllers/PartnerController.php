@@ -99,11 +99,11 @@ class PartnerController extends Controller
         if($request->img_profile == null && $partner->img_profile != null){
             $request->img_profile = $partner->img_profile;
             $request->validate([
-                'img_profile' => 'image',
+                'img_profile' => 'image|max:1000',
             ]);
         } else {
             $request->validate([
-                'img_profile' => 'required|image',
+                'img_profile' => 'required|image|max:1000',
             ]);
             $url = Storage::put('partners', $request->file('img_profile'));
             $partner->img_profile = $url;

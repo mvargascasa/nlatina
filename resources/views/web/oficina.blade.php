@@ -22,6 +22,10 @@
             #imgApostille{
                 padding-top: 5%;
             }
+            #imgrowapostille{
+                width: 100%!important;
+                height: 100%!important;
+            }
         }
         .titulo{
             color: white;
@@ -60,7 +64,7 @@
             <div class="col text-center">
                 <h1 class="font-weight-bold heading-title titulo">Notaría Pública Latina <br> en {{ $data['oficina'] }}</h1>
                 <p class="text-white heading-title" style="font-size: 25px">Gestión rápida y segura!</p>
-                <button class="btn" style="background-color: #9A7A2E">Iniciar Trámite</button>
+                <a id="btnFirstIniciarTramite" href="#iniciarTramite" class="btn" style="background-color: #9A7A2E">Iniciar Trámite</a>
             </div>
         </div>
     </section>
@@ -136,55 +140,55 @@
         <p class="text-center mt-5 mb-5" style="padding-top: 30px; font-size: 25px; font-weight: bold">Servicios adicionales de Notaría Pública</p>
         <div class="row" style="padding-left:20%; padding-right:20%;">
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
+                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
                 <p>Travel Authorization</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
+                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
                 <p>Certificaciones</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
+                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
                 <p>Acuerdos</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
+                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
                 <p>Cartas de Invitación</p>
             </div>
         </div>
     
         <div class="row mt-1" style="padding-left:20%; padding-right:20%;">
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-12.png') }}" alt="">
+                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-12.png') }}" alt="">
                 <p>Revocatorias</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-13.png') }}" alt="">
+                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-13.png') }}" alt="">
                 <p>Contratos</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-14.png') }}" alt="">
+                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-14.png') }}" alt="">
                 <p>Testamentos</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
-                <p>Matrimonios</p>
+                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset($data['imggrid']) }}" alt="">
+                <p>{{ $data['txtgrid'] }}</p>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-6 fifth-row" style="padding-left: 10%; padding-top: 4%; padding-bottom: 4%">
-            <h3 style="font-weight: bold"><i>APOSTILLAS EN {{ Str::upper($data['oficina']) }}</i></h3>
-            <p>¡Apostillamos todo tipo de documentos para {{ $data['oficina'] }}!</p>
-            <p class="text-muted">Apostille actas de nacimiento, actas de matrimonio, certificados, poderes, traducciones, diplomas, contratos, testamentos</p>
+        <div class="col-sm-6 fifth-row text-center" style="padding-top: 4%; padding-bottom: 4%">
+            <h3 style="font-weight: bold"><i>{{ Str::upper($data['title']) }}</i></h3>
+            <p>{{ $data['subtitle'] }}!</p>
+            <p class="text-muted" style="margin-left: 10%; margin-right: 10%">Apostille actas de nacimiento, actas de matrimonio, certificados, poderes, traducciones, diplomas, contratos, testamentos</p>
         </div>
         <div class="col-sm-6">
-            <img class="img-fluid" src="{{$data['imgdown']}}" alt="Notaria Latina en {{$data['oficina']}}">
+            <img id="imgrowapostille" style="width: {{$data['widthimgdown']}}; height: {{$data['heightimgdown']}}; padding-top: {{$data['paddingtop']}}" class="img-fluid" src="{{$data['imgdown']}}" alt="Notaria Latina en {{$data['oficina']}}">
         </div>
     </div>
 
-    <section class="row quienes-somos text-white m-0">  
+    <section id="iniciarTramite" class="row quienes-somos text-white m-0">  
         <div class="col-12 col-md-6 pb-5 px-3 mx-auto">
             <div class="card-body text-center">  
               <h2 class="font-italic font-weight-bold">Solicitar Tramite</h2>      
@@ -331,11 +335,14 @@
 
 @endsection
 
+@section('numberWpp', $data['telfWpp'])
+
 @section('script')
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgup'])}})";
-            document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/FONDO-N.jpg')}}')";
+            document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/BANNER-NEGRO.jpg')}}')";
         });
 
         var pais = document.getElementById('pais');
@@ -349,5 +356,13 @@
                 telf.disabled = true;
             }
         }
+
+        $('#btnFirstIniciarTramite').click(function(e){				
+		e.preventDefault();		//evitar el eventos del enlace normal
+		var strAncla=$(this).attr('href'); //id del ancla
+			$('body,html').stop(true,true).animate({				
+				scrollTop: $(strAncla).offset().top
+			},1000);
+	    });
     </script>
 @endsection
