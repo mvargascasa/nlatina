@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function update(Partner $partner, Request $request)
     {
 
-        if($request->img_profile == null && $partner->img_profile != null){
+        if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
             $request->img_profile = $partner->img_profile;
             $request->validate([
                 'name' => 'required',
@@ -39,13 +39,14 @@ class HomeController extends Controller
                 'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
-                'img_profile' => 'image',
+                'img_profile' => 'image|max:1000',
                 'biography_html' => 'required|min:700',
             ], [
+                'img_profile.max' => 'La imagen no debe ser mayor a 1MB',
                 'biography_html.min' => 'La biografia debe tener al menos 700 caracteres',
                 'specialties.max' => 'No debe seleccionar más de tres campos'
             ]);
-        } else {
+        } else if($request->img_profile != null && $partner->img_profile != null){ //ESTE IF ES PARA SI ES QUE CAMBIA SU FOTO DE PERFIL - ELIMINA LA ANTERIOR
             $request->validate([
                 'name' => 'required',
                 'nationality' => 'required',
@@ -58,9 +59,33 @@ class HomeController extends Controller
                 'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
-                'img_profile' => 'required|image',
+                'img_profile' => 'required|image|max:1000',
                 'biography_html' => 'required|min:700',
             ], [
+                'img_profile.max' => 'La imagen no debe ser mayor a 1MB',
+                'biography_html.min' => 'La biografia debe tener al menos 700 caracteres',
+                'specialties.max' => 'No debe seleccionar más de tres campos'
+            ]);
+            $url = Storage::put('partners', $request->file('img_profile'));
+            Storage::delete($partner->img_profile);
+            $partner->img_profile = $url;
+        } else  { //ESTE ELSE ES SI ES QUE NO HA SUBIDO NINGUNA IMAGEN, LA CREA EN EL SERVIDOR
+            $request->validate([
+                'name' => 'required',
+                'nationality' => 'required',
+                'specialty' => 'required',
+                'specialties' => 'required|max:3 ',
+                'country_residence' => 'required',
+                'city' => 'required',
+                'state' => 'required',
+                'address' => 'required',
+                'company' => 'required',
+                'phone' => 'required',
+                'email' => 'required',
+                'img_profile' => 'required|image|max:1000',
+                'biography_html' => 'required|min:700',
+            ], [
+                'img_profile.max' => 'La imagen no debe ser mayor a 1MB',
                 'biography_html.min' => 'La biografia debe tener al menos 700 caracteres',
                 'specialties.max' => 'No debe seleccionar más de tres campos'
             ]);
@@ -68,7 +93,7 @@ class HomeController extends Controller
             $partner->img_profile = $url;
         }
 
-        $codigo_pais = $this->getPaisByCodigo($request->country_residence);
+        // $codigo_pais = $this->getPaisByCodigo($request->country_residence);
 
         if($request->specialties){
             $partner->specialties()->detach();
