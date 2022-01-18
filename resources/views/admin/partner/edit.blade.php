@@ -144,9 +144,9 @@
                                             <div class="form-group">
                                                 {!! Form::label('codigo_pais', 'Código País') !!}
                                                 @if ($partner->codigo_pais != null)
-                                                {!! Form::number('codigo_pais', $partner->codigo_pais , ['class' => 'form-control']) !!}
+                                                {!! Form::text('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'readonly']) !!}
                                                 @else
-                                                {!! Form::number('codigo_pais', null, ['class' => 'form-control']) !!}
+                                                {!! Form::text('codigo_pais', null, ['class' => 'form-control', 'readonly']) !!}
                                                 @endif
                                             @error('codigo_pais')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -347,30 +347,6 @@
             }
             inputCodPais.value = codigo;
         }
-
-        // var divOtherSpecialty = document.getElementById('otherSpecialty');
-        // var inputAnotherArea = document.getElementById('input_another_area');
-
-        // function carg(elemento) {
-        //     d = elemento.value;
-        //     var valueAnotherArea = "";
-
-        //     switch (d) {
-        //         case "Derecho Constitucional":valueAnotherArea = d;break;
-        //         case "Derecho Administrativo":valueAnotherArea = d;break;
-        //         case "Derecho Procesal":valueAnotherArea = d;break;
-        //         case "Derecho Penal":valueAnotherArea = d;break;
-        //         case "Derecho Laboral":valueAnotherArea = d;break;
-        //         case "Derecho Tributario":valueAnotherArea = d;break;
-        //         case "Derecho Internacional Público":valueAnotherArea = d;break;
-        //         case "Derecho Mercantil":valueAnotherArea = d;break;
-        //         case "Derecho Civil":valueAnotherArea = d;break;
-        //         case "Derecho Internacional Privado":valueAnotherArea = d;break;
-        //         case "Derecho Internacional Privado":valueAnotherArea = valueAnotherArea;break;
-        //     }
-
-        //     inputAnotherArea.value = valueAnotherArea;
-        // }
     </script>
 @endsection
 
