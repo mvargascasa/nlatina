@@ -78,8 +78,8 @@ class RegisterController extends Controller
         $message = "
         <div>
             <div>
-                <div>
-                    <img style='background-color: black; border-radius: 10px; padding: 10px; margin-top:20px' src='https://notarialatina.com/img/marca-notaria-latina.png' alt='IMAGEN NOTARIA LATINA'>
+                <div style='text-align:center'>
+                    <img style='margin-top:20px; width:150px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
                 </div>
             </div>
             <div>
@@ -89,8 +89,15 @@ class RegisterController extends Controller
                     No olvides de <a href='https://notarialatina.com/socios/login'>Iniciar sesión</a> y completar toda tu información para que las personas puedan encontrarte y consultar por tus servicios.
                     Se verificará que tus datos estén correctamente completos para que puedas ser publicado en nuestro sitio oficial y de esta manera puedas llegar a tus futuros clientes. 
                 </h5>
+                <h4>
+                    A continuación te mostramos los pasos necesarios para que tu perfil sea habilitado 👇
+                </h4>  
+            </div>
+            <div style='text-align:center'>
+                <img style='margin-top:20px; width:400px' src='https://notarialatina.com/img/partners/partner-bienvenida.jpg' alt='IMAGEN NOTARIA LATINA'>
+            </div>
+            <div style='margin-top:10px'>
                 <h4>Notaria Latina agradece tu suscripción y te desea lo mejor! 😉⚖</h4>
-                <img style='width:250px' src='https://blog.lemontech.com/wp-content/uploads/2021/01/frases-de-abogados.jpg' alt='Abogados Notaria Latina'>
             </div>
         </div>
         ";
