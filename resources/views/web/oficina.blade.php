@@ -17,7 +17,7 @@
             }
             #sectionthree{
                 min-width: 110vw;
-                min-height: 170vh;
+                min-height: 150vh;
             }
             #imgApostille{
                 padding-top: 5%;
