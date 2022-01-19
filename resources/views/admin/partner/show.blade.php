@@ -125,7 +125,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                {!! Form::label('state', 'Estado/Provincia') !!}
+                                {!! Form::label('state', 'Estado') !!}
                                 @if ($partner->state != null)
                                 {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
                                 @else
