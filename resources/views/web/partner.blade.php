@@ -65,7 +65,9 @@
             <div class="col-sm-6 mt-3 info-header">
                 <h3><b>{{ $partner->name }} {{ $partner->lastname }}</b></h3>
                 <p>{{ $partner->country_residence}}</p>
-                <p>{{ $partner->company }}</p>
+                @if ($partner->company_name != null)
+                    <p>{{ $partner->company_name }}</p>
+                @endif
                 <br>
                 <div class="row">
                     <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
