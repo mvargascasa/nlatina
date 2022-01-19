@@ -26,6 +26,35 @@
           margin-right: 0% !important;
         }
       }
+
+      .offices:hover{
+        background-color: rgb(94, 94, 94);
+        border-radius: 25px;
+      }
+
+      .underline{
+        position: relative;
+      }
+
+      .underline::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 2px;
+        background-color: #ffffff;
+        transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .underline:hover::before{
+          left: 0;
+          right: auto;
+          width: 100%;
+        }
+      }
+
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -50,9 +79,9 @@
               <h1 class="tit-not">Notaría Pública</h1>
               <h2 class="heading-title">Gestión Fácil y Rápida</h2>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%">
-                <div class="col-sm-4 border-right"><i class="fas fa-map-marker-alt"><a style="color: #ffffff; text-decoration: none" href="#"></i> Oficinas New York</a></div>
-                <div class="col-sm-4 border-left border-right"><i class="fas fa-map-marker-alt"><a style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a></div>
-                <div class="col-sm-4 border-left"><i class="fas fa-map-marker-alt"><a style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+                <div class="col-sm-4 border-right"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
+                <div class="col-sm-4 border-left border-right"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
+                <div class="col-sm-4 border-left"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
               </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               <hr width="200" style="border-color: #fff">
