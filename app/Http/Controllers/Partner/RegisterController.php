@@ -7,11 +7,13 @@ use App\Partner;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
+use App\Http\Traits\GetCodByCountryTrait;
+
 
 class RegisterController extends Controller
 {
+
+    use GetCodByCountryTrait;
 
     public function __construct()
     {
@@ -19,6 +21,8 @@ class RegisterController extends Controller
     }
 
     public function register(Request $request){
+
+        $codigoPais = $this->getCodByPais($request->country_residence);
         
         $request->validate([
             'name' => 'required',
@@ -34,6 +38,7 @@ class RegisterController extends Controller
             'name' => $request['name'],
             'lastname' => $request['lastname'],
             'country_residence' => $request['country_residence'],
+            'codigo_pais' => $codigoPais,
             'phone' => $request['phone'],
             'company' => $request['company'],
             'email'=> $request['email'],
@@ -88,7 +93,7 @@ class RegisterController extends Controller
                 <h1 style='text-align:center'>Bienvenido " . strip_tags($partner->name) . " " . strip_tags($partner->lastname)  ."</h1>
                 <h5>Ya formas parte de Notaria Latina 👨‍⚖️</h5>
                 <h5>
-                    No olvides de <a href='https://notarialatina.com/socios/login'>Iniciar sesión</a> y completar toda tu información para que las personas puedan encontrarte y consultar por tus servicios.
+                    No olvides de <a href='https://notarialatina.com/partners/login'>Iniciar sesión</a> y completar toda tu información para que las personas puedan encontrarte y consultar por tus servicios.
                     Se verificará que tus datos estén correctamente completos para que puedas ser publicado en nuestro sitio oficial y de esta manera puedas llegar a tus futuros clientes. 
                 </h5>
                 <h4>
