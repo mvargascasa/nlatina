@@ -40,7 +40,7 @@ class RegisterController extends Controller
             'country_residence' => $request['country_residence'],
             'codigo_pais' => $codigoPais,
             'phone' => $request['phone'],
-            'company' => $request['company'],
+            'company_name' => $request['company'],
             'email'=> $request['email'],
             'password'=> bcrypt($request['password']),
         ]);
