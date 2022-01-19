@@ -132,6 +132,7 @@
         }
         
     </style>
+    <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -282,7 +283,7 @@
                             <div class="layer"></div>
                             <div class="content">
                                 <div class="image">
-                                    <img width="125px" height="150px" src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
+                                    <img class="lazyload" width="125px" height="150px" data-src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
                                 </div>
                                 <h5><b>{{ $partner->name }} {{ $partner->lastname }}</b></h5>
                                 {{-- <p>{{ $partner->specialty }}</p> --}}
