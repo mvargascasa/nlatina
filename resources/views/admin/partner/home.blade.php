@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="mt-4">
-        <h1>Bienvenido {{ Auth::guard('partner')->user()->name }}</h1>
+        <h1>Bienvenido {{ Auth::guard('partner')->user()->name }} {{ Auth::guard('partner')->user()->lastname }}</h1>
     </div>
 @endsection
 

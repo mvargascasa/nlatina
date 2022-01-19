@@ -22,7 +22,8 @@ class RegisterController extends Controller
         
         $request->validate([
             'name' => 'required',
-            'nationality' => 'required',
+            'lastname' => 'required',
+            'country_residence' => 'required',
             'phone' => 'required',
             'company' => 'required',
             'email' => 'required|unique:partners,email|min:10|max:191',
@@ -31,7 +32,8 @@ class RegisterController extends Controller
         
         $partner = Partner::create([
             'name' => $request['name'],
-            'nationality' => $request['nationality'],
+            'lastname' => $request['lastname'],
+            'country_residence' => $request['country_residence'],
             'phone' => $request['phone'],
             'company' => $request['company'],
             'email'=> $request['email'],
@@ -51,12 +53,12 @@ class RegisterController extends Controller
     }
 
     public function sendEmail(Partner $partner){
-        $codigo_pais = $this->getCodigoPais($partner->nationality);
+        $codigo_pais = $this->getCodigoPais($partner->country_residence);
         $to = "partners@notarialatina.com,hserrano@notarialatina.com";
         $subject = 'Registro de Partner - Abogado';
         $message = "<br><strong><h2>Un nuevo partner se ha registrado en nuestra página - Notaria Latina</h2></strong>
-                    <br>Nombre: " . strip_tags($partner->name). "
-                    <br>Nacionalidad: " . strip_tags($partner->nationality) ."
+                    <br>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname) . "
+                    <br>Nacionalidad: " . strip_tags($partner->country_residence) ."
                     <br>Teléfono: ". strip_tags($codigo_pais) . " " .  strip_tags($partner->phone) ."
                     <br>Email: " . strip_tags($partner->email)."
                     <br>Empresa: " . strip_tags($partner->company)."
@@ -83,7 +85,7 @@ class RegisterController extends Controller
                 </div>
             </div>
             <div>
-                <h1 style='text-align:center'>Bienvenido " . strip_tags($partner->name)  ." </h1>
+                <h1 style='text-align:center'>Bienvenido " . strip_tags($partner->name) . " " . strip_tags($partner->lastname)  ."</h1>
                 <h5>Ya formas parte de Notaria Latina 👨‍⚖️</h5>
                 <h5>
                     No olvides de <a href='https://notarialatina.com/socios/login'>Iniciar sesión</a> y completar toda tu información para que las personas puedan encontrarte y consultar por tus servicios.

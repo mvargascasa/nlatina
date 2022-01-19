@@ -29,7 +29,7 @@ class HomeController extends Controller
             $request->img_profile = $partner->img_profile;
             $request->validate([
                 'name' => 'required',
-                'nationality' => 'required',
+                'lastname' => 'required',
                 'specialty' => 'required|min:150|max:200',
                 'specialties' => 'required|max:3',
                 'country_residence' => 'required',
@@ -49,7 +49,7 @@ class HomeController extends Controller
         } else if($request->img_profile != null && $partner->img_profile != null){ //ESTE IF ES PARA SI ES QUE CAMBIA SU FOTO DE PERFIL - ELIMINA LA ANTERIOR
             $request->validate([
                 'name' => 'required',
-                'nationality' => 'required',
+                'lastname' => 'required',
                 'specialty' => 'required|min:150|max:200',
                 'specialties' => 'required|max:3 ',
                 'country_residence' => 'required',
@@ -72,7 +72,7 @@ class HomeController extends Controller
         } else  { //ESTE ELSE ES SI ES QUE NO HA SUBIDO NINGUNA IMAGEN, LA CREA EN EL SERVIDOR
             $request->validate([
                 'name' => 'required',
-                'nationality' => 'required',
+                'lastname' => 'required',
                 'specialty' => 'required|min:150|max:200',
                 'specialties' => 'required|max:3 ',
                 'country_residence' => 'required',
@@ -101,7 +101,7 @@ class HomeController extends Controller
         }
         
         $partner->name = $request->name;
-        $partner->nationality = $request->nationality;
+        $partner->lastname = $request->lastname;
         $partner->specialty = $request->specialty;
         $partner->country_residence = $request->country_residence;
         $partner->city = $request->city;

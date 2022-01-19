@@ -75,7 +75,7 @@ class WebController extends Controller
         $country = $request->get('country');
         $specialty = $request->get('specialty');
 
-        $partners = Partner::select(['id', 'img_profile', 'name', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email'])
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email'])
                 ->where('status', 'PUBLICADO')
                 ->orderBy('id', 'DESC')
                 ->country($country)
@@ -143,9 +143,10 @@ class WebController extends Controller
                     <br>Mensaje: " . strip_tags($request->mensaje) . "
                     <br>
                     <br><strong><h3>Socio al cual consulta</h3></strong>
-                    <br>Nombre: " . strip_tags($partner->name) ."
+                    <br>Nombre: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . "
                     <br>Especialidad: " . strip_tags($partner->specialty) ."
-                    <br>Teléfono: " . strip_tags($partner->phone) ."
+                    <br>Pais: " . strip_tags($partner->country_residence) . "
+                    <br>Teléfono: " . strip_tags($partner->codigo_pais) . " " . strip_tags($partner->phone) ."
                     <br>Email: " . strip_tags($partner->email) ."
                     <br>
                     <img style='margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>

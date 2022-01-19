@@ -56,8 +56,17 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('name', 'Nombre y Apellido') !!}
+                                        {!! Form::label('name', 'Nombre') !!}
                                         {!! Form::text('name', $partner->name, ['class' => 'form-control']) !!}
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        {!! Form::label('lastname', 'Apellido') !!}
+                                        {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control']) !!}
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -72,7 +81,7 @@
                                     @enderror
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
+                                {{-- <div class="col-sm-4">
                                     <div class="form-group">
                                         {!! Form::label('nationality', 'Nacionalidad') !!}
                                         {!! Form::select('nationality', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->nationality, ['class' => 'form-control']) !!}
@@ -80,7 +89,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <div class="row">

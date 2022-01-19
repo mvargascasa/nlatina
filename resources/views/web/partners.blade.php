@@ -152,7 +152,8 @@
                     <form action="{{ route('socios.registro') }}" method="POST">        
                         @csrf
                         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-                            <input type="text" class="form-control" placeholder="Nombre y Apellido" name="name" autocomplete="off" value="{{ old('name')}}" required>
+                            <input style="margin-right: 1%" type="text" class="form-control" placeholder="Nombre" name="name" autocomplete="off" value="{{ old('name')}}" required>
+                            <input type="text" class="form-control" placeholder="Apellido" name="lastname" autocomplete="off" value="{{ old('lastname')}}" required>
                         </div>
                         @error('name')
                             <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
@@ -160,8 +161,8 @@
                             </div>
                         @enderror
                         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-                            <select name="nationality" id="nacionalidad" class="form-control" required>
-                                <option value="">Nacionalidad</option>
+                            <select name="country_residence" id="country_residence" class="form-control" required>
+                                <option value="">País</option>
                                 <option value="Argentina">Argentina</option>
                                 <option value="Bolivia">Bolivia</option>
                                 <option value="Colombia">Colombia</option>
@@ -184,7 +185,7 @@
                             </select>
                             <input type="number" name="phone" class="form-control" id="telefono" placeholder="Teléfono" autocomplete="off" value="{{ old('phone') }}" required>
                         </div>
-                        @error('nationality')
+                        @error('country_residence')
                             <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
                                 <span class="text-danger">{{ $message }}</span>
                             </div>

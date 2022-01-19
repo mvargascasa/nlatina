@@ -19,6 +19,7 @@ class Partner extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'id', 
         'name', 
+        'lastname',
         'specialty',
         'nationality', 
         'country_residence',
