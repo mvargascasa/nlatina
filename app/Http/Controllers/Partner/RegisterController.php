@@ -22,7 +22,7 @@ class RegisterController extends Controller
 
     public function register(Request $request){
 
-        $codigoPais = $this->getCodByPais($request->country_residence);
+        // $codigoPais = $this->getCodByPais($request->country_residence);
         
         $request->validate([
             'name' => 'required',
@@ -38,7 +38,7 @@ class RegisterController extends Controller
             'name' => $request['name'],
             'lastname' => $request['lastname'],
             'country_residence' => $request['country_residence'],
-            'codigo_pais' => $codigoPais,
+            'codigo_pais' => $request['codTelfPais'],
             'phone' => $request['phone'],
             'company_name' => $request['company'],
             'email'=> $request['email'],

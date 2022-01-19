@@ -123,6 +123,7 @@ Route::get('/thankpartner', function(){return view('web.thankpartner');});
 //OFICINAS
 Route::get('/newjersey', 'WebController@oficinasnj')->name('web.oficina.newjersey');
 Route::get('/florida', 'WebController@oficinasfl')->name('web.oficina.florida');
+Route::get('/newyork', 'WebController@oficinasny')->name('web.oficina.newyork');
 
 //SEND-EMAIL-OFICINA
 Route::post('/sendmail-oficina', 'WebController@sendEmailOficina')->name('send.email.oficinas');

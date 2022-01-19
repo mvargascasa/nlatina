@@ -148,7 +148,7 @@
             <div class="col-sm-6">
                 <div class="text-center form" style="background-color: #002542;">
                     <h4 class="text-white pt-4 px-4" style="margin: 10px 10px 10px 10px;">¿Eres abogado y quieres anunciarte en Estados Unidos?</h4>
-                    <p class="text-white">Únete hoy e impulsa tus servicios</p>
+                    <p class="text-white">Se parte de nuestro equipo AHORA! <br> E impulsa tus servicios</p>
                     <form action="{{ route('socios.registro') }}" method="POST">        
                         @csrf
                         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
@@ -183,6 +183,7 @@
                                 <option value="Uruguay">Uruguay</option>
                                 <option value="Venezuela">Venezuela</option>  
                             </select>
+                            <input type="text" style="margin-left: 1px;" name="codTelfPais" id="codTelfPais" class="form-control" readonly>
                             <input type="number" name="phone" class="form-control" id="telefono" placeholder="Teléfono" autocomplete="off" value="{{ old('phone') }}" required>
                         </div>
                         @error('country_residence')
@@ -215,7 +216,7 @@
                             </div>
                         @enderror
                         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
-                            <button type="submit" class="btn btn-block" style="background-color: #FEC02F">Sí, me uno!</button>
+                            <button type="submit" class="btn btn-block" style="background-color: #FEC02F">Registrarse</button>
                         </div>
                     </form>
                     <div>
@@ -270,7 +271,7 @@
     </div>
 </div>
 
-<div class="container mt-5 contenido">
+<div class="mt-5 contenido" style="margin-left:7%; margin-right: 7%;">
     @if (count($partners) > 0)
         <div class="row">
             @foreach ($partners as $partner)
@@ -290,10 +291,9 @@
                                     • {{ $specialty->name_specialty }}
                                 </div>
                                 @endforeach
-                                @if ($partner->state != null)
-                                    <h6 class="mt-2"><b>{{$partner->state}} - {{ $partner->country_residence }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png') }}"/></b></h6>
-                                @else
                                 <h6 class="mt-2"><b>{{ $partner->country_residence }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png') }}"/></b></h6>
+                                @if ($partner->state != null)
+                                    <h6><b>{{ $partner->state }}</b></h6>
                                 @endif
                                 <div class="row mt-4">
                                     <div class="col-sm-12">
@@ -325,6 +325,35 @@
 
 @section('script')
 <script>
+
+        var selectPaisResidencia = document.getElementById('country_residence');
+        var inputCodPais = document.getElementById('codTelfPais');
+        
+        selectPaisResidencia.onchange  = function(e){
+            switch (selectPaisResidencia.value) {
+                case "Argentina":codigo = "+54";break;
+                case "Bolivia":codigo = "+591";break;
+                case "Colombia":codigo = "+57";break;
+                case "Costa Rica":codigo = "+506";break;
+                case "Ecuador":codigo = "+593";break;
+                case "El Salvador":codigo = "+503";break;
+                case "España":codigo = "+34";break;
+                case "Guatemala":codigo = "+502";break;
+                case "Honduras":codigo = "+504";break;
+                case "México":codigo = "+52";break;
+                case "Nicaragua":codigo = "+505";break;
+                case "Panamá":codigo = "+507";break;
+                case "Paraguay":codigo = "+595";break;
+                case "Perú":codigo = "+51";break;
+                case "Puerto Rico":codigo = "+1787";break;
+                case "República Dominicana":codigo = "+1809";break;
+                case "Uruguay":codigo = "+598";break;
+                case "Venezuela":codigo = "+58";break;
+            }
+            inputCodPais.value = codigo;
+        }
+
+
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-PARTNERS.jpg')}}')";
     });
