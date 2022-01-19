@@ -148,7 +148,7 @@
             <div class="col-sm-6">
                 <div class="text-center form" style="background-color: #002542;">
                     <h4 class="text-white pt-4 px-4" style="margin: 10px 10px 10px 10px;">¿Eres abogado y quieres anunciarte en Estados Unidos?</h4>
-                    <p class="text-white">Se parte de nuestro equipo AHORA! <br> E impulsa tus servicios</p>
+                    <p class="text-white">Se parte de nuestro equipo AHORA!</p>
                     <form action="{{ route('socios.registro') }}" method="POST">        
                         @csrf
                         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
