@@ -94,15 +94,15 @@ class WebController extends Controller
     public function oficinasny(){
         $data['oficina'] = 'New York';
         $data['title'] = 'Apostillas en New York';
-        $data['subtitle'] = '¡Apostillamos todo tipo de documento de 3 a 4 días!';
+        $data['subtitle'] = '¡Apostillamos todo tipo de documentos para New York!';
         $data['imggrid'] = 'img/oficinas/ICONOS-15.png';
-        $data['txtgrid'] = 'New Jersey Motor Vehicle Commission';
-        $data['telfHidden'] = '+19088009046';
-        $data['telfWpp'] = '19088009046';
-        $data['telfShow'] = '908-800-9046';
-        $data['imgapostilla'] = 'img/oficinas/apostillanj.png';
-        $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
-        $data['imgdown'] = 'img/oficinas/CHICA-APOST.png';
+        $data['txtgrid'] = 'New York Motor Vehicle Commission';
+        $data['telfHidden'] = '+13479739888';
+        $data['telfWpp'] = '13479739888';
+        $data['telfShow'] = '347-973-9888';
+        $data['imgapostilla'] = 'img/oficinas/apostillany.png';
+        $data['imgup'] = 'img/oficinas/BANER-NEW-YORK.jpg';
+        $data['imgdown'] = '';
         $data['widthimgdown'] = '70%';
         $data['heightimgdown'] = '25rem';
         $data['paddingtop'] = '2px';
