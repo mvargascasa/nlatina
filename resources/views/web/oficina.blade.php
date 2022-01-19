@@ -72,7 +72,7 @@
     <div class="row" style="background-color: #122944;">
         <div class="col-sm-6 first-row" style="color: #ffffff; padding-left:15%; padding-top: 4%; margin-right: 0px;">
             <h2 style="font-weight: bold">¿Por qué elegirnos?</h2>
-            <p style="font-size: 15px;">Brindamos el mejor servicio y asesoría en trámmites de notaría para Latinos en Estados Unidos.</p>
+            <p style="font-size: 15px;">Brindamos el mejor servicio y asesoría en trámites de notaría para Latinos en Estados Unidos.</p>
             <div>
                 <img width="50px" src="{{ asset('img/docverify-approved-enotary-small.png') }}" alt="Notaria Latina en {{ $data['oficina'] }}">
                 <img src="{{ asset('img/logo.png') }}" alt="Notaria Latina en {{ $data['oficina'] }}">

@@ -88,9 +88,9 @@
                             <div class="form-group">
                                 {!! Form::label('country_residence', 'Pais de residencia') !!}
                                 @if ($partner->country_residence != null)
-                                {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->country_residence, ['class' => 'form-control']) !!}    
+                                {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->country_residence, ['class' => 'form-control', 'onchange' => 'changeCodPais();']) !!}    
                                 @else
-                                {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], null, ['class' => 'form-control']) !!}
+                                {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], null, ['class' => 'form-control', 'onchange' => 'changeCodPais();']) !!}
                                 @endif
                                 @error('country_residence')
                                     <span class="text-danger">{{ $message }}</span>
@@ -101,9 +101,9 @@
                             <div class="form-group">
                                 {!! Form::label('codigo_pais', 'Código País') !!}
                                 @if ($partner->codigo_pais != null)
-                                {!! Form::number('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'id' => 'codigo_pais']) !!}
+                                {!! Form::text('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'readonly']) !!}
                                 @else
-                                {!! Form::number('codigo_pais', null, ['class' => 'form-control', 'id' => 'codigo_pais']) !!}
+                                {!! Form::text('codigo_pais', null, ['class' => 'form-control', 'readonly']) !!}
                                 @endif
                             @error('codigo_pais')
                                 <span class="text-danger">{{ $message }}</span>
@@ -306,6 +306,32 @@
             CKEDITOR.replace('biography_html');
         });
 
+        function changeCodPais(){
+            var selectPaisResidencia = document.getElementById('country_residence');
+            var inputCodPais = document.getElementById('codigo_pais');
+                switch (selectPaisResidencia.value) {
+                    case "Argentina":  inputCodPais.value = "+54";break;
+                    case "Bolivia": inputCodPais.value = "+591";break;
+                    case "Colombia": inputCodPais.value = "+57";break;
+                    case "Costa Rica": inputCodPais.value = "+506";break;
+                    case "Ecuador": inputCodPais.value = "+593";break;
+                    case "El Salvador": inputCodPais.value = "+503";break;
+                    case "España": inputCodPais.value = "+34";break;
+                    case "Guatemala": inputCodPais.value = "+502";break;
+                    case "Honduras": inputCodPais.value = "+504";break;
+                    case "México": inputCodPais.value = "+52";break;
+                    case "Nicaragua": inputCodPais.value = "+505";break;
+                    case "Panamá": inputCodPais.value = "+507";break;
+                    case "Paraguay": inputCodPais.value = "+595";break;
+                    case "Perú": inputCodPais.value = "+51";break;
+                    case "Puerto Rico": inputCodPais.value = "+1787";break;
+                    case "República Dominicana": inputCodPais.value = "+1809";break;
+                    case "Uruguay": inputCodPais.value = "+598";break;
+                    case "Venezuela": inputCodPais.value = "+58";break;
+                }
+            }
+        
+
         function countChars(){
             obj = document.getElementById('specialty');
             document.getElementById("charNum").innerHTML = obj.value.length+' caracteres';
@@ -320,32 +346,6 @@
             }
         }
 
-        var selectPaisResidencia = document.getElementById('country_residence');
-        var inputCodPais = document.getElementById('codigo_pais');
-        
-        selectPaisResidencia.onchange  = function(e){
-            switch (selectPaisResidencia.value) {
-                case "Argentina": codigo = "+54";break;
-                case "Bolivia": codigo = "+591";break;
-                case "Colombia": codigo = "+57";break;
-                case "Costa Rica": codigo = "+506";break;
-                case "Ecuador": codigo = "+593";break;
-                case "El Salvador": codigo = "+503";break;
-                case "España": codigo = "+34";break;
-                case "Guatemala": codigo = "+502";break;
-                case "Honduras": codigo = "+504";break;
-                case "México": codigo = "+52";break;
-                case "Nicaragua": codigo = "+505";break;
-                case "Panamá": codigo = "+507";break;
-                case "Paraguay": codigo = "+595";break;
-                case "Perú": codigo = "+51";break;
-                case "Puerto Rico": codigo = "+1787";break;
-                case "República Dominicana": codigo = "+1809";break;
-                case "Uruguay": codigo = "+598";break;
-                case "Venezuela": codigo = "+58";break;
-            }
-            inputCodPais.value = codigo;
-        }
 
         function showInputNameCompany(){
             var selectCompany = document.getElementById('company').value;

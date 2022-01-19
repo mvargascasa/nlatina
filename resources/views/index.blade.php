@@ -75,7 +75,7 @@
               <h2 class="heading-title">Gestión Fácil y Rápida</h2>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%">
                 <div class="col-sm-4 border-right"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
-                <div class="col-sm-4 border-left border-right"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="#"></i> Oficinas New York</a></div>
+                <div class="col-sm-4 border-left border-right"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
                 <div class="col-sm-4 border-left"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
               </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
