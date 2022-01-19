@@ -59,7 +59,7 @@ class RegisterController extends Controller
 
     public function sendEmail(Partner $partner){
         $codigo_pais = $this->getCodigoPais($partner->country_residence);
-        $to = "sebas31051999@gmail.com";
+        $to = "partners@notarialatina.com,hserrano@notarialatina.com";
         $subject = 'Registro de Partner - Abogado';
         $message = "<br><strong><h2>Un nuevo partner se ha registrado en nuestra página - Notaria Latina</h2></strong>
                     <br>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname) . "

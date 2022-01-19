@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('header')
-    <title>Partners de Casa Credito Promotora</title>
+    <title>Partner de Notaria Latina - {{ $partner->name }} {{$partner->lastname}}</title>
     <style>
         .bg-header{
             background-color: #002542;
@@ -60,7 +60,7 @@
         
         <div class="row mt-4">
             <div class="col-sm-6">
-                <img class="float-right" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="250" height="310">
+                <img id="imgPartner" class="float-right" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="250" height="310">
             </div>
             <div class="col-sm-6 mt-3 info-header">
                 <h3><b>{{ $partner->name }} {{ $partner->lastname }}</b></h3>
@@ -170,3 +170,16 @@
 @endsection
 
 @section('numberWpp', '13479739888')
+
+@section('script')
+    <script>
+        window.addEventListener('resize', function(){
+            var imgpartner = document.getElementById('imgPartner');
+            if(screen.width < 580){
+                imgpartner.classList.remove('float-right');
+            } else {
+                imgpartner.classList.add('float-right');
+            }
+        });
+    </script>
+@endsection

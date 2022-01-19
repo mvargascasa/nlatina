@@ -64,7 +64,7 @@
             <div class="col text-center">
                 <h1 class="font-weight-bold heading-title titulo">Notaría Pública Latina <br> en {{ $data['oficina'] }}</h1>
                 <p class="text-white heading-title" style="font-size: 25px">Gestión rápida y segura!</p>
-                <a id="btnFirstIniciarTramite" href="#iniciarTramite" class="btn" style="background-color: #9A7A2E">Iniciar Trámite</a>
+                <a id="btnFirstIniciarTramite" href="#iniciarTramite" class="btn" style="background-color: #ffc107">Iniciar Trámite</a>
             </div>
         </div>
     </section>
@@ -184,7 +184,7 @@
             <p class="text-muted" style="margin-left: 10%; margin-right: 10%">Apostille actas de nacimiento, actas de matrimonio, certificados, poderes, traducciones, diplomas, contratos, testamentos</p>
         </div>
         <div class="col-sm-6">
-            <img id="imgrowapostille" style="width: {{$data['widthimgdown']}}; height: {{$data['heightimgdown']}}; padding-top: {{$data['paddingtop']}}" class="img-fluid" src="{{$data['imgdown']}}" alt="Notaria Latina en {{$data['oficina']}}">
+            <img @if($data['oficina'] == "New York") class="float-right" @endif id="imgrowapostille" style="width: {{$data['widthimgdown']}}; height: {{$data['heightimgdown']}}; padding-top: {{$data['paddingtop']}}" class="img-fluid" src="{{$data['imgdown']}}" alt="Notaria Latina en {{$data['oficina']}}">
         </div>
     </div>
 

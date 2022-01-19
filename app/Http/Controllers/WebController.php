@@ -102,10 +102,10 @@ class WebController extends Controller
         $data['telfShow'] = '347-973-9888';
         $data['imgapostilla'] = 'img/oficinas/apostillany.png';
         $data['imgup'] = 'img/oficinas/BANER-NEW-YORK.jpg';
-        $data['imgdown'] = '';
-        $data['widthimgdown'] = '70%';
-        $data['heightimgdown'] = '25rem';
-        $data['paddingtop'] = '2px';
+        $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
+        $data['widthimgdown'] = '90%';
+        $data['heightimgdown'] = '100%';
+        $data['paddingtop'] = '0px';
         $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7118327106805!2d-73.90010968459403!3d40.74636597932825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f030415024b%3A0x3b391bcaf4cd7c10!2sNotaria%20Latina%20-%20Queens%20New%20York!5e0!3m2!1ses-419!2sec!4v1642622200464!5m2!1ses-419!2sec';
 
         return view('web.oficina', compact('data'));
@@ -125,7 +125,7 @@ class WebController extends Controller
         $data['imgdown'] = 'img/oficinas/CHICA-APOST.png';
         $data['widthimgdown'] = '70%';
         $data['heightimgdown'] = '25rem';
-        $data['paddingtop'] = '2px';
+        $data['paddingtop'] = '15px';
         $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.4152573854667!2d-74.21549248459648!3d40.66481847933702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24d541387e7ff%3A0x335c07b09362e483!2s1146%20E%20Jersey%20St%2C%20Elizabeth%2C%20NJ%2007201%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1642459239606!5m2!1ses!2sec';
 
         return view('web.oficina', compact('data'));
@@ -137,9 +137,9 @@ class WebController extends Controller
         $data['subtitle'] = '¡Apostillamos todo tipo de documentos para Florida!';
         $data['imggrid'] = 'img/oficinas/MATRIMONIO FL.png';
         $data['txtgrid'] = 'Matrimonios';
-        $data['telfHidden'] = '+13054229149';
-        $data['telfWpp'] = '13054229149';
-        $data['telfShow'] = '305 422-9149';
+        $data['telfHidden'] = '+13056146362';
+        $data['telfWpp'] = '13056146362';
+        $data['telfShow'] = '305 614-6362';
         $data['imgapostilla'] = 'img/oficinas/apostillafl.png';
         $data['imgup'] = 'img/oficina-notaria-florida.jpg';
         $data['imgdown'] = 'img/oficinas/Plaza_opt.jpg';
