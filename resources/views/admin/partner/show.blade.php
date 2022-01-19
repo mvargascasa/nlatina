@@ -46,9 +46,18 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                {!! Form::label('name', 'Nombre y Apellido') !!}
+                                {!! Form::label('name', 'Nombre') !!}
                                 {!! Form::text('name', $partner->name, ['class' => 'form-control']) !!}
                                 @error('name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                {!! Form::label('lastname', 'Apellido') !!}
+                                {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control']) !!}
+                                @error('lastname')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -62,7 +71,7 @@
                             @enderror
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        {{-- <div class="col-sm-4">
                             <div class="form-group">
                                 {!! Form::label('nationality', 'Nacionalidad') !!}
                                 {!! Form::select('nationality', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->nationality, ['class' => 'form-control']) !!}
@@ -70,7 +79,7 @@
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     {{--PAIS DE RESIDENCIA, CODIGO, TELEFONO--}}
@@ -207,14 +216,25 @@
             <p style="font-weight: bold">INFORMACIÓN PROFESIONAL</p>
             
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
-                        {!! Form::label('company', 'Empresa y/o Nombre del titular') !!}
-                        {!! Form::text('company', $partner->company, ['class' => 'form-control']) !!}
+                        {!! Form::label('company', 'Empresa') !!}
+                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Independiente' => 'Independiente'], null, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
                     @error('company')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                     </div>
+                </div>
+                <div id="divCompanyName" class="col-sm-4" @if ($partner->company == "Empresa") style="display: block" @else style="display: none" @endif>
+                    {!! Form::label('company_name', 'Nombre de la Empresa') !!}
+                    @if ($partner->company_name != null)
+                        {!! Form::text('company_name', $partner->company_name, ['class' => 'form-control']) !!}
+                    @else
+                        {!! Form::text('company_name', null, ['class' => 'form-control']) !!} 
+                    @endif
+                    @error('company_name')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
             </div>
 
@@ -242,10 +262,14 @@
                     <div class="form-group">
                         {!! Form::label('specialty', 'Especialidad(es)') !!} <b>(Descripción más detallada)</b>
                         @isset ($partner->specialty)
-                        {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control']) !!}
+                        {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control', 'onkeyup' => 'countChars();']) !!}
                         @else
-                        {!! Form::text('specialty', null, ['class' => 'form-control']) !!}
-                        @endisset   
+                        {!! Form::text('specialty', null, ['class' => 'form-control', 'onkeyup' => 'countChars();']) !!}
+                        @endisset
+                        <div class="d-flex">
+                            <p id="charNum">0 caracteres</p>
+                            <span class="text-success" style="margin-left: 5px">(Mínimo: 150 caracteres - Máximo: 200 caracteres)</span>
+                        </div>   
                         @error('specialty')
                             <div>
                                 <span class="text-danger">{{ $message }}</span>
@@ -276,9 +300,16 @@
 @section('end-scripts')
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
+        window.addEventListener('load', countChars());
+
         document.addEventListener("DOMContentLoaded", function(event) {
             CKEDITOR.replace('biography_html');
         });
+
+        function countChars(){
+            obj = document.getElementById('specialty');
+            document.getElementById("charNum").innerHTML = obj.value.length+' caracteres';
+        }
 
         function showPreview(event){
             if(event.target.files.length > 0){
@@ -294,26 +325,36 @@
         
         selectPaisResidencia.onchange  = function(e){
             switch (selectPaisResidencia.value) {
-                case "Argentina":codigo = "+54";break;
-                case "Bolivia":codigo = "+591";break;
-                case "Colombia":codigo = "+57";break;
-                case "Costa Rica":codigo = "+506";break;
-                case "Ecuador":codigo = "+593";break;
-                case "El Salvador":codigo = "+503";break;
-                case "España":codigo = "+34";break;
-                case "Guatemala":codigo = "+502";break;
-                case "Honduras":codigo = "+504";break;
-                case "México":codigo = "+52";break;
-                case "Nicaragua":codigo = "+505";break;
-                case "Panamá":codigo = "+507";break;
-                case "Paraguay":codigo = "+595";break;
-                case "Perú":codigo = "+51";break;
-                case "Puerto Rico":codigo = "+1787";break;
-                case "República Dominicana":codigo = "+1809";break;
-                case "Uruguay":codigo = "+598";break;
-                case "Venezuela":codigo = "+58";break;
+                case "Argentina": codigo = "+54";break;
+                case "Bolivia": codigo = "+591";break;
+                case "Colombia": codigo = "+57";break;
+                case "Costa Rica": codigo = "+506";break;
+                case "Ecuador": codigo = "+593";break;
+                case "El Salvador": codigo = "+503";break;
+                case "España": codigo = "+34";break;
+                case "Guatemala": codigo = "+502";break;
+                case "Honduras": codigo = "+504";break;
+                case "México": codigo = "+52";break;
+                case "Nicaragua": codigo = "+505";break;
+                case "Panamá": codigo = "+507";break;
+                case "Paraguay": codigo = "+595";break;
+                case "Perú": codigo = "+51";break;
+                case "Puerto Rico": codigo = "+1787";break;
+                case "República Dominicana": codigo = "+1809";break;
+                case "Uruguay": codigo = "+598";break;
+                case "Venezuela": codigo = "+58";break;
             }
             inputCodPais.value = codigo;
+        }
+
+        function showInputNameCompany(){
+            var selectCompany = document.getElementById('company').value;
+            var divCompanyName = document.getElementById('divCompanyName');
+            if(selectCompany == "Empresa"){
+                divCompanyName.style.display = "block";
+            } else {
+                divCompanyName.style.display = "none";
+            }
         }
     </script>
 @endsection

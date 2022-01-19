@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('state', 'Estado / Provincia') !!}
+                                        {!! Form::label('state', 'Estado') !!}
                                         @if ($partner->state != null)
                                         {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
                                         @else
@@ -226,12 +226,23 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('company', 'Empresa y/o Nombre del titular') !!}
-                                        {!! Form::text('company', $partner->company, ['class' => 'form-control']) !!}
+                                        {!! Form::label('company', 'Empresa') !!}
+                                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Independiente' => 'Independiente'], null, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
                                     @error('company')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     </div>
+                                </div>                            
+                                <div id="divCompanyName" class="col-sm-4" @if ($partner->company == "Empresa") style="display: block" @else style="display: none" @endif>
+                                    {!! Form::label('company_name', 'Nombre de la Empresa') !!}
+                                    @if ($partner->company_name != null)
+                                        {!! Form::text('company_name', $partner->company_name, ['class' => 'form-control']) !!}
+                                    @else
+                                        {!! Form::text('company_name', null, ['class' => 'form-control']) !!} 
+                                    @endif
+                                    @error('company_name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -366,6 +377,16 @@
         function countChars(){
             obj = document.getElementById('specialty');
             document.getElementById("charNum").innerHTML = obj.value.length+' caracteres';
+        }
+
+        function showInputNameCompany(){
+            var selectCompany = document.getElementById('company').value;
+            var divCompanyName = document.getElementById('divCompanyName');
+            if(selectCompany == "Empresa"){
+                divCompanyName.style.display = "block";
+            } else {
+                divCompanyName.style.display = "none";
+            }
         }
     </script>
 @endsection

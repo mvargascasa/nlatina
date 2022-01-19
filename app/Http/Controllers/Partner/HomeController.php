@@ -93,6 +93,16 @@ class HomeController extends Controller
             $partner->img_profile = $url;
         }
 
+        if($request->company == "Empresa"){
+            $request->validate([
+                'company_name' => 'required'
+            ]);
+            $partner->company = $request->company;
+            $partner->company_name = $request->company_name;
+        } else {    
+            $partner->company = $request->company;
+        }
+
         // $codigo_pais = $this->getPaisByCodigo($request->country_residence);
 
         if($request->specialties){
@@ -112,7 +122,6 @@ class HomeController extends Controller
         $partner->link_linkedin = $request->link_linkedin;
         $partner->website = $request->website;
         $partner->codigo_pais = $request->codigo_pais;
-        $partner->company = $request->company;
         $partner->phone = $request->phone;
         $partner->email = $request->email;
         $partner->biography_html = $request->biography_html;
