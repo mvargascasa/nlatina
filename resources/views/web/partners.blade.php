@@ -271,7 +271,7 @@
     </div>
 </div>
 
-<div class="mt-5 contenido" style="margin-left:7%; margin-right: 7%;">
+<div class="mt-5 contenido" style="margin-left:10%; margin-right: 10%;">
     @if (count($partners) > 0)
         <div class="row">
             @foreach ($partners as $partner)
