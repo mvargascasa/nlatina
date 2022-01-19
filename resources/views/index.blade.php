@@ -19,7 +19,14 @@
     <meta property="og:description"        content="Gestión en Línea en todo EE.UU. Poderes, Apostillas, Traducciones, Autorizaciones de Viaje, Affidavit." />
     <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
     
-
+    <style>
+      @media screen and (max-width: 580px){
+        #locations{
+          margin-left: 0% !important;
+          margin-right: 0% !important;
+        }
+      }
+    </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
 @section('phoneNumber', '800-742-8602')
@@ -42,7 +49,12 @@
           <div class="carousel-caption">
               <h1 class="tit-not">Notaría Pública</h1>
               <h2 class="heading-title">Gestión Fácil y Rápida</h2>
-              <h5 class="heading-title">Notarizamos Documentos</h5>
+              <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%">
+                <div class="col-sm-4 border-right"><i class="fas fa-map-marker-alt"><a style="color: #ffffff; text-decoration: none" href="#"></i> Oficinas New York</a></div>
+                <div class="col-sm-4 border-left border-right"><i class="fas fa-map-marker-alt"><a style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a></div>
+                <div class="col-sm-4 border-left"><i class="fas fa-map-marker-alt"><a style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+              </div>
+              {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               <hr width="200" style="border-color: #fff">
   
               <a href="javascript:void(0)" class="btn btn-warning btn-lg" data-toggle="modal" 
