@@ -310,6 +310,11 @@
                             <div class="form-group">
                                 {!! Form::label('biography_html', 'Biografia') !!} <b>(Descripción de trayectoria y experiencia en su área)</b>
                                 {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4']) !!}
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <span class="text-success float-right" style="font-size: 13px">(Mínimo: 600 caracteres - Máximo: 700 caracteres)</span>
+                                    </div>
+                                </div>
                                 @error('biography_html')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
