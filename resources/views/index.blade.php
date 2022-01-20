@@ -123,8 +123,12 @@
           <div class="carousel-caption">
               <h1 class="tit-not">PODERES GENERALES</h1>
               <h2 class="heading-title">Y ESPECIALES</h2>
-              <h5 class="heading-title">Notarizamos Documentos</h5>
-              <hr width="200" style="border-color: #fff">
+              <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 20px">
+                <div class="col-sm-4 border-right"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
+                <div class="col-sm-4 border-left border-right"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
+                <div class="col-sm-4 border-left"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+              </div>
+              {{-- <hr width="200" style="border-color: #fff"> --}}
   
               <a href="javascript:void(0)" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</a>
           </div>
