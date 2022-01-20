@@ -66,7 +66,7 @@ class RegisterController extends Controller
                     <br>Nacionalidad: " . strip_tags($partner->country_residence) ."
                     <br>Teléfono: ". strip_tags($codigo_pais) . " " .  strip_tags($partner->phone) ."
                     <br>Email: " . strip_tags($partner->email)."
-                    <br>Empresa: " . strip_tags($partner->company)."
+                    <br>Empresa: " . strip_tags($partner->company_name)."
                     <br>
                     <img style='margin-top:20px; width:210px; height:75px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";

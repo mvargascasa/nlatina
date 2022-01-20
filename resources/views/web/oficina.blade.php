@@ -140,38 +140,38 @@
         <p class="text-center mt-5 mb-5" style="padding-top: 30px; font-size: 25px; font-weight: bold">Servicios adicionales de Notaría Pública</p>
         <div class="row" style="padding-left:20%; padding-right:20%;">
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
+                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
                 <p>Travel Authorization</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
-                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
+                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
                 <p>Certificaciones</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
-                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
+                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
                 <p>Acuerdos</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
-                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
+                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
                 <p>Cartas de Invitación</p>
             </div>
         </div>
     
         <div class="row mt-1" style="padding-left:20%; padding-right:20%;">
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-12.png') }}" alt="">
+                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-12.png') }}" alt="">
                 <p>Revocatorias</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-13.png') }}" alt="">
+                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-13.png') }}" alt="">
                 <p>Contratos</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-14.png') }}" alt="">
+                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-14.png') }}" alt="">
                 <p>Testamentos</p>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 55px" class="img-fluid" src="{{ asset($data['imggrid']) }}" alt="">
+                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset($data['imggrid']) }}" alt="">
                 <p>{{ $data['txtgrid'] }}</p>
             </div>
         </div>
