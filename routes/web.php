@@ -34,6 +34,7 @@ Route::delete('/home/post/{post}', 'PostController@destroy')->name('post.destroy
 Route::get('/home/partners', 'PartnerController@index')->name('partner.index');
 Route::get('/home/partners/create', 'PartnerController@create')->name('partner.form');
 Route::post('/home/partners/store', 'PartnerController@store')->name('partner.store');
+Route::post('/home/partners/verify/{partner}', 'PartnerController@verifiEmailAdmin')->name('verify.email.admin');
 Route::get('/home/partners/{partner}/show', 'PartnerController@show')->name('partner.show');
 Route::put('/home/partners/{partner}', 'PartnerController@update')->name('partner.update');
 

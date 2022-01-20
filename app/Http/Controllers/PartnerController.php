@@ -122,6 +122,7 @@ class PartnerController extends Controller
         
         $partner->status = $request->status;
         $partner->name = $request->name;
+        $partner->lastname = $request->lastname;
         $partner->email = $request->email;
         $partner->nationality = $request->nationality;
         $partner->country_residence = $request->country_residence;
@@ -152,6 +153,13 @@ class PartnerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function verifiEmailAdmin(Partner $partner)
+    {
+        $partner->email_verified_at = date('Y-m-d h:i:s', time());
+        $partner->save();
+        return back()->with('success', 'Se ha verificado el correo del usuario');
     }
 
     public function sendEmail(Partner $partner){ 

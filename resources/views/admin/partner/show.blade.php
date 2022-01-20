@@ -6,7 +6,21 @@
 
 @section('content')
     <div class="container mt-5 ">
-        <h1>Perfil del Socio {{ $partner->name}}</h1>
+        @if (session('success'))
+            <div class="alert alert-success">
+                Se ha verificado el correo del usuario
+            </div>
+        @endif
+        <div>
+            <h1>Perfil del Socio {{ $partner->name}}</h1>
+            @if ($partner->email_verified_at == null)
+                <div class="float-right">
+                    {!! Form::open(['route' => ['verify.email.admin', $partner], 'method' => 'POST']) !!}
+                        {!! Form::submit('Verificar email', ['class' => 'btn btn-success']) !!}
+                    {!! Form::close() !!}
+                </div>
+            @endif
+        </div>
         <div class="form-group mt-5 border p-5">
             {!! Form::model($partner, ['route' => ['partner.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'POST']) !!}
             @csrf
