@@ -75,6 +75,8 @@ Route::get('blog','WebController@showblog')->name('post.blog');
 Route::get('consulados','WebController@consulados')->name('consul.index');
 Route::get('consulado/{slug}','WebController@consulado')->name('consul.slug');
 
+Route::get('socios/login', function(){ return redirect()->route('partner.showform');});
+
 Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
     Route::get('/home', 'HomeController@index')->name('socios.index')->middleware(['auth:partner', 'verified']);
     Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform')->middleware('guest:partner'); // MOSTRAR FORMULARIO DE LOGIN

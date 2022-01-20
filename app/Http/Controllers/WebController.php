@@ -107,6 +107,8 @@ class WebController extends Controller
         $data['heightimgdown'] = '100%';
         $data['paddingtop'] = '0px';
         $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7118327106805!2d-73.90010968459403!3d40.74636597932825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f030415024b%3A0x3b391bcaf4cd7c10!2sNotaria%20Latina%20-%20Queens%20New%20York!5e0!3m2!1ses-419!2sec!4v1642622200464!5m2!1ses-419!2sec';
+        $data['metadescription'] = '';
+        $data['keywords'] = '';
 
         return view('web.oficina', compact('data'));
     }
@@ -127,6 +129,8 @@ class WebController extends Controller
         $data['heightimgdown'] = '25rem';
         $data['paddingtop'] = '15px';
         $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.4152573854667!2d-74.21549248459648!3d40.66481847933702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24d541387e7ff%3A0x335c07b09362e483!2s1146%20E%20Jersey%20St%2C%20Elizabeth%2C%20NJ%2007201%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1642459239606!5m2!1ses!2sec';
+        $data['metadescription'] = '';
+        $data['keywords'] = '';
 
         return view('web.oficina', compact('data'));
     }
@@ -147,6 +151,8 @@ class WebController extends Controller
         $data['heightimgdown'] = '100%';
         $data['paddingtop'] = '0px';
         $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.404392613644!2d-80.25914568497105!3d26.150956283461554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90638fe895e7b%3A0xaa63cebf0d7899!2s2104%20N%20University%20Dr%2C%20Sunrise%2C%20FL%2033322%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1642375956270!5m2!1ses!2sec';
+        $data['metadescription'] = '';
+        $data['keywords'] = '';
 
         return view('web.oficina', compact('data'));
     } 

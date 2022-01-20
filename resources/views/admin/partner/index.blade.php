@@ -9,6 +9,20 @@
 <div class="col-9 mt-4">
     <div class="row justify-content-center">
         <div class="col-12">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5><b>TOTAL PARTNERS: </b>{{ $total }}</h5>
+                </div>
+                <div class="col-sm-3">
+                    <h5><b>PUBLICADOS: </b>{{ $published }}</h5>
+                </div>
+                <div class="col-sm-3">
+                    <h5><b>NO PUBLICADOS: </b>{{$notpublished}}</h5>
+                </div>
+                <div class="col-sm-3">
+                    <h5><b>EMAILS VERIFICADOS: </b>{{$verified}}</h5>
+                </div>
+            </div>
             <div class="card">
                 <div class="card-header font-weight-bold">
                     PARTNERS
@@ -28,6 +42,7 @@
                             <th>IMG</th>
                             <th>NOMBRE</th>
                             <th>ESPECIALIDAD</th>
+                            <th>VERIFICADO</th>
                             <th>PAIS DE RESIDENCIA</th>
                             <th>ESTADO</th>
                             <th>ACCIONES</th>
@@ -52,6 +67,9 @@
                                 @else
                                     <b>Sin información</b> 
                                 @endisset
+                            </td>
+                            <td>
+                                {{$partner->email_verified_at}}
                             </td>
                             <td>
                                 @isset($partner->country_residence)

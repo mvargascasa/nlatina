@@ -312,7 +312,7 @@
                                 {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4']) !!}
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <span class="text-success float-right" style="font-size: 13px">(Mínimo: 600 caracteres - Máximo: 700 caracteres)</span>
+                                        <span class="text-success float-right" style="font-size: 13px">(Mínimo: 600 caracteres - Máximo: 1000 caracteres)</span>
                                     </div>
                                 </div>
                                 @error('biography_html')

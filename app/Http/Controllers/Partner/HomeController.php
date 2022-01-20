@@ -40,11 +40,11 @@ class HomeController extends Controller
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'image|max:1000',
-                'biography_html' => 'required|min:600|max:700',
+                'biography_html' => 'required|min:600|max:1000',
             ], [
                 'img_profile.max' => 'La imagen no debe ser mayor a 1MB',
                 'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
-                'biography_html.max' => 'La biografia debe tener más de 700 caracteres',
+                'biography_html.max' => 'La biografia no debe tener más de 1000 caracteres',
                 'specialties.max' => 'No debe seleccionar más de tres campos'
             ]);
         } else if($request->img_profile != null && $partner->img_profile != null){ //ESTE IF ES PARA SI ES QUE CAMBIA SU FOTO DE PERFIL - ELIMINA LA ANTERIOR
@@ -61,11 +61,11 @@ class HomeController extends Controller
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'required|image|max:1000',
-                'biography_html' => 'required|min:600|max:700',
+                'biography_html' => 'required|min:600|max:1000',
             ], [
                 'img_profile.max' => 'La imagen no debe ser mayor a 1MB',
                 'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
-                'biography_html.max' => 'La biografia debe tener más de 700 caracteres',
+                'biography_html.max' => 'La biografia no debe tener más de 1000 caracteres',
                 'specialties.max' => 'No debe seleccionar más de tres campos'
             ]);
             $url = Storage::put('partners', $request->file('img_profile'));
@@ -85,11 +85,11 @@ class HomeController extends Controller
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'required|image|max:1000',
-                'biography_html' => 'required|min:600|max:700',
+                'biography_html' => 'required|min:600|max:1000',
             ], [
                 'img_profile.max' => 'La imagen no debe ser mayor a 1MB',
                 'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
-                'biography_html.max' => 'La biografia debe tener más de 700 caracteres',
+                'biography_html.max' => 'La biografia no debe tener más de 1000 caracteres',
                 'specialties.max' => 'No debe seleccionar más de tres campos'
             ]);
             $url = Storage::put('partners', $request->file('img_profile'));

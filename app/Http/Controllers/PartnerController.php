@@ -23,9 +23,14 @@ class PartnerController extends Controller
      */
     public function index()
     {
+        $total = Partner::count();
+        $published = Partner::where('status', '=', 'PUBLICADO')->count();
+        $notpublished = Partner::where('status', '=', 'NO PUBLICADO')->count();
+        $verified = Partner::where('email_verified_at', '!=', 'null')->count();
+
         $partners = Partner::orderBy('id', 'desc')
                     ->paginate(10);
-        return view('admin.partner.index', compact('partners'));
+        return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified'));
     }
 
     /**
