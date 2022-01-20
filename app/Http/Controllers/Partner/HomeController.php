@@ -40,9 +40,9 @@ class HomeController extends Controller
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'image|max:1000',
-                'biography_html' => 'required|min:600|max:1000',
+                'biography_html' => 'required|min:600|max:8000',
             ], [
-                'img_profile.max' => 'La imagen no debe ser mayor a 1MB',
+                'img_profile.max' => 'La imagen no debe ser mayor a 8MB',
                 'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
                 'biography_html.max' => 'La biografia no debe tener más de 1000 caracteres',
                 'specialties.max' => 'No debe seleccionar más de tres campos'
@@ -60,10 +60,10 @@ class HomeController extends Controller
                 'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
-                'img_profile' => 'required|image|max:1000',
+                'img_profile' => 'required|image|max:8000',
                 'biography_html' => 'required|min:600|max:1000',
             ], [
-                'img_profile.max' => 'La imagen no debe ser mayor a 1MB',
+                'img_profile.max' => 'La imagen no debe ser mayor a 8MB',
                 'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
                 'biography_html.max' => 'La biografia no debe tener más de 1000 caracteres',
                 'specialties.max' => 'No debe seleccionar más de tres campos'
@@ -84,10 +84,10 @@ class HomeController extends Controller
                 'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
-                'img_profile' => 'required|image|max:1000',
+                'img_profile' => 'required|image|max:8000',
                 'biography_html' => 'required|min:600|max:1000',
             ], [
-                'img_profile.max' => 'La imagen no debe ser mayor a 1MB',
+                'img_profile.max' => 'La imagen no debe ser mayor a 8MB',
                 'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
                 'biography_html.max' => 'La biografia no debe tener más de 1000 caracteres',
                 'specialties.max' => 'No debe seleccionar más de tres campos'
