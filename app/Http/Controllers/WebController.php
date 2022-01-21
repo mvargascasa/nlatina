@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Consulate;
+use App\Country;
 use App\Http\Traits\GetCountryByCodTrait;
 use App\Mail\SendLead;
 use App\Partner;
 use App\Post;
 use App\Specialty;
+use App\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -65,10 +67,12 @@ class WebController extends Controller
     }
 
     public function showAllPartners(Request $request){
-        $countries = Partner::select('country_residence')
-        ->where('status', 'PUBLICADO')
-        ->distinct()
-        ->get();
+        // $countries = Partner::select('country_residence')
+        // ->where('status', 'PUBLICADO')
+        // ->distinct()
+        // ->get();
+
+        $countries = Country::get(['name_country', 'id']);
 
         $specialties = Specialty::all();           
 
@@ -84,6 +88,11 @@ class WebController extends Controller
                 ->get();
 
         return view('web.partners', compact('partners', 'countries', 'specialties'));
+    }
+
+    public function fetchState(Request $request){
+        $states = State::where('country_id', $request->id)->get();
+        return response()->json($states);
     }
 
     public function showPartner($id){

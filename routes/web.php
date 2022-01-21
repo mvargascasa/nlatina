@@ -121,6 +121,9 @@ Route::get('/partners', 'WebController@showAllPartners')->name('web.showallpartn
 Route::get('/partners/{partner}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
 Route::post('/partners-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');
 
+//FETCH STATES
+Route::post('/partners/api/fetch-states', 'WebController@fetchState')->name('partners.fetch.state');
+
 Route::get('/thankpartner', function(){return view('web.thankpartner');});
 
 //OFICINAS

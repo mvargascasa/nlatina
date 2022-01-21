@@ -42,7 +42,7 @@
                             <th>IMG</th>
                             <th>NOMBRE</th>
                             <th>ESPECIALIDAD</th>
-                            <th>VERIFICADO</th>
+                            <th>EMAIL VERIFICADO</th>
                             <th>PAIS DE RESIDENCIA</th>
                             <th>ESTADO</th>
                             <th>ACCIONES</th>
@@ -60,7 +60,10 @@
                                         <img src="{{url('img/i300_'.$cat->imgcat)}}" width="50">
                                     @endif --}}
                             </td>
-                            <td>{{ $partner->name }} {{ $partner->lastname }}</td>
+                            <td>
+                                {{ $partner->name }} {{ $partner->lastname }}
+                                <p class="text-muted" style="font-size: 13px">{{ $partner->created_at->format('d/m/Y')}}</p>
+                            </td>
                             <td>
                                 @isset($partner->specialty)
                                     {{ $partner->specialty}}
@@ -69,7 +72,11 @@
                                 @endisset
                             </td>
                             <td>
-                                {{$partner->email_verified_at}}
+                                @isset($partner->email_verified_at)
+                                    Se verifico el <b>{{$partner->email_verified_at->format('d/m/Y')}}</b> 
+                                @else
+                                    <b>Sin verificar</b> 
+                                @endisset
                             </td>
                             <td>
                                 @isset($partner->country_residence)

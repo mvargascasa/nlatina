@@ -244,17 +244,24 @@
         
         <form action="{{ route('web.showallpartners') }}" method="GET">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="form-group">
                     <select class="form-control" name="country" id="country">
                         <option value="">País</option>
                         @foreach ($countries as $country)
-                            <option value="{{ $country->country_residence }}">{{ $country->country_residence}}</option>
+                            <option value="{{ $country->id }}">{{ $country->name_country}}</option>
                         @endforeach
                     </select>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <select class="form-control" name="stateSelect" id="stateSelect">
+                        <option value="">Estado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3">
                 <div class="form-group">
                     <select class="form-control" name="specialty" id="specialty">
                         <option value="">Especialidad</option>
@@ -325,7 +332,28 @@
 @endsection
 
 @section('script')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var idCountry = $(this).val();
+            $.ajax({
+                url: "partners/api/fetch-states",
+                type: "POST",
+                data: {
+                    "_token" : "{{ csrf_token() }}",
+                    "id": idCountry
+                },
+                dataType: "json",
+                success: function(result){
+                    $('#stateSelect').html('<option value="">Estado</option>');
+                    $.each(result, function(key, value){
+                        $('#stateSelect').append('<option value="' + value.name_state + '">' + value.name_state + "</option>");
+                    });
+                }
+            });
+        });
+    });
 
         var selectPaisResidencia = document.getElementById('country_residence');
         var inputCodPais = document.getElementById('codTelfPais');
