@@ -256,7 +256,7 @@
             </div>
             <div class="col-lg-3">
                 <div class="form-group">
-                    <select class="form-control" name="stateSelect" id="stateSelect">
+                    <select class="form-control" name="state" id="stateSelect">
                         <option value="">Estado</option>
                     </select>
                 </div>

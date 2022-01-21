@@ -5,8 +5,17 @@
 @endsection
 
 @section('content')
-    
 <div class="col-9 mt-4">
+    {!! Form::open(['route' => 'partner.index', 'method' => 'GET']) !!}
+    <div class="row form-group mb-3">
+        <div class="col-sm-10">
+                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre del partner']) !!}    
+            </div>
+            <div class="col-sm-2">
+                {!! Form::submit('Buscar', ['class' => 'btn btn-info']) !!}
+            </div>
+        </div>
+        {!! Form::close() !!}
     <div class="row justify-content-center">
         <div class="col-12">
             <div class="row">

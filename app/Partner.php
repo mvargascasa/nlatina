@@ -54,20 +54,38 @@ class Partner extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new PartnerResetPasswordNotification($token));
     }
+
     
     //SCOPE
+    public function scopeName($query, $name){
+        if($name){
+            return $query->where('name', 'LIKE', "%$name%");
+        }
+    }
+    
     public function scopeCountry($query, $country){
         if ($country) {
             return $query->where('country_residence', 'LIKE', "%$country%");
         }
     }
 
-    public function scopeSpecialty($query, $specialty){
+    public function scopeState($query, $state){
+        if($state){
+            return $query->where('state', 'LIKE', "%$state%");
+        }   
+    }
+
+    public function scopeSpecialties($specialty){
         if ($specialty) {
-            return $query->where('specialty', 'LIKE', "%$specialty%");
+            // return $query->where('specialty', 'LIKE', "%$specialty%");
+            $partners = Partner::with('specialties')->whereHas('specialties', function($query){
+                $query->where('name_specialty', 'LIKE', "%$this->specialty%");
+            });
+            return $partners;
         }
     }
 
+    //RELACION
     public function specialties(){
         return $this->belongsToMany(Specialty::class);
     }
