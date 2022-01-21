@@ -64,8 +64,9 @@ class Partner extends Authenticatable implements MustVerifyEmail
     }
     
     public function scopeCountry($query, $country){
-        if ($country) {
-            return $query->where('country_residence', 'LIKE', "%$country%");
+        $countryAux = Country::find($country);
+        if ($countryAux) {
+            return $query->where('country_residence', 'LIKE', "%$countryAux->name_country%");
         }
     }
 
@@ -78,9 +79,9 @@ class Partner extends Authenticatable implements MustVerifyEmail
     public function scopeSpecialties($specialty){
         if ($specialty) {
             // return $query->where('specialty', 'LIKE', "%$specialty%");
-            $partners = Partner::with('specialties')->whereHas('specialties', function($query){
-                $query->where('name_specialty', 'LIKE', "%$this->specialty%");
-            });
+            $partners = Partner::with(['specialties' => function($query){
+                $query->nameSpecialty($this->specialty);
+            }])->get();
             return $partners;
         }
     }

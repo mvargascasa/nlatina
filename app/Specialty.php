@@ -17,4 +17,9 @@ class Specialty extends Model
     public function partners(){
         return $this->belongsToMany(Partner::class);
     }
+
+    //SCOPE
+    public function scopeNameSpecialty($query, $name_specialty){
+        return $query->where('name_specialty', $name_specialty);
+    }
 }
