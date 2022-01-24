@@ -233,7 +233,11 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         {!! Form::label('company', 'Empresa') !!}
-                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Independiente' => 'Independiente'], null, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
+                        @if ($partner->company)
+                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], $partner->company, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
+                        @else
+                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], null, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
+                        @endif
                     @error('company')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -319,7 +323,10 @@
 @section('end-scripts')
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
-        window.addEventListener('load', countChars());
+        window.addEventListener('load', function(){
+            countChars();
+            showInputNameCompany();
+        });
 
         document.addEventListener("DOMContentLoaded", function(event) {
             CKEDITOR.replace('biography_html');

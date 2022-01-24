@@ -123,6 +123,17 @@ class PartnerController extends Controller
             $partner->specialties()->detach();
             $partner->specialties()->attach($request->specialties);
         }
+
+        if($request->company == "Empresa"){
+            $request->validate([
+                'company_name' => 'required'
+            ]);
+            $partner->company = $request->company;
+            $partner->company_name = $request->company_name;
+        } else {    
+            $partner->company = $request->company;
+            $partner->company_name = null;
+        }
         
         $partner->status = $request->status;
         $partner->name = $request->name;
@@ -139,7 +150,7 @@ class PartnerController extends Controller
         $partner->link_instagram = $request->link_instagram;
         $partner->link_linkedin = $request->link_linkedin;
         $partner->website = $request->website;
-        $partner->company = $request->company;
+        // $partner->company = $request->company;
         $partner->specialty = $request->specialty;
         $partner->biography_html = $request->biography_html;
         $partner->slug = Str::slug($request->name . ' ' . $request->lastname . ' ' . $partner->id, '-'); 

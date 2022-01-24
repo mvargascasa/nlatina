@@ -198,7 +198,11 @@
                             </div>
                         @enderror
                         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
-                            <input type="text" class="form-control" placeholder="Empresa" name="company" autocomplete="off" value="{{ old('company') }}" required>
+                            {{-- <input type="text" class="form-control" placeholder="Empresa" name="company" autocomplete="off" value="{{ old('company') }}" required> --}}
+                            <select name="company" id="company" class="form-control" required>
+                                <option value="Empresa">Empresa</option>
+                                <option value="Libre Ejercicio">Libre Ejercicio</option>
+                            </select>
                         </div>
                         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
                             <input type="email" class="form-control" placeholder="Email" name="email" autocomplete="off" value="{{ old('email') }}" required>
@@ -346,7 +350,7 @@
                 },
                 dataType: "json",
                 success: function(result){
-                    $('#stateSelect').html('<option value="">Estado</option>');
+                    $('#stateSelect').html('<option value="">Todos</option>');
                     $.each(result, function(key, value){
                         $('#stateSelect').append('<option value="' + value.name_state + '">' + value.name_state + "</option>");
                     });

@@ -100,6 +100,7 @@ class HomeController extends Controller
             $partner->company_name = $request->company_name;
         } else {    
             $partner->company = $request->company;
+            $partner->company_name = null;
         }
 
         // $codigo_pais = $this->getPaisByCodigo($request->country_residence);

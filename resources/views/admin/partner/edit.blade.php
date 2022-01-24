@@ -20,11 +20,6 @@
 @endsection
 
 @section('content')
-@if (Auth::guard('partner')->user()->id != $partner->id)
-    <div class="display-4 d-flex justify-content-center align-items-center">
-        <span class="text-danger">No estas autorizado para ver este contenido</span>
-    </div>
-@else
 <div class="container">
 
     <div class="col-12 mt-4">
@@ -153,7 +148,7 @@
                                             <div class="form-group">
                                                 {!! Form::label('codigo_pais', 'Código País') !!}
                                                 @if ($partner->codigo_pais != null)
-                                                {!! Form::text('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'readonly']) !!}
+                                                {!! Form::text('codigo_pais', $partner->codigo_pais , ['class' => 'form-control']) !!}
                                                 @else
                                                 {!! Form::text('codigo_pais', null, ['class' => 'form-control', 'readonly']) !!}
                                                 @endif
@@ -227,7 +222,11 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         {!! Form::label('company', 'Empresa') !!}
-                                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Independiente' => 'Independiente'], null, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
+                                        @if ($partner->company != null)
+                                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], $partner->company, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
+                                        @else
+                                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], null, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
+                                        @endif
                                     @error('company')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -332,7 +331,6 @@
         </div>
     </div>
 </div>   
-@endif
 @endsection
 
 @section('end-scripts')
@@ -340,6 +338,7 @@
     <script>
         window.addEventListener('load', function(){
             countChars();
+            showInputNameCompany();
         });
 
         document.addEventListener("DOMContentLoaded", function(event) {
