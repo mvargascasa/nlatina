@@ -20,6 +20,6 @@ class Specialty extends Model
 
     //SCOPE
     public function scopeNameSpecialty($query, $name_specialty){
-        return $query->where('name_specialty', $name_specialty);
+        return $query->where('name_specialty', 'LIKE',  "%$name_specialty%");
     }
 }

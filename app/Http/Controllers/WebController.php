@@ -77,7 +77,7 @@ class WebController extends Controller
         $specialties = Specialty::all();           
 
         $country = $request->get('country');
-        // $specialty = $request->get('specialty');
+        $specialty = $request->get('specialty');
         $state = $request->get('state');
 
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
@@ -85,7 +85,7 @@ class WebController extends Controller
                 ->orderBy('id', 'DESC')
                 ->country($country)
                 ->state($state)
-                // ->specialties($specialty)
+                ->specialties($specialty)
                 ->distinct()
                 ->get();
 
