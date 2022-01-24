@@ -138,6 +138,7 @@ class PartnerController extends Controller
         $partner->status = $request->status;
         $partner->name = $request->name;
         $partner->lastname = $request->lastname;
+        $partner->title = $request->title;
         $partner->email = $request->email;
         $partner->nationality = $request->nationality;
         $partner->country_residence = $request->country_residence;

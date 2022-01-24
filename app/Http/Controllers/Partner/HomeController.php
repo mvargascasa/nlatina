@@ -30,6 +30,7 @@ class HomeController extends Controller
             $request->validate([
                 'name' => 'required',
                 'lastname' => 'required',
+                'title' => 'required',
                 'specialty' => 'required|min:150|max:200',
                 'specialties' => 'required|max:3',
                 'country_residence' => 'required',
@@ -50,6 +51,7 @@ class HomeController extends Controller
             $request->validate([
                 'name' => 'required',
                 'lastname' => 'required',
+                'title' => 'required',
                 'specialty' => 'required|min:150|max:200',
                 'specialties' => 'required|max:3 ',
                 'country_residence' => 'required',
@@ -72,6 +74,7 @@ class HomeController extends Controller
             $request->validate([
                 'name' => 'required',
                 'lastname' => 'required',
+                'title' => 'required',
                 'specialty' => 'required|min:150|max:200',
                 'specialties' => 'required|max:3 ',
                 'country_residence' => 'required',
@@ -112,6 +115,7 @@ class HomeController extends Controller
         
         $partner->name = $request->name;
         $partner->lastname = $request->lastname;
+        $partner->title = $request->title;
         $partner->specialty = $request->specialty;
         $partner->country_residence = $request->country_residence;
         $partner->city = $request->city;

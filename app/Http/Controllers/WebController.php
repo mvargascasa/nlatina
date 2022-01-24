@@ -80,7 +80,7 @@ class WebController extends Controller
         // $specialty = $request->get('specialty');
         $state = $request->get('state');
 
-        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
                 ->where('status', 'PUBLICADO')
                 ->orderBy('id', 'DESC')
                 ->country($country)

@@ -20,6 +20,7 @@ class Partner extends Authenticatable implements MustVerifyEmail
         'id', 
         'name', 
         'lastname',
+        'title',
         'specialty',
         'nationality', 
         'country_residence',

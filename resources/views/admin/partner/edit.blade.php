@@ -49,7 +49,20 @@
                             <p style="font-weight: bold">Información Personal</p>
                             <hr>
                             <div class="row">
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        {!! Form::label('title', 'Titulo') !!}
+                                        @if ($partner->title != null)
+                                        {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], $partner->title, ['class' => 'form-control']) !!}
+                                        @else
+                                        {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], null, ['class' => 'form-control']) !!}
+                                        @endif
+                                        @error('title')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="form-group">
                                         {!! Form::label('name', 'Nombre') !!}
                                         {!! Form::text('name', $partner->name, ['class' => 'form-control']) !!}
@@ -58,7 +71,7 @@
                                     @enderror
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <div class="form-group">
                                         {!! Form::label('lastname', 'Apellido') !!}
                                         {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control']) !!}
@@ -67,7 +80,7 @@
                                     @enderror
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <div class="form-group">
                                         {!! Form::label('email', 'Email') !!}
                                         {!! Form::email('email', $partner->email, ['class' => 'form-control']) !!}

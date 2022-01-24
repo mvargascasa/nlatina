@@ -296,7 +296,16 @@
                                 <div class="image">
                                     <img class="lazyload" width="125px" height="150px" data-src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
                                 </div>
-                                <h5><b>{{ $partner->name }} {{ $partner->lastname }}</b></h5>
+                                <h5>
+                                    <b>
+                                        @if ($partner->title == "Abogado")
+                                        Abg.
+                                        @elseif($partner->title == "Licenciado")
+                                        Lic.
+                                        @endif
+                                        {{ $partner->name }} {{ $partner->lastname }}
+                                    </b>
+                                </h5>
                                 {{-- <p>{{ $partner->specialty }}</p> --}}
                                 @foreach ($partner->specialties as $specialty)
                                 <div class="d-inline" style="font-size: 14px">

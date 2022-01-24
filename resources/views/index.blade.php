@@ -95,7 +95,7 @@
           </div>
         </div>
 
-@if(!$mobile)
+{{-- @if(!$mobile) --}}
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
           <img src="{{asset('img/2.jpg')}}" class="d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left bottom;">
@@ -142,7 +142,7 @@
               <a href="javascript:void(0)" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</a>
           </div>
         </div>
-@endif
+{{-- @endif --}}
 
     </div>
     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
