@@ -316,7 +316,7 @@
                                 @if ($partner->state != null)
                                     <h6><b>{{ $partner->state }}</b></h6>
                                 @endif
-                                <div class="row mt-4">
+                                <div class="row mt-3">
                                     <div class="col-sm-12">
                                         <p><i class="fas fa-phone-alt"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
                                     </div>
