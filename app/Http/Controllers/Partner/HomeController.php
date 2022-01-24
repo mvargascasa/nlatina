@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Partner;
 use App\Specialty;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
@@ -39,12 +39,11 @@ class HomeController extends Controller
                 'company' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
-                'img_profile' => 'image|max:1000',
-                'biography_html' => 'required|min:600|max:8000',
+                'img_profile' => 'image|max:8000',
+                'biography_html' => 'min:600',
             ], [
                 'img_profile.max' => 'La imagen no debe ser mayor a 8MB',
                 'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
-                'biography_html.max' => 'La biografia no debe tener más de 1000 caracteres',
                 'specialties.max' => 'No debe seleccionar más de tres campos'
             ]);
         } else if($request->img_profile != null && $partner->img_profile != null){ //ESTE IF ES PARA SI ES QUE CAMBIA SU FOTO DE PERFIL - ELIMINA LA ANTERIOR
@@ -61,12 +60,10 @@ class HomeController extends Controller
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'required|image|max:8000',
-                'biography_html' => 'required|min:600|max:1000',
+                'biography_html' => 'min:600',
             ], [
                 'img_profile.max' => 'La imagen no debe ser mayor a 8MB',
-                'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
-                'biography_html.max' => 'La biografia no debe tener más de 1000 caracteres',
-                'specialties.max' => 'No debe seleccionar más de tres campos'
+                'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',                'specialties.max' => 'No debe seleccionar más de tres campos'
             ]);
             $url = Storage::put('partners', $request->file('img_profile'));
             Storage::delete($partner->img_profile);
@@ -85,11 +82,10 @@ class HomeController extends Controller
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'required|image|max:8000',
-                'biography_html' => 'required|min:600|max:1000',
+                'biography_html' => 'min:600',
             ], [
                 'img_profile.max' => 'La imagen no debe ser mayor a 8MB',
                 'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
-                'biography_html.max' => 'La biografia no debe tener más de 1000 caracteres',
                 'specialties.max' => 'No debe seleccionar más de tres campos'
             ]);
             $url = Storage::put('partners', $request->file('img_profile'));
@@ -128,6 +124,7 @@ class HomeController extends Controller
         $partner->phone = $request->phone;
         $partner->email = $request->email;
         $partner->biography_html = $request->biography_html;
+        $partner->slug = Str::slug($partner->name . ' '. $partner->lastname . ' ' . $partner->id, '-');
 
         $partner->save();
 

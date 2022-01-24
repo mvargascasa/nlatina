@@ -80,7 +80,7 @@ class WebController extends Controller
         // $specialty = $request->get('specialty');
         $state = $request->get('state');
 
-        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email'])
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
                 ->where('status', 'PUBLICADO')
                 ->orderBy('id', 'DESC')
                 ->country($country)
@@ -97,8 +97,8 @@ class WebController extends Controller
         return response()->json($states);
     }
 
-    public function showPartner($id){
-        $partner = Partner::find($id); 
+    public function showPartner($slug){
+        $partner = Partner::where('slug', $slug)->first(); 
         return view('web.partner', compact('partner'));
     }
 

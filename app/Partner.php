@@ -37,6 +37,7 @@ class Partner extends Authenticatable implements MustVerifyEmail
         'email',
         'password', 
         'biography_html',
+        'slug',
         'status',
         'created_at', 
         'updated_at'
@@ -50,11 +51,17 @@ class Partner extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime'
     ];
 
+    //NOTIFICACION DE RECUPERACION DE CONTRASEÑA
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new PartnerResetPasswordNotification($token));
     }
 
+    //SOBREESCRIBIENDO METODO PARA RETORNAR EL SLUG
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     
     //SCOPE
     public function scopeName($query, $name){

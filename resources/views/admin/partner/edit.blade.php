@@ -338,7 +338,9 @@
 @section('end-scripts')
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
-        window.addEventListener('load', countChars());
+        window.addEventListener('load', function(){
+            countChars();
+        });
 
         document.addEventListener("DOMContentLoaded", function(event) {
             CKEDITOR.replace('biography_html');
@@ -383,7 +385,7 @@
 
         function countChars(){
             obj = document.getElementById('specialty');
-            document.getElementById("charNum").innerHTML = obj.value.length+' caracteres';
+            document.getElementById("charNum").innerHTML = obj.value.length+' caracteres'; 
         }
 
         function showInputNameCompany(){

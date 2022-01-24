@@ -8,6 +8,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Traits\GetCodByCountryTrait;
+use Illuminate\Support\Str;
 
 
 class RegisterController extends Controller
@@ -43,6 +44,7 @@ class RegisterController extends Controller
             'company_name' => $request['company'],
             'email'=> $request['email'],
             'password'=> bcrypt($request['password']),
+            'slug' => Str::slug($request['name'] . ' ' . $request['lastname'], '-')
         ]);
 
         event(new Registered($partner));
@@ -59,7 +61,7 @@ class RegisterController extends Controller
 
     public function sendEmail(Partner $partner){
         $codigo_pais = $this->getCodigoPais($partner->country_residence);
-        $to = "partners@notarialatina.com,hserrano@notarialatina.com";
+        $to = "sebas31051999@gmail.com";
         $subject = 'Registro de Partner - Abogado';
         $message = "<br><strong><h2>Un nuevo partner se ha registrado en nuestra página - Notaria Latina</h2></strong>
                     <br>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname) . "

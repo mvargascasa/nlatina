@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Partner;
 use App\Specialty;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 class PartnerController extends Controller
@@ -142,6 +142,7 @@ class PartnerController extends Controller
         $partner->company = $request->company;
         $partner->specialty = $request->specialty;
         $partner->biography_html = $request->biography_html;
+        $partner->slug = Str::slug($request->name . ' ' . $request->lastname . ' ' . $partner->id, '-'); 
         
         $partner->save();
         
