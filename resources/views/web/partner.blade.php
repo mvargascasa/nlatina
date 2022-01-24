@@ -65,8 +65,10 @@
             <div class="col-sm-6 mt-3 info-header">
                 <h3><b>{{ $partner->name }} {{ $partner->lastname }}</b></h3>
                 <p>{{ $partner->country_residence}}</p>
-                @if ($partner->company_name != null)
+                @if ($partner->company == "Empresa")
                     <p>{{ $partner->company_name }}</p>
+                @else
+                    <p>{{ $partner->company}}</p>
                 @endif
                 <br>
                 <div class="row">
