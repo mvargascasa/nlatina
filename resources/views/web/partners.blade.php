@@ -253,7 +253,7 @@
                     <select class="form-control" name="country" id="country">
                         <option value="">País</option>
                         @foreach ($countries as $country)
-                            <option value="{{ $country->id }}">{{ $country->name_country}}</option>
+                            <option value="{{ $country->id }}" @if(session('form.country') == $country->id) selected @endif>{{ $country->name_country}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -270,7 +270,7 @@
                     <select class="form-control" name="specialty" id="specialty">
                         <option value="">Especialidad</option>
                         @foreach ($specialties as $specialty)
-                            <option value="{{ $specialty->name_specialty }}">{{ $specialty->name_specialty}}</option>
+                            <option value="{{ $specialty->name_specialty }}" @if(session('form.specialty') == $specialty->name_specialty) selected @endif>{{ $specialty->name_specialty}}</option>
                         @endforeach
                     </select>
                 </div>
