@@ -322,7 +322,7 @@
                                     </div>
                                     <br>
                                 </div>	
-                                <div class="row">
+                                <div class="row" style="margin-top: -15px">
                                     <div class="col">
                                         <p style="font-size: 10px"><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ $partner->email }}</p>
                                     </div>
