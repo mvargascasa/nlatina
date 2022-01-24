@@ -71,17 +71,6 @@ class WebController extends Controller
         // ->where('status', 'PUBLICADO')
         // ->distinct()
         // ->get();
-        if($request->get('country') != null){
-            session()->put('form.country', $request->get('country'));
-        }
-
-        // if($request->get('state') != null){
-        //     session()->put('form.state', $request->get('state'));
-        // }
-
-        if($request->get('specialty') != null){
-            session()->put('form.specialty', $request->get('specialty'));
-        }
 
         $countries = Country::get(['name_country', 'id']);
 

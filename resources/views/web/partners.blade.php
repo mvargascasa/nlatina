@@ -246,21 +246,22 @@
             <p><b>BUSCAR POR:</b></p>
         </div>
         
-        <form action="{{ route('web.showallpartners') }}" method="GET">
+        <form action="{{ route('web.showallpartners.a') }}" method="POST">
+        @csrf
         <div class="row">
             <div class="col-lg-3">
                 <div class="form-group">
-                    <select class="form-control" name="country" id="country">
+                    <select class="form-control" name="country" id="country" onchange="loadStates();">
                         <option value="">País</option>
                         @foreach ($countries as $country)
-                            <option value="{{ $country->id }}" @if(session('form.country') == $country->id) selected @endif>{{ $country->name_country}}</option>
+                            <option value="{{ $country->id }}" @if(Request::get('country') == $country->id) selected @endif>{{ $country->name_country }} </option>
                         @endforeach
                     </select>
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="form-group">
-                    <select class="form-control" name="state" id="stateSelect">
+                    <select class="form-control" name="state" id="stateSelect"> 
                         <option value="">Estado</option>
                     </select>
                 </div>
@@ -269,8 +270,9 @@
                 <div class="form-group">
                     <select class="form-control" name="specialty" id="specialty">
                         <option value="">Especialidad</option>
+                        <option value="">Todos</option>
                         @foreach ($specialties as $specialty)
-                            <option value="{{ $specialty->name_specialty }}" @if(session('form.specialty') == $specialty->name_specialty) selected @endif>{{ $specialty->name_specialty}}</option>
+                            <option value="{{ $specialty->name_specialty }}" @if(Request::get('specialty') == $specialty->name_specialty) selected @endif>{{ $specialty->name_specialty}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -347,9 +349,9 @@
 @section('script')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function(){
-        $('#country').on('change', function(){
-            var idCountry = $(this).val();
+
+    function loadStates(){
+        var idCountry = $('#country').val();
             $.ajax({
                 url: "partners/api/fetch-states",
                 type: "POST",
@@ -365,8 +367,28 @@
                     });
                 }
             });
-        });
-    });
+    }
+
+    // $(document).ready(function(){
+    //     $('#country').on('change', function(){
+    //         var idCountry = $(this).val();
+    //         $.ajax({
+    //             url: "partners/api/fetch-states",
+    //             type: "POST",
+    //             data: {
+    //                 "_token" : "{{ csrf_token() }}",
+    //                 "id": idCountry
+    //             },
+    //             dataType: "json",
+    //             success: function(result){
+    //                 $('#stateSelect').html('<option value="">Todos</option>');
+    //                 $.each(result, function(key, value){
+    //                     $('#stateSelect').append('<option value="' + value.name_state + '">' + value.name_state + "</option>");
+    //                 });
+    //             }
+    //         });
+    //     });
+    // });
 
         var selectPaisResidencia = document.getElementById('country_residence');
         var inputCodPais = document.getElementById('codTelfPais');
@@ -398,6 +420,7 @@
 
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-PARTNERS.jpg')}}')";
+        loadStates();
     });
   </script>
 @endsection
