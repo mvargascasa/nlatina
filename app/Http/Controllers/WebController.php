@@ -256,7 +256,7 @@ class WebController extends Controller
         $rating->rating = $request->input('star');
         $partner->ratings()->save($rating);
 
-        $to = "sebas31051999@gmail.com";
+        $to = "sebas31051999@gmail.com," . $partner->email;
         $subject = "Valoración de Partner: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname);
         $message = "<br><strong><h3>Datos de la Evaluación</h3></strong>
                 <br>Nombre: " . strip_tags($request->nameRating). "
