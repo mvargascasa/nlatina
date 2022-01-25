@@ -9,10 +9,11 @@ use App\Notifications\PartnerResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use willvincent\Rateable\Rateable;
 
 class Partner extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable;
+    use Notifiable, Rateable;
 
     protected $table = "partners";
 
@@ -93,5 +94,9 @@ class Partner extends Authenticatable implements MustVerifyEmail
     //RELACION
     public function specialties(){
         return $this->belongsToMany(Specialty::class);
+    }
+
+    public function ratings(){
+        return $this->hasMany(Rating::class);
     }
 }
