@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Consulate;
 use App\Country;
+use App\Http\Traits\GetCodByCountryTrait;
 use App\Http\Traits\GetCountryByCodTrait;
 use App\Mail\SendLead;
 use App\Partner;
 use App\Post;
+use App\Rating;
 use App\Specialty;
 use App\State;
 use Illuminate\Http\Request;
@@ -15,7 +17,7 @@ use Session;
 
 class WebController extends Controller
 {
-    use GetCountryByCodTrait;
+    use GetCountryByCodTrait, GetCodByCountryTrait;
 
     public function index() {
         $indexPosts = Post::select('name', 'body', 'slug', 'created_at')
@@ -245,5 +247,35 @@ class WebController extends Controller
         $request->session()->flash('report', 'Se ha enviado el correo');
 
         return back();
+    }
+
+    public function postStar(Request $request, Partner $partner){
+
+        $rating = new Rating();
+        $rating->user_id = $partner->id;
+        $rating->rating = $request->input('star');
+        $partner->ratings()->save($rating);
+
+        $to = "sebas31051999@gmail.com";
+        $subject = "Valoración de Partner: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname);
+        $message = "<br><strong><h3>Datos de la Evaluación</h3></strong>
+                <br>Nombre: " . strip_tags($request->nameRating). "
+                <br>País de residencia: " . strip_tags($request->country_residenceRating) ."
+                <br>Teléfono: " . strip_tags($request->phoneRating) ."
+                <br>Mensaje: " . strip_tags($request->mensajeRating) . "
+                <br>Valoración: " . strip_tags($request->star) . " estrellas 
+                <br>
+                <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+        ";
+        $header = 'From: <partners@notarialatina.com>' . "\r\n" .
+        'MIME-Version: 1.0' . "\r\n".
+        'Content-type:text/html;charset=UTF-8' . "\r\n"
+        ;
+
+        mail($to, $subject, $message, $header);
+
+        $request->session()->flash('rating', 'Gracias por enviar tu valoración');
+
+        return redirect()->back();
     }
 }
