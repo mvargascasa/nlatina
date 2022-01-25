@@ -101,6 +101,10 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
 Route::get('/ruta/escondida/cacheclear', function(){
     Artisan::call('cache:clear');
 });
+Route::get('/ruta/actualizar/composer', function(){
+    shell_exec('composer update');
+    return "Se actualizo";
+});
 
 Route::get('/apostillas', function () {    return view('web.apostillas');    })->name('web.apostillas');
 Route::get('/poderes', function () {    return view('web.poderes');    })->name('web.poderes');
