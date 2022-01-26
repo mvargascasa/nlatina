@@ -169,7 +169,9 @@ class PartnerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Partner::find($id)->delete();
+
+        return redirect()->route('partner.index');
     }
 
     public function verifiEmailAdmin(Partner $partner)

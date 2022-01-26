@@ -20,6 +20,13 @@
                     {!! Form::close() !!}
                 </div>
             @endif
+            <div class="float-right" style="margin-right: 5px">
+                {!! Form::open(['route' => ['partner.destroy', $partner->id], 'method' => 'POST']) !!}
+                @csrf
+                @method('delete')
+                {!! Form::submit('Eliminar Partner', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Estas seguro de eliminar este partner?')"]) !!}
+                {!! Form::close() !!}
+            </div>
         </div>
         <div class="form-group mt-5 border p-5">
             {!! Form::model($partner, ['route' => ['partner.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'POST']) !!}
@@ -385,7 +392,6 @@
                 preview.style.display = "block";
             }
         }
-
 
         function showInputNameCompany(){
             var selectCompany = document.getElementById('company').value;

@@ -37,6 +37,7 @@ Route::post('/home/partners/store', 'PartnerController@store')->name('partner.st
 Route::post('/home/partners/verify/{partner}', 'PartnerController@verifiEmailAdmin')->name('verify.email.admin');
 Route::get('/home/partners/{partner}/show', 'PartnerController@show')->name('partner.show');
 Route::put('/home/partners/{partner}', 'PartnerController@update')->name('partner.update');
+Route::delete('/home/partners/delete/{id}', 'PartnerController@destroy')->name('partner.destroy');
 
 // THANK
 Route::get('/thank', 'LandingController@thank')->name('landing.thank');
