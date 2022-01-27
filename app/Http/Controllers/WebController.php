@@ -68,12 +68,31 @@ class WebController extends Controller
         return view('web.consul.all',compact('consuls'));
     }
 
-    public function showAllPartners(){
+    public function showAllPartners(Request $request){
         // $countries = Partner::select('country_residence')
         // ->where('status', 'PUBLICADO')
         // ->distinct()
         // ->get();
-        return view('web.partners');
+
+        $countries = Country::select(['name_country', 'id'])->get();
+
+        $specialties = Specialty::all();           
+
+        $country = $request->get('country');
+        $specialty = $request->get('specialty');
+        $state = $request->get('state');
+
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+                ->where('status', 'PUBLICADO')
+                ->orderBy('id', 'DESC')
+                ->country($country)
+                ->state($state)
+                ->specialties($specialty)
+                ->distinct()
+                ->get();
+
+
+        return view('web.partners', compact('countries', 'specialties', 'partners'));
         
     }
 
