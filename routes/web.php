@@ -119,13 +119,14 @@ Route::get('/testamentos', function () {    return view('web.testamentos');    }
 //PARTNERS
 Route::get('/partners/politicas-de-privacidad', function(){ return view('web.politicasocios');})->name('web.socios.politicas');
 Route::get('/partners', 'WebController@showAllPartners')->name('web.showallpartners');
-Route::post('/partners/search', 'WebController@search')->name('web.showallpartners.a');
+Route::post('/partners', 'WebController@search')->name('web.showallpartners.a');
 Route::post('/partners/rating/{partner}', 'WebController@postStar')->name('partner.rating'); // RUTA PARA VALORAR UN PARTNER
 Route::get('/partners/{partner}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
 Route::post('/partners-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');
 
 //FETCH STATES
 Route::post('/partners/api/fetch-states', 'WebController@fetchState')->name('partners.fetch.state');
+Route::post('/partners/fetch-states/api', 'WebController@fetchStateAfter')->name('partners.fetch.state.a');
 
 Route::get('/thankpartner', function(){return view('web.thankpartner');});
 

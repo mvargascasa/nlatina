@@ -69,7 +69,35 @@ class WebController extends Controller
     }
 
     public function showAllPartners(){
+        // $countries = Partner::select('country_residence')
+        // ->where('status', 'PUBLICADO')
+        // ->distinct()
+        // ->get();
         return view('web.partners');
+        
+    }
+
+    public function search(Request $request){
+        $countries = Country::select(['name_country', 'id'])->get();
+
+        $specialties = Specialty::all();           
+
+        $country = $request->get('country');
+        $specialty = $request->get('specialty');
+        $state = $request->get('state');
+
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+                ->where('status', 'PUBLICADO')
+                ->orderBy('id', 'DESC')
+                ->country($country)
+                ->state($state)
+                ->specialties($specialty)
+                ->distinct()
+                ->get();
+
+        return response()->json([
+            'viewPartnersCountry' => view('web.partials.view_partners', compact('countries', 'specialties', 'partners'))
+        ]);
     }
 
     public function fetchStateAfter(Request $request){
