@@ -313,7 +313,7 @@
                                     </b>
                                 </h5> 
                                 <p>{{ $partner->specialty }}</p>
-                                {{-- {{-- @foreach ($partner->specialties as $specialty) --}}
+                                 @foreach ($partner->specialties as $specialty)
                                 <div class="d-inline" style="font-size: 14px">
                                     • {{ $specialty->name_specialty }}
                                 </div>
@@ -372,28 +372,28 @@
             });
     }
 
-    $('#formSearchPartner').submit(function(e){
-        e.preventDefault();
-        const countryId = $("input[type='radio']:checked").val();
-        $.ajax({
-            type: "POST",
-            url: "{{ route('partners.fetch.state') }}",
-            data: {
-                "_token" : "{{ csrf_token() }}",
-                "country" : countryId,
-                "state" : null,
-                "specialty": null
-            },
-            dataType: "json",
-            success: function(result){
-                $('#contentPartner').html(result.viewPartners);
-            },
-            error: function(xhr, status, error){
-                var errorMessage = xhr.status + ': ' + xhr.statusText
-                alert('Error - ' + errorMessage);
-            }
-        });
-    });
+    // $('#formSearchPartner').submit(function(e){
+    //     e.preventDefault();
+    //     const countryId = $("input[type='radio']:checked").val();
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "{{ route('partners.fetch.state') }}",
+    //         data: {
+    //             "_token" : "{{ csrf_token() }}",
+    //             "country" : countryId,
+    //             "state" : null,
+    //             "specialty": null
+    //         },
+    //         dataType: "json",
+    //         success: function(result){
+    //             $('#contentPartner').html(result.viewPartners);
+    //         },
+    //         error: function(xhr, status, error){
+    //             var errorMessage = xhr.status + ': ' + xhr.statusText
+    //             alert('Error - ' + errorMessage);
+    //         }
+    //     });
+    // });
         var selectPaisResidencia = document.getElementById('country_residence');
         var inputCodPais = document.getElementById('codTelfPais');
         
