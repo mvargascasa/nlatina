@@ -128,6 +128,8 @@ class WebController extends Controller
         $countries = Country::select(['id', 'name_country'])->get();
         $states = State::where('country_id', $request->country)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+                ->where('status', 'PUBLICADO')
+                ->orderBy('id', 'DESC')
                 ->country($request->country)
                 ->state($request->state)
                 ->specialties($request->specialty)
