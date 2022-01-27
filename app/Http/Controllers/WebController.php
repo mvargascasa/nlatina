@@ -68,35 +68,29 @@ class WebController extends Controller
         return view('web.consul.all',compact('consuls'));
     }
 
-    public function showAllPartners(Request $request){
-        // $countries = Partner::select('country_residence')
-        // ->where('status', 'PUBLICADO')
-        // ->distinct()
-        // ->get();
+    public function showAllPartners(){
+        return view('web.partners');
+    }
 
-        $countries = Country::get(['name_country', 'id']);
-
-        $specialties = Specialty::all();           
-
-        $country = $request->get('country');
-        $specialty = $request->get('specialty');
-        $state = $request->get('state');
-
-        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
-                ->where('status', 'PUBLICADO')
-                ->orderBy('id', 'DESC')
-                ->country($country)
-                ->state($state)
-                ->specialties($specialty)
-                ->distinct()
-                ->get();
-
-        return view('web.partners', compact('partners', 'countries', 'specialties'));
+    public function fetchStateAfter(Request $request){
+        $states = State::where('country_id', $request->id)->get();
+        return response()->json($states);
     }
 
     public function fetchState(Request $request){
-        $states = State::where('country_id', $request->id)->get();
-        return response()->json($states);
+        $countries = Country::select(['id', 'name_country'])->get();
+        $states = State::where('country_id', $request->country)->get();
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+                ->country($request->country)
+                ->state($request->state)
+                ->specialties($request->specialty)
+                ->get();
+        $specialties = Specialty::select(['id', 'name_specialty'])->get();
+        // return json_encode(array($states, $partners, $specialties));
+
+        return response()->json([
+            'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties'))->render()
+        ]);
     }
 
     public function showPartner($slug){

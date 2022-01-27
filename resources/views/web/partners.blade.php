@@ -236,7 +236,7 @@
     </div>
 </section>
 
-<div>
+{{-- <div>
     <p class="text-center mt-5">Solicite los servicios de un abogado <br> en Latinoamérica</p>
 </div>
 <hr style="width: 50%">
@@ -283,9 +283,15 @@
             </div>
         </form>
     </div>
+</div> --}}
+
+<div id="contentPartner">
+    @include('web.partials.search_partner')   
 </div>
 
-<div class="mt-5 contenido" style="margin-left:10%; margin-right: 10%;">
+<div id="contentSecond"></div>
+
+{{-- <div class="mt-5 contenido" style="margin-left:10%; margin-right: 10%;">
     @if (count($partners) > 0)
         <div class="row">
             @foreach ($partners as $partner)
@@ -307,9 +313,9 @@
                                         @endif
                                         {{ $partner->name }} {{ $partner->lastname }}
                                     </b>
-                                </h5>
+                                </h5> --}}
                                 {{-- <p>{{ $partner->specialty }}</p> --}}
-                                @foreach ($partner->specialties as $specialty)
+                                {{-- @foreach ($partner->specialties as $specialty)
                                 <div class="d-inline" style="font-size: 14px">
                                     • {{ $specialty->name_specialty }}
                                 </div>
@@ -343,17 +349,16 @@
                 </div>        
             </div>
         @endif
-</div>
+</div> --}}
 @endsection
 
 @section('script')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-
     function loadStates(){
         var idCountry = $('#country').val();
             $.ajax({
-                url: "partners/api/fetch-states",
+                url: "{{ route('partners.fetch.state.a') }}",
                 type: "POST",
                 data: {
                     "_token" : "{{ csrf_token() }}",
@@ -369,27 +374,28 @@
             });
     }
 
-    // $(document).ready(function(){
-    //     $('#country').on('change', function(){
-    //         var idCountry = $(this).val();
-    //         $.ajax({
-    //             url: "partners/api/fetch-states",
-    //             type: "POST",
-    //             data: {
-    //                 "_token" : "{{ csrf_token() }}",
-    //                 "id": idCountry
-    //             },
-    //             dataType: "json",
-    //             success: function(result){
-    //                 $('#stateSelect').html('<option value="">Todos</option>');
-    //                 $.each(result, function(key, value){
-    //                     $('#stateSelect').append('<option value="' + value.name_state + '">' + value.name_state + "</option>");
-    //                 });
-    //             }
-    //         });
-    //     });
-    // });
-
+    $('#formSearchPartner').submit(function(e){
+        e.preventDefault();
+        const countryId = $("input[type='radio']:checked").val();
+        $.ajax({
+            type: "POST",
+            url: "{{ route('partners.fetch.state') }}",
+            data: {
+                "_token" : "{{ csrf_token() }}",
+                "country" : countryId,
+                "state" : null,
+                "specialty": null
+            },
+            dataType: "json",
+            success: function(result){
+                $('#contentPartner').html(result.viewPartners);
+            },
+            error: function(xhr, status, error){
+                var errorMessage = xhr.status + ': ' + xhr.statusText
+                alert('Error - ' + errorMessage);
+            }
+        });
+    });
         var selectPaisResidencia = document.getElementById('country_residence');
         var inputCodPais = document.getElementById('codTelfPais');
         
