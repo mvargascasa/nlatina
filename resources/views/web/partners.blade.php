@@ -236,7 +236,7 @@
     </div>
 </section>
 
-<div>
+{{-- <div>
     <p class="text-center mt-5">Solicite los servicios de un abogado <br> en Latinoamérica</p>
 </div>
 <hr style="width: 50%">
@@ -283,13 +283,13 @@
             </div>
         </form>
     </div>
-</div>
-
-{{-- <div id="contentPartner">
-    @include('web.partials.search_partner')   
 </div> --}}
 
-<div class="mt-5 contenido" style="margin-left:10%; margin-right: 10%;">
+<div id="contentPartner">
+    @include('web.partials.search_partner')   
+</div>
+
+{{-- <div class="mt-5 contenido" style="margin-left:10%; margin-right: 10%;">
     @if (count($partners) > 0)
         <div class="row">
             @foreach ($partners as $partner)
@@ -312,7 +312,6 @@
                                         {{ $partner->name }} {{ $partner->lastname }}
                                     </b>
                                 </h5> 
-                                {{-- <p>{{ $partner->specialty }}</p> --}}
                                  @foreach ($partner->specialties as $specialty)
                                 <div class="d-inline" style="font-size: 14px">
                                     • {{ $specialty->name_specialty }}
@@ -347,7 +346,7 @@
                 </div>        
             </div>
         @endif
-</div>
+</div> --}}
 @endsection
 
 @section('script')
@@ -372,28 +371,29 @@
             });
     }
 
-    // $('#formSearchPartner').submit(function(e){
-    //     e.preventDefault();
-    //     const countryId = $("input[type='radio']:checked").val();
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "{{ route('partners.fetch.state') }}",
-    //         data: {
-    //             "_token" : "{{ csrf_token() }}",
-    //             "country" : countryId,
-    //             "state" : null,
-    //             "specialty": null
-    //         },
-    //         dataType: "json",
-    //         success: function(result){
-    //             $('#contentPartner').html(result.viewPartners);
-    //         },
-    //         error: function(xhr, status, error){
-    //             var errorMessage = xhr.status + ': ' + xhr.statusText
-    //             alert('Error - ' + errorMessage);
-    //         }
-    //     });
-    // });
+    $('#formSearchPartner').submit(function(e){
+        e.preventDefault();
+        const countryId = $("input[type='radio']:checked").val();
+        $.ajax({
+            type: "POST",
+            url: "{{ route('partners.fetch.state') }}",
+            data: {
+                "_token" : "{{ csrf_token() }}",
+                "country" : countryId,
+                "state" : null,
+                "specialty": null
+            },
+            dataType: "json",
+            success: function(result){
+                $('#contentPartner').html(result.viewPartners);
+            },
+            error: function(xhr, status, error){
+                var errorMessage = xhr.status + ': ' + xhr.statusText
+                alert('Error - ' + errorMessage);
+            }
+        });
+    });
+    
         var selectPaisResidencia = document.getElementById('country_residence');
         var inputCodPais = document.getElementById('codTelfPais');
         
