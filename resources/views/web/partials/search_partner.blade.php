@@ -10,16 +10,12 @@
                 $countries = \App\Country::select('id', 'name_country', 'name_country_lower')->orderBy('name_country')->get();
             @endphp
             @foreach ($countries as $country)
-                <div class="col-sm-4 mb-2">
-                    <img src="{{ asset('img/partners/'.$country->name_country_lower.'.png') }}" alt="">
-                    <input type="radio" name="country" id="country" value="{{ $country->id}}" required> {{ $country->name_country }}
-                    {{-- <input class="countrySearch" type="submit" name="country" value="{{ $country->id }}"> --}}
+                <div onclick="selectCountry({{ $country->id }})" style="cursor: pointer" class="col-sm-4 mb-2">
+                    <img src="{{ asset('img/partners/'.$country->name_country_lower.'.png') }}" alt=""> {{ $country->name_country}}
                 </div>
             @endforeach
         </div>
-        <div class="text-center">
-            <button id="btnSubmitSearch" type="submit" class="btn" style="background-color: #00223b; color: #ffffff">Continuar</button>
-        </div>
+        <input type="hidden" name="country" id="country">
         {!! Form::close() !!}
     </div>
 </div>
