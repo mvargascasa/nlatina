@@ -236,7 +236,7 @@
     </div>
 </section>
 
-{{-- <div>
+<div>
     <p class="text-center mt-5">Solicite los servicios de un abogado <br> en Latinoamérica</p>
 </div>
 <hr style="width: 50%">
@@ -283,15 +283,13 @@
             </div>
         </form>
     </div>
-</div> --}}
-
-<div id="contentPartner">
-    @include('web.partials.search_partner')   
 </div>
 
-<div id="contentSecond"></div>
+{{-- <div id="contentPartner">
+    @include('web.partials.search_partner')   
+</div> --}}
 
-{{-- <div class="mt-5 contenido" style="margin-left:10%; margin-right: 10%;">
+<div class="mt-5 contenido" style="margin-left:10%; margin-right: 10%;">
     @if (count($partners) > 0)
         <div class="row">
             @foreach ($partners as $partner)
@@ -349,7 +347,7 @@
                 </div>        
             </div>
         @endif
-</div> --}}
+</div>
 @endsection
 
 @section('script')
