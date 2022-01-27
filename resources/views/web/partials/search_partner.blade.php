@@ -4,7 +4,7 @@
         <h4 style="font-weight: bold">SELECCIONE UN PAÍS</h4>
     </div>
     <div class="container mt-4">
-        {!! Form::open(['route' => 'web.showallpartners', 'method' => 'POST', 'id' => 'formSearchPartner']) !!}
+        {!! Form::open(['id' => 'formSearchPartner']) !!}
         <div class="row" style="margin-left: 13%">
             @php
                 $countries = \App\Country::select('id', 'name_country', 'name_country_lower')->orderBy('name_country')->get();
