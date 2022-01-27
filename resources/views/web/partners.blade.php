@@ -312,7 +312,7 @@
                                         {{ $partner->name }} {{ $partner->lastname }}
                                     </b>
                                 </h5> 
-                                <p>{{ $partner->specialty }}</p>
+                                {{-- <p>{{ $partner->specialty }}</p> --}}
                                  @foreach ($partner->specialties as $specialty)
                                 <div class="d-inline" style="font-size: 14px">
                                     • {{ $specialty->name_specialty }}
