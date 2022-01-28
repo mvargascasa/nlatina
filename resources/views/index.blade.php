@@ -23,10 +23,10 @@
     <style>
       @media screen and (max-width: 580px){
         #titleTraducciones{
-          margin-bottom: 20% !important;
+          margin-bottom: 15% !important;
         }
         #titleApostillas{
-          margin-bottom: 20% !important;
+          margin-bottom: 15% !important;
         }
         #locations{
           margin-left: 0% !important;
