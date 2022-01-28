@@ -102,7 +102,7 @@
               </div>
               <div class="card mb-4 mb-md-0">
                 <div class="card-body">
-                    <p class="mb-2"><span class="text-primary font-italic me-1">Puntuación</span></p>
+                    <p class="mb-2"><span class="font-italic me-1" style="color: #002542; font-weight: bold">Puntuación</span></p>
                     @php
                         $rating = Auth::user()->averageRating();
                     @endphp
@@ -248,7 +248,7 @@
                 <div class="col-md-6">
                 <div class="card mb-4 mb-md-0">
                   <div class="card-body">
-                      <p class="mb-4"><span class="text-primary font-italic me-1">Especialidades</span></p>
+                      <p class="mb-4"><span class="font-italic me-1" style="color: #002542; font-weight: bold">Especialidades</span></p>
                       @if (Auth::user()->specialty != null)
                       @foreach (Auth::user()->specialties as $specialty)
                           <p class="mb-1" style="font-size: .99rem;">• {{$specialty->name_specialty}}</p>
@@ -268,7 +268,7 @@
             <div class="col-md-12 mt-4">
                 <div class="card mb-4 mb-md-0">
                     <div class="card-body">
-                        <p class="mb-2"><span class="text-primary font-italic me-1">Biografía</span></p>
+                        <p class="mb-2"><span class="font-italic me-1" style="color: #002542; font-weight: bold">Biografía</span></p>
                         @if (Auth::user()->biography_html != null)
                         {!! Auth::user()->biography_html !!}
                         @else

@@ -24,7 +24,6 @@ class HomeController extends Controller
     
     public function update(Partner $partner, Request $request)
     {
-
         if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
             $request->img_profile = $partner->img_profile;
             $request->validate([
@@ -38,7 +37,6 @@ class HomeController extends Controller
                 'state' => 'required',
                 'address' => 'required',
                 'company' => 'required',
-                'company_name' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'image|max:8000',
@@ -60,7 +58,6 @@ class HomeController extends Controller
                 'state' => 'required',
                 'address' => 'required',
                 'company' => 'required',
-                'company_name' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'required|image|max:8000',
@@ -84,7 +81,6 @@ class HomeController extends Controller
                 'state' => 'required',
                 'address' => 'required',
                 'company' => 'required',
-                'company_name' => 'required',
                 'phone' => 'required',
                 'email' => 'required',
                 'img_profile' => 'required|image|max:8000',

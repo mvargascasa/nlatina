@@ -17,7 +17,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #002542;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -27,7 +27,7 @@ body {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #bababa;
   display: block;
   transition: 0.3s;
 }
@@ -47,7 +47,7 @@ body {
 .openbtn {
   font-size: 20px;
   cursor: pointer;
-  background-color: #111;
+  background-color: #002542;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -86,7 +86,7 @@ body {
     {{-- @endif --}}
   </div>
   {{-- <a href="{{ route('web.index') }}" style="font-size: 20px"><img width="30" height="30" src="{{ asset('img/partners/marca-notaria-latina.png') }}" alt=""> Notaria Latina</a> --}}
-  <a href="{{ route('socios.index') }}" style="font-size: 20px"><img width="25" height="25" src="{{ asset('img/partners/home_logo.png') }}" alt=""> Inicio</a>
+  <a href="{{ route('socios.index') }}" style="font-size: 20px;"><img width="25" height="25" src="{{ asset('img/partners/home_logo.png') }}" alt=""> Inicio</a>
   <a href="{{ route('socios.edit', Auth::guard('partner')->user()) }}" style="font-size: 20px"><img width="25" height="25" src="{{ asset('img/partners/user.png') }}" alt=""> Editar Perfil</a>
   <div>
     <a href="{{ route('socios.logout') }}"
