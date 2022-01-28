@@ -75,7 +75,7 @@
                             </td>
                             <td>
                                 @isset($partner->specialty)
-                                    {{ $partner->specialty}}
+                                    {{Str::limit($partner->specialty, 100)}}
                                 @else
                                     <b>Sin información</b> 
                                 @endisset
