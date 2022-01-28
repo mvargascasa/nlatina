@@ -22,14 +22,25 @@
     <meta name="google-site-verification" content="dJnD6aMr-q5ldI-YRk2UM1KC0A8GEBUok__9ZpS0CiQ" />
     <style>
       @media screen and (max-width: 580px){
+        #titleTraducciones{
+          margin-bottom: 20% !important;
+        }
+        #titleApostillas{
+          margin-bottom: 20% !important;
+        }
         #locations{
           margin-left: 0% !important;
           margin-right: 0% !important;
+        }
+        .child-locations{
+          margin-top: 3% !important;
+          border: none !important;
         }
       }
 
       .child-locations:hover{
         background-color: #122944;
+        padding: 5px;
         border-radius: 10px;
         -webkit-transition: background-color 500ms linear;
         -ms-transition: background-color 500ms linear;
@@ -83,9 +94,9 @@
               <h1 class="tit-not">Notaría Pública</h1>
               <h2 class="heading-title" style="margin-bottom: 5%">Gestión Fácil y Rápida</h2>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
-                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
-                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
+                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
+                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
               </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
@@ -100,11 +111,11 @@
           <img src="{{asset('img/2.jpg')}}" class="d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left bottom;">
           <div class="carousel-caption">
-              <h1 class="tit-not" style="margin-bottom: 6%">TRADUCCIONES</h1>
+              <h1 id="titleTraducciones" class="tit-not" style="margin-bottom: 6%">TRADUCCIONES</h1>
               <div id="locations" class="row" style="margin-left: 11%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
-                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
-                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
+                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
+                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
@@ -115,11 +126,11 @@
           <img src="{{asset('img/3.jpg')}}" class="d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left top;">
           <div class="carousel-caption">
-              <h1 class="tit-not" style="margin-bottom: 6%">APOSTILLAS</h1>
+              <h1 id="titleApostillas" class="tit-not" style="margin-bottom: 6%">APOSTILLAS</h1>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
-                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
-                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
+                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
+                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
@@ -133,9 +144,9 @@
               <h1 class="tit-not">PODERES GENERALES</h1>
               <h2 class="heading-title" style="margin-bottom: 5%">Y ESPECIALES</h2>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
-                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
-                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
+                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
+                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
