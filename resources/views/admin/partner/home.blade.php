@@ -1,6 +1,6 @@
 @extends('admin.partner.layouts.sidebar')
 
-@section('title-socios', 'Inicio Socios - Notaria Latina')
+@section('title-socios', 'Inicio Partners - Notaria Latina')
 
 @section('scripts')
 
