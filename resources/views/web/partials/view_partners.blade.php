@@ -57,7 +57,7 @@
         <div class="row">
             @foreach ($partners as $partner)
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <a href="{{ route('web.showpartner', $partner->slug) }}" target="_blank">
+                    <a href="{{ route('web.showpartner', $partner->slug) }}">
                         <div class="testimotionals">
                             <div class="card mb-3">
                             <div class="layer"></div>
