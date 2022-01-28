@@ -26,7 +26,7 @@
         <img style="border-radius: 10px; padding: 10px; width: 250px" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt="">
         <h4 style="color: rgb(97, 97, 250); margin-top: 10px; text-align: center">Inscripción para formar parte de nuestro directorio de partners.</h4>
         <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte gratis en Estados Unidos</p>
-        <p style="text-align: center; color: red">*Es necesario llenar todos los campos para que tus datos puedan publicarse en nuestro sitio web</p>
+        <p style="text-align: center; color: red">{{ Str::upper('No olvides completar tu información para que tus datos puedan publicarse en nuestro sitio web') }}</p>
         <div class="row justify-content-center mt-3">
             <div class="col-12">
                 <div class="card">
@@ -227,14 +227,12 @@
                                     </div>  
                                 </div>
                             </div>
-
                             <p style="font-weight: bold">Información Profesional</p>
                             <hr>
-                            
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('company', 'Empresa') !!}
+                                        {!! Form::label('company', 'Tipo de trabajo') !!}
                                         @if ($partner->company != null)
                                         {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], $partner->company, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
                                         @else
