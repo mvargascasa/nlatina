@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-primary" type="submit">Buscar</button>
+                <button class="btn" type="submit" style="background-color: #002542; color: #ffffff">Buscar</button>
             </div>
             </div>
         {{-- </form> --}}
@@ -57,7 +57,7 @@
         <div class="row">
             @foreach ($partners as $partner)
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <a href="{{ route('web.showpartner', $partner->slug) }}">
+                    <a href="{{ route('web.showpartner', $partner->slug) }}" target="_blank">
                         <div class="testimotionals">
                             <div class="card mb-3">
                             <div class="layer"></div>

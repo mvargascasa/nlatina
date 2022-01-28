@@ -155,7 +155,14 @@ input[type="radio"]:checked ~ label {
                 <img id="imgPartner" class="float-right" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="250" height="310">
             </div>
             <div class="col-sm-6 mt-3 info-header">
-                <h3><b>{{ $partner->title }} {{ $partner->name }} {{ $partner->lastname }}</b></h3>
+                <h3><b>
+                    @if ($partner->title == "Abogado")
+                        Abg.
+                    @elseif($partner->title == "Licenciado")
+                        Lic.
+                    @endif
+                    {{ $partner->name }} {{ $partner->lastname }}
+                </b></h3>
                 <p>{{ $partner->country_residence}}</p>
                 @if ($partner->company == "Empresa")
                     <p>{{ $partner->company_name }}</p>

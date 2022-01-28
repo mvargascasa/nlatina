@@ -62,11 +62,6 @@ body {
   padding: 16px;
 }
 
-.btnLogout{
-  position: absolute;
-  bottom: 0px;
-}
-
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
@@ -81,20 +76,22 @@ body {
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <div class="d-flex justify-content-center mb-4">
-    @if (Auth::guard('partner')->user()->img_profile != null)
+  <div class="mb-3">
+    {{-- @if (Auth::guard('partner')->user()->img_profile != null)
     <img style="border-radius: 10px" class="img-fluid" width="150" height="75" src="{{ asset('storage/'.Auth::guard('partner')->user()->img_profile) }}" alt="Imagen de usuario">
-    @else
-    <img class="img-fluid rounded-circle" width="150" height="75" src="{{ asset('img/user1.png') }}" alt="Imagen de usuario">
-    @endif
+    @else --}}
+    <a href="{{ route('web.index') }}">
+      <img class="img-fluid" width="150" height="75" src="{{ asset('img/marca-notaria-latina.png') }}" alt="Notaria Latina">  
+    </a>
+    {{-- @endif --}}
   </div>
-  <a href="{{ route('web.index') }}"><img width="30" height="30" src="{{ asset('img/partners/marca-notaria-latina.png') }}" alt=""> Notaria Latina</a>
-  <a href="{{ route('socios.index') }}"><img width="25" height="25" src="{{ asset('img/partners/home_logo.png') }}" alt=""> Inicio</a>
-  <a href="{{ route('socios.edit', Auth::guard('partner')->user()) }}"><img width="25" height="25" src="{{ asset('img/partners/user.png') }}" alt=""> Perfil</a>
-  <div class="btnLogout">
+  {{-- <a href="{{ route('web.index') }}" style="font-size: 20px"><img width="30" height="30" src="{{ asset('img/partners/marca-notaria-latina.png') }}" alt=""> Notaria Latina</a> --}}
+  <a href="{{ route('socios.index') }}" style="font-size: 20px"><img width="25" height="25" src="{{ asset('img/partners/home_logo.png') }}" alt=""> Inicio</a>
+  <a href="{{ route('socios.edit', Auth::guard('partner')->user()) }}" style="font-size: 20px"><img width="25" height="25" src="{{ asset('img/partners/user.png') }}" alt=""> Editar Perfil</a>
+  <div>
     <a href="{{ route('socios.logout') }}"
        onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();">
+                     document.getElementById('logout-form').submit();" style="font-size: 20px">
     <img width="25" height="25" src="{{ asset('img/partners/logout.png') }}" alt="">
         {{ __('Cerrar Sesión') }}
     </a>

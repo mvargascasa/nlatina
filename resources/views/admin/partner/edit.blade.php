@@ -161,7 +161,7 @@
                                             <div class="form-group">
                                                 {!! Form::label('codigo_pais', 'Código País') !!}
                                                 @if ($partner->codigo_pais != null)
-                                                {!! Form::text('codigo_pais', $partner->codigo_pais , ['class' => 'form-control']) !!}
+                                                {!! Form::text('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'readonly']) !!}
                                                 @else
                                                 {!! Form::text('codigo_pais', null, ['class' => 'form-control', 'readonly']) !!}
                                                 @endif
