@@ -26,6 +26,10 @@
                 margin-left: -30px !important;
                 margin-right: -30px !important;
             }
+            #card1, #card2, #card3{
+                margin-left: -21px !important;
+                margin-right: -21px !important; 
+            }
         }
     </style>
 @endsection
@@ -54,7 +58,7 @@
                         {!! Form::model($partner, ['route' => ['socios.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'put']) !!}
                         @csrf
                         @method('put')
-                            <div class="card">
+                            <div id="card1" class="card">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• INFORMACIÓN PERSONAL</p>
                                     <div class="row">
@@ -213,7 +217,7 @@
                                 </div>
                             </div>
 
-                            <div class="card mt-4">
+                            <div id="card2" class="card mt-4">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• REDES SOCIALES</p>
                                     <div class="row">
@@ -261,7 +265,7 @@
                                 </div>
                             </div>
 
-                            <div class="card mt-4">
+                            <div id="card3" class="card mt-4">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• INFORMACIÓN PROFESIONAL</p>
                                     <div class="row">
