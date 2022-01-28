@@ -163,11 +163,11 @@ input[type="radio"]:checked ~ label {
                     @endif
                     {{ $partner->name }} {{ $partner->lastname }}
                 </b></h3>
-                <p>{{ $partner->country_residence}}</p>
+                <p><img src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt=""> {{ $partner->country_residence}}, {{ $partner->city }}</p>
                 @if ($partner->company == "Empresa")
-                    <p>{{ $partner->company_name }}</p>
+                    <p style="margin-top: -10px">{{ $partner->company_name }}</p>
                 @else
-                    <p>{{ $partner->company}}</p>
+                    <p style="margin-top: -10px">{{ $partner->company}}</p>
                 @endif
                 <br>
                 <div class="row">
@@ -290,7 +290,7 @@ input[type="radio"]:checked ~ label {
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Para valorar un partner necesitas completar los siguientes campos y enviar la calificación</p>
+                  <p>Para valorar un partner necesitas completar los siguientes campos con tu información y enviar la calificación</p>
                         <input class="form-control" type="text" id="nombre" placeholder="Nombre y Apellido" name="nameRating" autocomplete="off" required>
                         <div class="d-flex">
                             <select name="country_residenceRating" id="country_residence" class="form-control" required>
