@@ -2,13 +2,13 @@
     <p class="text-center mt-5">Solicite los servicios de un abogado <br> en Latinoamérica</p>
 </div>
 <hr style="width: 50%">
+<div class="text-center">
+    <p><b>BUSCAR POR:</b></p>
+</div>
 <div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
-        <div class="mr-2">
-            <p><b>BUSCAR POR:</b></p>
-        </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         {!! Form::open(['route' => 'web.showallpartners', 'method' => 'POST', 'id' => 'formSearchPartnersAfter']) !!}
-            <div class="row">
+            <div class="row d-flex justify-content-center ml-5 mr-5">
             <div class="col-lg-3">
                 <div class="form-group">
                     <select class="form-control" name="country" id="country" onchange="loadStates();">
