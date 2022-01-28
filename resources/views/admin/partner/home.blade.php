@@ -93,9 +93,11 @@
                       @endif
                       {{Auth::user()->name}} {{ Auth::user()->lastname}}
                   </h5>
+                  @if (Auth::user()->state != null)
                     <p class="text-muted mb-4">
                         {{Auth::user()->city}}, {{ Auth::user()->country_residence }}
                     </p>
+                  @endif
                 </div>
               </div>
               <div class="card mb-4 mb-md-0">
@@ -247,10 +249,10 @@
                 <div class="card mb-4 mb-md-0">
                   <div class="card-body">
                       <p class="mb-4"><span class="text-primary font-italic me-1">Especialidades</span></p>
-                      @if (Auth::user()->specialties != null || Auth::user()->specialty != null)
-                        @foreach (Auth::user()->specialties as $specialty)
-                            <p class="mb-1" style="font-size: .99rem;">• {{$specialty->name_specialty}}</p>
-                        @endforeach
+                      @if (Auth::user()->specialty != null)
+                      @foreach (Auth::user()->specialties as $specialty)
+                          <p class="mb-1" style="font-size: .99rem;">• {{$specialty->name_specialty}}</p>
+                      @endforeach
                         <p class="mt-4 mb-1" style="font-size: .90rem;">{{Auth::user()->specialty}}</p>
                         @else
                         <p class="mt-4 mb-1" style="font-weight: bold; font-size: .90rem;">No hay información que mostrar. Edita tu perfil para que puedas ver los cambios reflejados</p>

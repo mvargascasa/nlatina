@@ -16,32 +16,47 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="bg-light p-5 rounded mt-5">
-            <div class="row justify-content-center">
-                <img style="width: 250px" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt="">
-            </div>
-            <hr>
-            <h1 class="text-center">Tu correo se ha registrado exitosamente</h1>
-            
-            @if (session('resent'))
-                <div class="alert alert-success" role="alert">
-                    Hemos reenviado a tu correo un nuevo email para verificar tu cuenta
+    <div class="container mt-5">
+        <div class="row bg-light">
+            <div class="col-sm-6">
+                <div class="p-5 rounded">
+                    <div>
+                        <img style="width: 200px" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt="">
+                    </div>
+                    <h4 class="mt-4">
+                        ¡Felicidades su usuario se ha registrado exitosamente!
+                    </h4>
+                    <ul>
+                        <li>
+                            <p class="mt-3">Para continuar, ingrese a su correo electrónico y verifique el enlace de confirmación de registro</p>
+                        </li>
+                        <li>
+                            Si usted ya esta registrado y no ha recibido un correo de confirmación, haga un click
+                            <form action="{{ route('verification.resend') }}" method="POST" class="d-inline">
+                                @csrf
+                                <button type="submit" class="d-inline btn btn-link p-0" style="margin-top: -5px">
+                                    aquí
+                                </button>
+                            </form>
+                            para enviar nuevamente un enlace
+                        </li>
+                        <li>
+                            <p>Si el correo no llega a su Bandeja de Entrada, no olvide revisar su carpeta de spam</p>
+                        </li>
+                    </ul>
+                    @if (session('resent'))
+                        <div class="alert alert-success" role="alert">
+                            Hemos reenviado a tu correo un nuevo email para verificar tu cuenta
+                        </div>
+                    @endif
                 </div>
-            @endif
-
-            Para continuar, verifique su correo electrónico para ver si hay un enlace de verificación. Si no recibió el correo electrónico,
-            <form action="{{ route('verification.resend') }}" method="POST" class="d-inline">
-                @csrf
-                <button type="submit" class="d-inline btn btn-link p-0">
-                    haga clic aquí para solicitar otro
-                </button>.
-            </form>
-            <p class="mt-3" style="font-weight: bold">Si ya estabas registrado y no recibiste ningun correo, de igual manera da click en el enlace para enviar un link a tu correo y verificar tu cuenta</p>
-            <p style="font-weight: bold">Si el correo no llega a tu Bandeja de Entrada, no olvides revisar tu carpeta de spam</p>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center">
+                <img class="img-fluid" style="width: 75%" src="{{ asset('img/partners/verificacion.png')}}" alt="Notaria Latina">
+            </div>
         </div>
     </div>
-
+    
     <footer class="footer text-white" style="background-color: #122944;">
         <div class="container">
             <div class="row justify-content-center">
