@@ -21,7 +21,6 @@
 
 @section('content')
 <div class="container">
-
     <div class="col-12 mt-4">
         <img style="border-radius: 10px; padding: 10px; width: 250px" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt="">
         <h4 style="color: rgb(97, 97, 250); margin-top: 10px; text-align: center">Inscripción para formar parte de nuestro directorio de partners.</h4>
@@ -245,7 +244,7 @@
                                 </div>                            
                                 <div id="divCompanyName" class="col-sm-4" @if ($partner->company == "Empresa") style="display: block" @else style="display: none" @endif>
                                     {!! Form::label('company_name', 'Nombre de la Empresa') !!}
-                                    @if ($partner->company_name != null)
+                                    @if($partner->company_name != null)
                                         {!! Form::text('company_name', $partner->company_name, ['class' => 'form-control']) !!}
                                     @else
                                         {!! Form::text('company_name', null, ['class' => 'form-control']) !!} 

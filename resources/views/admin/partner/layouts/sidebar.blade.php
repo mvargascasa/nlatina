@@ -115,7 +115,10 @@ body {
 
 <script>
   window.onload = function(){
-    openNav();
+    var screenWidth = screen.width;
+    if(screenWidth > 1000){
+      openNav();
+    }
   }
   
   function openNav() {
