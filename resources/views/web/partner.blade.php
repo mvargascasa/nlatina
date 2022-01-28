@@ -220,6 +220,7 @@ input[type="radio"]:checked ~ label {
                         </div>
                     @endif
                 </div>
+                <h6 style="font-weight: bold; margin-top: 10px; color: #9A7A2E">Puntuación</h6>
                     @php
                       $rating = $partner->averageRating();
                     @endphp
