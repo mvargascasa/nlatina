@@ -30,6 +30,9 @@
                 margin-left: -21px !important;
                 margin-right: -21px !important; 
             }
+            #cardParent{
+                border: none !important;
+            }
         }
     </style>
 @endsection
@@ -39,7 +42,7 @@
         {{-- <img style="border-radius: 10px; padding: 10px; width: 250px" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt=""> --}}
         <div id="content" class="row justify-content-center mt-3">
             <div class="col-12">
-                <div class="card" style="background-color: #f4f4fc">
+                <div id="cardParent" class="card" style="background-color: #f4f4fc">
                     <div class="card-header font-weight-bold" style="background-color: #01385f; color: #ffffff">ACTUALIZAR DATOS</div>
                     <h4 style="color: #002542; margin-top: 20px; text-align: center">Inscripción para formar parte de nuestro directorio de partners.</h4>
                     <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte gratis en Estados Unidos</p>
