@@ -4,13 +4,10 @@
 <hr style="width: 50%">
 <div class="row">
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
-        <div style="display: inline-block" class="mr-2">
+        <div class="mr-2">
             <p><b>BUSCAR POR:</b></p>
         </div>
-        
-        {{-- <form action="{{ route('web.showallpartners.a') }}" method="POST" id="formSearchPartnersAfter"> --}}
         {!! Form::open(['route' => 'web.showallpartners', 'method' => 'POST', 'id' => 'formSearchPartnersAfter']) !!}
-            {{-- @csrf --}}
             <div class="row">
             <div class="col-lg-3">
                 <div class="form-group">
@@ -48,7 +45,6 @@
                 <button class="btn" type="submit" style="background-color: #002542; color: #ffffff">Buscar</button>
             </div>
             </div>
-        {{-- </form> --}}
         {!! Form::close() !!}
     </div>
 </div>

@@ -12,7 +12,7 @@
             </div>
         @endif
         <div>
-            <h1>Perfil del Socio {{ $partner->name}}</h1>
+            <h1>Perfil del Partner {{ $partner->name}} {{ $partner->lastname }}</h1>
             @if ($partner->email_verified_at == null)
                 <div class="float-right">
                     {!! Form::open(['route' => ['verify.email.admin', $partner], 'method' => 'POST']) !!}

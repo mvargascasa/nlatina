@@ -5,12 +5,12 @@
     </div>
     <div class="container mt-4">
         {!! Form::open(['id' => 'formSearchPartner']) !!}
-        <div class="row" style="margin-left: 13%">
+        <div class="row countrysearch" style="margin-left: 13%">
             @php
                 $countries = \App\Country::select('id', 'name_country', 'name_country_lower')->orderBy('name_country')->get();
             @endphp
             @foreach ($countries as $country)
-                <div onclick="selectCountry({{ $country->id }})" style="cursor: pointer" class="col-sm-4 mb-2">
+                <div onclick="selectCountry({{ $country->id }})" style="cursor: pointer" class="col-sm-4 col-6 mb-2">
                     <img src="{{ asset('img/partners/'.$country->name_country_lower.'.png') }}" alt=""> {{ $country->name_country}}
                 </div>
             @endforeach
