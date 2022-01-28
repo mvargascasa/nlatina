@@ -102,7 +102,7 @@ body {
 </div>
 
 <div id="main" style="background-color: rgb(244, 244, 252)">
-  <button class="openbtn" onclick="openNav()">☰ Menú</button>  
+  <button id="btnMenu" class="openbtn" onclick="openNav()">☰ Menú</button>  
     @yield('content')
 
 </div>
@@ -114,7 +114,6 @@ body {
 @yield('end-scripts')
 
 <script>
-
   window.onload = function(){
     openNav();
   }
@@ -122,11 +121,13 @@ body {
   function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("btnMenu").style.display = "none";
   }
 
   function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("btnMenu").style.display = "block";
   }
 
 </script>
