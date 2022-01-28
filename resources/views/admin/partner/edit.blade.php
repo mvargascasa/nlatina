@@ -22,6 +22,10 @@
             #txtTercero{
                 display: none !important;
             }
+            #content{
+                margin-left: -30px !important;
+                margin-right: -30px !important;
+            }
         }
     </style>
 @endsection
@@ -29,7 +33,7 @@
 @section('content')
     <div class="col-12 mt-4">
         {{-- <img style="border-radius: 10px; padding: 10px; width: 250px" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt=""> --}}
-        <div class="row justify-content-center mt-3">
+        <div id="content" class="row justify-content-center mt-3">
             <div class="col-12">
                 <div class="card" style="background-color: #f4f4fc">
                     <div class="card-header font-weight-bold" style="background-color: #01385f; color: #ffffff">ACTUALIZAR DATOS</div>
