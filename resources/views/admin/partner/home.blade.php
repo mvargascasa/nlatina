@@ -196,46 +196,46 @@
                           <ul class="list-group list-group-flush rounded-3">
                               @if (Auth::user()->website != null)
                               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fas fa-globe fa-lg text-warning"></i>
+                                <i class="fas fa-globe text-primary" style="font-size: 20px"></i>
                                 <a target="_blank" href="{{Auth::user()->website}}" class="mb-0" style="font-size: 10px; text-decoration: none; color: #000000">{{Auth::user()->website}}</a>
                               </li>
                               @else
                               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fas fa-globe fa-lg text-primary"></i>
+                                <i class="fas fa-globe" style="font-size: 20px"></i>
                                 <p style="font-size: 12px;" class="mb-0">Sin información</p>
                               </li>
                               @endif
                               @if (Auth::user()->link_linkedin != null)
                                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                    <i class="fab fa-linkedin fa-lg text-primary" style="color: #333333;"></i>
+                                  <i class="fab fa-linkedin text-primary" style="font-size: 20px"></i>
                                     <a target="_blank" href="{{Auth::user()->link_linkedin}}" class="mb-0" style="font-size: 10px; text-decoration: none; color: #000000">{{Auth::user()->link_linkedin}}</a>                    
                                 </li>
                                 @else
                                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                    <i class="fas fa-linkedin fa-lg"></i>
+                                    <i class="fab fa-linkedin" style="font-size: 20px"></i>
                                     <p style="font-size: 12px;" class="mb-0">Sin información</p>
                                   </li>
                               @endif
                               @if (Auth::user()->link_instagram != null)
                               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fab fa-instagram fa-lg" style="color: #ac2bac"></i> 
+                                <i class="fab fa-instagram" style="color: #ac2bac; font-size: 20px"></i> 
                                 {{-- <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i> --}}
                                 <a target="_blank" href="{{Auth::user()->link_instagram}}" class="mb-0" style="font-size: 10px; text-decoration: none; color: #000000">{{Auth::user()->link_instagram}}</a>
                               </li>
                                 @else
                                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                  <i class="fab fa-instagram"></i>  
+                                  <i class="fab fa-instagram" style="font-size: 20px"></i>  
                                     <p style="font-size: 12px;" class="mb-0">Sin información</p>
                                   </li>
                               @endif
                               @if (Auth::user()->link_facebook != null)
                               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fab fa-facebook-square fa-lg" style="color: #3b5998;"></i>
+                                <i class="fab fa-facebook-square" style="color: #3b5998; font-size: 20px"></i>
                                 <a target="_blank" href="{{Auth::user()->link_facebook}}" class="mb-0" style="font-size: 10px; text-decoration: none; color: #000000">{{Auth::user()->link_facebook}}</a>
                               </li>
                                   @else
                                   <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                    <i class="fas fa-facebook-square fa-lg text-primary"></i>
+                                    <i class="fab fa-facebook-square" style="font-size: 20px"></i>
                                     <p style="font-size: 12px;" class="mb-0">Sin información</p>
                                   </li>
                               @endif
