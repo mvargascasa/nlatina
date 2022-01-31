@@ -58,12 +58,13 @@
                             </div>
                         @endif
 
-                        {!! Form::model($partner, ['route' => ['socios.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'put']) !!}
-                        @csrf
-                        @method('put')
+                            {!! Form::model($partner, ['route' => ['socios.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'put']) !!}
+                            @csrf
+                            @method('put')
                             <div id="card1" class="card">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• INFORMACIÓN PERSONAL</p>
+                                    <input type="hidden" name="dataSend" value="personalInformation">
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="image-wrapper d-flex justify-content-center">
@@ -112,7 +113,7 @@
                                                     <div class="form-group">
                                                         {!! Form::label('lastname', 'Apellido') !!}
                                                         {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control']) !!}
-                                                    @error('name')
+                                                    @error('lastname')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
@@ -217,12 +218,19 @@
                                             </div>
                                         </div> --}}
                                     </div>
+                                    <div class="float-right">
+                                        {!! Form::submit('Actualizar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b']) !!}
+                                    </div>
                                 </div>
                             </div>
+                            {!! Form::close() !!}
 
+
+                            {!! Form::model($partner, ['route' => ['socios.update', $partner], 'method' => 'put']) !!}
                             <div id="card2" class="card mt-4">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• REDES SOCIALES</p>
+                                    <input type="hidden" name="dataSend" value="socialMediaInformation">
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="form-group">
@@ -265,12 +273,18 @@
                                             </div>  
                                         </div>
                                     </div>
+                                    <div class="float-right">
+                                        {!! Form::submit('Actualizar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b']) !!}
+                                    </div>
                                 </div>
                             </div>
+                            {{ Form::close() }}
 
+                            {!! Form::model($partner, ['route' => ['socios.update', $partner], 'method' => 'put']) !!}
                             <div id="card3" class="card mt-4">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• INFORMACIÓN PROFESIONAL</p>
+                                    <input type="hidden" name="dataSend" value="professionalInformation">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
@@ -297,7 +311,6 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    {{--EMPIEZA CHECKBOXES--}}
                                     <p style="font-size: 14px">Área de especialización <b>(Escoja entre 1 a 3 opciones)</b></p>
                                     <div class="form-group">
                                         <div class="row">
@@ -316,7 +329,6 @@
                                             </div>
                                             @enderror
                                     </div>
-                                    {{--TERMINA CHECKBOXES--}}
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
@@ -327,7 +339,7 @@
                                                     <span class="text-success" style="margin-left: 5px">(Mínimo: 150 caracteres - Máximo: 200 caracteres)</span>
                                                 </div>
                                                 @error('specialty')
-                                                <span class="text-danger">{{ $message }}</span>
+                                                <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                         </div>
@@ -344,16 +356,20 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    <div class="float-right">
+                                        {!! Form::submit('Actualizar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b']) !!}
+                                    </div>
                                 </div>
                             </div>
+                            {!! Form::close() !!}
 
-                            <div class="d-flex flex-column float-right mt-3">
+                            {{-- <div class="d-flex flex-column float-right mt-3">
                                 <div class="form-group">
                                     {!! Form::submit('Aceptar y Registrarme',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b']) !!}
                                 </div>
                                 <a style="text-decoration: none; color: black; text-align: end; font-size: 10px" href="{{ route('web.socios.politicas') }}">Términos y condiciones</a>
-                            </div>
-                            {!! Form::close() !!}  
+                            </div> --}}
+                            {{-- {!! Form::close() !!}   --}}
                     </div>
                 </div>
             </div>

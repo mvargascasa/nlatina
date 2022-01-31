@@ -47,7 +47,7 @@ class RegisterController extends Controller
             'slug' => Str::slug($request['name'] . ' ' . $request['lastname'], '-')
         ]);
 
-        event(new Registered($partner));
+        // event(new Registered($partner));
     
         //Envia correo a los administradores de que se ha registrado un nuevo usuario
         $this->sendEmail($partner);
