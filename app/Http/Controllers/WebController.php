@@ -197,9 +197,9 @@ class WebController extends Controller
         $data['subtitle'] = '¡Apostillamos todo tipo de documentos para Florida!';
         $data['imggrid'] = 'img/oficinas/MATRIMONIO FL.png';
         $data['txtgrid'] = 'Matrimonios';
-        $data['telfHidden'] = '+13056146362';
-        $data['telfWpp'] = '13056146362';
-        $data['telfShow'] = '305 614-6362';
+        $data['telfHidden'] = '+13056003290';
+        $data['telfWpp'] = '13056003290';
+        $data['telfShow'] = '305-600-3290';
         $data['imgapostilla'] = 'img/oficinas/apostillafl.png';
         $data['imgup'] = 'img/oficina-notaria-florida.jpg';
         $data['imgdown'] = 'img/oficinas/Plaza_opt.jpg';
