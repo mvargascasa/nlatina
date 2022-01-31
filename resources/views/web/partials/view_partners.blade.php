@@ -14,7 +14,9 @@
                     <select class="form-control" name="country" id="country" onchange="loadStates();">
                         <option value="">País</option>
                         @foreach ($countries as $country)
-                            <option value="{{ $country->id }}" @if(Request::get('country') == $country->id) selected @endif>{{ $country->name_country }} </option>
+                            @if ($country->name_country != "Estados Unidos")
+                                <option value="{{ $country->id }}" @if(Request::get('country') == $country->id) selected @endif>{{ $country->name_country }} </option>
+                            @endif
                         @endforeach
                     </select>
                 </div>

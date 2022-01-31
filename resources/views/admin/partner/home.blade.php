@@ -94,9 +94,18 @@
                       {{Auth::user()->name}} {{ Auth::user()->lastname}}
                   </h5>
                   @if (Auth::user()->state != null)
-                    <p class="text-muted mb-4">
+                    <p class="text-muted" style="margin-top: -10px">
                         {{Auth::user()->city}}, {{ Auth::user()->country_residence }}
                     </p>
+                  @endif
+                  @if (Auth::user()->company == "Empresa")
+                    <p class="text-muted" style="margin-top: -15px">
+                        {{Auth::user()->company_name}}
+                    </p>
+                  @else
+                  <p class="text-muted" style="margin-top: -15px">
+                    {{Auth::user()->company}}
+                </p>
                   @endif
                 </div>
               </div>
