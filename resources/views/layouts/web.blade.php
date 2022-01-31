@@ -145,7 +145,8 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
       </nav>
         <div  class="p-2" style=" position: absolute;right: 20px;">
                 <a class="text-warning" href="tel:@yield('phoneNumberHidden')" style="font-weight: bols;"
-                onclick="gtag_report_conversion('tel:+18007428602');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
+                onclick="gtag_report_conversion('tel:@yield('phoneNumberHidden');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
+                                                    {{--+18007428602--}}
                     <i class="fa fa-phone-square-alt"></i> @yield('phoneNumber')
                     {{--800-742-8602--}}
                 </a>
