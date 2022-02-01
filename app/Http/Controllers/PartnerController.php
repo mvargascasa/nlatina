@@ -162,9 +162,9 @@ class PartnerController extends Controller
     }
 
     public function viewLastPublicated(){
-        $partners = Partner::latest()
-            ->where('status', 'PUBLICADO')
-            ->take(10)
+        $partners = Partner::where('status', 'PUBLICADO')
+            ->orderBy('updated_at', 'desc')
+            ->limit(10)
             ->get();
 
         return view('admin.partner.form', compact('partners'));

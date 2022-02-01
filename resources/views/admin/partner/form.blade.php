@@ -13,103 +13,73 @@
             width: 75%;
             height: 75%;
         }
-
-        .card {
-            width: 300px;
-            background-color: #efefef;
-            border: none;
-            cursor: pointer;
-            transition: all 0.5s
-        }
-
-        .image img {
-            transition: all 0.5s
-        }
-
-        .card:hover .image img {
-            transform: scale(1.5)
-        }
-
-        .btn {
-            height: 140px;
-            width: 140px;
-            border-radius: 50%
-        }
-
-        .name {
-            font-size: 22px;
-            font-weight: bold
-        }
-
-        .idd {
-            font-size: 14px;
-            font-weight: 600
-        }
-
-        .idd1 {
-            font-size: 12px
-        }
-
-        .number {
-            font-size: 22px;
-            font-weight: bold
-        }
-
-        .follow {
-            font-size: 12px;
-            font-weight: 500;
-            color: #444444
-        }
-
-        .btn1 {
-            height: 40px;
-            width: 150px;
-            border: none;
-            background-color: #000;
-            color: #aeaeae;
-            font-size: 15px
-        }
-
-        .text span {
-            font-size: 13px;
-            color: #545454;
-            font-weight: 500
-        }
-
-        .icons i {
-            font-size: 19px
-        }
-
-        hr .new1 {
-            border: 1px solid
-        }
-
-        .join {
-            font-size: 14px;
-            color: #a0a0a0;
-            font-weight: bold
-        }
-
-        .date {
-            background-color: #ccc
-        }
     </style>
 @endsection
 
 @section('content')
 <div class="col-9 mt-4">
     <div class="row">
-        @foreach ($partners as $partner)
-            <div class="col-sm-3" style="margin-right: 25px">
-                <div class="card p-4">
-                    <div class=" image d-flex flex-column justify-content-center align-items-center"> <button class="btn btn-secondary"> <img src="{{asset('storage/'.$partner->img_profile)}}" height="120" width="100" /></button> <span class="name mt-3">{{ $partner->name }} {{ $partner->lastname }}</span> <span class="idd">{{ $partner->country_residence }}</span>
-                        <div class="d-flex flex-row justify-content-center align-items-center gap-2"> <span class="idd1">{{ $partner->state }}, {{ $partner->city}}</span> <span><i class="fa fa-copy"></i></span> </div>
-                        <div class=" d-flex mt-2"> <a target="_blank" style="text-decoration: none; font-size: 12px;" class="btn1 btn-dark text-center" href="https://notarialatina.com/partners/{{$partner->slug}}">Ver perfil en Notaria Latina</a> </div>
-                        <div class=" px-2 rounded mt-4 date "> <span class="join">Registrado el {{ $partner->created_at}}</span> </div>
-                    </div>
-                </div>
+        <div class="card" style="margin-left: 1%">
+            <div class="card-header font-weight-bold">
+                Ultimos PARTNERS publicados
             </div>
-        @endforeach
+
+            <div class="card-body">
+                {{-- @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif --}}
+
+                <table id="example" class="table table-sm" style="width:100%">
+                    <tr>
+                        <th>IMG</th>
+                        <th>NOMBRE</th>
+                        <th>ESPECIALIDAD</th>
+                        <th>PAIS DE RESIDENCIA</th>
+                        <th>ESTADO</th>
+                        <th>ACCIONES</th>
+                    </tr>
+
+                    @foreach ($partners as $partner)
+                    <tr>
+                        <td>
+                            @isset($partner->img_profile)
+                                <img src="{{ asset('storage/'.$partner->img_profile)}}" width="80px" height="80px">
+                            @else
+                                <img src="{{ asset('img/user.webp') }}" width="80px" height="80px" alt="">
+                            @endisset  
+                                {{-- @isset($cat->imgdir)
+                                    <img src="{{url('img/i300_'.$cat->imgcat)}}" width="50">
+                                @endif --}}
+                        </td>
+                        <td>
+                            {{ $partner->name }} {{ $partner->lastname }}
+                            <p class="text-muted" style="font-size: 13px">{{ $partner->created_at->format('d/m/Y')}}</p>
+                        </td>
+                        <td>
+                            @isset($partner->specialty)
+                                {{Str::limit($partner->specialty, 100)}}
+                            @else
+                                <b>Sin información</b> 
+                            @endisset
+                        </td>
+                        <td>
+                            @isset($partner->country_residence)
+                                {{ $partner->country_residence}}
+                            @else
+                                <b>Sin información</b> 
+                            @endisset
+                        </td>
+                        <td>{{ $partner->status}}</td>
+                        <td>
+                            <a target="_blank" href="{{ route('web.showpartner', $partner ) }}" class="btn btn-info" style="font-size: 11px">Ver perfil</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
     </div>
 </div>   
 @endsection

@@ -36,7 +36,7 @@
                 <div class="card-header font-weight-bold">
                     PARTNERS
                     {{-- {{ route('partner.form') }} --}}
-                    <a class="btn btn-sm btn-primary float-right" href="#">Ultimos publicados</a>
+                    <a class="btn btn-sm btn-primary float-right" href="{{ route('partner.show.latest.public') }}">Ultimos publicados</a>
                 </div>
 
                 <div class="card-body">
