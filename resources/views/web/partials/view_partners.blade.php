@@ -135,38 +135,5 @@
             }
         });
     });
-    
-    (function () {
-        var scrollFired = false;
-
-        function saveScroll () {
-            if (window.localStorage) {
-                window.localStorage.setItem("scrollLeftTop", window.pageXOffset + "," + window.pageYOffset);
-            }
-        }
-
-        function autoScroll() {
-            scrollFired = true;
-            if (window.localStorage) {
-                var xy = window.localStorage.getItem("scrollLeftTop");
-                if (xy) {
-                    var a = xy.split(",");
-                    var x = a[0];
-                    var y = a[1];
-                    window.scroll(x, y);
-                }
-            }
-        }
-
-        function onLoadAutoScroll() {
-        if(scrollFired === false) {//Prevent scroll if run DOMContentLoaded
-            autoScroll();
-        }
-        }
-
-        window.addEventListener("DOMContentLoaded", autoScroll, false);
-        window.addEventListener("load", onLoadAutoScroll, false);//If DOMContentLoaded not "run"
-        window.addEventListener("scroll", saveScroll, false);
-    })();
 
 </script>

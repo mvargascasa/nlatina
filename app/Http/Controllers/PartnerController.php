@@ -161,6 +161,15 @@ class PartnerController extends Controller
         return redirect()->route('partner.index');
     }
 
+    public function viewLastPublicated(){
+        $partners = Partner::latest()
+            ->where('status', 'PUBLICADO')
+            ->take(10)
+            ->get();
+
+        return view('admin.partner.form', compact('partners'));
+    }
+
     /**
      * Remove the specified resource from storage.
      *

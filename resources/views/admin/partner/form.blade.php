@@ -13,126 +13,103 @@
             width: 75%;
             height: 75%;
         }
+
+        .card {
+            width: 300px;
+            background-color: #efefef;
+            border: none;
+            cursor: pointer;
+            transition: all 0.5s
+        }
+
+        .image img {
+            transition: all 0.5s
+        }
+
+        .card:hover .image img {
+            transform: scale(1.5)
+        }
+
+        .btn {
+            height: 140px;
+            width: 140px;
+            border-radius: 50%
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: bold
+        }
+
+        .idd {
+            font-size: 14px;
+            font-weight: 600
+        }
+
+        .idd1 {
+            font-size: 12px
+        }
+
+        .number {
+            font-size: 22px;
+            font-weight: bold
+        }
+
+        .follow {
+            font-size: 12px;
+            font-weight: 500;
+            color: #444444
+        }
+
+        .btn1 {
+            height: 40px;
+            width: 150px;
+            border: none;
+            background-color: #000;
+            color: #aeaeae;
+            font-size: 15px
+        }
+
+        .text span {
+            font-size: 13px;
+            color: #545454;
+            font-weight: 500
+        }
+
+        .icons i {
+            font-size: 19px
+        }
+
+        hr .new1 {
+            border: 1px solid
+        }
+
+        .join {
+            font-size: 14px;
+            color: #a0a0a0;
+            font-weight: bold
+        }
+
+        .date {
+            background-color: #ccc
+        }
     </style>
 @endsection
 
 @section('content')
 <div class="col-9 mt-4">
-    <div class="row justify-content-center">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header font-weight-bold">CREAR PARTNER</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {!! Form::open(['route' => 'partner.store', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
-                        
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    {!! Form::label('name', 'Nombre') !!}
-                                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
-                                @error('name')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    {!! Form::label('lastname', 'Apellido') !!}
-                                    {!! Form::text('lastname', null, ['class' => 'form-control']) !!}
-                                @error('lastname')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    {!! Form::label('specialty', 'Especialidad') !!}
-                                    {!! Form::text('specialty', null, ['class' => 'form-control']) !!}
-                                @error('specialty')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    {!! Form::label('country_residence', 'Pais de residencia') !!}
-                                    {!! Form::select('country_residence', [null => 'Seleccione', 'Ecuador' => 'Ecuador', 'Colombia' => 'Colombia'], null, ['class' => 'form-control']) !!}
-                                @error('country_residence')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    {!! Form::label('phone', 'Telefono') !!}
-                                    {!! Form::number('phone', null, ['class' => 'form-control']) !!}
-                                @error('phone')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    {!! Form::label('email', 'Email') !!}
-                                    {!! Form::email('email', null, ['class' => 'form-control']) !!}
-                                @error('email')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row pt-4">
-                            <div class="col-md-6">
-                                <div class="image-wrapper">
-                                    <img id="picture" src="{{ asset('img/user.png') }}" alt="">
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                {!! Form::label('img_profile', 'Imagen de perfil') !!}
-                                {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);']) !!}
-                                @error('img_profile')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-5">
-                            {!! Form::label('status', 'Estado') !!}
-                            {!! Form::select('status',[null => 'SELECCIONE', 'NO PUBLICADO' => 'NO PUBLICADO','PUBLICADO' => 'PUBLICADO'],    null,    ['class' => 'form-control custom-select']) !!}
-                            @error('status')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        
-                        <div class="form-group">
-                            {!! Form::label('biography_html', 'Biografia') !!}
-                            {!! Form::textarea('biography_html', null, ['class' => 'form-control','rows' => '4']) !!}
-                            @error('biography_html')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::submit('Registrar Partner',  ['class' => 'btn btn-primary']) !!}
-                        </div>
-                        {!! Form::close() !!}    
+    <div class="row">
+        @foreach ($partners as $partner)
+            <div class="col-sm-3" style="margin-right: 25px">
+                <div class="card p-4">
+                    <div class=" image d-flex flex-column justify-content-center align-items-center"> <button class="btn btn-secondary"> <img src="{{asset('storage/'.$partner->img_profile)}}" height="120" width="100" /></button> <span class="name mt-3">{{ $partner->name }} {{ $partner->lastname }}</span> <span class="idd">{{ $partner->country_residence }}</span>
+                        <div class="d-flex flex-row justify-content-center align-items-center gap-2"> <span class="idd1">{{ $partner->state }}, {{ $partner->city}}</span> <span><i class="fa fa-copy"></i></span> </div>
+                        <div class=" d-flex mt-2"> <a target="_blank" style="text-decoration: none; font-size: 12px;" class="btn1 btn-dark text-center" href="https://notarialatina.com/partners/{{$partner->slug}}">Ver perfil en Notaria Latina</a> </div>
+                        <div class=" px-2 rounded mt-4 date "> <span class="join">Registrado el {{ $partner->created_at}}</span> </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 </div>   
 @endsection
