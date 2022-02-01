@@ -51,7 +51,7 @@
                             <th>IMG</th>
                             <th>NOMBRE</th>
                             <th>ESPECIALIDAD</th>
-                            <th>EMAIL VERIFICADO</th>
+                            <th>TERMINOS Y CONDICIONES</th>
                             <th>PAIS DE RESIDENCIA</th>
                             <th>ESTADO</th>
                             <th>ACCIONES</th>
@@ -81,10 +81,10 @@
                                 @endisset
                             </td>
                             <td>
-                                @isset($partner->email_verified_at)
-                                    Se verifico el <b>{{$partner->email_verified_at->format('d/m/Y')}}</b> 
+                                @isset($partner->terminos_verified_at)
+                                    Aceptó el <b>{{Str::limit($partner->terminos_verified_at, 10, '')}}</b> 
                                 @else
-                                    <b>Sin verificar</b> 
+                                    <b>Sin aceptar</b> 
                                 @endisset
                             </td>
                             <td>
