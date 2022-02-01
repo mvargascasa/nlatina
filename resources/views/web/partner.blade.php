@@ -190,10 +190,12 @@ input[type="radio"]:checked ~ label {
                         <p><i class="fas fa-check"></i> {{$specialty->name_specialty }}</p>
                     @endforeach
                 </div>
-                <div style="color: #9A7A2E">
-                    <h6><b>Especialidades</b></h6>
-                    <p>{{ $partner->specialty }}</p>
-                </div>
+                @isset($partner->specialty)
+                    <div style="color: #9A7A2E">
+                        <h6><b>Especialidades</b></h6>
+                        <p>{{ $partner->specialty }}</p>
+                    </div>
+                @endisset
             </div>
             <div class="col-sm-4">
                 <div style="color: #9A7A2E">
