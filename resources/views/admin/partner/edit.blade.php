@@ -228,6 +228,7 @@
                             <div id="card2" class="card mt-4">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• REDES SOCIALES</p>
+                                    <p>Si por el momento no cuenta con redes sociales, puede continuar completando su información profesional</p>
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="form-group">

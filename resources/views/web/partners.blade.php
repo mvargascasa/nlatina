@@ -189,7 +189,7 @@
                                 <option value="Uruguay">Uruguay</option>
                                 <option value="Venezuela">Venezuela</option>  
                             </select>
-                            <input type="text" style="margin-left: 2px; background-color: #ffffff" name="codTelfPais" id="codTelfPais" class="form-control" readonly>
+                            <input type="text" style="margin-left: 3px; background-color: #ffffff" name="codTelfPais" id="codTelfPais" class="form-control" readonly>
                             <input type="number" name="phone" class="form-control" id="telefono" placeholder="Teléfono" autocomplete="off" value="{{ old('phone') }}" required>
                         </div>
                         @error('country_residence')
