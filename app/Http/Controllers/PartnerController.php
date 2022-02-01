@@ -158,7 +158,7 @@ class PartnerController extends Controller
         
         $partner->save();
         
-        return redirect()->route('partner.index');
+        return redirect()->route('partner.index')->with('success', 'Se actualizaron los datos');
     }
 
     public function viewLastPublicated(){

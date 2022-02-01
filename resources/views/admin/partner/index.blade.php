@@ -6,6 +6,14 @@
 
 @section('content')
 <div class="col-9 mt-4">
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+    @endif
     {!! Form::open(['route' => 'partner.index', 'method' => 'GET']) !!}
     <div class="row form-group mb-3">
         <div class="col-sm-10">

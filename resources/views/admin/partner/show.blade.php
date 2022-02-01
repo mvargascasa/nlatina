@@ -7,9 +7,12 @@
 @section('content')
     <div class="container mt-5 ">
         @if (session('success'))
-            <div class="alert alert-success">
-                Se ha verificado el correo del usuario
-            </div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
         @endif
         <div>
             <h1>Perfil del Partner {{ $partner->name}} {{ $partner->lastname }}</h1>
