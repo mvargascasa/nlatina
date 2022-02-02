@@ -101,7 +101,7 @@
                 </div>
             @endforeach
         </div>
-        {{ $partners->links() }}
+        {{-- {{ $partners->links() }} --}}
         @else
             <div class="row d-flex text-align-center justify-content-center">
                 <div class="alert alert-success">

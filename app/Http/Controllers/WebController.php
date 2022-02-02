@@ -133,7 +133,6 @@ class WebController extends Controller
                 ->country($request->country)
                 ->state($request->state)
                 ->specialties($request->specialty)
-                ->paginate(12)
                 ->get();
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
         // return json_encode(array($states, $partners, $specialties));
