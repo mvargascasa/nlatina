@@ -23,7 +23,7 @@
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
 
             <div class="col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title">Carta Poder en {{ $data['office'] }}</h1>
+              <h1 class="font-weight-bold heading-title">Poder Notarial en {{ $data['office'] }}</h1>
               <h3 class="heading-title">Generales y Especiales</h3>
   
               <a href="javascript:void(0)" class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
