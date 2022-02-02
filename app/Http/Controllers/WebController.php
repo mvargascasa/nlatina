@@ -197,6 +197,18 @@ class WebController extends Controller
                 case 'motor-vehicle-comission-en-new-york':
                     return view('web.office.vehicle_comission', compact('data'));
                     break;
+                case 'poder-notarial-new-york':
+                    return view('web.office.poderes', compact('data'));
+                    break;
+                case 'traducir-documentos-new-york':
+                    return view('web.office.traducciones', compact('data'));
+                    break;
+                case 'apostillar-documentos-new-york':
+                    return view('web.office.apostillas', compact('data'));
+                    break;
+                case 'affidavit-support-new-york':
+                    return view('web.office.affidavit', compact('data'));
+                    break;
                 default:
                     # code...
                     break;
@@ -256,6 +268,18 @@ class WebController extends Controller
                 case 'motor-vehicle-comission-en-new-jersey':
                     return view('web.office.vehicle_comission', compact('data'));
                     break;
+                case 'poder-notarial-new-jersey':
+                    return view('web.office.poderes', compact('data'));
+                    break;
+                case 'traducir-documentos-new-jersey':
+                    return view('web.office.traducciones', compact('data'));
+                    break;
+                case 'apostillar-documentos-new-jersey':
+                    return view('web.office.apostillas', compact('data'));
+                    break;
+                case 'affidavit-support-new-jersey':
+                    return view('web.office.affidavit', compact('data'));
+                    break;
                 default:
                     # code...
                     break;
@@ -314,6 +338,18 @@ class WebController extends Controller
                     break;
                 case 'matrimonios-en-florida':
                     return view('web.office.matrimonios', compact('data'));
+                    break;
+                case 'poder-notarial-florida':
+                    return view('web.office.poderes', compact('data'));
+                    break;
+                case 'traducir-documentos-florida':
+                    return view('web.office.traducciones', compact('data'));
+                    break;
+                case 'apostillar-documentos-florida':
+                    return view('web.office.apostillas', compact('data'));
+                    break;
+                case 'affidavit-support-florida':
+                    return view('web.office.affidavit', compact('data'));
                     break;
                 default:
                     # code...

@@ -110,15 +110,19 @@
             <div class="row" style="padding-top: 9%; padding-right: 50px">
                 <div class="col-sm-6">
                     <div class="d-flex">
-                        <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-20.png')}}" alt="">
-                        <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Cartas Poder {{ $data['oficina'] }}</p>
+                        <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'poder-notarial-'.Str::slug($data['oficina'])) }}">
+                            <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-20.png')}}" alt="">
+                            <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Cartas Poder {{ $data['oficina'] }}</p>
+                        </a>
                     </div>
                     <p style="font-size: 14px; color: #ffffff">Realizamos Poderes Especiales y Poderes Generales con su respectiva Apostilla. Cartas Poder desde {{ $data['oficina'] }} hacia Latinoamérica</p>
                 </div>
                 <div class="col-sm-6">
                     <div class="d-flex">
-                        <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-18.png')}}" alt="">
-                        <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Servicio de Traducción Certificada</p>
+                        <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'traducir-documentos-'.Str::slug($data['oficina'])) }}">
+                            <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-18.png')}}" alt="">
+                            <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Servicio de Traducción Certificada</p>
+                        </a>
                     </div>
                     <p style="font-size: 14px; color: #ffffff">Al obtener un documento con sus correctas traducciones nos permiten validar su información, es así que este se puede utilizar fuera del pais de origen</p>
                 </div>
@@ -126,15 +130,19 @@
             <div class="row" style="padding-right: 50px">
                 <div class="col-sm-6">
                     <div class="d-flex">
-                        <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-19.png')}}" alt="">
-                        <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">¿Cómo apostillar en {{ $data['oficina'] }}?</p>
+                        <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'apostillar-documentos-'.Str::slug($data['oficina'])) }}">
+                            <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-19.png')}}" alt="">
+                            <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">¿Cómo apostillar en {{ $data['oficina'] }}?</p>
+                        </a>
                     </div>
                     <p style="font-size: 14px; color: #ffffff">El documento que porte la apostilla tiene validez legal en cualquiera de los países miembros del convenio de la Haya.</p>
                 </div>
                 <div class="col-sm-6">
                     <div class="d-flex">
-                        <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-17.png')}}" alt="">
-                        <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Affidavit Support</p>
+                        <a class="d-flex" style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'affidavit-support-'.Str::slug($data['oficina'])) }}">
+                            <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-17.png')}}" alt="">
+                            <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Affidávit Support</p>
+                        </a>
                     </div>
                     <p style="font-size: 14px; color: #ffffff">Una declaración jurada o Affidávit es una manifestación escrita o verbal cuya veracidad es asegurada mediante un juramento ante una autoridad judicial</p>
                 </div>
