@@ -65,6 +65,11 @@
             transition: 1s ease;
         }
 
+        #colService:hover{
+            background-color: #ece8e3;
+            -webkit-transition: 600ms;
+            -webkit-transform: initial;
+        }
     </style>
 @endsection
 
@@ -151,7 +156,7 @@
     <div style="background-color: rgb(245, 244, 244); padding-bottom:50px">
         <p class="text-center mt-5 mb-5" style="padding-top: 30px; font-size: 25px; font-weight: bold">Servicios adicionales de Notaría Pública</p>
         <div class="row" style="padding-left:20%; padding-right:20%;">
-            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
+            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'travel-authorization-en-'.Str::slug($data['oficina'])) }}">
                     <div class="grow">
                         <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
@@ -159,7 +164,7 @@
                     <p>Travel Authorization</p>
                 </a>
             </div>
-            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
+            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'certificaciones-en-'.Str::slug($data['oficina'])) }}">
                     <div class="grow">
                         <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
@@ -167,7 +172,7 @@
                     <p>Certificaciones</p>
                 </a>
             </div>    
-            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
+            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'acuerdos-en-'.Str::slug($data['oficina'])) }}">
                     <div class="grow">
                         <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
@@ -175,7 +180,7 @@
                     <p>Acuerdos</p>
                 </a>
             </div>
-            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
+            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'cartas-de-invitacion-en-'.Str::slug($data['oficina'])) }}">
                     <div class="grow">
                         <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
@@ -186,7 +191,7 @@
         </div>
     
         <div class="row mt-1" style="padding-left:20%; padding-right:20%;">
-            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
+            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'revocatorias-en-'.Str::slug($data['oficina'])) }}">
                     <div class="grow">
                         <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-12.png') }}" alt="">
@@ -194,7 +199,7 @@
                     <p>Revocatorias</p>
                 </a>
             </div>
-            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
+            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'contratos-en-'.Str::slug($data['oficina'])) }}">
                     <div class="grow">
                         <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-13.png') }}" alt="">
@@ -202,7 +207,7 @@
                     <p>Contratos</p>
                 </a>
             </div>
-            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
+            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'testamentos-en-'.Str::slug($data['oficina'])) }}">
                     <div class="grow">
                         <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-14.png') }}" alt="">
@@ -210,7 +215,7 @@
                     <p>Testamentos</p>
                 </a>
             </div>
-            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
+            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <div class="grow">
                     {{-- <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), Str::slug($data['txtgrid']).'-en-'.Str::slug($data['oficina'])) }}""> --}}
                         <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset($data['imggrid']) }}" alt="">
