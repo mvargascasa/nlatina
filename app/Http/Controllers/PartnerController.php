@@ -106,15 +106,13 @@ class PartnerController extends Controller
         //     'specialty' => 'required',
         //     'biography_html' => 'required'
         // ]);
-        if($request->img_profile == null && $partner->img_profile != null){
+        if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
             $request->img_profile = $partner->img_profile;
-            $request->validate([
-                'img_profile' => 'image|max:1000',
-            ]);
-        } else {
-            $request->validate([
-                'img_profile' => 'required|image|max:1000',
-            ]);
+        } else if($request->img_profile != null && $partner->img_profile != null){
+            $url = Storage::put('partners', $request->file('img_profile'));
+            Storage::delete($partner->img_profile);
+            $partner->img_profile = $url;
+        } else if($request->img_profile != null && $partner->img_profile == null){
             $url = Storage::put('partners', $request->file('img_profile'));
             $partner->img_profile = $url;
         }

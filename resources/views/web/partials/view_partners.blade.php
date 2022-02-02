@@ -101,7 +101,7 @@
                 </div>
             @endforeach
         </div>
-        {{-- {{ $partners->links() }} --}}
+        <button class="btn btn-primary" onclick="cargarMas();">Cargar más</button>
         @else
             <div class="row d-flex text-align-center justify-content-center">
                 <div class="alert alert-success">
@@ -136,5 +136,28 @@
             }
         });
     });
+
+    function cargarMas(){
+        var id = $('#country').val();
+        $.ajax({
+                type: "POST",
+                url: "{{ route('partners.fetch.state') }}",
+                data: {
+                    "_token" : "{{ csrf_token() }}",
+                    "country" : id,
+                    "state" : null,
+                    "specialty": null,
+                    "dataLoad": "{{ count($partners) }}"
+                },
+                dataType: "json",
+                success: function(result){
+                    $('#contentPartner').html(result.viewPartners);
+                },
+                error: function(xhr, status, error){
+                    var errorMessage = xhr.status + ': ' + xhr.statusText
+                    alert('Error - ' + errorMessage);
+                }
+            });
+    }
 
 </script>

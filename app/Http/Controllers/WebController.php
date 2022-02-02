@@ -125,6 +125,13 @@ class WebController extends Controller
     }
 
     public function fetchState(Request $request){
+        
+        $dataToLoad = 12;
+
+        if($request->dataLoad != null){
+            $dataToLoad = $dataToLoad + $request->dataLoad;
+        }
+
         $countries = Country::select(['id', 'name_country'])->get();
         $states = State::where('country_id', $request->country)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
@@ -133,7 +140,9 @@ class WebController extends Controller
                 ->country($request->country)
                 ->state($request->state)
                 ->specialties($request->specialty)
+                ->limit($dataToLoad)
                 ->get();
+
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
         // return json_encode(array($states, $partners, $specialties));
 
