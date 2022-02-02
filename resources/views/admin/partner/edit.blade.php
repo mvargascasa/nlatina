@@ -91,7 +91,7 @@
                                                 {!! Form::label('img_profile', 'Imagen de perfil') !!}
                                                 {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);']) !!}
                                                 @error('img_profile')
-                                                    <span class="text-danger">{{ $message }}</span>
+                                                    <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
                                                 @enderror
                                                 <hr>
                                                 {{-- <p style="color: #00223b">Al momento de subir tu foto de perfil puedes tomar como referencia la siguiente imagen</p> --}}

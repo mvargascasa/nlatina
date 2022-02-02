@@ -27,10 +27,20 @@ class HomeController extends Controller
         if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
             $request->img_profile = $partner->img_profile;
         } else if($request->img_profile != null && $partner->img_profile != null){
+            $request->validate([
+                'img_profile' => 'image'
+            ], [
+                'img_profile.image' => "El formado no es válido"
+            ]);
             $url = Storage::put('partners', $request->file('img_profile'));
             Storage::delete($partner->img_profile);
             $partner->img_profile = $url;
         } else if($request->img_profile != null && $partner->img_profile == null){
+            $request->validate([
+                'img_profile' => 'image'
+            ], [
+                'img_profile.image' => "El formado no es válido"
+            ]);
             $url = Storage::put('partners', $request->file('img_profile'));
             $partner->img_profile = $url;
         }
@@ -188,6 +198,7 @@ class HomeController extends Controller
         $partner->link_instagram =  $request->link_instagram;
         $partner->link_linkedin = $request->link_linkedin;
         $partner->website = $request->website;
+        
         if($request->company == "Empresa"){
             $partner->company = $request->company;
             $partner->company_name = $request->company_name;
