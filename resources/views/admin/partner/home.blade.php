@@ -75,7 +75,7 @@
         </div>
     </div> --}}
     <section>
-        <div class="container py-5">  
+      <div class="container py-5">
           <div class="row">
             <div class="col-lg-4">
               <div class="card mb-4">
@@ -287,6 +287,12 @@
                   </div>
                 </div>
           </div>
+
+          {{-- @if (Auth::user()->status == "PUBLICADO" && Auth::user()->link_facebook != null)
+            <div class="mt-4">
+              <a target="_blank" class="btn" href="https://www.facebook.com/sharer/sharer.php?u=notarialatina.com/partners/{{Auth::user()->slug}}&display=popup" style="color: #ffffff; background-color: #3b5998">Compartir mi perfil en Facebook </a>  
+            </div>
+          @endif --}}
 
         </div>
       </section>

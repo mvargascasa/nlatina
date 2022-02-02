@@ -140,20 +140,29 @@
         <p class="text-center mt-5 mb-5" style="padding-top: 30px; font-size: 25px; font-weight: bold">Servicios adicionales de Notaría Pública</p>
         <div class="row" style="padding-left:20%; padding-right:20%;">
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
-                <p>Travel Authorization</p>
+                <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'travel-authorization-en-'.Str::slug($data['oficina'])) }}">
+                    <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
+                    <p>Travel Authorization</p>
+                </a>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
-                <p>Certificaciones</p>
+                <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'certificaciones-en-'.Str::slug($data['oficina'])) }}">
+                    <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
+                    <p>Certificaciones</p>
+                </a>
+            </div>
+                
+            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
+                <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'acuerdos-en-'.Str::slug($data['oficina'])) }}">
+                    <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
+                    <p>Acuerdos</p>
+                </a>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
-                <p>Acuerdos</p>
-            </div>
-            <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
-                <p>Cartas de Invitación</p>
+                <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'cartas-de-invitacion-en-'.Str::slug($data['oficina'])) }}">
+                    <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
+                    <p>Cartas de Invitación</p>
+                </a>
             </div>
         </div>
     

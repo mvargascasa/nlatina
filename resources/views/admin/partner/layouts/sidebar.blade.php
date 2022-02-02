@@ -62,6 +62,13 @@ body {
   padding: 16px;
 }
 
+.socialMedia{
+  position: absolute;
+  right:    0;
+  bottom:   0;
+  text-align: center;
+}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
@@ -99,6 +106,16 @@ body {
         @csrf
     </form>
   </div>
+  <div class="mt-4 socialMedia">
+    <a target="_blank" class="btn" href="https://www.facebook.com/sharer/sharer.php?u=notarialatina.com/partners/{{Auth::user()->slug}}&display=popup" style="color: #002542; background-color: #002542; font-size: 10px">Compartir mi perfil en Facebook </a>  
+  </div>
+  {{-- <div class="socialMedia" style="color: #ffffff">
+    <p>Siguenos en nuestras redes sociales y mantente informado</p>
+    <div class="d-flex justify-content-center">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-instagram fa-3x" style="color: #ffffff; font-size: 20px"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-square fa-3x" style="color: #ffffff; font-size: 20px"></i></a>
+    </div>
+  </div> --}}
 </div>
 
 <div id="main" style="background-color: rgb(244, 244, 252)">
@@ -122,15 +139,31 @@ body {
   }
   
   function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.getElementById("btnMenu").style.display = "none";
+    var screenWidth = screen.width;
+    if(screenWidth > 1000){
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.getElementById("btnMenu").style.display = "none";
+    } else {
+      document.getElementById("mySidebar").style.width = "250px";
+      //document.getElementById("main").style.marginLeft = "250px";
+      document.getElementById("main").style.display = "none";
+      document.getElementById("btnMenu").style.display = "none";
+    }
   }
 
   function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    document.getElementById("btnMenu").style.display = "block";
+    var screenWidth = screen.width;
+    if(screenWidth > 1000){
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.getElementById("btnMenu").style.display = "block";
+    } else {
+      document.getElementById("mySidebar").style.width = "0";
+      // document.getElementById("main").style.marginLeft= "0";
+      document.getElementById("main").style.display= "block";
+      document.getElementById("btnMenu").style.display = "block";
+    }
   }
 
 </script>

@@ -133,6 +133,7 @@ class WebController extends Controller
                 ->country($request->country)
                 ->state($request->state)
                 ->specialties($request->specialty)
+                ->paginate(12)
                 ->get();
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
         // return json_encode(array($states, $partners, $specialties));
@@ -147,70 +148,150 @@ class WebController extends Controller
         return view('web.partner', compact('partner'));
     }
 
-    public function oficinasny(){
-        $data['oficina'] = 'New York';
-        $data['title'] = 'Apostillas en New York';
-        $data['subtitle'] = '¡Apostillamos todo tipo de documentos para New York!';
-        $data['imggrid'] = 'img/oficinas/ICONOS-15.png';
-        $data['txtgrid'] = 'New York Motor Vehicle Commission';
-        $data['telfHidden'] = '+13479739888';
-        $data['telfWpp'] = '13479739888';
-        $data['telfShow'] = '347-973-9888';
-        $data['imgapostilla'] = 'img/oficinas/apostillany.png';
-        $data['imgup'] = 'img/oficinas/BANER-NEW-YORK.jpg';
-        $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
-        $data['widthimgdown'] = '90%';
-        $data['heightimgdown'] = '100%';
-        $data['paddingtop'] = '0px';
-        $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7118327106805!2d-73.90010968459403!3d40.74636597932825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f030415024b%3A0x3b391bcaf4cd7c10!2sNotaria%20Latina%20-%20Queens%20New%20York!5e0!3m2!1ses-419!2sec!4v1642622200464!5m2!1ses-419!2sec';
-        $data['metadescription'] = '';
-        $data['keywords'] = '';
+    public function oficinasny(?string $service = null){
+        if($service != null){
+            $data['office'] = 'New York';
+            switch ($service) {
+                case 'certificaciones-en-new-york':
+                    // $data['office'] = 'New York';
+                    // $data['title'] = 'Certificar documentos en New York';
+                    return view('web.office.certificaciones', compact('data'));
+                    break;
+                case 'travel-authorization-en-new-york':
+                    // $data['office'] = 'New York';
+                    // $data['title'] = 'Autorizaciones de viaje en New York';
+                    return view('web.office.authorization', compact('data'));
+                    break;
+                case 'acuerdos-en-new-york':
+                    return view('web.office.acuerdos', compact('data'));
+                    break;
+                case 'cartas-de-invitacion-en-new-york':
+                    return view('web.office.invitacion', compact('data'));
+                    break;
+                default:
+                    # code...
+                    break;
+            }
 
-        return view('web.oficina', compact('data'));
+        } else {
+            $data['oficina'] = 'New York';
+            $data['title'] = 'Apostillas en New York';
+            $data['subtitle'] = '¡Apostillamos todo tipo de documentos para New York!';
+            $data['imggrid'] = 'img/oficinas/ICONOS-15.png';
+            $data['txtgrid'] = 'New York Motor Vehicle Commission';
+            $data['telfHidden'] = '+13479739888';
+            $data['telfWpp'] = '13479739888';
+            $data['telfShow'] = '347-973-9888';
+            $data['imgapostilla'] = 'img/oficinas/apostillany.png';
+            $data['imgup'] = 'img/oficinas/BANER-NEW-YORK.jpg';
+            $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
+            $data['widthimgdown'] = '90%';
+            $data['heightimgdown'] = '100%';
+            $data['paddingtop'] = '0px';
+            $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7118327106805!2d-73.90010968459403!3d40.74636597932825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f030415024b%3A0x3b391bcaf4cd7c10!2sNotaria%20Latina%20-%20Queens%20New%20York!5e0!3m2!1ses-419!2sec!4v1642622200464!5m2!1ses-419!2sec';
+            $data['metadescription'] = '';
+            $data['keywords'] = '';
+
+            return view('web.oficina', compact('data'));
+        }
     }
 
-    public function oficinasnj(){
-        $data['oficina'] = 'New Jersey';
-        $data['title'] = 'Apostillas express en New Jersey';
-        $data['subtitle'] = '¡Apostillamos todo tipo de documento de 3 a 4 días!';
-        $data['imggrid'] = 'img/oficinas/ICONOS-15.png';
-        $data['txtgrid'] = 'New Jersey Motor Vehicle Commission';
-        $data['telfHidden'] = '+19088009046';
-        $data['telfWpp'] = '19088009046';
-        $data['telfShow'] = '908-800-9046';
-        $data['imgapostilla'] = 'img/oficinas/apostillanj.png';
-        $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
-        $data['imgdown'] = 'img/oficinas/CHICA-APOST.png';
-        $data['widthimgdown'] = '70%';
-        $data['heightimgdown'] = '25rem';
-        $data['paddingtop'] = '15px';
-        $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.4152573854667!2d-74.21549248459648!3d40.66481847933702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24d541387e7ff%3A0x335c07b09362e483!2s1146%20E%20Jersey%20St%2C%20Elizabeth%2C%20NJ%2007201%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1642459239606!5m2!1ses!2sec';
-        $data['metadescription'] = '';
-        $data['keywords'] = '';
+    public function oficinasnj(?string $service = null){
+        if($service != null){
+            $data['office'] = 'New Jersey';
+            switch ($service) {
+                case 'certificaciones-en-new-jersey':
+                    // $data['office'] = 'New Jersey';
+                    // $data['title'] = 'Certificar documentos en New Jersey';
+                    return view('web.office.certificaciones', compact('data'));
+                    break;
+                case 'travel-authorization-en-new-jersey':
+                    // $data['office'] = 'New Jersey';
+                    // $data['title'] = 'Autorizaciones de viaje en New Jersey';
+                    return view('web.office.authorization', compact('data'));
+                    break;
+                case 'acuerdos-en-new-jersey':
+                    return view('web.office.acuerdos', compact('data'));
+                    break;
+                case 'cartas-de-invitacion-en-new-jersey':
+                    return view('web.office.invitacion', compact('data'));
+                    break;
+                
+                default:
+                    # code...
+                    break;
+            }
 
-        return view('web.oficina', compact('data'));
+        } else {
+            $data['oficina'] = 'New Jersey';
+            $data['title'] = 'Apostillas express en New Jersey';
+            $data['subtitle'] = '¡Apostillamos todo tipo de documento de 3 a 4 días!';
+            $data['imggrid'] = 'img/oficinas/ICONOS-15.png';
+            $data['txtgrid'] = 'New Jersey Motor Vehicle Commission';
+            $data['telfHidden'] = '+19088009046';
+            $data['telfWpp'] = '19088009046';
+            $data['telfShow'] = '908-800-9046';
+            $data['imgapostilla'] = 'img/oficinas/apostillanj.png';
+            $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
+            $data['imgdown'] = 'img/oficinas/CHICA-APOST.png';
+            $data['widthimgdown'] = '70%';
+            $data['heightimgdown'] = '25rem';
+            $data['paddingtop'] = '15px';
+            $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.4152573854667!2d-74.21549248459648!3d40.66481847933702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24d541387e7ff%3A0x335c07b09362e483!2s1146%20E%20Jersey%20St%2C%20Elizabeth%2C%20NJ%2007201%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1642459239606!5m2!1ses!2sec';
+            $data['metadescription'] = '';
+            $data['keywords'] = '';
+    
+            return view('web.oficina', compact('data'));
+        }
     }
 
-    public function oficinasfl(){
-        $data['oficina'] = 'Florida';
-        $data['title'] = 'Apostillas en Florida';
-        $data['subtitle'] = '¡Apostillamos todo tipo de documentos para Florida!';
-        $data['imggrid'] = 'img/oficinas/MATRIMONIO FL.png';
-        $data['txtgrid'] = 'Matrimonios';
-        $data['telfHidden'] = '+13056003290';
-        $data['telfWpp'] = '13056003290';
-        $data['telfShow'] = '305-600-3290';
-        $data['imgapostilla'] = 'img/oficinas/apostillafl.png';
-        $data['imgup'] = 'img/oficina-notaria-florida.jpg';
-        $data['imgdown'] = 'img/oficinas/Plaza_opt.jpg';
-        $data['widthimgdown'] = '100%';
-        $data['heightimgdown'] = '100%';
-        $data['paddingtop'] = '0px';
-        $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.404392613644!2d-80.25914568497105!3d26.150956283461554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90638fe895e7b%3A0xaa63cebf0d7899!2s2104%20N%20University%20Dr%2C%20Sunrise%2C%20FL%2033322%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1642375956270!5m2!1ses!2sec';
-        $data['metadescription'] = '';
-        $data['keywords'] = '';
+    public function oficinasfl(?string $service = null){
+        if($service != null){
+            $data['office'] = 'Florida';
+            switch ($service) {
+                case 'certificaciones-en-florida':
+                    // $data['office'] = 'Florida';
+                    // $data['title'] = 'Certificar documentos en Florida';
+                    return view('web.office.certificaciones', compact('data'));
+                    break;
+                case 'travel-authorization-en-florida':
+                    // $data['office'] = 'Florida';
+                    // $data['title'] = 'Autorizaciones de viaje en Florida';
+                    return view('web.office.authorization', compact('data'));
+                    break;
+                case 'acuerdos-en-florida':
+                    return view('web.office.acuerdos', compact('data'));
+                    break;
+                case 'cartas-de-invitacion-en-florida':
+                    return view('web.office.invitacion', compact('data'));
+                    break;
+                
+                default:
+                    # code...
+                    break;
+            }
 
-        return view('web.oficina', compact('data'));
+        } else {
+            $data['oficina'] = 'Florida';
+            $data['title'] = 'Apostillas en Florida';
+            $data['subtitle'] = '¡Apostillamos todo tipo de documentos para Florida!';
+            $data['imggrid'] = 'img/oficinas/MATRIMONIO FL.png';
+            $data['txtgrid'] = 'Matrimonios';
+            $data['telfHidden'] = '+13056003290';
+            $data['telfWpp'] = '13056003290';
+            $data['telfShow'] = '305-600-3290';
+            $data['imgapostilla'] = 'img/oficinas/apostillafl.png';
+            $data['imgup'] = 'img/oficina-notaria-florida.jpg';
+            $data['imgdown'] = 'img/oficinas/Plaza_opt.jpg';
+            $data['widthimgdown'] = '100%';
+            $data['heightimgdown'] = '100%';
+            $data['paddingtop'] = '0px';
+            $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.404392613644!2d-80.25914568497105!3d26.150956283461554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90638fe895e7b%3A0xaa63cebf0d7899!2s2104%20N%20University%20Dr%2C%20Sunrise%2C%20FL%2033322%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1642375956270!5m2!1ses!2sec';
+            $data['metadescription'] = '';
+            $data['keywords'] = '';
+
+            return view('web.oficina', compact('data'));
+        }
     } 
 
     public function sendEmailContact(Request $request, Partner $partner){
