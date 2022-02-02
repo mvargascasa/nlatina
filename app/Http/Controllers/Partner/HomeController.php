@@ -30,7 +30,7 @@ class HomeController extends Controller
             $request->validate([
                 'img_profile' => 'image'
             ], [
-                'img_profile.image' => "El formado no es válido"
+                'img_profile.image' => "El formato no es válido"
             ]);
             $url = Storage::put('partners', $request->file('img_profile'));
             Storage::delete($partner->img_profile);
@@ -39,7 +39,7 @@ class HomeController extends Controller
             $request->validate([
                 'img_profile' => 'image'
             ], [
-                'img_profile.image' => "El formado no es válido"
+                'img_profile.image' => "El formato no es válido"
             ]);
             $url = Storage::put('partners', $request->file('img_profile'));
             $partner->img_profile = $url;
