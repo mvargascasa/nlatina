@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
 <title>Autorizaciones de viaje en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description" content="Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres.">       
-<meta name="keywords" content="Autorizaciones de Viaje Notarizadas y Apostillados en Queens New York, Autorizaciones de Viaje Notarizadas y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es una autorizacion de viaje, travel authorization, para que sirve una autorizacion de viaje, autorizacion de viaje menor de edad, requisitos autorizacion de viaje, autorizacion de viaje cerca de mi, autorizacion de viaje en new york, travel authorization in new york" />
+<meta name="description" content="Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres. {{ $data['office'] }}">       
+<meta name="keywords" content="Autorizaciones de Viaje Notarizadas y Apostillados en {{ $data['office'] }}, Autorizaciones de Viaje Notarizadas y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ $data['office'] }}, notary public queens, que es una autorizacion de viaje, travel authorization, para que sirve una autorizacion de viaje, autorizacion de viaje menor de edad, requisitos autorizacion de viaje, autorizacion de viaje cerca de mi, autorizacion de viaje en new york, travel authorization in new york" />
 
 <meta property="og:url"                content="{{route('web.autorizaciones')}}" />
 <meta property="og:type"               content="article" />
@@ -92,7 +92,7 @@ aria-hidden="true">
 @section('script')
 <script>
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('img/autorizaciones-de-viaje.jpg')";
+        document.getElementById('prisection').style.backgroundImage = "url('../img/autorizaciones-de-viaje.jpg')";
     });
   </script>
 @endsection

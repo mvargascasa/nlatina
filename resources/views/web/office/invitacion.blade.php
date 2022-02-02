@@ -90,7 +90,7 @@ aria-hidden="true">
 @section('script')
 <script>
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('img/cartas-de-invitacion.jpg')";
+        document.getElementById('prisection').style.backgroundImage = "url('../img/cartas-de-invitacion.jpg')";
     });
   </script>
 @endsection

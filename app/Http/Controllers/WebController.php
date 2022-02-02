@@ -186,6 +186,18 @@ class WebController extends Controller
                 case 'cartas-de-invitacion-en-new-york':
                     return view('web.office.invitacion', compact('data'));
                     break;
+                case 'revocatorias-en-new-york':
+                    return view('web.office.revocatorias', compact('data'));
+                    break;
+                case 'contratos-en-new-york':
+                    return view('web.office.contratos', compact('data'));
+                    break;
+                case 'testamentos-en-new-york':
+                    return view('web.office.testamentos', compact('data'));
+                    break;
+                case 'motor-vehicle-comission-en-new-york':
+                    return view('web.office.vehicle_comission', compact('data'));
+                    break;
                 default:
                     # code...
                     break;
@@ -196,7 +208,7 @@ class WebController extends Controller
             $data['title'] = 'Apostillas en New York';
             $data['subtitle'] = '¡Apostillamos todo tipo de documentos para New York!';
             $data['imggrid'] = 'img/oficinas/ICONOS-15.png';
-            $data['txtgrid'] = 'New York Motor Vehicle Commission';
+            $data['txtgrid'] = 'Motor Vehicle Commission';
             $data['telfHidden'] = '+13479739888';
             $data['telfWpp'] = '13479739888';
             $data['telfShow'] = '347-973-9888';
@@ -234,7 +246,18 @@ class WebController extends Controller
                 case 'cartas-de-invitacion-en-new-jersey':
                     return view('web.office.invitacion', compact('data'));
                     break;
-                
+                case 'revocatorias-en-new-jersey':
+                    return view('web.office.revocatorias', compact('data'));
+                    break;
+                case 'contratos-en-new-jersey':
+                    return view('web.office.contratos', compact('data'));
+                    break;
+                case 'testamentos-en-new-jersey':
+                    return view('web.office.testamentos', compact('data'));
+                    break;
+                case 'motor-vehicle-comission-en-new-jersey':
+                    return view('web.office.vehicle_comission', compact('data'));
+                    break;
                 default:
                     # code...
                     break;
@@ -245,7 +268,7 @@ class WebController extends Controller
             $data['title'] = 'Apostillas express en New Jersey';
             $data['subtitle'] = '¡Apostillamos todo tipo de documento de 3 a 4 días!';
             $data['imggrid'] = 'img/oficinas/ICONOS-15.png';
-            $data['txtgrid'] = 'New Jersey Motor Vehicle Commission';
+            $data['txtgrid'] = 'Motor Vehicle Commission';
             $data['telfHidden'] = '+19088009046';
             $data['telfWpp'] = '19088009046';
             $data['telfShow'] = '908-800-9046';
@@ -283,7 +306,18 @@ class WebController extends Controller
                 case 'cartas-de-invitacion-en-florida':
                     return view('web.office.invitacion', compact('data'));
                     break;
-                
+                case 'revocatorias-en-florida':
+                    return view('web.office.revocatorias', compact('data'));
+                    break;
+                case 'contratos-en-florida':
+                    return view('web.office.contratos', compact('data'));
+                    break;
+                case 'testamentos-en-florida':
+                    return view('web.office.testamentos', compact('data'));
+                    break;
+                case 'matrimonios-en-florida':
+                    return view('web.office.matrimonios', compact('data'));
+                    break;
                 default:
                     # code...
                     break;

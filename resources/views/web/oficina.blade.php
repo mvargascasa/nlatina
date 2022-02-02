@@ -52,6 +52,19 @@
             justify-content: center;
             align-items: center;
         }
+
+        /*HOVER IMAGENES DE SERVICIOS*/
+        .grow img{
+            transition: 1s ease;
+        }
+
+        .grow img:hover{
+            -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2);
+            transition: 1s ease;
+        }
+
     </style>
 @endsection
 
@@ -135,32 +148,38 @@
         <a class="btn btn-warning rounded-pill" style="font-weight: bold" href="tel:{{$data['telfHidden']}}">LLAMAR {{$data['telfShow']}}</a>
         <hr>
     </div>
-
     <div style="background-color: rgb(245, 244, 244); padding-bottom:50px">
         <p class="text-center mt-5 mb-5" style="padding-top: 30px; font-size: 25px; font-weight: bold">Servicios adicionales de Notaría Pública</p>
         <div class="row" style="padding-left:20%; padding-right:20%;">
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'travel-authorization-en-'.Str::slug($data['oficina'])) }}">
-                    <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
+                    <div class="grow">
+                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
+                    </div>
                     <p>Travel Authorization</p>
                 </a>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'certificaciones-en-'.Str::slug($data['oficina'])) }}">
-                    <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
+                    <div class="grow">
+                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
+                    </div>
                     <p>Certificaciones</p>
                 </a>
-            </div>
-                
+            </div>    
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
                 <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'acuerdos-en-'.Str::slug($data['oficina'])) }}">
-                    <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
+                    <div class="grow">
+                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
+                    </div>
                     <p>Acuerdos</p>
                 </a>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'cartas-de-invitacion-en-'.Str::slug($data['oficina'])) }}">
-                    <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
+                    <div class="grow">
+                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
+                    </div>
                     <p>Cartas de Invitación</p>
                 </a>
             </div>
@@ -168,20 +187,36 @@
     
         <div class="row mt-1" style="padding-left:20%; padding-right:20%;">
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-12.png') }}" alt="">
-                <p>Revocatorias</p>
+                <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'revocatorias-en-'.Str::slug($data['oficina'])) }}">
+                    <div class="grow">
+                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-12.png') }}" alt="">
+                    </div>
+                    <p>Revocatorias</p>
+                </a>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-13.png') }}" alt="">
-                <p>Contratos</p>
+                <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'contratos-en-'.Str::slug($data['oficina'])) }}">
+                    <div class="grow">
+                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-13.png') }}" alt="">
+                    </div>
+                    <p>Contratos</p>
+                </a>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-14.png') }}" alt="">
-                <p>Testamentos</p>
+                <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), 'testamentos-en-'.Str::slug($data['oficina'])) }}">
+                    <div class="grow">
+                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-14.png') }}" alt="">
+                    </div>
+                    <p>Testamentos</p>
+                </a>
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px">
-                <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset($data['imggrid']) }}" alt="">
-                <p>{{ $data['txtgrid'] }}</p>
+                <div class="grow">
+                    {{-- <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), Str::slug($data['txtgrid']).'-en-'.Str::slug($data['oficina'])) }}""> --}}
+                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset($data['imggrid']) }}" alt="">
+                        <p>{{ $data['txtgrid'] }}</p>
+                    {{-- </a> --}}
+                </div>
             </div>
         </div>
     </div>

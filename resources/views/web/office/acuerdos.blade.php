@@ -82,7 +82,7 @@
 @section('script')
 <script>
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('img/acuerdos.jpg')";
+        document.getElementById('prisection').style.backgroundImage = "url('../img/acuerdos.jpg')";
     });
   </script>
 @endsection

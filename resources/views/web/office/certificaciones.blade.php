@@ -105,7 +105,7 @@ aria-hidden="true">
 @section('script')
 <script>
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('img/inicio.jpg')";
+        document.getElementById('prisection').style.backgroundImage = "url('../img/inicio.jpg')";
     });
   </script>
 @endsection
