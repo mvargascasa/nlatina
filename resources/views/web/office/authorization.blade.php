@@ -1,18 +1,18 @@
 @extends('layouts.web')
 @section('header')
 <title>Autorizaciones de viaje en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description" content="Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres. {{ $data['office'] }}">       
-<meta name="keywords" content="Autorizaciones de Viaje Notarizadas y Apostillados en {{ $data['office'] }}, Autorizaciones de Viaje Notarizadas y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ $data['office'] }}, notary public queens, que es una autorizacion de viaje, travel authorization, para que sirve una autorizacion de viaje, autorizacion de viaje menor de edad, requisitos autorizacion de viaje, autorizacion de viaje cerca de mi, autorizacion de viaje en new york, travel authorization in new york" />
+<meta name="description" content="Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres. Travel Authorization en {{ $data['office'] }}">       
+<meta name="keywords" content="Autorizaciones de Viaje Notarizadas y Apostillados en {{ $data['office'] }}, Autorizaciones de Viaje Notarizadas y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ $data['office'] }}, notary public {{ $data['office'] }}, que es una autorizacion de viaje, travel authorization, para que sirve una autorizacion de viaje, autorizacion de viaje menor de edad, requisitos autorizacion de viaje, autorizacion de viaje cerca de mi, autorizacion de viaje en {{ $data['office'] }}, travel authorization in {{ $data['office'] }}" />
 
-<meta property="og:url"                content="{{route('web.autorizaciones')}}" />
+<meta property="og:url"                content="{{ Request::url() }}" />
 <meta property="og:type"               content="article" />
-<meta property="og:title"              content="Autorizaciones de Viaje Notarizadas y Apostillados en Queens New York - Notaria Latina" />
+<meta property="og:title"              content="Autorizaciones de Viaje Notarizadas y Apostillados en {{ $data['office'] }} - Notaria Latina" />
 <meta property="og:description"        content="Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres." />
 <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 @endsection
 
-@section('phoneNumberHidden', '+18007428602')
-@section('phoneNumber', '800-742-8602')
+@section('phoneNumberHidden', $data['telfHidden'])
+@section('phoneNumber', $data['telfShow'])
 
 @section('content')
 
@@ -40,7 +40,7 @@
             La autorización puede realizarse tambien para que el menor viaje con solo uno de sus padres.</p>
 
 
-        <h3>Que requisitos se necesita para realizar autorizaciones de viaje?</h3>
+        <h3>¿Que requisitos se necesita para realizar autorizaciones de viaje?</h3>
         <ul class="text-muted">
             <li>Identificación válida del padre o madre que va a dar la autorización.</li>
             <li>Nombres y apellidos del menor que va a viajar.</li>
@@ -49,17 +49,17 @@
             <li>Información del vuelo.</li>
         </ul>
 
-        <h3>Que tiempo de validez tienen las autorizaciones de viaje?</h3>
+        <h3>¿Que tiempo de validez tienen las autorizaciones de viaje?</h3>
         <p class="text-muted">La autorización de viaje solo es válida por el tiempo que el menor vaya a estar fuera del país, entonces, terminado este periodo el documento
             pierde su validez automaticamente.  </p>
 
-        <h3>En donde puedo realizar una autorización de viaje?</h3>
+        <h3>¿En donde puedo realizar una autorización de viaje?</h3>
         <p class="text-muted">Acérquese a nuestra oficina con los requisitos necesarios y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
 
 
 
 
-        <h3>En que tiempo me entregan la autorización de viaje?</h3>
+        <h3>¿En que tiempo me entregan la autorización de viaje?</h3>
         <ul class="text-muted">
             <li>El tiempo de entrega es inmediato siempre que las personas que realiza el trámite se acerque con los requisitos correspondientes.</li>
         </ul>
@@ -87,7 +87,7 @@ aria-hidden="true">
  </div>
 @endsection
 
-@section('numberWpp', '13479739888')
+@section('numberWpp', $data['telfWpp'])
 
 @section('script')
 <script>

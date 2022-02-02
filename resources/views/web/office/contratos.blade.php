@@ -1,18 +1,18 @@
 @extends('layouts.web')
 @section('header')
 <title>Contratos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Los contratos notarizados son un documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada.">       
+<meta name="description"        content="Los contratos notarizados son un documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada. Contratos en {{ $data['office']}}">       
 <meta name="keywords"           content="Contratos Notarizados y Apostillados en {{ $data['office'] }}, Contratos Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ $data['office'] }}, notary public queens, que es un contrato, tipos de contrato, requisitos para realizar un contrato, realizar contrato en {{ $data['office'] }}, tramitar contrato {{ $data['office'] }}, tramitar contraro cerca de mi" />
 
-<meta property="og:url"         content="{{route('web.contratos')}}" />
+<meta property="og:url"         content="{{ Request::url() }}" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Contratos Notarizados y Apostillados en Queens New York - Notaria Latina" />
-<meta property="og:description" content="Los contratos notarizados son un documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada." />
+<meta property="og:title"       content="Contratos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina" />
+<meta property="og:description" content="Los contratos notarizados son documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada." />
 <meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 @endsection
 
-@section('phoneNumberHidden', '+18007428602')
-@section('phoneNumber', '800-742-8602')
+@section('phoneNumberHidden', $data['telfHidden'])
+@section('phoneNumber', $data['telfShow'])
 
 @section('content')
 
@@ -37,7 +37,7 @@
             <p class="text-muted">Este documento le va ayudar a evitar inconvenientes con promesas de «palabra» y así poder hacer cumplir lo que ya se estipuló en el mismo, teniendo así un respaldo legal para hacer valer lo acordado en el contrato.</p>
 
 
-            <h3>Qué tipos de contratos puedo realizar?</h3>
+            <h3>¿Qué tipos de contratos puedo realizar?</h3>
             <ul class="text-muted">
                 <li>Arriendo.</li>
                 <li>Compra-venta.</li>
@@ -48,19 +48,19 @@
             </ul>
             <p class="text-muted">Todo tipo de contrato está regulado por leyes que obligan a cumplir las cláusulas establecidas en el mismo.</p>
 
-            <h3>Que requisitos necesito para realizar un contrato?</h3>
+            <h3>¿Que requisitos necesito para realizar un contrato?</h3>
             <ul class="text-muted">
                 <li>Identificación valida de las personas que van a realizar el contrato.</li>
                 <li>Información de lo que se quiere dejar estipulado en el contrato.</li>
             </ul>
 
-        <h3>En donde puedo realizar un contrato?</h3>
+        <h3>¿En donde puedo realizar un contrato?</h3>
         <p class="text-muted">Acérquese a nuestra oficina y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
 
 
 
 
-        <h3>En que tiempo me entregan los contratos?</h3>
+        <h3>¿En que tiempo me entregan los contratos?</h3>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
@@ -91,7 +91,7 @@ aria-hidden="true">
  </div>
 @endsection
 
-@section('numberWpp', '13479739888')
+@section('numberWpp', $data['telfWpp'])
 
 @section('script')
 <script>

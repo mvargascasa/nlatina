@@ -1,18 +1,18 @@
 @extends('layouts.web')
 @section('header')
 <title>Certificaciones de documentos en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description" content="Las certificaciones son documentos firmados y sellados por un notario, que le proporciona autenticidad a nuestros documentos, pueden ser utilizados en todo aquel trámite legale donde se requiera total veracidad.">       
+<meta name="description" content="Las certificaciones son documentos firmados y sellados por un notario, que le proporciona autenticidad a nuestros documentos, pueden ser utilizados en todo aquel trámite legale donde se requiera total veracidad. Certificaciones en {{ $data['office'] }}">       
 <meta name="keywords" content="Certificaciones de Documentos Notarizados y Apostillados en {{ $data['office'] }}, Certificaciones de Documentos near me, notaria, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es una certificacion, para que sirve una certificacion, certificar acta de nacimiento en  {{ Str::lower($data['office']) }}, certificar acta de matrimonio en {{ Str::lower($data['office']) }}, certificar declaracion jurada en  {{ Str::lower($data['office']) }}, certificar documentos cerca de mi, notarizar certificacion en  {{ Str::lower($data['office']) }}" />
 
-<meta property="og:url"                content="{{route('web.certificaciones')}}" />
+<meta property="og:url"                content="{{ Request::url() }}" />
 <meta property="og:type"               content="article" />
-<meta property="og:title"              content="Certificaciones de Documentos Notarizados y Apostillados en Queens New York - Notaria Latina" />
+<meta property="og:title"              content="Certificaciones de Documentos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina" />
 <meta property="og:description"        content="Las certificaciones son documentos firmados y sellados por un notario, que le proporciona autenticidad a nuestros documentos, pueden ser utilizados en todo aquel trámite legale donde se requiera total veracidad." />
 <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 @endsection
 
-@section('phoneNumberHidden', '+18007428602')
-@section('phoneNumber', '800-742-8602')
+@section('phoneNumberHidden', $data['telfHidden'])
+@section('phoneNumber', $data['telfShow'])
 
 @section('content')
 
@@ -39,14 +39,14 @@
             <p class="text-muted">Es decir, es un documento que el mismo notario expide o en base a un documento preexistente, así como la afirmación de que
                 una transcripción o reproducción coincide fielmente con su original.</p>
 
-            <h3>Para que me sirven las certificaciones?</h3>
+            <h3>¿Para que me sirven las certificaciones?</h3>
             <p class="text-muted">Al ser la certificación un documento que le proporciona autenticidad a nuestros documentos, pueden ser utilizados
                 en todo aquel trámite legal donde se requiera total veracidad.</p>
             <p class="text-muted">Esta certificación nos sirve para realizar tanto trámites nacionales como internacionales.</p>
             <p class="text-muted">Es importante que certifique documentos que puedan estar en deterioro para evitar gestionar este documento desde un
                 inicion. Esto le evitará contratiempos a la hora de realizar trámites y gestiones importantes.</p>
 
-            <h3>Qué tipo de documentos puedo certificar?</h3>
+            <h3>¿Qué tipo de documentos puedo certificar?</h3>
             <ul class="text-muted">
                 <li>Actas de nacimiento.</li>
                 <li>Actas de matrimonio.</li>
@@ -56,20 +56,20 @@
                 <li>Escrituras.</li>
             </ul>
 
-        <h3>Qué validez tienen las certificaciones?</h3>
+        <h3>¿Qué validez tienen las certificaciones?</h3>
         <p class="text-muted">Cualquier documento que sea certificado tiene la misma validez que el documento original, no vence en el tiempo y se puede
             utilizar el cualquier trámite legal que se necesite.</p>
 
-        <h3>Que requisitos necesito para certificar un documento?</h3>
+        <h3>¿Que requisitos necesito para certificar un documento?</h3>
         <p class="text-muted">El único requisito es presentar el documento original que desea certificar, siempre que el notario pueda constatar que este es original.</p>
 
-        <h3>En donde puedo certificar un documento?</h3>
+        <h3>¿En donde puedo certificar un documento?</h3>
         <p class="text-muted">Acérquese a nuestra oficina con el documento que desea certificar y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
 
 
 
 
-        <h3>En que tiempo me entregan mi documento certificado?</h3>
+        <h3>¿En que tiempo me entregan mi documento certificado?</h3>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
@@ -100,7 +100,7 @@ aria-hidden="true">
  </div>
 @endsection
 
-@section('numberWpp', '13479739888')
+@section('numberWpp', $data['telfWpp'])
 
 @section('script')
 <script>

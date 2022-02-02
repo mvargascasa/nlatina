@@ -168,16 +168,15 @@ class WebController extends Controller
 
     public function oficinasny(?string $service = null){
         if($service != null){
+            $data['telfHidden'] = '+13479739888';
+            $data['telfWpp'] = '13479739888';
+            $data['telfShow'] = '347-973-9888';
             $data['office'] = 'New York';
             switch ($service) {
                 case 'certificaciones-en-new-york':
-                    // $data['office'] = 'New York';
-                    // $data['title'] = 'Certificar documentos en New York';
                     return view('web.office.certificaciones', compact('data'));
                     break;
                 case 'travel-authorization-en-new-york':
-                    // $data['office'] = 'New York';
-                    // $data['title'] = 'Autorizaciones de viaje en New York';
                     return view('web.office.authorization', compact('data'));
                     break;
                 case 'acuerdos-en-new-york':
@@ -228,16 +227,15 @@ class WebController extends Controller
 
     public function oficinasnj(?string $service = null){
         if($service != null){
+            $data['telfHidden'] = '+19088009046';
+            $data['telfWpp'] = '19088009046';
+            $data['telfShow'] = '908-800-9046';
             $data['office'] = 'New Jersey';
             switch ($service) {
                 case 'certificaciones-en-new-jersey':
-                    // $data['office'] = 'New Jersey';
-                    // $data['title'] = 'Certificar documentos en New Jersey';
                     return view('web.office.certificaciones', compact('data'));
                     break;
                 case 'travel-authorization-en-new-jersey':
-                    // $data['office'] = 'New Jersey';
-                    // $data['title'] = 'Autorizaciones de viaje en New Jersey';
                     return view('web.office.authorization', compact('data'));
                     break;
                 case 'acuerdos-en-new-jersey':
@@ -289,15 +287,14 @@ class WebController extends Controller
     public function oficinasfl(?string $service = null){
         if($service != null){
             $data['office'] = 'Florida';
+            $data['telfHidden'] = '+13056003290';
+            $data['telfWpp'] = '13056003290';
+            $data['telfShow'] = '305-600-3290';
             switch ($service) {
                 case 'certificaciones-en-florida':
-                    // $data['office'] = 'Florida';
-                    // $data['title'] = 'Certificar documentos en Florida';
                     return view('web.office.certificaciones', compact('data'));
                     break;
                 case 'travel-authorization-en-florida':
-                    // $data['office'] = 'Florida';
-                    // $data['title'] = 'Autorizaciones de viaje en Florida';
                     return view('web.office.authorization', compact('data'));
                     break;
                 case 'acuerdos-en-florida':

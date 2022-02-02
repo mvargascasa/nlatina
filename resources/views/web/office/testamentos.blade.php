@@ -1,18 +1,18 @@
 @extends('layouts.web')
 @section('header')
 <title>Testamentos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte.">       
-<meta name="keywords"           content="Testamentos Notarizados y Apostillados en {{ $data['office'] }}, Testamentos Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un testamento, para que sirve un testamento, requisitos para testamento, realizar un testamento en new york, notarizar testamento en new york" />
+<meta name="description"        content="Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte. Testamentos en {{ $data['office'] }}">       
+<meta name="keywords"           content="Testamentos Notarizados y Apostillados en {{ $data['office'] }}, Testamentos Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ $data['office'] }}, notary public {{ $data['office'] }}, que es un testamento, para que sirve un testamento, requisitos para testamento, realizar un testamento en {{ $data['office'] }}, notarizar testamento en {{ $data['office'] }}" />
 
-<meta property="og:url"         content="{{route('web.testamentos')}}" />
+<meta property="og:url"         content="{{Request::url()}}" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Testamentos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina" />
 <meta property="og:description" content="Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte." />
 <meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 @endsection
 
-@section('phoneNumberHidden', '+18007428602')
-@section('phoneNumber', '800-742-8602')
+@section('phoneNumberHidden', $data['telfHidden'])
+@section('phoneNumber', $data['telfShow'])
 
 @section('content')
 
@@ -37,7 +37,7 @@
         <p class="text-muted">El documento tiene que realizarse en una notaría para que tenga validez y pueda ejecutarse de acuerdo a la voluntad del testador.</p>
         <p class="text-muted">Con la creación de su testamento usted puede evitar futuros inconvenientes familiares en la división de bienes ya que en éste documento usted define la división a su voluntad y este debe respetarse.</p>
 
-        <h3>Que requisitos se necesita para realizar testamentos?</h3>
+        <h3>¿Que requisitos se necesita para realizar testamentos?</h3>
         <ul class="text-muted">
             <li>Presentar una identificación válida del testador.</li>
             <li>Nombres y apellidos del albacea.</li>
@@ -46,11 +46,11 @@
             <li>Información de los herederos.</li>
         </ul>
 
-        <h3>En donde puedo realizar un testamento?</h3>
+        <h3>¿En donde puedo realizar un testamento?</h3>
         <p class="text-muted">Acérquese a nuestra oficina y solicite empezar su proceso, nuestro personal le va asesorar de la mejor manera para que éste trámite se lleve a cabo de manera correcta y segura.</p>
 
 
-        <h3>En que tiempo me entregan un testamento?</h3>
+        <h3>¿En que tiempo me entregan un testamento?</h3>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
@@ -81,7 +81,7 @@ aria-hidden="true">
  </div>
 @endsection
 
-@section('numberWpp', '13479739888')
+@section('numberWpp', $data['telfWpp'])
 
 @section('script')
 <script>
