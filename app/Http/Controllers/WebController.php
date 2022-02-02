@@ -126,7 +126,7 @@ class WebController extends Controller
 
     public function fetchState(Request $request){
         
-        $dataToLoad = 1;
+        $dataToLoad = 12;
 
         if($request->dataLoad != null){
             $dataToLoad = $dataToLoad + $request->dataLoad;
