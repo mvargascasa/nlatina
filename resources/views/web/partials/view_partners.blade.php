@@ -101,7 +101,9 @@
                 </div>
             @endforeach
         </div>
-        <button class="btn btn-primary" onclick="cargarMas();">Cargar más</button>
+        @if (count($partners) < $totalPartners)
+            <button class="btn btn-primary" onclick="cargarMas();">Cargar más</button>
+        @endif
         @else
             <div class="row d-flex text-align-center justify-content-center">
                 <div class="alert alert-success">

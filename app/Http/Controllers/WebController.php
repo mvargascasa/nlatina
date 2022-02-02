@@ -126,7 +126,7 @@ class WebController extends Controller
 
     public function fetchState(Request $request){
         
-        $dataToLoad = 12;
+        $dataToLoad = 1;
 
         if($request->dataLoad != null){
             $dataToLoad = $dataToLoad + $request->dataLoad;
@@ -143,11 +143,21 @@ class WebController extends Controller
                 ->limit($dataToLoad)
                 ->get();
 
+        $partnersCount = Partner::where('status', 'PUBLICADO')
+                    ->orderBy('id', 'DESC')
+                    ->country($request->country)
+                    ->state($request->state)
+                    ->specialties($request->specialty)
+                    ->get();
+
+        $totalPartners = $partnersCount->count();
+        
+
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
         // return json_encode(array($states, $partners, $specialties));
 
         return response()->json([
-            'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties'))->render()
+            'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties', 'totalPartners'))->render()
         ]);
     }
 
