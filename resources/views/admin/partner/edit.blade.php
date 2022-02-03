@@ -74,11 +74,11 @@
                                 </button>
                             </div>
                         @endif
-                        @if (session('camposVacios'))
+                        @if (count($camposVacios) > 0)
                             <div class="alert alert-danger">
                                 Los siguientes campos se encuentran vacios:
                                 <div class="row">
-                                    @foreach (session('camposVacios') as $campoVacio)
+                                    @foreach ($camposVacios as $campoVacio)
                                     <div class="col-6 col-sm-3">
                                         ✖ <b id="txtCamposVacios">{{ $campoVacio }}</b>       
                                     </div>
@@ -89,6 +89,7 @@
                                 </div>
                             </div>
                         @endif
+
                             <div id="card1" class="card">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• INFORMACIÓN PERSONAL</p>
@@ -130,28 +131,31 @@
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
                                                         {!! Form::label('name', 'Nombre') !!}
-                                                        {!! Form::text('name', $partner->name, ['class' => 'form-control']) !!}
-                                                    {{-- @error('name')
-                                                        <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror --}}
+                                                        @if ($partner->name != null)
+                                                        {!! Form::text('name', $partner->name, ['class' => 'form-control', 'required']) !!}
+                                                        @else 
+                                                        {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}  
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
                                                         {!! Form::label('lastname', 'Apellido') !!}
-                                                        {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control']) !!}
-                                                    {{-- @error('lastname')
-                                                        <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror --}}
+                                                        @if ($partner->lastname != null)
+                                                        {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control', 'required']) !!}                                                        
+                                                        @else 
+                                                        {!! Form::text('lastname', null, ['class' => 'form-control', 'required']) !!}                                                        
+                                                        @endif
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     {!! Form::label('email', 'Email') !!}
-                                                    {!! Form::email('email', $partner->email, ['class' => 'form-control']) !!}
-                                                    {{-- @error('email')
-                                                    <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror --}}
+                                                    @if ($partner->email != null)
+                                                    {!! Form::email('email', $partner->email, ['class' => 'form-control', 'type' => 'email', 'required']) !!}                                                        
+                                                    @else
+                                                    {!! Form::email('email', null, ['class' => 'form-control', 'type' => 'email', 'required']) !!}                                                        
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -669,6 +673,7 @@
         
         selectPaisResidencia.onchange  = function(e){
             switch (selectPaisResidencia.value) {
+                case "":codigo = ""; break;
                 case "Argentina":codigo = "+54";break;
                 case "Bolivia":codigo = "+591";break;
                 case "Colombia":codigo = "+57";break;

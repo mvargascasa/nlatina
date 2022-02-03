@@ -18,35 +18,36 @@ class HomeController extends Controller
 
     public function edit(Partner $partner)
     {
-        $specialties = Specialty::all();
-        return view('admin.partner.edit', compact('partner', 'specialties'));
-    }
-    
-    public function update(Partner $partner, Request $request)
-    {
         $camposVacios = [];
 
-        if($request->img_profile == null && $partner->img_profile == null){ array_push ( $camposVacios , "Imagen de perfil");}
-        if($request->title == null){ array_push ( $camposVacios , "Título"); }
-        if($request->name == null){ array_push ( $camposVacios , "Nombre"); }
-        if($request->lastname == null){ array_push ( $camposVacios , "Apellido"); }
-        if($request->email == null){ array_push ( $camposVacios , "Email"); }
-        if($request->country_residence == null){ array_push ( $camposVacios , "País de residencia"); }
-        if($request->phone == null){ array_push ( $camposVacios , "Teléfono"); }
-        if($request->state == null){ array_push ( $camposVacios , "Estado"); }
-        if($request->city == null){ array_push ( $camposVacios , "Ciudad"); }
-        if($request->address == null){ array_push ( $camposVacios , "Dirección"); }
-        if($request->company != null){ 
-            if($request->company == "Empresa" && $request->company_name == null){
+        if($partner->img_profile == null && $partner->img_profile == null){ array_push ( $camposVacios , "Imagen de perfil");}
+        if($partner->title == null){ array_push ( $camposVacios , "Título"); }
+        if($partner->name == null){ array_push ( $camposVacios , "Nombre"); }
+        if($partner->lastname == null){ array_push ( $camposVacios , "Apellido"); }
+        if($partner->email == null){ array_push ( $camposVacios , "Email"); }
+        if($partner->country_residence == null){ array_push ( $camposVacios , "País de residencia"); }
+        if($partner->phone == null){ array_push ( $camposVacios , "Teléfono"); }
+        if($partner->state == null){ array_push ( $camposVacios , "Estado"); }
+        if($partner->city == null){ array_push ( $camposVacios , "Ciudad"); }
+        if($partner->address == null){ array_push ( $camposVacios , "Dirección"); }
+        if($partner->company != null){ 
+            if($partner->company == "Empresa" && $partner->company_name == null){
                 array_push ( $camposVacios , "Nombre de la empresa"); 
             }
         } else {
             array_push ( $camposVacios , "Tipo de trabajo");
         }
-        if($request->specialties == null){ array_push ( $camposVacios , "Áreas de especialización"); }
-        if($request->specialty == null){ array_push ( $camposVacios , "Especialidad (Descripción)"); }
-        if($request->biography_html == null){ array_push ( $camposVacios , "Biografía"); }
+        if($partner->specialties == null){ array_push ( $camposVacios , "Áreas de especialización"); }
+        if($partner->specialty == null){ array_push ( $camposVacios , "Especialidad (Descripción)"); }
+        if($partner->biography_html == null){ array_push ( $camposVacios , "Biografía"); }
 
+        $specialties = Specialty::all();
+
+        return view('admin.partner.edit', compact('partner', 'specialties', 'camposVacios'));
+    }
+    
+    public function update(Partner $partner, Request $request)
+    {
         if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
             $request->img_profile = $partner->img_profile;
         } else if($request->img_profile != null && $partner->img_profile != null){
@@ -102,7 +103,7 @@ class HomeController extends Controller
 
         $partner->save();
 
-        return redirect()->route('socios.edit', $partner)->with(['status' => 'Se actualizaron los datos', 'camposVacios' => $camposVacios]);
+        return redirect()->route('socios.edit', $partner)->with(['status' => 'Se actualizaron los datos']);
     }
 
     public function getPaisByCodigo($pais){
