@@ -17,13 +17,36 @@ class HomeController extends Controller
     }
 
     public function edit(Partner $partner)
-    { 
+    {
         $specialties = Specialty::all();
         return view('admin.partner.edit', compact('partner', 'specialties'));
     }
     
     public function update(Partner $partner, Request $request)
     {
+        $camposVacios = [];
+
+        if($request->img_profile == null && $partner->img_profile == null){ array_push ( $camposVacios , "Imagen de perfil");}
+        if($request->title == null){ array_push ( $camposVacios , "Título"); }
+        if($request->name == null){ array_push ( $camposVacios , "Nombre"); }
+        if($request->lastname == null){ array_push ( $camposVacios , "Apellido"); }
+        if($request->email == null){ array_push ( $camposVacios , "Email"); }
+        if($request->country_residence == null){ array_push ( $camposVacios , "País de residencia"); }
+        if($request->phone == null){ array_push ( $camposVacios , "Teléfono"); }
+        if($request->state == null){ array_push ( $camposVacios , "Estado"); }
+        if($request->city == null){ array_push ( $camposVacios , "Ciudad"); }
+        if($request->address == null){ array_push ( $camposVacios , "Dirección"); }
+        if($request->company != null){ 
+            if($request->company == "Empresa" && $request->company_name == null){
+                array_push ( $camposVacios , "Nombre de la empresa"); 
+            }
+        } else {
+            array_push ( $camposVacios , "Tipo de trabajo");
+        }
+        if($request->specialties == null){ array_push ( $camposVacios , "Áreas de especialización"); }
+        if($request->specialty == null){ array_push ( $camposVacios , "Especialidad (Descripción)"); }
+        if($request->biography_html == null){ array_push ( $camposVacios , "Biografía"); }
+
         if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
             $request->img_profile = $partner->img_profile;
         } else if($request->img_profile != null && $partner->img_profile != null){
@@ -43,145 +66,6 @@ class HomeController extends Controller
             ]);
             $url = Storage::put('partners', $request->file('img_profile'));
             $partner->img_profile = $url;
-        }
-
-        $request->validate([
-            'title' => 'required',
-            'name' => 'required',
-            'lastname' => 'required',
-            'email' => 'required|email'
-        ], [
-            'title.required' => 'El campo titulo es requerido',
-            'name.required' => 'El campo nombre es requerido',
-            'lastname.required' => 'El campo apellido es requerido',
-            'email.required' => 'El campo email es requerido',
-            'email.email' => 'El campo email debe tener un formato válido'
-        ]);
-
-        if ($request->country_residence != null) {
-            $request->validate([
-                'country_residence' => 'required'
-            ], [
-                'country_residence.required' => 'El campo pais de residencia es requerido'
-            ]);
-        }
-
-        if ($request->phone != null) {
-            $request->validate([
-                'phone' => 'required'
-            ], [
-                'phone.required' => 'El campo telefono es requerido'
-            ]);
-        }
-
-        if ($request->state != null) {
-            $request->validate([
-                'state' => 'required'
-            ], [
-                'state.required' => 'El campo estado es requerido'
-            ]);
-        }
-
-        if ($request->city != null) {
-            $request->validate([
-                'city' => 'required'
-            ], [
-                'city.required' => 'El campo ciudad es requerido'
-            ]);
-        }
-
-        if ($request->address != null) {
-            $request->validate([
-                'address' => 'required'
-            ], [
-                'address.required' => 'El campo direccion es requerido'
-            ]);
-        }
-
-        if($request->link_facebook != null){ 
-            $request->validate([
-                'link_facebook' => 'regex:/www/',
-            ], [
-                'link_facebook.regex' => "EL link ingresado es invalido. Ejemplo: https://www.facebook.com/su_usuario",
-            ]);
-            if(Str::startsWith($request->link_facebook, 'www')){
-                $request->link_facebook = 'https://'.$request->link_facebook;
-            }
-        }
-
-        if($request->link_instagram != null){
-            $request->validate([
-                'link_instagram' => 'regex:/www/',
-            ], [
-                'link_instagram.regex' => "EL link ingresado es invalido. Ejemplo: https://www.instagram.com/su_usuario",
-            ]);
-            if(Str::startsWith($request->link_instagram, 'www')){
-                $request->link_instagram = 'https://'.$request->link_instagram;
-            }
-        }
-
-        if($request->link_linkedin != null){
-            $request->validate([
-                'link_linkedin' => 'regex:/www/',
-            ], [
-                'link_linkedin.regex' => "EL link ingresado es invalido. Ejemplo: https://www.linkedin.com/su_usuario",
-            ]);
-            if(Str::startsWith($request->link_linkedin, 'www')){
-                $request->link_linkedin = 'https://'.$request->link_linkedin;
-            }
-        }
-
-        if($request->website != null){
-            $request->validate([
-                'website' => 'regex:/www/',
-            ], [
-                'website.regex' => "EL link ingresado es invalido. Ejemplo: https://www.su_dominio.com",
-            ]);
-            if(Str::startsWith($request->website, 'www')){
-                $request->website = 'https://'.$request->website;
-            }
-        }
-
-        if ($request->company != null) {
-            $request->validate([
-                'company' => 'required'
-            ], [
-                'company.required' => 'El campo tipo de trabajo es requerido'
-            ]);
-        }
-
-        if($request->company == "Empresa"){
-            $request->validate([
-                'company_name' => 'required'
-            ], [
-                'company_name.required' => 'El campo nombre de la empresa es requerido'
-            ]);
-        }
-
-        if ($request->specialties != null) {
-            $request->validate([
-                'specialties' => 'required|max:3'
-            ], [
-                'speciaties.required' => 'Debe seleccionar entre 1 a 3 opciones',
-                'specialties.max' => 'Debe seleccionar entre 1 a 3 opciones'
-            ]);
-        }
-        
-        if ($request->specialty != null) {
-            $request->validate([
-                'specialty' => 'min:150|max:200'
-            ], [
-                'specialty.min' => 'El campo especialidad debe tener al menos 150 caracteres',
-                'specialty.max' => 'El campo especialidad no debe tener más de 200 caracteres'
-            ]);
-        }
-
-        if ($request->biography_html != null) {
-            $request->validate([
-                'biography_html' => 'min:600'
-            ], [
-                'biography_html.min' => 'El campo biografia debe tener al menos 600 caracteres' 
-            ]);
         }
 
         $partner->title = $request->title;
@@ -218,119 +102,7 @@ class HomeController extends Controller
 
         $partner->save();
 
-        return redirect()->route('socios.edit', $partner)->with('status', 'Se actualizaron los datos');
-
-
-        // if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
-        //     $request->img_profile = $partner->img_profile;
-        //     $request->validate([
-        //         'name' => 'required',
-        //         'lastname' => 'required',
-        //         'title' => 'required',
-        //         'specialty' => 'required|min:150|max:200',
-        //         'specialties' => 'required|max:3',
-        //         'country_residence' => 'required',
-        //         'city' => 'required',
-        //         'state' => 'required',
-        //         'address' => 'required',
-        //         'company' => 'required',
-        //         'phone' => 'required',
-        //         'email' => 'required',
-        //         'img_profile' => 'image|max:8000',
-        //         'biography_html' => 'min:600',
-        //     ], [
-        //         'img_profile.max' => 'La imagen no debe ser mayor a 8MB',
-        //         'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
-        //         'specialties.max' => 'No debe seleccionar más de tres campos'
-        //     ]);
-        // } else if($request->img_profile != null && $partner->img_profile != null){ //ESTE IF ES PARA SI ES QUE CAMBIA SU FOTO DE PERFIL - ELIMINA LA ANTERIOR
-        //     $request->validate([
-        //         'name' => 'required',
-        //         'lastname' => 'required',
-        //         'title' => 'required',
-        //         'specialty' => 'required|min:150|max:200',
-        //         'specialties' => 'required|max:3 ',
-        //         'country_residence' => 'required',
-        //         'city' => 'required',
-        //         'state' => 'required',
-        //         'address' => 'required',
-        //         'company' => 'required',
-        //         'phone' => 'required',
-        //         'email' => 'required',
-        //         'img_profile' => 'required|image|max:8000',
-        //         'biography_html' => 'min:600',
-        //     ], [
-        //         'img_profile.max' => 'La imagen no debe ser mayor a 8MB',
-        //         'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',                'specialties.max' => 'No debe seleccionar más de tres campos'
-        //     ]);
-        //     $url = Storage::put('partners', $request->file('img_profile'));
-        //     Storage::delete($partner->img_profile);
-        //     $partner->img_profile = $url;
-        // } else  { //ESTE ELSE ES SI ES QUE NO HA SUBIDO NINGUNA IMAGEN, LA CREA EN EL SERVIDOR
-        //     $request->validate([
-        //         'name' => 'required',
-        //         'lastname' => 'required',
-        //         'title' => 'required',
-        //         'specialty' => 'required|min:150|max:200',
-        //         'specialties' => 'required|max:3 ',
-        //         'country_residence' => 'required',
-        //         'city' => 'required',
-        //         'state' => 'required',
-        //         'address' => 'required',
-        //         'company' => 'required',
-        //         'phone' => 'required',
-        //         'email' => 'required',
-        //         'img_profile' => 'required|image|max:8000',
-        //         'biography_html' => 'min:600',
-        //     ], [
-        //         'img_profile.max' => 'La imagen no debe ser mayor a 8MB',
-        //         'biography_html.min' => 'La biografia debe tener al menos 600 caracteres',
-        //         'specialties.max' => 'No debe seleccionar más de tres campos'
-        //     ]);
-        //     $url = Storage::put('partners', $request->file('img_profile'));
-        //     $partner->img_profile = $url;
-        // }
-
-        // if($request->company == "Empresa"){
-        //     $request->validate([
-        //         'company_name' => 'required'
-        //     ]);
-        //     $partner->company = $request->company;
-        //     $partner->company_name = $request->company_name;
-        // } else {    
-        //     $partner->company = $request->company;
-        //     $partner->company_name = null;
-        // }
-
-        // // $codigo_pais = $this->getPaisByCodigo($request->country_residence);
-
-        // if($request->specialties){
-        //     $partner->specialties()->detach();
-        //     $partner->specialties()->attach($request->specialties);
-        // }
-        
-        // $partner->name = $request->name;
-        // $partner->lastname = $request->lastname;
-        // $partner->title = $request->title;
-        // $partner->specialty = $request->specialty;
-        // $partner->country_residence = $request->country_residence;
-        // $partner->city = $request->city;
-        // $partner->state = $request->state;
-        // $partner->address = $request->address;
-        // $partner->link_facebook = $request->link_facebook;
-        // $partner->link_instagram = $request->link_instagram;
-        // $partner->link_linkedin = $request->link_linkedin;
-        // $partner->website = $request->website;
-        // $partner->codigo_pais = $request->codigo_pais;
-        // $partner->phone = $request->phone;
-        // $partner->email = $request->email;
-        // $partner->biography_html = $request->biography_html;
-        // $partner->slug = Str::slug($partner->name . ' '. $partner->lastname . ' ' . $partner->id, '-');
-
-        // $partner->save();
-
-        // return redirect()->route('socios.index')->with('success', 'Se guardaron los datos correctamente');
-        
+        return redirect()->route('socios.edit', $partner)->with(['status' => 'Se actualizaron los datos', 'camposVacios' => $camposVacios]);
     }
 
     public function getPaisByCodigo($pais){

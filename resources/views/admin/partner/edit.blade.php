@@ -33,6 +33,15 @@
             #cardParent{
                 border: none !important;
             }
+            #txtCamposVacios{
+                font-size: 12px !important;
+            }
+            #charNum{
+                font-size: 10px !important;
+            }
+            #txtMaxMinChar{
+                font-size: 10px !important;
+            }
         }
         .modal-dialog{
             overflow-y: initial !important
@@ -49,15 +58,13 @@
 @csrf
 @method('put')
     <div class="col-12 mt-4">
-        {{-- <img style="border-radius: 10px; padding: 10px; width: 250px" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt=""> --}}
         <div id="content" class="row justify-content-center mt-3">
             <div class="col-12">
                 <div id="cardParent" class="card" style="background-color: #f4f4fc">
                     <div class="card-header font-weight-bold" style="background-color: #01385f; color: #ffffff">ACTUALIZAR DATOS</div>
                     <h4 style="color: #002542; margin-top: 20px; text-align: center">Inscripción para formar parte de nuestro directorio de partners.</h4>
-                    <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte gratis en Estados Unidos</p>
+                    <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte <b>gratis</b> en Estados Unidos</p>
                     <p id="txtTercero" style="text-align: center; color: #002542; font-weight: bold">{{ Str::upper('¡No olvides completar tu información para que tus datos puedan publicarse en nuestro sitio web!') }}</p>
-                    
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -67,12 +74,19 @@
                                 </button>
                             </div>
                         @endif
-                        @if ($errors->any())
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                Hubo un error al guardar la información. Verifique que los campos requeridos sean correctos y estén completos
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                        @if (session('camposVacios'))
+                            <div class="alert alert-danger">
+                                Los siguientes campos se encuentran vacios:
+                                <div class="row">
+                                    @foreach (session('camposVacios') as $campoVacio)
+                                    <div class="col-6 col-sm-3">
+                                        ✖ <b id="txtCamposVacios">{{ $campoVacio }}</b>       
+                                    </div>
+                                    @endforeach
+                                </div>
+                                <div class="mt-2">
+                                    Si su información no esta completa, su perfil no podrá anunciarse <b>gratis</b> en nuestro sitio web
+                                </div>
                             </div>
                         @endif
                             <div id="card1" class="card">
@@ -90,9 +104,9 @@
                                             <div class="form-group col-md-12">
                                                 {!! Form::label('img_profile', 'Imagen de perfil') !!}
                                                 {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);']) !!}
-                                                @error('img_profile')
+                                                {{-- @error('img_profile')
                                                     <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                @enderror
+                                                @enderror --}}
                                                 <hr>
                                                 {{-- <p style="color: #00223b">Al momento de subir tu foto de perfil puedes tomar como referencia la siguiente imagen</p> --}}
                                                 {{-- <i style="color: #00223b; font-weight: bold">"Recuerda que tu imagen es muestra de la calidad de tus servicios"</i> --}}
@@ -106,38 +120,38 @@
                                                         @if ($partner->title != null)
                                                         {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], $partner->title, ['class' => 'form-control']) !!}
                                                         @else
-                                                        {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], null, ['class' => 'form-control']) !!}
+                                                        {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], "{{ old('title') }}", ['class' => 'form-control']) !!}
                                                         @endif
-                                                        @error('title')
+                                                        {{-- @error('title')
                                                             <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                        @enderror
+                                                        @enderror --}}
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
                                                         {!! Form::label('name', 'Nombre') !!}
                                                         {!! Form::text('name', $partner->name, ['class' => 'form-control']) !!}
-                                                    @error('name')
+                                                    {{-- @error('name')
                                                         <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror
+                                                    @enderror --}}
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
                                                         {!! Form::label('lastname', 'Apellido') !!}
                                                         {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control']) !!}
-                                                    @error('lastname')
+                                                    {{-- @error('lastname')
                                                         <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror
+                                                    @enderror --}}
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     {!! Form::label('email', 'Email') !!}
-                                                        {!! Form::email('email', $partner->email, ['class' => 'form-control']) !!}
-                                                        @error('email')
-                                                        <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror
+                                                    {!! Form::email('email', $partner->email, ['class' => 'form-control']) !!}
+                                                    {{-- @error('email')
+                                                    <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
+                                                    @enderror --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -145,15 +159,12 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        {!! Form::label('country_residence', 'Pais de residencia') !!}
+                                                    {!! Form::label('country_residence', 'Pais de residencia') !!}
                                                     @if ($partner->country_residence != null)
                                                     {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Estados Unidos' => 'Estados Unidos', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->country_residence, ['class' => 'form-control']) !!}    
                                                     @else
-                                                    {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Estados Unidos' => 'Estados Unidos', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], null, ['class' => 'form-control']) !!}
+                                                    {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Estados Unidos' => 'Estados Unidos', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], "{{ old('country_residence') }}", ['class' => 'form-control']) !!}
                                                     @endif
-                                                    @error('country_residence')
-                                                        <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
@@ -164,18 +175,15 @@
                                                         @else
                                                         {!! Form::text('codigo_pais', null, ['class' => 'form-control', 'readonly']) !!}
                                                         @endif
-                                                    @error('codigo_pais')
+                                                    {{-- @error('codigo_pais')
                                                         <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror
+                                                    @enderror --}}
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         {!! Form::label('phone', 'Telefono') !!}
                                                         {!! Form::number('phone', $partner->phone, ['class' => 'form-control']) !!}
-                                                    @error('phone')
-                                                        <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,9 +196,9 @@
                                                         @else
                                                         {!! Form::text('state', null, ['class' => 'form-control']) !!}
                                                         @endif
-                                                    @error('state')
+                                                    {{-- @error('state')
                                                         <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror
+                                                    @enderror --}}
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
@@ -201,9 +209,9 @@
                                                         @else
                                                         {!! Form::text('city', null, ['class' => 'form-control']) !!}
                                                         @endif
-                                                    @error('city')
+                                                    {{-- @error('city')
                                                         <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror
+                                                    @enderror --}}
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
@@ -214,9 +222,6 @@
                                                         @else
                                                         {!! Form::text('address', null, ['class' => 'form-control']) !!}
                                                         @endif
-                                                    @error('address')
-                                                        <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                    @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -228,7 +233,7 @@
                             <div id="card2" class="card mt-4">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• REDES SOCIALES</p>
-                                    <p>Si por el momento no cuenta con redes sociales, puede continuar completando su información profesional</p>
+                                    <p>Si <b>por el momento no cuenta con redes sociales</b>, puede continuar completando su información profesional</p>
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="form-group">
@@ -238,11 +243,12 @@
                                                 @else
                                                 {!! Form::text('link_facebook', null, ['class' => 'form-control']) !!}
                                                 @endif
-                                                @error('link_facebook')
+                                                <label style="font-size: 13px; color: #566067">Ej.:https://www.facebook.com/su-usuario</label>
+                                                {{-- @error('link_facebook')
                                                     <span class="text-danger" style="font-size: 15px; font-weight: bold">
                                                         {{ $message }}
                                                     </span>
-                                                @enderror
+                                                @enderror --}}
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
@@ -253,11 +259,12 @@
                                                 @else
                                                 {!! Form::text('link_instagram', null, ['class' => 'form-control']) !!}
                                                 @endif
-                                                @error('link_instagram')
+                                                <label style="font-size: 13px; color: #566067">Ej.:https://www.instagram.com/su-usuario</label>
+                                                {{-- @error('link_instagram')
                                                     <span class="text-danger" style="font-size: 15px">
                                                         {{ $message }}
                                                     </span>
-                                                @enderror
+                                                @enderror --}}
                                             </div>                            
                                         </div>
                                         <div class="col-sm-3">
@@ -268,11 +275,12 @@
                                                 @else
                                                 {!! Form::text('link_linkedin', null, ['class' => 'form-control']) !!}
                                                 @endif
-                                                @error('link_linkedin')
+                                                <label style="font-size: 13px; color: #566067">Ej.:https://www.linkedin.com/su-usuario</label>
+                                                {{-- @error('link_linkedin')
                                                     <span class="text-danger" style="font-size: 15px">
                                                         {{ $message }}
                                                     </span>
-                                                @enderror
+                                                @enderror --}}
                                             </div>                            
                                         </div>
                                         <div class="col-sm-3">
@@ -283,11 +291,12 @@
                                                 @else
                                                 {!! Form::text('website', null, ['class' => 'form-control']) !!}
                                                 @endif
-                                                @error('website')
+                                                <label style="font-size: 13px; color: #566067">Ej.:https://www.su-dominio.com</label>
+                                                {{-- @error('website')
                                                     <span class="text-danger" style="font-size: 15px">
                                                         {{ $message }}
                                                     </span>
-                                                @enderror
+                                                @enderror --}}
                                             </div>  
                                         </div>
                                     </div>
@@ -306,9 +315,9 @@
                                                 @else
                                                 {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], null, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
                                                 @endif
-                                            @error('company')
+                                            {{-- @error('company')
                                                 <span class="text-danger">{{ $message }}</span>
-                                            @enderror
+                                            @enderror --}}
                                             </div>
                                         </div>                            
                                         <div id="divCompanyName" class="col-sm-4" @if ($partner->company == "Empresa") style="display: block" @else style="display: none" @endif>
@@ -318,9 +327,9 @@
                                             @else
                                                 {!! Form::text('company_name', null, ['class' => 'form-control']) !!} 
                                             @endif
-                                            @error('company_name')
+                                            {{-- @error('company_name')
                                                 <span class="text-danger">{{ $message }}</span>
-                                            @enderror
+                                            @enderror --}}
                                         </div>
                                     </div>
                                     <p style="font-size: 14px">Área de especialización <b>(Escoja entre 1 a 3 opciones)</b></p>
@@ -335,38 +344,38 @@
                                                 </div>
                                                 @endforeach
                                             </div>
-                                            @error('specialties')
+                                            {{-- @error('specialties')
                                             <div>
                                                 <span class="text-danger">{{ $message }}</span>
                                             </div>
-                                            @enderror
+                                            @enderror --}}
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 {!! Form::label('specialty', 'Especialidad(es)') !!} <b style="font-size: 14px">(Descripción más detallada sus especialidades)</b>
-                                                {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control', 'onkeyup' => 'countChars();']) !!}
+                                                {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control', 'onkeyup' => 'countChars();', 'minlength' => '100', 'maxlength' => '200']) !!}
                                                 <div class="d-flex float-right">
                                                     <p id="charNum">0 caracteres</p>
-                                                    <span class="text-success" style="margin-left: 5px">(Mínimo: 150 caracteres - Máximo: 200 caracteres)</span>
+                                                    <span id="txtMaxMinChar" class="text-success" style="margin-left: 5px">(Mínimo: 100 caracteres - Máximo: 200 caracteres)</span>
                                                 </div>
-                                                @error('specialty')
+                                                {{-- @error('specialty')
                                                 <span class="text-danger" style="font-weight: bold">{{ $message }}</span>
-                                                @enderror
+                                                @enderror --}}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         {!! Form::label('biography_html', 'Biografia') !!} <b>(Descripción de trayectoria y experiencia en su área)</b>
                                         {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4']) !!}
-                                        <div class="row">
+                                        {{-- <div class="row">
                                             <div class="col-sm-12">
                                                 <span class="text-success float-right" style="font-size: 15px">(Mínimo: 600 caracteres - Máximo: 1000 caracteres)</span>
                                             </div>
-                                        </div>
-                                        @error('biography_html')
+                                        </div> --}}
+                                        {{-- @error('biography_html')
                                             <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                        @enderror --}}
                                     </div>
                                     <div class="float-right">
                                         @if ($partner->terminos_verified_at != null)
@@ -634,6 +643,7 @@
 
 @section('end-scripts')
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         window.addEventListener('load', function(){
             countChars();
@@ -700,13 +710,17 @@
         function comprobar()
         {   
             obj = document.getElementById('exampleCheck1');
-
             if (obj.checked){
                 document.getElementById('btnActualizar').disabled = false;
             } else{  
                 document.getElementById('btnActualizar').disabled = true;
             }     
         }
+
+        $("input:checkbox").click(function() {
+        var bol = $("input:checkbox:checked").length >= 3;     
+            $("input:checkbox").not(":checked").attr("disabled",bol);
+        });
 
     </script>
 @endsection
