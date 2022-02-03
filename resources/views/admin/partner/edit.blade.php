@@ -297,7 +297,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                                 @foreach ($specialties as $specialty)
-                                                <div class="col-sm-4">
+                                                <div class="col-6 col-sm-4">
                                                     <label for="specialties">
                                                         {!! Form::checkbox('specialties[]', $specialty->id, null) !!}
                                                         {{ $specialty->name_specialty}}
@@ -307,7 +307,7 @@
                                             </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-6 col-sm-12">
+                                        <div class="col-sm-12">
                                             <div class="form-group">
                                                 {!! Form::label('specialty', 'Especialidad(es)') !!} <b style="font-size: 14px">(Descripción más detallada sus especialidades)</b>
                                                 {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control', 'onkeyup' => 'countChars();', 'minlength' => '100', 'maxlength' => '200']) !!}
