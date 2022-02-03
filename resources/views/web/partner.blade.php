@@ -1,16 +1,14 @@
 @extends('layouts.web')
 @section('header')
-{{-- <meta property="og:title" content="Partner NL - {{ $partner->name }} {{ $partner->lastname}}"/>
-<meta property="og:site_name" content="https://notarialatina.com"/>
-<meta property="og:url" content="https://notarialatina.com"/>
-<meta property="og:description" content="La descripción de mi sitio web"/>
-<meta property="og:type" content="website"/>
-<meta property="og:locale" content="es"/>
-<meta property="og:image" content="https://notarialatina.com/img/partners/WEB-HEREDADO.png"/>
-<meta property="og:image:width" content="400" />
-<meta property="og:image:height" content="400" />
-<meta property="fb:app_id" content="xxxxxxxxx"/> --}}
-
+    <meta property="og:title" content="Partner Notaria Latina - {{ $partner->name }} {{ $partner->lastname}}"/>
+    <meta property="og:site_name" content="https://notarialatina.com"/>
+    <meta property="og:url" content="{{ Request::url() }}"/>
+    <meta property="og:description" content="{{ $partner->specialty}}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="es"/>
+    <meta property="og:image" content="https://notarialatina.com/img/partners/WEB-HEREDADO.png"/>
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
 @php
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
