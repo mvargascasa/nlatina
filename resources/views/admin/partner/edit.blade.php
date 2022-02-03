@@ -653,6 +653,9 @@
             countChars();
             showInputNameCompany();
             comprobar();
+            if($("input:checkbox:checked").length == 3){
+                $("input:checkbox").not(":checked").attr("disabled",true);
+            }
         });
 
         document.addEventListener("DOMContentLoaded", function(event) {

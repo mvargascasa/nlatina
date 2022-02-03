@@ -37,7 +37,7 @@ class HomeController extends Controller
         } else {
             array_push ( $camposVacios , "Tipo de trabajo");
         }
-        if($partner->specialties == null){ array_push ( $camposVacios , "Áreas de especialización"); }
+        if(count($partner->specialties) == 0){ array_push ( $camposVacios , "Áreas de especialización"); }
         if($partner->specialty == null){ array_push ( $camposVacios , "Especialidad (Descripción)"); }
         if($partner->biography_html == null){ array_push ( $camposVacios , "Biografía"); }
 
@@ -94,6 +94,8 @@ class HomeController extends Controller
         if($request->specialties){
             $partner->specialties()->detach();
             $partner->specialties()->attach($request->specialties);
+        } else {
+            $partner->specialties()->detach();
         }
         $partner->specialty = $request->specialty;
         $partner->biography_html = $request->biography_html;
