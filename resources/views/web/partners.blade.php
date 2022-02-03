@@ -135,9 +135,6 @@
         #nacionalidad{
             margin-right: 2.5px;
         }
-
-        /*DISEÑO PERSONALIZADO DE LOS SELECT*/
-        
     </style>
     <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection

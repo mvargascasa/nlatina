@@ -4,7 +4,6 @@
     <title>Notaria Latina en {{ $data['office'] }}</title>
     <meta name="description" content="{{ $data['metadescription'] }}">
     <meta name="keywords" content="{{ $data['keywords'] }}">
-    <meta name="">
     <style>
         @media screen and (max-width: 580px){
             .titulo{
@@ -73,6 +72,7 @@
             -webkit-transform: initial;
         }
     </style>
+    <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
@@ -94,26 +94,26 @@
             <h2 style="font-weight: bold">¿Por qué elegirnos?</h2>
             <p style="font-size: 15px;">Brindamos el mejor servicio y asesoría en trámites de notaría para Latinos en Estados Unidos.</p>
             <div>
-                <img width="50px" src="{{ asset('img/docverify-approved-enotary-small.png') }}" alt="Notaria Latina en {{ $data['office'] }}">
-                <img src="{{ asset('img/logo.png') }}" alt="Notaria Latina en {{ $data['office'] }}">
+                <img class="lazyload" width="50px" data-src="{{ asset('img/docverify-approved-enotary-small.png') }}" alt="Notaria Latina en {{ $data['office'] }}">
+                <img class="lazyload" data-src="{{ asset('img/logo.png') }}" alt="Notaria Latina en {{ $data['office'] }}">
             </div>
         </div>
         
         <div class="col-sm-6">
-            <img style="width: 100%; height: 100%" src="{{ asset('img/oficinas/IMAGENES-NEW-JERSEY2.jpg') }}" alt="">
+            <img class="lazyload" style="width: 100%; height: 100%" data-src="{{ asset('img/oficinas/IMAGENES-NEW-JERSEY2.jpg') }}" alt="">
         </div>
     </div>
     
     <div class="row" id="sectionthree" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <div class="col-sm-6 d-flex justify-content-center align-items-center" id="imgApostille">
-            <img style="width: 80%" class="img-fluid" src="{{ asset($data['imgapostilla']) }}" alt="">
+            <img class="lazyload" style="width: 80%" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
         </div>
         <div class="col-sm-6 second-row">
             <div class="row" style="padding-top: 9%; padding-right: 50px">
                 <div class="col-sm-6">
                     <div class="d-flex">
                         <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
-                            <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-20.png')}}" alt="">
+                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-20.png')}}" alt="">
                             <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Cartas Poder {{ $data['office'] }}</p>
                         </a>
                     </div>
@@ -122,7 +122,7 @@
                 <div class="col-sm-6">
                     <div class="d-flex">
                         <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'traducir-documentos-'.Str::slug($data['office'])) }}">
-                            <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-18.png')}}" alt="">
+                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-18.png')}}" alt="">
                             <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Servicio de Traducción Certificada</p>
                         </a>
                     </div>
@@ -133,7 +133,7 @@
                 <div class="col-sm-6">
                     <div class="d-flex">
                         <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-documentos-'.Str::slug($data['office'])) }}">
-                            <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-19.png')}}" alt="">
+                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-19.png')}}" alt="">
                             <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">¿Cómo apostillar en {{ $data['office'] }}?</p>
                         </a>
                     </div>
@@ -142,7 +142,7 @@
                 <div class="col-sm-6">
                     <div class="d-flex">
                         <a class="d-flex" style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'affidavit-support-'.Str::slug($data['office'])) }}">
-                            <img style="width: 30px; height: 30px" src="{{asset('img/oficinas/ICONOS-17.png')}}" alt="">
+                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-17.png')}}" alt="">
                             <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Affidávit Support</p>
                         </a>
                     </div>
@@ -169,7 +169,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'travel-authorization-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
                     </div>
                     <p>Travel Authorization</p>
                 </a>
@@ -177,7 +177,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'certificaciones-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
                     </div>
                     <p>Certificaciones</p>
                 </a>
@@ -185,7 +185,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'acuerdos-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
                     </div>
                     <p>Acuerdos</p>
                 </a>
@@ -193,7 +193,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'cartas-de-invitacion-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
                     </div>
                     <p>Cartas de Invitación</p>
                 </a>
@@ -204,7 +204,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'revocatorias-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-12.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-12.png') }}" alt="">
                     </div>
                     <p>Revocatorias</p>
                 </a>
@@ -212,7 +212,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'contratos-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-13.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-13.png') }}" alt="">
                     </div>
                     <p>Contratos</p>
                 </a>
@@ -220,7 +220,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'testamentos-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset('img/oficinas/ICONOS-14.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-14.png') }}" alt="">
                     </div>
                     <p>Testamentos</p>
                 </a>
@@ -228,7 +228,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <div class="grow">
                     {{-- <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), Str::slug($data['txtgrid']).'-en-'.Str::slug($data['oficina'])) }}""> --}}
-                        <img style="width: 50px; height: 50px" class="img-fluid" src="{{ asset($data['imggrid']) }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset($data['imggrid']) }}" alt="">
                         <p>{{ $data['txtgrid'] }}</p>
                     {{-- </a> --}}
                 </div>
@@ -243,7 +243,7 @@
             <p class="text-muted" style="margin-left: 10%; margin-right: 10%">Apostille actas de nacimiento, actas de matrimonio, certificados, poderes, traducciones, diplomas, contratos, testamentos</p>
         </div>
         <div class="col-sm-6">
-            <img @if($data['office'] == "New York") class="float-right" @endif id="imgrowapostille" style="width: {{$data['widthimgdown']}}; height: {{$data['heightimgdown']}}; padding-top: {{$data['paddingtop']}}" class="img-fluid" src="{{$data['imgdown']}}" alt="Notaria Latina en {{$data['office']}}">
+            <img @if($data['office'] == "New York") class="float-right lazyload" @endif id="imgrowapostille" style="width: {{$data['widthimgdown']}}; height: {{$data['heightimgdown']}}; padding-top: {{$data['paddingtop']}}" class="img-fluid lazyload" data-src="{{$data['imgdown']}}" alt="Notaria Latina en {{$data['office']}}">
         </div>
     </div>
 
