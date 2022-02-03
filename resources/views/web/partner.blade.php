@@ -116,40 +116,40 @@
 
         /*OTHER RATING*/
         #form {
-  width: 250px;
-  margin: 0 auto;
-  height: 50px;
-}
+        width: 250px;
+        margin: 0 auto;
+        height: 50px;
+        }
 
-#form p {
-  text-align: center;
-}
+        #form p {
+        text-align: center;
+        }
 
-#form label {
-  font-size: 20px;
-}
+        #form label {
+        font-size: 20px;
+        }
 
-input[type="radio"] {
-  display: none;
-}
+        input[type="radio"] {
+        display: none;
+        }
 
-label {
-  color: grey;
-}
+        label {
+        color: grey;
+        }
 
-.clasificacion {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-}
+        .clasificacion {
+        direction: rtl;
+        unicode-bidi: bidi-override;
+        }
 
-label:hover,
-label:hover ~ label {
-  color: orange;
-}
+        label:hover,
+        label:hover ~ label {
+        color: orange;
+        }
 
-input[type="radio"]:checked ~ label {
-  color: orange;
-}
+        input[type="radio"]:checked ~ label {
+        color: orange;
+        }
 
 
     </style>
@@ -231,19 +231,19 @@ input[type="radio"]:checked ~ label {
                         </div>
                     @endif
                 </div>
-                <h6 style="font-weight: bold; margin-top: 10px; color: #9A7A2E">Puntuación</h6>
+                <h6 style="font-weight: bold; margin-top: 10px; color: #9A7A2E">Reviews</h6>
                     @php
                       $rating = $partner->averageRating();
                     @endphp
                 <div data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 10px; color: #9A7A2E; cursor: pointer">
                     @foreach(range(1,5) as $i)
-                        <span class="fa-stack" style="width:1em" onclick="openModalRating();">
-                            <i class="far fa-star fa-stack-1x"></i>
-                            @if($rating >0)
-                                @if($rating >0.5)
-                                    <i class="fas fa-star fa-stack-1x"></i>
+                        <span class="fa-stack" style="width:2em" onclick="openModalRating();">
+                            <i class="far fa-star fa-stack-2x"></i>
+                            @if($rating > 0)
+                                @if($rating > 0.5)
+                                    <i class="fas fa-star fa-stack-2x"></i>
                                 @else
-                                    <i class="fas fa-star-half fa-stack-1x"></i>
+                                    <i class="fas fa-star-half fa-stack-2x"></i>
                                 @endif
                             @endif
                         @php $rating--; @endphp
