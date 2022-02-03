@@ -6,7 +6,7 @@
     <meta property="og:description" content="{{ $partner->specialty}}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="es"/>
-    <meta property="og:image" content="https://notarialatina.com/img/partners/WEB-HEREDADO.png"/>
+    <meta property="og:image" content="https://notarialatina.com/storage/{{$partner->img_profile}}"/>
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="400" />
 @php
