@@ -106,13 +106,14 @@ body {
         @csrf
     </form>
   </div>
-  {{-- <div class="socialMedia" style="color: #ffffff">
+  <div class="socialMedia" style="color: #ffffff">
     <p>Siguenos en nuestras redes sociales y mantente informado</p>
-    <div class="d-flex justify-content-center">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-instagram fa-3x" style="color: #ffffff; font-size: 20px"></i></a>
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-square fa-3x" style="color: #ffffff; font-size: 20px"></i></a>
+    <div class="d-flex" style="margin-left: 8%">
+      <a href="https://www.instagram.com/notarialatina/" target="_blank"><i class="fab fa-instagram text-center" style="color: #ffffff;"></i></a>
+      <a href="https://www.facebook.com/notariapublicalatina" target="_blank"><i class="fab fa-facebook-square" style="color: #ffffff;"></i></a>
+      <a href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A" target="_blank"><i class="fab fa-youtube" style="color: #ffffff"></i></a>
     </div>
-  </div> --}}
+  </div>
 </div>
 
 <div id="main" style="background-color: rgb(244, 244, 252)">
