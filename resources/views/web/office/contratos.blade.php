@@ -2,7 +2,7 @@
 @section('header')
 <title>Contratos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
 <meta name="description"        content="Los contratos notarizados son un documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada. Contratos en {{ $data['office']}}">       
-<meta name="keywords"           content="Contratos Notarizados y Apostillados en {{ $data['office'] }}, Contratos Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ $data['office'] }}, notary public queens, que es un contrato, tipos de contrato, requisitos para realizar un contrato, realizar contrato en {{ $data['office'] }}, tramitar contrato {{ $data['office'] }}, tramitar contraro cerca de mi" />
+<meta name="keywords"           content="Contratos Notarizados y Apostillados en {{ $data['office'] }}, Contratos Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public queens, que es un contrato, tipos de contrato, requisitos para realizar un contrato, realizar contrato en {{ Str::lower($data['office']) }}, tramitar contrato {{ Str::lower($data['office']) }}, tramitar contraro cerca de mi" />
 
 <meta property="og:url"         content="{{ Request::url() }}" />
 <meta property="og:type"        content="article" />

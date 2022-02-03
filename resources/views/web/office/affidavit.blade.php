@@ -3,7 +3,7 @@
 <title>Affidávit Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
 <meta name="title" content="Affidávit Notarizados y Apostillas en {{ $data['office'] }} - Notaria Latina">
 <meta name="description" content="Una declaración jurada o Affidávit es una manifestación escrita o verbal cuya veracidad es asegurada mediante un juramento ante una autoridad judicial o administrativa. Affidavit Support en {{ $data['office'] }}">       
-<meta name="keywords" content="Affidávit Notarizados y Apostillados en {{ $data['office'] }}, Affidávit Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ $data['office'] }}, notary public {{ $data['office'] }}, que es un affidavit, para que sirve un affidavit, como hacer una declaracion jurada, requisitos affidavit, obtener affidavit en {{ $data['office'] }}, declaracion jurada en {{ $data['office'] }}" />
+<meta name="keywords" content="Affidávit Notarizados y Apostillados en {{ $data['office'] }}, Affidávit Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es un affidavit, para que sirve un affidavit, como hacer una declaracion jurada, requisitos affidavit, obtener affidavit en {{ Str::lower($data['office']) }}, declaracion jurada en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"                content="{{ Request::url() }}" />
 <meta property="og:type"               content="article" />

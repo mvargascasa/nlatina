@@ -2,7 +2,7 @@
 @section('header')
 <title>Apostillas en {{ $data['office'] }} - Notaria Latina</title> 
 <meta name="description" content="Autentificamos sus documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos. Apostillas en {{ $data['office'] }}">       
-<meta name="keywords" content="Apostillas en {{ $data['office'] }}, Affidávit near me, notaria latina, apostillar, apostillar cerca de mi, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ $data['office'] }}, notary public {{ $data['office'] }}, que es una apostilla, para que sirve apostillar un documento, apostillar documentos cerca de mi, requisitos para apostillar un documento, apostillar en {{ $data['office'] }}, apostillar acta de nacimiento {{ $data['office'] }}, apostillar poder en {{ $data['office'] }}, apostillar carta poder en {{ $data['office'] }}" />
+<meta name="keywords" content="Apostillas en {{ $data['office'] }}, Affidávit near me, notaria latina, apostillar, apostillar cerca de mi, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es una apostilla, para que sirve apostillar un documento, apostillar documentos cerca de mi, requisitos para apostillar un documento, apostillar en {{ Str::lower($data['office']) }}, apostillar acta de nacimiento {{ Str::lower($data['office']) }}, apostillar poder en {{ Str::lower($data['office']) }}, apostillar carta poder en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"                content="{{Request::url()}}" />
 <meta property="og:type"               content="article" />

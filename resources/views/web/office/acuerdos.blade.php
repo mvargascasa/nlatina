@@ -2,7 +2,7 @@
 @section('header')
     <title>Acuerdos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
     <meta name="description"        content="Los acuerdos son un pacto firmado entre dos o más personas que están de acuerdo con lo estipulado en el documento. Acuerdos en {{ $data['office'] }}">       
-    <meta name="keywords"           content="Acuerdos Notarizados y Apostillados en {{ $data['office'] }}, Acuerdos Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ $data['office'] }}, notary public {{ $data['office'] }}, que es un acuerdo notaria, para que sirve un acuerdo notaria, requisitos para un acuerdo notaria, realizar un acuerdo en {{ $data['office'] }}, tramitar acuerdo {{ $data['office'] }}, notarizar acuerdo en {{ $data['office'] }}" />
+    <meta name="keywords"           content="Acuerdos Notarizados y Apostillados en {{ Str::lower($data['office']) }}, Acuerdos Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es un acuerdo notaria, para que sirve un acuerdo notaria, requisitos para un acuerdo notaria, realizar un acuerdo en {{ Str::lower($data['office']) }}, tramitar acuerdo {{ Str::lower($data['office']) }}, notarizar acuerdo en {{ Str::lower($data['office']) }}" />
     
     <meta property="og:url"         content="{{ Request::url() }}" />
     <meta property="og:type"        content="article" />
