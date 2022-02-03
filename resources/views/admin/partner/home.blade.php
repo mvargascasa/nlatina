@@ -7,73 +7,6 @@
 @endsection
 
 @section('content')
-    {{-- <div class="mt-4">
-        <h1>Bienvenido {{ Auth::guard('partner')->user()->name }} {{ Auth::guard('partner')->user()->lastname }}</h1>
-    </div>
-    <div>
-        <h4 style="font-weight: bold">Resumen de tu perfil</h4>
-        <h6 style="font-weight: bold">Información Personal</h6>
-        <div class="border" style="padding: 10px">
-            <div class="row ml-1">
-                <div class="col-sm-4">
-                    <p><b>Nombre:</b> {{ Auth::user()->title }} {{ Auth::user()->name }} {{ Auth::user()->lastname }}</p> 
-                </div>
-                @if (Auth::user()->email != null)
-                    <div class="col-sm-4">
-                        <p><b>Correo electrónico: </b>{{ Auth::user()->email }}</p>
-                    </div>
-                @endif
-                @if (Auth::user()->codigo_pais != null)
-                    <div class="col-sm-4">
-                        <p><b>Teléfono/Celular: </b>{{ Auth::user()->codigo_pais }} {{ Auth::user()->phone}}</p>
-                    </div>
-                @endif
-            </div>
-            <div class="row ml-1">
-                <div class="col-sm-3">
-                    <p><b>País de residencia: </b>{{Auth::user()->country_residence }}</p>
-                </div>
-                <div class="col-sm-3">
-                    <p><b>Estado: </b>{{ Auth::user()->state }}</p>
-                </div>
-                <div class="col-sm-3">
-                    <p><b>Ciudad: </b>{{ Auth::user()->city }}</p>
-                </div>
-                <div class="col-sm-3">
-                    <p><b>Dirección: </b>{{ Auth::user()->address}}</p>
-                </div>
-            </div>
-            <div class="row ml-1">
-                <div class="col-sm-4">
-                    <label style="font-weight: bold">Facebook</label><br>
-                    <a target="_blank" href="{{Auth::user()->link_facebook}}">{{ Auth::user()->link_facebook }}</a>
-                </div>
-                <div class="col-sm-4">
-                    <label style="font-weight: bold">Instagram</label><br>
-                    <a target="_blank" href="{{Auth::user()->link_instagram}}">{{Auth::user()->link_instagram}}</a>
-                </div>
-                <div class="col-sm-4">
-                    <label style="font-weight: bold">LinkedIn</label><br>
-                    <a target="_blank" href="{{Auth::user()->link_linkedin}}">{{Auth::user()->link_linkedin}}</a>
-                </div>
-                <div class="col-sm-4">
-                    <label style="font-weight: bold">Sitio Web</label><br>
-                    <a target="_blank" href="{{Auth::user()->website}}">{{Auth::user()->website}}</a>
-                </div>
-            </div>
-        </div>
-        <h6 style="font-weight: bold" class="mt-2">Información Profesional</h6>
-        <div class="border" style="padding: 10px">
-            <div class="row">
-                <div class="col-sm-3">
-                    <p><b>Tipo de trabajo: </b>{{ Auth::user()->company}}</p>
-                </div>
-                <div class="col-sm-6">
-                    <p><b>Nombre de la empresa: </b>{{ Auth::user()->company_name }}</p>
-                </div>
-            </div>
-        </div>
-    </div> --}}
     <section>
       <div class="container py-5">
           <div class="row">
@@ -288,11 +221,11 @@
                 </div>
           </div>
 
-          {{-- @if (Auth::user()->status == "PUBLICADO" && Auth::user()->link_facebook != null)
+          @if (Auth::user()->status == "PUBLICADO" && Auth::user()->link_facebook != null)
             <div class="mt-4">
-              <a target="_blank" class="btn" href="https://www.facebook.com/sharer/sharer.php?u=notarialatina.com/partners/{{Auth::user()->slug}}&display=popup" style="color: #ffffff; background-color: #3b5998">Compartir mi perfil en Facebook </a>  
+              <a target="_blank" class="btn" href="https://www.facebook.com/sharer/sharer.php?u=notarialatina.com/partners/{{Auth::user()->slug}}&display=popup" style="color: #ffffff; background-color: #3b5998">Compartir mi perfil en Facebook <i class="fab fa-facebook-square"></i></a>  
             </div>
-          @endif --}}
+          @endif
 
         </div>
       </section>

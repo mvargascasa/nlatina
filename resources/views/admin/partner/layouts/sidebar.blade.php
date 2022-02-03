@@ -106,9 +106,6 @@ body {
         @csrf
     </form>
   </div>
-  <div class="mt-4 socialMedia">
-    <a target="_blank" class="btn" href="https://www.facebook.com/sharer/sharer.php?u=notarialatina.com/partners/{{Auth::user()->slug}}&display=popup" style="color: #002542; background-color: #002542; font-size: 10px">Compartir mi perfil en Facebook </a>  
-  </div>
   {{-- <div class="socialMedia" style="color: #ffffff">
     <p>Siguenos en nuestras redes sociales y mantente informado</p>
     <div class="d-flex justify-content-center">
