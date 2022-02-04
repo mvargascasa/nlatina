@@ -100,7 +100,7 @@
         </div>
         
         <div class="col-sm-6">
-            <img class="lazyload" style="width: 100%; height: 100%" data-src="{{ asset('img/oficinas/IMAGENES-NEW-JERSEY2.jpg') }}" alt="">
+            <img class="lazyload" style="width: 100%; height: 100%" data-src="{{ asset('img/oficinas/IMAGENES-NEW-JERSEY2.webp') }}" alt="">
         </div>
     </div>
     
@@ -113,7 +113,7 @@
                 <div class="col-sm-6">
                     <div class="d-flex">
                         <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
-                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-20.png')}}" alt="">
+                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
                             <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Cartas Poder {{ $data['office'] }}</p>
                         </a>
                     </div>
@@ -122,7 +122,7 @@
                 <div class="col-sm-6">
                     <div class="d-flex">
                         <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'traducir-documentos-'.Str::slug($data['office'])) }}">
-                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-18.png')}}" alt="">
+                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-18.webp')}}" alt="">
                             <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Servicio de Traducción Certificada</p>
                         </a>
                     </div>
@@ -133,7 +133,7 @@
                 <div class="col-sm-6">
                     <div class="d-flex">
                         <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-documentos-'.Str::slug($data['office'])) }}">
-                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-19.png')}}" alt="">
+                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-19.webp')}}" alt="">
                             <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">¿Cómo apostillar en {{ $data['office'] }}?</p>
                         </a>
                     </div>
@@ -142,7 +142,7 @@
                 <div class="col-sm-6">
                     <div class="d-flex">
                         <a class="d-flex" style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'affidavit-support-'.Str::slug($data['office'])) }}">
-                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-17.png')}}" alt="">
+                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-17.webp')}}" alt="">
                             <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Affidávit Support</p>
                         </a>
                     </div>
@@ -169,7 +169,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'travel-authorization-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-08.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-08.webp') }}" alt="">
                     </div>
                     <p>Travel Authorization</p>
                 </a>
@@ -177,7 +177,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'certificaciones-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-09.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
                     </div>
                     <p>Certificaciones</p>
                 </a>
@@ -185,7 +185,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'acuerdos-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-10.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-10.webp') }}" alt="">
                     </div>
                     <p>Acuerdos</p>
                 </a>
@@ -193,7 +193,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'cartas-de-invitacion-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-11.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-11.webp') }}" alt="">
                     </div>
                     <p>Cartas de Invitación</p>
                 </a>
@@ -204,7 +204,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'revocatorias-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-12.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-12.webp') }}" alt="">
                     </div>
                     <p>Revocatorias</p>
                 </a>
@@ -212,7 +212,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'contratos-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-13.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-13.webp') }}" alt="">
                     </div>
                     <p>Contratos</p>
                 </a>
@@ -220,7 +220,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'testamentos-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-14.png') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-14.webp') }}" alt="">
                     </div>
                     <p>Testamentos</p>
                 </a>
@@ -401,7 +401,7 @@
     <script>
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgup'])}})";
-            document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/BANNER-NEGRO.jpg')}}')";
+            document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/BANNER-NEGRO.webp')}}')";
         });
 
         var pais = document.getElementById('pais');
