@@ -7,6 +7,7 @@
     <title>Login Partners</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/styles.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <style>
         .img-logo{
             width: 150px;
@@ -74,8 +75,14 @@
                         </div>
                         <div class="form-outline mb-3">
                             <label class="form-label mb-3" for="form3Example4">Contraseña</label>
-                            <input type="password" id="form3Example4" class="form-control" value="{{ old('password') }}"
-                            name="password" required/>
+                            {{-- <input type="password" id="form3Example4" class="form-control" value="{{ old('password') }}"
+                            name="password" required/> --}}
+                            <div class="input-group">
+                                <input type="password" name="password" class="form-control" id="password" autocomplete="off" required>
+                                <div class="input-group-append" style="cursor: pointer" onmousedown="mostrarContrasena();" onmouseup="mostrarContrasena();">
+                                  <span class="input-group-text" id="basic-addon2"><i id="eyePassword" class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-check">
                             <input type="checkbox" name="remember" class="form-check-input" id="exampleCheck1">
@@ -112,5 +119,20 @@
     <script defer src="{{asset('js/jquery-3.4.1.min.js')}}" ></script>
     <script defer src="{{asset('js/popper.min.js')}}"></script>
     <script defer src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script>
+        function mostrarContrasena(){
+        var tipo = document.getElementById("password");
+        var eye = document.getElementById("eyePassword");
+            if(tipo.type == "password"){
+                tipo.type = "text";
+                eye.classList.remove('fas', 'fa-eye');
+                eye.classList.add('fas', 'fa-eye-slash');
+            }else{
+                tipo.type = "password";
+                eye.classList.remove('fas', 'fa-eye-slash');
+                eye.classList.add('fas', 'fa-eye');
+            }
+        }
+    </script>
 </body>
 </html>
