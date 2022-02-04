@@ -350,7 +350,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="exampleModalLongTitle"><b>¡Felicidades!</b> Estas a tan solo un paso de publicar tu perfil. <b>Completa tu información</b>  y accede a los siguientes beneficios:</h6>
+                    <h6 class="modal-title" id="exampleModalLongTitle"><b>¡Felicidades!</b> Esta a tan solo un paso de publicar su perfil. <b>Complete su información</b>  y podrá ser anunciado <b>GRATIS</b> en nuestro sitio web</h6>
                 </div>
                 <div class="modal-body d-flex justify-content-center">
                   <img class="img-fluid" src="{{ asset('img/partners/bienvenida.jpeg') }}" alt="Partners de Notaria Latina">
