@@ -48,6 +48,7 @@ class HomeController extends Controller
     
     public function update(Partner $partner, Request $request)
     {
+
         if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
             $request->img_profile = $partner->img_profile;
         } else if($request->img_profile != null && $partner->img_profile != null){
@@ -99,8 +100,10 @@ class HomeController extends Controller
         }
         $partner->specialty = $request->specialty;
         $partner->biography_html = $request->biography_html;
-        $partner->checkterminos = $request->filled('checkTerminos');
-        $partner->terminos_verified_at = date('y-m-d h:i:s');
+        if($request->filled('checkTerminos') != null){
+            $partner->checkterminos = $request->filled('checkTerminos');
+            $partner->terminos_verified_at = date('y-m-d h:i:s');
+        }
         $partner->slug = Str::slug($partner->name . ' '. $partner->lastname . ' ' . $partner->id, '-');
 
         $partner->save();

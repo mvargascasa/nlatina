@@ -69,6 +69,14 @@
                     <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte <b>gratis</b> en Estados Unidos</p>
                     <p id="txtTercero" style="text-align: center; color: #002542; font-weight: bold">{{ Str::upper('¡No olvides completar tu información para que tus datos puedan publicarse en nuestro sitio web!') }}</p>
                     <div class="card-body">
+                        @if (count($camposVacios) < 1 && Str::limit($partner->terminos_verified_at, 10, '') == Str::limit(date(now()), 10, ''))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <b>¡Felicidades!</b> Toda tu información se ha completado con éxito. En breves minutos tu perfil será publicado gratis en nuestro sitio web
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
                         @if (session('status'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 {{ session('status') }}
@@ -92,7 +100,6 @@
                                 </div>
                             </div>
                         @endif
-
                             <div id="card1" class="card">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• INFORMACIÓN PERSONAL</p>
