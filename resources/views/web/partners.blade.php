@@ -216,8 +216,14 @@
                                 <span class="text-danger">{{ $message }}</span>
                             </div>
                         @enderror
-                        <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
-                            <input type="password" class="form-control" placeholder="Contraseña" name="password" autocomplete="off" {{ old('password') }} required>
+                        <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
+                            {{-- <input type="password" class="form-control" placeholder="Crea una contraseña para tu perfil" name="password" autocomplete="off" {{ old('password') }} required> --}}
+                            <div class="input-group">
+                                <input type="password" name="password" class="form-control" placeholder="Cree una contraseña" id="password" autocomplete="off" required>
+                                <div class="input-group-append" style="cursor: pointer" onmousedown="mostrarContrasena();" onmouseup="mostrarContrasena();">
+                                  <span class="input-group-text" id="basic-addon2"><i id="eyePassword" class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
                         </div>
                         @error('password')
                             <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
@@ -356,6 +362,20 @@
 @section('script')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+    function mostrarContrasena(){
+      var tipo = document.getElementById("password");
+      var eye = document.getElementById("eyePassword");
+        if(tipo.type == "password"){
+            tipo.type = "text";
+            eye.classList.remove('fas', 'fa-eye');
+            eye.classList.add('fas', 'fa-eye-slash');
+        }else{
+            tipo.type = "password";
+            eye.classList.remove('fas', 'fa-eye-slash');
+            eye.classList.add('fas', 'fa-eye');
+        }
+    }
+
     function loadStates(){
         var idCountry = $('#country').val();
             $.ajax({
@@ -374,29 +394,6 @@
                 }
             });
     }
-
-    // $('#formSearchPartner').submit(function(e){
-    //     e.preventDefault();
-    //     const countryId = $("#country").val();
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "{{ route('partners.fetch.state') }}",
-    //         data: {
-    //             "_token" : "{{ csrf_token() }}",
-    //             "country" : countryId,
-    //             "state" : null,
-    //             "specialty": null
-    //         },
-    //         dataType: "json",
-    //         success: function(result){
-    //             $('#contentPartner').html(result.viewPartners);
-    //         },
-    //         error: function(xhr, status, error){
-    //             var errorMessage = xhr.status + ': ' + xhr.statusText
-    //             alert('Error - ' + errorMessage);
-    //         }
-    //     });
-    //     });
 
         function selectCountry(id){
             $.ajax({
@@ -445,7 +442,6 @@
             }
             inputCodPais.value = codigo;
         }
-
 
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-PARTNERS.jpg')}}')";

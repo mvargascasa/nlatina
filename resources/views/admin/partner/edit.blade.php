@@ -324,9 +324,9 @@
                                     </div>
                                     <div class="float-right">
                                         @if ($partner->terminos_verified_at != null)
-                                        {!! Form::submit('Actualizar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b']) !!}
+                                        {!! Form::submit('Guardar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b']) !!}
                                         @else
-                                        {!! Form::button('Actualizar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b', 'data-toggle' => 'modal', 'data-target' => '#exampleModalCenter']) !!}
+                                        {!! Form::button('Guardar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b', 'data-toggle' => 'modal', 'data-target' => '#exampleModalCenter']) !!}
                                         @endif
                                     </div>
                                 </div>
@@ -336,6 +336,31 @@
             </div>
         </div>
     </div>
+
+    @if ($partner->terminos_verified_at == null)
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("document").ready(function(){
+            $('#modalBienvenido').modal('toggle')
+        });
+    </script>
+    @endif
+
+    <div class="modal" id="modalBienvenido" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalLongTitle"><b>¡Felicidades!</b> Estas a tan solo un paso de publicar tu perfil. <b>Completa tu información</b>  y accede a los siguientes beneficios:</h6>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                  <img class="img-fluid" src="{{ asset('img/partners/bienvenida.jpeg') }}" alt="Partners de Notaria Latina">
+              </div>
+              <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-primary" style="background-color: #002542; color: #ffffff" onclick="$('#modalBienvenido').modal('hide')">Continuar</button>
+              </div>
+            </div>
+        </div>
+      </div>
 
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -578,7 +603,7 @@
                     <input type="checkbox" name="checkTerminos" class="form-check-input" id="exampleCheck1" onchange="comprobar();">
                     <label class="form-check-label" for="exampleCheck1">Aceptar</label>
                   </div>
-              {!! Form::submit('Actualizar', ['class' => 'btn text-white', 'style' => 'background-color: #00223b', 'id' => 'btnActualizar']) !!}
+              {!! Form::submit('Guardar', ['class' => 'btn text-white', 'style' => 'background-color: #00223b', 'id' => 'btnActualizar']) !!}
             </div>
           </div>
         </div>
@@ -594,9 +619,6 @@
             countChars();
             showInputNameCompany();
             comprobar();
-            if($("input:checkbox:checked").length == 3){
-                $("input:checkbox").not(":checked").attr("disabled",true);
-            }
         });
 
         document.addEventListener("DOMContentLoaded", function(event) {
@@ -665,11 +687,6 @@
                 document.getElementById('btnActualizar').disabled = true;
             }     
         }
-
-        $("input:checkbox").click(function() {
-        var bol = $("input:checkbox:checked").length >= 3;     
-            $("input:checkbox").not(":checked").attr("disabled",bol);
-        });
 
     </script>
 @endsection
