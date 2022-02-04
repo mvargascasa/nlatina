@@ -353,7 +353,7 @@
                     <h6 class="modal-title" id="exampleModalLongTitle"><b>¡Felicidades!</b> Esta a tan solo un paso de publicar su perfil. <b>Complete su información</b>  y podrá ser anunciado <b>GRATIS</b> en nuestro sitio web</h6>
                 </div>
                 <div class="modal-body d-flex justify-content-center">
-                  <img class="img-fluid" src="{{ asset('img/partners/bienvenida.jpeg') }}" alt="Partners de Notaria Latina">
+                  <img class="img-fluid" src="{{ asset('img/partners/bienvenida.jpg') }}" alt="Partners de Notaria Latina">
               </div>
               <div class="modal-footer justify-content-center">
                 <button type="button" class="btn btn-primary" style="background-color: #002542; color: #ffffff" onclick="$('#modalBienvenido').modal('hide')">Continuar</button>
