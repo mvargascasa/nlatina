@@ -10,6 +10,57 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
   <meta name="facebook-domain-verification" content="lz9luqstj366xp6jboc5k6mt4m4ssm" />
 
+<?php
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+if(strpos($actual_link, 'localhost') === false){
+?>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124437679-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124437679-3');
+  gtag('config', 'AW-702844945');
+</script>
+
+<!-- Event snippet for Enviar formulario de clientes potenciales conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-806267889/3YziCJeyiswBEPHXuoAD',
+          'event_callback': callback
+      });
+      return false;
+    }
+</script>
+
+<!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '757596345081494');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
+    </noscript>
+<!-- End Facebook Pixel Code -->
+
+<?php };// fin de if url localhost ?>
 <style>
     /*iframe{ width: 250px !important;    } */
 </style>
@@ -17,6 +68,7 @@
   @yield('header')
   </head>
 <body>
+
     <header>
         <nav class="navbar navfoot navbar-dark navbar-expand-lg navbar-light bg-light">
           <div class="d-flex flex-grow-1">
@@ -259,57 +311,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </a> 
         </div>
 </footer>
-<?php
-$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-if(strpos($actual_link, 'localhost') === false){
-?>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124437679-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-124437679-3');
-  gtag('config', 'AW-702844945');
-</script>
-
-<!-- Event snippet for Enviar formulario de clientes potenciales conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-806267889/3YziCJeyiswBEPHXuoAD',
-          'event_callback': callback
-      });
-      return false;
-    }
-</script>
-
-<!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '757596345081494');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
-    </noscript>
-<!-- End Facebook Pixel Code -->
-
-<?php };// fin de if url localhost ?>
 <script defer src="{{asset('js/jquery-3.4.1.min.js')}}" ></script>
 <script defer src="{{asset('js/popper.min.js')}}"></script>
 <script defer src="{{asset('js/bootstrap.min.js')}}"></script>
