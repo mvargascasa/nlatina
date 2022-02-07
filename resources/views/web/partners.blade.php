@@ -13,7 +13,8 @@
             overflow:hidden;
             width:100%;
             margin:0 auto;
-            background:rgb(255, 255, 255);
+            /* background:rgb(255, 255, 255); */
+            background: #f5f6f8;
             padding:20px;
             box-sizing:border-box;
             text-align:justify;
@@ -98,7 +99,7 @@
             margin-bottom: 10px;
         }
 
-        @media screen and (max-width: 580px){
+        @media screen and (max-width: 860px){
             .countrysearch{
                 margin-left: 0% !important;
                 font-size: 13px;
@@ -112,12 +113,43 @@
             .titulo{
                 margin-top: 15%;
             }
+            #rowTxt{
+                padding-top: 15px !important;  
+            }
+            #rowTxt h5{
+                font-size: 16px;  
+            }
+            #rowTxt p{
+                font-size: 15px; 
+            }
+            #rowFiltros{ 
+                margin-left: -40px !important;
+                margin-right: -65px !important;
+            }
+            .selects{
+                height: 27px !important; 
+                font-size: 11px !important;
+            }
+            #btnBuscar{
+                width: 120px !important; 
+                height: 20px !important; 
+                font-size: 10px !important;
+            }
+            #imgBanner{
+                height: 100px !important;
+            }
+            #imgPareja{
+                margin-left: 12% !important;
+                width: 210px !important;
+            }
+            #txtBanner{
+                font-size: 11px !important;
+                margin-right: 10% !important;
+            }
         }
-
         .titulo{
             font-size: 30px;
         }
-
         .emptyRegister{
             text-align: center;
             justify-content: center;
@@ -134,6 +166,9 @@
 
         #nacionalidad{
             margin-right: 2.5px;
+        }
+        select {
+            box-shadow: 2px 2px 3px #bfbfbf;
         }
     </style>
     <script src="{{ asset('js/lazysizes.min.js') }}"></script>
@@ -295,7 +330,7 @@
     </div>
 </div> --}}
 
-<div id="contentPartner">
+<div id="contentPartner" style="background-color: #f5f6f8">
     @include('web.partials.search_partner')   
 </div>
 
