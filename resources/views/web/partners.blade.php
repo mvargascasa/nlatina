@@ -152,7 +152,7 @@
                margin-left: -25% !important;
             }
             .txtDataPartner{
-                font-size: 9px !important;
+                font-size: 12px !important;
             }
             .dismissMarginTopBottom{
                 margin-top: 0% !important;
