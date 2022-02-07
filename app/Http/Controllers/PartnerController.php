@@ -117,10 +117,6 @@ class PartnerController extends Controller
             $partner->company = $request->company;
             $partner->company_name = null;
         }
-
-        if($request->status == "PUBLICADO" && $partner->fecha_publicado == null){
-            $partner->fecha_publicado = date(now());
-        }
         
         $partner->status = $request->status;
         $partner->name = $request->name;
@@ -143,11 +139,16 @@ class PartnerController extends Controller
         $partner->biography_html = $request->biography_html;
         $partner->slug = Str::slug($request->name . ' ' . $request->lastname . ' ' . $partner->id, '-'); 
         
-        $partner->save();
-
-        if($request->status == "PUBLICADO" && $partner->fecha_publicado != null && Str::limit($partner->fecha_publicado, 10, '') == Str::limit(date(now()), 10, '')){ //|| ($request->status == "PUBLICADO" && $partner->fecha_publicado != date(now()))
+        if($request->status == "PUBLICADO" && $partner->fecha_publicado == null){
+            $partner->fecha_publicado = date(now());
             $this->sendEmailPublicado($partner);
         }
+
+        $partner->save();
+
+        // if($request->status == "PUBLICADO" && $partner->fecha_publicado != null && Str::limit($partner->fecha_publicado, 10, '') == Str::limit(date(now()), 10, '')){ //|| ($request->status == "PUBLICADO" && $partner->fecha_publicado != date(now()))
+            
+        // }
         
         return redirect()->route('partner.index')->with('success', 'Se actualizaron los datos');
     }
