@@ -3,11 +3,7 @@
     <title>Abogados y Notarias en Latinoamérica a su alcance</title>
     <meta name="description" content="Socios de Casa Credito Promotora">
     <style>
-        .testimotionals {
-            width:100%;
-            display:inline-block;
-        }
-
+        .testimotionals {width:100%;display:inline-block;}
         .testimotionals .card {
             position:relative;
             overflow:hidden;
@@ -145,6 +141,26 @@
             #txtBanner{
                 font-size: 11px !important;
                 margin-right: 10% !important;
+            }
+        }
+        @media screen and (max-width: 580px){
+            .contenido{
+                margin-left: 0% !important;
+                margin-right: -10% !important;
+            }
+            #rowDataPartner{
+               margin-left: -25% !important;
+            }
+            .txtDataPartner{
+                font-size: 9px !important;
+            }
+            .dismissMarginTopBottom{
+                margin-top: 0% !important;
+                margin-bottom: 0% !important;
+            }
+            .image{
+                width: 75px !important; 
+                height: 100px !important;
             }
         }
         .titulo{

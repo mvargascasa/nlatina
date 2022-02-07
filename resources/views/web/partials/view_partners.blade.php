@@ -61,38 +61,44 @@
                             <div class="card mb-3">
                             <div class="layer"></div>
                             <div class="content">
-                                <div class="image">
-                                    <img class="lazyload" width="125px" height="150px" data-src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
-                                </div>
-                                <h5>
-                                    <b>
-                                        @if ($partner->title == "Abogado")
-                                        Abg.
-                                        @elseif($partner->title == "Licenciado")
-                                        Lic.
-                                        @endif
-                                        {{ $partner->name }} {{ $partner->lastname }}
-                                    </b>
-                                </h5>
-                                {{-- <p>{{ $partner->specialty }}</p> --}}
-                                @foreach ($partner->specialties as $specialty)
-                                <div class="d-inline" style="font-size: 14px">
-                                    • {{ $specialty->name_specialty }}
-                                </div>
-                                @endforeach
-                                <h6 class="mt-2"><b>{{ $partner->country_residence }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png') }}"/></b></h6>
-                                @if ($partner->state != null)
-                                    <h6><b>{{ $partner->state }}</b></h6>
-                                @endif
-                                <div class="row mt-3">
-                                    <div class="col-sm-12">
-                                        <p><i class="fas fa-phone-alt"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
+                                <div class="row">
+                                    <div class="col-6 col-sm-12">
+                                        <div class="image">
+                                            <img class="lazyload" width="125px" height="150px" data-src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
+                                        </div>
                                     </div>
-                                    <br>
-                                </div>	
-                                <div class="row" style="margin-top: -15px">
-                                    <div class="col">
-                                        <p style="font-size: 10px"><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ $partner->email }}</p>
+                                    <div id="rowDataPartner" class="col-6 col-sm-12">
+                                        <h5 class="txtDataPartner dismissMarginTopBottom">
+                                            <b>
+                                                @if ($partner->title == "Abogado")
+                                                Abg.
+                                                @elseif($partner->title == "Licenciado")
+                                                Lic.
+                                                @endif
+                                                {{ $partner->name }} {{ $partner->lastname }}
+                                            </b>
+                                        </h5>
+                                        {{-- <p>{{ $partner->specialty }}</p> --}}
+                                        @foreach ($partner->specialties as $specialty)
+                                        <div class="d-inline txtDataPartner dismissMarginTopBottom" style="font-size: 14px">
+                                            • {{ $specialty->name_specialty }}
+                                        </div>
+                                        @endforeach
+                                        <h6 class="mt-2 txtDataPartner dismissMarginTopBottom"><b>{{ $partner->country_residence }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png') }}"/></b></h6>
+                                        @if ($partner->state != null)
+                                            <h6 class="txtDataPartner dismissMarginTopBottom"><b>{{ $partner->state }}</b></h6>
+                                        @endif
+                                        <div class="row mt-3">
+                                            <div class="col-sm-12">
+                                                <p class="txtDataPartner"><i class="fas fa-phone-alt"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
+                                            </div>
+                                            <br>
+                                        </div>	
+                                        <div class="row" style="margin-top: -15px">
+                                            <div class="col-sm-12">
+                                                <p class="txtDataPartner" style="font-size: 10px"><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ $partner->email }}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
