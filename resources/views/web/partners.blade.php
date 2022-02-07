@@ -146,7 +146,7 @@
         @media screen and (max-width: 580px){
             .contenido{
                 margin-left: 0% !important;
-                margin-right: -10% !important;
+                margin-right: -12% !important;
             }
             #rowDataPartner{
                margin-left: -25% !important;
