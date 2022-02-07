@@ -146,10 +146,10 @@
         @media screen and (max-width: 580px){
             .contenido{
                 margin-left: 0% !important;
-                margin-right: -15% !important;
+                margin-right: 0% !important;
             }
             #rowDataPartner{
-               margin-left: -25% !important;
+               margin-left: -15% !important;
             }
             .txtDataPartner{
                 font-size: 10px !important;
