@@ -41,6 +41,13 @@
             .info-header{
                 color: black;
             }
+            #divImgPartner{
+                display: flex;
+                justify-content: center;
+            }
+            #divPhoneAndEmail p{
+                margin-left: 5% !important;
+            }
         }
 
         #nombre, #telefono, #mensaje{
@@ -160,7 +167,7 @@
     <div class="container">
         @if ($partner != null)
         <div class="row mt-4">
-            <div class="col-sm-6">
+            <div id="divImgPartner" class="col-sm-6">
                 <img id="imgPartner" class="float-right" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="250" height="310">
             </div>
             <div class="col-sm-6 mt-3 info-header">
@@ -179,9 +186,9 @@
                     <p style="margin-top: -10px">{{ $partner->company}}</p>
                 @endif
                 <br>
-                <div class="row">
+                <div id="divPhoneAndEmail" class="row d-flex">
                     <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
-                    <p class="float-right ml-5"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p>
+                    <p class="ml-5"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p>
                 </div>
             </div>
         </div>
@@ -379,14 +386,14 @@
 @section('script')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        window.addEventListener('resize', function(){
-            var imgpartner = document.getElementById('imgPartner');
-            if(screen.width < 580){
-                imgpartner.classList.remove('float-right');
-            } else {
-                imgpartner.classList.add('float-right');
-            }
-        });
+        // window.addEventListener('resize', function(){
+        //     var imgpartner = document.getElementById('imgPartner');
+        //     if(screen.width < 580){
+        //         imgpartner.classList.add('float-center');
+        //     } else {
+        //         imgpartner.classList.remove('float-center');
+        //     }
+        // });
 
         // $('#addStar').change('.star', function(e) {
         //     $(this).submit();
