@@ -79,7 +79,7 @@
                             name="password" required/> --}}
                             <div class="input-group">
                                 <input type="password" name="password" class="form-control" id="password" autocomplete="off" required>
-                                <div class="input-group-append" style="cursor: pointer" onmousedown="mostrarContrasena();" onmouseup="mostrarContrasena();">
+                                <div class="input-group-append" style="cursor: pointer" onclick="mostrarContrasena();"> {{--onmousedown="mostrarContrasena();" onmouseup="mostrarContrasena();"--}}
                                   <span class="input-group-text" id="basic-addon2"><i id="eyePassword" class="fas fa-eye"></i></span>
                                 </div>
                             </div>

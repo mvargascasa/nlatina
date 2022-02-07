@@ -271,7 +271,7 @@
                             {{-- <input type="password" class="form-control" placeholder="Crea una contraseña para tu perfil" name="password" autocomplete="off" {{ old('password') }} required> --}}
                             <div class="input-group">
                                 <input type="password" name="password" class="form-control" placeholder="Cree una contraseña" id="password" autocomplete="off" required>
-                                <div class="input-group-append" style="cursor: pointer" onmousedown="mostrarContrasena();" onmouseup="mostrarContrasena();">
+                                <div class="input-group-append" style="cursor: pointer" onclick="mostrarContrasena();"> {{--onmousedown="mostrarContrasena();" onmouseup="mostrarContrasena();"--}}
                                   <span class="input-group-text" id="basic-addon2"><i id="eyePassword" class="fas fa-eye"></i></span>
                                 </div>
                             </div>
@@ -297,117 +297,10 @@
     </div>
 </section>
 
-{{-- <div>
-    <p class="text-center mt-5">Solicite los servicios de un abogado <br> en Latinoamérica</p>
-</div>
-<hr style="width: 50%">
-<div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
-        <div style="display: inline-block" class="mr-2">
-            <p><b>BUSCAR POR:</b></p>
-        </div>
-        
-        <form action="{{ route('web.showallpartners.a') }}" method="POST">
-        @csrf
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="form-group">
-                    <select class="form-control" name="country" id="country" onchange="loadStates();">
-                        <option value="">País</option>
-                        @foreach ($countries as $country)
-                            <option value="{{ $country->id }}" @if(Request::get('country') == $country->id) selected @endif>{{ $country->name_country }} </option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="form-group">
-                    <select class="form-control" name="state" id="stateSelect"> 
-                        <option value="">Estado</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="form-group">
-                    <select class="form-control" name="specialty" id="specialty">
-                        <option value="">Especialidad</option>
-                        <option value="">Todos</option>
-                        @foreach ($specialties as $specialty)
-                            <option value="{{ $specialty->name_specialty }}" @if(Request::get('specialty') == $specialty->name_specialty) selected @endif>{{ $specialty->name_specialty}}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div>
-                <button class="btn btn-primary" type="submit">Buscar</button>
-            </div>
-            </div>
-        </form>
-    </div>
-</div> --}}
-
 <div id="contentPartner" style="background-color: #f5f6f8">
     @include('web.partials.search_partner')   
 </div>
 
-{{-- <div class="mt-5 contenido" style="margin-left:10%; margin-right: 10%;">
-    @if (count($partners) > 0)
-        <div class="row">
-            @foreach ($partners as $partner)
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <a href="{{ route('web.showpartner', $partner->slug) }}">
-                        <div class="testimotionals">
-                            <div class="card mb-3">
-                            <div class="layer"></div>
-                            <div class="content">
-                                <div class="image">
-                                    <img class="lazyload" width="125px" height="150px" data-src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
-                                </div>
-                                <h5>
-                                    <b>
-                                        @if ($partner->title == "Abogado")
-                                        Abg.
-                                        @elseif($partner->title == "Licenciado")
-                                        Lic.
-                                        @endif
-                                        {{ $partner->name }} {{ $partner->lastname }}
-                                    </b>
-                                </h5> 
-                                 @foreach ($partner->specialties as $specialty)
-                                <div class="d-inline" style="font-size: 14px">
-                                    • {{ $specialty->name_specialty }}
-                                </div>
-                                @endforeach
-                                <h6 class="mt-2"><b>{{ $partner->country_residence }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png') }}"/></b></h6>
-                                @if ($partner->state != null)
-                                    <h6><b>{{ $partner->state }}</b></h6>
-                                @endif
-                                <div class="row mt-3">
-                                    <div class="col-sm-12">
-                                        <p><i class="fas fa-phone-alt"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
-                                    </div>
-                                    <br>
-                                </div>	
-                                <div class="row" style="margin-top: -15px">
-                                    <div class="col">
-                                        <p style="font-size: 10px"><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ $partner->email }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
-        </div>
-        @else
-            <div class="row d-flex text-align-center justify-content-center">
-                <div class="alert alert-success">
-                    <h4>No se encontraron registros</h4>
-                </div>        
-            </div>
-        @endif
-</div> --}}
 @endsection
 
 @section('script')
