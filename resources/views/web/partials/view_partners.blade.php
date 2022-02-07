@@ -80,7 +80,7 @@
                                         </h5>
                                         {{-- <p>{{ $partner->specialty }}</p> --}}
                                         @foreach ($partner->specialties as $specialty)
-                                        <div class="d-inline txtDataPartner dismissMarginTopBottom" style="font-size: 13px">
+                                        <div class="d-inline txtDataPartner dismissMarginTopBottom" style="font-size: 12px">
                                             • {{ $specialty->name_specialty }}
                                         </div>
                                         @endforeach
