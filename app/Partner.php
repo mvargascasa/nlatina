@@ -41,6 +41,7 @@ class Partner extends Authenticatable implements MustVerifyEmail
         'biography_html',
         'slug',
         'status',
+        'fecha_publicado',
         'checkterminos',
         'terminos_verified_at',
         'created_at', 
