@@ -152,15 +152,15 @@
                margin-left: -25% !important;
             }
             .txtDataPartner{
-                font-size: 12px !important;
+                font-size: 10px !important;
             }
             .dismissMarginTopBottom{
                 margin-top: 0% !important;
                 margin-bottom: 0% !important;
             }
             .image{
-                width: 75px !important; 
-                height: 100px !important;
+                width: 100px !important; 
+                height: 125px !important;
             }
         }
         .titulo{
