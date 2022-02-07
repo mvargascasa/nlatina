@@ -68,7 +68,7 @@
                                         </div>
                                     </div>
                                     <div id="rowDataPartner" class="col-6 col-sm-12">
-                                        <h5 style="font-size: 13px" class="txtDataPartner dismissMarginTopBottom">
+                                        <h5 style="font-size: 13px; text-align: left" class="txtDataPartner dismissMarginTopBottom">
                                             <b>
                                                 @if ($partner->title == "Abogado")
                                                 Abg.
