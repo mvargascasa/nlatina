@@ -122,10 +122,6 @@
                 margin-left: -40px !important;
                 margin-right: -65px !important;
             }
-            .selects{
-                height: 27px !important; 
-                font-size: 11px !important;
-            }
             #btnBuscar{
                 width: 120px !important; 
                 height: 20px !important; 
