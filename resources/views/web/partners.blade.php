@@ -293,7 +293,7 @@
     </div>
 </section>
 
-<div id="contentPartner" style="background-color: #f5f6f8">
+<div class="pb-3" id="contentPartner" style="background-color: #f5f6f8">
     @include('web.partials.search_partner')   
 </div>
 
