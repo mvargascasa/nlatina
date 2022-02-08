@@ -351,7 +351,10 @@
                 },
                 error: function(xhr, status, error){
                     var errorMessage = xhr.status + ': ' + xhr.statusText
-                    alert('Error - ' + errorMessage);
+                    if(xhr.status == 419){
+                        alert('Por favor recargue la página');
+                    }
+                    // alert('Error - ' + errorMessage);
                 }
             });
         }
