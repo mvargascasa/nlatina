@@ -309,7 +309,7 @@
                                                 @foreach ($specialties as $specialty)
                                                 <div class="col-6 col-sm-4">
                                                     <label for="specialties">
-                                                        {!! Form::checkbox('specialties[]', $specialty->id, null) !!}
+                                                        {!! Form::checkbox('specialties[]', $specialty->id, null, ['class' => 'checkSpecialties']) !!}
                                                         {{ $specialty->name_specialty}}
                                                     </label>
                                                 </div>
@@ -319,7 +319,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                {!! Form::label('specialty', 'Especialidad(es)') !!} <b style="font-size: 14px">(Descripción más detallada sus especialidades)</b>
+                                                {!! Form::label('specialty', 'Especialidad(es)') !!} <b style="font-size: 14px">(Descripción más detallada)</b>
                                                 {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control', 'onkeyup' => 'countChars();', 'minlength' => '100', 'maxlength' => '200']) !!}
                                                 <div class="d-flex float-right">
                                                     <p id="charNum">0 caracteres</p>
@@ -631,6 +631,7 @@
             showInputNameCompany();
             comprobar();
             setSrcImageWelcome();
+            deshabilitarCheckBox();
         });
 
         document.addEventListener("DOMContentLoaded", function(event) {
@@ -708,6 +709,13 @@
             document.getElementById("imgWelcome").src = "{{ asset('img/partners/bienvenida.jpg') }}";
             }
         }
+
+        function deshabilitarCheckBox(){
+            var bol = $(".checkSpecialties:checked").length >= 3;     
+            $(".checkSpecialties").not(":checked").attr("disabled",bol);
+        }
+
+        $(".checkSpecialties").click(() => deshabilitarCheckBox());
 
     </script>
 @endsection
