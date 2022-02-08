@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PartnerController;
+// use App\Http\Controllers\PartnerController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;

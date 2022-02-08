@@ -387,7 +387,7 @@
         }
 
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-PARTNERS.jpg')}}')";
+        document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-PARTNERS.webp')}}')";
     });
   </script>
 @endsection
