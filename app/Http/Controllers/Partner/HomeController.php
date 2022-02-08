@@ -8,6 +8,7 @@ use App\Specialty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class HomeController extends Controller
 {
@@ -48,7 +49,6 @@ class HomeController extends Controller
     
     public function update(Partner $partner, Request $request)
     {
-
         if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
             $request->img_profile = $partner->img_profile;
         } else if($request->img_profile != null && $partner->img_profile != null){
@@ -56,9 +56,15 @@ class HomeController extends Controller
                 'img_profile' => 'image'
             ], [
                 'img_profile.image' => "El formato no es válido"
-            ]);
+            ]); 
             $url = Storage::put('partners', $request->file('img_profile'));
-            Storage::delete($partner->img_profile);
+            Storage::delete($partner->img_profile); //Si cambia la imagen de perfil, elimina la antigua foto
+            $image = Image::make(Storage::get($url));
+            $image->resize(844, 1035, function($constraint){
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            Storage::put($url, (string) $image->encode('jpg', 72));
             $partner->img_profile = $url;
         } else if($request->img_profile != null && $partner->img_profile == null){
             $request->validate([
@@ -67,6 +73,12 @@ class HomeController extends Controller
                 'img_profile.image' => "El formato no es válido"
             ]);
             $url = Storage::put('partners', $request->file('img_profile'));
+            $image = Image::make(Storage::get($url));
+            $image->resize(844, 1035, function($constraint){
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            Storage::put($url, (string) $image->encode('jpg', 72));
             $partner->img_profile = $url;
         }
 
