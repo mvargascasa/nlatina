@@ -206,6 +206,134 @@ class WebController extends Controller
                 case 'affidavit-support-new-york':
                     return view('web.office.affidavit', compact('data'));
                     break;
+                case 'apostillar-certificado-de-nacimiento-new-york':
+                    $data['description'] = 'Certificados de Nacimiento';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-reporte-consular-new-york':
+                    $data['description'] = 'Reporte Consular';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificados-de-matrimonio-new-york':
+                    $data['description'] = 'Certificados de Matrimonio';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-defuncion-new-york':
+                    $data['description'] = 'Certificados de Defunción';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-divorcio-new-york':
+                    $data['description'] = 'Certificados de Divorcio';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-naturalizacion-new-york':
+                    $data['description'] = 'Certificados de Naturalización';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-expediente-de-adopcion-new-york':
+                    $data['description'] = 'Expediente de Adopción';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-copia-de-pasaporte-new-york':
+                    $data['description'] = 'Copia de pasaporte';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-copia-de-licencia-de-conducir-new-york':
+                    $data['description'] = 'Copia de Licencia de Conducir';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-escrituras-testamentos-new-york':
+                    $data['description'] = 'Escrituras y Testamentos';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-declaraciones-juradas-de-estado-unico-new-york':
+                    $data['description'] = 'Declaraciones Juradas';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-titulo-de-automovil-new-york':
+                    $data['description'] = 'Título de coche/automóvil';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-autorizacion-de-viaje-new-york':
+                    $data['description'] = 'Autorización de Viaje';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-poder-notarial-personal-new-york':
+                    $data['description'] = 'Poder Notarial Personal';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-registro-de-policia-estatal-new-york':
+                    $data['description'] = 'Registro de la policía estatal';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-registro-de-antecedentes-fbi-new-york':
+                    $data['description'] = 'Registros de antecedentes del FBI';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-diploma-universitario-new-york':
+                    $data['description'] = 'Diploma Universitario';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break; 
+                case 'apostillar-transcripcion-universitaria-new-york':
+                    $data['description'] = 'Transcripción Universitaria';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-diploma-de-escuela-secundaria-new-york':
+                    $data['description'] = 'Diploma de Escuela Secundaria';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break; 
+                case 'apostillar-transcripcion-de-escuela-secundaria-new-york':
+                    $data['description'] = 'Transcripción de Escuela Secundaria';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-incorporacion-new-york':
+                    $data['description'] = 'Certificado de Incorporación';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-buena-reputacion-new-york':
+                    $data['description'] = 'Certificado de Buena Reputación';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-origen-new-york':
+                    $data['description'] = 'Certificado de Origen';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-marca-patente-new-york':
+                    $data['description'] = 'Marcas o Patentes';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break; 
+                case 'apostillar-poder-comercial-new-york':
+                    $data['description'] = 'Poder Comercial';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-declaracion-jurada-comercial-new-york':
+                    $data['description'] = 'Declaración Jurada Comercial';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-fda-new-york':
+                    $data['description'] = 'Certificado FDA';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-facturas-new-york':
+                    $data['description'] = 'Facturas';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;   
+                case 'apostillar-departamento-de-hacienda-new-york':
+                    $data['description'] = 'Departamento de Hacienda';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-gobierno-extranjero-new-york':
+                    $data['description'] = 'Certificado de Gobierno Extranjero';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-venta-gratis-new-york':
+                    $data['description'] = 'Certificado de Venta gratis';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-ordenes-de-compra-new-york':
+                    $data['description'] = 'Órdenes de compra';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
                 default:
                     # code...
                     break;
@@ -275,6 +403,134 @@ class WebController extends Controller
                     break;
                 case 'affidavit-support-new-jersey':
                     return view('web.office.affidavit', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-nacimiento-new-jersey':
+                    $data['description'] = 'Certificados de Nacimiento';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-reporte-consular-new-jersey':
+                    $data['description'] = 'Reporte Consular';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-matrimonio-new-jersey':
+                    $data['description'] = 'Certificados de Matrimonio';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-defuncion-new-jersey':
+                    $data['description'] = 'Certificados de Defunción';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-divorcio-new-jersey':
+                    $data['description'] = 'Certificados de Divorcio';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-naturalizacion-new-jersey':
+                    $data['description'] = 'Certificados de Naturalización';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-expediente-de-adopcion-new-jersey':
+                    $data['description'] = 'Expediente de Adopción';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-copia-de-pasaporte-new-jersey':
+                    $data['description'] = 'Copia de pasaporte';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-copia-de-licencia-de-conducir-new-jersey':
+                    $data['description'] = 'Copia de Licencia de Conducir';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-escrituras-testamentos-new-jersey':
+                    $data['description'] = 'Escrituras y Testamentos';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-declaraciones-juradas-de-estado-unico-new-jersey':
+                    $data['description'] = 'Declaraciones Juradas';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-titulo-de-automovil-new-jersey':
+                    $data['description'] = 'Título de coche/automóvil';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-autorizacion-de-viaje-new-jersey':
+                    $data['description'] = 'Autorización de Viaje';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-poder-notarial-personal-new-jersey':
+                    $data['description'] = 'Poder Notarial Personal';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-registro-de-policia-estatal-new-jersey':
+                    $data['description'] = 'Registro de la policía estatal';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-registro-de-antecedentes-fbi-new-jersey':
+                    $data['description'] = 'Registros de antecedentes del FBI';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-diploma-universitario-new-jersey':
+                    $data['description'] = 'Diploma Universitario';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break; 
+                case 'apostillar-transcripcion-universitaria-new-jersey':
+                    $data['description'] = 'Transcripción Universitaria';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-diploma-de-escuela-secundaria-new-jersey':
+                    $data['description'] = 'Diploma de Escuela Secundaria';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break; 
+                case 'apostillar-transcripcion-de-escuela-secundaria-new-jersey':
+                    $data['description'] = 'Transcripción de Escuela Secundaria';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-incorporacion-new-jersey':
+                    $data['description'] = 'Certificado de Incorporación';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-buena-reputacion-new-jersey':
+                    $data['description'] = 'Certificado de Buena Reputación';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-origen-new-jersey':
+                    $data['description'] = 'Certificado de Origen';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-marca-patente-new-jersey':
+                    $data['description'] = 'Marcas o Patentes';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break; 
+                case 'apostillar-poder-comercial-new-jersey':
+                    $data['description'] = 'Poder Comercial';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-declaracion-jurada-comercial-new-jersey':
+                    $data['description'] = 'Declaración Jurada Comercial';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-fda-new-jersey':
+                    $data['description'] = 'Certificado FDA';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-facturas-new-jersey':
+                    $data['description'] = 'Facturas';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;   
+                case 'apostillar-departamento-de-hacienda-new-jersey':
+                    $data['description'] = 'Departamento de Hacienda';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-gobierno-extranjero-new-jersey':
+                    $data['description'] = 'Certificado de Gobierno Extranjero';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-venta-gratis-new-jersey':
+                    $data['description'] = 'Certificado de Venta gratis';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-ordenes-de-compra-new-jersey':
+                    $data['description'] = 'Órdenes de compra';
+                    return view('web.office.apostille_layout', compact('data'));
                     break;
                 default:
                     # code...
@@ -346,6 +602,134 @@ class WebController extends Controller
                     break;
                 case 'affidavit-support-florida':
                     return view('web.office.affidavit', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-nacimiento-florida':
+                    $data['description'] = 'Certificados de Nacimiento';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-reporte-consular-florida':
+                    $data['description'] = 'Reporte Consular';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-matrimonio-florida':
+                    $data['description'] = 'Certificados de Matrimonio';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-defuncion-florida':
+                    $data['description'] = 'Certificados de Defunción';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-divorcio-florida':
+                    $data['description'] = 'Certificados de Divorcio';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-de-naturalizacion-florida':
+                    $data['description'] = 'Certificados de Naturalización';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-expediente-de-adopcion-florida':
+                    $data['description'] = 'Expediente de Adopción';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-copia-de-pasaporte-florida':
+                    $data['description'] = 'Copia de pasaporte';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-copia-de-licencia-de-conducir-florida':
+                    $data['description'] = 'Copia de Licencia de Conducir';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-escrituras-testamentos-florida':
+                    $data['description'] = 'Escrituras y Testamentos';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-declaraciones-juradas-de-estado-unico-florida':
+                    $data['description'] = 'Declaraciones Juradas';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-titulo-de-automovil-florida':
+                    $data['description'] = 'Título de coche/automóvil';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-autorizacion-de-viaje-florida':
+                    $data['description'] = 'Autorización de Viaje';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-poder-notarial-personal-florida':
+                    $data['description'] = 'Poder Notarial Personal';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-registro-de-policia-estatal-florida':
+                    $data['description'] = 'Registro de la policía estatal';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-registro-de-antecedentes-fbi-florida':
+                    $data['description'] = 'Registros de antecedentes del FBI';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-diploma-universitario-florida':
+                    $data['description'] = 'Diploma Universitario';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break; 
+                case 'apostillar-transcripcion-universitaria-florida':
+                    $data['description'] = 'Transcripción Universitaria';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-diploma-de-escuela-secundaria-florida':
+                    $data['description'] = 'Diploma de Escuela Secundaria';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break; 
+                case 'apostillar-transcripcion-de-escuela-secundaria-florida':
+                    $data['description'] = 'Transcripción de Escuela Secundaria';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-incorporacion-florida':
+                    $data['description'] = 'Certificado de Incorporación';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-buena-reputacion-florida':
+                    $data['description'] = 'Certificado de Buena Reputación';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-origen-florida':
+                    $data['description'] = 'Certificado de Origen';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-marca-patente-florida':
+                    $data['description'] = 'Marcas o Patentes';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break; 
+                case 'apostillar-poder-comercial-florida':
+                    $data['description'] = 'Poder Comercial';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-declaracion-jurada-comercial-florida':
+                    $data['description'] = 'Declaración Jurada Comercial';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-certificado-fda-florida':
+                    $data['description'] = 'Certificado FDA';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-facturas-florida':
+                    $data['description'] = 'Facturas';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;   
+                case 'apostillar-departamento-de-hacienda-florida':
+                    $data['description'] = 'Departamento de Hacienda';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-gobierno-extranjero-florida':
+                    $data['description'] = 'Certificado de Gobierno Extranjero';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;  
+                case 'apostillar-certificado-de-venta-gratis-florida':
+                    $data['description'] = 'Certificado de Venta gratis';
+                    return view('web.office.apostille_layout', compact('data'));
+                    break;
+                case 'apostillar-ordenes-de-compra-florida':
+                    $data['description'] = 'Órdenes de compra';
+                    return view('web.office.apostille_layout', compact('data'));
                     break;
                 default:
                     # code...
@@ -482,5 +866,89 @@ class WebController extends Controller
         $request->session()->flash('rating', 'Gracias por enviar tu valoración');
 
         return redirect()->back();
+    }
+
+    public function sendEmailApostille(Request $request){
+
+        $pais = $this->getPaisByCodigo($request->cod_pais);
+        $from_email		 = $request->email; //from mail, sender email address
+        $recipient_email = 'sebas31051999@gmail.com'; //recipient email address
+        
+        $subject = 'Servicios de Apostilla | Notaria Latina'; //subject for the email
+        $message = "<br><strong><h3>Información del cliente</h3></strong>
+        <br><b>Nombre:</b> " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
+        <br><b>País de residencia:</b> " . strip_tags($pais) . "
+        <br><b>Teléfono:</b> " . strip_tags($request->cod_pais) . " " . strip_tags($request->phone) ."
+        <br><b>Email:</b> " . strip_tags($request->email) . "
+        <br><b>Documento a Apostillar:</b> " . strip_tags($request->document) . "
+        <br><b>Mensaje:</b> " . strip_tags($request->mensaje) . "
+        "; //body of the email
+
+        if ($request->file('adjunto') != null) {
+            $tmp_name = $_FILES['adjunto']['tmp_name']; // get the temporary file name of the file on the server
+            $name	 = $_FILES['adjunto']['name']; // get the name of the file
+            $size	 = $_FILES['adjunto']['size']; // get size of the file for size validation
+            $type	 = $_FILES['adjunto']['type']; // get type of the file
+            $error	 = $_FILES['adjunto']['error']; // get the error (if any)
+    
+            //validate form field for attaching the file
+            if($error > 0)
+            {
+                die('Upload error or No files uploaded');
+            }
+    
+            //read from the uploaded file & base64_encode content
+            $handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
+            $content = fread($handle, $size); // reading the file
+            fclose($handle);				 // close upon completion
+    
+            $encoded_content = chunk_split(base64_encode($content));
+    
+            $boundary = md5("random"); // define boundary with a md5 hashed value
+        }
+        
+
+        //header
+        $headers = "MIME-Version: 1.0\r\n"; // Defining the MIME version
+        $headers .= "From:".$from_email."\r\n"; // Sender Email
+        if ($request->file('adjunto') != null) {
+            $headers .= "Content-Type: multipart/mixed;"; // Defining Content-Type
+            $headers .= "boundary = $boundary\r\n"; //Defining the Boundary
+        } else {
+            $headers .= "Content-Type: text/html; charset=UTF-8";
+        }
+            
+        //plain text
+        $body = "";
+        if ($request->file('adjunto') != null) {
+            $body .= "--$boundary\r\n";
+            $body .= "Content-Type: text/html; charset=UTF-8\r\n";
+            $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
+            $body .= chunk_split(base64_encode($message));
+        }
+            
+        //attachment
+        if ($request->file('adjunto') != null) {
+            $body .= "--$boundary\r\n";
+            $body .="Content-Type: $type; name=".$name."\r\n";
+            $body .="Content-Disposition: attachment; filename=".$name."\r\n";
+            $body .="Content-Transfer-Encoding: base64\r\n";
+            $body .="X-Attachment-Id: ".rand(1000, 99999)."\r\n\r\n";
+            $body .= $encoded_content; // Attaching the encoded file with email
+        }
+        
+        if($request->file('adjunto') != null){
+            $sentMailResult = mail($recipient_email, $subject, $body, $headers);
+        } else {
+            $sentMailResult = mail($recipient_email, $subject, $message, $headers);
+        }
+
+        if($sentMailResult){
+            $request->session()->flash('success', 'Hemos enviado tu información');
+        } else {
+            $request->session()->flash('error', 'Algo salio mal');
+        }
+        
+        return back();
     }
 }

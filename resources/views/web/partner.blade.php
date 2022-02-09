@@ -157,8 +157,6 @@
         input[type="radio"]:checked ~ label {
         color: orange;
         }
-
-
     </style>
 @endsection
 
@@ -385,22 +383,4 @@
 
 @section('script')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
-        // window.addEventListener('resize', function(){
-        //     var imgpartner = document.getElementById('imgPartner');
-        //     if(screen.width < 580){
-        //         imgpartner.classList.add('float-center');
-        //     } else {
-        //         imgpartner.classList.remove('float-center');
-        //     }
-        // });
-
-        // $('#addStar').change('.star', function(e) {
-        //     $(this).submit();
-        // });
-
-        // function openModalRating(){
-        //     document.getElementById('exampleModalCenter').style.display = "block";
-        // }
-    </script>
 @endsection

@@ -136,6 +136,9 @@ Route::get('/thankpartner', function(){return view('web.thankpartner');});
 Route::get('/newjersey/{service?}', 'WebController@oficinasnj')->name('web.oficina.newjersey');
 Route::get('/florida/{service?}', 'WebController@oficinasfl')->name('web.oficina.florida');
 Route::get('/newyork/{service?}', 'WebController@oficinasny')->name('web.oficina.newyork');
+//APOSTILLE SERVICES OFICINAS
+// Route::get('/apostilla', function(){return view('web.office.apostille_layout');});
+Route::post('/send-apostille', 'WebController@sendEmailApostille')->name('send.apostilla');
 
 //SEND-EMAIL-OFICINA
 Route::post('/sendmail-oficina', 'WebController@sendEmailOficina')->name('send.email.oficinas');
