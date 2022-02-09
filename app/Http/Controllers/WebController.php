@@ -873,7 +873,7 @@ class WebController extends Controller
         $from_email		 = "apostillas@notarialatina.com"; //from mail, sender email address
         $recipient_email = 'sebas31051999@gmail.com'; //recipient email address
         
-        $subject = 'Servicios de Apostilla | Notaria Latina'; //subject for the email
+        $subject = 'Servicios de Apostilla | Notaria Latina ' . date(now()); //subject for the email
         $message = "<br><strong><h3>Información del cliente</h3></strong>
         <br><b>Nombre:</b> " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
         <br><b>País de residencia:</b> " . strip_tags($pais) . "
