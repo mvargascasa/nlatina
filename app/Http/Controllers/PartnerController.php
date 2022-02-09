@@ -31,7 +31,7 @@ class PartnerController extends Controller
         $verified = Partner::where('email_verified_at', '!=', 'null')->count();
 
         $partners = Partner::name($name)
-                    ->orderBy('id', 'desc')
+                    ->orderBy('id', 'asc')
                     ->paginate(10);
 
         return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified'));
