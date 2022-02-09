@@ -8,7 +8,8 @@
                 font-size: 20px !important;
             }
             #txtSubtitle{
-                font-size: 20px !important;
+                font-size: 18px !important;
+                justify-content: left !important;
             }
             #card{
                 margin-right: 0px !important;
