@@ -871,7 +871,7 @@ class WebController extends Controller
     public function sendEmailApostille(Request $request){
 
         $pais = $this->getPaisByCodigo($request->cod_pais);
-        $from_email		 = $request->email; //from mail, sender email address
+        $from_email		 = "apostillas@notarialatina.com"; //from mail, sender email address
         $recipient_email = 'sebas31051999@gmail.com'; //recipient email address
         
         $subject = 'Servicios de Apostilla | Notaria Latina'; //subject for the email
