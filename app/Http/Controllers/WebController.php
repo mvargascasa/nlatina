@@ -6,13 +6,14 @@ use App\Consulate;
 use App\Country;
 use App\Http\Traits\GetCodByCountryTrait;
 use App\Http\Traits\GetCountryByCodTrait;
+use App\Mail\SendLead;
 use App\Partner;
 use App\Post;
 use App\Rating;
 use App\Specialty;
 use App\State;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use Session;
 
 class WebController extends Controller
 {
@@ -909,7 +910,7 @@ class WebController extends Controller
 
         //header
         $headers = "MIME-Version: 1.0\r\n"; // Defining the MIME version
-        $headers .= "From:". $from_email."\r\n"; // Sender Email
+        $headers .= "From:".$from_email."\r\n"; // Sender Email
         if ($request->file('adjunto') != null) {
             $headers .= "Content-Type: multipart/mixed;"; // Defining Content-Type
             $headers .= "boundary = $boundary\r\n"; //Defining the Boundary
