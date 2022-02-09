@@ -7,6 +7,9 @@
             #title{
                 font-size: 20px !important;
             }
+            #txtSubtitle{
+                font-size: 20px !important;
+            }
             #card{
                 margin-right: 0px !important;
                 margin-left: 0px !important;
@@ -16,7 +19,7 @@
                 margin-right: 0px !important;
             }
             .inputs{
-                font-size: 10px !important;
+                font-size: 12px !important;
                 margin-bottom: -25px !important;
             }
         }
@@ -35,7 +38,7 @@
             <div class="card-header" style="border-bottom: none; background-color: #ffffff">
                 <div class="d-flex justify-content-center align-items-center">
                     {{-- <img class="img-fluid" style="margin-left: 1%; margin-top: 1%" src="{{ asset('img/apostilla-haya1.png') }}" alt=""> --}}
-                    <h4 class="text-center" style="font-size: 30px; margin-left: 5%; margin-right: 5%; margin-top: 1%">Para apostillar <b>{{ $data['description'] }}</b> por favor complete el siguiente formulario con su información y el documento a realizar el trámite</h4>
+                    <h4 id="txtSubtitle" class="text-center" style="font-size: 30px; margin-left: 5%; margin-right: 5%; margin-top: 1%">Para apostillar <b>{{ $data['description'] }}</b> por favor complete el siguiente formulario con su información y el documento a realizar el trámite</h4>
                 </div>
             </div>
             <div class="card-body">
