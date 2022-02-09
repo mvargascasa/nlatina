@@ -909,7 +909,7 @@ class WebController extends Controller
 
         //header
         $headers = "MIME-Version: 1.0\r\n"; // Defining the MIME version
-        $headers .= "From:". $from_email . " " . Str::limit(date(now()), 10, '') . "\r\n"; // Sender Email
+        $headers .= "From:". $from_email . " " . date(now()) . "\r\n"; // Sender Email
         if ($request->file('adjunto') != null) {
             $headers .= "Content-Type: multipart/mixed;"; // Defining Content-Type
             $headers .= "boundary = $boundary\r\n"; //Defining the Boundary
