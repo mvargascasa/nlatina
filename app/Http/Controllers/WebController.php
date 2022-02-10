@@ -870,15 +870,14 @@ class WebController extends Controller
 
     public function sendEmailApostille(Request $request){
 
-        $pais = $this->getPaisByCodigo($request->cod_pais);
         $from_email		 = "apostillas@notarialatina.com"; //from mail, sender email address
         $recipient_email = 'sebas31051999@gmail.com'; //recipient email address
         
         $subject = 'Servicios de Apostilla | Notaria Latina - ' . date(now()); //subject for the email
         $message = "<br><strong><h3>Información del cliente</h3></strong>
         <br><b>Nombre:</b> " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
-        <br><b>País de residencia:</b> " . strip_tags($pais) . "
-        <br><b>Teléfono:</b> " . strip_tags($request->cod_pais) . " " . strip_tags($request->phone) ."
+        <br><b>País de residencia:</b> " . strip_tags($request->cod_pais) . "
+        <br><b>Teléfono:</b> " . strip_tags($request->phone) . "
         <br><b>Email:</b> " . strip_tags($request->email) . "
         <br><b>Documento a Apostillar:</b> " . strip_tags($request->document) . "
         <br><b>Mensaje:</b> " . strip_tags($request->mensaje) . "

@@ -53,7 +53,6 @@
                         </div>
                         <div class="mb-5 d-flex">
                             @include('layouts.select_countries')
-                            <input class="form-control inputs" type="text" id="telf" style="border: none; border-bottom:solid 1px; border-radius: 0px; margin-left: 5px; margin-right: 5px; background-color: #ffffff; border-radius: 0px; border-color: rgb(228, 216, 216)" value="Código país" readonly>
                             <input class="form-control inputs" type="number" placeholder="Teléfono*" style="border: none; border-bottom:solid 1px; border-radius: 0px; border-radius: 0px; border-color: rgb(228, 216, 216)" name="phone" id="phone" maxlength="14" minlength="8" autocomplete="off" required>
                         </div>
                         <div class="mb-5 d-flex">
@@ -101,17 +100,5 @@
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-    <script>
-        var pais = document.getElementById('pais');
-        var telf = document.getElementById('telf');
 
-    pais.onchange = function(e) {
-	    telf.value = this.value;
-	    if((this.value).trim() != '') {
-            telf.disabled = false;
-	    } else {
-		    telf.disabled = true;
-	    }
-    }
-    </script>
 @endsection
