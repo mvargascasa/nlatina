@@ -22,7 +22,7 @@
   </section>
 
   <div class="container pt-4">
-            <h3 class="font-weight-bold pt-4">¿Qué documentos necesita para la obtención de su licencia?</h3>
+            <h3>¿Qué documentos necesita para la obtención de su licencia?</h3>
             <p class="text-muted text-justify">
                 Todos los residentes de Nueva Jersey que soliciten una licencia de conducir deben mostrar prueba de identidad
                 (por ejemplo un pasaporte, certificado de nacimiento, o tarjeta de identificación consular), prueba de 
@@ -31,26 +31,26 @@
                 a la fecha de emisión de la documentación. 
             </p>
 
-            <h3 class="font-weight-bold pt-4">¿Aceptará la MVC mis documentos si están en un idioma que no sea el inglés?</h3>
+            <h3>¿Aceptará la MVC mis documentos si están en un idioma que no sea el inglés?</h3>
             <p class="text-muted text-justify">
                 Se requerirá una traducción certificada para TODOS los documentos que no sean escritos en Inglés. 
                 Notaria Publica Latina en New jersey le ofrece una traducción certificada de los documentos de la MVC para su trámite.  
             </p>
 
-            <h3 class="font-weight-bold pt-4">¿Cuánto cuesta y cómo se puede pagar?</h3>
+            <h3>¿Cuánto cuesta y cómo se puede pagar?</h3>
             <p class="text-muted">
                 El permiso cuesta $10 dólares y la licencia de conducir estándar de NJ cuesta $24 dólares. Puede pagar con tarjetas
                 como American Express®, MasterCard®, Visa®, Discover card®, cheques o efectivo.
             </p>
 
-            <h3 class="font-weight-bold pt-4">¿Tuvo problemas con el trámite?</h3>
+            <h3>¿Tuvo problemas con el trámite?</h3>
             <p class="text-muted text-justify">
                 Si un solicitante cree que ha sido tratado injustamente o que se le ha negado el servicio injustamente, puede presentar una queja formal ante la NJMVC utilizando <a target="_blank" href="https://www.state.nj.us/mvc/pdf/about/Title_VI_Form.pdf"> este formulario en inglés</a>. Recuerde que no puede haber discriminación o la denegación de servicio por motivos de raza, color, origen nacional u otras categorías protegidas.
                 Recuerde, la Comisión de Vehículos de Motor de Nueva Jersey no le debería preguntar sobre su estatus migratorio o pedir compensación adicional para realizar el trámite. 
                 Para preguntas generales en inglés o español, puede enviar un correo electrónico a <a href="mailto:MVC.Correspondence@mvc.nj.gov">MVC.Correspondence@mvc.nj.gov</a> 
             </p>
 
-       <h3 class="font-weight-bold pt-4">¿En que tiempo me entregan mis documentos traducidos?</h3>
+       <h3>¿En que tiempo me entregan mis documentos traducidos?</h3>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>

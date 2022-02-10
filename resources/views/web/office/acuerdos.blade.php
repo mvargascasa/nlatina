@@ -33,19 +33,19 @@
 
 <div class="container pt-4">
     <h3>Los acuerdos son un pacto firmado entre dos o más personas que están de acuerdo con lo estipulado en el documento.</h3>
-            <h3 class="font-weight-bold pt-4">¿Para que me sirve realizar un acuerdo?</h3>
+            <h3>¿Para que me sirve realizar un acuerdo?</h3>
             <p class="text-muted">Para comprometer a las dos personas a cumplir con  obligaciones y derechos establecidos por ley.</p>
 
-            <h3 class="font-weight-bold pt-4">¿Que requisitos necesito para realizar un acuerdo?</h3>
+            <h3>¿Que requisitos necesito para realizar un acuerdo?</h3>
             <ul class="text-muted">
                 <li>Identificación válida de las personas que van a realizar el acuerdo.</li>
                 <li>Información de lo que se quiere dejar estipulado en el acuerdo.</li>
             </ul>
 
-            <h3 class="font-weight-bold pt-4">¿Donde puedo realizar un acuerdo?</h3>
+            <h3>¿Donde puedo realizar un acuerdo?</h3>
             <p class="text-muted">Acérquese a nuestra oficina y un asesor lo guiará en la gestión del documento para que realice el trámite de manera correcta y segura.</p>
 
-       <h3 class="font-weight-bold pt-4">¿En que tiempo me entregan los acuerdos?</h3>
+       <h3>¿En que tiempo me entregan los acuerdos?</h3>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
