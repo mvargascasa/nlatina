@@ -227,10 +227,10 @@
             </div>
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <div class="grow">
-                    {{-- <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['oficina'])), Str::slug($data['txtgrid']).'-en-'.Str::slug($data['oficina'])) }}""> --}}
+                    <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), Str::lower(Str::slug($data['txtgrid'])).'-en-'.Str::slug($data['office'])) }}"">
                         <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset($data['imggrid']) }}" alt="">
                         <p>{{ $data['txtgrid'] }}</p>
-                    {{-- </a> --}}
+                    </a>
                 </div>
             </div>
         </div>

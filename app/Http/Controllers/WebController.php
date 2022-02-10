@@ -206,6 +206,9 @@ class WebController extends Controller
                 case 'affidavit-support-new-york':
                     return view('web.office.affidavit', compact('data'));
                     break;
+                case 'motor-vehicle-commission-en-new-york':
+                    return view('web.office.vehicle_comission', compact('data'));
+                    break;
                 case 'apostillar-certificado-de-nacimiento-new-york':
                     $data['description'] = 'Certificados de Nacimiento';
                     return view('web.office.apostille_layout', compact('data'));
@@ -403,6 +406,9 @@ class WebController extends Controller
                     break;
                 case 'affidavit-support-new-jersey':
                     return view('web.office.affidavit', compact('data'));
+                    break;
+                case 'motor-vehicle-commission-en-new-jersey':
+                    return view('web.office.vehicle_comission', compact('data'));
                     break;
                 case 'apostillar-certificado-de-nacimiento-new-jersey':
                     $data['description'] = 'Certificados de Nacimiento';
@@ -602,6 +608,9 @@ class WebController extends Controller
                     break;
                 case 'affidavit-support-florida':
                     return view('web.office.affidavit', compact('data'));
+                    break;
+                case 'matrimonios-en-florida':
+                    return view('web.office.matrimonios', compact('data'));
                     break;
                 case 'apostillar-certificado-de-nacimiento-florida':
                     $data['description'] = 'Certificados de Nacimiento';
