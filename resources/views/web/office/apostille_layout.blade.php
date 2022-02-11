@@ -40,7 +40,7 @@
         <div id="card" class="card ml-5 mr-5" style="box-shadow: 1px 1px 4px 4px #d5d4d4; border-radius: 0px">
             <div class="card-header" style="border-bottom: none; background-color: #333333">
                 <div class="d-flex justify-content-center align-items-center">
-                    <h5 id="txtSubtitle" class="text-center text-white" style="font-size: 30px; margin-left: 5%; margin-right: 5%; margin-top: 1%; padding-top: 2%; padding-bottom: 2%">Para apostillar <b>{{ $data['description'] }}</b>, complete el formulario y nos póndremos en contacto</h5>
+                    <h5 id="txtSubtitle" class="text-center text-white" style="font-size: 30px; margin-left: 5%; margin-right: 5%; margin-top: 1%; padding-top: 2%; padding-bottom: 2%">Para apostillar <b>{{ $data['description'] }}</b>, complete el formulario y nos pondrémos en contacto</h5>
                 </div>
             </div>
             <div class="card-body">
