@@ -44,6 +44,13 @@
                 <div class="card-header font-weight-bold">
                     PARTNERS
                     <div class="float-right ml-1">
+                        <form id="formOrderBy" action="{{route('partner.index')}}" method="POST">
+                            @csrf
+                            <input type="hidden" id="inputOrderBy" name="orderBy" value="{{ $orderBy }}">
+                            <button type="submit" onclick="changeOrderBy();" class="btn btn-outline-secondary"><img style="width: 15px; height: 15px" src="{{ asset('img/order.png') }}" alt=""></button>
+                        </form>
+                    </div>
+                    <div class="float-right ml-1">
                         <form action="{{route('partner.index')}}" method="POST">
                             @csrf
                             <input type="hidden" name="publicadosHoy" value="{{ Str::limit(date(now()), 10, '') }}">
@@ -127,5 +134,22 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('end-scripts')
+    <script>
+        function changeOrderBy(){
+            var formOrderBy = document.getElementById('formOrderBy');
+            var inputOrderBy = document.getElementById('inputOrderBy');
+            formOrderBy.submit(() => {
+                console.log(inputOrderBy.value);
+                if(inputOrderBy.value == 'desc'){
+                    inputOrderBy.value = 'asc';
+                } else {
+                    inputOrderBy.value = 'desc'; 
+                }
+            })
+        }
+    </script>
 @endsection
 
