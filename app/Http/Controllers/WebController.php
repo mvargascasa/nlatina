@@ -211,193 +211,193 @@ class WebController extends Controller
                     break;
                 case 'apostillar-certificado-de-nacimiento-new-york':
                     $data['description'] = 'Certificados de Nacimiento';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento 📃 en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento 📃 en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-reporte-consular-new-york':
                     $data['description'] = 'Reporte Consular';
-                    $data['metadescription'] = "Apostillamos Reporte Consular CRBA Nacidos en el Extranjero 📃 en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Reporte Consular CRBA Nacidos en el Extranjero 📃 en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificados-de-matrimonio-new-york':
                     $data['description'] = 'Certificados de Matrimonio';
-                    $data['metadescription'] = "Apostillamos Certificados de Matrimonio 📃 en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Matrimonio 📃 en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-defuncion-new-york':
                     $data['description'] = 'Certificados de Defunción';
-                    $data['metadescription'] = "Apostillamos Certificados de Defunción 📃 en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Defunción 📃 en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-divorcio-new-york':
                     $data['description'] = 'Certificados de Divorcio';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-naturalizacion-new-york':
                     $data['description'] = 'Certificados de Naturalización';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-expediente-de-adopcion-new-york':
                     $data['description'] = 'Expediente de Adopción';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-copia-de-pasaporte-new-york':
                     $data['description'] = 'Copia de pasaporte';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-copia-de-licencia-de-conducir-new-york':
                     $data['description'] = 'Copia de Licencia de Conducir';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-escrituras-testamentos-new-york':
                     $data['description'] = 'Escrituras y Testamentos';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaraciones-juradas-de-estado-unico-new-york':
                     $data['description'] = 'Declaraciones Juradas';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-titulo-de-automovil-new-york':
                     $data['description'] = 'Título de coche/automóvil';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-autorizacion-de-viaje-new-york':
                     $data['description'] = 'Autorización de Viaje';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-poder-notarial-personal-new-york':
                     $data['description'] = 'Poder Notarial Personal';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-registro-de-policia-estatal-new-york':
                     $data['description'] = 'Registro de la policía estatal';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-registro-de-antecedentes-fbi-new-york':
                     $data['description'] = 'Registros de antecedentes del FBI';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-diploma-universitario-new-york':
                     $data['description'] = 'Diploma Universitario';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-transcripcion-universitaria-new-york':
                     $data['description'] = 'Transcripción Universitaria';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-diploma-de-escuela-secundaria-new-york':
                     $data['description'] = 'Diploma de Escuela Secundaria';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-transcripcion-de-escuela-secundaria-new-york':
                     $data['description'] = 'Transcripción de Escuela Secundaria';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-incorporacion-new-york':
                     $data['description'] = 'Certificado de Incorporación';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-buena-reputacion-new-york':
                     $data['description'] = 'Certificado de Buena Reputación';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-origen-new-york':
                     $data['description'] = 'Certificado de Origen';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-marca-patente-new-york':
                     $data['description'] = 'Marcas o Patentes';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-poder-comercial-new-york':
                     $data['description'] = 'Poder Comercial';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaracion-jurada-comercial-new-york':
                     $data['description'] = 'Declaración Jurada Comercial';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-fda-new-york':
                     $data['description'] = 'Certificado FDA';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-facturas-new-york':
                     $data['description'] = 'Facturas';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;   
                 case 'apostillar-departamento-de-hacienda-new-york':
                     $data['description'] = 'Departamento de Hacienda';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-gobierno-extranjero-new-york':
                     $data['description'] = 'Certificado de Gobierno Extranjero';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-venta-gratis-new-york':
                     $data['description'] = 'Certificado de Venta gratis';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-ordenes-de-compra-new-york':
                     $data['description'] = 'Órdenes de compra';
-                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New York de una manera ágil y rápida 😉";
                     $data['keywords'] = "";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
