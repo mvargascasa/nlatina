@@ -4,12 +4,12 @@ namespace App;
 
 // use Illuminate\Database\Eloquent\Model;
 
-use App\Notifications\PartnerEmailVerificationNotification;
 use App\Notifications\PartnerResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use willvincent\Rateable\Rateable;
+use Illuminate\Support\Str;
 
 class Partner extends Authenticatable implements MustVerifyEmail
 {
@@ -92,6 +92,18 @@ class Partner extends Authenticatable implements MustVerifyEmail
         return $query->whereHas('specialties', function($query) use ($specialty){
             $query->where('specialties.name_specialty', 'LIKE', "%$specialty%");
         });
+    }
+
+    public function scopeFechaPublicado($query, $fecha_publicado){
+        if($fecha_publicado){
+            return $query->where('fecha_publicado', 'LIKE', "%$fecha_publicado%");
+        }
+    }
+
+    public function scopeCreatedAt($query, $created_at){
+        if($created_at){
+            return $query->where('created_at', 'LIKE', "%$created_at%");
+        }
     }
 
     //RELACION

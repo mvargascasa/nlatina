@@ -23,18 +23,33 @@ class PartnerController extends Controller
      */
     public function index(Request $request)
     {
+        $fecha_publicado = null;
+        $created_at = null;
+
+        if($request->publicadosHoy != null){
+            $fecha_publicado = $request->publicadosHoy;
+        }
+
+        if($request->registradosHoy != null){
+            $created_at = $request->registradosHoy;
+        }
+
         $name = $request->get('name');
         
         $total = Partner::count();
         $published = Partner::where('status', '=', 'PUBLICADO')->count();
         $notpublished = Partner::where('status', '=', 'NO PUBLICADO')->count();
         $verified = Partner::where('email_verified_at', '!=', 'null')->count();
-
+        $countPublicadosHoy = Partner::where('fecha_publicado', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
+        $countRegistradosHoy = Partner::where('created_at', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
+        
         $partners = Partner::name($name)
-                    ->orderBy('id', 'asc')
-                    ->paginate(10);
+        ->fechaPublicado($fecha_publicado)
+        ->createdAt($created_at)
+        ->orderBy('id', 'asc')
+        ->paginate(10);
 
-        return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified'));
+        return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy'));
     }
 
     /**

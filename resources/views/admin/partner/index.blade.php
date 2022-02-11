@@ -43,8 +43,20 @@
             <div class="card">
                 <div class="card-header font-weight-bold">
                     PARTNERS
-                    {{-- {{ route('partner.form') }} --}}
-                    {{-- <a class="btn btn-sm btn-primary float-right" href="{{ route('partner.show.latest.public') }}">Ultimos publicados</a> --}}
+                    <div class="float-right ml-1">
+                        <form action="{{route('partner.index')}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="publicadosHoy" value="{{ Str::limit(date(now()), 10, '') }}">
+                            <button type="submit" class="btn btn-primary">Publicados hoy <span class="badge badge-light"> {{ $countPublicadosHoy }}</span></button>
+                        </form>
+                    </div>
+                    <div class="float-right">
+                        <form action="{{route('partner.index')}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="registradosHoy" value="{{ Str::limit(date(now()), 10, '') }}">
+                            <button type="submit" class="btn btn-primary">Registrados hoy <span class="badge badge-light"> {{ $countRegistradosHoy }}</span></button>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="card-body">

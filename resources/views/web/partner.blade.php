@@ -17,10 +17,11 @@
     <title>Partner de Notaria Latina - {{ $partner->name }} {{$partner->lastname}}</title>
     <style>
         .bg-header{
-            background-color: #002542;
+            /* background-color: #002542; */
             width: 100%;
             height: 300px;
             position: absolute;
+            filter: brightness(60%);
         }
         .container{
             position: relative;
@@ -161,7 +162,7 @@
 @endsection
 
 @section('content')
-    <div class="bg-header"></div>
+    <div id="prisection" class="bg-header" style="background-size: cover; background-position: left top; background-repeat: no-repeat"></div>
     <div class="container">
         @if ($partner != null)
         <div class="row mt-4">
@@ -383,4 +384,9 @@
 
 @section('script')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    window.addEventListener('load', (event) => {
+        document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/FONDO-PARTNER-INDIVIDUAL.webp')}}')";
+    });
+</script>
 @endsection
