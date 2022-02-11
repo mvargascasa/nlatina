@@ -31,15 +31,14 @@
 @section('phoneNumber', $data['telfShow'])
 
 @section('content')
-<div class="d-flex justify-content-center align-items-center text-center" style="height: 20vh; box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
-    <h1 id="title" style="font-size: 40px">Apostillamos <b>{{ $data['description']}}</b> en {{ $data['office']}}</h1>
+<div id="prisection" class="d-flex justify-content-center align-items-center text-center" style="height: 25vh;background-size: cover; background-position: left top; background-repeat: no-repeat;">
+    <h1 id="title" style="font-size: 40px; color: #ffffff">Apostillamos <b>{{ $data['description']}}</b> en {{ $data['office']}}</h1>
 </div>
     <div class="container mt-5">
         <div id="card" class="card ml-5 mr-5" style="box-shadow: 1px 1px 4px 4px #d5d4d4; border-radius: 0px">
-            <div class="card-header" style="border-bottom: none; background-color: #ffffff">
+            <div class="card-header" style="border-bottom: none; background-color: #333333">
                 <div class="d-flex justify-content-center align-items-center">
-                    {{-- <img class="img-fluid" style="margin-left: 1%; margin-top: 1%" src="{{ asset('img/apostilla-haya1.png') }}" alt=""> --}}
-                    <h4 id="txtSubtitle" class="text-center" style="font-size: 30px; margin-left: 5%; margin-right: 5%; margin-top: 1%">Para apostillar <b>{{ $data['description'] }}</b> por favor complete el siguiente formulario con su información y el documento a realizar el trámite</h4>
+                    <h5 id="txtSubtitle" class="text-center text-white" style="font-size: 30px; margin-left: 5%; margin-right: 5%; margin-top: 1%; padding-top: 2%; padding-bottom: 2%">Para apostillar <b>{{ $data['description'] }}</b>, complete el formulario y nos póndremos en contacto</h5>
                 </div>
             </div>
             <div class="card-body">
@@ -66,7 +65,7 @@
                             <input type="file" name="adjunto" id="adjunto" class="form-control inputs">
                         </div>
                         <div class="mb-5 d-flex justify-content-center">
-                            <input style="background-color: #ffc107; color: #000000; border: none" type="submit" value="Enviar" class="btn btn-primary">
+                            <input style="background-color: #ffc107; color: #000000; border: none" type="submit" value="Enviar" class="btn btn-primary btn-block">
                         </div>
                     {!! Form::close() !!}
                 </div>
@@ -100,5 +99,9 @@
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-
+<script>
+    window.addEventListener('load', (event) => {
+        document.getElementById('prisection').style.backgroundImage = "url('{{url('img/Apostilla-General.webp')}}')";
+    });
+</script>
 @endsection
