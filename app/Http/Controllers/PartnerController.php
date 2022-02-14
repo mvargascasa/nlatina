@@ -50,6 +50,7 @@ class PartnerController extends Controller
 
         $name = $request->get('name');
         
+        $total = Partner::count();
         $published = Partner::where('status', '=', 'PUBLICADO')->count();
         $notpublished = Partner::where('status', '=', 'NO PUBLICADO')->count();
         $verified = Partner::where('email_verified_at', '!=', 'null')->count();
@@ -63,7 +64,7 @@ class PartnerController extends Controller
         ->orderBy('id', $orderBy)
         ->paginate(10);
 
-        return view('admin.partner.index', compact('partners', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy', 'orderBy'));
+        return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy', 'orderBy'));
     }
 
     /**
