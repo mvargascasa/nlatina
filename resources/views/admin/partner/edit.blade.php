@@ -91,7 +91,7 @@
                                 <div class="row">
                                     @foreach ($camposVacios as $campoVacio)
                                     <div class="col-6 col-sm-3">
-                                        ✖ <b id="txtCamposVacios">{{ $campoVacio }}</b>       
+                                        <i class="fas fa-exclamation-circle"></i> <b id="txtCamposVacios"><a style="text-decoration: none; color: #000000" href="#{{$campoVacio}}">{{ $campoVacio }}</a></b>       
                                     </div>
                                     @endforeach
                                 </div>
@@ -122,7 +122,7 @@
                                             <div class="row">
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
-                                                        {!! Form::label('title', 'Título') !!}
+                                                        {!! Form::label('title', 'Título', ['id' => 'Título']) !!}
                                                         @if ($partner->title != null)
                                                         {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], $partner->title, ['class' => 'form-control']) !!}
                                                         @else
@@ -165,7 +165,7 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                    {!! Form::label('country_residence', 'Pais de residencia') !!}
+                                                    {!! Form::label('country_residence', 'Pais de residencia', ['id' => 'País de residencia']) !!}
                                                     @if ($partner->country_residence != null)
                                                     {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Estados Unidos' => 'Estados Unidos', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->country_residence, ['class' => 'form-control']) !!}    
                                                     @else
@@ -185,7 +185,7 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        {!! Form::label('phone', 'Telefono') !!}
+                                                        {!! Form::label('phone', 'Telefono', ['id' => 'Teléfono']) !!}
                                                         {!! Form::number('phone', $partner->phone, ['class' => 'form-control']) !!}
                                                     </div>
                                                 </div>
@@ -193,7 +193,7 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        {!! Form::label('state', 'Estado/Departamento') !!}
+                                                        {!! Form::label('state', 'Estado/Departamento', ['id' => 'Estado/Departamento']) !!}
                                                         @if ($partner->state != null)
                                                         {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
                                                         @else
@@ -203,7 +203,7 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        {!! Form::label('city', 'Ciudad') !!}
+                                                        {!! Form::label('city', 'Ciudad', ['id' => 'Ciudad']) !!}
                                                         @if ($partner->city != null)
                                                         {!! Form::text('city', $partner->city, ['class' => 'form-control']) !!}    
                                                         @else
@@ -213,7 +213,7 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        {!! Form::label('address', 'Dirección') !!}
+                                                        {!! Form::label('address', 'Dirección', ['id' => 'Dirección']) !!}
                                                         @if ($partner->address != null)
                                                         {!! Form::text('address', $partner->address, ['class' => 'form-control']) !!}
                                                         @else
@@ -241,6 +241,11 @@
                                                 {!! Form::text('link_facebook', null, ['class' => 'form-control']) !!}
                                                 @endif
                                                 <label style="font-size: 13px; color: #566067">Ej.:https://www.facebook.com/su-usuario</label>
+                                                @if (count($socialLinks) > 0 && in_array('Facebook', $socialLinks, false) && $partner->link_facebook != null)
+                                                    <div class="alert alert-warning" style="font-size: 12px">
+                                                        <i class="fas fa-exclamation-triangle"></i> El link de Facebook no es válido
+                                                    </div>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
@@ -252,6 +257,11 @@
                                                 {!! Form::text('link_instagram', null, ['class' => 'form-control']) !!}
                                                 @endif
                                                 <label style="font-size: 13px; color: #566067">Ej.:https://www.instagram.com/su-usuario</label>
+                                                @if (count($socialLinks) > 0 && in_array('Instagram', $socialLinks, false) && $partner->link_instagram != null)
+                                                    <div class="alert alert-warning" style="font-size: 12px">
+                                                        <i class="fas fa-exclamation-triangle"></i> El link de Instagram no es válido
+                                                    </div>
+                                                @endif
                                             </div>                            
                                         </div>
                                         <div class="col-sm-3">
@@ -263,6 +273,11 @@
                                                 {!! Form::text('link_linkedin', null, ['class' => 'form-control']) !!}
                                                 @endif
                                                 <label style="font-size: 13px; color: #566067">Ej.:https://www.linkedin.com/su-usuario</label>
+                                                @if (count($socialLinks) > 0 && in_array('LinkedIn', $socialLinks, false) && $partner->link_linkedin != null)
+                                                    <div class="alert alert-warning" style="font-size: 12px">
+                                                        <i class="fas fa-exclamation-triangle"></i> El link de LinkedIn no es válido
+                                                    </div>
+                                                @endif
                                             </div>                            
                                         </div>
                                         <div class="col-sm-3">
@@ -274,6 +289,11 @@
                                                 {!! Form::text('website', null, ['class' => 'form-control']) !!}
                                                 @endif
                                                 <label style="font-size: 13px; color: #566067">Ej.:https://www.su-dominio.com</label>
+                                                @if (count($socialLinks) > 0 && in_array('Website', $socialLinks, false) && $partner->website != null)
+                                                    <div class="alert alert-warning" style="font-size: 12px">
+                                                        <i class="fas fa-exclamation-triangle"></i> El link del Sitio Web no es válido
+                                                    </div>
+                                                @endif
                                             </div>  
                                         </div>
                                     </div>
@@ -286,7 +306,7 @@
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                {!! Form::label('company', 'Tipo de trabajo') !!}
+                                                {!! Form::label('company', 'Tipo de trabajo', ['id' => 'Tipo de trabajo']) !!}
                                                 @if ($partner->company != null)
                                                 {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], $partner->company, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
                                                 @else
@@ -295,7 +315,7 @@
                                             </div>
                                         </div>                            
                                         <div id="divCompanyName" class="col-sm-4" @if ($partner->company == "Empresa") style="display: block" @else style="display: none" @endif>
-                                            {!! Form::label('company_name', 'Nombre de la Empresa') !!}
+                                            {!! Form::label('company_name', 'Nombre de la Empresa', ['id' => 'Nombre de la empresa']) !!}
                                             @if($partner->company_name != null)
                                                 {!! Form::text('company_name', $partner->company_name, ['class' => 'form-control']) !!}
                                             @else
@@ -303,7 +323,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <p style="font-size: 14px">Área de especialización <b>(Escoja entre 1 a 3 opciones)</b></p>
+                                    <p style="font-size: 14px" id="Áreas de especialización">Área de especialización <b>(Escoja entre 1 a 3 opciones)</b></p>
                                     <div class="form-group">
                                         <div class="row">
                                                 @foreach ($specialties as $specialty)
@@ -319,7 +339,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                {!! Form::label('specialty', 'Especialidad(es)') !!} <b style="font-size: 14px">(Descripción más detallada)</b>
+                                                {!! Form::label('specialty', 'Especialidad(es)', ['id' => 'Especialidad (Descripción)']) !!} <b style="font-size: 14px">(Descripción más detallada)</b>
                                                 {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control', 'onkeyup' => 'countChars();', 'minlength' => '100', 'maxlength' => '200']) !!}
                                                 <div class="d-flex float-right">
                                                     <p id="charNum">0 caracteres</p>
@@ -329,7 +349,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::label('biography_html', 'Biografia') !!} <b>(Descripción de trayectoria y experiencia en su área)</b>
+                                        {!! Form::label('biography_html', 'Biografia', ['id' => 'Biografía']) !!} <b>(Descripción de trayectoria y experiencia en su área)</b>
                                         {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4']) !!}
                                     </div>
                                     <div class="float-right">

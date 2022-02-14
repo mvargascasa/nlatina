@@ -220,22 +220,22 @@
                         <h6 style="font-weight: bold"><i class="fas fa-map-marker-alt"></i> Dirección</h6>
                         <p>{{ $partner->address}}</p>
                     @endisset
-                    @isset($partner->website)
+                    @if($partner->website != null && Str::startsWith($partner->website, 'https'))
                         <h6 style="font-weight: bold"><i class="fas fa-globe"></i> Sitio web</h6>
                         <a target="_blank" style="color: #9A7A2E" href="{{$partner->website}}">{{ $partner->website }}</a>
-                    @endisset
+                    @endif
                     @if($partner->link_facebook != null || $partner->link_instagram != null || $partner->link_linkedin != null)
                         <h6 style="font-weight: bold; margin-top: 10px">Redes Sociales</h6>
                         <div style="margin-top: 20px">
-                            @isset ($partner->link_facebook)
+                            @if($partner->link_facebook != null && Str::startsWith($partner->link_facebook, 'https'))
                                 <a target="_blank" class="social" href="{{$partner->link_facebook}}"><i class="fab fa-facebook-square fa-2x"></i></a>
-                            @endisset
-                            @isset($partner->link_instagram)
+                            @endif
+                            @if($partner->link_instagram != null && Str::startsWith($partner->link_instagram, 'https'))
                                 <a target="_blank" class="social" href="{{$partner->link_instagram}}"><i class="fab fa-instagram fa-2x"></i></a>
-                            @endisset
-                            @isset($partner->link_linkedin)
+                            @endif
+                            @if($partner->link_linkedin != null && Str::startsWith($partner->link_linkedin, 'https'))
                                 <a target="_blank" class="social" href="{{ $partner->link_linkedin}}"><i class="fab fa-linkedin fa-2x"></i></a>
-                            @endisset
+                            @endif
                         </div>
                     @endif
                 </div>

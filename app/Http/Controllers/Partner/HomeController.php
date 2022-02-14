@@ -20,6 +20,20 @@ class HomeController extends Controller
     public function edit(Partner $partner)
     {
         $camposVacios = [];
+        $socialLinks = [];
+
+        if (!Str::startsWith($partner->link_facebook, 'https')) {
+            array_push($socialLinks, "Facebook");
+        }
+        if (!Str::startsWith($partner->link_instagram, 'https')) {
+            array_push($socialLinks, "Instagram");
+        }
+        if (!Str::startsWith($partner->link_linkedin, 'https')) {
+            array_push($socialLinks, "LinkedIn");
+        }
+        if (!Str::startsWith($partner->website, 'https')) {
+            array_push($socialLinks, "Website");
+        }
 
         if($partner->img_profile == null && $partner->img_profile == null){ array_push ( $camposVacios , "Imagen de perfil");}
         if($partner->title == null){ array_push ( $camposVacios , "Título"); }
@@ -44,7 +58,7 @@ class HomeController extends Controller
 
         $specialties = Specialty::all();
 
-        return view('admin.partner.edit', compact('partner', 'specialties', 'camposVacios'));
+        return view('admin.partner.edit', compact('partner', 'specialties', 'camposVacios', 'socialLinks'));
     }
     
     public function update(Partner $partner, Request $request)
@@ -80,6 +94,28 @@ class HomeController extends Controller
             });
             Storage::put($url, (string) $image->encode('jpg', 72));
             $partner->img_profile = $url;
+        }
+
+        if(Str::startsWith($request->link_facebook, 'www')){
+            $request->link_facebook = 'https://' . $request->link_facebook;
+        } else if (Str::startsWith($request->link_facebook, 'facebook')) {
+            $request->link_facebook = 'https://www.' . $request->link_facebook;
+        }
+
+        if(Str::startsWith($request->link_instagram, 'www')){
+            $request->link_instagram = 'https://' . $request->link_instagram;
+        } else if (Str::startsWith($request->link_instagram, 'instagram')) {
+            $request->link_instagram = 'https://www.' . $request->link_instagram;
+        }
+
+        if(Str::startsWith($request->link_linkedin, 'www')){
+            $request->link_linkedin = 'https://' . $request->link_linkedin;
+        } else if (Str::startsWith($request->link_linkedin, 'linkedin')) {
+            $request->link_linkedin = 'https://www.' . $request->link_linkedin;
+        }
+
+        if(Str::startsWith($request->website, 'www')){
+            $request->website = 'https://' . $request->website;
         }
 
         $partner->title = $request->title;
