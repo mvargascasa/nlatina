@@ -26,7 +26,7 @@ class PartnerController extends Controller
         $fecha_publicado = null;
         $created_at = null;
         $status = null;
-        static $orderBy = 'asc';
+        $orderBy = null;
 
         if($request->publicadosHoy != null){
             $fecha_publicado = $request->publicadosHoy;
@@ -63,7 +63,7 @@ class PartnerController extends Controller
         ->fechaPublicado($fecha_publicado)
         ->createdAt($created_at)
         ->status($status)
-        ->orderBy('id', $orderBy)
+        ->orderBy('id', $orderBy ? $orderBy : 'asc')
         ->paginate(10);
 
         return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy', 'orderBy'));
