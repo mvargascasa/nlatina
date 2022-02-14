@@ -28,7 +28,7 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-sm-3">
-                    <h5><b>TOTAL PARTNERS: </b>{{ $total }}</h5>
+                    <h5><b>TOTAL PARTNERS: </b>{{ $partners->count() }}</h5>
                 </div>
                 <div class="col-sm-3">
                     <h5><b>PUBLICADOS: </b>{{ $published }}</h5>
