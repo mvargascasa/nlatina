@@ -26,7 +26,7 @@ class PartnerController extends Controller
         $fecha_publicado = null;
         $created_at = null;
         $status = null;
-        $orderBy = 'asc';
+        static $orderBy = 'asc';
 
         if($request->publicadosHoy != null){
             $fecha_publicado = $request->publicadosHoy;
