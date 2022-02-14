@@ -26,7 +26,7 @@ class PartnerController extends Controller
         $fecha_publicado = null;
         $created_at = null;
         $status = null;
-        global $orderBy;
+        $orderBy = "asc";
 
         if($request->publicadosHoy != null){
             $fecha_publicado = $request->publicadosHoy;
@@ -42,9 +42,9 @@ class PartnerController extends Controller
             $status = $request->publicados;
         }
 
-        if ($request->orderBy == 'desc') {
+        if ($request->orderBy == 'desc' && $orderBy == 'asc') {
             $orderBy = 'asc';
-        } else if($request->orderBy == 'asc'){
+        } else if($request->orderBy == 'asc' && $orderBy == 'desc'){
             $orderBy = 'desc';
         }
 
