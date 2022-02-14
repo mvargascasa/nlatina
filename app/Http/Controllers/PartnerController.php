@@ -25,6 +25,7 @@ class PartnerController extends Controller
     {
         $fecha_publicado = null;
         $created_at = null;
+        $status = null;
         $orderBy = 'asc';
 
         if($request->publicadosHoy != null){
@@ -33,6 +34,12 @@ class PartnerController extends Controller
 
         if($request->registradosHoy != null){
             $created_at = $request->registradosHoy;
+        }
+
+        if($request->nopublicados != null){
+            $status = $request->nopublicados;
+        } else if($request->publicados != null){
+            $status = $request->publicados;
         }
 
         if($request->orderBy != null){
@@ -55,6 +62,7 @@ class PartnerController extends Controller
         $partners = Partner::name($name)
         ->fechaPublicado($fecha_publicado)
         ->createdAt($created_at)
+        ->status($status)
         ->orderBy('id', $orderBy)
         ->paginate(10);
 

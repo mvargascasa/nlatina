@@ -106,6 +106,12 @@ class Partner extends Authenticatable implements MustVerifyEmail
         }
     }
 
+    public function scopeStatus($query, $status){
+        if ($status) {
+            return $query->where('status', 'LIKE', "%$status%");
+        }
+    }
+
     //RELACION
     public function specialties(){
         return $this->belongsToMany(Specialty::class);
