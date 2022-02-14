@@ -221,7 +221,7 @@
                 </div>
           </div>
 
-          @if (Auth::user()->status == "PUBLICADO" && Auth::user()->link_facebook != null)
+          @if (Auth::user()->status == "PUBLICADO" && Auth::user()->link_facebook != null && Str::startsWith(Auth::user()->link_facebook, 'https'))
             <div class="mt-4">
               <a target="_blank" class="btn" href="https://www.facebook.com/sharer/sharer.php?u=notarialatina.com/partners/{{Auth::user()->slug}}&display=popup" style="color: #ffffff; background-color: #3b5998">Compartir mi perfil en Facebook <i class="fab fa-facebook-square"></i></a>  
             </div>
