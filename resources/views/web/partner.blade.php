@@ -1,7 +1,7 @@
 @extends('layouts.web')
 @section('header')
     <meta name="description" content="@isset($partner->specialty) {{ $partner->specialty }} @else Partners de Notaria Latina | Contamos con un amplio directorio de abogados/as y notarios en Latinoamérica @endisset">
-    <meta name="keywords" content="abogado en {{ Str::lower($partner->city) }} {{ Str::lower($partner->state) }}, notario en {{ Str::lower($partner->city) }} {{ Str::lower($partner->state) }}, abogados en {{ Str::lower($partner->country_residence) }}, @foreach($partner->specialties as $specialty)abogado especialista {{ Str::lower($specialty->name_specialty) }} en {{ Str::lower($partner->city . " " .  $partner->state)}}, @endforeach @isset($partner->address)abogado en {{ Str::lower($partner->address)}} @endisset">
+    <meta name="keywords" content="abogado near me, abogado cerca de mi, notaria near me, notaria cerca de mi, abogado en {{ Str::lower($partner->city) }} {{ Str::lower($partner->state) }}, notario en {{ Str::lower($partner->city) }} {{ Str::lower($partner->state) }}, abogados en {{ Str::lower($partner->country_residence) }}, @foreach($partner->specialties as $specialty)abogado especialista {{ Str::lower($specialty->name_specialty) }} en {{ Str::lower($partner->city . " " .  $partner->state)}}, @endforeach @isset($partner->address)abogado en {{ Str::lower($partner->address)}} @endisset">
     <meta property="og:title" content="Partner Notaria Latina - {{ $partner->name }} {{ $partner->lastname}}"/>
     <meta property="og:site_name" content="https://notarialatina.com"/>
     <meta property="og:url" content="{{ Request::url() }}"/>
