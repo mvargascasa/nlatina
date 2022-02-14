@@ -168,47 +168,68 @@ class WebController extends Controller
         $data['telfWpp'] = '13479739888';
         $data['telfShow'] = '347-973-9888';
         $data['office'] = 'New York';
-        $data['keywords'] = 'apostillar cerca de mi, apostille near me, apostille new york, apostillar new york, apostillar documentos rapido new york, apostillar documentos new york, donde puedo apostillar un documento, donde apostillar en new york, apostillado de documentos, fast document apostille new york';
+        $data['keywords'] = 'tramitar documentos new york, certificar documentos new york, traducir documentos new york, apostille new york, apostillar new york, apostillar documentos rapido new york, apostillar documentos new york, donde puedo apostillar un documento, donde apostillar en new york, apostillado de documentos, fast document apostille new york, apostillar documentos ny, tramitar documentos ny, notarizar documentos ny';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-york':
+                    $data['metadescription'] = "Realizamos todo tipo de Certificaciones en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", certificar acta de nacimiento new york, certificar acta de matrimonio new york, certificar cartas new york, certificar licencia de conducir new york, certificar declaracion jurada new york, certificar affidavit new york, certificar escrituras new york";
                     return view('web.office.certificaciones', compact('data'));
                     break;
                 case 'travel-authorization-en-new-york':
+                    $data['metadescription'] = "Realizamos Autorizaciones de Viaje para Menores de Edad en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", autorizacion de viaje new york, tramitar autorizacion de viaje new york, realizar autorizacion de viaje new york, obtener autorizacion de viaje new york, make new york travel authorization";
                     return view('web.office.authorization', compact('data'));
                     break;
                 case 'acuerdos-en-new-york':
+                    $data['metadescription'] = "Realizamos Acuerdos en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", tramitar acuerdo new york, realizar acuerdo new york, process agreement new york, make deal new york";
                     return view('web.office.acuerdos', compact('data'));
                     break;
                 case 'cartas-de-invitacion-en-new-york':
+                    $data['metadescription'] = "Tramitamos Cartas de Invitación en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", realizar carta de invitacion new york, tramitar carta de invitacion new york, make invitation letter new york, process letter of invitation new york";
                     return view('web.office.invitacion', compact('data'));
                     break;
                 case 'revocatorias-en-new-york':
+                    $data['metadescription'] = "Realizamos Revocatorias de Poderes en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", revocar carta poder new york, revocar poder general new york, revocar poder especial new york, realizar revocatoria new york, anular poder new york, anular carta poder new york, cancelar poder new york, cancelar carta poder new york, revoke power new york, override power new york, cancel power new york";
                     return view('web.office.revocatorias', compact('data'));
                     break;
                 case 'contratos-en-new-york':
+                    $data['metadescription'] = "Realizamos todo tipo de Contratos en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", contrato de arrendamiento new york, contrato de trabajo new york, contrato de renta new york, realizar contrato de arriendo new york, realizar contrato compra venta new york, realizar contrato prestamo new york, realizar contrato prenupcial new york, realizar contrato de servicio new york, realizar contrato de transporte new york, make contract new york";
                     return view('web.office.contratos', compact('data'));
                     break;
                 case 'testamentos-en-new-york':
+                    $data['metadescription'] = "Realizamos Testamentos en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", realizar testamento new york, hacer testamento new york, tramitar testamento new york, make a will new york";
                     return view('web.office.testamentos', compact('data'));
                     break;
-                case 'motor-vehicle-comission-en-new-york':
+                case 'motor-vehicle-commission-en-new-york':
+                    $data['metadescription'] = "Motor Vehicle Commission en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", traducir historial de manejo new york, obtener licencia de conducir new york, traducir documentos licencia de conducir";
                     return view('web.office.vehicle_comission', compact('data'));
                     break;
                 case 'poder-notarial-new-york':
+                    $data['metadescription'] = "Realizamos Poderes Generales y Especiales en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", realizar carta poder new york, realizar poder especial new york, realizar poder general new york, tramitar poder new york, make power of attorney new york, process power new york";
                     return view('web.office.poderes', compact('data'));
                     break;
                 case 'traducir-documentos-new-york':
+                    $data['metadescription'] = "Traducimos todo tipo de Documentos en New York de una manera ágil y rápida! ";
+                    $data['keywords'] .= ", traducir documentos new york, traducir certificado de nacimiento new york, traducir diplomas new york, traducir certificado de matrimonio new york, traducir certificado de divorcio new york, traducir certificado de defuncion new york, traducir documentos medicos new york, traducir certificados estudiantiles new york, translate documents new york";
                     return view('web.office.traducciones', compact('data'));
                     break;
                 case 'apostillar-documentos-new-york':
+                    $data['metadescription'] = "Apostillamos todo tipo de Documentos en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", apostillar documentos new york, apostillar diploma new york, apostillar poder general new york, apostillar poder especial new york, apostillar certificado de matrimonio new york, apostillar certificado de defuncion new york, apostillar contrato new york, apostillar carta de invitacion new york, apostillar testamentos new york, apostillar declaraciones juradas new york, apostillar affidavit new york, apostillar acta de divorcio new york, apostillar facturas new york, apostille documents new york";
                     return view('web.office.apostillas', compact('data'));
                     break;
                 case 'affidavit-support-new-york':
+                    $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en New York de una manera ágil y rápida!";
+                    $data['keywords'] .= ", declaracion jurada new york, affidavit new york, realizar declaracion jurada new york, tramitar declaracion jurada new york, make an affidavit new york, process affidavit new york";
                     return view('web.office.affidavit', compact('data'));
-                    break;
-                case 'motor-vehicle-commission-en-new-york':
-                    return view('web.office.vehicle_comission', compact('data'));
                     break;
                 case 'apostillar-certificado-de-nacimiento-new-york':
                     $data['description'] = 'Certificados de Nacimiento';
@@ -261,7 +282,7 @@ class WebController extends Controller
                 case 'apostillar-copia-de-licencia-de-conducir-new-york':
                     $data['description'] = 'Copia de Licencia de Conducir';
                     $data['metadescription'] = "Apostillamos Copia de Licencia de Conducir en New York de una manera ágil y rápida 😉";
-                    $data['keywords'] .= ", apostillar copia de licencia de conducir, apostillar copia de licencia de conducir near me, apostillar copia de licencia de conducir new york, apostille copy of driver's license, apostille copy of driver's license near me, apostille copy of driver's license new york, donde apostillar copia de licencia de conducir en new york";
+                    $data['keywords'] .= ", apostillar licencia de conducir, apostillar copia de licencia de conducir, apostillar copia de licencia de conducir near me, apostillar copia de licencia de conducir new york, apostille copy of driver's license, apostille copy of driver's license near me, apostille copy of driver's license new york, donde apostillar copia de licencia de conducir en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-escrituras-testamentos-new-york':
@@ -434,47 +455,68 @@ class WebController extends Controller
         $data['telfWpp'] = '19088009046';
         $data['telfShow'] = '908-800-9046';
         $data['office'] = 'New Jersey';
-        $data['keywords'] = 'apostillar cerca de mi, apostille near me, apostille new jersey, apostillar new jersey, apostillar documentos rapido new jersey, apostillar documentos new jersey, donde puedo apostillar un documento, donde apostillar en new jersey, apostillado de documentos, fast document apostille new jersey';
+        $data['keywords'] = 'tramitar documentos new jersey, certificar documentos new jersey, traducir documentos new jersey, apostillar cerca de mi, apostille near me, apostille new jersey, apostillar new jersey, apostillar documentos rapido new jersey, apostillar documentos new jersey, donde puedo apostillar un documento, donde apostillar en new jersey, apostillado de documentos, fast document apostille new jersey, tramitar documentos nj, apostillar documentos nj, notarizar documentos nj';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-jersey':
+                    $data['metadescription'] = "Realizamos todo tipo de Certificaciones en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", certificar acta de nacimiento new jersey, certificar acta de matrimonio new jersey, certificar cartas new jersey, certificar licencia de conducir new jersey, certificar declaracion jurada new jersey, certificar affidavit new jersey, certificar escrituras new jersey";
                     return view('web.office.certificaciones', compact('data'));
                     break;
                 case 'travel-authorization-en-new-jersey':
+                    $data['metadescription'] = "Realizamos Autorizaciones de Viaje para Menores de Edad en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", autorizacion de viaje new jersey, tramitar autorizacion de viaje new jersey, realizar autorizacion de viaje new jersey, obtener autorizacion de viaje new jersey, make new jersey travel authorization";
                     return view('web.office.authorization', compact('data'));
                     break;
                 case 'acuerdos-en-new-jersey':
+                    $data['metadescription'] = "Realizamos Acuerdos en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", tramitar acuerdo new jersey, realizar acuerdo new jersey, process agreement new jersey, make deal new jersey";
                     return view('web.office.acuerdos', compact('data'));
                     break;
                 case 'cartas-de-invitacion-en-new-jersey':
+                    $data['metadescription'] = "Tramitamos Cartas de Invitación en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", realizar carta de invitacion new jersey, tramitar carta de invitacion new jersey, make invitation letter new jersey, process letter of invitation new jersey";
                     return view('web.office.invitacion', compact('data'));
                     break;
                 case 'revocatorias-en-new-jersey':
+                    $data['metadescription'] = "Realizamos Revocatorias de Poderes en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", revocar carta poder new jersey, revocar poder general new jersey, revocar poder especial new jersey, realizar revocatoria new jersey, anular poder new jersey, anular carta poder new jersey, cancelar poder new jersey, cancelar carta poder new jersey, revoke power new jersey, override power new jersey, cancel power new jersey";
                     return view('web.office.revocatorias', compact('data'));
                     break;
                 case 'contratos-en-new-jersey':
+                    $data['metadescription'] = "Realizamos todo tipo de Contratos en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", contrato de arrendamiento new jersey, contrato de trabajo new jersey, contrato de renta new jersey, realizar contrato de arriendo new jersey, realizar contrato compra venta new jersey, realizar contrato prestamo new jersey, realizar contrato prenupcial new jersey, realizar contrato de servicio new jersey, realizar contrato de transporte new jersey, make contract new jersey";
                     return view('web.office.contratos', compact('data'));
                     break;
                 case 'testamentos-en-new-jersey':
+                    $data['metadescription'] = "Realizamos Testamentos en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", realizar testamento new jersey, hacer testamento new jersey, tramitar testamento new jersey, make a will new jersey";
                     return view('web.office.testamentos', compact('data'));
                     break;
-                case 'motor-vehicle-comission-en-new-jersey':
+                case 'motor-vehicle-commission-en-new-jersey':
+                    $data['metadescription'] = "Motor Vehicle Commission en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", traducir historial de manejo new jersey, obtener licencia de conducir new jersey, traducir documentos licencia de conducir";
                     return view('web.office.vehicle_comission', compact('data'));
                     break;
                 case 'poder-notarial-new-jersey':
+                    $data['metadescription'] = "Realizamos Poderes Generales y Especiales en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", realizar carta poder new jersey, realizar poder especial new jersey, realizar poder general new jersey, tramitar poder new jersey, make power of attorney new jersey, process power new jersey";
                     return view('web.office.poderes', compact('data'));
                     break;
                 case 'traducir-documentos-new-jersey':
+                    $data['metadescription'] = "Traducimos todo tipo de Documentos en New Jersey de una manera ágil y rápida! ";
+                    $data['keywords'] .= ", traducir documentos new jersey, traducir certificado de nacimiento new jersey, traducir diplomas new jersey, traducir certificado de matrimonio new jersey, traducir certificado de divorcio new jersey, traducir certificado de defuncion new jersey, traducir documentos medicos new jersey, traducir certificados estudiantiles new jersey, translate documents new jersey";
                     return view('web.office.traducciones', compact('data'));
                     break;
                 case 'apostillar-documentos-new-jersey':
+                    $data['metadescription'] = "Apostillamos todo tipo de Documentos en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", apostillar documentos new jersey, apostillar diploma new jersey, apostillar poder general new jersey, apostillar poder especial new jersey, apostillar certificado de matrimonio new jersey, apostillar certificado de defuncion new jersey, apostillar contrato new jersey, apostillar carta de invitacion new jersey, apostillar testamentos new jersey, apostillar declaraciones juradas new jersey, apostillar affidavit new jersey, apostillar acta de divorcio new jersey, apostillar facturas new jersey, apostille documents new jersey";
                     return view('web.office.apostillas', compact('data'));
                     break;
                 case 'affidavit-support-new-jersey':
+                    $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en New Jersey de una manera ágil y rápida!";
+                    $data['keywords'] .= ", declaracion jurada new jersey, affidavit new jersey, realizar declaracion jurada new jersey, tramitar declaracion jurada new jersey, make an affidavit new jersey, process affidavit new jersey";
                     return view('web.office.affidavit', compact('data'));
-                    break;
-                case 'motor-vehicle-commission-en-new-jersey':
-                    return view('web.office.vehicle_comission', compact('data'));
                     break;
                 case 'apostillar-certificado-de-nacimiento-new-jersey':
                     $data['description'] = 'Certificados de Nacimiento';
@@ -527,7 +569,7 @@ class WebController extends Controller
                 case 'apostillar-copia-de-licencia-de-conducir-new-jersey':
                     $data['description'] = 'Copia de Licencia de Conducir';
                     $data['metadescription'] = "Apostillamos Copia de Licencia de Conducir en New Jersey de una manera ágil y rápida 😉";
-                    $data['keywords'] .= ", apostillar copia de licencia de conducir, apostillar copia de licencia de conducir near me, apostillar copia de licencia de conducir new jersey, apostille copy of driver's license, apostille copy of driver's license near me, apostille copy of driver's license new jersey, donde apostillar copia de licencia de conducir en new jersey";
+                    $data['keywords'] .= ", apostillar licencia de conducir, apostillar copia de licencia de conducir, apostillar copia de licencia de conducir near me, apostillar copia de licencia de conducir new jersey, apostille copy of driver's license, apostille copy of driver's license near me, apostille copy of driver's license new jersey, donde apostillar copia de licencia de conducir en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-escrituras-testamentos-new-jersey':
@@ -701,47 +743,68 @@ class WebController extends Controller
         $data['telfHidden'] = '+13056003290';
         $data['telfWpp'] = '13056003290';
         $data['telfShow'] = '305-600-3290';
-        $data['keywords'] = 'apostillar cerca de mi, apostille near me, apostille florida, apostillar florida, apostillar documentos rapido florida, apostillar documentos florida, donde puedo apostillar un documento, donde apostillar en florida, apostillado de documentos, fast document apostille florida';
+        $data['keywords'] = 'tramitar documentos florida, certificar documentos florida, traducir documentos florida, apostillar cerca de mi, apostille near me, apostille florida, apostillar florida, apostillar documentos rapido florida, apostillar documentos florida, donde puedo apostillar un documento, donde apostillar en florida, apostillado de documentos, fast document apostille florida, apostillar documentos fl, tramitar documentos fl, notarizar documentos fl';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-florida':
+                    $data['metadescription'] = "Realizamos todo tipo de Certificaciones en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", certificar acta de nacimiento florida, certificar acta de matrimonio florida, certificar cartas florida, certificar licencia de conducir florida, certificar declaracion jurada florida, certificar affidavit florida, certificar escrituras florida";
                     return view('web.office.certificaciones', compact('data'));
                     break;
                 case 'travel-authorization-en-florida':
+                    $data['metadescription'] = "Realizamos Autorizaciones de Viaje para Menores de Edad en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", autorizacion de viaje florida, tramitar autorizacion de viaje florida, realizar autorizacion de viaje florida, obtener autorizacion de viaje florida, make florida travel authorization";
                     return view('web.office.authorization', compact('data'));
                     break;
                 case 'acuerdos-en-florida':
+                    $data['metadescription'] = "Realizamos Acuerdos en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", tramitar acuerdo florida, realizar acuerdo florida, process agreement florida, make deal florida";
                     return view('web.office.acuerdos', compact('data'));
                     break;
                 case 'cartas-de-invitacion-en-florida':
+                    $data['metadescription'] = "Tramitamos Cartas de Invitación en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", realizar carta de invitacion florida, tramitar carta de invitacion florida, make invitation letter florida, process letter of invitation florida";
                     return view('web.office.invitacion', compact('data'));
                     break;
                 case 'revocatorias-en-florida':
+                    $data['metadescription'] = "Realizamos Revocatorias de Poderes en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", revocar carta poder florida, revocar poder general florida, revocar poder especial florida, realizar revocatoria florida, anular poder florida, anular carta poder florida, cancelar poder florida, cancelar carta poder florida, revoke power florida, override power florida, cancel power florida";
                     return view('web.office.revocatorias', compact('data'));
                     break;
                 case 'contratos-en-florida':
+                    $data['metadescription'] = "Realizamos todo tipo de Contratos en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", contrato de arrendamiento florida, contrato de trabajo florida, contrato de renta florida, realizar contrato de arriendo florida, realizar contrato compra venta florida, realizar contrato prestamo florida, realizar contrato prenupcial florida, realizar contrato de servicio florida, realizar contrato de transporte florida, make contract florida";
                     return view('web.office.contratos', compact('data'));
                     break;
                 case 'testamentos-en-florida':
+                    $data['metadescription'] = "Realizamos Testamentos en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", realizar testamento florida, hacer testamento florida, tramitar testamento florida, make a will florida";
                     return view('web.office.testamentos', compact('data'));
                     break;
                 case 'matrimonios-en-florida':
+                    $data['metadescription'] = "Notarizamos Certificados de Matrimonio en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", notarizar certificado de matrimonio florida, tramitar certificado de matrimonio florida, notarizar acta de matrimonio florida, tramitar acta de matrimonio florida, notarize marriage certificate florida, process marriage certificate florida";
                     return view('web.office.matrimonios', compact('data'));
                     break;
                 case 'poder-notarial-florida':
+                    $data['metadescription'] = "Realizamos Poderes Generales y Especiales en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", realizar carta poder florida, realizar poder especial florida, realizar poder general florida, tramitar poder florida, make power of attorney florida, process power florida";
                     return view('web.office.poderes', compact('data'));
                     break;
                 case 'traducir-documentos-florida':
+                    $data['metadescription'] = "Traducimos todo tipo de Documentos en Florida de una manera ágil y rápida! ";
+                    $data['keywords'] .= ", traducir documentos florida, traducir certificado de nacimiento florida, traducir diplomas florida, traducir certificado de matrimonio florida, traducir certificado de divorcio florida, traducir certificado de defuncion florida, traducir documentos medicos florida, traducir certificados estudiantiles florida, translate documents florida";
                     return view('web.office.traducciones', compact('data'));
                     break;
                 case 'apostillar-documentos-florida':
+                    $data['metadescription'] = "Apostillamos todo tipo de Documentos en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", apostillar documentos florida, apostillar diploma florida, apostillar poder general florida, apostillar poder especial florida, apostillar certificado de matrimonio florida, apostillar certificado de defuncion florida, apostillar contrato florida, apostillar carta de invitacion florida, apostillar testamentos florida, apostillar declaraciones juradas florida, apostillar affidavit florida, apostillar acta de divorcio florida, apostillar facturas florida, apostille documents florida";
                     return view('web.office.apostillas', compact('data'));
                     break;
                 case 'affidavit-support-florida':
+                    $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en Florida de una manera ágil y rápida!";
+                    $data['keywords'] .= ", declaracion jurada florida, affidavit florida, realizar declaracion jurada florida, tramitar declaracion jurada florida, make an affidavit florida, process affidavit florida";
                     return view('web.office.affidavit', compact('data'));
-                    break;
-                case 'matrimonios-en-florida':
-                    return view('web.office.matrimonios', compact('data'));
                     break;
                 case 'apostillar-certificado-de-nacimiento-florida':
                     $data['description'] = 'Certificados de Nacimiento';
@@ -794,7 +857,7 @@ class WebController extends Controller
                 case 'apostillar-copia-de-licencia-de-conducir-florida':
                     $data['description'] = 'Copia de Licencia de Conducir';
                     $data['metadescription'] = "Apostillamos Copia de Licencia de Conducir en Florida de una manera ágil y rápida 😉";
-                    $data['keywords'] .= ", apostillar copia de licencia de conducir, apostillar copia de licencia de conducir near me, apostillar copia de licencia de conducir florida, apostille copy of driver's license, apostille copy of driver's license near me, apostille copy of driver's license florida, donde apostillar copia de licencia de conducir en florida";
+                    $data['keywords'] .= ", apostillar licencia de conducir, apostillar copia de licencia de conducir, apostillar copia de licencia de conducir near me, apostillar copia de licencia de conducir florida, apostille copy of driver's license, apostille copy of driver's license near me, apostille copy of driver's license florida, donde apostillar copia de licencia de conducir en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-escrituras-testamentos-florida':
