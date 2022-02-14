@@ -42,25 +42,13 @@ class PartnerController extends Controller
             $status = $request->publicados;
         }
 
-        $name = $request->get('name');
-        
         if ($request->orderBy == 'desc') {
             $orderBy = 'asc';
-            $partners = Partner::name($name)
-            ->fechaPublicado($fecha_publicado)
-            ->createdAt($created_at)
-            ->status($status)
-            ->orderBy('id', $orderBy)
-            ->paginate(10);
         } else if($request->orderBy == 'asc'){
             $orderBy = 'desc';
-            $partners = Partner::name($name)
-            ->fechaPublicado($fecha_publicado)
-            ->createdAt($created_at)
-            ->status($status)
-            ->orderBy('id', $orderBy)
-            ->paginate(10);
         }
+
+        $name = $request->get('name');
         
         $total = Partner::count();
         $published = Partner::where('status', '=', 'PUBLICADO')->count();
@@ -69,6 +57,12 @@ class PartnerController extends Controller
         $countPublicadosHoy = Partner::where('fecha_publicado', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
         $countRegistradosHoy = Partner::where('created_at', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
         
+        $partners = Partner::name($name)
+        ->fechaPublicado($fecha_publicado)
+        ->createdAt($created_at)
+        ->status($status)
+        ->orderBy('id', $orderBy)
+        ->paginate(10);
 
         return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy', 'orderBy'));
     }
