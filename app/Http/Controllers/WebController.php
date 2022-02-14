@@ -434,6 +434,7 @@ class WebController extends Controller
         $data['telfWpp'] = '19088009046';
         $data['telfShow'] = '908-800-9046';
         $data['office'] = 'New Jersey';
+        $data['keywords'] = 'apostillar cerca de mi, apostille near me, apostille new jersey, apostillar new jersey, apostillar documentos rapido new jersey, apostillar documentos new jersey, donde puedo apostillar un documento, donde apostillar en new jersey, apostillado de documentos, fast document apostille new jersey';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-jersey':
@@ -477,194 +478,194 @@ class WebController extends Controller
                     break;
                 case 'apostillar-certificado-de-nacimiento-new-jersey':
                     $data['description'] = 'Certificados de Nacimiento';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar acta de nacimiento near me, apostillar partida de nacimiento new jersey, apostillar inscripcion de nacimiento new jersey, apostillar certificado de nacimiento new jersey, apostillar acta de nacimiento new jersey, donde apostillar certificado de nacimiento en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-reporte-consular-new-jersey':
                     $data['description'] = 'Reporte Consular';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Reporte Consular CRBA en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar crba near me, apostillar crba new jersey, apostillar reporte consular de nacimiento en el extranjero new jersey, apostillar certificado de nacimiento en el extranjero new jersey, apostillar inscripcion de nacimiento extranjero new jersey, apostillar acta de nacimiento extranjero new jersey, apostille birth certificate abroad new jersey, donde apostillar crba en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-matrimonio-new-jersey':
                     $data['description'] = 'Certificados de Matrimonio';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Matrimonio en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de matrimonio near me, apostillar certificado de matrimonio en new jersey, apostillar acta de matrimonio en new jersey, apostilla matrimonio new jersey, apostillar partida de matrimonio new jersey, apostille marriage certificate, apostille marriage certificate new jersey, donde apostillar certificado de matrimonio en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-defuncion-new-jersey':
                     $data['description'] = 'Certificados de Defunción';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Defunción en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de defuncion, apostillar certificado de defuncion near me, apostillar certificado de defuncion en new jersey, apostillar acta de defuncion en new jersey, como apostillar un certificado de defuncion, apostillado de certificado de defuncion, apostille death certificate new jersey, apostille death certificate near me, donde apostillar certificado de defuncion en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-divorcio-new-jersey':
                     $data['description'] = 'Certificados de Divorcio';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Divorcio en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de divorcio, apostillar acta de divorcio, apostillar certificado de divorcio near me, apostillar certificado de divorcio en new jersey, apostilllar acta de divorcio new jersey, apostillar sentencia de divorcio new jersey, apostille divorce certificate new jersey, apostille divorce certificate near me, donde apostillar certificado de divorcio en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-naturalizacion-new-jersey':
                     $data['description'] = 'Certificados de Naturalización';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Naturalización en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de naturalizacion, apostillar acta de naturalizacion, apostillar certificado de naturalizacion near me, apostillar certificado de naturalizacion new jersey, apostillar acta de naturalizacion new jersey, apostille naturalization certificate near me, apostille naturalization certificate new jersey, donde apostillar certificado de naturalizacion en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-expediente-de-adopcion-new-jersey':
                     $data['description'] = 'Expediente de Adopción';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Expediente de Adopción en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar expediente de adopcion, apostillar expediente de adopcion near me, apostillar expediente de adopcion new jersey, apostille adoption file, apostille adoption file near me, apostille adoption file new jersey, donde apostillar expediente de adopcion en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-copia-de-pasaporte-new-jersey':
                     $data['description'] = 'Copia de pasaporte';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Copia de Pasaporte en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar copia de pasaporte, apostillar copia de pasaporte near me, apostillar copia de pasaporte new jersey, apostille copy of passport, apostille copy of passport near me, apostille copy of passport new jersey, donde apostillar copia de pasaporte en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-copia-de-licencia-de-conducir-new-jersey':
                     $data['description'] = 'Copia de Licencia de Conducir';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Copia de Licencia de Conducir en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar copia de licencia de conducir, apostillar copia de licencia de conducir near me, apostillar copia de licencia de conducir new jersey, apostille copy of driver's license, apostille copy of driver's license near me, apostille copy of driver's license new jersey, donde apostillar copia de licencia de conducir en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-escrituras-testamentos-new-jersey':
                     $data['description'] = 'Escrituras y Testamentos';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Escrituras y Testamentos en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar escrituras, apostillar testamento, apostillar escrituras near me, apostillar testamentos near me, apostillar escrituras new jersey, apostillar testamentos new jersey, apostille deeds near me, apostille deeds new jersey, apostille wills near me, apostille wills new jersey, donde apostillar escrituras en new jersey, donde apostillar testamentos en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaraciones-juradas-de-estado-unico-new-jersey':
                     $data['description'] = 'Declaraciones Juradas';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Declaraciones Juradas (Affidavit) en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar affidavit, apostillar declaracion jurada, apostillar affidavit near me, apostillar declaracion jurada near me, apostillar affidavit near me, apostillar declaracion jurada new jersey, apostille affidavit, donde apostillar affidavit en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-titulo-de-automovil-new-jersey':
                     $data['description'] = 'Título de coche/automóvil';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Título de Coche/Automóvil en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar titulo de automovil, apostillar titulo de automovil near me, apostillar titulo de automovil new jersey, apostille car title, apostille car title near me, apostille car title new jersey, donde apostillar titulo de automovil en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-autorizacion-de-viaje-new-jersey':
                     $data['description'] = 'Autorización de Viaje';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Autorización de Viaje en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar autorizacion de viaje, apostillar autorizacion de viaje near me, apostillar autorizacion de viaje new jersey, apostille travel authorization, apostille travel authorization near me, apostille travel authorization new jersey, donde apostillar autorizacion de viaje en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-poder-notarial-personal-new-jersey':
                     $data['description'] = 'Poder Notarial Personal';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Poder Notarial Personal en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar poder notarial, apostillar carta poder new jersey, apostillar poder notarial near me, apostillar poder notarial new jersey, apostillar poder personal new jersey, apostille power of attorney, apostille power of attorney new jersey, donde apostillar carta poder en new jersey, donde apostillar poder notarial en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-registro-de-policia-estatal-new-jersey':
                     $data['description'] = 'Registro de la policía estatal';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Registro de Policía Estatal en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar registro policial, apostillar registro de policia estatal, apostillar registro policial near me, apostillar registro policial new jersey, apostille police record new jersey, apostill police record new jersey, donde apostillar registro policial new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-registro-de-antecedentes-fbi-new-jersey':
                     $data['description'] = 'Registros de antecedentes del FBI';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Registros de Antecedentes del FBI en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar antecedentes del fbi, apostillar registro de antecentes del fbi, apostillar registros de antecedentes del fbi near me, apostillar registros de antecedentes del fbi new jersey, apostille fbi background check new jersey, donde apostillar antecedentes del fbi new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-diploma-universitario-new-jersey':
                     $data['description'] = 'Diploma Universitario';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Diploma Universitario en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar diploma, apostillar diploma universitario near me, apostillar diploma universitario new jersey, apostillar titulo universitario new jersey, apostille university diploma new jersey, donde apostillar diploma universitario en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-transcripcion-universitaria-new-jersey':
                     $data['description'] = 'Transcripción Universitaria';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Transcripción Universitaria en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar transcripcion universitaria, apostillar transcripcion universitaria near me, apostillar transcripcion universitaria new jersey, apostillar transcripcion titulo universitario new jersey, apostille university transcript new jersey, donde apostillar transcripcion universitaria new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-diploma-de-escuela-secundaria-new-jersey':
                     $data['description'] = 'Diploma de Escuela Secundaria';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Diploma de Escuela Secundaria en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar diploma secundario, apostillar diploma escuela secundaria, apostillar diploma escuela secundaria near me, apostillar diploma escuela secundaria new jersey, apostille high school diploma new jersey, donde apostillar diploma secundaria en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-transcripcion-de-escuela-secundaria-new-jersey':
                     $data['description'] = 'Transcripción de Escuela Secundaria';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Transcripción de Escuela Secundaria en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar transcripcion de escuela secundaria, apostillar transcripcion de escuela secundaria near me, apostillar transcripcion de escuela secundaria new jersey, apostille high school transcript new jersey, donde apostillar transcripcion de escuela secundaria new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-incorporacion-new-jersey':
                     $data['description'] = 'Certificado de Incorporación';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Incorporación en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de incorporacion, apostillar acta de incorporacion, apostillar certificado de incorporacion near me, apostillar certificado de incorporacion new jersey, apostille certificate of incorporation new jersey, donde apostillar certificado de incorporacion en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-buena-reputacion-new-jersey':
                     $data['description'] = 'Certificado de Buena Reputación';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Buena Reputación en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de buena reputacion, apostillar certificado de buena reputacion near me, apostillar certificado de buena reputacion new jersey, apostille certificate of good standing new jersey, donde apostillar certificado de buena reputacion en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-origen-new-jersey':
                     $data['description'] = 'Certificado de Origen';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Origen en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de origen, apostillar certificado de origen near me, apostillar certificado de origen new jersey, apostille certificate of origin new jersey, donde apostillar certificado de origen en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-marca-patente-new-jersey':
                     $data['description'] = 'Marcas o Patentes';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Marcas y/o Patentes en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar marca new jersey, apostillar patente new jersey, apostillar marca near me, apostillar patente near me, apostillar marca, apostille mark new jersey, apostille patent new jersey, donde apostillar marca en new jersey, donde apostillar patente en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-poder-comercial-new-jersey':
                     $data['description'] = 'Poder Comercial';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Poder Comercial en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar poder comercial,  apostillar poder comercial new jersey, apostillar poder comercial near me, apostille commercial power new jersey, donde apostillar poder comercial new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaracion-jurada-comercial-new-jersey':
                     $data['description'] = 'Declaración Jurada Comercial';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Declaración Jurada Comercial en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar declaracion jurada comercial, apostillar affidavit comercial, apostillar declaracion jurada comercial near me, apostillar declaracion jurada comercial new jersey, apostille commercial affidavit new jersey, apostillar affidavir comercial new jersey, donde apostillar affidavit comercial en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-fda-new-jersey':
                     $data['description'] = 'Certificado FDA';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados FDA en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado fda, apostillar certificado fda near me, apostillar certificado fda new jersey, apostille fda certificate new jersey, donde apostillar certificado fda en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-facturas-new-jersey':
                     $data['description'] = 'Facturas';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Facturas en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar facturas, apostillar facturas near me, apostillar factura new jersey, apostille invoices new jersey, donde apostillar facturas en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;   
                 case 'apostillar-departamento-de-hacienda-new-jersey':
                     $data['description'] = 'Departamento de Hacienda';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Departamento de Hacienda en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar documento departamento de hacienda, apostillar departamento de hacienda near me, apostillar departamento de hacienda new jersey, apostille department of finance new jersey, donde apostillar departamento de hacienda en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-gobierno-extranjero-new-jersey':
                     $data['description'] = 'Certificado de Gobierno Extranjero';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Gobierno Extranjero en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de gobierno extranjero, apostillar certificado de gobierno extranjero near me, apostillar certificado de gobierno extranjero new jersey, apostille foreign government certificate new jersey, apostillar certificado de gobierno extranjero en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-venta-gratis-new-jersey':
                     $data['description'] = 'Certificado de Venta gratis';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Venta en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de venta, apostillar acta de venta, apostillar certificado de venta near me, apostillar acta de venta near me, apostillar certificado de venta new jersey, apostillar acta de venta new jersey, apostille sales certificate new jersey, donde apostillar certificado de venta en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-ordenes-de-compra-new-jersey':
                     $data['description'] = 'Órdenes de compra';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Órdenes de Compra en New Jersey de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar orden de compra, apostillar orden de compra near me, apostillar orden de compra new jersey, apostille purchase order new jersey, donde apostillar orden de compra en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 default:
@@ -700,6 +701,7 @@ class WebController extends Controller
         $data['telfHidden'] = '+13056003290';
         $data['telfWpp'] = '13056003290';
         $data['telfShow'] = '305-600-3290';
+        $data['keywords'] = 'apostillar cerca de mi, apostille near me, apostille florida, apostillar florida, apostillar documentos rapido florida, apostillar documentos florida, donde puedo apostillar un documento, donde apostillar en florida, apostillado de documentos, fast document apostille florida';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-florida':
@@ -743,194 +745,194 @@ class WebController extends Controller
                     break;
                 case 'apostillar-certificado-de-nacimiento-florida':
                     $data['description'] = 'Certificados de Nacimiento';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Nacimiento en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar acta de nacimiento near me, apostillar partida de nacimiento florida, apostillar inscripcion de nacimiento florida, apostillar certificado de nacimiento florida, apostillar acta de nacimiento florida, donde apostillar certificado de nacimiento en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-reporte-consular-florida':
                     $data['description'] = 'Reporte Consular';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Reporte Consular CRBA en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar crba near me, apostillar crba florida, apostillar reporte consular de nacimiento en el extranjero florida, apostillar certificado de nacimiento en el extranjero florida, apostillar inscripcion de nacimiento extranjero florida, apostillar acta de nacimiento extranjero florida, apostille birth certificate abroad florida, donde apostillar crba en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-matrimonio-florida':
                     $data['description'] = 'Certificados de Matrimonio';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Matrimonio en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de matrimonio near me, apostillar certificado de matrimonio en florida, apostillar acta de matrimonio en florida, apostilla matrimonio florida, apostillar partida de matrimonio florida, apostille marriage certificate, apostille marriage certificate florida, donde apostillar certificado de matrimonio en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-defuncion-florida':
                     $data['description'] = 'Certificados de Defunción';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Defunción en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de defuncion, apostillar certificado de defuncion near me, apostillar certificado de defuncion en florida, apostillar acta de defuncion en florida, como apostillar un certificado de defuncion, apostillado de certificado de defuncion, apostille death certificate florida, apostille death certificate near me, donde apostillar certificado de defuncion en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-divorcio-florida':
                     $data['description'] = 'Certificados de Divorcio';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Divorcio en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de divorcio, apostillar acta de divorcio, apostillar certificado de divorcio near me, apostillar certificado de divorcio en florida, apostilllar acta de divorcio florida, apostillar sentencia de divorcio florida, apostille divorce certificate florida, apostille divorce certificate near me, donde apostillar certificado de divorcio en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-naturalizacion-florida':
                     $data['description'] = 'Certificados de Naturalización';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Naturalización en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de naturalizacion, apostillar acta de naturalizacion, apostillar certificado de naturalizacion near me, apostillar certificado de naturalizacion florida, apostillar acta de naturalizacion florida, apostille naturalization certificate near me, apostille naturalization certificate florida, donde apostillar certificado de naturalizacion en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-expediente-de-adopcion-florida':
                     $data['description'] = 'Expediente de Adopción';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Expediente de Adopción en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar expediente de adopcion, apostillar expediente de adopcion near me, apostillar expediente de adopcion florida, apostille adoption file, apostille adoption file near me, apostille adoption file florida, donde apostillar expediente de adopcion en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-copia-de-pasaporte-florida':
                     $data['description'] = 'Copia de pasaporte';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Copia de Pasaporte en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar copia de pasaporte, apostillar copia de pasaporte near me, apostillar copia de pasaporte florida, apostille copy of passport, apostille copy of passport near me, apostille copy of passport florida, donde apostillar copia de pasaporte en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-copia-de-licencia-de-conducir-florida':
                     $data['description'] = 'Copia de Licencia de Conducir';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Copia de Licencia de Conducir en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar copia de licencia de conducir, apostillar copia de licencia de conducir near me, apostillar copia de licencia de conducir florida, apostille copy of driver's license, apostille copy of driver's license near me, apostille copy of driver's license florida, donde apostillar copia de licencia de conducir en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-escrituras-testamentos-florida':
                     $data['description'] = 'Escrituras y Testamentos';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Escrituras y Testamentos en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar escrituras, apostillar testamento, apostillar escrituras near me, apostillar testamentos near me, apostillar escrituras florida, apostillar testamentos florida, apostille deeds near me, apostille deeds florida, apostille wills near me, apostille wills florida, donde apostillar escrituras en florida, donde apostillar testamentos en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaraciones-juradas-de-estado-unico-florida':
                     $data['description'] = 'Declaraciones Juradas';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Declaraciones Juradas (Affidavit) en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar affidavit, apostillar declaracion jurada, apostillar affidavit near me, apostillar declaracion jurada near me, apostillar affidavit near me, apostillar declaracion jurada florida, apostille affidavit, donde apostillar affidavit en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-titulo-de-automovil-florida':
                     $data['description'] = 'Título de coche/automóvil';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Título de Coche/Automóvil en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar titulo de automovil, apostillar titulo de automovil near me, apostillar titulo de automovil florida, apostille car title, apostille car title near me, apostille car title florida, donde apostillar titulo de automovil en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-autorizacion-de-viaje-florida':
                     $data['description'] = 'Autorización de Viaje';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Autorización de Viaje en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar autorizacion de viaje, apostillar autorizacion de viaje near me, apostillar autorizacion de viaje florida, apostille travel authorization, apostille travel authorization near me, apostille travel authorization florida, donde apostillar autorizacion de viaje en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-poder-notarial-personal-florida':
                     $data['description'] = 'Poder Notarial Personal';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Poder Notarial Personal en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar poder notarial, apostillar carta poder florida, apostillar poder notarial near me, apostillar poder notarial florida, apostillar poder personal florida, apostille power of attorney, apostille power of attorney florida, donde apostillar carta poder en florida, donde apostillar poder notarial en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-registro-de-policia-estatal-florida':
                     $data['description'] = 'Registro de la policía estatal';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Registro de Policía Estatal en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar registro policial, apostillar registro de policia estatal, apostillar registro policial near me, apostillar registro policial florida, apostille police record florida, apostill police record florida, donde apostillar registro policial florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-registro-de-antecedentes-fbi-florida':
                     $data['description'] = 'Registros de antecedentes del FBI';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Registro de Antecedentes del FBI en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar antecedentes del fbi, apostillar registro de antecentes del fbi, apostillar registros de antecedentes del fbi near me, apostillar registros de antecedentes del fbi florida, apostille fbi background check florida, donde apostillar antecedentes del fbi florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-diploma-universitario-florida':
                     $data['description'] = 'Diploma Universitario';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Diploma Universitario en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar diploma, apostillar diploma universitario near me, apostillar diploma universitario florida, apostillar titulo universitario florida, apostille university diploma florida, donde apostillar diploma universitario en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-transcripcion-universitaria-florida':
                     $data['description'] = 'Transcripción Universitaria';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Transcripción Universitaria en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar transcripcion universitaria, apostillar transcripcion universitaria near me, apostillar transcripcion universitaria florida, apostillar transcripcion titulo universitario florida, apostille university transcript florida, donde apostillar transcripcion universitaria florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-diploma-de-escuela-secundaria-florida':
                     $data['description'] = 'Diploma de Escuela Secundaria';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Diploma de Escuela Secundaria en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar diploma secundario, apostillar diploma escuela secundaria, apostillar diploma escuela secundaria near me, apostillar diploma escuela secundaria florida, apostille high school diploma florida, donde apostillar diploma secundaria en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-transcripcion-de-escuela-secundaria-florida':
                     $data['description'] = 'Transcripción de Escuela Secundaria';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Transcripción de Escuela Secundaria en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar transcripcion de escuela secundaria, apostillar transcripcion de escuela secundaria near me, apostillar transcripcion de escuela secundaria florida, apostille high school transcript florida, donde apostillar transcripcion de escuela secundaria florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-incorporacion-florida':
                     $data['description'] = 'Certificado de Incorporación';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Incorporación en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de incorporacion, apostillar acta de incorporacion, apostillar certificado de incorporacion near me, apostillar certificado de incorporacion florida, apostille certificate of incorporation florida, donde apostillar certificado de incorporacion en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-buena-reputacion-florida':
                     $data['description'] = 'Certificado de Buena Reputación';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Buena Reputación en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de buena reputacion, apostillar certificado de buena reputacion near me, apostillar certificado de buena reputacion florida, apostille certificate of good standing florida, donde apostillar certificado de buena reputacion en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-origen-florida':
                     $data['description'] = 'Certificado de Origen';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Origen en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de origen, apostillar certificado de origen near me, apostillar certificado de origen florida, apostille certificate of origin florida, donde apostillar certificado de origen en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-marca-patente-florida':
                     $data['description'] = 'Marcas o Patentes';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Marcas y/o Patentes en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar marca florida, apostillar patente florida, apostillar marca near me, apostillar patente near me, apostillar marca, apostille mark florida, apostille patent florida, donde apostillar marca en florida, donde apostillar patente en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-poder-comercial-florida':
                     $data['description'] = 'Poder Comercial';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Poder Comercial en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar poder comercial,  apostillar poder comercial florida, apostillar poder comercial near me, apostille commercial power florida, donde apostillar poder comercial florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaracion-jurada-comercial-florida':
                     $data['description'] = 'Declaración Jurada Comercial';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Declaración Jurada Comercial en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar declaracion jurada comercial, apostillar affidavit comercial, apostillar declaracion jurada comercial near me, apostillar declaracion jurada comercial florida, apostille commercial affidavit florida, apostillar affidavir comercial florida, donde apostillar affidavit comercial en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-fda-florida':
                     $data['description'] = 'Certificado FDA';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados FDA en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado fda, apostillar certificado fda near me, apostillar certificado fda florida, apostille fda certificate florida, donde apostillar certificado fda en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-facturas-florida':
                     $data['description'] = 'Facturas';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Facturas en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar facturas, apostillar facturas near me, apostillar factura florida, apostille invoices florida, donde apostillar facturas en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;   
                 case 'apostillar-departamento-de-hacienda-florida':
                     $data['description'] = 'Departamento de Hacienda';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Departamento de Hacienda en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar documento departamento de hacienda, apostillar departamento de hacienda near me, apostillar departamento de hacienda florida, apostille department of finance florida, donde apostillar departamento de hacienda en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-gobierno-extranjero-florida':
                     $data['description'] = 'Certificado de Gobierno Extranjero';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Gobierno Extranjero en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de gobierno extranjero, apostillar certificado de gobierno extranjero near me, apostillar certificado de gobierno extranjero florida, apostille foreign government certificate florida, apostillar certificado de gobierno extranjero en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-venta-gratis-florida':
                     $data['description'] = 'Certificado de Venta gratis';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Certificados de Venta en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar certificado de venta, apostillar acta de venta, apostillar certificado de venta near me, apostillar acta de venta near me, apostillar certificado de venta florida, apostillar acta de venta florida, apostille sales certificate florida, donde apostillar certificado de venta en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-ordenes-de-compra-florida':
                     $data['description'] = 'Órdenes de compra';
-                    $data['metadescription'] = "";
-                    $data['keywords'] = "";
+                    $data['metadescription'] = "Apostillamos Órdenes de Compra en Florida de una manera ágil y rápida 😉";
+                    $data['keywords'] .= ", apostillar orden de compra, apostillar orden de compra near me, apostillar orden de compra florida, apostille purchase order florida, donde apostillar orden de compra en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 default:
