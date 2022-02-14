@@ -50,7 +50,7 @@
                             <button type="submit" onclick="changeOrderBy();" class="btn btn-outline-secondary"><img style="width: 15px; height: 15px" src="{{ asset('img/order.png') }}" alt=""></button>
                         </form>
                     </div> --}}
-                    <div class="float-right ml-1">
+                    {{-- <div class="float-right ml-1">
                         <form action="{{route('partner.index')}}" method="POST">
                             @csrf
                             <input type="hidden" name="publicados" value="PUBLICADO">
@@ -63,7 +63,7 @@
                             <input type="hidden" name="nopublicados" value="NO PUBLICADO">
                             <button type="submit" class="btn btn-primary">No publicados</button>
                         </form>
-                    </div>
+                    </div> --}}
                     <div class="float-right ml-1">
                         <form action="{{route('partner.index')}}" method="POST">
                             @csrf
