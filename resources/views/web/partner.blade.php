@@ -10,7 +10,7 @@
     <meta property="og:locale" content="es"/>
     <meta property="og:image" content="https://notarialatina.com/storage/{{$partner->img_profile}}"/>
     <meta property="og:image:width" content="400" />
-    <meta property="og:image:height" content="500" />
+    <meta property="og:image:height" content="400" />
 @php
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
