@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 class PartnerController extends Controller
 {
 
+    static $orderBy = 'asc';
+
     public function __construct()
     {
         $this->middleware(['auth']);
@@ -26,7 +28,7 @@ class PartnerController extends Controller
         $fecha_publicado = null;
         $created_at = null;
         $status = null;
-        static $orderBy = 'asc';
+        // static $orderBy = 'asc';
 
         if($request->publicadosHoy != null){
             $fecha_publicado = $request->publicadosHoy;
