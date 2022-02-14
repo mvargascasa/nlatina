@@ -6,7 +6,7 @@
     <meta property="og:site_name" content="https://notarialatina.com"/>
     <meta property="og:url" content="{{ Request::url() }}"/>
     <meta property="og:description" content="{{ $partner->specialty}}"/>
-    <meta property="og:type" content="video"/>
+    <meta property="og:type" content="article"/>
     <meta property="og:locale" content="es"/>
     <meta property="og:image" content="https://notarialatina.com/storage/{{$partner->img_profile}}"/>
     <meta property="og:image:width" content="400" />
