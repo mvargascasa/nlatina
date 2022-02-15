@@ -26,7 +26,7 @@ class PartnerController extends Controller
         $fecha_publicado = null;
         $created_at = null;
         $status = null;
-        $orderBy = "asc";
+        static $orderBy = 'asc';
 
         if($request->publicadosHoy != null){
             $fecha_publicado = $request->publicadosHoy;
@@ -50,21 +50,37 @@ class PartnerController extends Controller
 
         $name = $request->get('name');
         
-        $total = Partner::count();
         $published = Partner::where('status', '=', 'PUBLICADO')->count();
         $notpublished = Partner::where('status', '=', 'NO PUBLICADO')->count();
         $verified = Partner::where('email_verified_at', '!=', 'null')->count();
         $countPublicadosHoy = Partner::where('fecha_publicado', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
         $countRegistradosHoy = Partner::where('created_at', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
         
-        $partners = Partner::name($name)
-        ->fechaPublicado($fecha_publicado)
-        ->createdAt($created_at)
-        ->status($status)
-        ->orderBy('id', $orderBy)
-        ->paginate(10);
+        // if($request->orderBy != null){
 
-        return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy', 'orderBy'));
+            $partners = Partner::name($name)
+            ->fechaPublicado($fecha_publicado)
+            ->createdAt($created_at)
+            ->status($status)
+            ->orderBy('id', $orderBy)
+            ->paginate(10);
+
+            $links = $partners->appends(['sortby' => 'id', 'order' => $orderBy])->links();
+
+            // return $orderBy;
+        
+        // } else {
+        //     $partners = Partner::name($name)
+        //     ->fechaPublicado($fecha_publicado)
+        //     ->createdAt($created_at)
+        //     ->status($status)
+        //     //->orderBy('id', $request->orderBy)
+        //     ->paginate(10);
+
+        //     $links = $partners->links();
+        // }
+
+        return view('admin.partner.index', compact('partners', 'links', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy', 'orderBy'));
     }
 
     /**
