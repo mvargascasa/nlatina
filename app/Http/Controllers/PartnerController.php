@@ -26,61 +26,58 @@ class PartnerController extends Controller
         $fecha_publicado = null;
         $created_at = null;
         $status = null;
-        static $orderBy = 'asc';
+        // static $orderBy = 'asc';
 
-        if($request->publicadosHoy != null){
-            $fecha_publicado = $request->publicadosHoy;
-        }
-
-        if($request->registradosHoy != null){
-            $created_at = $request->registradosHoy;
-        }
-
-        if($request->nopublicados != null){
-            $status = $request->nopublicados;
-        } else if($request->publicados != null){
-            $status = $request->publicados;
-        }
-
-        if ($request->orderBy == 'desc') {
-            $orderBy = 'asc';
-        } else if($request->orderBy == 'asc'){
-            $orderBy = 'desc';
-        }
-
+        // if($request->nopublicados != null){
+        //     $status = $request->nopublicados;
+        // } else if($request->publicados != null){
+            //     $status = $request->publicados;
+        // }
+        
         $name = $request->get('name');
         
+        $total = Partner::count();
         $published = Partner::where('status', '=', 'PUBLICADO')->count();
         $notpublished = Partner::where('status', '=', 'NO PUBLICADO')->count();
         $verified = Partner::where('email_verified_at', '!=', 'null')->count();
         $countPublicadosHoy = Partner::where('fecha_publicado', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
         $countRegistradosHoy = Partner::where('created_at', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
         
-        // if($request->orderBy != null){
+        if($request->publicadosHoy != null){
+            
+            $contadorPaginatePublicados = $countPublicadosHoy + 1;
+
+            $fecha_publicado = $request->publicadosHoy;
 
             $partners = Partner::name($name)
-            ->fechaPublicado($fecha_publicado)
-            ->createdAt($created_at)
-            ->status($status)
-            ->orderBy('id', $orderBy)
-            ->paginate(10);
+                ->fechaPublicado($fecha_publicado)
+                ->createdAt($created_at)
+                ->status($status)
+                ->orderBy('id', 'asc')
+                ->paginate($contadorPaginatePublicados);
+        } else 
+        if($request->registradosHoy != null){
 
-            
+            $contadorPaginateRegistrados = $countRegistradosHoy + 1;
 
-            // return $orderBy;
-        
-        // } else {
-        //     $partners = Partner::name($name)
-        //     ->fechaPublicado($fecha_publicado)
-        //     ->createdAt($created_at)
-        //     ->status($status)
-        //     //->orderBy('id', $request->orderBy)
-        //     ->paginate(10);
+            $created_at = $request->registradosHoy;
 
-        //     $links = $partners->links();
-        // }
+            $partners = Partner::name($name)
+                ->fechaPublicado($fecha_publicado)
+                ->createdAt($created_at)
+                ->status($status)
+                ->orderBy('id', 'asc')
+                ->paginate($contadorPaginateRegistrados);
+        } else {
+            $partners = Partner::name($name)
+                //->fechaPublicado($fecha_publicado)
+                //->createdAt($created_at)
+                ->status($status)
+                ->orderBy('id', 'asc')
+                ->paginate(10);
+        }
 
-        return view('admin.partner.index', compact('partners', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy', 'orderBy'));
+        return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy'));
     }
 
     /**
