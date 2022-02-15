@@ -65,7 +65,7 @@ class PartnerController extends Controller
             ->orderBy('id', $orderBy)
             ->paginate(10);
 
-            $links = $partners->appends(['sortby' => 'id', 'order' => $orderBy])->links();
+            $links = $partners->links();
 
             // return $orderBy;
         
