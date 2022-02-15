@@ -144,7 +144,7 @@
                     </table>
                 </div>
             </div>
-            {{ $links }}
+            {{ $partners->links() }}
         </div>
     </div>
 </div>

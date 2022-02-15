@@ -65,7 +65,7 @@ class PartnerController extends Controller
             ->orderBy('id', $orderBy)
             ->paginate(10);
 
-            $links = $partners->links();
+            
 
             // return $orderBy;
         
@@ -80,7 +80,7 @@ class PartnerController extends Controller
         //     $links = $partners->links();
         // }
 
-        return view('admin.partner.index', compact('partners', 'links', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy', 'orderBy'));
+        return view('admin.partner.index', compact('partners', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy', 'orderBy'));
     }
 
     /**
