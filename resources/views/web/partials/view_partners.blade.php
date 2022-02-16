@@ -128,7 +128,7 @@
         const countryId = $("#country").val();
         const specialty = $('#specialty').val();
         const state = $('#stateSelect').val();
-        $('#contentPartner').html("<div class='loading text-center img-fluid'><img src='{{ asset('img/loader.gif') }}' alt='loading' /></div>");
+        $('#contentPartner').html("<div class='loading text-center img-fluid'><img width='400px' height='400px' src='{{ asset('img/loader.gif') }}' alt='loading' /></div>");
         $.ajax({
             type: "POST",
             url: "{{ route('partners.fetch.state') }}",
