@@ -159,8 +159,13 @@ class WebController extends Controller
     }
 
     public function showPartner($slug){
-        $partner = Partner::where('slug', $slug)->first(); 
-        return view('web.partner', compact('partner'));
+        $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first(); 
+        
+        if($partner){
+            return view('web.partner', compact('partner'));
+        } else {
+            return redirect()->route('web.showallpartners');
+        }
     }
 
     public function oficinasny(?string $service = null){
