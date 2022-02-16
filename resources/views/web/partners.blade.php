@@ -1,7 +1,6 @@
 @extends('layouts.web')
 @section('header')
     <title>Abogados y Notarias en Latinoamérica a su alcance</title>
-    <meta name="title" content="Abogados y Notarias en Latinoamérica a su alcance!">
     <meta name="description" content="Partners de Notaria Latina | Contamos con un amplio directorio de abogados y notarios en Latinoamérica para ayudarlo a gestionar sus trámites.">
     <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil, abogados latinos">
     <style>
@@ -202,7 +201,7 @@
     <div>
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-sm-6 col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title titulo">¡Abogados y Notarias<br>en Latinoamérica a su alcance!</h1>
+              <h1 class="font-weight-bold heading-title titulo">¡Abogados y Notarias<br> en Latinoamérica a su alcance!</h1>
             </div>
             <div class="col-sm-6">
                 <div class="text-center form" style="background-color: #002542;">
