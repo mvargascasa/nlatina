@@ -197,12 +197,35 @@ class PartnerController extends Controller
     }
 
     public function viewLastPublicated(){
-        $partners = Partner::where('status', 'PUBLICADO')
-            ->orderBy('updated_at', 'desc')
-            ->limit(10)
-            ->get();
 
-        return view('admin.partner.form', compact('partners'));
+        $total = Partner::count();
+        $published = Partner::where('status', '=', 'PUBLICADO')->count();
+        $notpublished = Partner::where('status', '=', 'NO PUBLICADO')->count();
+        $verified = Partner::where('email_verified_at', '!=', 'null')->count();
+        $countPublicadosHoy = Partner::where('fecha_publicado', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
+        $countRegistradosHoy = Partner::where('created_at', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
+        
+        $partners = Partner::where('status', 'PUBLICADO')
+            ->orderBy('id', 'asc')
+            ->paginate(1);
+
+        return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy'));
+    }
+
+    public function getAllNotPublicated(){
+        
+        $total = Partner::count();
+        $published = Partner::where('status', '=', 'PUBLICADO')->count();
+        $notpublished = Partner::where('status', '=', 'NO PUBLICADO')->count();
+        $verified = Partner::where('email_verified_at', '!=', 'null')->count();
+        $countPublicadosHoy = Partner::where('fecha_publicado', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
+        $countRegistradosHoy = Partner::where('created_at', 'LIKE', '%' . Str::limit(date(now()), 10, '') . '%')->count();
+        
+        $partners = Partner::where('status', 'NO PUBLICADO')
+        ->orderBy('id', 'asc')
+        ->paginate(10);
+
+        return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy'));
     }
 
     /**

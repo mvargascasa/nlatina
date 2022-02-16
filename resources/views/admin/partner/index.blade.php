@@ -28,7 +28,7 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-sm-3">
-                    <h5><b>TOTAL PARTNERS: </b>{{ $partners->total() }}</h5>
+                    <h5><b>TOTAL: </b>{{ $partners->total() }}</h5>
                 </div>
                 <div class="col-sm-3">
                     <h5><b>PUBLICADOS: </b>{{ $published }}</h5>
@@ -50,20 +50,16 @@
                             <button type="submit" onclick="changeOrderBy();" class="btn btn-outline-secondary"><img style="width: 15px; height: 15px" src="{{ asset('img/order.png') }}" alt=""></button>
                         </form>
                     </div> --}}
-                    {{-- <div class="float-right ml-1">
-                        <form action="{{route('partner.index')}}" method="POST">
-                            @csrf
-                            <input type="hidden" name="publicados" value="PUBLICADO">
-                            <button type="submit" class="btn btn-primary">Publicados</button>
-                        </form>
+                    <div class="float-right ml-1">
+                        <button class="btn btn-primary">
+                            <a style="text-decoration: none; color: #ffffff" href="{{ route('partner.show.not.publicated') }}">No Publicados</a>
+                        </button>
                     </div>
                     <div class="float-right ml-1">
-                        <form action="{{route('partner.index')}}" method="POST">
-                            @csrf
-                            <input type="hidden" name="nopublicados" value="NO PUBLICADO">
-                            <button type="submit" class="btn btn-primary">No publicados</button>
-                        </form>
-                    </div> --}}
+                        <button class="btn btn-primary">
+                            <a style="text-decoration: none; color: #ffffff" href="{{ route('partner.show.latest.public') }}">Publicados</a>
+                        </button>
+                    </div>
                     <div class="float-right ml-1">
                         <form action="{{route('partner.index')}}" method="POST">
                             @csrf

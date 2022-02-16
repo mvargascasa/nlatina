@@ -81,6 +81,7 @@
             </div>
         </div>
     </div>
+    {{ $partners->links()}}
 </div>   
 @endsection
 
