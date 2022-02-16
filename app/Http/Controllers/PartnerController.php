@@ -207,7 +207,7 @@ class PartnerController extends Controller
         
         $partners = Partner::where('status', 'PUBLICADO')
             ->orderBy('id', 'asc')
-            ->paginate(1);
+            ->paginate(10);
 
         return view('admin.partner.index', compact('partners', 'total', 'published', 'notpublished', 'verified', 'countPublicadosHoy', 'countRegistradosHoy'));
     }
