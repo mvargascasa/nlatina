@@ -124,7 +124,7 @@
 
 <script>
     $('#formSearchPartnersAfter').submit(function(event){
-        $('#contentPartner').html("<div class='loading text-center img-fluid'><img src='{{ asset('img/loader.gif') }}' alt='loading' /></div>");
+        // $('#contentPartner').html("<div class='loading text-center img-fluid'><img src='{{ asset('img/loader.gif') }}' alt='loading' /></div>");
         event.preventDefault();
         const countryId = $("#country").val();
         const specialty = $('#specialty').val();
