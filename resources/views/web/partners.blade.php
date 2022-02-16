@@ -2,7 +2,7 @@
 @section('header')
     <title>Abogados y Notarias en Latinoamérica a su alcance</title>
     <meta name="description" content="Partners de Notaria Latina | Contamos con un amplio directorio de abogados y notarios en Latinoamérica para ayudarlo a gestionar sus trámites.">
-    <meta name="keywords" content="abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi">
+    <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil, abogados latinos">
     <style>
         html, body {
             max-width: 100% !important;
