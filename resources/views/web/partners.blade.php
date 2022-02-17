@@ -308,6 +308,8 @@
     @include('web.partials.search_partner')   
 </div>
 
+@section('numberWpp', '13479739888')
+
 @endsection
 
 @section('script')
