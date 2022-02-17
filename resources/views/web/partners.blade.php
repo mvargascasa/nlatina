@@ -172,6 +172,9 @@
                 width: 100px !important; 
                 height: 125px !important;
             }
+            #colRegisterForm{
+                margin-bottom: -10px !important;
+            }
         }
         .titulo{
             font-size: 30px;
@@ -208,7 +211,7 @@
             <div class="col-sm-6 col-12 text-white text-center">
               <h1 class="font-weight-bold heading-title titulo">¡Abogados y Notarias<br> en Latinoamérica a su alcance!</h1>
             </div>
-            <div class="col-sm-6">
+            <div id="colRegisterForm" class="col-sm-6">
                 <div class="text-center form" style="background-color: #002542;">
                     <h4 class="text-white pt-4 px-4" style="margin: 10px 10px 10px 10px;">¿Eres abogado y quieres anunciarte en Estados Unidos?</h4>
                     <p class="text-white">Se parte de nuestro equipo AHORA!</p>
