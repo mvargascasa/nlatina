@@ -197,7 +197,7 @@
                       @endforeach
                         <p class="mt-4 mb-1" style="font-size: .90rem;">{{Auth::user()->specialty}}</p>
                         @else
-                        <p class="mt-4 mb-1" style="font-weight: bold; font-size: .90rem;">No hay información que mostrar. Edita tu perfil para que puedas ver los cambios reflejados</p>
+                        <p class="mt-4 mb-1" style="font-weight: bold; font-size: .90rem;">No hay información que mostrar. <a href="{{ route('socios.edit', Auth::user()) }}">Edita tu perfil</a> para que puedas ver los cambios reflejados</p>
                       @endif
                   </div>
               </div>
@@ -214,7 +214,7 @@
                         @if (Auth::user()->biography_html != null)
                         {!! Auth::user()->biography_html !!}
                         @else
-                        <p class="mt-4 mb-1" style="font-weight: bold; font-size: .90rem;">No hay información que mostrar. Edita tu perfil para que puedas ver los cambios reflejados</p>
+                        <p class="mt-4 mb-1" style="font-weight: bold; font-size: .90rem;">No hay información que mostrar. <a href="{{ route('socios.edit', Auth::user()) }}">Edita tu perfil</a> para que puedas ver los cambios reflejados</p>
                         @endif
                     </div>
                   </div>
