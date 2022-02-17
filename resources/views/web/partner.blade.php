@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
-    <meta name="description" content="@isset($partner->specialty) {{ $partner->specialty }} @else Partners de Notaria Latina | Contamos con un amplio directorio de abogados/as y notarios en Latinoamérica @endisset">
+    <meta name="description" content="@isset($partner->specialty) {{ $partner->specialty }} @else Contamos con un amplio directorio de abogados/as y notarios en Latinoamérica | Notaria Latina ⚖👨‍⚖️ @endisset">
     <meta name="keywords" content="abogado near me, abogado cerca de mi, notaria near me, notaria cerca de mi, abogado en {{ Str::lower($partner->city) }} {{ Str::lower($partner->state) }}, notario en {{ Str::lower($partner->city) }} {{ Str::lower($partner->state) }}, abogados en {{ Str::lower($partner->country_residence) }}, @foreach($partner->specialties as $specialty)abogado especialista {{ Str::lower($specialty->name_specialty) }} en {{ Str::lower($partner->city . " " .  $partner->state)}}, @endforeach @isset($partner->address)abogado en {{ Str::lower($partner->address)}} @endisset">
-    <meta property="og:title" content="Partner Notaria Latina - {{ $partner->name }} {{ $partner->lastname}}"/>
+    <meta property="og:title" content="Abogado en {{ $partner->city }}, {{ $partner->state }} | Notaria Latina"/>
     <meta property="og:site_name" content="https://notarialatina.com"/>
     <meta property="og:url" content="{{ Request::url() }}"/>
     <meta property="og:description" content="{{ $partner->specialty}}"/>
@@ -16,7 +16,7 @@
     header("Cache-Control: post-check=0, pre-check=0", false);
     header("Pragma: no-cache");
 @endphp
-    <title>Partner de Notaria Latina - {{ $partner->name }} {{$partner->lastname}}</title>
+    <title>Abogado en {{ Str::ucfirst($partner->city)}}, {{ Str::ucfirst($partner->state)}} | Notaria Latina</title>
     <style>
         .bg-header{
             /* background-color: #002542; */
@@ -224,7 +224,7 @@
                         <h6 style="font-weight: bold"><i class="fas fa-globe"></i> Sitio web</h6>
                         <a target="_blank" style="color: #9A7A2E" href="{{$partner->website}}">{{ $partner->website }}</a>
                     @endif
-                    @if($partner->link_facebook != null || $partner->link_instagram != null || $partner->link_linkedin != null)
+                    @if(Str::startsWith($partner->link_facebook, 'https') || Str::startsWith($partner->link_instagram, 'https') || Str::startsWith($partner->link_linkedin, 'https'))
                         <h6 style="font-weight: bold; margin-top: 10px">Redes Sociales</h6>
                         <div style="margin-top: 20px">
                             @if($partner->link_facebook != null && Str::startsWith($partner->link_facebook, 'https'))
