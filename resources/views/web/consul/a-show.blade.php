@@ -9,7 +9,14 @@
     <meta property="og:title"       content="Consulado de {{$consul->country}} en New York - Notaría Latina" />
     <meta property="og:description" content="Información para Ciudadanos de {{$consul->country}} en New York sobre Trámites Consulares, Apostillas, Poderes, Renovación de Pasaportes." />
     <meta property="og:image"       content="https://notarialatina.com/img/meta-notaria-latina-queens-new-york.jpg" />
-@endsection
+    <style>
+        @media screen and (max-width: 600px){
+            #imgBanner{
+                min-height: 385px !important;
+            }
+        }
+    </style>
+    @endsection
 
 @section('phoneNumberHidden', '+18007428602')
 @section('phoneNumber', '800-742-8602')
@@ -18,20 +25,16 @@
 
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
-
-        <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
-
+        <div id="imgBanner" class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-12 text-white text-center">
               <h1 class="font-weight-bold heading-title" >Consulado de {{$consul->country}} en New York</h1>
           </div>
-
       </div>
     </div>
   </section>
 
 <div class="container pt-4">
         <div class="row">
-
             <div class="col-12 col-md-9 p-4">
                 <h2>APOSTILLA {{strtoupper($consul->country)}}</h2>
                 <hr>
