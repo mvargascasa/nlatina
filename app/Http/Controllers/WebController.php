@@ -149,6 +149,7 @@ class WebController extends Controller
                     ->state($request->state)
                     ->specialties($request->specialty)
                     ->get();
+                    
         $totalPartners = $partnersCount->count();
         
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
