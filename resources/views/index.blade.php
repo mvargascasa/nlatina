@@ -18,7 +18,6 @@
     <meta property="og:title"              content="Notaría Latina - Notario Público en Queens New York." />
     <meta property="og:description"        content="Gestión en Línea en todo EE.UU. Poderes, Apostillas, Traducciones, Autorizaciones de Viaje, Affidavit." />
     <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
-    {{-- <meta property="og:image:secure_url"   content="{{ asset('img/meta-notaria-latina-queens-new-york.jpg') }}" /> --}}
     
     <meta name="google-site-verification" content="dJnD6aMr-q5ldI-YRk2UM1KC0A8GEBUok__9ZpS0CiQ" />
     <style>

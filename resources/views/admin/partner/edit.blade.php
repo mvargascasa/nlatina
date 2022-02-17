@@ -412,6 +412,7 @@
               </button>
             </div>
             <div class="modal-body">
+                {{--DIV POLITICAS Y PRIVACIDAD--}}
                 <div class="container p-4 text-justify">
                     <h6 dir="ltr"><strong>POL&Iacute;TICAS DE PRIVACIDAD Y COOKIES</strong></h6>
                     <h6>PRIVACIDAD</h6>
