@@ -13,7 +13,10 @@
             max-width: 100% !important;
             overflow-x: hidden !important;
         }
-
+        /*QUITAR LA ETIQUETA DE TELEFONO DE LA ESQUINA SUPERIOR DERECHA EN LA PAGINA DE LOS PARTNERS*/
+        #etiquetaPhone{
+            display: none;
+        }
         .testimotionals {width:100%;display:inline-block;}
         .testimotionals .card {
             position:relative;
@@ -196,9 +199,6 @@
     </style>
     <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
-
-@section('phoneNumberHidden', '+18007428602')
-@section('phoneNumber', '800-742-8602')
 
 @section('content')
 
