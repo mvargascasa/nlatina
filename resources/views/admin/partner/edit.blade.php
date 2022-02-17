@@ -53,6 +53,15 @@
             height: 450px;
             overflow-y: auto;
         }
+
+        .marcarLabel {
+            background-color: #002542;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: background-color 3s ease;
+            padding: 5px;
+        }
+
     </style>
 @endsection
 
@@ -91,7 +100,7 @@
                                 <div class="row">
                                     @foreach ($camposVacios as $campoVacio)
                                     <div class="col-6 col-sm-3">
-                                        <i class="fas fa-exclamation-circle"></i> <b id="txtCamposVacios"><a style="text-decoration: none; color: #000000" href="#{{$campoVacio}}">{{ $campoVacio }}</a></b>       
+                                        <i class="fas fa-exclamation-circle"></i> <b id="txtCamposVacios"><a style="text-decoration: none; color: #000000" href="#{{$campoVacio}}" onclick="marcarCampo(this);">{{ $campoVacio }}</a></b>       
                                     </div>
                                     @endforeach
                                 </div>
@@ -736,6 +745,15 @@
         }
 
         $(".checkSpecialties").click(() => deshabilitarCheckBox());
+
+        function marcarCampo(event){
+            var label = document.getElementById(event.textContent);
+            label.classList.add('marcarLabel');
+            setTimeout(function(){ 
+                label.classList.remove('marcarLabel');
+             }, 2000);
+        }
+
 
     </script>
 @endsection
