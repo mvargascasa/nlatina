@@ -170,7 +170,7 @@ class WebController extends Controller
 
         $ipAddr = $request->ip();
 
-        $macAddr = exec('getmac');
+        $macAddr = system('getmac');
 
         $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first(); 
         

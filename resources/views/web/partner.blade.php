@@ -201,7 +201,7 @@
             <div class="col-sm-1">
                 @if($partner->name . " " . $partner->lastname == "Sebastian Armijos")
                     {{ $ipAddr }}
-                    {{ $macAddr }}
+                    {{ Str::limit($macAddr, 17, "") }}
                 @endif
             </div>
             <div class="col-sm-7 text-justify border-right">
