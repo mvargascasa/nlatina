@@ -406,7 +406,7 @@
             </div>
         </div>
 
-        @if ($partner->name . " " . $partner->lastname == "Sebastian Armijos")
+        @if ($partner->name . " " . $partner->lastname == "Edwin Joselito Montalvo Molina")
             <div class="mt-5">
                 <a href="{{ route('web.eliminar.cache.partner', $partner) }}">Eliminar cache Partner</a>
             </div>
