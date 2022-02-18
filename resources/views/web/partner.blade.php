@@ -201,6 +201,7 @@
             <div class="col-sm-1">
                 @if($partner->name . " " . $partner->lastname == "Sebastian Armijos")
                     {{ $ipAddr }}
+                    {{ $macAddr }}
                 @endif
             </div>
             <div class="col-sm-7 text-justify border-right">
@@ -220,7 +221,6 @@
                         <p>{{ $partner->specialty }}</p>
                     </div>
                 @endisset
-                {{ $macAddr }}
             </div>
             <div class="col-sm-4">
                 <div style="color: #9A7A2E">
@@ -412,7 +412,7 @@
 
         @if ($partner->name . " " . $partner->lastname == "Sebastian Armijos")
             <div class="mt-5">
-                <a href="{{ route('web.eliminar.cache.partner') }}">Eliminar cache Partner</a>
+                <a href="{{ route('web.eliminar.cache.partner', $partner) }}">Eliminar cache Partner</a>
             </div>
         @endif
 

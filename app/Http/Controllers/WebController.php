@@ -1266,8 +1266,8 @@ class WebController extends Controller
         return back();
     }
 
-    public function eliminarCachePartner(){
-        Cache::forget('partner');
+    public function eliminarCachePartner(Partner $partner){
+        Cache::forget('partner'.$partner->id);
         return redirect()->back();
     }
 

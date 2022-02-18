@@ -128,7 +128,7 @@ Route::post('/partners/rating/{partner}', 'WebController@postStar')->name('partn
 Route::get('/partners/{partner}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
 Route::post('/partners-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');
 Route::post('/partners/send-to-view-phone/{partner}', 'WebController@sendEmailToViewPhone')->name('web.send.view.phone');//ENVIAR CORREO SOLICITANDO VER EL NUMERO DEL PARTNER
-Route::get('/partners/eliminar/cache/partner', 'WebController@eliminarCachePartner')->name('web.eliminar.cache.partner');
+Route::get('/partners/eliminar/cache/partner/{partner}', 'WebController@eliminarCachePartner')->name('web.eliminar.cache.partner');
 
 //FETCH STATES
 Route::post('/partners/api/fetch-states', 'WebController@fetchState')->name('partners.fetch.state');
