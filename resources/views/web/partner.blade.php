@@ -199,10 +199,6 @@
 
         <div class="row mt-5">
             <div class="col-sm-1">
-                @if($partner->name . " " . $partner->lastname == "Sebastian Armijos")
-                    {{ $ipAddr }}
-                    {{ Str::limit($macAddr, 17, "") }}
-                @endif
             </div>
             <div class="col-sm-7 text-justify border-right">
                 <h4><b>Biografía</b></h4>

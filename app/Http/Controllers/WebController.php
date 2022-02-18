@@ -163,19 +163,10 @@ class WebController extends Controller
 
     public function showPartner(Request $request, $slug){
 
-        // if (!empty($_SERVER['HTTP_CLIENT_IP'])){
-        //     $ipAddress = $_SERVER['HTTP_CLIENT_IP'];
-        //     return $ipAddress;
-        // }
-
-        $ipAddr = $request->ip();
-
-        $macAddr = system('getmac');
-
         $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first(); 
         
         if($partner){
-            return view('web.partner', compact('partner', 'ipAddr', 'macAddr'));
+            return view('web.partner', compact('partner'));
         } else {
             return redirect()->route('web.showallpartners');
         }
