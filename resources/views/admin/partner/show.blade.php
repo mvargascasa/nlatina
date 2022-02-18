@@ -63,6 +63,12 @@
                         <div class="form-group mx-3">
                             {!! Form::submit('Guardar',  ['class' => 'btn btn-primary']) !!}
                         </div>
+                        
+                            @if ($partner->fecha_publicado != null)
+                                <div class="mt-2 ml-5">
+                                    <p>Fecha Publicado: <b>{{ Str::limit($partner->fecha_publicado, 10, '')}}</b></p>
+                                </div>
+                            @endif       
                     </div>
 
                     {{--NOMBRE Y APELLIDO, EMAIL, NACIONALIDAD--}}
