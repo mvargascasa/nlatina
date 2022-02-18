@@ -220,6 +220,7 @@
                         <p>{{ $partner->specialty }}</p>
                     </div>
                 @endisset
+                {{ $macAddr }}
             </div>
             <div class="col-sm-4">
                 <div style="color: #9A7A2E">

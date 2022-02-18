@@ -170,10 +170,12 @@ class WebController extends Controller
 
         $ipAddr = $request->ip();
 
+        $macAddr = exec('getmac');
+
         $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first(); 
         
         if($partner){
-            return view('web.partner', compact('partner', 'ipAddr'));
+            return view('web.partner', compact('partner', 'ipAddr', 'macAddr'));
         } else {
             return redirect()->route('web.showallpartners');
         }
