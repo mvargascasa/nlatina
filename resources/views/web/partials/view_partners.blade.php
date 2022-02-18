@@ -86,11 +86,11 @@
                                         @endforeach
                                         <h6 class="mt-2 txtDataPartner dismissMarginTopBottom"><b>{{ $partner->country_residence }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png') }}"/></b></h6>
                                         @if ($partner->state != null)
-                                            <h6 class="txtDataPartner dismissMarginTopBottom"><b>{{ $partner->state }}</b></h6>
+                                            <h6 class="txtDataPartner dismissMarginTopBottom"><b>{{ Str::ucfirst($partner->state) }}</b></h6>
                                         @endif
                                         <div class="row mt-3">
                                             <div class="col-sm-12">
-                                                <p class="txtDataPartner"><i class="fas fa-phone-alt"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
+                                                <p class="txtDataPartner"><i class="fas fa-phone-alt"></i> {{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...') }}</p>
                                             </div>
                                             <br>
                                         </div>	
