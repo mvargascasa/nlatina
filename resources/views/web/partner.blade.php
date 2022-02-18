@@ -198,7 +198,11 @@
         </div>
 
         <div class="row mt-5">
-            <div class="col-sm-1"></div>
+            <div class="col-sm-1">
+                @if($partner->name . " " . $partner->lastname == "Sebastian Armijos")
+                    {{ $ipAddr }}
+                @endif
+            </div>
             <div class="col-sm-7 text-justify border-right">
                 <h4><b>Biografía</b></h4>
                 <div>
