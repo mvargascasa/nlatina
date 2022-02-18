@@ -13,7 +13,9 @@ use App\Rating;
 use App\Specialty;
 use App\State;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Session;
+use Illuminate\Support\Str;
 
 class WebController extends Controller
 {
@@ -1141,6 +1143,7 @@ class WebController extends Controller
         return redirect()->back();
     }
 
+    //FUNCION PARA ENVIAR SOLICITUD DE APOSTILLA CON ADJUNTO
     public function sendEmailApostille(Request $request){
 
         $from_email		 = "apostillas@notarialatina.com"; //from mail, sender email address
@@ -1223,4 +1226,39 @@ class WebController extends Controller
         
         return back();
     }
+
+    public function sendEmailToViewPhone(Request $request, Partner $partner){
+
+        // if(Cache::get('partner'.$partner->id) == $partner->name){
+        //     Cache::add('partner', $partner->name);
+        // } else {
+            Cache::put('partner'.$partner->id, $partner->name);
+        // }
+
+        $to = "sebas31051999@gmail.com";
+        $subject = "Consulta para ver teléfono del Partner: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . " | ". Str::limit(date(now()), 10, '');
+        $message = "<br><strong><h3>Datos del solicitante</h3></strong>
+                <br>Nombre: " . strip_tags($request->name). "
+                <br>Teléfono: " . strip_tags($request->phone) ."
+                <br>Email: " . strip_tags($request->email) . "
+                <br>
+                <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+        ";
+        $header = 'From: <partners@notarialatina.com>' . "\r\n" .
+        'MIME-Version: 1.0' . "\r\n".
+        'Content-type:text/html;charset=UTF-8' . "\r\n"
+        ;
+
+        mail($to, $subject, $message, $header);
+
+        $request->session()->flash('solicited', 'Gracias por enviar tu valoración');
+
+        return back();
+    }
+
+    public function eliminarCachePartner(){
+        Cache::forget('partner');
+        return redirect()->back();
+    }
+
 }

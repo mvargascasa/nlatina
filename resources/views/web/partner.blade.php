@@ -187,9 +187,12 @@
                     <p style="margin-top: -10px">{{ $partner->company}}</p>
                 @endif
                 <br>
-                <div id="divPhoneAndEmail" class="row d-flex">
-                    <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i> {{ $partner->codigo_pais }} {{ $partner->phone }}</p>
-                    <p class="ml-5"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p>
+                {{-- <div id="divPhoneAndEmail" class="row d-flex">
+                    <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p>
+                    <p class="ml-5" style="cursor: pointer; background-color: #002542; padding-left: 1%; padding-right: 1%; border-radius: 5px;">Ver número</p>
+                </div> --}}
+                <div class="row d-flex">
+                    <p class="ml-3"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p>
                 </div>
             </div>
         </div>
@@ -295,9 +298,21 @@
                         <button class="btn mb-3" style="background-color: #FEC02F" type="submit">Enviar</button>
                     </form>
                 </div>
+                @if (Cache::has('partner'.$partner->id) && Cache::get('partner'.$partner->id) == $partner->name)
+                    <div class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%">
+                        <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p>
+                        <a class="ml-5" style="color: #002542; text-decoration: none" href="tel:{{$partner->codigo_pais}}{{$partner->phone}}">Llamar</a>
+                    </div>
+                @else
+                    <div class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%">
+                        <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p>
+                        <p class="ml-5" style="cursor: pointer; color: #002542" data-toggle="modal" data-target=".bd-example-modal-sm">Ver teléfono</p>
+                    </div>
+                @endif
             </div>
         </div>
         @endif
+        {{--MODAL DE VALORACION DE PARTNER--}}
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
             <form action="{{ route('partner.rating', $partner)}}" method="POST">
@@ -358,7 +373,44 @@
                     </form>
               </div>
             </div>
-          </div>
+        </div>
+        {{--DIV PARA LLENAR FORMULARIO Y MOSTRAR EL NUMERO--}}
+        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header text-white" style="background-color: #002542">
+                        <p style="font-weight: bold">Complete el formulario para ver el número telefónico del partner {{ $partner->name . " " . $partner->lastname}}</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="{{ route('web.send.view.phone', $partner)}}" method="POST">
+                    <div class="modal-body" >
+                            @csrf
+                            <div class="mb-3">
+                                <input class="form-control" name="email" type="email" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control" name="name" type="text" placeholder="Nombre y Apellido" required>
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control" name="phone" type="text" placeholder="Teléfono" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-center" style="margin-bottom: -15px;">
+                            <button type="submit" class="btn" style="background-color: #fec02f">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        @if ($partner->name . " " . $partner->lastname == "Sebastian Armijos")
+            <div class="mt-5">
+                <a href="{{ route('web.eliminar.cache.partner') }}">Eliminar cache Partner</a>
+            </div>
+        @endif
+
         @if (session('report'))
             @php
                 echo "
@@ -379,6 +431,16 @@
                     ";    
             @endphp
         @endif
+        @if (session('solicited'))
+            @php
+                echo "
+                    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+                    <script>
+                        swal('Se envió la información', 'Ahora puedes acceder al teléfono del partner!', 'success');
+                    </script>
+                    ";    
+            @endphp
+        @endif
     </div>
 @endsection
 
@@ -390,5 +452,8 @@
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/FONDO-PARTNER-INDIVIDUAL.webp')}}')";
     });
+    function openModalPhone(){
+        $('.bd-example-modal-sm').modal('show');
+    }
 </script>
 @endsection
