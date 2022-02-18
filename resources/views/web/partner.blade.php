@@ -395,7 +395,7 @@
                                 <input class="form-control" name="name" type="text" placeholder="Nombre y Apellido" required>
                             </div>
                             <div class="mb-3">
-                                <input class="form-control" name="phone" type="text" placeholder="Teléfono" required>
+                                <input class="form-control" name="phone" type="number" placeholder="Teléfono" required>
                             </div>
                         </div>
                         <div class="modal-footer justify-content-center" style="margin-bottom: -15px;">
