@@ -134,7 +134,7 @@ class WebController extends Controller
             $dataToLoad = $dataToLoad + $request->dataLoad;
         }
 
-        $countries = Country::select(['id', 'name_country'])->get();
+        $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
         $states = State::where('country_id', $request->country)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
                 ->where('status', 'PUBLICADO')
