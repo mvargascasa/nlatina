@@ -231,6 +231,7 @@
                                 <option value="">País</option>
                                 <option value="Argentina">Argentina</option>
                                 <option value="Bolivia">Bolivia</option>
+                                <option value="Chile">Chile</option>
                                 <option value="Colombia">Colombia</option>
                                 <option value="Costa Rica">Costa Rica</option>
                                 <option value="Ecuador">Ecuador</option>
@@ -382,6 +383,7 @@
             switch (selectPaisResidencia.value) {
                 case "Argentina":codigo = "+54";break;
                 case "Bolivia":codigo = "+591";break;
+                case "Chile":codigo = "+56"; break;
                 case "Colombia":codigo = "+57";break;
                 case "Costa Rica":codigo = "+506";break;
                 case "Ecuador":codigo = "+593";break;
