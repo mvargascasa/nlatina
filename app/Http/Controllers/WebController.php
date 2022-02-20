@@ -84,7 +84,7 @@ class WebController extends Controller
         $specialty = $request->get('specialty');
         $state = $request->get('state');
 
-        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'city', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
                 ->where('status', 'PUBLICADO')
                 ->orderBy('id', 'DESC')
                 ->country($country)
@@ -107,7 +107,7 @@ class WebController extends Controller
         $specialty = $request->get('specialty');
         $state = $request->get('state');
 
-        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'city', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
                 ->where('status', 'PUBLICADO')
                 ->orderBy('id', 'DESC')
                 ->country($country)
@@ -136,7 +136,7 @@ class WebController extends Controller
 
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
         $states = State::where('country_id', $request->country)->get();
-        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'city', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
                 ->where('status', 'PUBLICADO')
                 ->orderBy('id', 'DESC')
                 ->country($request->country)
@@ -161,7 +161,7 @@ class WebController extends Controller
         ]);
     }
 
-    public function showPartner(Request $request, $city, $state, $slug){
+    public function showPartner(Request $request, $slug){
 
         $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first(); 
         

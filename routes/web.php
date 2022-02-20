@@ -125,7 +125,7 @@ Route::get('/partners/politicas-de-privacidad', function(){ return view('web.pol
 Route::get('/partners', 'WebController@showAllPartners')->name('web.showallpartners');
 Route::post('/partners', 'WebController@showAllPartners')->name('web.showallpartners.a');
 Route::post('/partners/rating/{partner}', 'WebController@postStar')->name('partner.rating'); // RUTA PARA VALORAR UN PARTNER
-Route::get('/partners/abogado-en-{city}-{state}/{slug}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
+Route::get('/partners/{slug}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
 Route::post('/partners-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');
 Route::post('/partners/send-to-view-phone/{partner}', 'WebController@sendEmailToViewPhone')->name('web.send.view.phone');//ENVIAR CORREO SOLICITANDO VER EL NUMERO DEL PARTNER
 Route::get('/partners/eliminar/cache/partner/{partner}', 'WebController@eliminarCachePartner')->name('web.eliminar.cache.partner');
