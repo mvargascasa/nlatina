@@ -211,12 +211,12 @@
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
-            <div class="col-sm-6 col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title titulo">¡Abogados y Notarias<br> en Latinoamérica a su alcance!</h1>
+            <div class="col-sm-12 col-12 text-white text-center">
+              <h1 class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarias</b> en Latinoamérica <br> a su alcance!</h1>
             </div>
-            <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-6">
+            {{-- <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-6">
                 @include('admin.partner.layouts.form_register')
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
@@ -224,22 +224,6 @@
 <div class="pb-3" id="contentPartner" style="background-color: #f5f6f8">
     @include('web.partials.search_partner')   
 </div>
-
-{{-- <div id="infoFormRegister" class="row justify-content-center align-items-center ml-5">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center" style="padding-bottom: 3%;">
-        <div class="mt-5">
-            <h4 id="divTitle">Al registrarse en nuestro directorio de partners obtiene los <b>siguientes beneficios:</b></h4>
-            <div id="divBeneficios" class="mt-4">
-                <p><i class="fas fa-check"></i> Obtener nuevos clientes potenciales</p>
-                <p><i class="fas fa-check"></i> Recomendación por parte de sus clientes</p>
-                <p><i class="fas fa-check"></i> Anunciar su perfil en nuestro sitio web <b>GRATIS</b></p>
-            </div>
-        </div>
-        <div class="mt-5">
-            <h5 id="textAction">¿Qué esperas para hacerlo? Llena el siguiente formulario con tus datos, completa toda la información posterior que te solicitará el sistema y <b>¡Listo!</b></h5>
-        </div>
-    </div>
-</div> --}}
 
 @section('numberWpp', '13479739888')
 
@@ -305,36 +289,36 @@
             });
         }
 
-        var selectPaisResidencia = document.getElementById('country_residence');
-        var inputCodPais = document.getElementById('codTelfPais');
+        // var selectPaisResidencia = document.getElementById('country_residence');
+        // var inputCodPais = document.getElementById('codTelfPais');
         
-        selectPaisResidencia.onchange  = function(e){
-            switch (selectPaisResidencia.value) {
-                case "Argentina":codigo = "+54";break;
-                case "Bolivia":codigo = "+591";break;
-                case "Chile":codigo = "+56"; break;
-                case "Colombia":codigo = "+57";break;
-                case "Costa Rica":codigo = "+506";break;
-                case "Ecuador":codigo = "+593";break;
-                case "El Salvador":codigo = "+503";break;
-                case "España":codigo = "+34";break;
-                case "Guatemala":codigo = "+502";break;
-                case "Honduras":codigo = "+504";break;
-                case "México":codigo = "+52";break;
-                case "Nicaragua":codigo = "+505";break;
-                case "Panamá":codigo = "+507";break;
-                case "Paraguay":codigo = "+595";break;
-                case "Perú":codigo = "+51";break;
-                case "Puerto Rico":codigo = "+1787";break;
-                case "República Dominicana":codigo = "+1809";break;
-                case "Uruguay":codigo = "+598";break;
-                case "Venezuela":codigo = "+58";break;
-            }
-            inputCodPais.value = codigo;
-        }
+        // selectPaisResidencia.onchange  = function(e){
+        //     switch (selectPaisResidencia.value) {
+        //         case "Argentina":codigo = "+54";break;
+        //         case "Bolivia":codigo = "+591";break;
+        //         case "Chile":codigo = "+56"; break;
+        //         case "Colombia":codigo = "+57";break;
+        //         case "Costa Rica":codigo = "+506";break;
+        //         case "Ecuador":codigo = "+593";break;
+        //         case "El Salvador":codigo = "+503";break;
+        //         case "España":codigo = "+34";break;
+        //         case "Guatemala":codigo = "+502";break;
+        //         case "Honduras":codigo = "+504";break;
+        //         case "México":codigo = "+52";break;
+        //         case "Nicaragua":codigo = "+505";break;
+        //         case "Panamá":codigo = "+507";break;
+        //         case "Paraguay":codigo = "+595";break;
+        //         case "Perú":codigo = "+51";break;
+        //         case "Puerto Rico":codigo = "+1787";break;
+        //         case "República Dominicana":codigo = "+1809";break;
+        //         case "Uruguay":codigo = "+598";break;
+        //         case "Venezuela":codigo = "+58";break;
+        //     }
+        //     inputCodPais.value = codigo;
+        // }
 
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-PARTNERS.webp')}}')";
+        document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-ABOGADOS.webp')}}')";
     });
   </script>
 @endsection

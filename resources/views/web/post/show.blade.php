@@ -1,4 +1,5 @@
 @extends('layouts.web')
+
 @section('header')
     <title>Notaría Latina en New York - {{$post->name}}</title>
     <meta name="description" content="{{$post->metadescrip}}"/>
@@ -25,13 +26,9 @@
 
 @section('content')
 
-@php
-    // $height = \Intervention\Image\Facades\Image::make('uploads/'.$post->imgdir);
-@endphp
-
     <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
         <div>
-            <div class="row align-items-center" style="min-height:550px; background:rgba(2, 2, 2, 0.5);">
+            <div id="rowImageBanner" class="row align-items-center" style="min-height: 550px; background:rgba(2, 2, 2, 0.5);">
             </div>
         </div>
     </section>
