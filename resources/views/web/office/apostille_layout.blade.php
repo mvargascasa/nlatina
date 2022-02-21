@@ -1,9 +1,10 @@
 @extends('layouts.web')
 
 @section('header')
-    <title>Apostillar {{ $data['description'] }} en {{ $data['office'] }} | Notaria Latina</title>
+    <meta name="title" content="Apostillar {{ $data['description'] }} en {{ $data['office'] }}">
     <meta name="description"     content="{{ $data['metadescription'] }}">
     <meta name="keywords"        content="{{ $data['keywords'] }}">
+    <title>Apostillar {{ $data['description'] }} en {{ $data['office'] }} | Notaria Latina</title>
     <style>
         @media screen and (max-width: 580px){
             #title{
