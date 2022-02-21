@@ -382,7 +382,7 @@
                     <div class="modal-header text-white" style="background-color: #002542">
                         <p style="font-weight: bold">Complete el formulario para ver el número telefónico del partner {{ $partner->name . " " . $partner->lastname}}</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span style="color: #ffffff" aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <form action="{{ route('web.send.view.phone', $partner)}}" method="POST">
