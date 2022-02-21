@@ -7,7 +7,7 @@
         <div class="col-4 col-sm-4">
         </div>
         <div class="col-8 col-sm-8 text-center">
-            <h4 id="txtBanner" style="color: #505151; font-weight: bold">Elija profesionales jurídicos que puedan solucionar sus requerimientos legales desde <b style="color: #3d3c3c">Estados Unidos</b></h4> 
+            <h4 id="txtBanner" style="color: #505151; font-weight: bold">Elija profesionales jurídicos que puedan solucionar sus requerimientos <b style="color: #3d3c3c">en Latinoamérica</b></h4> 
         </div>
     </div>
 </div>
