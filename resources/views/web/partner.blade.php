@@ -301,13 +301,13 @@
                 </div>
                 @if (Cache::has('partner'.$partner->id) && Cache::get('partner'.$partner->id) == $partner->name)
                     <div class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%">
-                        <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p>
+                        <p style="background-color: #002542" class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p>
                         <a class="ml-5" style="color: #002542; text-decoration: none" href="tel:{{$partner->codigo_pais}}{{$partner->phone}}">Llamar</a>
                     </div>
                 @else
-                    <div class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%">
-                        <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p>
-                        <p class="ml-5" style="cursor: pointer; color: #002542" data-toggle="modal" data-target=".bd-example-modal-sm">Ver teléfono</p>
+                    <div class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%;">
+                        <p style="background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px" class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p>
+                        <p class="ml-5" style="cursor: pointer; color: #002542; padding: 5px" data-toggle="modal" data-target=".bd-example-modal-sm">Ver teléfono</p>
                     </div>
                 @endif
             </div>
@@ -406,6 +406,8 @@
             </div>
         </div>
 
+
+        {{--ESTO ES PARA MI PERFIL--}}
         @if ($partner->name . " " . $partner->lastname == "Sebastian Armijos")
             <div class="mt-5">
                 <a href="{{ route('web.eliminar.cache.partner', $partner) }}">Eliminar cache Partner</a>

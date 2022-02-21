@@ -9,6 +9,12 @@
     <meta property="og:title"              content="Políticas de Privacidad - Notaría Latina - Notario Público en Queens New York." />
     <meta property="og:description"        content="Gestión en Línea en todo EE.UU. Poderes, Apostillas, Traducciones, Autorizaciones de Viaje, Affidavit." />
     <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
+
+    <style>
+        #etiquetaPhone{
+            display: none;
+        }
+    </style>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
