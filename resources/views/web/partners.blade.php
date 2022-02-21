@@ -212,7 +212,7 @@
     <div>
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-sm-12 col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarias</b> en Latinoamérica <br> a su alcance!</h1>
+              <h1 class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> en Latinoamérica <br> a su alcance!</h1>
             </div>
             {{-- <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-6">
                 @include('admin.partner.layouts.form_register')
