@@ -8,6 +8,16 @@
     <meta property="og:title"              content="Notaría Latina - {{$post->name}}" />
     <meta property="og:description"        content="{{$post->metadescrip}}" />
     <meta property="og:image"              content="{{url('uploads/i600_'.$post->imgsmall)}}" />
+
+    <style>
+        @media screen and (max-width: 580px){
+            #imgBlog{
+                float: none !important;
+                justify-content: center !important;
+                padding: 0px !important;
+            }
+        }
+    </style>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -25,8 +35,8 @@
     <div class="container pt-4">
             <h1 class="font-weight-bold heading-title" >{{$post->name}}</h1>
             <div class="row">
-                <div class="col-12" style="white-space: pre-wrap;">
-                <img class="p-4 float-right" width="500" alt="Imagen {{ $post->name }}" src='{{url('uploads/i600_'.$post->imgsmall)}}'>
+                <div class="col-12" style="white-space: pre-wrap; text-align: justify">
+                    <img id="imgBlog" class="p-4 float-right img-fluid" width="500" alt="Imagen {{ $post->name }}" src='{{url('uploads/i600_'.$post->imgsmall)}}'>
                 <?php echo htmlspecialchars_decode($post->body)?>
                 </div>
             </div>
