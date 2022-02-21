@@ -2,7 +2,7 @@
 
 @section('header')
     <title>Apostillar {{ $data['description'] }} en {{ $data['office'] }} | Notaria Latina</title>
-    <meta name="description"     content="{{ $data['metadescription'] }}">
+    <meta name="description"     content="Apostillar {{ $data['description'] }} en {{ $data['office']}} - {{ $data['metadescription'] }}">
     <meta name="keywords"        content="{{ $data['keywords'] }}">
     <style>
         @media screen and (max-width: 580px){
