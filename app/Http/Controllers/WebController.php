@@ -236,7 +236,7 @@ class WebController extends Controller
                     return view('web.office.apostillas', compact('data'));
                     break;
                 case 'affidavit-support-new-york':
-                    $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en New York de una manera ágil y rápida!";
+                    $data['metadescription'] = "Realizamos Declaraciones Juradas (Affidavit) en New York de una manera ágil y rápida!";
                     $data['keywords'] .= ", declaracion jurada new york, affidavit new york, realizar declaracion jurada new york, tramitar declaracion jurada new york, make an affidavit new york, process affidavit new york";
                     return view('web.office.affidavit', compact('data'));
                     break;
@@ -523,7 +523,7 @@ class WebController extends Controller
                     return view('web.office.apostillas', compact('data'));
                     break;
                 case 'affidavit-support-new-jersey':
-                    $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en New Jersey de una manera ágil y rápida!";
+                    $data['metadescription'] = "Realizamos Declaraciones Juradas (Affidavit) en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", declaracion jurada new jersey, affidavit new jersey, realizar declaracion jurada new jersey, tramitar declaracion jurada new jersey, make an affidavit new jersey, process affidavit new jersey";
                     return view('web.office.affidavit', compact('data'));
                     break;
