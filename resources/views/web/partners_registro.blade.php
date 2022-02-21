@@ -291,7 +291,6 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
                 case "Costa Rica":codigo = "+506";break;
                 case "Ecuador":codigo = "+593";break;
                 case "El Salvador":codigo = "+503";break;
-                case "España":codigo = "+34";break;
                 case "Guatemala":codigo = "+502";break;
                 case "Honduras":codigo = "+504";break;
                 case "México":codigo = "+52";break;

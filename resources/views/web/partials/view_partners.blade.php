@@ -13,7 +13,7 @@
                             <select class="form-control" name="country" id="country" onchange="loadStates();" style="border: none; border-radius: 0px; z-index: 1; height: 31px; font-size: 14px;">
                                 <option value="">País</option>
                                 @foreach ($countries as $country)
-                                    @if ($country->name_country != "Estados Unidos")
+                                    @if ($country->name_country != "Estados Unidos" && $country->name_country != "España")
                                         <option value="{{ $country->id }}" @if(Request::get('country') == $country->id) selected @endif>{{ $country->name_country }}</option>
                                     @endif
                                 @endforeach
