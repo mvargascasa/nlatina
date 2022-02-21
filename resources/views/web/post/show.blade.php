@@ -26,7 +26,7 @@
             <h1 class="font-weight-bold heading-title" >{{$post->name}}</h1>
             <div class="row">
                 <div class="col-12" style="white-space: pre-wrap;">
-                <img class="p-4 float-right" width="500" alt="Imagen {{ $post->name }}" src='{{url('uploads/i600_'.$post->imgsmall)}}'>
+                <img class="p-4" width="500" alt="Imagen {{ $post->name }}" src='{{url('uploads/i600_'.$post->imgsmall)}}'>
                 <?php echo htmlspecialchars_decode($post->body)?>
                 </div>
             </div>
