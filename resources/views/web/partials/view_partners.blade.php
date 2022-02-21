@@ -75,7 +75,7 @@
                                                 @elseif($partner->title == "Licenciado")
                                                 Lic.
                                                 @endif
-                                                {{ $partner->name }} {{ $partner->lastname }}
+                                                {{ Str::ucfirst($partner->name) }} {{ Str::ucfirst($partner->lastname) }}
                                             </b>
                                         </h5>
                                         {{-- <p>{{ $partner->specialty }}</p> --}}
