@@ -162,7 +162,7 @@
                margin-left: -15% !important;
             }
             .txtNamePartner{
-                font-size: 12px;
+                font-size: 13px;
             }
             .txtDataPartner{
                 font-size: 10px !important;
