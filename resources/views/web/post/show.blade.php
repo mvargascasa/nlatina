@@ -16,11 +16,6 @@
                 justify-content: center !important;
                 padding: 0px !important;
             }
-
-            #rowImageBanner{
-                min-height: 0px !important;
-                padding-top: 120% !important;
-            }
         }
     </style>
 @endsection
@@ -36,7 +31,7 @@
 
     <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
         <div>
-            <div id="rowImageBanner" class="row align-items-center" style="min-height:550px; background:rgba(2, 2, 2, 0.5);">
+            <div class="row align-items-center" style="min-height:550px; background:rgba(2, 2, 2, 0.5);">
             </div>
         </div>
     </section>
