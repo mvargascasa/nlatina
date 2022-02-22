@@ -187,6 +187,15 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         #colRegisterForm{
             margin-bottom: -10px !important;
         }
+        #titlemovil{
+            display: block !important;
+        }
+        #titlepc{
+            display: none !important;
+        }
+        .parrafoBeneficios{
+            margin: 0px !important;
+        }
     }
     .titulo{
         font-size: 25px;
@@ -214,6 +223,15 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
     .checkBeneficios{
         color: #fec02f;
     }
+    #titlemovil{
+        display: none;
+    }
+    #titlepc{
+        display: block;
+    }
+    .parrafoBeneficios{
+        margin: 5px;
+    }
 </style>
 <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
@@ -223,8 +241,9 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
     <div>
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-sm-6 col-12 text-white">
-              <h4 style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> en los <b>ESTADOS UNIDOS</b></h4>
-              <h4 style="margin-left: 25%; color: #fec02f" class="font-weight-bold subtitle"><i>Regístrese ahora..!</i></h4>
+                <h4 id="titlemovil" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> <br> en los <b>ESTADOS UNIDOS</b></h4>
+                <h4 id="titlepc" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> en los <b>ESTADOS UNIDOS</b></h4>
+                <h4 style="margin-left: 25%; color: #fec02f" class="font-weight-bold subtitle"><i>Regístrese ahora..!</i></h4>
             </div>
             <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-6">
                 @include('admin.partner.layouts.form_register')
@@ -238,11 +257,11 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         <div class="col-sm-6 mt-5">
             <div id="divBeneficios" class="float-right text-right">
                 <h4 class="font-weight-bold">Usted puede acceder <br> a varios beneficios como:</h4>
-                <p style="margin: 5px;">Mayor crecimiento económico y profesional <i class="fa fa-check checkBeneficios"></i></p>
-                <p style="margin: 5px;">Clientes potenciales de su país de origen <i class="fa fa-check checkBeneficios"></i>
-                <p style="margin: 5px;"> Genere su propia base de datos <i class="fa fa-check checkBeneficios"></i></p>
-                <p style="margin: 5px;">Posicionamiento internacional <i class="fa fa-check checkBeneficios"></i></p>
-                <p style="margin: 5px;">Obtenga más prestigio en su país <i class="fa fa-check checkBeneficios"></i></p>
+                <p class="parrafoBeneficios">Mayor crecimiento económico y profesional <i class="fa fa-check checkBeneficios"></i></p>
+                <p class="parrafoBeneficios">Clientes potenciales de su país de origen <i class="fa fa-check checkBeneficios"></i>
+                <p class="parrafoBeneficios"> Genere su propia base de datos <i class="fa fa-check checkBeneficios"></i></p>
+                <p class="parrafoBeneficios">Posicionamiento internacional <i class="fa fa-check checkBeneficios"></i></p>
+                <p class="parrafoBeneficios">Obtenga más prestigio en su país <i class="fa fa-check checkBeneficios"></i></p>
             </div>
         </div>
         <div id="divImageAbogado" class="col-sm-6 mt-4">
@@ -254,23 +273,23 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 <div class="row" style="background-color: #333333">
     <div class="container mt-5">
         <div class="row text-white">
-            <div class="col-sm-4 text-center mb-2">
+            <div class="col-sm-4 text-center mb-4">
                 <img width="15%" src="{{ asset('img/partners/REGISTRO.svg') }}" alt="">
                 <h6 style="margin-top: 5px"><b>PASO 1.</b></h6>
                 <p style="margin: 0px">Llene el formulario de registro</p>
             </div>
-            <div class="col-sm-4 text-center mb-2">
+            <div class="col-sm-4 text-center mb-4">
                 <img width="14%" src="{{ asset('img/partners/BIO-01.svg') }}" alt="">
                 <h6><b>PASO 2.</b></h6>
                 <p style="margin: 0px">Complete su biografía</p>
             </div>
-            <div class="col-sm-4 text-center mb-2">
+            <div class="col-sm-4 text-center mb-4">
                 <img width="16%" src="{{ asset('img/partners/TERMINOS-01.svg') }}" alt="">
                 <h6 style="margin-top: 6px"><b>PASO 3.</b></h6>
                 <p style="margin: 0px">Acepte los términos y condiciones</p>
             </div>
         </div>
-        <div class="row mt-4 mb-5">
+        <div class="row mt-1 mb-5">
             <div class="col-sm-12 text-center">
                 <h5 style="color: #fec02f"><i>¡Y listo su perfil será activado!</i></h5>
                 <p style="color: #ffffff">*Recuerde que si no completa los pasos no podrá acceder a clientes potenciales desde su perfil</p>

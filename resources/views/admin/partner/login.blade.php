@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="{{asset('css/styles.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <style>
+        html, body{
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+        }
         .img-logo{
             width: 150px;
             margin-top: 20px;
@@ -26,9 +30,23 @@
             right: 70px;
             color: white;
         }
-
+        #formLoginOculto{
+            display: none;
+        }
+        #formLogin{
+            display: block;
+        }
         @media screen and (max-width: 580px){
+            #lista{
+                margin-top: 20% !important;
+            }
             #lista > li{
+                color: #000000;
+            }
+            #formLoginOculto{
+                display: block;
+            }
+            #formLogin{
                 display: none;
             }
         }
@@ -41,9 +59,58 @@
             <a href="{{ route('web.index') }}"><img class="img-logo" src="{{ asset('img/partners/WEB-HEREDADO.png') }}" alt=""></a>
         </div>
         <div class="row">
+            {{--DIV PARA MOSTRAR EM MOVIL QUE SALGA PRIMERO--}}
+            <div id="formLoginOculto" class="col-sm-4 mb-4">
+                <div class="mx-2 mt-1">
+                    <h4 style="font-weight: bold">Iniciar Sesión</h4>
+                    <form action="{{ route('socios.login') }}" method="POST">
+                        @csrf
+                        <div class="form-outline mb-4">
+                            <label class="form-label mb-3" for="form3Example3">{{ __('Correo Electrónico')}}</label>
+                            <input type="email" id="form3Example3" class="form-control" value="{{ old('email') }}"
+                                name="email" required autocomplete="off"/>
+                        </div>
+                        <div class="form-outline mb-3">
+                            <label class="form-label mb-3" for="form3Example4">Contraseña</label>
+                            {{-- <input type="password" id="form3Example4" class="form-control" value="{{ old('password') }}"
+                            name="password" required/> --}}
+                            <div class="input-group">
+                                <input type="password" name="password" class="form-control" id="password" autocomplete="off" required>
+                                <div class="input-group-append" style="cursor: pointer" onclick="mostrarContrasena();"> {{--onmousedown="mostrarContrasena();" onmouseup="mostrarContrasena();"--}}
+                                  <span class="input-group-text" id="basic-addon2"><i id="eyePassword" class="fas fa-eye"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="remember" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Recuerdame en este ordenador</label>
+                        </div>
+
+                        @if ($errors->has('email'))
+                            <div class="alert alert-danger" role="alert">
+                                Credenciales incorrectas, intentalo nuevamente
+                            </div>
+                        @endif
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="submit" class="btn btn-primary btn-block"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #00223b">Entrar</button>
+                        </div>
+                    </form>
+                    <div style="text-align: center; margin-top: 15px">
+                        <a style="text-decoration: none;" class="text-muted" href="{{ route('socio.password.request')}}">¿Olvidó su contraseña?</a>
+                    </div>
+                    <div class="d-flex" style="margin-top: 15px">
+                        <hr style="width: 40%">o<hr style="width: 40%">
+                    </div>
+                    <div style="margin-top: 15px" class="text-center">
+                        <h6 class="text-muted">¿Aún no está registrado? <a style="text-decoration: none; color: #000000; font-weight: bold" href="{{ route('partners.registro') }}">Únase</a></h6>
+                    </div>
+                </div>
+            </div>
+            {{--TERMINA DIV OCULTO PARA MOSTRAR EN MOVIL--}}
             <div class="col-sm-6">
                 <div id="div-relative">
-                    <img class="img-fluid" src="{{ asset('img/partners/FOTO-IZQUIERDA-AZUL.jpg') }}" alt="">
+                    <img id="imgFondoBeneficios" class="img-fluid" src="{{ asset('img/partners/FOTO-IZQUIERDA-AZUL.jpg') }}" alt="">
                     <div id="div-absolute">
                         <h4 style="margin-top: 30px; font-weight: bold; margin-left: 25px">Accede a varios beneficios</h4>
                         <div class="row" style="margin-top: 20px; margin-left:20px">
@@ -63,7 +130,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div id="formLogin" class="col-sm-4">
                 <div class="mx-2 mt-1">
                     <h4 style="font-weight: bold">Iniciar Sesión</h4>
                     <form action="{{ route('socios.login') }}" method="POST">

@@ -64,9 +64,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 <style>
     /*iframe{ width: 250px !important;    } */
     html, body {
-            max-width: 100% !important;
-            overflow-x: hidden !important;
-        }
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
 </style>
 
   @yield('header')
