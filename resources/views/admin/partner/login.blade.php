@@ -75,9 +75,9 @@
                             {{-- <input type="password" id="form3Example4" class="form-control" value="{{ old('password') }}"
                             name="password" required/> --}}
                             <div class="input-group">
-                                <input type="password" name="password" class="form-control" id="password" autocomplete="off" required>
+                                <input type="password" name="password" class="form-control" id="passwordmovil" autocomplete="off" required>
                                 <div class="input-group-append" style="cursor: pointer" onclick="mostrarContrasena();"> {{--onmousedown="mostrarContrasena();" onmouseup="mostrarContrasena();"--}}
-                                  <span class="input-group-text" id="basic-addon2"><i id="eyePassword" class="fas fa-eye"></i></span>
+                                  <span class="input-group-text" id="basic-addon2"><i id="eyePasswordMovil" class="fas fa-eye"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -145,9 +145,9 @@
                             {{-- <input type="password" id="form3Example4" class="form-control" value="{{ old('password') }}"
                             name="password" required/> --}}
                             <div class="input-group">
-                                <input type="password" name="password" class="form-control" id="password" autocomplete="off" required>
+                                <input type="password" name="password" class="form-control" id="passwordpc" autocomplete="off" required>
                                 <div class="input-group-append" style="cursor: pointer" onclick="mostrarContrasena();"> {{--onmousedown="mostrarContrasena();" onmouseup="mostrarContrasena();"--}}
-                                  <span class="input-group-text" id="basic-addon2"><i id="eyePassword" class="fas fa-eye"></i></span>
+                                  <span class="input-group-text" id="basic-addon2"><i id="eyePasswordPc" class="fas fa-eye"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -188,16 +188,27 @@
     <script defer src="{{asset('js/bootstrap.min.js')}}"></script>
     <script>
         function mostrarContrasena(){
-        var tipo = document.getElementById("password");
-        var eye = document.getElementById("eyePassword");
-            if(tipo.type == "password"){
-                tipo.type = "text";
-                eye.classList.remove('fas', 'fa-eye');
-                eye.classList.add('fas', 'fa-eye-slash');
+        var tipo1 = document.getElementById("passwordpc");
+        var eye1 = document.getElementById("eyePasswordPc");
+        var tipo2 = document.getElementById("passwordmovil");
+        var eye2 = document.getElementById("eyePasswordMovil");
+            if(tipo1.type == "password"){
+                tipo1.type = "text";
+                eye1.classList.remove('fas', 'fa-eye');
+                eye1.classList.add('fas', 'fa-eye-slash');
             }else{
-                tipo.type = "password";
-                eye.classList.remove('fas', 'fa-eye-slash');
-                eye.classList.add('fas', 'fa-eye');
+                tipo1.type = "password";
+                eye1.classList.remove('fas', 'fa-eye-slash');
+                eye1.classList.add('fas', 'fa-eye');
+            }
+            if(tipo2.type == "password"){
+                tipo2.type = "text";
+                eye2.classList.remove('fas', 'fa-eye');
+                eye2.classList.add('fas', 'fa-eye-slash');
+            }else{
+                tipo2.type = "password";
+                eye2.classList.remove('fas', 'fa-eye-slash');
+                eye2.classList.add('fas', 'fa-eye');
             }
         }
     </script>
