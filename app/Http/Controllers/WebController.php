@@ -75,22 +75,18 @@ class WebController extends Controller
         // ->where('status', 'PUBLICADO')
         // ->distinct()
         // ->get();
-        $ipClient = null;
-        $ipforwarded = null;
-        $ipremote = null;
 
-        if (!empty($_SERVER['HTTP_CLIENT_IP']))   
-        {
-            $ipClient = $_SERVER['HTTP_CLIENT_IP'];
-        }
-
-        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))  
-        {
-            $ipforwarded = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        }
-        if(!empty($_SERVER['REMOTE_ADDR'])){
-            $ipremote = $_SERVER['REMOTE_ADDR'];  
-        }
+        if(!empty($_SERVER['HTTP_CLIENT_IP'])) {  
+            $ip = $_SERVER['HTTP_CLIENT_IP'];  
+        }  
+        //whether ip is from the proxy  
+        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {  
+                    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];  
+        }  
+        //whether ip is from the remote address  
+        else{  
+                $ip = $_SERVER['REMOTE_ADDR'];  
+        }  
 
         $countries = Country::select(['name_country', 'id'])->get();
 
@@ -110,7 +106,7 @@ class WebController extends Controller
                 ->get();
 
 
-        return view('web.partners', compact('countries', 'specialties', 'partners', 'ipClient', 'ipforwarded', 'ipremote'));
+        return view('web.partners', compact('countries', 'specialties', 'partners', 'ip'));
         
     }
 
