@@ -106,7 +106,7 @@
                         <hr style="width: 40%">o<hr style="width: 40%">
                     </div>
                     <div style="margin-top: 15px">
-                        <p class="text-muted">¿Aún no está registrado? <a style="text-decoration: none; color: #747c84" href="{{ route('web.showallpartners') }}">Únase</a></p>
+                        <p class="text-muted">¿Aún no está registrado? <a style="text-decoration: none; color: #747c84" href="{{ route('partners.registro') }}">Únase</a></p>
                     </div>
                 </div>
             </div>

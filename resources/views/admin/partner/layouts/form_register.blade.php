@@ -81,9 +81,6 @@
             <button type="submit" class="btn btn-block" style="background-color: #FEC02F">Registrarse</button>
         </div>
     </form>
-    <div>
-        <p class="text-white" style="font-size: 12px;">*Al registrarse aceptas nuestras <a href="{{ route('web.socios.politicas') }}" style="color: red">Políticas de privacidad</a></p>
-    </div>
     <div class="pb-3">
         <p class="text-white"><b>O si estas registrado puedes <a href="{{route('partner.showform')}}">Iniciar Sesión</a></b></p>
     </div>
