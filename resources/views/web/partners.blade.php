@@ -121,7 +121,7 @@
             }
 
             .titulo{
-                margin-top: 15%;
+                font-size: 25px !important;
             }
             #rowTxt{
                 padding-top: 15px !important;  
@@ -178,6 +178,12 @@
             #colRegisterForm{
                 margin-bottom: -10px !important;
             }
+            #titlemovil{
+                display: block !important;
+            }
+            #titlepc{
+                display: none !important;
+            }
         }
         .titulo{
             font-size: 30px;
@@ -202,6 +208,12 @@
         select {
             box-shadow: 2px 2px 3px #bfbfbf;
         }
+        #titlemovil{
+            display: none;
+        }
+        #titlepc{
+            display: block;
+        }
     </style>
     <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
@@ -210,9 +222,10 @@
 
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
-        <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
+        <div class="row align-items-center" style="min-height: 225px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-sm-12 col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> en Latinoamérica <br> a su alcance!</h1>
+                <h1 id="titlemovil" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> <br> en Latinoamérica <br> a su alcance!</h1>
+                <h1 id="titlepc" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> en Latinoamérica <br> a su alcance!</h1>
             </div>
             {{-- <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-6">
                 @include('admin.partner.layouts.form_register')
