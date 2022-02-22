@@ -300,9 +300,11 @@
                     </form>
                 </div>
                 @php
+                if (Cache::has('partner'.$partner->id)) {
                     $array = Cache::get('partner'.$partner->id);
                     $partnerCache = $array['partner'];
                     $ip = $array['ip'];
+                }
                 @endphp
                 @if (Cache::has('partner'.$partner->id) && $partnerCache == Str::lower(Str::studly($partner->name . ' ' . $partner->lastname . ' ' . $partner->id)))
                     <div class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%">
