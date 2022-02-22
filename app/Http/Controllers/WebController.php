@@ -1241,7 +1241,7 @@ class WebController extends Controller
 
         Cache::put('partner'.$partner->id, $data);
 
-        $to = "sebas31051999@gmail.com";
+        $to = "info@notarialatina.com";
         $subject = "Consulta para ver teléfono del Partner: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . " | ". date(now());
         $message = "<br><strong><h3>Datos del solicitante</h3></strong>
                 <br>Nombre: " . strip_tags($request->name). "
