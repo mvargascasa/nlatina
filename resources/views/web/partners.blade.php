@@ -239,7 +239,9 @@
     @include('web.partials.search_partner')   
 </div>
 
-<input type="hidden" name="ip" value="{{$ip}}">
+<input type="hidden" name="ip" value="{{ $ipClient }}">
+<input type="hidden" name="ip2" value="{{ $ipforwarded }}">
+<input type="hidden" name="ip3" value="{{ $ipremote }}">
 
 @section('numberWpp', '13479739888')
 
