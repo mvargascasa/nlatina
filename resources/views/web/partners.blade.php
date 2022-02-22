@@ -303,34 +303,6 @@
             });
         }
 
-        // var selectPaisResidencia = document.getElementById('country_residence');
-        // var inputCodPais = document.getElementById('codTelfPais');
-        
-        // selectPaisResidencia.onchange  = function(e){
-        //     switch (selectPaisResidencia.value) {
-        //         case "Argentina":codigo = "+54";break;
-        //         case "Bolivia":codigo = "+591";break;
-        //         case "Chile":codigo = "+56"; break;
-        //         case "Colombia":codigo = "+57";break;
-        //         case "Costa Rica":codigo = "+506";break;
-        //         case "Ecuador":codigo = "+593";break;
-        //         case "El Salvador":codigo = "+503";break;
-        //         case "España":codigo = "+34";break;
-        //         case "Guatemala":codigo = "+502";break;
-        //         case "Honduras":codigo = "+504";break;
-        //         case "México":codigo = "+52";break;
-        //         case "Nicaragua":codigo = "+505";break;
-        //         case "Panamá":codigo = "+507";break;
-        //         case "Paraguay":codigo = "+595";break;
-        //         case "Perú":codigo = "+51";break;
-        //         case "Puerto Rico":codigo = "+1787";break;
-        //         case "República Dominicana":codigo = "+1809";break;
-        //         case "Uruguay":codigo = "+598";break;
-        //         case "Venezuela":codigo = "+58";break;
-        //     }
-        //     inputCodPais.value = codigo;
-        // }
-
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-ABOGADOS.webp')}}')";
     });

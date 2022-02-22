@@ -316,12 +316,54 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </a> 
         </div>
 </footer>
-<script defer src="{{asset('js/jquery-3.4.1.min.js')}}" ></script>
-<script defer src="{{asset('js/popper.min.js')}}"></script>
-<script defer src="{{asset('js/bootstrap.min.js')}}"></script>
+{{-- <script defer src="{{asset('js/jquery-3.4.1.min.js')}}" ></script>
+<script defer src="{{ asset('js/popper.min.js') }}"></script> --}}
+{{-- <script defer src="{{ asset('js/bootstrap.min.js') }}"></script> --}}
 
 @yield('script')
 <script>
+    var script = document.createElement("script");
+    var script2 = document.createElement("script");
+    var script3 = document.createElement("script");
+    
+    script3.addEventListener("load", function(event) {
+        document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
+        document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+    });
+
+    script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
+    script3.async = true;
+    script2.src = "{{ asset('js/popper.min.js') }}";
+    script2.async = true;
+    script.src = "{{ asset('js/bootstrap.min.js') }}";
+    script.async = true;
+
+    window.addEventListener("load", function(event){
+        document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
+        console.log('Pagina cargada');
+    });
+
+    function downloadJQueryAtOnLoad(){
+        var jquery = document.createElement("script");
+        jquery.src = "{{ asset('js/jquery-3.4.1.min.js') }}";
+        jquery.defer = true;
+        document.body.appendChild(jquery);
+    }
+
+    function downloadPopperAtOnLoad(){
+        var popper = document.createElement("script");
+        popper.src = "{{ asset('js/popper.min.js') }}";
+        popper.defer = true;
+        document.body.appendChild(popper);
+    }
+
+    function downloadBootstrapAtOnLoad(){
+        var bootstrap = document.createElement("script");
+        bootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
+        bootstrap.defer = true;
+        document.body.appendChild(bootstrap);
+    }
+
     document.addEventListener("DOMContentLoaded", function(event) {
         if (localStorage.getItem("statusCardWhatsapp") === null) {
             localStorage.setItem("statusCardWhatsapp", "On");
@@ -329,7 +371,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         if (localStorage.getItem("statusCardWhatsapp") == "On") {
             document.getElementById('card_whatsapp').classList.toggle('hide-card-whatsapp');;
             console.log('if on load');
-        }        
+        }       
     });
     const testWsapp = () => {
         document.getElementById('card_whatsapp').classList.toggle('hide-card-whatsapp');
@@ -338,6 +380,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         localStorage.setItem("statusCardWhatsapp", "Off");
         document.getElementById('card_whatsapp').classList.toggle("hide-card-whatsapp");
     }
+    
 </script>
 </body>
 </html>
