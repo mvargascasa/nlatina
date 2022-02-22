@@ -12,10 +12,6 @@
             .first-row{
                 padding-bottom: 15px;
             }
-            .second-row{
-                padding-top: 0;
-                margin-left: 10%;
-            }
             #sectionthree{
                 min-width: 110vw;
                 min-height: 110vh;
@@ -71,6 +67,19 @@
             -webkit-transition: 600ms;
             -webkit-transform: initial;
         }
+        .linkServices{
+            color: #d4aa41;
+        }
+        #linkServices:hover .linkServices{
+            color: #ffffff;
+        }
+        #linkServices:hover .imgServices {
+            filter: grayscale(1);
+            -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2);
+            transition: 1s ease;
+        }
     </style>
     <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
@@ -108,45 +117,41 @@
         <div class="col-sm-6 d-flex justify-content-center align-items-center" id="imgApostille">
             <img class="lazyload" style="width: 80%" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
         </div>
-        <div class="col-sm-6 second-row">
-            <div class="row" style="padding-top: 9%; padding-right: 50px">
-                <div class="col-sm-6">
-                    <div class="d-flex">
-                        <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
-                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
-                            <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Cartas Poder {{ $data['office'] }}</p>
+        <div class="col-sm-6">
+            <div class="row" style="padding-top: 13%;">
+                <div class="col-sm-6 d-flex justify-content-center">
+                    <div id="linkServices" class="d-flex text-center">
+                        <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
+                            <img class="lazyload imgServices" style="width: 40px; height: 40px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">Cartas Poder {{ $data['office'] }}</p>
                         </a>
                     </div>
-                    <p style="font-size: 14px; color: #ffffff">Realizamos Poderes Especiales y Poderes Generales con su respectiva Apostilla. Cartas Poder desde {{ $data['office'] }} hacia Latinoamérica</p>
                 </div>
-                <div class="col-sm-6">
-                    <div class="d-flex">
-                        <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'traducir-documentos-'.Str::slug($data['office'])) }}">
-                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-18.webp')}}" alt="">
-                            <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Servicio de Traducción Certificada</p>
+                <div class="col-sm-6 d-flex justify-content-center">
+                    <div id="linkServices" class="d-flex text-center">
+                        <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'traducir-documentos-'.Str::slug($data['office'])) }}">
+                            <img class="lazyload imgServices" style="width: 40px; height: 40px" data-src="{{asset('img/oficinas/ICONOS-18.webp')}}" alt="">
+                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">Servicio de Traducción Certificada</p>
                         </a>
                     </div>
-                    <p style="font-size: 14px; color: #ffffff">Al obtener un documento con sus correctas traducciones nos permiten validar su información, es así que este se puede utilizar fuera del pais de origen</p>
                 </div>
             </div>
-            <div class="row" style="padding-right: 50px">
-                <div class="col-sm-6">
-                    <div class="d-flex">
-                        <a class="d-flex" style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-documentos-'.Str::slug($data['office'])) }}">
-                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-19.webp')}}" alt="">
-                            <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">¿Cómo apostillar en {{ $data['office'] }}?</p>
+            <div class="row pt-4">
+                <div class="col-sm-6 d-flex justify-content-center">
+                    <div id="linkServices" class="d-flex text-center">
+                        <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-documentos-'.Str::slug($data['office'])) }}">
+                            <img class="lazyload imgServices" style="width: 40px; height: 40px" data-src="{{asset('img/oficinas/ICONOS-19.webp')}}" alt="">
+                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">¿Cómo apostillar en {{ $data['office'] }}?</p>
                         </a>
                     </div>
-                    <p style="font-size: 14px; color: #ffffff">El documento que porte la apostilla tiene validez legal en cualquiera de los países miembros del convenio de la Haya.</p>
                 </div>
-                <div class="col-sm-6">
-                    <div class="d-flex">
-                        <a class="d-flex" style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'affidavit-support-'.Str::slug($data['office'])) }}">
-                            <img class="lazyload" style="width: 30px; height: 30px" data-src="{{asset('img/oficinas/ICONOS-17.webp')}}" alt="">
-                            <p style="margin-left: 5px; font-weight: bold; color:#d4aa41">Affidávit Support</p>
+                <div class="col-sm-6 d-flex justify-content-center">
+                    <div id="linkServices" class="d-flex text-center">
+                        <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'affidavit-support-'.Str::slug($data['office'])) }}">
+                            <img class="lazyload imgServices" style="width: 40px; height: 40px" data-src="{{asset('img/oficinas/ICONOS-17.webp')}}" alt="">
+                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">Affidávit Support</p>
                         </a>
                     </div>
-                    <p style="font-size: 14px; color: #ffffff">Una declaración jurada o Affidávit es una manifestación escrita o verbal cuya veracidad es asegurada mediante un juramento ante una autoridad judicial</p>
                 </div>
             </div>
         </div>
