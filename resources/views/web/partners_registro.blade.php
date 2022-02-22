@@ -159,6 +159,8 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         }
         #divBeneficios{
             text-align: center !important;
+            float: none !important;
+            text-align: center !important;
         }
         #divImageAbogado{
             display: flex !important;
@@ -255,7 +257,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 <div class="container">
     <div class="row">
         <div class="col-sm-6 mt-5">
-            <div id="divBeneficios">
+            <div id="divBeneficios" class="float-right text-right">
                 <h4 class="font-weight-bold">Usted puede acceder <br> a varios beneficios como:</h4>
                 <p class="parrafoBeneficios">Mayor crecimiento económico y profesional <i class="fa fa-check checkBeneficios"></i></p>
                 <p class="parrafoBeneficios">Clientes potenciales de su país de origen <i class="fa fa-check checkBeneficios"></i>
