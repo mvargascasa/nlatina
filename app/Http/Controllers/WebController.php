@@ -138,11 +138,12 @@ class WebController extends Controller
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
                 ->where('status', 'PUBLICADO')
                 // ->orderBy('id', 'DESC')
+                ->orderByRaw("RAND()")
                 ->country($request->country)
                 ->state($request->state)
                 ->specialties($request->specialty)
                 ->limit($dataToLoad)
-                ->inRandomOrder()
+                // ->inRandomOrder()
                 ->get();
 
         $partnersCount = Partner::where('status', 'PUBLICADO')
