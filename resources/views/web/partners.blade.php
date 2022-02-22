@@ -9,10 +9,6 @@
     <meta name="description" content="👨‍⚖️ Contamos con un amplio directorio de abogados y notarios en Latinoamérica para ayudarlo a gestionar sus trámites | Notaria Latina">
     <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil, @foreach($countriesmeta as $country)abogado en {{Str::lower($country->country_residence)}},@endforeach abogados latinos">
     <style>
-        html, body {
-            max-width: 100% !important;
-            overflow-x: hidden !important;
-        }
         /*QUITAR LA ETIQUETA DE TELEFONO DE LA ESQUINA SUPERIOR DERECHA EN LA PAGINA DE LOS PARTNERS*/
         #etiquetaPhone{
             display: none;
@@ -159,7 +155,9 @@
                 margin-right: 0% !important;
             }
             #rowDataPartner{
-               margin-left: -15% !important;
+                margin-left: -15% !important;
+                width: 100vw !important; /*ESTO LE AUMENTE*/
+                max-width: 100vw !important; /*ESTO LE AUMENTE*/
             }
             .txtNamePartner{
                 font-size: 13px;
