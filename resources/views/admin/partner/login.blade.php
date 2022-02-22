@@ -105,8 +105,8 @@
                     <div class="d-flex" style="margin-top: 15px">
                         <hr style="width: 40%">o<hr style="width: 40%">
                     </div>
-                    <div style="margin-top: 15px">
-                        <p class="text-muted">¿Aún no está registrado? <a style="text-decoration: none; color: #747c84" href="{{ route('partners.registro') }}">Únase</a></p>
+                    <div style="margin-top: 15px" class="text-center">
+                        <h6 class="text-muted">¿Aún no está registrado? <a style="text-decoration: none; color: #000000; font-weight: bold" href="{{ route('partners.registro') }}">Únase</a></h6>
                     </div>
                 </div>
             </div>
