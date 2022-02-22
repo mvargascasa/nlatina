@@ -76,6 +76,18 @@ class WebController extends Controller
         // ->distinct()
         // ->get();
 
+        if(!empty($_SERVER['HTTP_CLIENT_IP'])) {  
+            $ip = $_SERVER['HTTP_CLIENT_IP'];  
+        }  
+        //whether ip is from the proxy  
+        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {  
+                    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];  
+        }  
+        //whether ip is from the remote address  
+        else{  
+                $ip = $_SERVER['REMOTE_ADDR'];  
+        }  
+
         $countries = Country::select(['name_country', 'id'])->get();
 
         $specialties = Specialty::all();           
@@ -94,7 +106,7 @@ class WebController extends Controller
                 ->get();
 
 
-        return view('web.partners', compact('countries', 'specialties', 'partners'));
+        return view('web.partners', compact('countries', 'specialties', 'partners', 'ip'));
         
     }
 

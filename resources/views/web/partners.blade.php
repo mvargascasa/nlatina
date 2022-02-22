@@ -239,6 +239,8 @@
     @include('web.partials.search_partner')   
 </div>
 
+<input type="hidden" name="ip" value="{{$ip}}">
+
 @section('numberWpp', '13479739888')
 
 @endsection
