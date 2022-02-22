@@ -299,7 +299,12 @@
                         <button class="btn mb-3" style="background-color: #FEC02F" type="submit">Enviar</button>
                     </form>
                 </div>
-                @if (Cache::has('partner'.$partner->id) && Cache::get('partner'.$partner->id) == $partner->name)
+                @php
+                    $array = Cache::get('partner'.$partner->id);
+                    $partnerCache = $array['partner'];
+                    $ip = $array['ip'];
+                @endphp
+                @if (Cache::has('partner'.$partner->id) && $partnerCache == Str::lower(Str::studly($partner->name . ' ' . $partner->lastname . ' ' . $partner->id)) && $ip == $_SERVER['REMOTE_ADDR'])
                     <div class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%">
                         <p style="background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px" class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p>
                         <a class="ml-5" style="color: #002542; text-decoration: none" href="tel:{{$partner->codigo_pais}}{{$partner->phone}}">Llamar</a>

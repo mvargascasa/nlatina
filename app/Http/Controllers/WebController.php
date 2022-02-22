@@ -74,20 +74,7 @@ class WebController extends Controller
         // $countries = Partner::select('country_residence')
         // ->where('status', 'PUBLICADO')
         // ->distinct()
-        // ->get();
-
-        if(!empty($_SERVER['HTTP_CLIENT_IP'])) {  
-            $ip = $_SERVER['HTTP_CLIENT_IP'];  
-        }  
-        //whether ip is from the proxy  
-        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {  
-                    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];  
-        }  
-        //whether ip is from the remote address  
-        else{  
-                $ip = $_SERVER['REMOTE_ADDR'];  
-        }  
-
+        // ->get();  
         $countries = Country::select(['name_country', 'id'])->get();
 
         $specialties = Specialty::all();           
@@ -106,7 +93,7 @@ class WebController extends Controller
                 ->get();
 
 
-        return view('web.partners', compact('countries', 'specialties', 'partners', 'ip'));
+        return view('web.partners', compact('countries', 'specialties', 'partners'));
         
     }
 
@@ -1244,12 +1231,15 @@ class WebController extends Controller
     }
 
     public function sendEmailToViewPhone(Request $request, Partner $partner){
+    
+        $ip = $_SERVER['REMOTE_ADDR'];
 
-        // if(Cache::get('partner'.$partner->id) == $partner->name){
-        //     Cache::add('partner', $partner->name);
-        // } else {
-            Cache::put('partner'.$partner->id, $partner->name);
-        // }
+        $data = [
+            'partner' => Str::lower(Str::studly($partner->name . ' ' . $partner->lastname . ' ' . $partner->id)),
+            'ip' => $ip
+        ];
+
+        Cache::put('partner'.$partner->id, $data);
 
         $to = "sebas31051999@gmail.com";
         $subject = "Consulta para ver teléfono del Partner: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . " | ". date(now());
