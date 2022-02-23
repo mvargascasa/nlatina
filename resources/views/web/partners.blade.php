@@ -316,7 +316,6 @@
             dataType: "json",
             success: function(result){
                 $('#contentPartner').html(result.viewPartners);
-                console.log('Paso esto -> ' + id);
                 console.log('STATIC ' + Country.getCountryId());
                 Country.setCountryId(id);
             },

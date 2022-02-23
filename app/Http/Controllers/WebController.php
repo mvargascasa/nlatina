@@ -140,17 +140,12 @@ class WebController extends Controller
                 ->state($request->state)
                 ->specialties($request->specialty)
                 ->where('status', 'PUBLICADO')
-                ->inRandomOrder()
+                ->inRandomOrder('id')
                 // ->orderBy('id', 'DESC')
                 // ->limit($dataToLoad)
                 ->paginate(16);
                 // ->inRandomOrder()
                 // ->get();
-        // if($request->has('page')){
-        //     $request->session()->push('photos', $partners->pluck('id'));
-        // } else {
-        //     $request->session()->forget('partners');
-        // }
 
         $partnersCount = Partner::where('status', 'PUBLICADO')
                     ->orderBy('id', 'DESC')
