@@ -56,7 +56,9 @@
                 </div>
             @endforeach
         </div>
-        {{ $partners->links() }}
+        <div class="row justify-content-center">
+            {{ $partners->links() }}
+        </div>
             {{-- @if (count($partners) < $totalPartners)
                 <div class="text-center mt-3">
                     <button style="background-color: #002542; color:#ffffff" class="btn" onclick="cargarMas();">Cargar más</button>
