@@ -90,6 +90,7 @@
             dataType: "json",
             success: function(result){
                 $('#contentPartner').html(result.viewPartners);
+                Country.setCountryId(countryId);
             },
             error: function(xhr, status, error){
                 var errorMessage = xhr.status + ': ' + xhr.statusText
