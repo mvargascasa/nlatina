@@ -248,7 +248,7 @@
 <script>
 
     class Country {
-        static country_id = 100;
+        static country_id = 1;
 
         static setCountryId(id){
             this.country_id = id;
