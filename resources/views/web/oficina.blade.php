@@ -25,6 +25,10 @@
             }
             .linkServices{
                 margin-bottom: 20px;
+                margin-left: -5px !important;
+            }
+            #colServices{
+                padding-top: 0px !important;
             }
         }
         .titulo{
@@ -121,7 +125,7 @@
             <img class="lazyload" style="width: 80%" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
         </div>
         <div class="col-sm-6">
-            <div class="row" style="padding-top: 13%;">
+            <div id="colServices" class="row" style="padding-top: 13%;">
                 <div class="col-sm-6 d-flex justify-content-center">
                     <div id="linkServices" class="d-flex text-center">
                         <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
