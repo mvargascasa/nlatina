@@ -140,7 +140,7 @@ class WebController extends Controller
                 ->state($request->state)
                 ->specialties($request->specialty)
                 ->where('status', 'PUBLICADO')
-                ->inRandomOrder('id')
+                ->inRandomOrder('name')
                 // ->orderBy('id', 'DESC')
                 // ->limit($dataToLoad)
                 ->paginate(16);
