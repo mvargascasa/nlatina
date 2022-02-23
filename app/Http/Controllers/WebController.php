@@ -138,7 +138,7 @@ class WebController extends Controller
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
                 ->where('status', 'PUBLICADO')
                 // ->orderBy('id', 'DESC')
-                ->inRandomOrder('1234')
+                ->inRandomOrder('id')
                 ->country($request->country)
                 ->state($request->state)
                 ->specialties($request->specialty)
