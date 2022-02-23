@@ -136,10 +136,10 @@ class WebController extends Controller
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
         $states = State::where('country_id', $request->country)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+                ->inRandomOrder()
                 ->whereNotIn('id', $request->session()->get('partners', []))
                 ->where('status', 'PUBLICADO')
                 // ->orderBy('id', 'DESC')
-                ->inRandomOrder('id')
                 ->country($request->country)
                 ->state($request->state)
                 ->specialties($request->specialty)
