@@ -143,7 +143,7 @@ class WebController extends Controller
                 ->state($request->state)
                 ->specialties($request->specialty)
                 // ->limit($dataToLoad)
-                ->paginate(1);
+                ->paginate(16);
                 // ->inRandomOrder()
                 // ->get();
 
