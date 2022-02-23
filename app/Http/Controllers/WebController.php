@@ -136,12 +136,12 @@ class WebController extends Controller
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
         $states = State::where('country_id', $request->country)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
-                ->inRandomOrder('1')
-                ->where('status', 'PUBLICADO')
-                // ->orderBy('id', 'DESC')
                 ->country($request->country)
                 ->state($request->state)
                 ->specialties($request->specialty)
+                ->where('status', 'PUBLICADO')
+                ->inRandomOrder()
+                // ->orderBy('id', 'DESC')
                 // ->limit($dataToLoad)
                 ->paginate(16);
                 // ->inRandomOrder()
