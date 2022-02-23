@@ -130,15 +130,15 @@
                     <div id="linkServices" class="d-flex text-center">
                         <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
                             <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
-                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">CARTAS PODER EN {{ Str::upper($data['office']) }}</p>
+                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">PODERES</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-6 d-flex justify-content-center">
                     <div id="linkServices" class="d-flex text-center">
-                        <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'traducir-documentos-'.Str::slug($data['office'])) }}">
-                            <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-18.webp')}}" alt="">
-                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">SERVICIO DE TRADUCCIÓN CERTIFICADA</p>
+                        <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-documentos-'.Str::slug($data['office'])) }}">
+                            <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-19.webp')}}" alt="">
+                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">APOSTILLAS</p>
                         </a>
                     </div>
                 </div>
@@ -146,9 +146,9 @@
             <div class="row pt-4">
                 <div class="col-sm-6 d-flex justify-content-center mb-4">
                     <div id="linkServices" class="d-flex text-center">
-                        <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-documentos-'.Str::slug($data['office'])) }}">
-                            <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-19.webp')}}" alt="">
-                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">¿CÓMO APOSTILLAR EN {{ Str::upper($data['office']) }}?</p>
+                        <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'traducir-documentos-'.Str::slug($data['office'])) }}">
+                            <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-18.webp')}}" alt="">
+                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">TRADUCCIONES</p>
                         </a>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                     <div id="linkServices" class="d-flex text-center">
                         <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'affidavit-support-'.Str::slug($data['office'])) }}">
                             <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-17.webp')}}" alt="">
-                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">AFFIDÁVIT SUPPORT</p>
+                            <p class="linkServices" style="margin-left: 5px; font-weight: bold;">AFFIDÁVIT</p>
                         </a>
                     </div>
                 </div>
