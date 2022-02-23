@@ -132,7 +132,7 @@ Route::post('/partners/send-to-view-phone/{partner}', 'WebController@sendEmailTo
 Route::get('/partners/eliminar/cache/partner/{partner}', 'WebController@eliminarCachePartner')->name('web.eliminar.cache.partner');
 
 //FETCH STATES
-Route::post('/partners/api/fetch-states', 'WebController@fetchState')->name('partners.fetch.state');
+Route::get('/partners/api/fetch-states', 'WebController@fetchState')->name('partners.fetch.state');
 Route::post('/partners/fetch-states/api', 'WebController@fetchStateAfter')->name('partners.fetch.state.a');
 
 Route::get('/thankpartner', function(){return view('web.thankpartner');});

@@ -83,17 +83,17 @@ class WebController extends Controller
         $specialty = $request->get('specialty');
         $state = $request->get('state');
 
-        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
-                ->where('status', 'PUBLICADO')
-                ->orderBy('id', 'DESC')
-                ->country($country)
-                ->state($state)
-                ->specialties($specialty)
-                ->distinct()
-                ->get();
+        // $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+        //         ->where('status', 'PUBLICADO')
+        //         ->orderBy('id', 'DESC')
+        //         ->country($country)
+        //         ->state($state)
+        //         ->specialties($specialty)
+        //         ->distinct()
+        //         ->get();
 
 
-        return view('web.partners', compact('countries', 'specialties', 'partners'));
+        return view('web.partners', compact('countries', 'specialties'));
         
     }
 
@@ -141,9 +141,10 @@ class WebController extends Controller
                 ->country($request->country)
                 ->state($request->state)
                 ->specialties($request->specialty)
-                ->limit($dataToLoad)
+                // ->limit($dataToLoad)
+                ->paginate(12);
                 // ->inRandomOrder()
-                ->get();
+                // ->get();
 
         $partnersCount = Partner::where('status', 'PUBLICADO')
                     ->orderBy('id', 'DESC')

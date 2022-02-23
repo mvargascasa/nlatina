@@ -26,6 +26,7 @@
             @foreach ($countries as $country)
                 @if ($country->name_country != "Estados Unidos" && $country->name_country != "España")
                     <div onclick="selectCountry({{ $country->id }})" style="cursor: pointer" class="col-sm-4 col-6 mb-2">
+                        <input id="countryIDHidden" type="hidden" name="countryIDHidden" value="{{$country->id}}">
                         <img src="{{ asset('img/partners/'.$country->name_country_lower.'.png') }}" alt=""> {{ $country->name_country}}
                     </div>    
                 @endif

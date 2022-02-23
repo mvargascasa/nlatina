@@ -8,6 +8,7 @@
     <title>Abogados y Notarias en Latinoamérica a su alcance</title>
     <meta name="description" content="👨‍⚖️ Contamos con un amplio directorio de abogados y notarios en Latinoamérica para ayudarlo a gestionar sus trámites | Notaria Latina">
     <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil, @foreach($countriesmeta as $country)abogado en {{Str::lower($country->country_residence)}},@endforeach abogados latinos, notarias cerca de mi abiertas">
+    <script defer src="{{ asset('js/lazysizes.min.js') }}"></script>
     <style>
         /*QUITAR LA ETIQUETA DE TELEFONO DE LA ESQUINA SUPERIOR DERECHA EN LA PAGINA DE LOS PARTNERS*/
         #etiquetaPhone{
@@ -216,7 +217,6 @@
             display: block;
         }
     </style>
-    <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
 
 @section('content')
@@ -236,7 +236,7 @@
 </section>
 
 <div class="pb-3" id="contentPartner" style="background-color: #f5f6f8">
-    @include('web.partials.search_partner')   
+    @include('web.partials.search_partner')
 </div>
 
 @section('numberWpp', '13479739888')
@@ -246,6 +246,19 @@
 @section('script')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+
+    class Country {
+        static country_id = 100;
+
+        static setCountryId(id){
+            this.country_id = id;
+        }
+        
+        static getCountryId(){
+            return this.country_id;
+        }
+    }
+
     function mostrarContrasena(){
       var tipo = document.getElementById("password");
       var eye = document.getElementById("eyePassword");
@@ -272,36 +285,50 @@
                 dataType: "json",
                 success: function(result){
                     $('#stateSelect').html('<option value="">Todos</option>');
-                    $.each(result, function(key, value){
-                        $('#stateSelect').append('<option value="' + value.name_state + '">' + value.name_state + "</option>");
-                    });
-                }
-            });
+                $.each(result, function(key, value){
+                    $('#stateSelect').append('<option value="' + value.name_state + '">' + value.name_state + "</option>");
+                });
+            }
+        });
     }
 
-        function selectCountry(id){
-            $.ajax({
-                type: "POST",
-                url: "{{ route('partners.fetch.state') }}",
-                data: {
-                    "_token" : "{{ csrf_token() }}",
-                    "country" : id,
-                    "state" : null,
-                    "specialty": null
-                },
-                dataType: "json",
-                success: function(result){
-                    $('#contentPartner').html(result.viewPartners);
-                },
-                error: function(xhr, status, error){
-                    var errorMessage = xhr.status + ': ' + xhr.statusText
-                    if(xhr.status == 419){
-                        alert('Por favor recargue la página');
-                    }
-                    // alert('Error - ' + errorMessage);
-                }
-            });
+    $(document).on('click', '.pagination a', function(event){
+        event.preventDefault();
+        var page = $(this).attr('href').split('page=')[1];
+        var country_id = $('#countryIDHidden').val();
+        if(country_id == null || country_id == undefined){
+            country_id = Country.getCountryId();
         }
+        selectCountry(country_id, page);
+    });
+
+    function selectCountry(id, page = 1){
+        $.ajax({
+            type: "GET",
+            url: "{{ route('partners.fetch.state') }}",
+            data:{
+                // "_token" : "{{ csrf_token() }}",
+                "country" : id,
+                "state" : null,
+                "specialty": null,
+                "page": page,
+            },
+            dataType: "json",
+            success: function(result){
+                $('#contentPartner').html(result.viewPartners);
+                console.log('Paso esto -> ' + id);
+                console.log('STATIC ' + Country.getCountryId());
+                Country.setCountryId(id);
+            },
+            error: function(xhr, status, error){
+                var errorMessage = xhr.status + ': ' + xhr.statusText
+                if(xhr.status == 419){
+                    alert('Por favor recargue la página');
+                }
+                // alert('Error - ' + errorMessage);
+            }
+        });
+    }
 
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-ABOGADOS.webp')}}')";
