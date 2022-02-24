@@ -144,7 +144,7 @@ class WebController extends Controller
                 ->inRandomOrder('name')
                 // ->orderBy('id', 'DESC')
                 // ->limit($dataToLoad)
-                ->paginate(1);
+                ->paginate(16);
                 // ->inRandomOrder()
                 // ->get();
 
@@ -186,7 +186,7 @@ class WebController extends Controller
                 ->inRandomOrder('name')
                 // ->orderBy('id', 'DESC')
                 // ->limit($dataToLoad)
-                ->paginate(1);
+                ->paginate(16);
                 // ->inRandomOrder()
                 // ->get();
 
