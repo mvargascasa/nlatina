@@ -59,11 +59,6 @@
         <div class="row justify-content-center">
             {{ $partners->links() }}
         </div>
-            {{-- @if (count($partners) < $totalPartners)
-                <div class="text-center mt-3">
-                    <button style="background-color: #002542; color:#ffffff" class="btn" onclick="cargarMas();">Cargar más</button>
-                </div>
-            @endif --}}
         @else
             <div class="row d-flex text-align-center justify-content-center">
                 <div class="alert alert-success">
@@ -73,6 +68,7 @@
         @endif
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $('#formSearchPartnersAfter').submit(function(event){
         event.preventDefault();
@@ -82,9 +78,8 @@
         $('#contentPartner').html("<div class='loading text-center img-fluid'><img width='400px' height='400px' src='{{ asset('img/loader.gif') }}' alt='loading' /></div>");
         $.ajax({
             type: "GET",
-            url: "{{ route('partners.fetch.state') }}",
+            url: "{{ route('partners.fetch.state.b') }}",
             data: {
-                // "_token" : "{{ csrf_token() }}",
                 "country" : countryId,
                 "specialty" : specialty,
                 "state" : state
@@ -103,29 +98,29 @@
         });
     });
 
-    function cargarMas(){
-        var id = $('#country').val();
-        $.ajax({
-                type: "POST",
-                url: "{{ route('partners.fetch.state') }}",
-                data: {
-                    "_token" : "{{ csrf_token() }}",
-                    "country" : id,
-                    "state" : null,
-                    "specialty": null,
-                    "dataLoad": "{{ count($partners) }}"
-                },
-                dataType: "json",
-                success: function(result){
-                    $('#contentPartner').html(result.viewPartners);
-                },
-                error: function(xhr, status, error){
-                    var errorMessage = xhr.status + ': ' + xhr.statusText
-                    if(xhr.status == 419){
-                        alert('Por favor recargue la página');
-                    }
-                }
-            });
-    }
+    // function cargarMas(){
+    //     var id = $('#country').val();
+    //     $.ajax({
+    //             type: "POST",
+    //             url: "{{ route('partners.fetch.state') }}",
+    //             data: {
+    //                 "_token" : "{{ csrf_token() }}",
+    //                 "country" : id,
+    //                 "state" : null,
+    //                 "specialty": null,
+    //                 "dataLoad": "{{ count($partners) }}"
+    //             },
+    //             dataType: "json",
+    //             success: function(result){
+    //                 $('#contentPartner').html(result.viewPartners);
+    //             },
+    //             error: function(xhr, status, error){
+    //                 var errorMessage = xhr.status + ': ' + xhr.statusText
+    //                 if(xhr.status == 419){
+    //                     alert('Por favor recargue la página');
+    //                 }
+    //             }
+    //         });
+    // }
 
 </script>

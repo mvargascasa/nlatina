@@ -97,53 +97,54 @@ class WebController extends Controller
         
     }
 
-    public function search(Request $request){
-        $countries = Country::select(['name_country', 'id'])->get();
+    // public function search(Request $request){
+    //     $countries = Country::select(['name_country', 'id'])->get();
 
-        $specialties = Specialty::all();           
+    //     $specialties = Specialty::all();           
 
-        $country = $request->get('country');
-        $specialty = $request->get('specialty');
-        $state = $request->get('state');
+    //     $country = $request->get('country');
+    //     $specialty = $request->get('specialty');
+    //     $state = $request->get('state');
 
-        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
-                ->where('status', 'PUBLICADO')
-                ->orderBy('id', 'DESC')
-                ->country($country)
-                ->state($state)
-                ->specialties($specialty)
-                ->distinct()
-                ->get();
+    //     $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+    //             ->where('status', 'PUBLICADO')
+    //             ->orderBy('id', 'DESC')
+    //             ->country($country)
+    //             ->state($state)
+    //             ->specialties($specialty)
+    //             ->distinct()
+    //             ->get();
 
-        return response()->json([
-            'viewPartnersCountry' => view('web.partials.view_partners', compact('countries', 'specialties', 'partners'))
-        ]);
-    }
+    //     return response()->json([
+    //         'viewPartnersCountry' => view('web.partials.view_partners', compact('countries', 'specialties', 'partners'))
+    //     ]);
+    // }
 
+    //ESTA FUNCION ES PARA CARGAR LOS ESTADOS CUANDO HAYA UN CAMBIO EN EL SELECT DE COUNTRIES
     public function fetchStateAfter(Request $request){
         $states = State::where('country_id', $request->id)->get();
         return response()->json($states);
     }
 
     public function fetchState(Request $request){
-        
-        $dataToLoad = 12;
 
-        if($request->dataLoad != null){
-            $dataToLoad = $dataToLoad + $request->dataLoad;
-        }
+        // $dataToLoad = 12;
+
+        // if($request->dataLoad != null){
+        //     $dataToLoad = $dataToLoad + $request->dataLoad;
+        // }
 
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
         $states = State::where('country_id', $request->country)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
                 ->country($request->country)
-                ->state($request->state)
-                ->specialties($request->specialty)
+                // ->state($request->state)
+                // ->specialties($request->specialty)
                 ->where('status', 'PUBLICADO')
                 ->inRandomOrder('name')
                 // ->orderBy('id', 'DESC')
                 // ->limit($dataToLoad)
-                ->paginate(16);
+                ->paginate(1);
                 // ->inRandomOrder()
                 // ->get();
 
@@ -158,9 +159,57 @@ class WebController extends Controller
         
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
 
-        return response()->json([
-            'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties', 'totalPartners'))->render()
-        ]);
+        // if($request->state != null){
+        //     return response()->json([
+        //         'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties', 'totalPartners'))->render()
+        //     ]);
+        // } else {
+            return view('web.partners_result', compact('countries', 'states', 'partners', 'specialties', 'totalPartners'));
+        //}
+    }
+
+    public function fetchStateB(Request $request){
+
+        // $dataToLoad = 12;
+
+        // if($request->dataLoad != null){
+        //     $dataToLoad = $dataToLoad + $request->dataLoad;
+        // }
+
+        $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
+        $states = State::where('country_id', $request->country)->get();
+        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+                ->country($request->country)
+                ->state($request->state)
+                ->specialties($request->specialty)
+                ->where('status', 'PUBLICADO')
+                ->inRandomOrder('name')
+                // ->orderBy('id', 'DESC')
+                // ->limit($dataToLoad)
+                ->paginate(1);
+                // ->inRandomOrder()
+                // ->get();
+
+        $partnersCount = Partner::where('status', 'PUBLICADO')
+                    ->orderBy('id', 'DESC')
+                    ->country($request->country)
+                    ->state($request->state)
+                    ->specialties($request->specialty)
+                    ->get();
+                    
+        $totalPartners = $partnersCount->count();
+
+        $countryID = $request->country;
+        
+        $specialties = Specialty::select(['id', 'name_specialty'])->get();
+
+        // if($request->state != null){
+            return response()->json([
+                'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties', 'totalPartners', 'countryID'))->render()
+            ]);
+        // } else {
+        //return view('web.partners_result', compact('countries', 'states', 'partners', 'specialties', 'totalPartners'));
+        // }
     }
 
     public function showPartner(Request $request, $slug){

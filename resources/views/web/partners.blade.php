@@ -8,95 +8,10 @@
     <title>Abogados y Notarias en Latinoamérica a su alcance</title>
     <meta name="description" content="👨‍⚖️ Contamos con un amplio directorio de abogados y notarios en Latinoamérica para ayudarlo a gestionar sus trámites | Notaria Latina">
     <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil, @foreach($countriesmeta as $country)abogado en {{Str::lower($country->country_residence)}},@endforeach abogados latinos, notarias cerca de mi abiertas">
-    <script defer src="{{ asset('js/lazysizes.min.js') }}"></script>
     <style>
         /*QUITAR LA ETIQUETA DE TELEFONO DE LA ESQUINA SUPERIOR DERECHA EN LA PAGINA DE LOS PARTNERS*/
         #etiquetaPhone{
             display: none;
-        }
-        .testimotionals {width:100%;display:inline-block;}
-        .testimotionals .card {
-            position:relative;
-            overflow:hidden;
-            width:100%;
-            margin:0 auto;
-            /* background:rgb(255, 255, 255); */
-            background: #f5f6f8;
-            padding:20px;
-            box-sizing:border-box;
-            text-align:justify;
-            /* box-shadow:0 10px 40px rgba(0,0,0,.5) */
-        }
-
-        .testimotionals .card .layer {
-            z-index:2;
-            position:absolute;
-            top:calc(100% - 5px);
-            height:100%;
-            width:100%;
-            left:0;
-            background:linear-gradient(to left , #002542, #002542);
-            transition:0.5s;
-        }
-
-        .testimotionals .card .content {
-            z-index:2; 
-            position:relative;
-            color: black;
-        }
-
-        .testimotionals .card .content:hover {
-            color: white;
-        }
-
-        .testimotionals .card:hover  .layer{
-            top:0;
-        }
-
-        .testimotionals .card .content h5{
-            margin-top: 10px;
-            font-size:14px;
-            color:rgb(160, 85, 85);
-        }
-        .testimotionals .card:hover .content h5{
-            font-size:14px;
-            color:rgb(255, 255, 255);
-        }
-
-        .testimotionals .card .content p{
-            font-size:14px;
-            color:rgb(0, 0, 0);
-            text-align: left; /*LE AGREGUE ESTO PARA QUE SE JUSTIFIQUE A LA IZQUIERDA*/
-        }
-        .testimotionals .card:hover .content p{
-            font-size:14px;
-            color:rgb(255, 255, 255);
-        }
-
-        .testimotionals .card .content h6{
-            font-size:14px;
-            color:rgb(0, 0, 0);
-        }
-        .testimotionals .card:hover .content h6{
-            font-size:14px;
-            color:rgb(255, 255, 255);
-        }
-
-        .testimotionals .card .content .row p{
-            font-size:11px;
-            color:rgb(0, 0, 0);
-        }
-        .testimotionals .card:hover .row p{
-            font-size:11px;
-            color:rgb(255, 255, 255);
-        }
-
-        .testimotionals .card .content .image {
-            width:100%; 
-            height:100%;
-            overflow:hidden;
-            display: flex;
-            justify-content: center;
         }
 
         .form{
@@ -245,19 +160,8 @@
 
 @section('script')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('js/Country.js') }}"></script>
 <script>
-
-    class Country {
-        static country_id = 1;
-
-        static setCountryId(id){
-            this.country_id = id;
-        }
-        
-        static getCountryId(){
-            return this.country_id;
-        }
-    }
 
     function mostrarContrasena(){
       var tipo = document.getElementById("password");
@@ -272,61 +176,37 @@
             eye.classList.add('fas', 'fa-eye');
         }
     }
+                            //page = 1 Este parametro iba en SelectCountry
+    function selectCountry(id){       
+        var form = document.getElementById('formSearchPartner');
+        var inputCountryId = document.getElementById('countryHidden');
+        inputCountryId.value = id;
+        Country.setCountryId(id); 
+        form.submit();
 
-    function loadStates(){
-        var idCountry = $('#country').val();
-            $.ajax({
-                url: "{{ route('partners.fetch.state.a') }}",
-                type: "POST",
-                data: {
-                    "_token" : "{{ csrf_token() }}",
-                    "id": idCountry
-                },
-                dataType: "json",
-                success: function(result){
-                    $('#stateSelect').html('<option value="">Todos</option>');
-                $.each(result, function(key, value){
-                    $('#stateSelect').append('<option value="' + value.name_state + '">' + value.name_state + "</option>");
-                });
-            }
-        });
-    }
 
-    $(document).on('click', '.pagination a', function(event){
-        event.preventDefault();
-        var page = $(this).attr('href').split('page=')[1];
-        var country_id = $('#countryIDHidden').val();
-        if(country_id == null || country_id == undefined){
-            country_id = Country.getCountryId();
-        }
-        selectCountry(country_id, page);
-    });
-
-    function selectCountry(id, page = 1){
-        $.ajax({
-            type: "GET",
-            url: "{{ route('partners.fetch.state') }}",
-            data:{
-                // "_token" : "{{ csrf_token() }}",
-                "country" : id,
-                "state" : null,
-                "specialty": null,
-                "page": page,
-            },
-            dataType: "json",
-            success: function(result){
-                $('#contentPartner').html(result.viewPartners);
-                console.log('STATIC ' + Country.getCountryId());
-                Country.setCountryId(id);
-            },
-            error: function(xhr, status, error){
-                var errorMessage = xhr.status + ': ' + xhr.statusText
-                if(xhr.status == 419){
-                    alert('Por favor recargue la página');
-                }
-                // alert('Error - ' + errorMessage);
-            }
-        });
+        // $.ajax({
+        //     type: "GET",
+        //     url: "{{ route('partners.fetch.state') }}",
+        //     data:{
+        //         // "_token" : "{{ csrf_token() }}",
+        //         "country" : id,
+        //         "state" : null,
+        //         "specialty": null,
+        //         "page": page,
+        //     },
+        //     // dataType: "json",
+        //     success: function(result){
+                
+        //     },
+        //     error: function(xhr, status, error){
+        //         var errorMessage = xhr.status + ': ' + xhr.statusText
+        //         if(xhr.status == 419){
+        //             alert('Por favor recargue la página');
+        //         }
+        //         // alert('Error - ' + errorMessage);
+        //     }
+        // });
     }
 
     window.addEventListener('load', (event) => {

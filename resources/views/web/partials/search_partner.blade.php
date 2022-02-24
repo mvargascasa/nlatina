@@ -18,22 +18,21 @@
         <hr style="width: 85%">
     </div>
     <div class="container mt-4">
-        {!! Form::open(['id' => 'formSearchPartner']) !!}
-        <div class="row countrysearch" style="margin-left: 13%">
-            @php
-                $countries = \App\Country::select('id', 'name_country', 'name_country_lower')->orderBy('name_country')->get();
-            @endphp
-            @foreach ($countries as $country)
-                @if ($country->name_country != "Estados Unidos" && $country->name_country != "España")
-                    <div onclick="selectCountry({{ $country->id }})" style="cursor: pointer" class="col-sm-4 col-6 mb-2">
-                        <input id="countryIDHidden" type="hidden" name="countryIDHidden" value="{{$country->id}}">
-                        <img src="{{ asset('img/partners/'.$country->name_country_lower.'.png') }}" alt=""> {{ $country->name_country}}
-                    </div>    
-                @endif
-            @endforeach
-            {{----}}
-        </div>
-        <input type="hidden" name="country" id="country">
+        <form action="{{ route('partners.fetch.state') }}" method="GET" id="formSearchPartner">
+            <div class="row countrysearch" style="margin-left: 13%">
+                @php
+                    $countries = \App\Country::select('id', 'name_country', 'name_country_lower')->orderBy('name_country')->get();
+                @endphp
+                @foreach ($countries as $country)
+                    @if ($country->name_country != "Estados Unidos" && $country->name_country != "España")
+                        <div onclick="selectCountry({{$country->id}});" style="cursor: pointer" class="col-sm-4 col-6 mb-2">
+                            <img src="{{ asset('img/partners/'.$country->name_country_lower.'.png') }}" alt=""> {{ $country->name_country}}
+                        </div>    
+                    @endif
+                @endforeach
+            </div>
+            <input id="countryHidden" type="hidden" name="country">
+        </form>
         {!! Form::close() !!}
     </div>
 </div>
