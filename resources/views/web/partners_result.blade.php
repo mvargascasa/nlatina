@@ -292,9 +292,19 @@
         });
     }
 
+    function scrollToFilters(e) {
+        e.preventDefault();
+        const offsetTop = document.querySelector("#rowTxt").offsetTop;
+
+        scroll({
+            top: offsetTop,
+            behavior: "smooth"
+        });
+    }
         
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-ABOGADOS.webp')}}')";
+        scrollToFilters(event);
     });
     </script>
 @endsection
