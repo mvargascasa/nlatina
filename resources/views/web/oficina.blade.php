@@ -33,6 +33,12 @@
                 padding-top: 0px !important;
                 margin-left: 10% !important;
             }
+            #txtNuestrosServicios{
+                margin-right: 0px !important; 
+            }
+            #hrNuestrosServicios{
+                margin-right: auto !important;
+            }
         }
         .titulo{
             color: white;
@@ -128,7 +134,11 @@
             <img class="lazyload" style="width: 80%" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
         </div>
         <div class="col-sm-6">
-            <div class="row" id="colServices" style="padding-top: 15%; margin-right: 10%;">
+            <div>
+                <h3 id="txtNuestrosServicios" class="text-center text-white mb-3" style="padding-top: 10%; margin-right: 12%; font-family: sans-serif">Nuestros Servicios</h3>
+                <hr id="hrNuestrosServicios" style="width: 10%; margin-right: 51%; border: 1px solid #ffffff">
+            </div>
+            <div class="row" id="colServices" style="margin-right: 10%;">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center">
                     <div id="linkServices" class="text-center border pt-4 pb-4 pl-3 pr-3 mb-3" style="border-radius: 10px; border: 2px solid #e4b63e !important;">
                         <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
@@ -359,6 +369,8 @@
   </div>
 
   <div class="mt-5 checks">
+      <h3 class="text-center">Servicios Adicionales</h3>
+      <hr style="width: 10%; border: 1px solid #000000">
       <h6 class="text-center" style="font-size:25px">Documentos que requieren una apostilla en {{ $data['office'] }}</h6>
       <p style="padding-left: 15%; font-size: 18px; margin-top: 15px">Documentos Personales</p>
       <div class="row" style="padding-left:15%; padding-right:15%;">

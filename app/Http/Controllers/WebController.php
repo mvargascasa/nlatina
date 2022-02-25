@@ -1155,6 +1155,7 @@ class WebController extends Controller
                 <br>País de residencia: " . strip_tags($pais) ."
                 <br>Teléfono: " .strip_tags($request->cod_pais) . " " . strip_tags($request->bbb) ."
                 <br>Mensaje: " . strip_tags($request->ddd) . "
+                <br>Proveniente: " . strip_tags($request->interest) . "
                 <br>
                 <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";
