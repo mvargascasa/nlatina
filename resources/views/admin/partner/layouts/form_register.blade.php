@@ -1,6 +1,6 @@
 <div class="text-center form" style="background-color: #002542; border-radius: 5px">
-    <h4 class="text-white pt-4 px-4" style="margin: 10px 10px 10px 10px;">¿Eres abogado y quieres anunciarte en Estados Unidos?</h4>
-    <p class="text-white">Se parte de nuestro equipo AHORA!</p>
+    <h4 class="text-white pt-4 px-4" style="margin: 10px 10px 10px 10px;">¿Es abogado y quiere anunciarse en Estados Unidos?</h4>
+    <p class="text-white">Sea parte de nuestro equipo AHORA!</p>
     <form action="{{ route('socios.registro') }}" method="POST">        
         @csrf
         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
@@ -82,6 +82,6 @@
         </div>
     </form>
     <div class="pb-3">
-        <p class="text-white"><b>O si estas registrado puedes <a href="{{route('partner.showform')}}">Iniciar Sesión</a></b></p>
+        <p class="text-white"><b>Si ya esta registrado puede <a href="{{route('partner.showform')}}">Iniciar Sesión</a></b></p>
     </div>
 </div>

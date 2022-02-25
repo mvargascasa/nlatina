@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Session;
 use Illuminate\Support\Str;
+use Intervention\Image\Image;
 
 class WebController extends Controller
 {
