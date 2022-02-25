@@ -5,13 +5,6 @@
     <meta name="description" content="{{ $data['metadescription'] }}">
     <meta name="keywords" content="{{ $data['keywords'] }}">
     <style>
-        @media screen and(max-width: 1200px){
-            .linkServices{
-                height: 150px;
-                width: 200px;
-            }
-        }
-
         @media screen and (max-width: 580px){
             .titulo{
                 margin-top: 15%;
@@ -137,7 +130,7 @@
         <div class="col-sm-6">
             <div class="row" id="colServices" style="padding-top: 15%; margin-right: 10%;">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center">
-                    <div id="linkServices" class="text-center border pt-4 pb-4 pl-3 pr-3 mb-1 linkServices" style="border-radius: 10px; border: 2px solid #e4b63e !important;">
+                    <div id="linkServices" class="text-center border pt-4 pb-4 pl-3 pr-3 mb-1" style="border-radius: 10px; border: 2px solid #e4b63e !important;">
                         <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
                             <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
                                 <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
@@ -282,7 +275,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <div class="grow">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), Str::lower(Str::slug($data['txtgrid'])).'-en-'.Str::slug($data['office'])) }}"">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset($data['imggrid']) }}" alt="">
+                        <img style="width: 50px; height: 50px; filter: brightness(0.85) saturate(85%);" class="img-fluid lazyload" data-src="{{ asset($data['imggrid']) }}" alt="">
                         <p>{{ $data['txtgrid'] }}</p>
                     </a>
                 </div>
