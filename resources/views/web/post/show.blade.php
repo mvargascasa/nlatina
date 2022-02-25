@@ -18,10 +18,10 @@
                 padding: 0px !important;
             }
             #rowImageBanner{
-                min-height: 400px !important;
+                min-height: 350px !important;
             }
             #prisection{
-                height: 400px !important;
+                height: 350px !important;
             }
             #title{
                 font-size: 25px !important;
