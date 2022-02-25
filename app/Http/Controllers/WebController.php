@@ -1158,7 +1158,7 @@ class WebController extends Controller
                 <br>
                 <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";
-        $header = 'From: <'.Str::studly(Str::lower($request->interest)). '@notarialatina.com>' . "\r\n" .
+        $header = 'From: <'.Str::lower(Str::studly($request->interest)). '@notarialatina.com>' . "\r\n" .
         'MIME-Version: 1.0' . "\r\n".
         'Content-type:text/html;charset=UTF-8' . "\r\n"
         ;
