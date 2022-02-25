@@ -1148,14 +1148,14 @@ class WebController extends Controller
     //notariapublicalatina@gmail.com,hserrano@notarialatina.com
     public function sendEmailOficina(Request $request){
         $pais = $this->getPaisByCodigo($request->cod_pais);
-        $to = "sebas31051999@gmail.com";
+        $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com";
         $subject = "Lead " . strip_tags($request->interest) . " | " . date(now());
         $message = "<br><strong><h3>Datos del Lead</h3></strong>
                 <br>Nombre: " . strip_tags($request->aaa). "
                 <br>País de residencia: " . strip_tags($pais) ."
                 <br>Teléfono: " .strip_tags($request->cod_pais) . " " . strip_tags($request->bbb) ."
                 <br>Mensaje: " . strip_tags($request->ddd) . "
-                <br>Proveniente: " . strip_tags($request->interest) . "
+                <br>Proveniente: Página de " . strip_tags($request->interest) . "
                 <br>
                 <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";
