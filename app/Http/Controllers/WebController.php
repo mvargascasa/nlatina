@@ -287,7 +287,7 @@ class WebController extends Controller
                     $data['keywords'] .= ", apostillar documentos new york, apostillar diploma new york, apostillar poder general new york, apostillar poder especial new york, apostillar certificado de matrimonio new york, apostillar certificado de defuncion new york, apostillar contrato new york, apostillar carta de invitacion new york, apostillar testamentos new york, apostillar declaraciones juradas new york, apostillar affidavit new york, apostillar acta de divorcio new york, apostillar facturas new york, apostille documents new york";
                     return view('web.office.apostillas', compact('data'));
                     break;
-                case 'affidavit-support-new-york':
+                case 'affidavit-support-en-new-york':
                     $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en New York de una manera ágil y rápida!";
                     $data['keywords'] .= ", declaracion jurada new york, affidavit new york, realizar declaracion jurada new york, tramitar declaracion jurada new york, make an affidavit new york, process affidavit new york";
                     return view('web.office.affidavit', compact('data'));
@@ -492,8 +492,8 @@ class WebController extends Controller
             //$data['oficina'] = 'New York';
             $data['title'] = 'Apostillas en New York';
             $data['subtitle'] = '¡Apostillamos todo tipo de documentos para New York!';
-            $data['imggrid'] = 'img/oficinas/ICONOS-15.webp';
-            $data['txtgrid'] = 'Motor Vehicle Commission';
+            $data['imggrid'] = 'img/oficinas/ICONOS-17.webp';
+            $data['txtgrid'] = 'Affidávit Support';
             $data['telfHidden'] = '+13479739888';
             $data['telfWpp'] = '13479739888';
             $data['telfShow'] = '347-973-9888';
@@ -575,7 +575,7 @@ class WebController extends Controller
                     $data['keywords'] .= ", apostillar documentos new jersey, apostillar diploma new jersey, apostillar poder general new jersey, apostillar poder especial new jersey, apostillar certificado de matrimonio new jersey, apostillar certificado de defuncion new jersey, apostillar contrato new jersey, apostillar carta de invitacion new jersey, apostillar testamentos new jersey, apostillar declaraciones juradas new jersey, apostillar affidavit new jersey, apostillar acta de divorcio new jersey, apostillar facturas new jersey, apostille documents new jersey";
                     return view('web.office.apostillas', compact('data'));
                     break;
-                case 'affidavit-support-new-jersey':
+                case 'affidavit-support-en-new-jersey':
                     $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", declaracion jurada new jersey, affidavit new jersey, realizar declaracion jurada new jersey, tramitar declaracion jurada new jersey, make an affidavit new jersey, process affidavit new jersey";
                     return view('web.office.affidavit', compact('data'));
@@ -781,8 +781,8 @@ class WebController extends Controller
             //$data['oficina'] = 'New Jersey';
             $data['title'] = 'Apostillas express en New Jersey';
             $data['subtitle'] = '¡Apostillamos todo tipo de documento de 3 a 4 días!';
-            $data['imggrid'] = 'img/oficinas/ICONOS-15.webp';
-            $data['txtgrid'] = 'Motor Vehicle Commission';
+            $data['imggrid'] = 'img/oficinas/ICONOS-17.webp';
+            $data['txtgrid'] = 'Affidávit Support';
             $data['telfHidden'] = '+19088009046';
             $data['telfWpp'] = '19088009046';
             $data['telfShow'] = '908-800-9046';
@@ -864,7 +864,7 @@ class WebController extends Controller
                     $data['keywords'] .= ", apostillar documentos florida, apostillar diploma florida, apostillar poder general florida, apostillar poder especial florida, apostillar certificado de matrimonio florida, apostillar certificado de defuncion florida, apostillar contrato florida, apostillar carta de invitacion florida, apostillar testamentos florida, apostillar declaraciones juradas florida, apostillar affidavit florida, apostillar acta de divorcio florida, apostillar facturas florida, apostille documents florida";
                     return view('web.office.apostillas', compact('data'));
                     break;
-                case 'affidavit-support-florida':
+                case 'affidavit-support-en-florida':
                     $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", declaracion jurada florida, affidavit florida, realizar declaracion jurada florida, tramitar declaracion jurada florida, make an affidavit florida, process affidavit florida";
                     return view('web.office.affidavit', compact('data'));

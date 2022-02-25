@@ -5,6 +5,13 @@
     <meta name="description" content="{{ $data['metadescription'] }}">
     <meta name="keywords" content="{{ $data['keywords'] }}">
     <style>
+        @media screen and(max-width: 1200px){
+            .linkServices{
+                height: 150px;
+                width: 200px;
+            }
+        }
+
         @media screen and (max-width: 580px){
             .titulo{
                 margin-top: 15%;
@@ -14,7 +21,7 @@
             }
             #sectionthree{
                 min-width: 110vw;
-                min-height: 120vh;
+                min-height: 130vh;
             }
             #imgApostille{
                 padding-top: 5%;
@@ -24,11 +31,14 @@
                 height: 100%!important;
             }
             .linkServices{
-                margin-bottom: 20px;
                 margin-left: -5px !important;
+                padding: 0px 0px 0px 0px !important; 
+                margin-top: 0% !important; 
+                margin-bottom: 0% !important;
             }
             #colServices{
                 padding-top: 0px !important;
+                margin-left: 10% !important;
             }
         }
         .titulo{
@@ -125,7 +135,39 @@
             <img class="lazyload" style="width: 80%" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
         </div>
         <div class="col-sm-6">
-            <div id="colServices" class="row" style="padding-top: 13%;">
+            <div class="row" id="colServices" style="padding-top: 15%; margin-right: 10%;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center">
+                    <div id="linkServices" class="text-center border pt-4 pb-4 pl-3 pr-3 mb-1 linkServices" style="border-radius: 10px; border: 2px solid #e4b63e !important;">
+                        <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
+                            <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
+                                <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                            </div>
+                            <h4 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Poderes</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center">
+                    <div id="linkServices" class="d-flex text-center border pt-4 pb-4 pl-3 pr-3 mb-1" style="border-radius: 10px; border: 2px solid #e4b63e !important">
+                        <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-documentos-'.Str::slug($data['office'])) }}">
+                            <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
+                                <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-19.webp')}}" alt="">
+                            </div>
+                            <h4 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Apostillas</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center" style="">
+                    <div id="linkServices" class="d-flex text-center border pt-4 pb-4 pl-3 pr-3 mb-1" style="border-radius: 10px; border: 2px solid #e4b63e !important">
+                        <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'traducir-documentos-'.Str::slug($data['office'])) }}">
+                            <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
+                                <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-18.webp')}}" alt="">
+                            </div>
+                            <h4 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Traducciones</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{-- <div id="colServices" class="row" style="padding-top: 13%;">
                 <div class="col-sm-6 d-flex justify-content-center mb-4">
                     <div id="linkServices" class="d-flex text-center">
                         <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
@@ -142,8 +184,8 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="row pt-4">
+            </div> --}}
+            {{-- <div class="row pt-4">
                 <div class="col-sm-6 d-flex justify-content-center mb-4">
                     <div id="linkServices" class="d-flex text-center">
                         <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'traducir-documentos-'.Str::slug($data['office'])) }}">
@@ -160,7 +202,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 
