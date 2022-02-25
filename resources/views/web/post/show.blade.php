@@ -17,6 +17,15 @@
                 justify-content: center !important;
                 padding: 0px !important;
             }
+            #rowImageBanner{
+                min-height: 325px !important;
+            }
+            #prisection{
+                height: 325px !important;
+            }
+            #title{
+                font-size: 25px !important;
+            }
         }
     </style>
 @endsection
@@ -26,7 +35,7 @@
 
 @section('content')
 
-    <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
+    <section id="prisection" style="background-size: cover; background-repeat: no-repeat; width: 100%; height: 550px">
         <div>
             <div id="rowImageBanner" class="row align-items-center" style="min-height: 550px; background:rgba(2, 2, 2, 0.5);">
             </div>
@@ -34,11 +43,13 @@
     </section>
 
     <div class="container pt-4">
-        <h1 class="font-weight-bold heading-title">{{$post->name}}</h1>
+        <h1 id="title" class="font-weight-bold heading-title">{{$post->name}}</h1>
         <div class="row">
-            <div class="col-12" style="white-space: pre-wrap; text-align: justify">
+            <div class="col-12" style="text-align: justify">
                 <img id="imgBlog" class="p-4 float-right img-fluid" width="500" alt="Imagen {{ $post->name }}" src='{{url('uploads/i600_'.$post->imgsmall)}}'>
-            <?php echo htmlspecialchars_decode($post->body)?>
+                <div class="mt-3" style="font-family: 'Times New Roman', Times, serif">
+                    <?php echo htmlspecialchars_decode($post->body)?>
+                </div>
             </div>
         </div>
         <hr>
