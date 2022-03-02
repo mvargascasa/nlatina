@@ -21,6 +21,7 @@
             }
             #imgApostille img{
                 width: 400px !important;
+                height: 250px !important;
             }
             #imgrowapostille{
                 width: 100%!important;
@@ -134,7 +135,7 @@
     
     <div class="row" id="sectionthree" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <div class="col-sm-6 d-flex justify-content-center align-items-center" id="imgApostille">
-            <img class="lazyload" style="width: 500px;" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
+            <img class="lazyload" style="width: 500px; height: 350px;" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
         </div>
         <div class="col-sm-6">
             <div>
