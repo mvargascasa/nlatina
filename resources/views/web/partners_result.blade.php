@@ -274,16 +274,16 @@
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
         
-        var country_id = $('#countryIDHidden').val();
-        if(country_id == null || country_id == undefined){
-            country_id = Country.getCountryId();
-        }
+        var country_id = $('#country').val();
+        // if(country_id == null || country_id == undefined){
+        //     country_id = Country.getCountryId();
+        // }
 
         // const valores = window.location.search;
         // const urlParams = new URLSearchParams(valores);
         // var country_id = urlParams.get('country');
 
-        selectCountry(Country.getCountryId(), page);
+        selectCountry(country_id, page);
     });
 
     function loadStates(){
