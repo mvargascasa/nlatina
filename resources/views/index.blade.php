@@ -48,6 +48,7 @@
       
       .child-locations:hover{
         background-position: left bottom;
+        opacity: 0.8;
       }
 
       .underline{
