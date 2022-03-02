@@ -298,7 +298,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div>
           <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});"
         href="https://api.whatsapp.com/send?phone=+@yield('numberWpp')" target="_blank"> {{--+13479739888--}}
-        <div class="card-body py-4" style="background-image: url({{ asset('img/whatsapp-wallpaper.jpg') }});">
+        <div class="card-body py-4" style="background-image: url({{ asset('img/whatsapp-wallpaper.webp') }});">
             <div class="card">
                 <div class="card-body p-2 text-dark">
                     Hola! <br>

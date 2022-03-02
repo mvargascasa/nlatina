@@ -368,9 +368,10 @@
         </div>
   </section>
 
-  <div class="row">
-    <iframe src="{{$data['urlmap']}}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </div>
+    <div class="row">
+        <iframe src="{{$data['urlmap']}}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        {{-- <img src="{{ asset('img/oficinas/maps-nj.png') }}" class="img-fluid" alt=""> --}}
+    </div>
 
   <div class="mt-5 checks">
       <h3 class="text-center">Servicios Adicionales</h3>

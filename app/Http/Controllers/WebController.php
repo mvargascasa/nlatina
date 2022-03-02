@@ -499,7 +499,7 @@ class WebController extends Controller
             $data['telfWpp'] = '13479739888';
             $data['telfShow'] = '347-973-9888';
             $data['imgapostilla'] = 'img/oficinas/apostillany.webp';
-            $data['imgup'] = 'img/oficinas/BANER-NEW-YORK.jpg';
+            $data['imgup'] = 'img/oficinas/BANER-NEW-YORK.webp';
             $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
             $data['widthimgdown'] = '90%';
             $data['heightimgdown'] = '100%';
@@ -788,7 +788,7 @@ class WebController extends Controller
             $data['telfWpp'] = '19088009046';
             $data['telfShow'] = '908-800-9046';
             $data['imgapostilla'] = 'img/oficinas/apostillanj.webp';
-            $data['imgup'] = 'img/newjersey-landing-notaria-latina.jpg';
+            $data['imgup'] = 'img/newjersey-landing-notaria-latina.webp';
             $data['imgdown'] = 'img/oficinas/CHICA-APOST.webp';
             $data['widthimgdown'] = '70%';
             $data['heightimgdown'] = '25rem';
