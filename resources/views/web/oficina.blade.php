@@ -20,7 +20,7 @@
                 padding-top: 5%;
             }
             #imgApostille img{
-                width: 350px !important;
+                width: 400px !important;
             }
             #imgrowapostille{
                 width: 100%!important;
