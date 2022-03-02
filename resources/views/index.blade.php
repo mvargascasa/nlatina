@@ -37,14 +37,17 @@
           border: none !important;
         }
       }
+
+      .child-locations{
+        background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #122944, #122944);
+        background-position: right bottom;
+        background-size: 400% 100%;
+        transition: all 0.7s ease-out;
+        transition-timing-function: linear;
+      }
       
       .child-locations:hover{
-        background-color: #122944;
-        padding: 5px;
-        border-radius: 10px;
-        -webkit-transition: background-color 500ms linear;
-        -ms-transition: background-color 500ms linear;
-        transition: background-color 500ms linear;
+        background-position: left bottom;
       }
 
       .underline{
@@ -69,7 +72,6 @@
           width: 100%;
         }
       }
-
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -94,7 +96,7 @@
               <h1 class="tit-not">Notaría Pública</h1>
               <h2 class="heading-title" style="margin-bottom: 5%">Gestión Fácil y Rápida</h2>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
+                <div id="div2" class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
                 <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
                 <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
               </div>
