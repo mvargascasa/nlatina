@@ -2,7 +2,7 @@
 @section('header')
     <meta name="description" content="@isset($partner->specialty) Abogado en {{ $partner->city }}, {{$partner->state}} - {{ $partner->specialty }} ⚖👨‍⚖️@else Contamos con un amplio directorio de abogados/as y notarios en Latinoamérica | Notaria Latina ⚖👨‍⚖️ @endisset">
     <meta name="keywords" content="abogado near me, abogado cerca de mi, notaria near me, notaria cerca de mi, abogado en {{ Str::lower($partner->city) }} {{ Str::lower($partner->state) }}, notario en {{ Str::lower($partner->city) }} {{ Str::lower($partner->state) }}, abogados en {{ Str::lower($partner->country_residence) }}, @foreach($partner->specialties as $specialty)abogado {{ Str::lower($specialty->name_specialty) }} en {{ Str::lower($partner->city . " " .  $partner->state)}}, @endforeach @isset($partner->address)abogado en {{ Str::lower($partner->address)}} @endisset">
-    <meta property="og:title" content="Abogado en {{ $partner->city }}, {{ $partner->state }} | Notaria Latina"/>
+    <meta property="og:title" content="Abogado en {{ $partner->city }}, {{ $partner->state }} - {{ $partner->id }} | Notaria Latina"/>
     <meta property="og:site_name" content="https://notarialatina.com"/>
     <meta property="og:url" content="{{ Request::url() }}"/>
     <meta property="og:description" content="{{ $partner->specialty}}"/>
