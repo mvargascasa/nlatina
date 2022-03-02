@@ -78,12 +78,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           <div class="d-flex flex-grow-1">
               <span class="w-100 d-lg-none d-block">
                   <a class="navbar-brand" href="{{route('web.index')}}">
-                      <img src="{{asset('img/marca-notaria-latina.png')}}" width="140" height="30" alt="">
+                      <img src="{{asset('img/marca-notaria-latina.png')}}" width="140px" height="30px" alt="">
                     </a>
               </span>
 
               <a class="navbar-brand d-none d-lg-inline-block " href="{{route('web.index')}}">
-                  <img src="{{asset('img/marca-notaria-latina.png')}}" width="140" height="30" alt="">
+                  <img src="{{asset('img/marca-notaria-latina.png')}}" width="140px" height="30px" alt="">
                 </a>
               <div class="w-100 text-right">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
@@ -210,7 +210,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     <div class="container">
         <div class="row ">
             <div class="col-12 col-sm-6 col-md-3 pt-4">
-                <img class="img-fluid" src="{{asset('img/marca-notaria-latina.png')}}" alt="Logo Notaria Latina">
+                <img width="150px" height="35px" src="{{asset('img/marca-notaria-latina.png')}}" alt="Logo Notaria Latina">
                     <p class="text-muted py-2" style="font-size: 19px">
                         Por más de 10 años contamos con su ayuda en el crecimiento y progreso de nuestra empresa. Es por eso que nuestro mayor afán es ofrecerle todas las soluciones con un servicio totalmente integral de notaria.
                     </p>
