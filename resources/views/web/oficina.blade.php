@@ -535,9 +535,10 @@
 
         window.addEventListener('resize', setImageUrlByViewport);
 
+        //FUNCION PARA SETEAR SRC DE LA IMAGEN DEPENDIENDO DEL TAMAÑO DE LA PANTALLA
         function setImageUrlByViewport(){
             var imgUrlMap = document.getElementById('imgurlmap');
-            if (screen.width < 340){
+            if (screen.width < 400){
                 imgUrlMap.src = "{{ $data['imgurlmapmobile'] }}";
             } else {
                 imgUrlMap.src = "{{ $data['imgurlmap'] }}";
