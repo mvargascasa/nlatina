@@ -369,8 +369,9 @@
   </section>
 
     <div class="row">
-        <iframe src="{{$data['urlmap']}}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        {{-- <img src="{{ asset('img/oficinas/maps-nj.png') }}" class="img-fluid" alt=""> --}}
+        <a href="{{ $data['urlmap']}}" target="_blank">
+            <img id="imgurlmap" class="img-fluid lazyload" src="{{ asset($data['imgurlmap']) }}" alt="Apostillar Documentos en {{ $data['office'] }}">
+        </a>
     </div>
 
   <div class="mt-5 checks">
@@ -529,7 +530,19 @@
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgup'])}})";
             document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/BANNER-NEGRO.webp')}}')";
+            setImageUrlByViewport();
         });
+
+        window.addEventListener('resize', setImageUrlByViewport);
+
+        function setImageUrlByViewport(){
+            var imgUrlMap = document.getElementById('imgurlmap');
+            if (screen.width < 340){
+                imgUrlMap.src = "{{ $data['imgurlmapmobile'] }}";
+            } else {
+                imgUrlMap.src = "{{ $data['imgurlmap'] }}";
+            }
+        }
 
         var pais = document.getElementById('pais');
         var telf = document.getElementById('telf');
