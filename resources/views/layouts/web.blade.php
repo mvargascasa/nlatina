@@ -281,7 +281,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                     </a>
 
                     <div id="fb-root"></div>
-                    <script defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1" nonce="EGGI99Fb"></script>
+                    {{-- <script defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1" nonce="EGGI99Fb"></script> --}}
                     <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="300" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
                     
             </div>
@@ -323,7 +323,18 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 {{-- <script defer src="{{ asset('js/bootstrap.min.js') }}"></script> --}}
 
 @yield('script')
+{{-- <script defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1" nonce="EGGI99Fb"></script> --}}
 <script>
+
+    var scriptFacebook = document.createElement('script');
+    scriptFacebook.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1";
+    scriptFacebook.crossorigin = "anonymous";
+    scriptFacebook.defer = true;
+    scriptFacebook.nonce = "EGGI99Fb";
+
+    window.addEventListener('load', function(event){
+        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebook);
+    });
 
     var urlActual = window.location.href; //OBTENGO LA URL ACTUAL DE LA PAGINA
 
