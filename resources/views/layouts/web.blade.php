@@ -322,18 +322,17 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 {{-- <script defer src="{{ asset('js/bootstrap.min.js') }}"></script> --}}
 
 @yield('script')
-{{-- <script defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1" nonce="EGGI99Fb"></script> --}}
 <script>
 
-    var scriptFacebook = document.createElement('script');
-    scriptFacebook.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1";
-    scriptFacebook.crossorigin = "anonymous";
-    scriptFacebook.defer = true;
-    scriptFacebook.nonce = "EGGI99Fb";
+    // var scriptFacebook = document.createElement('script');
+    // scriptFacebook.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1";
+    // scriptFacebook.crossorigin = "anonymous";
+    // scriptFacebook.defer = true;
+    // scriptFacebook.nonce = "EGGI99Fb";
 
-    window.addEventListener('load', function(event){
-        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebook);
-    });
+    // window.addEventListener('load', function(event){
+    //     document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebook);
+    // });
 
     var urlActual = window.location.href; //OBTENGO LA URL ACTUAL DE LA PAGINA
 
