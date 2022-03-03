@@ -281,18 +281,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                     </a>
 
                     <div id="fb-root"></div>
-                    <script>
-                        var scriptConnectFacebook = document.createElement('script');
-                        scriptConnectFacebook.crossorigin = "anonymous";
-                        scriptConnectFacebook.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1";
-                        scriptConnectFacebook.nonce = "EGGI99Fb";
-
-                        window.addEventListener("load", function(event){
-                            document.getElementsByTagName("script")[0].parentNode.appendChild(scriptConnectFacebook);
-                            console.log('ENTRA AQUI');
-                        });
-                    </script>
-                    {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1" nonce="EGGI99Fb"></script> --}}
+                    <script defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1" nonce="EGGI99Fb"></script>
                     <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="300" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
                     
             </div>
