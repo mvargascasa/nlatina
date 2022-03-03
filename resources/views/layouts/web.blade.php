@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon" />
   {{-- <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet"> --}}
-  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+  <link rel="preload" href="{{asset('css/bootstrap.min.css')}}" as="style" onload="this.rel='stylesheet'">
   <link rel="stylesheet" href="{{asset('css/styles.min.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
   <meta name="facebook-domain-verification" content="lz9luqstj366xp6jboc5k6mt4m4ssm" />
@@ -323,9 +323,10 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 @yield('script')
 <script>
 
-    var urlActual = window.location.href;
-    console.log(urlActual);
-    if(urlActual != "https://notarialatina.com/newjersey"){
+    var urlActual = window.location.href; //OBTENGO LA URL ACTUAL DE LA PAGINA
+
+    //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS
+    if(urlActual != "https://notarialatina.com/newjersey" || urlActual != "https://notarialatina.com/newyork" || urlActual != "https://notarialatina.com/florida"){
         var script3 = document.createElement("script");
 
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
