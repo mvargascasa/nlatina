@@ -322,25 +322,40 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
 @yield('script')
 <script>
+
+    var urlActual = window.location.href;
+    console.log(urlActual);
+    if(urlActual != "https://notarialatina.com/newjersey"){
+        var script3 = document.createElement("script");
+
+        script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
+        script3.async = true;
+
+        window.addEventListener("load", function(event){
+            document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
+        });
+
+        script3.addEventListener("load", function(event) {
+            document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
+            document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+        });
+    }
+    
     var script = document.createElement("script");
     var script2 = document.createElement("script");
-    var script3 = document.createElement("script");
+    // var script3 = document.createElement("script");
     
-    script3.addEventListener("load", function(event) {
-        document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
-        document.getElementsByTagName("script")[0].parentNode.appendChild(script);
-    });
 
-    script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
-    script3.async = true;
+    // script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
+    // script3.async = true;
     script2.src = "{{ asset('js/popper.min.js') }}";
     script2.async = true;
     script.src = "{{ asset('js/bootstrap.min.js') }}";
     script.async = true;
 
-    window.addEventListener("load", function(event){
-        document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
-    });
+    // window.addEventListener("load", function(event){
+    //     document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
+    // });
 
     function downloadJQueryAtOnLoad(){
         var jquery = document.createElement("script");
