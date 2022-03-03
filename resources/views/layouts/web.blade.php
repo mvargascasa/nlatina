@@ -347,6 +347,14 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         scriptFacebook.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1";
         document.body.appendChild(scriptFacebook);
     }
+
+    if (window.addEventListener) {
+        window.addEventListener('load', downloadJSConnectFacebook, false);
+    } else if(window.attachEvent){
+        window.attachEvent('onload', downloadJSConnectFacebook);
+    } else {
+        window.onload = downloadJSConnectFacebook;
+    }
     
     var script = document.createElement("script");
     var script2 = document.createElement("script");
@@ -386,7 +394,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     }
 
     document.addEventListener("DOMContentLoaded", function(event) {
-        downloadJSConnectFacebook();
         if (localStorage.getItem("statusCardWhatsapp") === null) {
             localStorage.setItem("statusCardWhatsapp", "On");
         }
