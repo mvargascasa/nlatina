@@ -43,7 +43,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 </script>
 
 <!-- Facebook Pixel Code -->
-    <script>
+    <script defer>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
