@@ -280,9 +280,9 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                         <img src="{{asset('img/notary-public-near-me-youtube.svg')}}" alt="Youtube Notary Public Near Me" width="30" height="30">
                     </a>
 
-                    <div id="fb-root"></div>
-                    {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1" nonce="tBBwJ6yv"></script> --}}
-                    <div class="fb-like" data-href="https://www.facebook.com/notariapublicalatina" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                    {{-- <div id="fb-root"></div>
+                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1" nonce="tBBwJ6yv"></script>
+                    <div class="fb-like" data-href="https://www.facebook.com/notariapublicalatina" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div> --}}
             </div>
         </div>
     </div>
