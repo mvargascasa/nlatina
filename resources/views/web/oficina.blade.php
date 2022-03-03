@@ -540,8 +540,12 @@
             var imgUrlMap = document.getElementById('imgurlmap');
             if (screen.width < 580){
                 imgUrlMap.src = "{{ $data['imgurlmapmobile'] }}";
+                imgUrlMap.style.width = "100%";
+                imgUrlMap.style.height = "100%";
             } else {
                 imgUrlMap.src = "{{ $data['imgurlmap'] }}";
+                imgUrlMap.style.width = "100%";
+                imgUrlMap.style.height = "100%";
             }
         }
 
