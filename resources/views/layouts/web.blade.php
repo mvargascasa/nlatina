@@ -340,7 +340,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
     window.addEventListener("load", function(event){
         document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
-        console.log('Pagina cargada');
     });
 
     function downloadJQueryAtOnLoad(){

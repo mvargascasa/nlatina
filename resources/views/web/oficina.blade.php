@@ -525,7 +525,6 @@
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgup'])}})";
@@ -544,12 +543,18 @@
             }
         }
 
-        $('#btnFirstIniciarTramite').click(function(e){				
-		e.preventDefault();		//evitar el eventos del enlace normal
-		var strAncla=$(this).attr('href'); //id del ancla
-			$('body,html').stop(true,true).animate({				
-				scrollTop: $(strAncla).offset().top
-			},1000);
-	    });
+        //DESPLAZAMIENTO AL HACER CLICK EN EL BOTON INICIAR TRAMITE DEL BANNER
+        var btnTramite = document.getElementById('btnFirstIniciarTramite');
+        btnTramite.addEventListener('click', clickHandler);
+
+        function clickHandler(e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+            const offsetTop = document.querySelector(href).offsetTop;
+            scroll({
+                top: offsetTop,
+                behavior: "smooth"
+            });
+        }
     </script>
 @endsection

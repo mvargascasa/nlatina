@@ -1012,7 +1012,7 @@ class WebController extends Controller
                     break;
                 case 'apostillar-facturas-florida':
                     $data['description'] = 'Facturas';
-                    $data['metadescription'] .= "¿Necesitas apostillar Facturas en Florida? Notaria Latina te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
+                    $data['metadescription'] .= "¿Necesitas apostillar Facturas en Florida? Notaria Latina te ayuda con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar facturas, apostillar facturas near me, apostillar factura florida, apostille invoices florida, donde apostillar facturas en florida";
                     return view('web.office.apostille_layout', compact('data'));
                     break;   
