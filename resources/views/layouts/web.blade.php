@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{asset('css/styles.min.css')}}">
   <meta name="facebook-domain-verification" content="lz9luqstj366xp6jboc5k6mt4m4ssm" />
 
+  {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script> --}}
 <?php
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 if(strpos($actual_link, 'localhost') === false){
@@ -323,6 +324,35 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
 @yield('script')
 <script>
+
+        function init() {
+            FB.api(
+                                "/me/likes",
+                                function (response) {
+                                if (response && !response.error) {
+                                    /* handle the result */
+                                }
+                                }
+                            );
+            }
+
+            window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '478871590548026',
+                xfbml      : true,
+                version    : 'v13.0'
+            });
+
+            init();
+            };
+
+            (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
 
     // var scriptFacebook = document.createElement('script');
     // scriptFacebook.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1";

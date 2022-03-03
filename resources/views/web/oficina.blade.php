@@ -526,25 +526,6 @@
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId            : '626907141708334',
-                autoLogAppEvents : true,
-                xfbml            : true,
-                version          : 'v13.0'
-            });
-            FB.api(
-                "/me/likes",
-                function (response) {
-                if (response && !response.error) {
-                    /* handle the result */
-                }
-                }
-            );
-        };
-  </script>
     <script>
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgup'])}})";
