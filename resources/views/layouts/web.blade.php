@@ -229,7 +229,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                     <br>
 
                     <span class="font-weight-bold text-white"> New Jersey </span> <br>
-                    <a href="#" target="_blank" class="text-muted"> {{--https://goo.gl/maps/uo1QrZQ1XKDS8gk5A--}}
+                    <a href="https://goo.gl/maps/uo1QrZQ1XKDS8gk5A" target="_blank" class="text-muted"> 
                         1146 East Jersey St Elizabeth, NJ 07201 </a><br>
                         <a href="tel:+19088009046" class="text-muted pr-2"><i class="fa fa-phone-square-alt"></i> 908 800 9046</a><br>
                     <br> 
