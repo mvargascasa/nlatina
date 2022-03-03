@@ -281,7 +281,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                     </a>
 
                     <div id="fb-root"></div>
-                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1" nonce="tBBwJ6yv"></script>
+                    {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1" nonce="tBBwJ6yv"></script> --}}
                     <div class="fb-like" data-href="https://www.facebook.com/notariapublicalatina" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
             </div>
         </div>
@@ -323,16 +323,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
 @yield('script')
 <script>
-    // var scriptFacebook = document.createElement('script');
-    // scriptFacebook.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=225377631999565&autoLogAppEvents=1";
-    // scriptFacebook.crossorigin = "anonymous";
-    // scriptFacebook.defer = true;
-    // scriptFacebook.nonce = "EGGI99Fb";
-
-    // window.addEventListener('load', function(event){
-    //     document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebook);
-    // });
-
     var urlActual = window.location.href; //OBTENGO LA URL ACTUAL DE LA PAGINA
 
     //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS
@@ -350,6 +340,12 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
             document.getElementsByTagName("script")[0].parentNode.appendChild(script);
         });
+    }
+
+    function downloadJSConnectFacebook(){
+        var scriptFacebook = document.createElement('script');
+        scriptFacebook.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1";
+        document.body.appendChild(scriptFacebook);
     }
     
     var script = document.createElement("script");
@@ -390,6 +386,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     }
 
     document.addEventListener("DOMContentLoaded", function(event) {
+        downloadJSConnectFacebook();
         if (localStorage.getItem("statusCardWhatsapp") === null) {
             localStorage.setItem("statusCardWhatsapp", "On");
         }
