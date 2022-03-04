@@ -281,7 +281,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                     </a>
 
                     <div id="fb-root"></div>
-                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1" nonce="tBBwJ6yv"></script>
+                    {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1" nonce="tBBwJ6yv"></script> --}}
                     <div class="fb-like" data-href="https://www.facebook.com/notariapublicalatina" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
             </div>
         </div>
@@ -323,7 +323,11 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
 @yield('script')
 <script>
-    //var urlActual = window.location.href; //OBTENGO LA URL ACTUAL DE LA PAGINA
+    
+    var scriptFacebookPlugin = document.createElement('script');
+    scriptFacebookPlugin.async = true;
+    scriptFacebookPlugin.defer = true;
+    scriptFacebookPlugin.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1";
 
     var path = window.location.pathname;
 
@@ -359,6 +363,10 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     // window.addEventListener("load", function(event){
     //     document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
     // });
+
+    window.addEventListener("load", function(event){
+        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
+    });
 
     function downloadJQueryAtOnLoad(){
         var jquery = document.createElement("script");
