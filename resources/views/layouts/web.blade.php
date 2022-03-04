@@ -343,10 +343,8 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
     var path = window.location.pathname;
 
-    console.log(path);
-
     //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS
-    if(!(path.match('/newjersey/apostillar') || path.match('/newyork/apostillar') || path.match('/florida/apostillar'))){
+    if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida'))){
 
         document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
 

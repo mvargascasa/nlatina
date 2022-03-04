@@ -80,9 +80,17 @@
 @endsection
 
 @section('script')
+<script async src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
     <script>
+      var scriptBootstrap = document.createElement('script');
+      scriptBootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
+
+      var scriptPopper = document.createElement('script');
+      scriptPopper.src = "{{ asset('js/popper.min.js') }}";
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url('../img/matrimonios.webp')";
+            document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
+        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
         });
     </script>
 @endsection
