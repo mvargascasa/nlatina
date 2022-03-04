@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon" />
   {{-- <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet"> --}}
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
+    <link rel="preload" href="{{asset('css/bootstrap.min.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"></noscript>
     <link rel="stylesheet" href="{{asset('css/styles.min.css')}}">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" as="style" onload="this.rel='stylesheet'"/>
     <meta name="facebook-domain-verification" content="lz9luqstj366xp6jboc5k6mt4m4ssm" />
@@ -324,16 +326,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 @yield('script')
 
 <script>
-
-    // function loadCSS(){
-    //     var linkCssBootstrap = document.createElement('link');
-    //     linkCssBootstrap.rel = "stylesheet";
-    //     linkCssBootstrap.href = "{{ asset('css/bootstrap.min.css') }}";
-
-    //     var head = document.getElementsByTagName('head')[0];
-    //     head.appendChild(linkCssBootstrap);
-    // }
-
     //CARGAR EL SCRIPT DE PLUGIN DE FACEBOOK
     var scriptFacebookPlugin = document.createElement('script');
     scriptFacebookPlugin.id = "plugin-facebook";

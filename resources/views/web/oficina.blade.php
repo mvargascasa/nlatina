@@ -101,7 +101,7 @@
             transition: 1s ease;
         }
     </style>
-    <script src="{{ asset('js/lazysizes.min.js') }}"></script>
+    <script defer src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
