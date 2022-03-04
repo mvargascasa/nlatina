@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon" />
   {{-- <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet"> --}}
-  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('css/styles.min.css')}}">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" as="style" onload="this.rel='stylesheet'"/>
-  <meta name="facebook-domain-verification" content="lz9luqstj366xp6jboc5k6mt4m4ssm" />
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/styles.min.css')}}">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" as="style" onload="this.rel='stylesheet'"/>
+    <meta name="facebook-domain-verification" content="lz9luqstj366xp6jboc5k6mt4m4ssm" />
 
 <?php
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -322,8 +322,19 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 {{-- <script defer src="{{ asset('js/bootstrap.min.js') }}"></script> --}}
 
 @yield('script')
+
 <script>
-    
+
+    // function loadCSS(){
+    //     var linkCssBootstrap = document.createElement('link');
+    //     linkCssBootstrap.rel = "stylesheet";
+    //     linkCssBootstrap.href = "{{ asset('css/bootstrap.min.css') }}";
+
+    //     var head = document.getElementsByTagName('head')[0];
+    //     head.appendChild(linkCssBootstrap);
+    // }
+
+    //CARGAR EL SCRIPT DE PLUGIN DE FACEBOOK
     var scriptFacebookPlugin = document.createElement('script');
     scriptFacebookPlugin.id = "plugin-facebook";
     scriptFacebookPlugin.async = true;
@@ -332,8 +343,10 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
     var path = window.location.pathname;
 
-    //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS https://notarialatina.com/newjersey https://notarialatina.com/newyork https://notarialatina.com/florida
-    if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida'))){
+    console.log(path);
+
+    //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS
+    if(!(path.match('/newjersey/apostillar') || path.match('/newyork/apostillar') || path.match('/florida/apostillar'))){
 
         document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
 
@@ -354,10 +367,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         if(screen.width > 580){
             document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
         } 
-        // else {
-        //     document.getElementById('plugin-facebook').parentNode.removeChild(this);
-        // }
-
     }
     
     var script = document.createElement("script");
