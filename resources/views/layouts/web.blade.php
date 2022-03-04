@@ -44,7 +44,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
 <!-- Facebook Pixel Code -->
     <script>
-        if(window.location.href != "https://notarialatina.com/newjersey" && window.location.href != "https://notarialatina.com/newyork" && window.location.href != "https://notarialatina.com/florida"){
+        if(!(window.location.pathname.match('/newjersey') || window.location.pathname.match('/newyork') || window.location.pathname.match('/florida'))){
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
