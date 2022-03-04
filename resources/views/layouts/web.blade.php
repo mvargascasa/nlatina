@@ -325,6 +325,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 <script>
     
     var scriptFacebookPlugin = document.createElement('script');
+    scriptFacebookPlugin.id = "plugin-facebook";
     scriptFacebookPlugin.async = true;
     scriptFacebookPlugin.defer = true;
     scriptFacebookPlugin.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1";
@@ -333,6 +334,9 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
     //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS https://notarialatina.com/newjersey https://notarialatina.com/newyork https://notarialatina.com/florida
     if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida'))){
+
+        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
+
         var script3 = document.createElement("script");
 
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
@@ -346,6 +350,14 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
             document.getElementsByTagName("script")[0].parentNode.appendChild(script);
         });
+    } else {
+        if(screen.width > 580){
+            document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
+        } 
+        // else {
+        //     document.getElementById('plugin-facebook').parentNode.removeChild(this);
+        // }
+
     }
     
     var script = document.createElement("script");
@@ -363,11 +375,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     // window.addEventListener("load", function(event){
     //     document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
     // });
-
-    if(screen.width > 580){
-        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
-    }
-
 
     function downloadJQueryAtOnLoad(){
         var jquery = document.createElement("script");
