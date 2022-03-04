@@ -283,7 +283,7 @@ class WebController extends Controller
                     $data['keywords'] .= ", apostillar crba near me, apostillar crba new york, apostillar reporte consular de nacimiento en el extranjero new york, apostillar certificado de nacimiento en el extranjero new york, apostillar inscripcion de nacimiento extranjero new york, apostillar acta de nacimiento extranjero new york, apostille birth certificate abroad new york, donde apostillar crba en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
-                case 'apostillar-certificados-de-matrimonio-new-york':
+                case 'apostillar-certificado-de-matrimonio-new-york':
                     $data['description'] = 'Certificados de Matrimonio';
                     $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Matrimonio en New York? Notaria Latina te ayuda de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar certificado de matrimonio near me, apostillar certificado de matrimonio en new york, apostillar acta de matrimonio en new york, apostilla matrimonio new york, apostillar partida de matrimonio new york, apostille marriage certificate, apostille marriage certificate new york, donde apostillar certificado de matrimonio en new york";
