@@ -364,9 +364,10 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     //     document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
     // });
 
-    window.addEventListener("load", function(event){
+    if(screen.width > 580){
         document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
-    });
+    }
+
 
     function downloadJQueryAtOnLoad(){
         var jquery = document.createElement("script");
