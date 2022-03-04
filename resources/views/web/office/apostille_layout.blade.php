@@ -49,6 +49,7 @@
                     {!! Form::open(['route' => 'send.apostilla', 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'POST']) !!}
                         @csrf
                         <input type="hidden" name="document" value="{{ $data['description'] }}">
+                        <input type="hidden" name="from" value="{{$data['office']}}">
                         <div class="mb-5 d-flex">
                             <input style="border: none; border-bottom:solid 1px; border-radius: 0px; margin-right: 5px; border-color: rgb(228, 216, 216)" type="text" class="form-control inputs" placeholder="Nombre*" name="name" autocomplete="off" value="{{ old('name')}}" required>
                             <input style="border: none; border-bottom:solid 1px; border-radius: 0px; border-color: rgb(228, 216, 216)" type="text" class="form-control inputs" placeholder="Apellido*" name="lastname" autocomplete="off" value="{{ old('lastname')}}" required>
