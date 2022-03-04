@@ -325,7 +325,9 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 <script>
     //var urlActual = window.location.href; //OBTENGO LA URL ACTUAL DE LA PAGINA
 
-    //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS
+    var path = window.location.pathname;
+
+    //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS https://notarialatina.com/newjersey https://notarialatina.com/newyork https://notarialatina.com/florida
     if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida'))){
         var script3 = document.createElement("script");
 
