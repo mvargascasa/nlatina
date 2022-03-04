@@ -123,8 +123,8 @@
             <h2 style="font-weight: bold">¿Por qué elegirnos?</h2>
             <p style="font-size: 15px;">Brindamos el mejor servicio y asesoría en trámites de notaría para Latinos en Estados Unidos.</p>
             <div>
-                <img class="lazyload" width="50px" height="60px" data-src="{{ asset('img/docverify-approved-enotary-small.png') }}" alt="Notaria Latina en {{ $data['office'] }}">
-                <img class="lazyload" width="160px" height="55px" data-src="{{ asset('img/logo.png') }}" alt="Notaria Latina en {{ $data['office'] }}">
+                <img class="lazyload" width="50px" height="60px" data-src="{{ asset('img/docverify-approved-enotary-small.webp') }}" alt="Notaria Latina en {{ $data['office'] }}">
+                <img class="lazyload" width="160px" height="55px" data-src="{{ asset('img/logo.webp') }}" alt="Notaria Latina en {{ $data['office'] }}">
             </div>
         </div>
         
