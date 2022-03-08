@@ -358,6 +358,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        {{-- <div>
+                                            {{ $charCountBio }}
+                                            <br>
+                                            {{ $biographyDecode }}
+                                        </div> --}}
                                         {!! Form::label('biography_html', 'Biografia', ['id' => 'Biografía']) !!} <b>(Descripción de trayectoria y experiencia en su área)</b>
                                         {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4']) !!}
                                     </div>

@@ -19,6 +19,17 @@ class HomeController extends Controller
 
     public function edit(Partner $partner)
     {
+
+        /*PRUEBAS*/
+        $bioEntity = htmlentities($partner->biography_html);
+
+        $biographyDecode = html_entity_decode($bioEntity);
+
+        $charCountBio = strip_tags($partner->biography_html);
+
+        $charCountBio = Str::length($charCountBio);
+        /*--------*/
+
         $camposVacios = [];
         $socialLinks = [];
 
@@ -58,7 +69,7 @@ class HomeController extends Controller
 
         $specialties = Specialty::all();
 
-        return view('admin.partner.edit', compact('partner', 'specialties', 'camposVacios', 'socialLinks'));
+        return view('admin.partner.edit', compact('partner', 'specialties', 'camposVacios', 'socialLinks', 'charCountBio', 'biographyDecode'));
     }
     
     public function update(Partner $partner, Request $request)

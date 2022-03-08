@@ -305,7 +305,13 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 
 @section('script')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
+
+    function onSubmit(token) {
+        document.getElementById("demo-form").submit();
+    }
+    
     function mostrarContrasena(){
       var tipo = document.getElementById("password");
       var eye = document.getElementById("eyePassword");
