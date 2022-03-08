@@ -1,7 +1,7 @@
 <div class="text-center form" style="background-color: #002542; border-radius: 5px">
     <h4 class="text-white pt-4 px-4" style="margin: 10px 10px 10px 10px;">¿Es abogado y quiere anunciarse en Estados Unidos?</h4>
     <p class="text-white">Sea parte de nuestro equipo AHORA!</p>
-    <form action="{{ route('socios.registro') }}" method="POST">        
+    <form action="{{ route('socios.registro') }}" method="POST" onsubmit="return evitarSpam();">        
         @csrf
         <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
             <input style="margin-right: 1%; font-size: 15px" type="text" class="form-control" placeholder="Nombre" name="name" autocomplete="off" value="{{ old('name')}}" required>
@@ -76,6 +76,10 @@
                 <span class="text-danger">{{ $message }}</span>
             </div>
         @enderror
+            <div class="mb-2" style="display: none; margin-left: 5%; margin-right: 5%">
+                <label style="color: #ffffff" for="nospam">Campo de control. Si lo ves ignóralo</label>
+                <input type="text" name="nospam" id="controlspam" readonly>
+            </div>
         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
             <button type="submit" class="btn btn-block" style="background-color: #FEC02F">Registrarse</button>
         </div>

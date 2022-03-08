@@ -320,49 +320,6 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         }
     }
 
-    // function loadStates(){
-    //     var idCountry = $('#country').val();
-    //         $.ajax({
-    //             url: "{{ route('partners.fetch.state.a') }}",
-    //             type: "POST",
-    //             data: {
-    //                 "_token" : "{{ csrf_token() }}",
-    //                 "id": idCountry
-    //             },
-    //             dataType: "json",
-    //             success: function(result){
-    //                 $('#stateSelect').html('<option value="">Todos</option>');
-    //                 $.each(result, function(key, value){
-    //                     $('#stateSelect').append('<option value="' + value.name_state + '">' + value.name_state + "</option>");
-    //                 });
-    //             }
-    //         });
-    // }
-
-        // function selectCountry(id){
-        //     $.ajax({
-        //         type: "POST",
-        //         url: "{{ route('partners.fetch.state') }}",
-        //         data: {
-        //             "_token" : "{{ csrf_token() }}",
-        //             "country" : id,
-        //             "state" : null,
-        //             "specialty": null
-        //         },
-        //         dataType: "json",
-        //         success: function(result){
-        //             $('#contentPartner').html(result.viewPartners);
-        //         },
-        //         error: function(xhr, status, error){
-        //             var errorMessage = xhr.status + ': ' + xhr.statusText
-        //             if(xhr.status == 419){
-        //                 alert('Por favor recargue la página');
-        //             }
-        //             // alert('Error - ' + errorMessage);
-        //         }
-        //     });
-        // }
-
         var selectPaisResidencia = document.getElementById('country_residence');
         var inputCodPais = document.getElementById('codTelfPais');
         
@@ -388,6 +345,14 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
                 case "Venezuela":codigo = "+58";break;
             }
             inputCodPais.value = codigo;
+        }
+
+        function evitarSpam(){
+            if (!document.getElementById("controlspam").value) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
     window.addEventListener('load', (event) => {
