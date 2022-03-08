@@ -50,7 +50,10 @@
                 justify-content: center;
             }
             #divPhoneAndEmail p{
-                margin-left: 5% !important;
+                margin-left: 0.3% !important;
+            }
+            #rowinfoheader, #rowinfobody{
+                margin-left: 0.3% !important;
             }
         }
 
@@ -168,7 +171,7 @@
     <div id="prisection" class="bg-header" style="background-size: cover; background-position: left top; background-repeat: no-repeat;"></div>
     {{-- <div class="container"> --}}
         @if ($partner != null)
-        <div class="row mt-3">
+        <div id="rowinfoheader" class="row mt-3">
             <div class="col-sm-2"></div>
             <div id="divImgPartner" class="col-sm-2">
                 <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="200" height="260">
@@ -199,11 +202,11 @@
             </div>
         </div>
 
-        <div class="row mt-5">
+        <div id="rowinfobody" class="row mt-5">
             <div class="col-sm-2">
             </div>
             <div class="col-sm-6 border-right">
-                <div style="margin-right: 5%">
+                <div>
                     <h4><b>Biografía</b></h4>
                     <div>
                         {!! $partner->biography_html !!}
