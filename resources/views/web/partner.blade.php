@@ -52,8 +52,11 @@
             #divPhoneAndEmail p{
                 margin-left: 0.3% !important;
             }
-            #rowinfoheader, #rowinfobody{
-                margin-left: 0.3% !important;
+            #rowinfoheader{
+                margin-left: 0.5% !important;
+            }
+            .rowinfobody{
+                margin-left: 3% !important;
             }
         }
 
@@ -205,8 +208,8 @@
         <div class="row mt-5">
             <div class="col-sm-2">
             </div>
-            <div id="rowinfobody" class="col-sm-6 border-right">
-                <div>
+            <div class="col-sm-6 border-right">
+                <div class="rowinfobody">
                     <h4><b>Biografía</b></h4>
                     <div>
                         {!! $partner->biography_html !!}
@@ -227,51 +230,53 @@
                 </div>
             </div>
             <div class="col-sm-3">
-                <div style="color: #9A7A2E">
-                    @isset($partner->address)
-                        <h6 style="font-weight: bold"><i class="fas fa-map-marker-alt"></i> Dirección</h6>
-                        <p>{{ $partner->address}}</p>
-                    @endisset
-                    @if($partner->website != null && Str::startsWith($partner->website, 'https'))
-                        <h6 style="font-weight: bold"><i class="fas fa-globe"></i> Sitio web</h6>
-                        <a target="_blank" style="color: #9A7A2E" href="{{$partner->website}}">{{ $partner->website }}</a>
-                    @endif
-                    @if(Str::startsWith($partner->link_facebook, 'https') || Str::startsWith($partner->link_instagram, 'https') || Str::startsWith($partner->link_linkedin, 'https'))
-                        <h6 style="font-weight: bold; margin-top: 10px">Redes Sociales</h6>
-                        <div style="margin-top: 20px">
-                            @if($partner->link_facebook != null && Str::startsWith($partner->link_facebook, 'https'))
-                                <a target="_blank" class="social" href="{{$partner->link_facebook}}"><i class="fab fa-facebook-square fa-2x"></i></a>
-                            @endif
-                            @if($partner->link_instagram != null && Str::startsWith($partner->link_instagram, 'https'))
-                                <a target="_blank" class="social" href="{{$partner->link_instagram}}"><i class="fab fa-instagram fa-2x"></i></a>
-                            @endif
-                            @if($partner->link_linkedin != null && Str::startsWith($partner->link_linkedin, 'https'))
-                                <a target="_blank" class="social" href="{{ $partner->link_linkedin}}"><i class="fab fa-linkedin fa-2x"></i></a>
-                            @endif
-                        </div>
-                    @endif
-                </div>
-                <h6 style="font-weight: bold; margin-top: 10px; color: #9A7A2E">Reviews</h6>
-                    @php
-                      $rating = $partner->averageRating();
-                    @endphp
-                <div data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 10px; color: #9A7A2E; cursor: pointer">
-                    @foreach(range(1,5) as $i)
-                        <span class="fa-stack" style="width:2em" onclick="openModalRating();">
-                            <i class="far fa-star fa-stack-2x"></i>
-                            @if($rating > 0)
-                                @if($rating > 0.5)
-                                    <i class="fas fa-star fa-stack-2x"></i>
-                                @else
-                                    <i class="fas fa-star-half fa-stack-2x"></i>
+                <div class="rowinfobody">
+                    <div style="color: #9A7A2E">
+                        @isset($partner->address)
+                            <h6 style="font-weight: bold"><i class="fas fa-map-marker-alt"></i> Dirección</h6>
+                            <p>{{ $partner->address}}</p>
+                        @endisset
+                        @if($partner->website != null && Str::startsWith($partner->website, 'https'))
+                            <h6 style="font-weight: bold"><i class="fas fa-globe"></i> Sitio web</h6>
+                            <a target="_blank" style="color: #9A7A2E" href="{{$partner->website}}">{{ $partner->website }}</a>
+                        @endif
+                        @if(Str::startsWith($partner->link_facebook, 'https') || Str::startsWith($partner->link_instagram, 'https') || Str::startsWith($partner->link_linkedin, 'https'))
+                            <h6 style="font-weight: bold; margin-top: 10px">Redes Sociales</h6>
+                            <div style="margin-top: 20px">
+                                @if($partner->link_facebook != null && Str::startsWith($partner->link_facebook, 'https'))
+                                    <a target="_blank" class="social" href="{{$partner->link_facebook}}"><i class="fab fa-facebook-square fa-2x"></i></a>
                                 @endif
-                            @endif
-                        @php $rating--; @endphp
-                        </span>
-                    @endforeach
-                </div>
-                <div style="color: #9A7A2E">  
-                    <p>{{ $partner->timesRated()}} opiniones</p>
+                                @if($partner->link_instagram != null && Str::startsWith($partner->link_instagram, 'https'))
+                                    <a target="_blank" class="social" href="{{$partner->link_instagram}}"><i class="fab fa-instagram fa-2x"></i></a>
+                                @endif
+                                @if($partner->link_linkedin != null && Str::startsWith($partner->link_linkedin, 'https'))
+                                    <a target="_blank" class="social" href="{{ $partner->link_linkedin}}"><i class="fab fa-linkedin fa-2x"></i></a>
+                                @endif
+                            </div>
+                        @endif
+                    </div>
+                    <h6 style="font-weight: bold; margin-top: 10px; color: #9A7A2E">Reviews</h6>
+                        @php
+                          $rating = $partner->averageRating();
+                        @endphp
+                    <div data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 10px; color: #9A7A2E; cursor: pointer">
+                        @foreach(range(1,5) as $i)
+                            <span class="fa-stack" style="width:2em" onclick="openModalRating();">
+                                <i class="far fa-star fa-stack-2x"></i>
+                                @if($rating > 0)
+                                    @if($rating > 0.5)
+                                        <i class="fas fa-star fa-stack-2x"></i>
+                                    @else
+                                        <i class="fas fa-star-half fa-stack-2x"></i>
+                                    @endif
+                                @endif
+                            @php $rating--; @endphp
+                            </span>
+                        @endforeach
+                    </div>
+                    <div style="color: #9A7A2E">  
+                        <p>{{ $partner->timesRated()}} opiniones</p>
+                    </div>
                 </div>
                 <div class="formContact mt-4 rounded">
                     <h5 class="text-white text-center p-3">Realice aquí una consulta</h5>
