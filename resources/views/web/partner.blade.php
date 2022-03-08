@@ -164,7 +164,7 @@
 @endsection
 
 @section('content')
-    <div id="prisection" class="bg-header" style="background-size: cover; background-position: left top; background-repeat: no-repeat; height: 50vh;"></div>
+    <div id="prisection" class="bg-header" style="background-size: cover; background-position: left top; background-repeat: no-repeat;"></div>
     <div class="container">
         @if ($partner != null)
         <div class="row mt-4">
