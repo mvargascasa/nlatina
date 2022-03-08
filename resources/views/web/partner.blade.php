@@ -164,14 +164,15 @@
 @endsection
 
 @section('content')
-    <div id="prisection" class="bg-header" style="background-size: cover; background-position: left top; background-repeat: no-repeat"></div>
+    <div id="prisection" class="bg-header" style="background-size: cover; background-position: left top; background-repeat: no-repeat; height: 50vh;"></div>
     <div class="container">
         @if ($partner != null)
         <div class="row mt-4">
-            <div id="divImgPartner" class="col-sm-6">
-                <img id="imgPartner" class="float-right" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="250" height="310">
+            <div class="col-sm-1"></div>
+            <div id="divImgPartner" class="col-sm-3">
+                <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="250" height="310">
             </div>
-            <div class="col-sm-6 mt-3 info-header">
+            <div class="col-sm-8 mt-3 info-header">
                 <h3><b>
                     @if ($partner->title == "Abogado")
                         Abg.
@@ -200,17 +201,18 @@
         <div class="row mt-5">
             <div class="col-sm-1">
             </div>
-            <div class="col-sm-7 text-justify border-right">
+            <div class="col-sm-7 border-right">
                 <h4><b>Biografía</b></h4>
                 <div>
                     {!! $partner->biography_html !!}
                 </div>
-                <div style="color: #9A7A2E">
+                {{-- RETIRANDO EL BLOQUE DIV DE AREA CON LAS ESPECIALIDADES --}}
+                {{-- <div style="color: #9A7A2E">
                     <h6><b>Área</b></h6>
                     @foreach ($partner->specialties as $specialty)
                         <p><i class="fas fa-check"></i> {{$specialty->name_specialty }}</p>
                     @endforeach
-                </div>
+                </div> --}}
                 @isset($partner->specialty)
                     <div style="color: #9A7A2E">
                         <h6><b>Especialidades</b></h6>
