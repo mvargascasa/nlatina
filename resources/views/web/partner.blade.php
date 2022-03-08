@@ -43,6 +43,7 @@
         @media screen and (max-width: 580px){
             .info-header{
                 color: black;
+                margin-top: 10% !important; 
             }
             #divImgPartner{
                 display: flex;
@@ -165,12 +166,12 @@
 
 @section('content')
     <div id="prisection" class="bg-header" style="background-size: cover; background-position: left top; background-repeat: no-repeat;"></div>
-    <div class="container">
+    {{-- <div class="container"> --}}
         @if ($partner != null)
-        <div class="row mt-4">
-            <div class="col-sm-1"></div>
-            <div id="divImgPartner" class="col-sm-3">
-                <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="250" height="310">
+        <div class="row mt-3">
+            <div class="col-sm-2"></div>
+            <div id="divImgPartner" class="col-sm-2">
+                <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="200" height="260">
             </div>
             <div class="col-sm-8 mt-3 info-header">
                 <h3><b>
@@ -199,28 +200,30 @@
         </div>
 
         <div class="row mt-5">
-            <div class="col-sm-1">
+            <div class="col-sm-2">
             </div>
-            <div class="col-sm-7 border-right">
-                <h4><b>Biografía</b></h4>
-                <div>
-                    {!! $partner->biography_html !!}
-                </div>
-                {{-- RETIRANDO EL BLOQUE DIV DE AREA CON LAS ESPECIALIDADES --}}
-                {{-- <div style="color: #9A7A2E">
-                    <h6><b>Área</b></h6>
-                    @foreach ($partner->specialties as $specialty)
-                        <p><i class="fas fa-check"></i> {{$specialty->name_specialty }}</p>
-                    @endforeach
-                </div> --}}
-                @isset($partner->specialty)
-                    <div style="color: #9A7A2E">
-                        <h6><b>Especialidades</b></h6>
-                        <p>{{ $partner->specialty }}</p>
+            <div class="col-sm-6 border-right">
+                <div style="margin-right: 5%">
+                    <h4><b>Biografía</b></h4>
+                    <div>
+                        {!! $partner->biography_html !!}
                     </div>
-                @endisset
+                    {{-- RETIRANDO EL BLOQUE DIV DE AREA CON LAS ESPECIALIDADES --}}
+                    {{-- <div style="color: #9A7A2E">
+                        <h6><b>Área</b></h6>
+                        @foreach ($partner->specialties as $specialty)
+                            <p><i class="fas fa-check"></i> {{$specialty->name_specialty }}</p>
+                        @endforeach
+                    </div> --}}
+                    @isset($partner->specialty)
+                        <div style="color: #9A7A2E">
+                            <h6><b>Especialidades</b></h6>
+                            <p>{{ $partner->specialty }}</p>
+                        </div>
+                    @endisset
+                </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div style="color: #9A7A2E">
                     @isset($partner->address)
                         <h6 style="font-weight: bold"><i class="fas fa-map-marker-alt"></i> Dirección</h6>
@@ -453,7 +456,7 @@
                     ";    
             @endphp
         @endif
-    </div>
+    {{-- </div> --}}
 @endsection
 
 @section('numberWpp', '13479739888')
