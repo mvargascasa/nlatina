@@ -20,19 +20,19 @@ class HomeController extends Controller
     public function edit(Partner $partner)
     {
 
-        /*PRUEBAS*/
-        $bioEntity = htmlentities($partner->biography_html);
+        /*ESCAPAR CARACTERES ESPECIALES Y CONTAR PARA VALIDAR QUE SEA MAYOR A 400*/
+        $biographyDecode = html_entity_decode($partner->biography_html, ENT_QUOTES);
 
-        $biographyDecode = html_entity_decode($bioEntity);
-
-        $charCountBio = strip_tags($partner->biography_html);
+        $charCountBio = strip_tags($biographyDecode);
 
         $charCountBio = Str::length($charCountBio);
         /*--------*/
 
         $camposVacios = [];
         $socialLinks = [];
+        $advertencias = [];
 
+        //LINKS DE REDES PARA VALIDAR QUE SEA LINK VALIDO
         if (!Str::startsWith($partner->link_facebook, 'https')) {
             array_push($socialLinks, "Facebook");
         }
@@ -46,11 +46,16 @@ class HomeController extends Controller
             array_push($socialLinks, "Website");
         }
 
+        //CAMPOS VACIOS
         if($partner->img_profile == null && $partner->img_profile == null){ array_push ( $camposVacios , "Imagen de perfil");}
         if($partner->title == null){ array_push ( $camposVacios , "Título"); }
         if($partner->name == null){ array_push ( $camposVacios , "Nombre"); }
         if($partner->lastname == null){ array_push ( $camposVacios , "Apellido"); }
         if($partner->email == null){ array_push ( $camposVacios , "Email"); }
+        if($partner->link_facebook == null){ array_push( $camposVacios, "Link de Facebook");}
+        if($partner->link_instagram == null){ array_push( $camposVacios, "Link de Instagram");}
+        if($partner->link_linkedin == null){ array_push( $camposVacios, "Link de LinkedIn");}
+        if($partner->website == null){ array_push( $camposVacios, "Link de Sitio Web");}
         if($partner->country_residence == null){ array_push ( $camposVacios , "País de residencia"); }
         if($partner->phone == null){ array_push ( $camposVacios , "Teléfono"); }
         if($partner->state == null){ array_push ( $camposVacios , "Estado"); }
@@ -67,9 +72,12 @@ class HomeController extends Controller
         if($partner->specialty == null){ array_push ( $camposVacios , "Especialidad (Descripción)"); }
         if($partner->biography_html == null){ array_push ( $camposVacios , "Biografía"); }
 
+        //ADVERTENCIAS
+        if($partner->biography_html != null && $charCountBio < 400){ array_push( $advertencias, "La biografía debe tener al menos 400 caracteres");}
+
         $specialties = Specialty::all();
 
-        return view('admin.partner.edit', compact('partner', 'specialties', 'camposVacios', 'socialLinks', 'charCountBio', 'biographyDecode'));
+        return view('admin.partner.edit', compact('partner', 'specialties', 'camposVacios', 'socialLinks', 'advertencias'));
     }
     
     public function update(Partner $partner, Request $request)
@@ -167,7 +175,7 @@ class HomeController extends Controller
 
         $partner->save();
 
-        return redirect()->route('socios.edit', $partner)->with(['status' => 'Se actualizaron los datos']);
+        return redirect()->route('socios.edit', $partner)->with(['status' => 'Se actualizó su información']);
     }
 
     public function getPaisByCodigo($pais){

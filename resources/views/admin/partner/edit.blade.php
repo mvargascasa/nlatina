@@ -11,8 +11,8 @@
         .image-wrapper img{
             /* position: absolute; */
             object-fit: contain;
-            width: 70%;
-            height: 130%;
+            width: 60%;
+            height: 120%;
             box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         }
         input, label{
@@ -78,7 +78,7 @@
                     <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte <b>gratis</b> en Estados Unidos</p>
                     <p id="txtTercero" style="text-align: center; color: #002542; font-weight: bold">{{ Str::upper('¡No olvides completar tu información para que tus datos puedan publicarse en nuestro sitio web!') }}</p>
                     <div class="card-body">
-                        @if (count($camposVacios) < 1 && Str::limit($partner->terminos_verified_at, 10, '') == Str::limit(date(now()), 10, ''))
+                        @if (count($camposVacios) < 1 && Str::limit($partner->terminos_verified_at, 10, '') == Str::limit(date(now()), 10, '') && count($advertencias) < 1)
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <b>¡Felicidades!</b> Toda tu información se ha completado con éxito. En breves minutos tu perfil será publicado gratis en nuestro sitio web
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -104,15 +104,31 @@
                                     </div>
                                     @endforeach
                                 </div>
-                                <div class="mt-2">
+                                <div class="mt-2" style="font-size: 13px">
                                     Si su información no esta completa, su perfil no podrá anunciarse <b>gratis</b> en nuestro sitio web
+                                </div>
+                            </div>
+                        @endif
+                        @if (count($advertencias) > 0)
+                            <div class="alert alert-warning">
+                                Por favor revise los siguientes campos:
+                                <div class="row">
+                                    @foreach ($advertencias as $advertencia)
+                                    <div class="col-6 col-sm-3">
+                                        <i class="fas fa-exclamation-circle"></i> <b id="txtCamposVacios"><a style="text-decoration: none; color: #000000">{{ $advertencia }}</a></b>       
+                                    </div>
+                                    @endforeach
+                                </div>
+                                <div class="mt-2" style="font-size: 13px">
+                                    Si su información no cumple los requisitos, su perfil no podrá anunciarse <b>gratis</b> en nuestro sitio web
                                 </div>
                             </div>
                         @endif
                             <div id="card1" class="card">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• INFORMACIÓN PERSONAL</p>
-                                    <div class="row">
+                                    <div class="row border pt-3 mb-3 justify-content-center align-items-center">
+                                        <div class="col-sm-1"></div>
                                         <div class="col-sm-3">
                                             <div class="image-wrapper d-flex justify-content-center">
                                                 @if ($partner->img_profile != null)
@@ -127,7 +143,22 @@
                                                 <hr>
                                             </div>
                                         </div>
-                                        <div class="col-sm-9">
+                                        <div class="col-sm-7">
+                                            <h5>Al momento de subir su foto de perfil, <b>RECUERDE</b>:</h5>
+                                            <div>
+                                                <p><i class="fas fa-check"></i> La imagen debe ser tamaño carnet o pasaporte</p>
+                                                <p><i class="fas fa-check"></i> Asegúrese que sea una imagen corporativa</p>
+                                                @if ($partner->img_profile == null)
+                                                <p><i class="fas fa-check"></i> Puede tomar como referencia la imagen de ejemplo</p>
+                                                @endif
+                                                <i><p>"Recuerda que tu <b>imagen</b> es muestra de la <b>calidad</b> de tus servicios"</p></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1"></div>  
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
                                             <div class="row">
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
@@ -199,40 +230,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        {!! Form::label('state', 'Estado/Departamento/Provincia', ['id' => 'Estado']) !!}
-                                                        @if ($partner->state != null)
-                                                        {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
-                                                        @else
-                                                        {!! Form::text('state', null, ['class' => 'form-control']) !!}
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        {!! Form::label('city', 'Ciudad', ['id' => 'Ciudad']) !!}
-                                                        @if ($partner->city != null)
-                                                        {!! Form::text('city', $partner->city, ['class' => 'form-control']) !!}    
-                                                        @else
-                                                        {!! Form::text('city', null, ['class' => 'form-control']) !!}
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        {!! Form::label('address', 'Dirección', ['id' => 'Dirección']) !!}
-                                                        @if ($partner->address != null)
-                                                        {!! Form::text('address', $partner->address, ['class' => 'form-control']) !!}
-                                                        @else
-                                                        {!! Form::text('address', null, ['class' => 'form-control']) !!}
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            
+                                        </div>  
                                     </div>
+
                                 </div>
                             </div>
 
@@ -243,7 +244,7 @@
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                {!! Form::label('link_facebook', 'Link de perfil de Facebook') !!} <i class="fab fa-facebook-square" style="color: #3b5998"></i>
+                                                {!! Form::label('link_facebook', 'Link de perfil de Facebook', ['id' => 'Link de Facebook']) !!} <i class="fab fa-facebook-square" style="color: #3b5998"></i>
                                                 @if ($partner->link_facebook != null)
                                                 {!! Form::text('link_facebook', $partner->link_facebook, ['class' => 'form-control']) !!}
                                                 @else
@@ -259,7 +260,7 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                {!! Form::label('link_instagram', 'Link de perfil de Instagram') !!} <i class="fab fa-instagram" style="color: #ac2bac"></i>
+                                                {!! Form::label('link_instagram', 'Link de perfil de Instagram', ['id' => 'Link de Instagram']) !!} <i class="fab fa-instagram" style="color: #ac2bac"></i>
                                                 @if ($partner->link_instagram != null)
                                                 {!! Form::text('link_instagram', $partner->link_instagram, ['class' => 'form-control']) !!}
                                                 @else
@@ -275,7 +276,7 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                {!! Form::label('link_linkedin', 'Link de perfil de LinkedIn') !!} <i class="fab fa-linkedin text-primary"></i>
+                                                {!! Form::label('link_linkedin', 'Link de perfil de LinkedIn',  ['id' => 'Link de LinkedIn']) !!} <i class="fab fa-linkedin text-primary"></i>
                                                 @if ($partner->link_linkedin != null)
                                                 {!! Form::text('link_linkedin', $partner->link_linkedin, ['class' => 'form-control']) !!}
                                                 @else
@@ -291,7 +292,7 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                {!! Form::label('website', 'Sitio Web') !!} <i class="fas fa-globe" style="color: #3b5998"></i>
+                                                {!! Form::label('website', 'Sitio Web',  ['id' => 'Link de Sitio Web']) !!} <i class="fas fa-globe" style="color: #3b5998"></i>
                                                 @if ($partner->website != null)
                                                 {!! Form::text('website', $partner->website, ['class' => 'form-control']) !!}
                                                 @else
@@ -331,8 +332,42 @@
                                                 {!! Form::text('company_name', null, ['class' => 'form-control']) !!} 
                                             @endif
                                         </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                {!! Form::label('address', 'Dirección', ['id' => 'Dirección']) !!}
+                                                @if ($partner->address != null)
+                                                {!! Form::text('address', $partner->address, ['class' => 'form-control']) !!}
+                                                @else
+                                                {!! Form::text('address', null, ['class' => 'form-control']) !!}
+                                                @endif
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p style="font-size: 14px" id="Áreas de especialización">Área de especialización <b>(Escoja entre 1 a 3 opciones)</b></p>
+
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                {!! Form::label('state', 'Estado, Departamento o Provincia', ['id' => 'Estado']) !!}
+                                                @if ($partner->state != null)
+                                                {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
+                                                @else
+                                                {!! Form::text('state', null, ['class' => 'form-control']) !!}
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                {!! Form::label('city', 'Ciudad', ['id' => 'Ciudad']) !!}
+                                                @if ($partner->city != null)
+                                                {!! Form::text('city', $partner->city, ['class' => 'form-control']) !!}    
+                                                @else
+                                                {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p style="font-size: 14px" id="Áreas de especialización">Áreas en las que trabaja <b>(Escoja entre 1 a 3 opciones)</b></p>
                                     <div class="form-group">
                                         <div class="row">
                                                 @foreach ($specialties as $specialty)
@@ -350,7 +385,7 @@
                                             <div class="form-group">
                                                 {!! Form::label('specialty', 'Especialidad(es)', ['id' => 'Especialidad (Descripción)']) !!} <b style="font-size: 14px">(Descripción más detallada)</b>
                                                 {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control', 'onkeyup' => 'countChars();', 'minlength' => '100', 'maxlength' => '200']) !!}
-                                                <div class="d-flex float-right">
+                                                <div class="d-flex float-right" style="font-size: 13px">
                                                     <p id="charNum">0 caracteres</p>
                                                     <span id="txtMaxMinChar" class="text-success" style="margin-left: 5px">(Mínimo: 100 caracteres - Máximo: 200 caracteres)</span>
                                                 </div>
@@ -358,14 +393,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        {{-- <div>
-                                            {{ $charCountBio }}
-                                            <br>
-                                            {{ $biographyDecode }}
-                                        </div> --}}
-                                        {!! Form::label('biography_html', 'Biografia', ['id' => 'Biografía']) !!} <b>(Descripción de trayectoria y experiencia en su área)</b>
-                                        {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4']) !!}
+                                        {!! Form::label('biography_html', 'Biografia', ['id' => 'Biografía']) !!} <b style="font-size: 14px">(Descripción de trayectoria y experiencia en su área)</b>
+                                        {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4', 'minlength' => '100', 'maxlength' => '200']) !!}
+                                        <div class="d-flex float-right" style="font-size: 13px">
+                                            <span id="txtMaxMinChar" class="text-success" style="margin-left: 5px">(Mínimo: 400 caracteres)</span>
+                                        </div>
                                     </div>
+                                    <br>
                                     <div class="float-right">
                                         @if ($partner->terminos_verified_at != null)
                                         {!! Form::submit('Guardar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b']) !!}
