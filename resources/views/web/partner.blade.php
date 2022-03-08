@@ -202,10 +202,10 @@
             </div>
         </div>
 
-        <div id="rowinfobody" class="row mt-5">
+        <div class="row mt-5">
             <div class="col-sm-2">
             </div>
-            <div class="col-sm-6 border-right">
+            <div id="rowinfobody" class="col-sm-6 border-right">
                 <div>
                     <h4><b>Biografía</b></h4>
                     <div>
