@@ -801,10 +801,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             $("document").ready(function(){
-                //if (localStorage.getItem("modalwaslaunched") == null) {
+                if (localStorage.getItem("modalwaslaunched") == null) {
                     $('#modalFollowInstagram').modal('toggle');
                     localStorage.setItem("modalwaslaunched", true);
-                //}
+                }
             });
         </script>
     @endif
