@@ -334,7 +334,7 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                {!! Form::label('address', 'Dirección', ['id' => 'Dirección']) !!}
+                                                {!! Form::label('address', 'Dirección de despacho u oficina', ['id' => 'Dirección']) !!}
                                                 @if ($partner->address != null)
                                                 {!! Form::text('address', $partner->address, ['class' => 'form-control']) !!}
                                                 @else
