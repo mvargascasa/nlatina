@@ -24,51 +24,84 @@ class RegisterController extends Controller
     public function register(Request $request){
 
         // $codigoPais = $this->getCodByPais($request->country_residence);
-        
-        $request->validate([
-            'name' => 'required',
-            'lastname' => 'required',
-            'country_residence' => 'required',
-            'phone' => 'required',
-            'company' => 'required',
-            'email' => 'required|unique:partners,email|min:10|max:191',
-            'password' => 'required|string|min:8|max:255'
-        ]);
-        
-        $partner = Partner::create([
-            'name' => $request['name'],
-            'lastname' => $request['lastname'],
-            'country_residence' => $request['country_residence'],
-            'codigo_pais' => $request['codTelfPais'],
-            'phone' => $request['phone'],
-            'company' => $request['company'],
-            'email'=> $request['email'],
-            'password'=> bcrypt($request['password']),
-            'slug' => Str::slug($request['name'] . ' ' . $request['lastname'], '-')
-        ]);
+        //CONDICION PARA QUE NO GUARDE LA INFO SI EL CODIGO DE PAIS NO EMPIEZA CON + | BOTS ESTABAN GUARDANDO ESTE CAMPO CON LETRAS ALEATORIAS (TLiCEZogI)
+        if(Str::startsWith($request->codTelfPais, '+')){
 
-        // event(new Registered($partner));
+            $request->validate([
+                'name' => 'required',
+                'lastname' => 'required',
+                'country_residence' => 'required',
+                'phone' => 'required',
+                'company' => 'required',
+                'email' => 'required|unique:partners,email|min:10|max:191',
+                'password' => 'required|string|min:8|max:255'
+            ]);
+            
+            $partner = Partner::create([
+                'name' => $request['name'],
+                'lastname' => $request['lastname'],
+                'country_residence' => $request['country_residence'],
+                'codigo_pais' => $request['codTelfPais'],
+                'phone' => $request['phone'],
+                'company' => $request['company'],
+                'email'=> $request['email'],
+                'password'=> bcrypt($request['password']),
+                'slug' => Str::slug($request['name'] . ' ' . $request['lastname'], '-')
+            ]);
     
-        //Envia correo a los administradores de que se ha registrado un nuevo usuario
-        $this->sendEmail($partner);
+            // event(new Registered($partner));
+        
+            //Envia correo a los administradores de que se ha registrado un nuevo usuario
+            $this->sendEmail($partner);
+    
+            $this->sendEmailPartner($partner);
+    
+            Auth::guard('partner')->login($partner);
+    
+            return redirect()->route('socios.edit', compact('partner'))->with('success', 'Register complete!');
 
-        $this->sendEmailPartner($partner);
+        } else {
+            //
+            $macaddress = exec('getmac');
+            $ipaddress = $request->ip();
 
-        Auth::guard('partner')->login($partner);
+            $to = "sebas31051999@gmail.com"; //partners@notarialatina.com,hserrano@notarialatina.com
+            $subject = 'Un nuevo registro | ' . date(now());
+            $message = "<br><strong><h2>Información</h2></strong>
+                    <br>Nombre: " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
+                    <br>Nacionalidad: " . strip_tags($request->country_residence) ."
+                    <br>Teléfono: ". strip_tags($request->codTelfPais) . " " .  strip_tags($request->phone) ."
+                    <br>Email: " . strip_tags($request->email)."
+                    <br>Tipo de trabajo: " . strip_tags($request->company)."
+                    <br>Mac Address: " . strip_tags($macaddress) ."
+                    <br>Ip Address: " . strip_tags($ipaddress) . " 
+        ";
 
-        return redirect()->route('socios.edit', compact('partner'))->with('success', 'Register complete!');
+        $header = 'From: <partners@notarialatina.com>' . "\r\n" .
+                'MIME-Version: 1.0' . "\r\n".
+                'Content-type:text/html;charset=UTF-8' . "\r\n"
+                ;
+        
+            mail($to, $subject, $message, $header);
+
+            $request->session()->flash('success', 'Hemos enviado tu información');
+
+            return back();
+            
+        }
+
     }
 
     public function sendEmail(Partner $partner){
         $codigo_pais = $this->getCodigoPais($partner->country_residence);
-        $to = "partners@notarialatina.com,hserrano@notarialatina.com"; //partners@notarialatina.com,hserrano@notarialatina.com
+        $to = "sebas31051999@gmail.com"; //partners@notarialatina.com,hserrano@notarialatina.com
         $subject = 'Registro de Partner - Abogado';
         $message = "<br><strong><h2>Un nuevo partner se ha registrado en nuestra página - Notaria Latina</h2></strong>
                     <br>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname) . "
                     <br>Nacionalidad: " . strip_tags($partner->country_residence) ."
                     <br>Teléfono: ". strip_tags($codigo_pais) . " " .  strip_tags($partner->phone) ."
                     <br>Email: " . strip_tags($partner->email)."
-                    <br>Empresa: " . strip_tags($partner->company_name)."
+                    <br>Tipo de trabajo: " . strip_tags($partner->company)."
                     <br>
                     <img style='margin-top:20px; width:210px; height:75px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";

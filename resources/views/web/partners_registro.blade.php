@@ -299,6 +299,17 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         </div>
     </div>
 </div>
+
+@if (session('success'))
+            @php
+                echo "
+                    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+                    <script>
+                        swal('Registro exitoso', 'Revisa tu correo para validarlo', 'success');
+                    </script>
+                    ";    
+            @endphp
+        @endif
 @endsection
 
 @section('numberWpp', '13479739888')
