@@ -136,8 +136,8 @@ class WebController extends Controller
                 // ->state($request->state)
                 // ->specialties($request->specialty)
                 ->where('status', 'PUBLICADO')
-                ->inRandomOrder('name')
-                // ->orderBy('id', 'DESC')
+                //->inRandomOrder('name')
+                ->orderBy('name', 'DESC')
                 // ->limit($dataToLoad)
                 ->paginate(16);
                 // ->inRandomOrder()
@@ -166,8 +166,8 @@ class WebController extends Controller
                 ->state($request->state)
                 ->specialties($request->specialty)
                 ->where('status', 'PUBLICADO')
-                ->inRandomOrder('name')
-                // ->orderBy('id', 'DESC')
+                //->inRandomOrder('name')
+                ->orderBy('name', 'DESC')
                 // ->limit($dataToLoad)
                 ->paginate(16);
                 // ->inRandomOrder()
