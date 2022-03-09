@@ -505,9 +505,6 @@
                                         @endif
                                     </div>
                                 </div>
-                                {{ Str::limit($partner->terminos_verified_at, 16, '')}}
-                                <br>
-                                {{ Str::limit(date(now()), 16, '')}}
                             </div>
                     </div>
                 </div>
