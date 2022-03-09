@@ -823,22 +823,22 @@
               <div class="modal-header" style="display: inline; border-radius: 5px">
                   <h6 class="modal-title text-center">Síguenos en nuestras redes sociales y mantente informado cada día</h6>
                   <div class="row text-center mt-3 mb-4">
-                      <div class="col-sm-3">
+                      <div class="col-3 col-sm-3">
                           <a target="_blank" href="https://www.facebook.com/notariapublicalatina" class="btn btn-primary" style="background-color: #0c8aef;" href="#!" role="button"
                           ><i class="fab fa-facebook-f"></i
                           ></a>
                       </div>
-                      <div class="col-sm-3">
+                      <div class="col-3 col-sm-3">
                           <a target="_blank" href="https://www.instagram.com/notarialatina/" class="btn btn-primary" style="background-color: #bf3590;" href="#!" role="button"
                           ><i class="fab fa-instagram"></i
                           ></a>
                       </div>
-                      <div class="col-sm-3">
+                      <div class="col-3 col-sm-3">
                           <a target="_blank" href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A" class="btn btn-primary" style="background-color: #ff0000;" href="#!" role="button"
                           ><i class="fab fa-youtube"></i
                           ></a>
                       </div>
-                      <div class="col-sm-3">
+                      <div class="col-3 col-sm-3">
                           <a target="_blank" href="https://mobile.twitter.com/latinanotaria" class="btn btn-primary" style="background-color: #1d9bf0;" href="#!" role="button"
                           ><i class="fab fa-twitter"></i
                           ></a>
