@@ -16,8 +16,11 @@
     @endif
     {!! Form::open(['route' => 'partner.index', 'method' => 'GET']) !!}
     <div class="row form-group mb-3">
-        <div class="col-sm-10">
+        <div class="col-sm-5">
                 {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre del partner']) !!}    
+            </div>
+            <div class="col-sm-5">
+                {!! Form::text('lastname', null, ['class' => 'form-control', 'placeholder' => 'Apellido del partner']) !!}    
             </div>
             <div class="col-sm-2">
                 {!! Form::submit('Buscar', ['class' => 'btn btn-info']) !!}

@@ -35,6 +35,7 @@ class PartnerController extends Controller
         // }
         
         $name = $request->get('name');
+        $lastname = $request->get('lastname');
         
         $total = Partner::count();
         $published = Partner::where('status', '=', 'PUBLICADO')->count();
@@ -50,6 +51,7 @@ class PartnerController extends Controller
             $fecha_publicado = $request->publicadosHoy;
 
             $partners = Partner::name($name)
+                ->lastname($lastname)
                 ->fechaPublicado($fecha_publicado)
                 ->createdAt($created_at)
                 ->status($status)
@@ -63,6 +65,7 @@ class PartnerController extends Controller
             $created_at = $request->registradosHoy;
 
             $partners = Partner::name($name)
+                ->lastname($lastname)
                 ->fechaPublicado($fecha_publicado)
                 ->createdAt($created_at)
                 ->status($status)
@@ -70,6 +73,7 @@ class PartnerController extends Controller
                 ->paginate($contadorPaginateRegistrados);
         } else {
             $partners = Partner::name($name)
+                ->lastname($lastname)
                 //->fechaPublicado($fecha_publicado)
                 //->createdAt($created_at)
                 ->status($status)
@@ -193,7 +197,7 @@ class PartnerController extends Controller
             
         // }
         
-        return redirect()->route('partner.index')->with('success', 'Se actualizaron los datos');
+        return redirect()->back()->with('success', 'Se actualizaron los datos');
     }
 
     public function viewLastPublicated(){

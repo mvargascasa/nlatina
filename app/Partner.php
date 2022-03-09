@@ -75,6 +75,12 @@ class Partner extends Authenticatable implements MustVerifyEmail
             return $query->where('name', 'LIKE', "%$name%");
         }
     }
+
+    public function scopeLastname($query, $lastname){
+        if ($lastname) {
+            return $query->where('lastname', 'LIKE', "%$lastname%");
+        }
+    }
     
     public function scopeCountry($query, $country){
         $countryAux = Country::find($country);
