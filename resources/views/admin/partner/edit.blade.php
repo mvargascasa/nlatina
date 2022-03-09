@@ -45,14 +45,12 @@
             #modalBienvenido .modal-dialog{
                 width: 96% !important;
             }
-            .social a{
-                /*border:1px solid #000;*/
+            /* .social a{
                 top:50% !important;
                 height:205px !important;
-                /*para poner height 192 deberíamos haber indicado en el reset de estilos font-size:0;*/
                 margin-top:-100px !important;
                 width: 5px !important;
-		    }
+		    } */
         }
         .modal-dialog{
             overflow-y: initial !important
