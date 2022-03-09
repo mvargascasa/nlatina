@@ -45,6 +45,14 @@
             #modalBienvenido .modal-dialog{
                 width: 96% !important;
             }
+            .social a{
+                /*border:1px solid #000;*/
+                top:50% !important;
+                height:205px !important;
+                /*para poner height 192 deberíamos haber indicado en el reset de estilos font-size:0;*/
+                margin-top:-100px !important;
+                width: 5px !important;
+		    }
         }
         .modal-dialog{
             overflow-y: initial !important
@@ -273,7 +281,6 @@
                             <div id="card2" class="card mt-4">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• REDES SOCIALES</p>
-                                    <p>Si <b>por el momento no cuenta con redes sociales</b>, puede continuar completando su información profesional</p>
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="form-group">
