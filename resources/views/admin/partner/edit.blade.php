@@ -45,12 +45,11 @@
             #modalBienvenido .modal-dialog{
                 width: 96% !important;
             }
-            /* .social a{
+            .social a{
                 top:50% !important;
-                height:205px !important;
-                margin-top:-100px !important;
-                width: 5px !important;
-		    } */
+                height:35px !important;
+                margin-left: 5px !important;
+		    }
         }
         .modal-dialog{
             overflow-y: initial !important
@@ -798,11 +797,14 @@
       </div>
     {!! Form::close() !!}
 
-    {{-- @if ($partner->terminos_verified_at != null && Str::limit($partner->terminos_verified_at, 16, '') == Str::limit(date(now()), 16, ''))
+    @if ($partner->terminos_verified_at != null)
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             $("document").ready(function(){
-                $('#modalFollowInstagram').modal('toggle')
+                //if (localStorage.getItem("modalwaslaunched") == null) {
+                    $('#modalFollowInstagram').modal('toggle');
+                    localStorage.setItem("modalwaslaunched", true);
+                //}
             });
         </script>
     @endif
@@ -811,35 +813,35 @@
         <div class="modal-dialog modal-dialog-centered modal-sm">
           <div class="modal-content">
               <div class="modal-header" style="display: inline; border-radius: 5px">
-                  <h6 class="modal-title text-center">No olvides seguirnos en nuestras redes sociales</h6>
-                  <div class="row text-center mt-3 mb-3">
-                      <div class="col-sm-6">
+                  <h6 class="modal-title text-center">Síguenos en nuestras redes sociales y mantente informado cada día</h6>
+                  <div class="row text-center mt-3 mb-4">
+                      <div class="col-sm-3">
                           <a target="_blank" href="https://www.facebook.com/notariapublicalatina" class="btn btn-primary" style="background-color: #0c8aef;" href="#!" role="button"
                           ><i class="fab fa-facebook-f"></i
                           ></a>
                       </div>
-                      <div class="col-sm-6">
+                      <div class="col-sm-3">
                           <a target="_blank" href="https://www.instagram.com/notarialatina/" class="btn btn-primary" style="background-color: #bf3590;" href="#!" role="button"
                           ><i class="fab fa-instagram"></i
                           ></a>
                       </div>
-                  </div>
-                  <div class="row text-center">
-                      <div class="col-sm-6">
+                      <div class="col-sm-3">
                           <a target="_blank" href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A" class="btn btn-primary" style="background-color: #ff0000;" href="#!" role="button"
                           ><i class="fab fa-youtube"></i
                           ></a>
                       </div>
-                      <div class="col-sm-6">
+                      <div class="col-sm-3">
                           <a target="_blank" href="https://mobile.twitter.com/latinanotaria" class="btn btn-primary" style="background-color: #1d9bf0;" href="#!" role="button"
                           ><i class="fab fa-twitter"></i
                           ></a>
                       </div>
                   </div>
+                  <div class="row text-center">
+                  </div>
               </div>
           </div>
         </div>
-    </div> --}}
+    </div>
     
 @endsection
 
@@ -847,6 +849,10 @@
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        if(localStorage.getItem('modalwaslaunched') != null){
+            console.log(localStorage.getItem('modalwaslaunched'));
+        }
+
         window.addEventListener('load', function(){
             countChars();
             showInputNameCompany();
