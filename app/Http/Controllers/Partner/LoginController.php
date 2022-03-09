@@ -40,8 +40,7 @@ class LoginController extends Controller
             $partner = Partner::where('email', $request->email)->first();
             // return auth('partner')->user(); //ESTO ME DEVUELVE EL USUARIO QUE INICIO SESION
             return redirect()
-            ->route('socios.edit', $partner)
-            ->with('status', 'You are logged in!');
+            ->route('socios.edit', $partner);
         }
 
         $this->incrementLoginAttempts($request);

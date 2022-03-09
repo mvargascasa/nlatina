@@ -86,14 +86,6 @@
                                 </button>
                             </div>
                         @endif
-                        @if (session('status'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                {{ session('status') }}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        @endif
                         @if (count($camposVacios) > 0)
                             <div class="alert alert-danger">
                                 Los siguientes campos se encuentran vacios:
@@ -313,6 +305,18 @@
                             <div id="card3" class="card mt-4">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• INFORMACIÓN PROFESIONAL</p>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                {!! Form::label('numlicencia', 'Número de Título Registrado', ['id' => 'Número de Licencia']) !!}
+                                                @if ($partner->numlicencia != null)
+                                                {!! Form::text('numlicencia', $partner->numlicencia, ['class' => 'form-control']) !!}
+                                                @else
+                                                {!! Form::text('numlicencia', null, ['class' => 'form-control']) !!}
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">

@@ -33,6 +33,7 @@ class Partner extends Authenticatable implements MustVerifyEmail
         'link_linkedin',
         'website',
         'codigo_pais',
+        'numlicencia',
         'company',
         'company_name',
         'phone', 

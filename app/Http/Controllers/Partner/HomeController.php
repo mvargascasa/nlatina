@@ -61,6 +61,7 @@ class HomeController extends Controller
         if($partner->state == null){ array_push ( $camposVacios , "Estado"); }
         if($partner->city == null){ array_push ( $camposVacios , "Ciudad"); }
         if($partner->address == null){ array_push ( $camposVacios , "Dirección"); }
+        if($partner->numlicencia == null){ array_push( $camposVacios, "Número de Licencia" );}
         if($partner->company != null){ 
             if($partner->company == "Empresa" && $partner->company_name == null){
                 array_push ( $camposVacios , "Nombre de la empresa"); 
@@ -143,6 +144,7 @@ class HomeController extends Controller
         $partner->email = $request->email;
         $partner->country_residence = $request->country_residence;
         $partner->codigo_pais = $request->codigo_pais;
+        $partner->numlicencia = $request->numlicencia;
         $partner->phone = $request->phone;
         $partner->state = $request->state;
         $partner->city = $request->city;
