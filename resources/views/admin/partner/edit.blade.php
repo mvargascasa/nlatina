@@ -154,7 +154,11 @@
                                             <div class="row">
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
-                                                        {!! Form::label('title', 'Título', ['id' => 'Título']) !!}
+                                                        @if ($partner->title != null)
+                                                            {!! Form::label('title', 'Título', ['id' => 'Título']) !!}
+                                                        @else
+                                                            {!! Form::label('title', 'Título *', ['id' => 'Título', 'style' => 'color: red; font-weight: bold']) !!}
+                                                        @endif
                                                         @if ($partner->title != null)
                                                         {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], $partner->title, ['class' => 'form-control']) !!}
                                                         @else
@@ -164,7 +168,11 @@
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
-                                                        {!! Form::label('name', 'Nombre') !!}
+                                                        @if ($partner->name != null)
+                                                            {!! Form::label('name', 'Nombre') !!}
+                                                        @else
+                                                            {!! Form::label('name', 'Nombre *', ['id' => 'Nombre', 'style' => 'color: red; font-weight: bold']) !!}
+                                                        @endif
                                                         @if ($partner->name != null)
                                                         {!! Form::text('name', $partner->name, ['class' => 'form-control', 'required']) !!}
                                                         @else 
@@ -174,7 +182,11 @@
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
-                                                        {!! Form::label('lastname', 'Apellido') !!}
+                                                        @if ($partner->lastname != null)
+                                                            {!! Form::label('lastname', 'Apellido') !!}
+                                                        @else
+                                                            {!! Form::label('lastname', 'Apellido *', ['id' => 'Apellido', 'style' => 'color: red; font-weight: bold']) !!}
+                                                        @endif
                                                         @if ($partner->lastname != null)
                                                         {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control', 'required']) !!}                                                        
                                                         @else 
@@ -184,7 +196,11 @@
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group">
-                                                    {!! Form::label('email', 'Email') !!}
+                                                    @if ($partner->email != null)
+                                                        {!! Form::label('email', 'Email') !!}
+                                                    @else
+                                                        {!! Form::label('email', 'Email *', ['id' => 'Email', 'style' => 'color: red; font-weight: bold']) !!}
+                                                    @endif
                                                     @if ($partner->email != null)
                                                     {!! Form::email('email', $partner->email, ['class' => 'form-control', 'type' => 'email', 'required']) !!}                                                        
                                                     @else
@@ -197,7 +213,11 @@
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                    {!! Form::label('country_residence', 'Pais de residencia', ['id' => 'País de residencia']) !!}
+                                                        @if ($partner->country_residence != null)
+                                                            {!! Form::label('country_residence', 'Pais de residencia', ['id' => 'País de residencia']) !!}
+                                                        @else
+                                                            {!! Form::label('country_residence', 'Pais de residencia *', ['id' => 'País de residencia', 'style' => 'color: red; font-weight: bold']) !!}
+                                                        @endif
                                                     @if ($partner->country_residence != null)
                                                     {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Chile' => 'Chile', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->country_residence, ['class' => 'form-control']) !!}    
                                                     @else
@@ -217,7 +237,11 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        {!! Form::label('phone', 'Telefono', ['id' => 'Teléfono']) !!}
+                                                        @if ($partner->phone != null)
+                                                            {!! Form::label('phone', 'Telefono', ['id' => 'Teléfono']) !!}
+                                                        @else
+                                                            {!! Form::label('phone', 'Telefono *', ['id' => 'Teléfono', 'style' => 'color: red; font-weight: bold']) !!}
+                                                        @endif
                                                         {!! Form::number('phone', $partner->phone, ['class' => 'form-control']) !!}
                                                     </div>
                                                 </div>
@@ -236,7 +260,11 @@
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                {!! Form::label('link_facebook', 'Link de perfil de Facebook', ['id' => 'Link de Facebook']) !!} <i class="fab fa-facebook-square" style="color: #3b5998"></i>
+                                                @if ($partner->link_facebook != null)
+                                                    {!! Form::label('link_facebook', 'Link de perfil de Facebook', ['id' => 'Link de Facebook']) !!} <i class="fab fa-facebook-square" style="color: #3b5998"></i>
+                                                @else
+                                                    {!! Form::label('link_facebook', 'Link de perfil de Facebook *', ['id' => 'Link de Facebook', 'style' => 'color: red; font-weight: bold']) !!} <i class="fab fa-facebook-square" style="color: #3b5998"></i>
+                                                @endif
                                                 @if ($partner->link_facebook != null)
                                                 {!! Form::text('link_facebook', $partner->link_facebook, ['class' => 'form-control']) !!}
                                                 @else
@@ -252,7 +280,11 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                {!! Form::label('link_instagram', 'Link de perfil de Instagram', ['id' => 'Link de Instagram']) !!} <i class="fab fa-instagram" style="color: #ac2bac"></i>
+                                                @if ($partner->link_instagram != null)
+                                                    {!! Form::label('link_instagram', 'Link de perfil de Instagram', ['id' => 'Link de Instagram']) !!} <i class="fab fa-instagram" style="color: #ac2bac"></i>
+                                                @else
+                                                    {!! Form::label('link_instagram', 'Link de perfil de Instagram *', ['id' => 'Link de Instagram', 'style' => 'color: red; font-weight: bold']) !!} <i class="fab fa-instagram" style="color: #ac2bac"></i>
+                                                @endif
                                                 @if ($partner->link_instagram != null)
                                                 {!! Form::text('link_instagram', $partner->link_instagram, ['class' => 'form-control']) !!}
                                                 @else
@@ -268,7 +300,11 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                {!! Form::label('link_linkedin', 'Link de perfil de LinkedIn',  ['id' => 'Link de LinkedIn']) !!} <i class="fab fa-linkedin text-primary"></i>
+                                                @if ($partner->link_linkedin != null)
+                                                    {!! Form::label('link_linkedin', 'Link de perfil de LinkedIn', ['id' => 'Link de LinkedIn']) !!} <i class="fab fa-linkedin text-primary"></i>
+                                                @else
+                                                    {!! Form::label('link_linkedin', 'Link de perfil de LinkedIn *', ['id' => 'Link de LinkedIn', 'style' => 'color: red; font-weight: bold']) !!} <i class="fab fa-linkedin text-primary"></i>
+                                                @endif
                                                 @if ($partner->link_linkedin != null)
                                                 {!! Form::text('link_linkedin', $partner->link_linkedin, ['class' => 'form-control']) !!}
                                                 @else
@@ -284,7 +320,11 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                {!! Form::label('website', 'Sitio Web',  ['id' => 'Link de Sitio Web']) !!} <i class="fas fa-globe" style="color: #3b5998"></i>
+                                                @if ($partner->website != null)
+                                                    {!! Form::label('website', 'Sitio Web', ['id' => 'Link de Sitio Web']) !!} <i class="fas fa-globe" style="color: #3b5998"></i>
+                                                @else
+                                                    {!! Form::label('website', 'Sitio Web *', ['id' => 'Link de Sitio Web', 'style' => 'color: red; font-weight: bold']) !!} <i class="fas fa-globe" style="color: #3b5998"></i>
+                                                @endif
                                                 @if ($partner->website != null)
                                                 {!! Form::text('website', $partner->website, ['class' => 'form-control']) !!}
                                                 @else
@@ -308,7 +348,11 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                {!! Form::label('numlicencia', 'Número de Título Registrado', ['id' => 'Número de Licencia']) !!}
+                                                @if ($partner->numlicencia != null)
+                                                    {!! Form::label('numlicencia', 'Número de Título Registrado', ['id' => 'Número de Licencia']) !!}
+                                                @else
+                                                    {!! Form::label('numlicencia', 'Número de Título Registrado *', ['id' => 'Número de Licencia', 'style' => 'color: red; font-weight: bold']) !!}
+                                                @endif
                                                 @if ($partner->numlicencia != null)
                                                 {!! Form::text('numlicencia', $partner->numlicencia, ['class' => 'form-control']) !!}
                                                 @else
@@ -320,7 +364,11 @@
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                {!! Form::label('company', 'Tipo de trabajo', ['id' => 'Tipo de trabajo']) !!}
+                                                @if ($partner->company != null)
+                                                    {!! Form::label('company', 'Tipo de trabajo', ['id' => 'Tipo de trabajo']) !!}
+                                                @else
+                                                    {!! Form::label('company', 'Tipo de trabajo *', ['id' => 'Tipo de trabajo', 'style' => 'color: red; font-weight: bold']) !!}
+                                                @endif
                                                 @if ($partner->company != null)
                                                 {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], $partner->company, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
                                                 @else
@@ -329,7 +377,11 @@
                                             </div>
                                         </div>                            
                                         <div id="divCompanyName" class="col-sm-4" @if ($partner->company == "Empresa") style="display: block" @else style="display: none" @endif>
-                                            {!! Form::label('company_name', 'Nombre de la Empresa', ['id' => 'Nombre de la empresa']) !!}
+                                            @if ($partner->company_name != null)
+                                                {!! Form::label('company_name', 'Nombre de la Empresa', ['id' => 'Nombre de la empresa']) !!}
+                                            @else
+                                                {!! Form::label('company_name', 'Nombre de la Empresa *', ['id' => 'Nombre de la empresa', 'style' => 'color: red; font-weight: bold']) !!}
+                                            @endif
                                             @if($partner->company_name != null)
                                                 {!! Form::text('company_name', $partner->company_name, ['class' => 'form-control']) !!}
                                             @else
@@ -338,7 +390,11 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                {!! Form::label('address', 'Dirección de despacho u oficina', ['id' => 'Dirección']) !!}
+                                                @if ($partner->address != null)
+                                                    {!! Form::label('address', 'Dirección de despacho u oficina', ['id' => 'Dirección']) !!}
+                                                @else
+                                                    {!! Form::label('address', 'Dirección de despacho u oficina *', ['id' => 'Dirección', 'style' => 'color: red; font-weight: bold']) !!}
+                                                @endif
                                                 @if ($partner->address != null)
                                                 {!! Form::text('address', $partner->address, ['class' => 'form-control']) !!}
                                                 @else
@@ -351,7 +407,11 @@
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                {!! Form::label('state', 'Estado, Departamento o Provincia', ['id' => 'Estado']) !!}
+                                                @if ($partner->state != null)
+                                                    {!! Form::label('state', 'Estado, Departamento o Provincia', ['id' => 'Estado']) !!}
+                                                @else
+                                                    {!! Form::label('state', 'Estado, Departamento o Provincia *', ['id' => 'Estado', 'style' => 'color: red; font-weight: bold']) !!} 
+                                                @endif
                                                 @if ($partner->state != null)
                                                 {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
                                                 @else
@@ -361,7 +421,11 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                {!! Form::label('city', 'Ciudad', ['id' => 'Ciudad']) !!}
+                                                @if ($partner->city != null)
+                                                    {!! Form::label('city', 'Ciudad', ['id' => 'Ciudad']) !!}
+                                                @else
+                                                    {!! Form::label('city', 'Ciudad *', ['id' => 'Ciudad', 'style' => 'color: red; font-weight: bold']) !!}
+                                                @endif
                                                 @if ($partner->city != null)
                                                 {!! Form::text('city', $partner->city, ['class' => 'form-control']) !!}    
                                                 @else
@@ -371,7 +435,11 @@
                                         </div>
                                     </div>
 
-                                    <p style="font-size: 14px" id="Áreas de especialización">Áreas en las que trabaja <b>(Escoja entre 1 a 3 opciones)</b></p>
+                                    @if (count($partner->specialties) > 0)
+                                        <p style="font-size: 14px" id="Áreas de especialización">Áreas en las que trabaja <b>(Escoja entre 1 a 3 opciones)</b></p>
+                                    @else
+                                        <p style="font-size: 14px; color: red; font-weight: bold" id="Áreas de especialización">Áreas en las que trabaja * <b style="color: #000000; font-weight: normal">(Escoja entre 1 a 3 opciones)</b></p>
+                                    @endif
                                     <div class="form-group">
                                         <div class="row">
                                                 @foreach ($specialties as $specialty)
@@ -387,7 +455,11 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                {!! Form::label('specialty', 'Especialidad(es)', ['id' => 'Especialidad (Descripción)']) !!} <b style="font-size: 14px">(Descripción más detallada)</b>
+                                                @if ($partner->specialty != null)
+                                                    {!! Form::label('specialty', 'Especialidad(es)', ['id' => 'Especialidad (Descripción)']) !!} <b style="font-size: 14px">(Descripción más detallada)</b>
+                                                @else
+                                                    {!! Form::label('specialty', 'Especialidad(es) *', ['id' => 'Especialidad (Descripción)', 'style' => 'color: red; font-weight: bold']) !!} <b style="font-size: 14px">(Descripción más detallada)</b>
+                                                @endif
                                                 {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control', 'onkeyup' => 'countChars();', 'minlength' => '100', 'maxlength' => '200']) !!}
                                                 <div class="d-flex float-right" style="font-size: 13px">
                                                     <p id="charNum">0 caracteres</p>
@@ -397,7 +469,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::label('biography_html', 'Biografia', ['id' => 'Biografía']) !!} <b style="font-size: 14px">(Descripción de trayectoria y experiencia en su área)</b>
+                                        @if ($partner->biography_html != null)
+                                            {!! Form::label('biography_html', 'Biografia', ['id' => 'Biografía']) !!} <b style="font-size: 14px">(Descripción de trayectoria y experiencia en su área)</b>
+                                        @else
+                                            {!! Form::label('biography_html', 'Biografia *', ['id' => 'Biografía', 'style' => 'color: red; font-weight: bold']) !!} <b style="font-size: 14px">(Descripción de trayectoria y experiencia en su área)</b>
+                                        @endif
                                         {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4', 'minlength' => '100', 'maxlength' => '200']) !!}
                                         <div class="d-flex float-right" style="font-size: 13px">
                                             <span id="txtMaxMinChar" class="text-success" style="margin-left: 5px">(Mínimo: 400 caracteres)</span>
