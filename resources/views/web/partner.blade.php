@@ -18,6 +18,9 @@
 @endphp
     <title>Abogado en {{ Str::ucfirst($partner->city)}}, {{ Str::ucfirst($partner->state)}} | Notaria Latina</title>
     <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
         .bg-header{
             /* background-color: #002542; */
             width: 100%;
@@ -167,6 +170,9 @@
         input[type="radio"]:checked ~ label {
         color: orange;
         }
+        #divcallphone{
+            display: none;
+        }
     </style>
 @endsection
 
@@ -180,7 +186,8 @@
                 <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="200" height="260">
             </div>
             <div class="col-sm-8 mt-3 info-header">
-                <h3><b>
+                <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
+                <h3 id="txtnamelastname"><b>
                     @if ($partner->title == "Abogado")
                         Abg.
                     @elseif($partner->title == "Licenciado")
@@ -200,12 +207,12 @@
                     <p class="ml-5" style="cursor: pointer; background-color: #002542; padding-left: 1%; padding-right: 1%; border-radius: 5px;">Ver número</p>
                 </div> --}}
                 <div class="row d-flex">
-                    <p class="ml-3"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p>
+                    <a style="text-decoration: none; color: #ffffff" href="mailto:{{$partner->email}}"><p class="ml-3"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p></a>
                 </div>
             </div>
         </div>
 
-        <div class="row mt-5">
+        <div class="row mt-5 pt-2">
             <div class="col-sm-2">
             </div>
             <div class="col-sm-6 border-right">
@@ -228,6 +235,12 @@
                         </div>
                     @endisset
                 </div>
+                @isset($partner->numlicencia)
+                    <div>
+                        <h5 style="font-weight: bold">Número de Licencia - Título</h5>
+                        <p>{{ $partner->numlicencia }}</p>
+                    </div>
+                @endisset
             </div>
             <div class="col-sm-3">
                 <div class="rowinfobody">
@@ -319,20 +332,11 @@
                         $ip = $array['ip'];
                     }
                 @endphp
-                @if (Cache::has('partner'.$partner->id) && $partnerCache == Str::lower(Str::studly($partner->name . ' ' . $partner->lastname . ' ' . $partner->id)) && $ip == $_SERVER['REMOTE_ADDR'])
-                    <div class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%">
-                        <p style="background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px" class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p>
-                        <a class="ml-5" style="color: #002542; text-decoration: none" href="tel:{{$partner->codigo_pais}}{{$partner->phone}}">Llamar</a>
-                    </div>
-                @else
-                    <div class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%;">
-                        <p style="background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px" class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p>
-                        <p class="ml-5" style="cursor: pointer; color: #002542; padding: 5px" data-toggle="modal" data-target=".bd-example-modal-sm">Ver teléfono</p>
-                    </div>
-                @endif
+                <div id="divshowphone" class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%;"> </div>
             </div>
         </div>
         @endif
+
         {{--MODAL DE VALORACION DE PARTNER--}}
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -405,7 +409,7 @@
                             <span style="color: #ffffff" aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ route('web.send.view.phone', $partner)}}" method="POST">
+                    <form id="formviewphone" action="{{ route('web.send.view.phone', $partner)}}" method="POST">
                     <div class="modal-body" >
                             @csrf
                             <div class="mb-3">
@@ -419,13 +423,12 @@
                             </div>
                         </div>
                         <div class="modal-footer justify-content-center" style="margin-bottom: -15px;">
-                            <button type="submit" class="btn" style="background-color: #fec02f">Enviar</button>
+                            <button onclick="saveStorage();" class="btn" style="background-color: #fec02f">Enviar</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
 
         {{--ESTO ES PARA MI PERFIL--}}
         @if ($partner->name . " " . $partner->lastname == "Sebastian Armijos")
@@ -474,9 +477,27 @@
 <script>
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/FONDO-PARTNER-INDIVIDUAL.webp')}}')";
+        const divshowphone = document.getElementById('divshowphone');
+        var id = document.getElementById('txtpartnerid').textContent;
+        if(!localStorage.getItem("prueba"+id)){
+            divshowphone.innerHTML = "<p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px' class='ml-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p><p class='ml-5' style='cursor: pointer; color: #002542; padding: 5px' data-toggle='modal' data-target='.bd-example-modal-sm'>Ver teléfono</p>";
+        } else {
+            divshowphone.innerHTML = "<p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px' class='ml-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p><a class='ml-5' style='color: #002542; text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>Llamar</a>";
+        }
     });
+
     function openModalPhone(){
         $('.bd-example-modal-sm').modal('show');
+    }
+
+    function saveStorage(){
+        var id = document.getElementById('txtpartnerid').textContent;
+        var partner = document.getElementById('txtnamelastname').textContent;
+        if(localStorage.getItem("prueba"+id) == null){
+            partner = partner.replace(/\s/g, "") + id;
+            localStorage.setItem("prueba"+id, partner);
+        }
+        document.getElementById('formviewphone').submit();
     }
 </script>
 @endsection

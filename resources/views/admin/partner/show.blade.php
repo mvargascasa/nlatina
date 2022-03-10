@@ -258,6 +258,16 @@
             {{--ESPECIALIDADES--}}
             <p style="font-weight: bold">INFORMACIÓN PROFESIONAL</p>
             
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    {!! Form::label('numlicencia', 'Número de Licencia') !!}
+                    @if ($partner->numlicencia)
+                    {!! Form::text('numlicencia', $partner->numlicencia, ['class' => 'form-control']) !!}
+                    @else
+                    {!! Form::text('numlicencia', null, ['class' => 'form-control']) !!}
+                    @endif
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
