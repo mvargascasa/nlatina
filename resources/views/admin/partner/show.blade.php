@@ -362,7 +362,7 @@
 @section('end-scripts')
     <script src="{{ asset('ckeditoradmin/ckeditor.js') }}"></script>
     <script>
-        
+
         CKEDITOR.timestamp = "ABCD";
 
         window.addEventListener('load', function(){
@@ -371,7 +371,9 @@
         });
 
         document.addEventListener("DOMContentLoaded", function(event) {
-            CKEDITOR.replace('biography_html');
+            CKEDITOR.replace('biography_html', {
+                contentCss : "test.css"
+            });
         });
 
         function changeCodPais(){
