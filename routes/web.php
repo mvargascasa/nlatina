@@ -41,6 +41,7 @@ Route::post('/home/partners/verify/{partner}', 'PartnerController@verifiEmailAdm
 Route::get('/home/partners/{partner}/show', 'PartnerController@show')->name('partner.show');
 Route::put('/home/partners/{partner}', 'PartnerController@update')->name('partner.update');
 Route::delete('/home/partners/delete/{id}', 'PartnerController@destroy')->name('partner.destroy');
+Route::post('home/partners/send-notification/{partner}', 'PartnerController@sendEmailPartner')->name('send.email.notification.partner');
 
 // THANK
 Route::get('/thank', 'LandingController@thank')->name('landing.thank');

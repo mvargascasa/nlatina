@@ -200,7 +200,7 @@
                 </b></h3>
                 <p><img src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt=""> {{ $partner->country_residence}}, {{ $partner->city }}</p>
                 @if ($partner->company == "Empresa")
-                    <p style="margin-top: -10px">{{ $partner->company_name }}</p>
+                    <p>{{ $partner->company_name }}</p>
                 @else
                     <p style="margin-top: -10px">{{ $partner->company}}</p>
                 @endif
@@ -233,15 +233,15 @@
                     </div> --}}
                     @isset($partner->specialty)
                         <div class="mt-3">
-                            <h6>Especialidades</h6>
-                            <p>{{ $partner->specialty }}</p>
+                            <p style="font-weight: 600">Especialidades</p>
+                            <p style="font-weight: 400">{{ $partner->specialty }}</p>
                         </div>
                     @endisset
                 </div>
                 @isset($partner->numlicencia)
                     <div>
-                        <h6>Número de Licencia - Título</h6>
-                        <p>{{ $partner->numlicencia }}</p>
+                        <p style="font-weight: 600">Número de Licencia - Título</p>
+                        <p style="font-weight: 400">{{ $partner->numlicencia }}</p>
                     </div>
                 @endisset
             </div>

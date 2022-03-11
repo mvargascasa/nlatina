@@ -14,14 +14,22 @@
             </button>
         </div>
         @endif
+        @if (session('emailsent'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('emailsent') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
         <div>
             <h1>Perfil del Partner {{ $partner->name}} {{ $partner->lastname }}</h1>
             @if ($partner->email_verified_at == null)
-                <div class="float-right">
-                    {!! Form::open(['route' => ['verify.email.admin', $partner], 'method' => 'POST']) !!}
-                        {!! Form::submit('Verificar email', ['class' => 'btn btn-success']) !!}
-                    {!! Form::close() !!}
-                </div>
+            <div class="float-right">
+                {!! Form::open(['route' => ['verify.email.admin', $partner], 'method' => 'POST']) !!}
+                {!! Form::submit('Verificar email', ['class' => 'btn btn-success']) !!}
+                {!! Form::close() !!}
+            </div>
             @endif
             <div class="float-right" style="margin-right: 5px">
                 {!! Form::open(['route' => ['partner.destroy', $partner->id], 'method' => 'POST']) !!}
@@ -29,6 +37,11 @@
                 @method('delete')
                 {!! Form::submit('Eliminar Partner', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Estas seguro de eliminar este partner?')"]) !!}
                 {!! Form::close() !!}
+            </div>
+            <div class="float-right mr-1">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#modalSendEmail">
+                    Enviar correo
+                </button>
             </div>
         </div>
         <div class="form-group mt-5 border p-5">
@@ -356,6 +369,34 @@
             </div>
             {!! Form::close() !!}  
         </div>
+
+        {{-- MODAL PARA ENVIAR MENSAJE AL CORREO DEL PARTNER --}}
+        <div class="modal fade" id="modalSendEmail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            {!! Form::open(['route' => ['send.email.notification.partner', $partner], 'method' => 'POST']) !!}
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Enviar mensaje al partner {{ $partner->name }} {{ $partner->lastname}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        {!! Form::text('asunto', null, ['class' => 'form-control', 'placeholder' => 'Asunto']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::textarea('mensaje', null, ['class' => 'form-control', 'rows' => '4', 'placeholder' => 'Escribe el mensaje...']) !!}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                  {!! Form::submit('Enviar', ['class' => 'btn btn-success']) !!}
+                </div>
+              </div>
+            {!! Form::close() !!}
+            </div>
+        </div>
     </div>
 @endsection
 
@@ -372,6 +413,7 @@
 
         document.addEventListener("DOMContentLoaded", function(event) {
             CKEDITOR.replace('biography_html');
+            CKEDITOR.replace('mensaje');
         });
 
         function changeCodPais(){
