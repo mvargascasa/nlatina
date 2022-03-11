@@ -220,7 +220,7 @@
             </div>
             <div class="col-sm-6 border-right">
                 <div class="rowinfobody">
-                    <h4><b>Biografía</b></h4>
+                    <h5><b>Biografía</b></h5>
                     <div>
                         {!! $partner->biography_html !!}
                     </div>
@@ -232,7 +232,7 @@
                         @endforeach
                     </div> --}}
                     @isset($partner->specialty)
-                        <div style="color: #000000">
+                        <div class="mt-3">
                             <h6><b>Especialidades</b></h6>
                             <p>{{ $partner->specialty }}</p>
                         </div>
@@ -240,7 +240,7 @@
                 </div>
                 @isset($partner->numlicencia)
                     <div>
-                        <h6 style="font-weight: bold">Número de Licencia - Título</h6>
+                        <h6>Número de Licencia - Título</h6>
                         <p>{{ $partner->numlicencia }}</p>
                     </div>
                 @endisset
