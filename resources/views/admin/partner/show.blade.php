@@ -371,9 +371,7 @@
         });
 
         document.addEventListener("DOMContentLoaded", function(event) {
-            CKEDITOR.replace('biography_html', {
-                contentCss : "test.css"
-            });
+            CKEDITOR.replace('biography_html');
         });
 
         function changeCodPais(){
