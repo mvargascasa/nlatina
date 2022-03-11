@@ -233,7 +233,7 @@
                     </div> --}}
                     @isset($partner->specialty)
                         <div class="mt-3">
-                            <p style="font-weight: 600">Especialidades</p>
+                            <p style="font-weight: 500">Especialidades</p>
                             <p style="font-weight: 400">{{ $partner->specialty }}</p>
                         </div>
                     @endisset
