@@ -220,7 +220,7 @@
             </div>
             <div class="col-sm-6 border-right">
                 <div class="rowinfobody">
-                    <h5><b>Biografía</b></h5>
+                    <h6><b>Biografía</b></h6>
                     <div>
                         {!! $partner->biography_html !!}
                     </div>
