@@ -45,7 +45,7 @@
 
         @media screen and (max-width: 580px){
             .info-header{
-                color: black;
+                color: #000000 !important;
                 margin-top: 10% !important; 
             }
             #divImgPartner{
@@ -60,6 +60,9 @@
             }
             .rowinfobody{
                 margin-left: 3% !important;
+            }
+            #txtemail{
+                color: #000000 !important;
             }
         }
 
@@ -207,7 +210,7 @@
                     <p class="ml-5" style="cursor: pointer; background-color: #002542; padding-left: 1%; padding-right: 1%; border-radius: 5px;">Ver número</p>
                 </div> --}}
                 <div class="row d-flex">
-                    <a style="text-decoration: none; color: #ffffff" href="mailto:{{$partner->email}}"><p class="ml-3"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p></a>
+                    <a id="txtemail" style="text-decoration: none; color: #ffffff" href="mailto:{{$partner->email}}"><p class="ml-3"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p></a>
                 </div>
             </div>
         </div>
