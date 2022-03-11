@@ -232,7 +232,7 @@
                         @endforeach
                     </div> --}}
                     @isset($partner->specialty)
-                        <div style="color: #9A7A2E">
+                        <div style="color: #000000">
                             <h6><b>Especialidades</b></h6>
                             <p>{{ $partner->specialty }}</p>
                         </div>
@@ -240,7 +240,7 @@
                 </div>
                 @isset($partner->numlicencia)
                     <div>
-                        <h5 style="font-weight: bold">Número de Licencia - Título</h5>
+                        <h6 style="font-weight: bold">Número de Licencia - Título</h6>
                         <p>{{ $partner->numlicencia }}</p>
                     </div>
                 @endisset
