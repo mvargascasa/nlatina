@@ -362,6 +362,9 @@
 @section('end-scripts')
     <script src="{{ asset('ckeditoradmin/ckeditor.js') }}"></script>
     <script>
+        
+        CKEDITOR.timestamp = "ABCD";
+
         window.addEventListener('load', function(){
             countChars();
             showInputNameCompany();
