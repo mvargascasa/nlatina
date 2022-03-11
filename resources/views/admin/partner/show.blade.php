@@ -360,7 +360,7 @@
 @endsection
 
 @section('end-scripts')
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('ckeditoradmin/ckeditor.js') }}"></script>
     <script>
         window.addEventListener('load', function(){
             countChars();
