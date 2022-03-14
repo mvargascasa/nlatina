@@ -222,7 +222,7 @@
                 <div class="rowinfobody">
                     <h6><b>Biografía</b></h6>
                     <div>
-                        {!! $partner->biography_html !!}
+                        {!! Purify::clean($partner->biography_html) !!}
                     </div>
                     {{-- RETIRANDO EL BLOQUE DIV DE AREA CON LAS ESPECIALIDADES --}}
                     {{-- <div style="color: #9A7A2E">
@@ -234,7 +234,7 @@
                     @isset($partner->specialty)
                         <div class="mt-3">
                             <p style="font-weight: 600">Especialidades</p>
-                            <p style="font-weight: 400">{{ $partner->specialty }}</p>
+                            <p style="font-weight: 400">{{ Purify::clean($partner->specialty) }}</p>
                         </div>
                     @endisset
                 </div>

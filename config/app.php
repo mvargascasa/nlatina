@@ -236,6 +236,7 @@ return [
 
         'Image' => Intervention\Image\Facades\Image::class,
         'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
+        'Purify' => Stevebauman\Purify\Facades\Purify::class,
 
     ],
 

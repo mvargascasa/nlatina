@@ -489,7 +489,7 @@
                                                 @else
                                                     {!! Form::label('specialty', 'Especialidad(es) *', ['id' => 'Especialidad (Descripción)', 'style' => 'color: red; font-weight: bold']) !!} <b style="font-size: 14px">(Descripción más detallada)</b>
                                                 @endif
-                                                {!! Form::text('specialty', $partner->specialty, ['class' => 'form-control', 'onkeyup' => 'countChars();', 'minlength' => '100', 'maxlength' => '200']) !!}
+                                                {!! Form::text('specialty', Purify::clean($partner->specialty), ['class' => 'form-control', 'onkeyup' => 'countChars();', 'minlength' => '100', 'maxlength' => '200']) !!}
                                                 <div class="d-flex float-right" style="font-size: 13px">
                                                     <p id="charNum">0 caracteres</p>
                                                     <span id="txtMaxMinChar" class="text-success" style="margin-left: 5px">(Mínimo: 100 caracteres - Máximo: 200 caracteres)</span>
@@ -503,7 +503,7 @@
                                         @else
                                             {!! Form::label('biography_html', 'Biografia *', ['id' => 'Biografía', 'style' => 'color: red; font-weight: bold']) !!} <b style="font-size: 14px">(Descripción de trayectoria y experiencia en su área)</b>
                                         @endif
-                                        {!! Form::textarea('biography_html', $partner->biography_html, ['class' => 'form-control','rows' => '4', 'minlength' => '100', 'maxlength' => '200']) !!}
+                                        {!! Form::textarea('biography_html', Purify::clean($partner->biography_html), ['class' => 'form-control','rows' => '4', 'minlength' => '100', 'maxlength' => '200']) !!}
                                         <div class="d-flex float-right" style="font-size: 13px">
                                             <span id="txtMaxMinChar" class="text-success" style="margin-left: 5px">(Mínimo: 400 caracteres)</span>
                                         </div>
