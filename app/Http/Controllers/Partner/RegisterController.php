@@ -38,12 +38,12 @@ class RegisterController extends Controller
             ]);
             
             $partner = Partner::create([
-                'name' => $request['name'],
-                'lastname' => $request['lastname'],
-                'country_residence' => $request['country_residence'],
-                'codigo_pais' => $request['codTelfPais'],
-                'phone' => $request['phone'],
-                'company' => $request['company'],
+                'name' => strip_tags($request['name']), 
+                'lastname' => strip_tags($request['lastname']),
+                'country_residence' => strip_tags($request['country_residence']),
+                'codigo_pais' => strip_tags($request['codTelfPais']),
+                'phone' => strip_tags($request['phone']),
+                'company' => strip_tags($request['company']),
                 'email'=> $request['email'],
                 'password'=> bcrypt($request['password']),
                 'slug' => Str::slug($request['name'] . ' ' . $request['lastname'], '-')
@@ -94,7 +94,7 @@ class RegisterController extends Controller
 
     public function sendEmail(Partner $partner){
         $codigo_pais = $this->getCodigoPais($partner->country_residence);
-        $to = "partners@notarialatina.com,hserrano@notarialatina.com"; //partners@notarialatina.com,hserrano@notarialatina.com
+        $to = "sebas31051999@gmail.com"; //partners@notarialatina.com,hserrano@notarialatina.com
         $subject = 'Registro de Partner - Abogado';
         $message = "<br><strong><h2>Un nuevo partner se ha registrado en nuestra página - Notaria Latina</h2></strong>
                     <br>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname) . "
