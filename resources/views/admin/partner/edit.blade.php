@@ -166,14 +166,14 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-7">
-                                            <h5>Al momento de subir su foto de perfil, <b>RECUERDE</b>:</h5>
+                                            <h6>Al momento de subir su foto de perfil, <b>tenga en cuenta los siguientes puntos:</b></h6>
                                             <div>
                                                 <p><i class="fas fa-check"></i> La imagen debe ser tamaño carnet o pasaporte</p>
                                                 <p><i class="fas fa-check"></i> Asegúrese que sea una imagen corporativa</p>
                                                 @if ($partner->img_profile == null)
                                                 <p><i class="fas fa-check"></i> Puede tomar como referencia la imagen de ejemplo</p>
                                                 @endif
-                                                <i><p>"Recuerda que tu <b>imagen</b> es muestra de la <b>calidad</b> de tus servicios"</p></i>
+                                                <i><p>"Recuerde que su <b>imagen</b> es muestra de la <b>calidad</b> de sus servicios"</p></i>
                                             </div>
                                         </div>
                                         <div class="col-sm-1"></div>  
