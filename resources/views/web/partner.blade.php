@@ -241,7 +241,9 @@
                 @isset($partner->numlicencia)
                     <div class="rowinfobody">
                         <p style="font-weight: 600">Número de Licencia - Título</p>
-                        <p style="font-weight: 400; width: 130px; padding: 5px; border-radius: 4px" class="border">{{ $partner->numlicencia }}</p>
+                        <div class="d-flex">
+                            <p style="font-weight: 400; padding: 5px; border-radius: 5px" class="border">{{ $partner->numlicencia }}</p>
+                        </div>
                     </div>
                 @endisset
             </div>
