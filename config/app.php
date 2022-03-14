@@ -180,6 +180,8 @@ return [
 
         willvincent\Rateable\RateableServiceProvider::class,
 
+        Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
+
     ],
 
     /*
@@ -233,6 +235,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Image' => Intervention\Image\Facades\Image::class,
+        'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
 
     ],
 

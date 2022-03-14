@@ -81,7 +81,7 @@
                 <input type="text" name="nospam" id="controlspam">
             </div>
         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
-            <button type="submit" class="g-recaptcha btn btn-block" data-sitekey="6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8" data-callback='onSubmit' data-action='submit' style="background-color: #FEC02F">Registrarse</button>
+            <button type="submit" class="btn btn-block" style="background-color: #FEC02F">Registrarse</button>
             {{-- class="g-recaptcha" data-sitekey="6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8" data-callback='onSubmit' data-action='submit'--}}
         </div>
     </form>

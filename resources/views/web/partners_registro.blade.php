@@ -235,6 +235,26 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         margin: 5px;
     }
 </style>
+<script type="text/javascript">
+    function callbackThen(response){
+        // read HTTP status
+        console.log(response.status);
+        // read Promise object
+        response.json().then(function(data){
+        console.log(data);
+        });
+    }
+
+    function callbackCatch(error){
+        console.error('Error:', error)
+    }
+    </script>
+
+
+    {!! htmlScriptTagJsApi([
+    'callback_then' => 'callbackThen',
+    'callback_catch' => 'callbackCatch'
+    ]) !!}
 <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
 
@@ -316,12 +336,12 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 
 @section('script')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://www.google.com/recaptcha/api.js"></script>
+{{-- <script src="https://www.google.com/recaptcha/api.js"></script> --}}
 <script>
 
-    function onSubmit(token) {
-        document.getElementById("demo-form").submit();
-    }
+    // function onSubmit(token) {
+    //     document.getElementById("demo-form").submit();
+    // }
     
     function mostrarContrasena(){
       var tipo = document.getElementById("password");
