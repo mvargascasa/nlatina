@@ -26,7 +26,7 @@ class RegisterController extends Controller
         // $codigoPais = $this->getCodByPais($request->country_residence);
         //CONDICION PARA QUE NO GUARDE LA INFO SI EL CODIGO DE PAIS NO EMPIEZA CON + | BOTS ESTABAN GUARDANDO ESTE CAMPO CON LETRAS ALEATORIAS (TLiCEZogI)
         if(Str::startsWith($request->codTelfPais, '+')){
-            
+
             $request->validate([
                 'name' => 'required',
                 'lastname' => 'required',
@@ -94,7 +94,7 @@ class RegisterController extends Controller
 
     public function sendEmail(Partner $partner){
         $codigo_pais = $this->getCodigoPais($partner->country_residence);
-        $to = "sebas31051999@gmail.com"; //partners@notarialatina.com,hserrano@notarialatina.com
+        $to = "partners@notarialatina.com,hserrano@notarialatina.com"; //partners@notarialatina.com,hserrano@notarialatina.com
         $subject = 'Registro de Partner - Abogado';
         $message = "<br><strong><h2>Un nuevo partner se ha registrado en nuestra página - Notaria Latina</h2></strong>
                     <br>Nombre: " . strip_tags($partner->name). " " . strip_tags($partner->lastname) . "
