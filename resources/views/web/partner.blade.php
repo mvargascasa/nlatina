@@ -239,9 +239,9 @@
                     @endisset
                 </div>
                 @isset($partner->numlicencia)
-                    <div>
+                    <div class="rowinfobody">
                         <p style="font-weight: 600">Número de Licencia - Título</p>
-                        <p style="font-weight: 400">{{ $partner->numlicencia }}</p>
+                        <p style="font-weight: 400; width: 130px; padding: 5px; border-radius: 4px" class="border">{{ $partner->numlicencia }}</p>
                     </div>
                 @endisset
             </div>
