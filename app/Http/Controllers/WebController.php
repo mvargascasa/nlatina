@@ -1077,22 +1077,21 @@ class WebController extends Controller
     public function sendEmailContact(Request $request, Partner $partner){
 
         //ENVIO A NOTARIA LATINA
-        $to = "partners@notarialatina.com,hserrano@notarialatina.com";
-        $subject = 'Lead para Socio Abogado - Notaria Latina';
+        $to = "partners@notarialatina.com,hserrano@notarialatina.com"; //partners@notarialatina.com,hserrano@notarialatina.com
+        $subject = 'Lead para Partner Abogado - Notaria Latina';
         $message = "<br><strong><h3>Datos del cliente</h3></strong>
                     <br>Nombre: " . strip_tags($request->name). "
                     <br>País de residencia: " . strip_tags($request->country_residence) ."
                     <br>Teléfono: " . strip_tags($request->phone) ."
                     <br>Mensaje: " . strip_tags($request->mensaje) . "
                     <br>
-                    <br><strong><h3>Socio al cual consulta</h3></strong>
+                    <br><strong><h3>Partner al cual consulta</h3></strong>
                     <br>Nombre: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . "
-                    <br>Especialidad: " . strip_tags($partner->specialty) ."
                     <br>Pais: " . strip_tags($partner->country_residence) . "
                     <br>Teléfono: " . strip_tags($partner->codigo_pais) . " " . strip_tags($partner->phone) ."
                     <br>Email: " . strip_tags($partner->email) ."
                     <br>
-                    <img style='margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+                    <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";
 
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
@@ -1104,18 +1103,21 @@ class WebController extends Controller
 
         //ENVIO AL PARTNER
         $toPartner = $partner->email;
-        $subjectPartner = 'Nuevo Cliente - Notaria Latina';
-        $messagePartner = "<br><strong><h3>Un nuevo cliente a consultado por tus servicios</h3></strong>
-                    <br><strong><h3>Datos del cliente</h3></strong>
-                    <br>Nombre: " . strip_tags($request->name). "
-                    <br>País de residencia: " . strip_tags($request->country_residence) ."
-                    <br>Teléfono: " . strip_tags($request->phone) ."
-                    <br>Mensaje: " . strip_tags($request->mensaje) . "
+        $subjectPartner = 'Un cliente ha consultado por usted - Notaria Latina ⚖';
+        $messagePartner = "<div style='font-size:13px; margin: 5%; padding: 3%; border-style: ridge;'>
+                    <strong style='text-align:center; font-size: 15px'><h3>Lo saludamos de Notaria Latina</h3></strong>
+                    <br><p style='font-size: 15px; margin:0'>Queremos informarle que un cliente ha consultado por usted, no olvide ponerse en contacto con el mismo y brindarle sus servicios 📃</p>  
+                    <br><strong><h3>La información del cliente es la siguiente:</h3></strong>
+                    <p><b>Nombre:</b> " . strip_tags($request->name). "</p>
+                    <p><b>País de residencia:</b> " . strip_tags($request->country_residence) ."</p>
+                    <p><b>Teléfono:</b> " . strip_tags($request->phone) ."</p>
+                    <p><b>Mensaje:</b> " . strip_tags($request->mensaje) . "</p>
                     <br>
-                    <img style='margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+                    <a href='https://notarialatina.com'><img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'></a>
+                    </div>
         ";
 
-        $headerPartner = 'From: <partners@notarialatina.com>' . "\r\n" .
+        $headerPartner = 'From: <noreply@notarialatina.com>' . "\r\n" .
                 'MIME-Version: 1.0' . "\r\n".
                 'Content-type:text/html;charset=UTF-8' . "\r\n"
                 ;

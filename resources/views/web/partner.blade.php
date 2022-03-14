@@ -310,7 +310,6 @@
                                 <option value="Costa Rica">Costa Rica</option>
                                 <option value="Ecuador">Ecuador</option>
                                 <option value="El Salvador">El Salvador</option>
-                                <option value="España">España</option>
                                 <option value="Estados Unidos">Estados Unidos</option>
                                 <option value="Guatemala">Guatemala</option>
                                 <option value="Honduras">Honduras</option>
@@ -366,7 +365,6 @@
                                 <option value="Costa Rica">Costa Rica</option>
                                 <option value="Ecuador">Ecuador</option>
                                 <option value="El Salvador">El Salvador</option>
-                                <option value="España">España</option>
                                 <option value="Estados Unidos">Estados Unidos</option>
                                 <option value="Guatemala">Guatemala</option>
                                 <option value="Honduras">Honduras</option>
