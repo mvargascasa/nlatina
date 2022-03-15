@@ -301,7 +301,8 @@
                     <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
                         @csrf
                         <input class="form-control" type="text" id="nombre" placeholder="Nombre y Apellido" name="name" autocomplete="off" required>
-                        <div class="d-flex">
+                        <input type="email" name="email" id="email" placeholder="Correo electrónico" class="form-control" autocomplete="off" required>
+                        <div class="d-flex mt-3">
                             <select name="country_residence" id="country_residence" class="form-control" required>
                                 <option value="">País de residencia</option>
                                 <option value="Argentina">Argentina</option>

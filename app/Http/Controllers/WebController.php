@@ -1110,6 +1110,7 @@ class WebController extends Controller
                     <br><strong><h3>La información del cliente es la siguiente:</h3></strong>
                     <p><b>Nombre:</b> " . strip_tags($request->name). "</p>
                     <p><b>País de residencia:</b> " . strip_tags($request->country_residence) ."</p>
+                    <p><b>Email:</b> " . strip_tags($request->email) . "</p>
                     <p><b>Teléfono:</b> " . strip_tags($request->phone) ."</p>
                     <p><b>Mensaje:</b> " . strip_tags($request->mensaje) . "</p>
                     <br>
