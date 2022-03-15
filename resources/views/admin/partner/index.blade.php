@@ -14,6 +14,21 @@
                 </button>
         </div>
     @endif
+    @if (session('emailsent'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('emailsent') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+    @elseif(session('notemailsent'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('notemailsent') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+    @endif
     {!! Form::open(['route' => 'partner.index', 'method' => 'GET']) !!}
     <div class="row form-group mb-3">
         <div class="col-sm-5">
@@ -45,7 +60,6 @@
             </div>
             <div class="card">
                 <div class="card-header font-weight-bold">
-                    PARTNERS
                     {{-- <div class="float-right ml-1">
                         <form id="formOrderBy" action="{{route('partner.index')}}" method="POST">
                             @csrf
@@ -53,6 +67,12 @@
                             <button type="submit" onclick="changeOrderBy();" class="btn btn-outline-secondary"><img style="width: 15px; height: 15px" src="{{ asset('img/order.png') }}" alt=""></button>
                         </form>
                     </div> --}}
+
+                    <div class="float-left">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                            Enviar correos
+                        </button>
+                    </div>
                     <div class="float-right ml-1">
                         <button class="btn btn-primary">
                             <a style="text-decoration: none; color: #ffffff" href="{{ route('partner.show.not.publicated') }}">No Publicados</a>
@@ -147,10 +167,49 @@
         </div>
     </div>
 </div>
+
+@php
+    $emailsPartners = \App\Partner::select('email')->where('numlicencia', '=', null)->get();
+@endphp
+{{-- MODAL PARA ENVIAR CORREOS --}}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form action="{{ route('partner.send.email.masivo') }}" method="POST">
+            @csrf
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Envio de correos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                <div class="form-group">
+                  <input type="text" name="emails" class="form-control" value="@foreach($emailsPartners as $email){{$email->email}},@endforeach">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="asunto" id="asunto" placeholder="Asunto">
+                </div>
+                <div class="form-group">
+                    <textarea name="mensaje" id="txtareamensaje" rows="4"></textarea>
+                </div>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
 @endsection
 
 @section('end-scripts')
+    <script src="{{ asset('ckeditoradmin/ckeditor.js') }}"></script>
     <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            CKEDITOR.replace('txtareamensaje');
+        });
         function changeOrderBy(){
             var formOrderBy = document.getElementById('formOrderBy');
             var inputOrderBy = document.getElementById('inputOrderBy');

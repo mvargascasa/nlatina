@@ -177,6 +177,7 @@ class PartnerController extends Controller
         $partner->state = $request->state;
         $partner->city = $request->city;
         $partner->address = $request->address;
+        $partner->numlicencia = $request->numlicencia;
         $partner->link_facebook = $request->link_facebook;
         $partner->link_instagram = $request->link_instagram;
         $partner->link_linkedin = $request->link_linkedin;
@@ -321,6 +322,31 @@ class PartnerController extends Controller
         ;
 
         mail($to, $subject, $message, $header);
+    }
+
+    //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
+    public function sendEmailMasivo(Request $request){
+        $to = $request->emails;
+        $subject = $request->asunto;
+        $message = $request->mensaje;
+        $message .= "
+                <br>
+                <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+        ";
+        $header = 'From: <partners@notarialatina.com>' . "\r\n" .
+        'MIME-Version: 1.0' . "\r\n".
+        'Content-type:text/html;charset=UTF-8' . "\r\n"
+        ;
+
+        $send = mail($to, $subject, $message, $header);
+
+        if($send){
+            $request->session()->flash('emailsent', 'Se han enviado los correos');
+        } else {
+            $request->session()->flash('notemailsent', 'Hubo un error en el envio de los correos');
+        }
+
+        return back();
     }
 
 }
