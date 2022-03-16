@@ -20,7 +20,7 @@
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="setLocalStorage('{{ Str::lower(Auth::guard('partner')->user()->name.Str::lower(Auth::guard('partner')->user()->lastname).Str::lower(Auth::guard('partner')->user()->id)) }}');">
                 <span aria-hidden="true">&times;</span>
             </div>
-            <p>Queremos informarle que hemos creado esta sección para guardar un registro de sus clientes. Una vez que alguien contacte por usted, aparecerá en este listado.</p>
+            <p>Queremos informarle que hemos creado esta sección para guardar un registro de sus clientes. Una vez que su perfil sea publicado y alguien contacte por usted, aparecerá en este listado.</p>
             <hr>
             <p class="mb-0" style="font-weight: bold">Notaria Latina le desea lo mejor! 👨‍⚖️</p>
         </div>
