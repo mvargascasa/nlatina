@@ -24,13 +24,13 @@
         @endif
         <div>
             <h1>Perfil del Partner {{ $partner->name}} {{ $partner->lastname }}</h1>
-            @if ($partner->email_verified_at == null)
+            {{-- @if ($partner->email_verified_at == null)
             <div class="float-right">
                 {!! Form::open(['route' => ['verify.email.admin', $partner], 'method' => 'POST']) !!}
                 {!! Form::submit('Verificar email', ['class' => 'btn btn-success']) !!}
                 {!! Form::close() !!}
             </div>
-            @endif
+            @endif --}}
             <div class="float-right" style="margin-right: 5px">
                 {!! Form::open(['route' => ['partner.destroy', $partner->id], 'method' => 'POST']) !!}
                 @csrf
@@ -39,8 +39,13 @@
                 {!! Form::close() !!}
             </div>
             <div class="float-right mr-1">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#modalSendEmail">
+                <button class="btn btn-success" data-toggle="modal" data-target="#modalSendEmail">
                     Enviar correo
+                </button>
+            </div>
+            <div class="float-right mr-1">
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    Ver Clientes
                 </button>
             </div>
         </div>
@@ -397,6 +402,60 @@
             {!! Form::close() !!}
             </div>
         </div>
+
+        {{-- MODAL PARA VER LOS CLIENTES DEL PARTNER --}}
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+              <div class="modal-content">
+                <div class="modal-header" style="border: none;">
+                    <h4 style="font-weight: bold">Clientes del Partner {{ $partner->name }} {{ $partner->lastname }}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class="modal-body">
+                    @if (count($partner->customers) > 0)
+                        <div class="row">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Correo</th>
+                                    <th scope="col">País</th>
+                                    <th scope="col">Teléfono</th>
+                                    <th scope="col">Mensaje</th>
+                                    <th scope="col">Fecha registro</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($partner->customers as $customer)
+                                        <tr>
+                                            <th>{{ $customer->nombre }}</th>
+                                            <td><a href="mailto:{{$customer->email}}">{{ $customer->email }}</a></td>
+                                            <td>{{ $customer->pais }}</td>
+                                            <td>{{ $customer->telefono }}</td>
+                                            <td>{{ $customer->mensaje }}</td>
+                                            <td>{{ $customer->pivot->created_at }}</td>
+                                        </tr>      
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    @else
+                        <div class="row d-inline text-center">
+                            <div class="mt-5">
+                                <img class="img-fluid" src="{{ asset('img/partners/computer.png') }}" alt="">
+                            </div>
+                            <div class="mt-4">
+                                <h4>Por el momento no hemos encontrado registros</h4>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+              </div>
+            </div>
+          </div>
+          
     </div>
 @endsection
 

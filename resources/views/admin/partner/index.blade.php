@@ -68,11 +68,11 @@
                         </form>
                     </div> --}}
 
-                    <div class="float-left">
+                    {{-- <div class="float-left">
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                             Enviar correos
                         </button>
-                    </div>
+                    </div> --}} 
                     <div class="float-right ml-1">
                         <button class="btn btn-primary">
                             <a style="text-decoration: none; color: #ffffff" href="{{ route('partner.show.not.publicated') }}">No Publicados</a>
