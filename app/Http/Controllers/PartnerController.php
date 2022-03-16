@@ -283,6 +283,7 @@ class PartnerController extends Controller
         
     }
 
+    //SE ENVIA EL CORREO PERSONALIZADO INDIVIDUAL AL PARTNER DESDE EL ADMIN
     public function sendEmailPartner(Request $request, Partner $partner){
         $to = $partner->email;
         $subject = $request->asunto;
@@ -303,6 +304,7 @@ class PartnerController extends Controller
         return back();
     }
 
+    //ENVIA CORREO DESACTIVADO CUANDO EL STATUS CAMBIE A NO PUBLICADO Y LA FECHA_PUBLICADO SEA != NULL
     public function sendEmailPartnerDesactivado(Partner $partner){
         $to = $partner->email;
         $subject = "Perfil Desactivado - Notaria Latina";

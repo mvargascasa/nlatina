@@ -95,6 +95,7 @@ body {
   {{-- <a href="{{ route('web.index') }}" style="font-size: 20px"><img width="30" height="30" src="{{ asset('img/partners/marca-notaria-latina.png') }}" alt=""> Notaria Latina</a> --}}
   <a href="{{ route('socios.index') }}" style="font-size: 20px;"><img width="25" height="25" src="{{ asset('img/partners/home_logo.png') }}" alt=""> Inicio</a>
   <a href="{{ route('socios.edit', Auth::guard('partner')->user()) }}" style="font-size: 20px"><img width="25" height="25" src="{{ asset('img/partners/user.png') }}" alt=""> Editar Perfil</a>
+  <a href="{{ route('partner.get.customers', Auth::guard('partner')->user()) }}" style="font-size: 20px"><img style="filter: invert(1);" src="{{ asset('img/partners/notebook.png') }}" alt=""> Mis clientes</a>
   <div>
     <a href="{{ route('socios.logout') }}"
        onclick="event.preventDefault();

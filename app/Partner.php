@@ -9,7 +9,6 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use willvincent\Rateable\Rateable;
-use Illuminate\Support\Str;
 
 class Partner extends Authenticatable implements MustVerifyEmail
 {
@@ -126,5 +125,10 @@ class Partner extends Authenticatable implements MustVerifyEmail
 
     public function ratings(){
         return $this->hasMany(Rating::class);
+    }
+
+    public function customers(){
+        return $this->belongsToMany('App\Customer')
+            ->withPivot('customer_id', 'partner_id', 'created_at', 'viewed');
     }
 }

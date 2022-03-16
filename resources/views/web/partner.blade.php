@@ -11,6 +11,8 @@
     <meta property="og:image" content="https://notarialatina.com/storage/{{$partner->img_profile}}"/>
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="400" />
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 @php
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
@@ -177,6 +179,26 @@
             display: none;
         }
     </style>
+    <script type="text/javascript">
+        function callbackThen(response){
+            // read HTTP status
+            console.log(response.status);
+            // read Promise object
+            response.json().then(function(data){
+            console.log(data);
+            });
+        }
+    
+        function callbackCatch(error){
+            console.error('Error:', error)
+        }
+        </script>
+    
+    
+        {!! htmlScriptTagJsApi([
+        'callback_then' => 'callbackThen',
+        'callback_catch' => 'callbackCatch'
+        ]) !!}
 @endsection
 
 @section('content')
@@ -242,7 +264,7 @@
                     <div class="rowinfobody">
                         <p style="font-weight: 600">Número de Licencia - Título</p>
                         <div class="d-flex">
-                            <p style="font-weight: 400; padding: 5px; border-radius: 5px" class="border">{{ $partner->numlicencia }}</p>
+                            <p style="font-weight: 400; padding: 5px; border-radius: 5px" class="border">{{ Purify::clean($partner->numlicencia) }}</p>
                         </div>
                     </div>
                 @endisset
@@ -324,9 +346,13 @@
                                 <option value="Uruguay">Uruguay</option>
                                 <option value="Venezuela">Venezuela</option>
                             </select>
+                            <input type="hidden" name="codpais" id="codTelfPais">
                             <input class="form-control" type="number" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
                         </div>
                         <textarea class="form-control" id="mensaje" rows="4" placeholder="Mensaje" name="mensaje" autocomplete="off" required></textarea>
+                        <div style="display: none">
+                            <input type="hidden" name="aux">
+                        </div>
                         <button class="btn mb-3" style="background-color: #FEC02F" type="submit">Enviar</button>
                     </form>
                 </div>
@@ -441,6 +467,7 @@
             </div>
         @endif
 
+        {{-- SE MUESTRA CUANDO LLENA EL FORMULARIO DE CONTACTO --}}
         @if (session('report'))
             @php
                 echo "
@@ -451,6 +478,8 @@
                     ";    
             @endphp
         @endif
+        
+        {{-- SE MUESTRA SI EL CLIENTE HA DADO REVIEW AL PARTNER --}}
         @if (session('rating'))
             @php
                 echo "
@@ -461,6 +490,8 @@
                     ";    
             @endphp
         @endif
+
+        {{-- SE MUESTRA SI EL CLIENTE HA SOLICITADO VER EL NUMERO DEL PARTNER --}}
         @if (session('solicited'))
             @php
                 echo "
@@ -471,7 +502,18 @@
                     ";    
             @endphp
         @endif
-    {{-- </div> --}}
+
+        {{-- ENVIO DE "LEAD" A MI CORREO --}}
+        @if (session('emailsendedme'))
+            @php
+                echo "
+                    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+                    <script>
+                        swal('Se envió la información', 'En breve nos pondremos en contacto', 'success');
+                    </script>
+                    ";    
+            @endphp
+        @endif
 @endsection
 
 @section('numberWpp', '13479739888')
@@ -503,5 +545,33 @@
         }
         document.getElementById('formviewphone').submit();
     }
+
+    var selectPaisResidencia = document.getElementById('country_residence');
+    var inputCodPais = document.getElementById('codTelfPais');
+        
+        selectPaisResidencia.onchange  = function(e){
+            switch (selectPaisResidencia.value) {
+                case "" : codigo = ""; break;
+                case "Argentina":codigo = "+54";break;
+                case "Bolivia":codigo = "+591";break;
+                case "Chile":codigo = "+56"; break;
+                case "Colombia":codigo = "+57";break;
+                case "Costa Rica":codigo = "+506";break;
+                case "Ecuador":codigo = "+593";break;
+                case "El Salvador":codigo = "+503";break;
+                case "Guatemala":codigo = "+502";break;
+                case "Honduras":codigo = "+504";break;
+                case "México":codigo = "+52";break;
+                case "Nicaragua":codigo = "+505";break;
+                case "Panamá":codigo = "+507";break;
+                case "Paraguay":codigo = "+595";break;
+                case "Perú":codigo = "+51";break;
+                case "Puerto Rico":codigo = "+1787";break;
+                case "República Dominicana":codigo = "+1809";break;
+                case "Uruguay":codigo = "+598";break;
+                case "Venezuela":codigo = "+58";break;
+            }
+            inputCodPais.value = codigo;
+        }
 </script>
 @endsection

@@ -207,4 +207,9 @@ class HomeController extends Controller
         }
         return $codigo_pais;
     }
+
+    public function getCustomers(Partner $partner){
+        $customers = $partner->customers;
+        return view('admin.partner.customersview', compact('customers'));
+    }
 }

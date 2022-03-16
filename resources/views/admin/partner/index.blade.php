@@ -178,7 +178,7 @@
         <form action="{{ route('partner.send.email.masivo') }}" method="POST">
             @csrf
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Envio de correos</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Envio de correos a los partners que no tienen número de licencia</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

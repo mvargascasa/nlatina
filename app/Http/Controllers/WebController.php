@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Consulate;
 use App\Country;
+use App\Customer;
 use App\Http\Traits\GetCodByCountryTrait;
 use App\Http\Traits\GetCountryByCodTrait;
 use App\Mail\SendLead;
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Cache;
 use Session;
 use Illuminate\Support\Str;
 use Intervention\Image\Image;
+use Stevebauman\Purify\Facades\Purify;
 
 class WebController extends Controller
 {
@@ -1076,58 +1078,98 @@ class WebController extends Controller
 
     public function sendEmailContact(Request $request, Partner $partner){
 
-        //ENVIO A NOTARIA LATINA
-        $to = "partners@notarialatina.com,hserrano@notarialatina.com"; //partners@notarialatina.com,hserrano@notarialatina.com
-        $subject = 'Lead para Partner Abogado - Notaria Latina';
-        $message = "<br><strong><h3>Datos del cliente</h3></strong>
-                    <br>Nombre: " . strip_tags($request->name). "
-                    <br>País de residencia: " . strip_tags($request->country_residence) ."
-                    <br>Teléfono: " . strip_tags($request->phone) ."
-                    <br>Mensaje: " . strip_tags($request->mensaje) . "
-                    <br>
-                    <br><strong><h3>Partner al cual consulta</h3></strong>
-                    <br>Nombre: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . "
-                    <br>Pais: " . strip_tags($partner->country_residence) . "
-                    <br>Teléfono: " . strip_tags($partner->codigo_pais) . " " . strip_tags($partner->phone) ."
-                    <br>Email: " . strip_tags($partner->email) ."
-                    <br>
-                    <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
-        ";
+        if (!Str::startsWith($request->codpais, '+') || $request->aux != null) {
 
-        $header = 'From: <partners@notarialatina.com>' . "\r\n" .
-                'MIME-Version: 1.0' . "\r\n".
-                'Content-type:text/html;charset=UTF-8' . "\r\n"
-                ;
-        
-        mail($to, $subject, $message, $header);
+            //ENVIO A MI CORREO SI OCURRE UNA DE ESTAS OPCIONES EN EL IF
+            $to = "sebas31051999@gmail.com";
+            $subject = 'Alguien ha intentado ingresar en formulario del partner ' . $partner->name . " " . $partner->lastname;
+            $message = "<br><strong><h3>Datos del cliente</h3></strong>
+                        <br>Nombre: " . strip_tags($request->name). "
+                        <br>País de residencia: " . strip_tags($request->country_residence) ."
+                        <br>Teléfono: " . strip_tags($request->codpais) . " " . strip_tags($request->phone) ."
+                        <br>Mensaje: " . strip_tags($request->mensaje) . "
+                        <br>IP: " . strip_tags($request->ip()) . "
+                        <br>Input Aux: " . strip_tags($request->aux) . "
+                        <br>
+                        <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+            ";
 
-        //ENVIO AL PARTNER
-        $toPartner = $partner->email;
-        $subjectPartner = 'Un cliente ha consultado por usted - Notaria Latina ⚖';
-        $messagePartner = "<div style='font-size:13px; margin: 5%; padding: 3%; border-style: ridge;'>
-                    <strong style='text-align:center; font-size: 15px'><h3>Lo saludamos de Notaria Latina</h3></strong>
-                    <br><p style='font-size: 15px; margin:0'>Queremos informarle que un cliente ha consultado por usted, no olvide ponerse en contacto con el mismo y brindarle sus servicios 📃</p>  
-                    <br><strong><h3>La información del cliente es la siguiente:</h3></strong>
-                    <p><b>Nombre:</b> " . strip_tags($request->name). "</p>
-                    <p><b>País de residencia:</b> " . strip_tags($request->country_residence) ."</p>
-                    <p><b>Email:</b> " . strip_tags($request->email) . "</p>
-                    <p><b>Teléfono:</b> " . strip_tags($request->phone) ."</p>
-                    <p><b>Mensaje:</b> " . strip_tags($request->mensaje) . "</p>
-                    <br>
-                    <a href='https://notarialatina.com'><img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'></a>
-                    </div>
-        ";
+            $header = 'From: <partners@notarialatina.com>' . "\r\n" .
+                    'MIME-Version: 1.0' . "\r\n".
+                    'Content-type:text/html;charset=UTF-8' . "\r\n"
+                    ;
+            
+            mail($to, $subject, $message, $header);
 
-        $headerPartner = 'From: <noreply@notarialatina.com>' . "\r\n" .
-                'MIME-Version: 1.0' . "\r\n".
-                'Content-type:text/html;charset=UTF-8' . "\r\n"
-                ;
-        
-        mail($toPartner, $subjectPartner, $messagePartner, $headerPartner);
+            $request->session()->flash('emailsendedme', 'Hemos enviado su información');
 
-        $request->session()->flash('report', 'Se ha enviado el correo');
+            return back();
 
-        return back();
+        } else {
+            //ENVIO A NOTARIA LATINA
+            $to = "sebas31051999@gmail.com"; //partners@notarialatina.com,hserrano@notarialatina.com
+            $subject = 'Lead para Partner Abogado - Notaria Latina';
+            $message = "<br><strong><h3>Datos del cliente</h3></strong>
+                        <br>Nombre: " . strip_tags($request->name). "
+                        <br>País de residencia: " . strip_tags($request->country_residence) ."
+                        <br>Teléfono: " . strip_tags($request->codpais) . " " . strip_tags($request->phone) ."
+                        <br>Mensaje: " . strip_tags($request->mensaje) . "
+                        <br>
+                        <br><strong><h3>Partner al cual consulta</h3></strong>
+                        <br>Nombre: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . "
+                        <br>Pais: " . strip_tags($partner->country_residence) . "
+                        <br>Teléfono: " . strip_tags($partner->codigo_pais) . " " . strip_tags($partner->phone) ."
+                        <br>Email: " . strip_tags($partner->email) ."
+                        <br>
+                        <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+            ";
+    
+            $header = 'From: <partners@notarialatina.com>' . "\r\n" .
+                    'MIME-Version: 1.0' . "\r\n".
+                    'Content-type:text/html;charset=UTF-8' . "\r\n"
+                    ;
+            
+            mail($to, $subject, $message, $header);
+            
+            //ENVIO AL PARTNER
+            $toPartner = $partner->email;
+            $subjectPartner = 'Un cliente ha consultado por usted - Notaria Latina ⚖';
+            $messagePartner = "<div style='font-size:13px; margin: 5%; padding: 3%; border-style: ridge;'>
+                        <strong style='text-align:center; font-size: 15px'><h3>Lo saludamos de Notaria Latina</h3></strong>
+                        <br><p style='font-size: 15px; margin:0'>Queremos informarle que un cliente ha consultado por usted, no olvide ponerse en contacto con el mismo y brindarle sus servicios 📃</p>  
+                        <br><strong><h3>La información del cliente es la siguiente:</h3></strong>
+                        <p><b>Nombre:</b> " . strip_tags($request->name). "</p>
+                        <p><b>País de residencia:</b> " . strip_tags($request->country_residence) ."</p>
+                        <p><b>Email:</b> " . strip_tags($request->email) . "</p>
+                        <p><b>Teléfono:</b> " . strip_tags($request->codpais) . " " . strip_tags($request->phone) ."</p>
+                        <p><b>Mensaje:</b> " . strip_tags($request->mensaje) . "</p>
+                        <br>
+                        <a href='https://notarialatina.com'><img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'></a>
+                        </div>
+            ";
+    
+            $headerPartner = 'From: <noreply@notarialatina.com>' . "\r\n" .
+                    'MIME-Version: 1.0' . "\r\n".
+                    'Content-type:text/html;charset=UTF-8' . "\r\n"
+                    ;
+            
+            mail($toPartner, $subjectPartner, $messagePartner, $headerPartner);
+
+            //GUARDANDO EN LA BASE DE DATOS
+            $customer = Customer::create([
+                'nombre' => Purify::clean($request['name']),
+                'email' => Purify::clean($request['email']),
+                'pais' => Purify::clean($request['country_residence']),
+                'telefono' => Purify::clean($request['phone']),
+                'mensaje' => Purify::clean($request['mensaje']),
+            ]);
+    
+            $partner->customers()->attach($customer->id);
+    
+            $request->session()->flash('report', 'Se ha enviado el correo');
+    
+            return back();
+        }
     }
 
     //partners@notarialatina.com,hserrano@notarialatina.com
