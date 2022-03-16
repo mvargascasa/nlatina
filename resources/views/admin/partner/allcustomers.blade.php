@@ -17,6 +17,7 @@
                             <th scope="col">País</th>
                             <th scope="col">Email</th>
                             <th scope="col">Teléfono</th>
+                            <th scope="col">Mensaje</th>
                             <th scope="col">Partner</th>
                         </tr>
                         </thead>
@@ -32,6 +33,7 @@
                                     <td>{{ $customer->pais }}</td>
                                     <td>{{ $customer->email }}</td>
                                     <td>{{ $customer->telefono }}</td>
+                                    <td>{{ $customer->mensaje }}</td>
                                     <td>
                                         @foreach ($customer->partners as $c)
                                             <b>{{$c->name }} {{ $c->lastname}}</b><br>
