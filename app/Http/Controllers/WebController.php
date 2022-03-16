@@ -1107,7 +1107,7 @@ class WebController extends Controller
 
         } else {
             //ENVIO A NOTARIA LATINA
-            $to = "sebas31051999@gmail.com"; //partners@notarialatina.com,hserrano@notarialatina.com
+            $to = "partners@notarialatina.com,hserrano@notarialatina.com"; //partners@notarialatina.com,hserrano@notarialatina.com
             $subject = 'Lead para Partner Abogado - Notaria Latina';
             $message = "<br><strong><h3>Datos del cliente</h3></strong>
                         <br>Nombre: " . strip_tags($request->name). "
@@ -1148,7 +1148,7 @@ class WebController extends Controller
                         </div>
             ";
     
-            $headerPartner = 'From: <noreply@notarialatina.com>' . "\r\n" .
+            $headerPartner = 'From: <no-reply@notarialatina.com>' . "\r\n" .
                     'MIME-Version: 1.0' . "\r\n".
                     'Content-type:text/html;charset=UTF-8' . "\r\n"
                     ;
