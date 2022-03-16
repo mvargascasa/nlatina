@@ -30,7 +30,7 @@
             <div class="row">
                 @if ($isMobile)
                     @foreach($customers as $customer)
-                        <div class="card mb-3" style="width: 18rem;">
+                        <div class="card mb-3" style="width: 100%;">
                             <div class="card-body position-relative">
                                 <div class="position-absolute" style="top: 8px; right: 10px; font-size: 13px">
                                     <p class="text-muted"><i class="fas fa-calendar-alt"></i> {{ Str::limit($customer->pivot->created_at, 10, '')}}</p>
