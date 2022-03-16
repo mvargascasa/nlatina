@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Partner;
 use App\Http\Controllers\Controller;
 use App\Partner;
 use App\Specialty;
+use Detection\MobileDetect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -209,7 +210,15 @@ class HomeController extends Controller
     }
 
     public function getCustomers(Partner $partner){
+        
+        $detect = new MobileDetect();
+        $isMobile = FALSE;
+
+        if($detect->isMobile()){
+            $isMobile = TRUE;
+        }
+
         $customers = $partner->customers;
-        return view('admin.partner.customersview', compact('customers'));
+        return view('admin.partner.customersview', compact('customers', 'isMobile'));
     }
 }

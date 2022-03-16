@@ -28,30 +28,47 @@
         <h4 class="mt-3 mb-3 text-center" style="font-weight: bold">Listado de clientes</h4>
         @if (count($customers) > 0)
             <div class="row">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">País</th>
-                        <th scope="col">Teléfono</th>
-                        <th scope="col">Mensaje</th>
-                        <th scope="col">Fecha registro</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($customers as $customer)
-                            <tr>
-                                <th>{{ $customer->nombre }}</th>
-                                <td><a href="mailto:{{$customer->email}}">{{ $customer->email }}</a></td>
-                                <td>{{ $customer->pais }}</td>
-                                <td>{{ $customer->telefono }}</td>
-                                <td>{{ $customer->mensaje }}</td>
-                                <td>{{ $customer->pivot->created_at }}</td>
-                            </tr>      
-                        @endforeach
-                    </tbody>
-                </table>
+                @if ($isMobile)
+                    @foreach($customers as $customer)
+                        <div class="card mb-3" style="width: 18rem;">
+                            <div class="card-body position-relative">
+                                <div class="position-absolute" style="top: 8px; right: 10px; font-size: 13px">
+                                    <p class="text-muted"><i class="fas fa-calendar-alt"></i> {{ Str::limit($customer->pivot->created_at, 10, '')}}</p>
+                                </div>
+                                <h5 class="card-title">{{ $customer->nombre }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ $customer->pais }}</h6>
+                                <p class="card-text">{{ $customer->mensaje }}</p>
+                                <p class="card-text"><i class="fas fa-phone"></i> {{ $customer->telefono }}</p>
+                                <a href="#" class="card-link"><i class="fas fa-envelope"></i> {{ $customer->email }}</a>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">País</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Mensaje</th>
+                            <th scope="col">Fecha registro</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($customers as $customer)
+                                <tr>
+                                    <th>{{ $customer->nombre }}</th>
+                                    <td><a href="mailto:{{$customer->email}}">{{ $customer->email }}</a></td>
+                                    <td>{{ $customer->pais }}</td>
+                                    <td>{{ $customer->telefono }}</td>
+                                    <td>{{ $customer->mensaje }}</td>
+                                    <td>{{ Str::limit($customer->pivot->created_at, 10, '') }}</td>
+                                </tr>      
+                            @endforeach
+                        </tbody>
+                    </table>
+                @endif
             </div>
         @else
             <div class="row d-inline text-center">
