@@ -14,7 +14,7 @@
     <div class="container">
         <p id="txtpartner" style="display: none">{{ Str::lower(Auth::guard('partner')->user()->name.Str::lower(Auth::guard('partner')->user()->lastname).Str::lower(Auth::guard('partner')->user()->id)) }}</p>
         {{-- ALERT PARA INFORMAR DE LA NUEVA PAGINA DE MIS CLIENTES --}}
-        <div id="alertinfoclientes" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        <div id="alertinfoclientes" style="display: none" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
             <div>
                 <h4 class="alert-heading">Bienvenido/a {{ Auth::guard('partner')->user()->name }}!</h4>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="setLocalStorage('{{ Str::lower(Auth::guard('partner')->user()->name.Str::lower(Auth::guard('partner')->user()->lastname).Str::lower(Auth::guard('partner')->user()->id)) }}');">
@@ -95,9 +95,9 @@
         document.addEventListener("DOMContentLoaded", function(event) {
             var txtpartner = document.getElementById('txtpartner');
             if (localStorage.getItem(txtpartner.textContent)) {
-                $('#alertinfoclientes').hide();
+                $('#alertinfoclientes').css("display", "none");
             } else {
-                $('#alertinfoclientes').show();
+                $('#alertinfoclientes').css("display", "block");
             }
         });
 
