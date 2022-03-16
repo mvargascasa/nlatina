@@ -39,7 +39,7 @@
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $customer->pais }}</h6>
                                 <p class="card-text">{{ $customer->mensaje }}</p>
                                 <p class="card-text"><i class="fas fa-phone"></i> {{ $customer->telefono }}</p>
-                                <a href="#" class="card-link"><i class="fas fa-envelope"></i> {{ $customer->email }}</a>
+                                <a href="mailto:{{ $customer->email }}" class="card-link"><i class="fas fa-envelope"></i> {{ $customer->email }}</a>
                             </div>
                         </div>
                     @endforeach
