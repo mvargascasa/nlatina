@@ -37,6 +37,7 @@ Route::get('/home/partners/create', 'PartnerController@create')->name('partner.f
 Route::post('/home/partners/store', 'PartnerController@store')->name('partner.store');
 Route::get('/home/partners/publicated', 'PartnerController@viewLastPublicated')->name('partner.show.latest.public');
 Route::get('/home/partners/not-publicated', 'PartnerController@getAllNotPublicated')->name('partner.show.not.publicated');
+Route::get('/home/partners/all-customers', 'PartnerController@showallcustomers')->name('partner.show.all.customers');
 Route::post('/home/partners/verify/{partner}', 'PartnerController@verifiEmailAdmin')->name('verify.email.admin');
 Route::get('/home/partners/{partner}/show', 'PartnerController@show')->name('partner.show');
 Route::put('/home/partners/{partner}', 'PartnerController@update')->name('partner.update');

@@ -29,6 +29,17 @@
                 </button>
         </div>
     @endif
+    <div class="row">
+        <div class="col-sm-3">
+            <h5><b>TOTAL: </b>{{ $partners->total() }}</h5>
+        </div>
+        <div class="col-sm-3">
+            <h5><b>PUBLICADOS: </b>{{ $published }}</h5>
+        </div>
+        <div class="col-sm-3">
+            <h5><b>NO PUBLICADOS: </b>{{$notpublished}}</h5>
+        </div>
+    </div>
     {!! Form::open(['route' => 'partner.index', 'method' => 'GET']) !!}
     <div class="row form-group mb-3">
         <div class="col-sm-5">
@@ -41,23 +52,9 @@
                 {!! Form::submit('Buscar', ['class' => 'btn btn-info']) !!}
             </div>
         </div>
-        {!! Form::close() !!}
+    {!! Form::close() !!}
     <div class="row justify-content-center">
         <div class="col-12">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h5><b>TOTAL: </b>{{ $partners->total() }}</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5><b>PUBLICADOS: </b>{{ $published }}</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5><b>NO PUBLICADOS: </b>{{$notpublished}}</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5><b>EMAILS VERIFICADOS: </b>{{$verified}}</h5>
-                </div>
-            </div>
             <div class="card">
                 <div class="card-header font-weight-bold">
                     {{-- <div class="float-right ml-1">
@@ -73,6 +70,11 @@
                             Enviar correos
                         </button>
                     </div> --}} 
+                    <div class="float-left">
+                        <button class="btn btn-success">
+                            <a style="text-decoration: none; color: #ffffff" href="{{ route('partner.show.all.customers') }}">Ver Clientes</a>
+                        </button>
+                    </div>
                     <div class="float-right ml-1">
                         <button class="btn btn-primary">
                             <a style="text-decoration: none; color: #ffffff" href="{{ route('partner.show.not.publicated') }}">No Publicados</a>

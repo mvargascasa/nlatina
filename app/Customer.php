@@ -16,6 +16,7 @@ class Customer extends Model
     public $timestamps = false;
 
     public function partners(){
-        return $this->belongsToMany('App\Partner');
+        return $this->belongsToMany('App\Partner')
+        ->withPivot('customer_id', 'partner_id', 'created_at', 'viewed');
     }
 }

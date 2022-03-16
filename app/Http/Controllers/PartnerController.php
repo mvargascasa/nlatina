@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use App\Partner;
 use App\Specialty;
 use Illuminate\Http\Request;
@@ -324,6 +325,13 @@ class PartnerController extends Controller
         ;
 
         mail($to, $subject, $message, $header);
+    }
+
+    public function showallcustomers(){
+        $customers = Customer::with('partners')
+                    ->orderBy('id', 'desc')
+                    ->paginate(10);
+        return view('admin.partner.allcustomers', compact('customers'));
     }
 
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
