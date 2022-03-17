@@ -90,7 +90,7 @@
 			margin-top:-100px;
 		}
 
-        .fab {
+        .media {
             padding-top: 10px;
             font-size: 30px;
             width: 50px;
@@ -101,7 +101,7 @@
             border-radius: 5px;
         }
 
-        .fab:hover {
+        .media:hover {
             opacity: 0.8;
             border-radius: 25px 25px 25px 25px;
             -webkit-transition: 0.5s;
@@ -116,12 +116,12 @@
             color: white;
         }
 
-        .fa-instagram{
+        .instagram{
             background: #bf3590;
             color: white;
         }
 
-        .fa-instagram:hover{
+        .instagram:hover{
             color: white;
         }
     </style>
@@ -352,7 +352,7 @@
                                                 @if ($partner->link_instagram != null)
                                                     {!! Form::label('link_instagram', 'Link de perfil de Instagram', ['id' => 'Link de Instagram']) !!} <i class="fab fa-instagram" style="color: #ac2bac"></i>
                                                 @else
-                                                    {!! Form::label('link_instagram', 'Link de perfil de Instagram *', ['id' => 'Link de Instagram', 'style' => 'color: red; font-weight: bold']) !!} <i class="fab fa-instagram" style="color: #ac2bac"></i>
+                                                    {!! Form::label('link_instagram', 'Link de perfil de Instagram *', ['id' => 'Link de Instagram', 'style' => 'color: red; font-weight: bold;']) !!} <i class="fab fa-instagram" style="color: #ac2bac;"></i>
                                                 @endif
                                                 @if ($partner->link_instagram != null)
                                                 {!! Form::text('link_instagram', $partner->link_instagram, ['class' => 'form-control']) !!}
@@ -563,8 +563,8 @@
             </div>
         </div>
         <div class="social">
-            <a target="_blank" href="https://www.facebook.com/notariapublicalatina" class="mb-1" style="text-decoration: none"><i class="fab fa-facebook-f"></i></a>
-            <a target="_blank" href="https://www.instagram.com/notarialatina/" class="mb-1" style="text-decoration: none"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="https://www.facebook.com/notariapublicalatina" class="mb-1" style="text-decoration: none"><i class="fab fa-facebook-f media"></i></a>
+            <a target="_blank" href="https://www.instagram.com/notarialatina/" class="mb-1" style="text-decoration: none"><i class="fab fa-instagram instagram media"></i></a>
         </div>
     </div>
 
@@ -866,13 +866,13 @@
                           {{-- <a target="_blank" href="https://www.facebook.com/notariapublicalatina" class="btn btn-primary" style="background-color: #0c8aef; width: 60px; height: 60px" href="#!" role="button"
                           ><i class="fab fa-facebook-f fa-2x mt-2"></i
                           ></a> --}}
-                          <a target="_blank" href="https://www.facebook.com/notariapublicalatina" style="text-decoration: none" class="fab fa-facebook-f"></a>
+                          <a target="_blank" href="https://www.facebook.com/notariapublicalatina" style="text-decoration: none" class="fab fa-facebook-f media"></a>
                       </div>
                       <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                           {{-- <a target="_blank" href="https://www.instagram.com/notarialatina/" class="btn btn-primary" style="background-color: #bf3590; width: 60px; height: 60px" href="#!" role="button"
                           ><i class="fab fa-instagram fa-2x mt-2"></i
                           ></a> --}}
-                          <a target="_blank" href="https://www.instagram.com/notarialatina/" style="text-decoration: none" class="fab fa-instagram"></a>
+                          <a target="_blank" href="https://www.instagram.com/notarialatina/" style="text-decoration: none" class="fab fa-instagram instagram media"></a>
                       </div>
                       <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
                   </div>
