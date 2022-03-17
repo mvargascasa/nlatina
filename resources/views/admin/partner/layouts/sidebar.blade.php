@@ -70,10 +70,10 @@ body {
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 580px) {
+@media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
-  .a-social{margin-left: 10% !important;}
+  .a-social{margin-left: 13% !important;}
 }
 </style>
 
