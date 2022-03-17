@@ -46,10 +46,17 @@
                 width: 96% !important;
             }
             .social a{
-                top:50% !important;
-                height:35px !important;
-                margin-left: 5px !important;
+                top: 50% !important;
+                height: 35px !important;
+                margin-left: 13px !important;
 		    }
+            .fab {
+                padding-top: 10px !important;
+                font-size: 18px !important;
+                width: 40px !important;
+                height: 40px !important;
+                border-radius: 25px !important;
+            }
         }
         .modal-dialog{
             overflow-y: initial !important
@@ -72,11 +79,9 @@
 			width:48px;
 			position:fixed;
 			top:50px;
-			right:0;
+			right: 10px;
 		}
-
 		/* Extra centrado vertical*/
-
 		.social{
 			/*border:1px solid #000;*/
 			top:50%;
@@ -84,6 +89,41 @@
 			/*para poner height 192 deberíamos haber indicado en el reset de estilos font-size:0;*/
 			margin-top:-100px;
 		}
+
+        .fab {
+            padding-top: 10px;
+            font-size: 30px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            text-decoration: none;
+            margin: 3px 2px;
+            border-radius: 5px;
+        }
+
+        .fab:hover {
+            opacity: 0.8;
+            border-radius: 25px 25px 25px 25px;
+            -webkit-transition: 0.5s;
+        }
+
+        .fa-facebook-f {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-facebook-f:hover{
+            color: white;
+        }
+
+        .fa-instagram{
+            background: #bf3590;
+            color: white;
+        }
+
+        .fa-instagram:hover{
+            color: white;
+        }
     </style>
 @endsection
 
@@ -523,10 +563,8 @@
             </div>
         </div>
         <div class="social">
-            <a target="_blank" href="https://www.facebook.com/notariapublicalatina" class="btn btn-primary mb-1" style="background-color: #0c8aef; width: 40px; text-decoration: none" role="button"><i class="fab fa-facebook-f"></i></a>
-            <a target="_blank" href="https://www.instagram.com/notarialatina/" class="btn btn-primary mb-1" style="background-color: #bf3590; width: 40px; text-decoration: none" role="button"><i class="fab fa-instagram"></i></a>
-            <a target="_blank" href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A" class="btn btn-primary mb-1" style="background-color: #ff0000; width: 40px; text-decoration: none" role="button"><i class="fab fa-youtube" style="margin-left: -2px"></i></a>
-            <a target="_blank" href="https://mobile.twitter.com/latinanotaria" class="btn btn-primary mb-1" style="background-color: #1d9bf0; width: 40px; text-decoration: none" role="button"><i class="fab fa-twitter"></i></a>
+            <a target="_blank" href="https://www.facebook.com/notariapublicalatina" class="mb-1" style="text-decoration: none"><i class="fab fa-facebook-f"></i></a>
+            <a target="_blank" href="https://www.instagram.com/notarialatina/" class="mb-1" style="text-decoration: none"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 
@@ -821,28 +859,22 @@
         <div class="modal-dialog modal-dialog-centered modal-sm">
           <div class="modal-content">
               <div class="modal-header" style="display: inline; border-radius: 5px">
-                  <h6 class="modal-title text-center">Síguenos en nuestras redes sociales y mantente informado cada día</h6>
+                  <h6 class="modal-title text-center" style="font-weight: bold">Síguenos en nuestras cuentas oficiales y mantente informado cada día</h6>
                   <div class="row text-center mt-3 mb-4">
-                      <div class="col-3 col-sm-3">
-                          <a target="_blank" href="https://www.facebook.com/notariapublicalatina" class="btn btn-primary" style="background-color: #0c8aef;" href="#!" role="button"
-                          ><i class="fab fa-facebook-f"></i
-                          ></a>
+                      <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          {{-- <a target="_blank" href="https://www.facebook.com/notariapublicalatina" class="btn btn-primary" style="background-color: #0c8aef; width: 60px; height: 60px" href="#!" role="button"
+                          ><i class="fab fa-facebook-f fa-2x mt-2"></i
+                          ></a> --}}
+                          <a target="_blank" href="https://www.facebook.com/notariapublicalatina" style="text-decoration: none" class="fab fa-facebook-f"></a>
                       </div>
-                      <div class="col-3 col-sm-3">
-                          <a target="_blank" href="https://www.instagram.com/notarialatina/" class="btn btn-primary" style="background-color: #bf3590;" href="#!" role="button"
-                          ><i class="fab fa-instagram"></i
-                          ></a>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          {{-- <a target="_blank" href="https://www.instagram.com/notarialatina/" class="btn btn-primary" style="background-color: #bf3590; width: 60px; height: 60px" href="#!" role="button"
+                          ><i class="fab fa-instagram fa-2x mt-2"></i
+                          ></a> --}}
+                          <a target="_blank" href="https://www.instagram.com/notarialatina/" style="text-decoration: none" class="fab fa-instagram"></a>
                       </div>
-                      <div class="col-3 col-sm-3">
-                          <a target="_blank" href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A" class="btn btn-primary" style="background-color: #ff0000;" href="#!" role="button"
-                          ><i class="fab fa-youtube"></i
-                          ></a>
-                      </div>
-                      <div class="col-3 col-sm-3">
-                          <a target="_blank" href="https://mobile.twitter.com/latinanotaria" class="btn btn-primary" style="background-color: #1d9bf0;" href="#!" role="button"
-                          ><i class="fab fa-twitter"></i
-                          ></a>
-                      </div>
+                      <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
                   </div>
                   <div class="row text-center">
                   </div>

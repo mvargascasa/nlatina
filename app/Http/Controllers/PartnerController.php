@@ -312,7 +312,7 @@ class PartnerController extends Controller
         $message = "<div style='font-size:13px; margin: 5%; padding:5%; border-style: ridge;'>
                     <br><strong><h3>Hola " . $partner->name . "! Lo saludamos de Notaria Latina 👋🏻</h3></strong>
                     <br>Queremos informarle que su perfil ha sido desactivado debido a que algunos campos están incompletos o no cumplen con los requisitos necesarios 😔.
-                    <br>Pero no se preocupes, una vez que complete su información restante volveremos a publicar gratis su perfil en nuestro sitio web 😊
+                    <br>Pero no se preocupe, una vez que complete su información restante volveremos a publicar gratis su perfil en nuestro sitio web 😊
                     <br>Puede iniciar sesión y editar su perfil haciendo click <a href='https://notarialatina.com/partners/login'>aqui</a> o si tiene alguna duda no dude en contactarnos!
                     <br><b>Fecha Desactivación: </b> " . strip_tags(Str::limit(date(now()), 10, '')) . "
                     <br>
