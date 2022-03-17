@@ -73,7 +73,7 @@ body {
 @media screen and (max-height: 580px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
-  .a-social{margin-left: 13% !important;}
+  .a-social{margin-left: 12% !important;}
 }
 </style>
 
