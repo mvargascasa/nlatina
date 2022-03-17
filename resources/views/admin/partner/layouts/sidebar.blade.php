@@ -73,7 +73,6 @@ body {
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
-  .a-social{margin-left: 13% !important;}
 }
 </style>
 
@@ -108,9 +107,9 @@ body {
         @csrf
     </form>
   </div>
-  <div class="socialMedia" style="color: #ffffff">
+  <div class="socialMedia d-inline justify-content-center" style="color: #ffffff">
     <p>¡Manténgase informado! <br> Síganos en nuestras redes sociales</p>
-    <div class="d-flex a-social" style="margin-left: 20%; margin-top: -20px">
+    <div class="d-flex justify-content-center" style="margin-left: -23px; margin-top: -20px">
       <a href="https://www.instagram.com/notarialatina/" target="_blank"><i class="fab fa-instagram text-center" style="color: #ffffff; background-color: #002542;"></i></a>
       <a href="https://www.facebook.com/notariapublicalatina" target="_blank"><i class="fab fa-facebook-square" style="color: #ffffff;"></i></a>
       {{-- <a href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A" target="_blank"><i class="fab fa-youtube" style="color: #ffffff"></i></a> --}}
