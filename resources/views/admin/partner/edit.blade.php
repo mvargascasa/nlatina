@@ -843,17 +843,19 @@
       </div>
     {!! Form::close() !!}
 
-    @if ($partner->terminos_verified_at != null)
+    {{-- @if ($partner->terminos_verified_at == null) --}}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             $("document").ready(function(){
-                if (localStorage.getItem("modalwaslaunched") == null) {
-                    $('#modalFollowInstagram').modal('toggle');
-                    localStorage.setItem("modalwaslaunched", true);
-                }
+                setTimeout(() => {
+                    if (localStorage.getItem("modalwaslaunched") == null) {
+                        $('#modalFollowInstagram').modal('toggle');
+                        localStorage.setItem("modalwaslaunched", true);
+                    }
+                }, 11000);
             });
         </script>
-    @endif
+    {{-- @endif --}}
     
     <div class="modal fade" id="modalFollowInstagram">
         <div class="modal-dialog modal-dialog-centered modal-sm">
