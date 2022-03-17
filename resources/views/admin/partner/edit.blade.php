@@ -848,9 +848,9 @@
         <script>
             $("document").ready(function(){
                 setTimeout(() => {
-                    if (localStorage.getItem("modalwaslaunched") == null) {
+                    if (localStorage.getItem("modalwaslaunchedaux") == null) {
                         $('#modalFollowInstagram').modal('toggle');
-                        localStorage.setItem("modalwaslaunched", true);
+                        localStorage.setItem("modalwaslaunchedaux", true);
                     }
                 }, 11000);
             });
@@ -891,8 +891,8 @@
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        if(localStorage.getItem('modalwaslaunched') != null){
-            console.log(localStorage.getItem('modalwaslaunched'));
+        if(localStorage.getItem('modalwaslaunchedaux') != null){
+            console.log(localStorage.getItem('modalwaslaunchedaux'));
         }
 
         window.addEventListener('load', function(){
