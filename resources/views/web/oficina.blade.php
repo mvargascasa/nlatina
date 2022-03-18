@@ -117,6 +117,13 @@
             bottom: 75px !important;
             right: 0px !important;
         }
+        /* QUITAR SPINNERS DE INPUT TYPE NUMBER */
+    /* CHROME */
+    input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+    /* FIREFOX */
+    input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
+    /* OTHER */
+    input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
     </style>
     <script type="text/javascript">
         function callbackThen(response){
@@ -381,7 +388,7 @@
                       </select>
                       <div id="divcodigoandtelefono" class="d-flex" style="width: 50%">
                           <input type="text" id="telf" name="codpais" class="form-control" style="border-radius: 5px 0px 0px 5px; width: 75px" readonly/>
-                          <input id="bbb" name="bbb" type="text" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required>
+                          <input id="bbb" name="bbb" type="number" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required>
                       </div>
                 </div>
 

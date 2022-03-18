@@ -58,6 +58,14 @@
     .hrw{      border: 1px solid white;      width: 100px;    }
     .hrb{      border: 1px solid #122944;      width: 100px;    }
     .bg-bordo{background: #522621; border: 0}
+    /* QUITAR SPINNERS DE INPUT TYPE NUMBER */
+    /* CHROME */
+    input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+    /* FIREFOX */
+    input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
+    /* OTHER */
+    input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+    @media screen and (max-width: 580px){#divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}}
   </style>
 </head>
 <body>
@@ -224,7 +232,35 @@
               <div class="form-group pt-4">
                 <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombre y Apellido"  maxlength="40" minlength="2" autocomplete="off" required>
               </div>
-              <div class="row">
+              <div id="divpais" class="form-group d-flex">
+                <select id="pais" name="pais" class="form-control mr-2" style="width: 50%" required>
+                  <option value="">País de residencia</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Bolivia">Bolivia</option>
+                  <option value="Colombia">Colombia</option>
+                  <option value="Costa Rica">Costa Rica</option>
+                  <option value="Ecuador">Ecuador</option>
+                  <option value="El Salvador">El Salvador</option>
+                  <option value="España">España</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                  <option value="Guatemala">Guatemala</option>
+                  <option value="Honduras">Honduras</option>
+                  <option value="México">México</option>
+                  <option value="Nicaragua">Nicaragua</option>
+                  <option value="Panamá">Panamá</option>
+                  <option value="Paraguay">Paraguay</option>
+                  <option value="Perú">Perú</option>
+                  <option value="Puerto Rico">Puerto Rico</option>
+                  <option value="República Dominicana">República Dominicana</option>
+                  <option value="Uruguay">Uruguay</option>
+                  <option value="Venezuela">Venezuela</option>                    
+                </select> 
+                <div id="divcodigoandtelefono" class="d-flex" style="width: 50%">
+                  <input type="text" id="telf" name="codpais" class="form-control" style="border-radius: 5px 0px 0px 5px; width: 75px" readonly/>
+                  <input id="bbb" name="bbb" type="number" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required> 
+                </div>
+              </div>
+              {{-- <div class="row">
                 <div class="col-sm-7">
                   <div class="row">
                     <div class="col-sm-7 mb-3">
@@ -249,7 +285,7 @@
                         <option value="República Dominicana">República Dominicana</option>
                         <option value="Uruguay">Uruguay</option>
                         <option value="Venezuela">Venezuela</option>                    
-                      </select>                                        
+                      </select>                                       
                     </div>
                     <div class="col-sm-5">
                       <div class="form-group">
@@ -260,10 +296,10 @@
                 </div>
                 <div class="col-sm-5">
                   <div class="form-group">
-                    <input id="bbb" name="bbb" type="text" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" required>
+                    <input id="bbb" name="bbb" type="number" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" required>
                   </div>
                 </div>
-              </div>
+              </div> --}}
               <div class="form-group">
                 <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
               </div>
