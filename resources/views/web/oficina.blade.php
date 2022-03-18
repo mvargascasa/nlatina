@@ -45,6 +45,17 @@
             #hrNuestrosServicios{
                 margin-right: auto !important;
             }
+            #divpais{
+                display: inline !important;
+            }
+            #divcodigoandtelefono{
+                width: 100% !important;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+            #pais{
+                width: 100% !important;
+            }
         }
         .titulo{
             color: white;
@@ -335,7 +346,7 @@
     </div>
 
     <section id="iniciarTramite" class="row quienes-somos text-white m-0">  
-        <div class="col-12 col-md-6 pb-5 px-3 mx-auto">
+        <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 pb-5 px-3 mx-auto">
             <div class="card-body text-center">  
               <h2 class="font-italic font-weight-bold">Solicitar Tramite</h2>      
               <small> Envíe el formulario y un asesor le contactará breve. </small>     
@@ -345,7 +356,36 @@
                 <div class="form-group pt-4">
                   <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombre y Apellido"  maxlength="40" minlength="2" autocomplete="off" required>
                 </div>
-                <div class="row">
+                <div id="divpais" class="form-group d-flex">
+                    <select id="pais" name="pais" class="form-control mr-2" style="width: 50%" required>
+                        <option value="">País de residencia</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="España">España</option>
+                        <option value="Estados Unidos">Estados Unidos</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="México">México</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Panamá">Panamá</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Perú">Perú</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="República Dominicana">República Dominicana</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Venezuela">Venezuela</option>                    
+                      </select>
+                      <div id="divcodigoandtelefono" class="d-flex" style="width: 50%">
+                          <input type="text" id="telf" name="codpais" class="form-control" style="border-radius: 5px 0px 0px 5px; width: 75px" readonly/>
+                          <input id="bbb" name="bbb" type="text" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required>
+                      </div>
+                </div>
+
+                {{-- <div class="row">
                   <div class="col-sm-7">
                     <div class="row">
                       <div class="col-sm-7 mb-3">
@@ -384,7 +424,7 @@
                       <input id="bbb" name="bbb" type="text" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" required>
                     </div>
                   </div>
-                </div>
+                </div> --}}
                 <div class="form-group">
                   <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
                 </div>
