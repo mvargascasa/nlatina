@@ -13,6 +13,10 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         max-width: 100% !important;
         overflow-x: hidden !important;
     }
+
+    #svgwpp{
+        display: none;
+    }
     /*QUITAR LA ETIQUETA DE TELEFONO DE LA ESQUINA SUPERIOR DERECHA EN LA PAGINA DE LOS PARTNERS*/
     #etiquetaPhone{
         display: none;

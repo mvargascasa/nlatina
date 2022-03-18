@@ -23,6 +23,9 @@
         body{
             font-family: Arial, Helvetica, sans-serif;
         }
+        #svgwpp{
+            display: none;
+        }
         .bg-header{
             /* background-color: #002542; */
             width: 100%;
