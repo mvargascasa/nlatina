@@ -266,6 +266,9 @@
               </div>
               <div class="form-group">
                 <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
+              </div>
+              <div class="form-group" style="display: none">
+                <input type="text" name="aux" class="form-control" placeholder="Validacion" readonly>  
               </div>  
               <button class="btn btn-lg btn-warning btn-block" type="submit">INICIAR TRAMITE</button>
             </form>
