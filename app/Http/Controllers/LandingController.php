@@ -88,14 +88,14 @@ class LandingController extends Controller
 
     public function thankpostnj (Request $request)
     {
-        $pais = $this->getCodPais($request->get('cod_pais'));
+        // $pais = $this->getCodPais($request->get('cod_pais'));
 
-        if ($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb)) {
+        if ($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::contains($request->codpais, '+')) {
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
                         <br> Nombre: ". strip_tags($request->aaa)."
-                        <br> Telef: ".strip_tags($request->get('cod_pais'))." ".  strip_tags($request->bbb)."
-                        <br> País: " .strip_tags($pais)."
+                        <br> Telef: ".strip_tags($request->codpais)." ".  strip_tags($request->bbb)."
+                        <br> País: " .strip_tags($request->pais)."
                         <br> Mensaje: ".strip_tags($request->ddd)." 
                         <br> Fuente: GoogleAds 
                         <br> Proviene: Landing Campañas
@@ -120,8 +120,8 @@ class LandingController extends Controller
     
                 $message = "<br><strong>Nuevo Lead Landing</strong>
                             <br> Nombre: ". strip_tags($request->aaa)."
-                            <br> Telef: ".strip_tags($request->get('cod_pais'))." ".  strip_tags($request->bbb)."
-                            <br> País: " .strip_tags($pais)."
+                            <br> Telef: ".strip_tags($request->codpais). " ".  strip_tags($request->bbb)."
+                            <br> País: " .strip_tags($request->pais)."
                             <br> Interes: ".  strip_tags($interest)."
                             <br> Mensaje: ".strip_tags($request->ddd)." 
                             <br> Fuente: GoogleAds ";
@@ -131,6 +131,8 @@ class LandingController extends Controller
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);      
+            
+                //'notariapublicalatina@gmail.com'.$sendoffices
         }
 
         return view('landing.thank');
