@@ -1176,14 +1176,13 @@ class WebController extends Controller
 
     //notariapublicalatina@gmail.com,hserrano@notarialatina.com
     public function sendEmailOficina(Request $request){
-        $pais = $this->getPaisByCodigo($request->cod_pais);
-
-        if($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb)){
+        // $pais = $this->getPaisByCodigo($request->cod_pais);
+        if($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::contains($request->codpais, '+')){
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
                         <br> Nombre: ". strip_tags($request->aaa)."
-                        <br> Telef: ".strip_tags($request->get('cod_pais'))." ".  strip_tags($request->bbb)."
-                        <br> País: " .strip_tags($pais)."
+                        <br> Telef: ".strip_tags($request->codpais) ." ".  strip_tags($request->bbb)."
+                        <br> País: " .strip_tags($request->pais)."
                         <br> Mensaje: ".strip_tags($request->ddd)." 
                         <br> Fuente: GoogleAds 
                         <br> Proviene: " . strip_tags($request->interest) . " 
@@ -1201,7 +1200,7 @@ class WebController extends Controller
             $subject = "Lead " . strip_tags($request->interest) . " | " . date(now());
             $message = "<br><strong><h3>Datos del Lead</h3></strong>
                     <br>Nombre: " . strip_tags($request->aaa). "
-                    <br>País de residencia: " . strip_tags($pais) ."
+                    <br>País de residencia: " . strip_tags($request->pais) ."
                     <br>Teléfono: " .strip_tags($request->cod_pais) . " " . strip_tags($request->bbb) ."
                     <br>Mensaje: " . strip_tags($request->ddd) . "
                     <br>Proveniente: Página de " . strip_tags($request->interest) . "

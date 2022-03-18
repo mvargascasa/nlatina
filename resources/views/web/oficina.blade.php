@@ -349,32 +349,32 @@
                   <div class="col-sm-7">
                     <div class="row">
                       <div class="col-sm-7 mb-3">
-                        <select id="pais" name="cod_pais" class="form-control" required>
+                        <select id="pais" name="pais" class="form-control" required>
                           <option value="">País de residencia</option>
-                          <option value="+54">Argentina</option>
-                          <option value="+591">Bolivia</option>
-                          <option value="+57">Colombia</option>
-                          <option value="+506">Costa Rica</option>
-                          <option value="+593">Ecuador</option>
-                          <option value="+503">El Salvador</option>
-                          <option value="+34">España</option>
-                          <option value="+1">Estados Unidos</option>
-                          <option value="+502">Guatemala</option>
-                          <option value="+504">Honduras</option>
-                          <option value="+52">México</option>
-                          <option value="+505">Nicaragua</option>
-                          <option value="+507">Panamá</option>
-                          <option value="+595">Paraguay</option>
-                          <option value="+51">Perú</option>
-                          <option value="+1 787">Puerto Rico</option>
-                          <option value="+1 809">República Dominicana</option>
-                          <option value="+598">Uruguay</option>
-                          <option value="+58">Venezuela</option>                    
+                          <option value="Argentina">Argentina</option>
+                          <option value="Bolivia">Bolivia</option>
+                          <option value="Colombia">Colombia</option>
+                          <option value="Costa Rica">Costa Rica</option>
+                          <option value="Ecuador">Ecuador</option>
+                          <option value="El Salvador">El Salvador</option>
+                          <option value="España">España</option>
+                          <option value="Estados Unidos">Estados Unidos</option>
+                          <option value="Guatemala">Guatemala</option>
+                          <option value="Honduras">Honduras</option>
+                          <option value="México">México</option>
+                          <option value="Nicaragua">Nicaragua</option>
+                          <option value="Panamá">Panamá</option>
+                          <option value="Paraguay">Paraguay</option>
+                          <option value="Perú">Perú</option>
+                          <option value="Puerto Rico">Puerto Rico</option>
+                          <option value="República Dominicana">República Dominicana</option>
+                          <option value="Uruguay">Uruguay</option>
+                          <option value="Venezuela">Venezuela</option>                    
                         </select>                                        
                       </div>
                       <div class="col-sm-5">
                         <div class="form-group">
-                          <input type="text" id="telf" class="form-control" readonly/>
+                          <input type="text" id="telf" name="codpais" class="form-control" readonly/>
                         </div>
                       </div>
                     </div>
@@ -578,16 +578,46 @@
             }
         }
 
-        var pais = document.getElementById('pais');
-        var telf = document.getElementById('telf');
+        // var pais = document.getElementById('pais');
+        // var telf = document.getElementById('telf');
 
-        pais.onchange = function(e) {
-        telf.value = this.value;
-            if((this.value).trim() != '') {
-                telf.disabled = false;
-            } else {
-                telf.disabled = true;
+        // pais.onchange = function(e) {
+        // telf.value = this.value;
+        //     if((this.value).trim() != '') {
+        //         telf.disabled = false;
+        //     } else {
+        //         telf.disabled = true;
+        //     }
+        // }
+
+        var selectPaisResidencia = document.getElementById('pais');
+        var inputCodPais = document.getElementById('telf');
+
+        selectPaisResidencia.onchange  = function(e){
+            switch (selectPaisResidencia.value) {
+            case "":codigo = ""; break;
+            case "Argentina":codigo = "+54";break;
+            case "Bolivia":codigo = "+591";break;
+            case "Chile":codigo = "+56"; break;
+            case "Colombia":codigo = "+57";break;
+            case "Costa Rica":codigo = "+506";break;
+            case "Ecuador":codigo = "+593";break;
+            case "El Salvador":codigo = "+503";break;
+            case "España":codigo = "+34"; break;
+            case "Estados Unidos":codigo = "+1"; break;
+            case "Guatemala":codigo = "+502";break;
+            case "Honduras":codigo = "+504";break;
+            case "México":codigo = "+52";break;
+            case "Nicaragua":codigo = "+505";break;
+            case "Panamá":codigo = "+507";break;
+            case "Paraguay":codigo = "+595";break;
+            case "Perú":codigo = "+51";break;
+            case "Puerto Rico":codigo = "+1787";break;
+            case "República Dominicana":codigo = "+1809";break;
+            case "Uruguay":codigo = "+598";break;
+            case "Venezuela":codigo = "+58";break;
             }
+            inputCodPais.value = codigo;
         }
 
         //DESPLAZAMIENTO AL HACER CLICK EN EL BOTON INICIAR TRAMITE DEL BANNER
