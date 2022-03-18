@@ -1177,23 +1177,44 @@ class WebController extends Controller
     //notariapublicalatina@gmail.com,hserrano@notarialatina.com
     public function sendEmailOficina(Request $request){
         $pais = $this->getPaisByCodigo($request->cod_pais);
-        $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com";
-        $subject = "Lead " . strip_tags($request->interest) . " | " . date(now());
-        $message = "<br><strong><h3>Datos del Lead</h3></strong>
-                <br>Nombre: " . strip_tags($request->aaa). "
-                <br>País de residencia: " . strip_tags($pais) ."
-                <br>Teléfono: " .strip_tags($request->cod_pais) . " " . strip_tags($request->bbb) ."
-                <br>Mensaje: " . strip_tags($request->ddd) . "
-                <br>Proveniente: Página de " . strip_tags($request->interest) . "
-                <br>
-                <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
-        ";
-        $header = 'From: <'.Str::lower(Str::studly($request->interest)). '@notarialatina.com>' . "\r\n" .
-        'MIME-Version: 1.0' . "\r\n".
-        'Content-type:text/html;charset=UTF-8' . "\r\n"
-        ;
 
-        mail($to, $subject, $message, $header);
+        if($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb)){
+
+            $message = "<br><strong>Nuevo Lead Landing</strong>
+                        <br> Nombre: ". strip_tags($request->aaa)."
+                        <br> Telef: ".strip_tags($request->get('cod_pais'))." ".  strip_tags($request->bbb)."
+                        <br> País: " .strip_tags($pais)."
+                        <br> Mensaje: ".strip_tags($request->ddd)." 
+                        <br> Fuente: GoogleAds 
+                        <br> Proviene: " . strip_tags($request->interest) . " 
+                        ";
+                    
+            $header='';
+            $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
+            $header .= "MIME-Version: 1.0\r\n";
+            $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+            mail('sebas31051999@gmail.com','Bot Lead Landing: '.strip_tags($request->aaa), $message, $header);
+        } else {
+
+            $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com"; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
+            $subject = "Lead " . strip_tags($request->interest) . " | " . date(now());
+            $message = "<br><strong><h3>Datos del Lead</h3></strong>
+                    <br>Nombre: " . strip_tags($request->aaa). "
+                    <br>País de residencia: " . strip_tags($pais) ."
+                    <br>Teléfono: " .strip_tags($request->cod_pais) . " " . strip_tags($request->bbb) ."
+                    <br>Mensaje: " . strip_tags($request->ddd) . "
+                    <br>Proveniente: Página de " . strip_tags($request->interest) . "
+                    <br>
+                    <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+            ";
+            $header = 'From: <'.Str::lower(Str::studly($request->interest)). '@notarialatina.com>' . "\r\n" .
+            'MIME-Version: 1.0' . "\r\n".
+            'Content-type:text/html;charset=UTF-8' . "\r\n"
+            ;
+    
+            mail($to, $subject, $message, $header);
+        }
 
         $request->session()->flash('report', 'Se ha enviado el correo');
 

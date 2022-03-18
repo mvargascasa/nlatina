@@ -90,7 +90,7 @@ class LandingController extends Controller
     {
         $pais = $this->getCodPais($request->get('cod_pais'));
 
-        if ($request->aux != null || preg_match("/^[a-z]+$/i", $request->bbb)) {
+        if ($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb)) {
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
                         <br> Nombre: ". strip_tags($request->aaa)."

@@ -4,6 +4,8 @@
     <title>Notaria Latina en {{ $data['office'] }}</title>
     <meta name="description" content="{{ $data['metadescription'] }}">
     <meta name="keywords" content="{{ $data['keywords'] }}">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         @media screen and (max-width: 580px){
             .titulo{
@@ -101,6 +103,26 @@
             transition: 1s ease;
         }
     </style>
+    <script type="text/javascript">
+        function callbackThen(response){
+            // read HTTP status
+            console.log(response.status);
+            // read Promise object
+            response.json().then(function(data){
+            console.log(data);
+            });
+        }
+    
+        function callbackCatch(error){
+            console.error('Error:', error)
+        }
+        </script>
+    
+    
+        {!! htmlScriptTagJsApi([
+        'callback_then' => 'callbackThen',
+        'callback_catch' => 'callbackCatch'
+        ]) !!}
     <script defer src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
 
@@ -361,7 +383,10 @@
                 </div>
                 <div class="form-group">
                   <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
-                </div>  
+                </div>
+                <div class="form-group" style="display: none">
+                    <input type="text" name="aux" class="form-control" readonly>  
+                </div>
                 <button class="btn btn-lg btn-warning btn-block" type="submit">INICIAR TRAMITE</button>
               </form>
             </div> 
@@ -515,7 +540,7 @@
             echo "
                 <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
                 <script>
-                    swal('Hemos enviado tu información', 'Nos pondremos en contacto lo antes posible!', 'success');
+                    swal('Hemos enviado su información', 'Nos pondremos en contacto lo antes posible!', 'success');
                 </script>
                 ";    
         @endphp
