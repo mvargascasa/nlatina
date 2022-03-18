@@ -89,8 +89,6 @@ class LandingController extends Controller
     public function thankpostnj (Request $request)
     {
         // $pais = $this->getCodPais($request->get('cod_pais'));
-
-        
         if ($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+')) {
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
@@ -131,7 +129,7 @@ class LandingController extends Controller
                 $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('sebas31051999@gmail.com','Lead Landing: '.strip_tags($request->aaa), $message, $header);      
+                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);      
             
                 //'notariapublicalatina@gmail.com'.$sendoffices
         }
