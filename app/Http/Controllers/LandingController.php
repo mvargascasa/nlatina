@@ -95,7 +95,8 @@ class LandingController extends Controller
                         <br> Nombre: ". strip_tags($request->aaa)."
                         <br> Telef: ".strip_tags($request->codpais)." ".  strip_tags($request->bbb)."
                         <br> País: " .strip_tags($request->pais)."
-                        <br> Mensaje: ".strip_tags($request->ddd)." 
+                        <br> Mensaje: ".strip_tags($request->ddd)."
+                        <br> Fuente: " . strip_tags($request->interest) . " 
                         <br> Fuente: GoogleAds 
                         <br> Proviene: Landing Campañas
                         ";
