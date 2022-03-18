@@ -106,7 +106,7 @@ class LandingController extends Controller
             $header .= "MIME-Version: 1.0\r\n";
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-            mail('sebas31051999@gmail.com','Lead Landing: '.strip_tags($request->aaa), $message, $header);
+            mail('sebas31051999@gmail.com','Bot Lead Landing: '.strip_tags($request->aaa), $message, $header);
 
         } else {
 
