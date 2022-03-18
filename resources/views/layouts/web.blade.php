@@ -309,7 +309,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div>        
       </div>
 
-      <div style="width: 60px; position: fixed; bottom: 10px; right: 25px; height: 50px;">
+      <div id="svgwpp" style="width: 60px; position: fixed; bottom: 10px; right: 25px; height: 50px;">
         <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});"
         href="https://api.whatsapp.com/send?phone=+@yield('numberWpp')" target="_blank">{{--+13479739888--}}
             <img src="{{asset('img/notary-public-near-me-whatsapp.svg')}}" 

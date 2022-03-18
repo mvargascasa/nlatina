@@ -102,6 +102,10 @@
             transform: scale(1.2);
             transition: 1s ease;
         }
+        #svgwpp{
+            bottom: 75px !important;
+            right: 0px !important;
+        }
     </style>
     <script type="text/javascript">
         function callbackThen(response){
