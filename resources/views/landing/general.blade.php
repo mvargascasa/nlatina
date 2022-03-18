@@ -65,7 +65,7 @@
 
 <header>
   <nav class="navbar navbar-dark navfoot">
-    <a class="navbar-brand pl-3" href="#">
+    <a class="navbar-brand pl-3" href="{{ route('web.index') }}">
       <img src="{{asset('img/marca-notaria-latina.png')}}" width="140" height="30" alt="Notaria Latina en {{ $oficina }}">
     </a>
       <div class="d-flex justify-content-end pr-3">
