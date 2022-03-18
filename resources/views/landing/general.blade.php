@@ -303,9 +303,7 @@
               <div class="form-group">
                 <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
               </div>
-              <div class="form-group" style="display: none">
-                <input type="text" name="aux" class="form-control" readonly>  
-              </div>  
+              <input type="hidden" name="aux" style="font-size: 10px" placeholder="Si puede ver este campo, por favor ignórelo" class="form-control" readonly>  
               <button class="btn btn-lg btn-warning btn-block" type="submit">INICIAR TRAMITE</button>
             </form>
           </div> 
