@@ -1178,8 +1178,6 @@ class WebController extends Controller
     public function sendEmailOficina(Request $request){
         // $pais = $this->getPaisByCodigo($request->cod_pais);
 
-        return $request;
-
         if($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+')){
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
