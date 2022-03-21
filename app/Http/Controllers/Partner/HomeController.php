@@ -140,27 +140,27 @@ class HomeController extends Controller
             $request->website = 'https://' . $request->website;
         }
 
-        $partner->title = Purify::clean($request->title);
-        $partner->name = Purify::clean($request->name);
-        $partner->lastname = Purify::clean($request->lastname);
-        $partner->email = Purify::clean($request->email);
-        $partner->country_residence = Purify::clean($request->country_residence);
-        $partner->codigo_pais = Purify::clean($request->codigo_pais);
-        $partner->numlicencia = Purify::clean($request->numlicencia);
-        $partner->phone = Purify::clean($request->phone);
-        $partner->state = Purify::clean($request->state);
-        $partner->city = Purify::clean($request->city);
-        $partner->address = Purify::clean($request->address);
-        $partner->link_facebook = Purify::clean($request->link_facebook);
-        $partner->link_instagram =  Purify::clean($request->link_instagram);
-        $partner->link_linkedin = Purify::clean($request->link_linkedin);
-        $partner->website = Purify::clean($request->website);
+        $partner->title = $request->title;
+        $partner->name = $request->name;
+        $partner->lastname = $request->lastname;
+        $partner->email = $request->email;
+        $partner->country_residence = $request->country_residence;
+        $partner->codigo_pais = $request->codigo_pais;
+        $partner->numlicencia = $request->numlicencia;
+        $partner->phone = $request->phone;
+        $partner->state = $request->state;
+        $partner->city = $request->city;
+        $partner->address = $request->address;
+        $partner->link_facebook = $request->link_facebook;
+        $partner->link_instagram =  $request->link_instagram;
+        $partner->link_linkedin = $request->link_linkedin;
+        $partner->website = $request->website;
         
         if($request->company == "Empresa"){
-            $partner->company = Purify::clean($request->company);
-            $partner->company_name = Purify::clean($request->company_name);
+            $partner->company = $request->company;
+            $partner->company_name = $request->company_name;
         } else {    
-            $partner->company = Purify::clean($request->company);
+            $partner->company = $request->company;
             $partner->company_name = null;
         }
         if($request->specialties){
@@ -169,7 +169,7 @@ class HomeController extends Controller
         } else {
             $partner->specialties()->detach();
         }
-        $partner->specialty = Purify::clean($request->specialty);
+        $partner->specialty = $request->specialty;
         $partner->biography_html = $request->biography_html;
         if($request->filled('checkTerminos') != null){
             $partner->checkterminos = $request->filled('checkTerminos');
