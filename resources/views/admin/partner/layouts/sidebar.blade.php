@@ -6,31 +6,34 @@
 <title>@yield('title-socios')</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
 <style>
-body {
-  font-family: "Lato", sans-serif;
-}
 
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #002542;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+  html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    font-family: "Lato", sans-serif;
+  }
 
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #bababa;
-  display: block;
-  transition: 0.3s;
-}
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #002542;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #bababa;
+    display: block;
+    transition: 0.3s;
+  }
 
 .sidebar a:hover {
   color: #f1f1f1;
@@ -59,7 +62,7 @@ body {
 
 #main {
   transition: margin-left .5s;
-  padding: 16px;
+  padding: 5px;
 }
 
 .socialMedia{

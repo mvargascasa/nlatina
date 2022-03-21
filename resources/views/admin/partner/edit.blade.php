@@ -57,7 +57,15 @@
                 height: 40px !important;
                 border-radius: 25px !important;
             }
+            /* #divcamposvacios{
+                margin-left: -20px;
+                width: 100rem !important;
+            } */
         }
+        #txtCamposVacios{
+            font-size: 13px !important;
+        }
+
         .modal-dialog{
             overflow-y: initial !important
         }
@@ -157,11 +165,11 @@
                             </div>
                         @endif
                         @if (count($camposVacios) > 0)
-                            <div class="alert alert-danger">
-                                Los siguientes campos se encuentran vacios:
+                            <div id="divcamposvacios" class="alert alert-danger">
+                                Por favor complete los siguientes campos:
                                 <div class="row">
                                     @foreach ($camposVacios as $campoVacio)
-                                    <div class="col-6 col-sm-3">
+                                    <div class="col-12 col-sm-6 col-md-3">
                                         <i class="fas fa-exclamation-circle"></i> <b id="txtCamposVacios"><a style="text-decoration: none; color: #000000" href="#{{$campoVacio}}" onclick="marcarCampo(this);">{{ $campoVacio }}</a></b>       
                                     </div>
                                     @endforeach
@@ -200,7 +208,11 @@
                                                 @endif                    
                                             </div>
                                             <div class="form-group col-md-12">
-                                                {!! Form::label('img_profile', 'Imagen de perfil') !!}
+                                                @if ($partner->img_profile != null)
+                                                    {!! Form::label('img_profile', 'Imagen de perfil', ['id' => 'Imagen de perfil']) !!}
+                                                @else
+                                                    {!! Form::label('img_profile', 'Imagen de perfil *', ['id' => 'Imagen de perfil', 'style' => 'color: red; font-weight: bold']) !!}
+                                                @endif
                                                 {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);']) !!}
                                                 <hr>
                                             </div>
@@ -477,9 +489,9 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 @if ($partner->state != null)
-                                                    {!! Form::label('state', 'Estado, Departamento o Provincia', ['id' => 'Estado']) !!}
+                                                    {!! Form::label('state', 'Estado, Departamento o Provincia', ['id' => 'Estado, Departamento o Provincia']) !!}
                                                 @else
-                                                    {!! Form::label('state', 'Estado, Departamento o Provincia *', ['id' => 'Estado', 'style' => 'color: red; font-weight: bold']) !!} 
+                                                    {!! Form::label('state', 'Estado, Departamento o Provincia *', ['id' => 'Estado, Departamento o Provincia', 'style' => 'color: red; font-weight: bold']) !!} 
                                                 @endif
                                                 @if ($partner->state != null)
                                                 {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}

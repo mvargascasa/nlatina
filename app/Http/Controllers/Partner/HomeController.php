@@ -59,7 +59,7 @@ class HomeController extends Controller
         if($partner->website == null){ array_push( $camposVacios, "Link de Sitio Web");}
         if($partner->country_residence == null){ array_push ( $camposVacios , "País de residencia"); }
         if($partner->phone == null){ array_push ( $camposVacios , "Teléfono"); }
-        if($partner->state == null){ array_push ( $camposVacios , "Estado"); }
+        if($partner->state == null){ array_push ( $camposVacios , "Estado, Departamento o Provincia"); }
         if($partner->city == null){ array_push ( $camposVacios , "Ciudad"); }
         if($partner->address == null){ array_push ( $camposVacios , "Dirección"); }
         if($partner->numlicencia == null){ array_push( $camposVacios, "Número de Licencia" );}
