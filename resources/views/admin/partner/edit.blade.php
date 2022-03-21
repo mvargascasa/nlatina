@@ -184,7 +184,7 @@
                                 Por favor revise los siguientes campos:
                                 <div class="row">
                                     @foreach ($advertencias as $advertencia)
-                                    <div class="col-6 col-sm-3">
+                                    <div class="col-12 col-sm-6 col-md-3">
                                         <i class="fas fa-exclamation-circle"></i> <b id="txtCamposVacios"><a style="text-decoration: none; color: #000000">{{ $advertencia }}</a></b>       
                                     </div>
                                     @endforeach
