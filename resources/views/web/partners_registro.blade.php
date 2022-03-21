@@ -203,6 +203,21 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         .parrafoBeneficios{
             margin: 0px !important;
         }
+        #divpais{
+            display: inline !important;
+        }
+        #country_residence{
+            width: 90% !important;
+            margin-left: 5% !important;
+            margin-right: 5% !important;
+            margin-top: -25px !important;
+        }
+        #divcodigoandtelefono{
+            width: 92% !important;
+            margin-top: 9px;
+            margin-bottom: -17px;
+            margin-left: 3.5% !important;
+        }
     }
     .titulo{
         font-size: 25px;
@@ -239,6 +254,13 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
     .parrafoBeneficios{
         margin: 5px;
     }
+    /* QUITAR SPINNERS DE INPUT TYPE NUMBER */
+    /* CHROME */
+    input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+    /* FIREFOX */
+    input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
+    /* OTHER */
+    input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
 </style>
 <script type="text/javascript">
     function callbackThen(response){

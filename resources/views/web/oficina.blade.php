@@ -118,12 +118,12 @@
             right: 0px !important;
         }
         /* QUITAR SPINNERS DE INPUT TYPE NUMBER */
-    /* CHROME */
-    input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
-    /* FIREFOX */
-    input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
-    /* OTHER */
-    input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+        /* CHROME */
+        input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+        /* FIREFOX */
+        input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
+        /* OTHER */
+        input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
     </style>
     <script type="text/javascript">
         function callbackThen(response){
