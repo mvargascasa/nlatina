@@ -62,7 +62,7 @@
 
 #main {
   transition: margin-left .5s;
-  padding: 5px;
+  padding: 8px;
 }
 
 .socialMedia{
