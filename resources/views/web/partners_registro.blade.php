@@ -288,13 +288,13 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 @section('content')
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
-        <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
+        <div class="row justify-content-center align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-sm-6 col-12 text-white">
                 <h4 id="titlemovil" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> <br> en los <b>ESTADOS UNIDOS</b></h4>
                 <h4 id="titlepc" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> en los <b>ESTADOS UNIDOS</b></h4>
                 <h4 style="margin-left: 25%; color: #fec02f" class="font-weight-bold subtitle"><i>Regístrese ahora..!</i></h4>
             </div>
-            <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-6">
+            <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                 @include('admin.partner.layouts.form_register')
             </div>
         </div>

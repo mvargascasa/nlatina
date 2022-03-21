@@ -13,7 +13,7 @@
             </div>
         @enderror
         <div id="divpais" class="form-group mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-            <select style="font-size: 14px; width: 50%" name="country_residence" id="country_residence" class="form-control" required>
+            <select style="font-size: 14px; width: 49%" name="country_residence" id="country_residence" class="form-control" required>
                 <option value="">País</option>
                 <option value="Argentina">Argentina</option>
                 <option value="Bolivia">Bolivia</option>
@@ -34,8 +34,8 @@
                 <option value="Uruguay">Uruguay</option>
                 <option value="Venezuela">Venezuela</option>  
             </select>
-            <div id="divcodigoandtelefono" class="d-flex" style="width: 50%">
-                <input type="text" style="margin-left: 5px; background-color: #ffffff; font-size: 14px; border-radius: 5px 0px 0px 5px; width: 35%" name="codTelfPais" id="codTelfPais" class="form-control" readonly>
+            <div id="divcodigoandtelefono" class="d-flex" style="width: 51%">
+                <input type="text" style="margin-left: 5px; background-color: #ffffff; font-size: 14px; border-radius: 5px 0px 0px 5px; width: 45%" name="codTelfPais" id="codTelfPais" class="form-control" readonly>
                 <input style="margin-left: 0px; font-size: 14px; border-radius: 0px 5px 5px 0px;" type="number" name="phone" class="form-control" id="telefono" placeholder="Teléfono" autocomplete="off" value="{{ old('phone') }}" required>
             </div>
         </div>
