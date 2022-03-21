@@ -495,8 +495,8 @@ class WebController extends Controller
     }
 
     public function oficinasnj(?string $service = null){
-        $data['telfHidden'] = '+19088009046'; //908-365-1163
-        $data['telfWpp'] = '19083651163';
+        $data['telfHidden'] = '+19088009046'; //9083571176
+        $data['telfWpp'] = '19083571176';
         $data['telfShow'] = '908-800-9046';
         $data['office'] = 'New Jersey';
         $data['metadescription'] = "";
@@ -767,7 +767,7 @@ class WebController extends Controller
             $data['imggrid'] = 'img/oficinas/ICONOS-17.webp';
             $data['txtgrid'] = 'Affidávit Support';
             $data['telfHidden'] = '+19088009046';
-            $data['telfWpp'] = '19083651163';
+            $data['telfWpp'] = '19083571176';
             $data['telfShow'] = '908-800-9046';
             $data['imgapostilla'] = 'img/oficinas/apostillanj.webp';
             $data['imgup'] = 'img/newjersey-landing-notaria-latina.webp';
@@ -1170,13 +1170,16 @@ class WebController extends Controller
     
             return back();
         }
+        //partners@notarialatina.com,hserrano@notarialatina.com
     }
 
-    //partners@notarialatina.com,hserrano@notarialatina.com
 
     //notariapublicalatina@gmail.com,hserrano@notarialatina.com
     public function sendEmailOficina(Request $request){
         // $pais = $this->getPaisByCodigo($request->cod_pais);
+
+        return $request;
+
         if($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+')){
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
@@ -1195,6 +1198,16 @@ class WebController extends Controller
 
             mail('sebas31051999@gmail.com','Bot Lead Landing: '.strip_tags($request->aaa), $message, $header);
         } else {
+
+            // switch ($request->interest) {
+            //     case 'Oficina New Jersey':
+            //         $sendoffices = 'newjersey@notarialatina.com';
+            //         break;
+            //     // case 'Oficina New York'
+            //     default:
+            //         # code...
+            //         break;
+            // }
 
             $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com"; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
             $subject = "Lead " . strip_tags($request->interest) . " | " . date(now());
