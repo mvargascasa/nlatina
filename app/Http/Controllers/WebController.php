@@ -1197,17 +1197,18 @@ class WebController extends Controller
             mail('sebas31051999@gmail.com','Bot Lead Landing: '.strip_tags($request->aaa), $message, $header);
         } else {
 
-            // switch ($request->interest) {
-            //     case 'Oficina New Jersey':
-            //         $sendoffices = 'newjersey@notarialatina.com';
-            //         break;
-            //     // case 'Oficina New York'
-            //     default:
-            //         # code...
-            //         break;
-            // }
+            switch ($request->interest) {
+                case 'Oficina New Jersey': $sendoffices = 'newjersey@notarialatina.com'; //newjersey@notarialatina.com
+                    break;
+                case 'Oficina New York': $sendoffices = 'newyork@notarialatina.com'; //newyork@notarialatina.com
+                    break;
+                case 'Oficina Florida': $sendoffices = 'florida@notarialatina.com'; //florida@notarialatina.com
+                    break;
+                default:
+                    break;
+            }
 
-            $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com"; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
+            $to = "notariapublicalatina@gmail.com," . $sendoffices; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
             $subject = "Lead " . strip_tags($request->interest) . " | " . date(now());
             $message = "<br><strong><h3>Datos del Lead</h3></strong>
                     <br>Nombre: " . strip_tags($request->aaa). "
@@ -1218,6 +1219,7 @@ class WebController extends Controller
                     <br>
                     <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
             ";
+
             $header = 'From: <'.Str::lower(Str::studly($request->interest)). '@notarialatina.com>' . "\r\n" .
             'MIME-Version: 1.0' . "\r\n".
             'Content-type:text/html;charset=UTF-8' . "\r\n"
