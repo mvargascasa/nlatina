@@ -495,8 +495,8 @@ class WebController extends Controller
     }
 
     public function oficinasnj(?string $service = null){
-        $data['telfHidden'] = '+19088009046'; //9083571176
-        $data['telfWpp'] = '19083571176';
+        $data['telfHidden'] = '+19088009046'; //+19082249260
+        $data['telfWpp'] = '19082249260';
         $data['telfShow'] = '908-800-9046';
         $data['office'] = 'New Jersey';
         $data['metadescription'] = "";
@@ -767,7 +767,7 @@ class WebController extends Controller
             $data['imggrid'] = 'img/oficinas/ICONOS-17.webp';
             $data['txtgrid'] = 'Affidávit Support';
             $data['telfHidden'] = '+19088009046';
-            $data['telfWpp'] = '19083571176';
+            $data['telfWpp'] = '19082249260';
             $data['telfShow'] = '908-800-9046';
             $data['imgapostilla'] = 'img/oficinas/apostillanj.webp';
             $data['imgup'] = 'img/newjersey-landing-notaria-latina.webp';
