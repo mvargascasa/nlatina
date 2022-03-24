@@ -90,7 +90,6 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
     Route::get('/home', 'HomeController@index')->name('socios.index')->middleware('auth:partner'); //verified
     Route::get('/login', 'LoginController@showLoginFormSocios')->name('partner.showform')->middleware('guest:partner'); // MOSTRAR FORMULARIO DE LOGIN
     Route::post('/login', 'LoginController@loginSocios')->name('socios.login');
-    Route::get('/registro', function(){return view('web.partners_registro');})->name('partners.registro');
     Route::post('/registro', 'RegisterController@register')->name('socios.registro'); //REGISTRO DEL SOCIO - WEB
     Route::get('/mis-clientes/{partner}', 'HomeController@getCustomers')->name('partner.get.customers');
     Route::get('/edit/{partner}', 'HomeController@edit')->name('socios.edit')->middleware('auth:partner'); // 'verified'
@@ -126,6 +125,8 @@ Route::get('/revocatorias', function () {    return view('web.revocatorias');   
 Route::get('/testamentos', function () {    return view('web.testamentos');    })->name('web.testamentos');
 
 //PARTNERS
+Route::get('/registro', function(){return view('web.partners_registro');})->name('partners.registro');
+Route::get('/partners/registro', function(){return redirect()->route('partners.registro');});
 Route::get('/partners/politicas-de-privacidad', function(){ return view('web.politicasocios');})->name('web.socios.politicas');
 Route::get('/partners', 'WebController@showAllPartners')->name('web.showallpartners');
 Route::post('/partners', 'WebController@showAllPartners')->name('web.showallpartners.a');
