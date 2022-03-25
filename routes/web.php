@@ -126,7 +126,7 @@ Route::get('/testamentos', function () {    return view('web.testamentos');    }
 
 //PARTNERS
 Route::get('/registro', function(){return view('web.partners_registro');})->name('partners.registro');
-Route::get('/partners/registro', function(){return redirect()->route('partners.registro');});
+Route::get('/partners/registro', function(){return view('web.partners_registro');});
 Route::get('/partners/politicas-de-privacidad', function(){ return view('web.politicasocios');})->name('web.socios.politicas');
 Route::get('/partners', 'WebController@showAllPartners')->name('web.showallpartners');
 Route::post('/partners', 'WebController@showAllPartners')->name('web.showallpartners.a');
