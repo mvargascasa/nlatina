@@ -1115,6 +1115,7 @@ class WebController extends Controller
                         <br>País de residencia: " . strip_tags($request->country_residence) ."
                         <br>Teléfono: " . strip_tags($request->codpais) . " " . strip_tags($request->phone) ."
                         <br>Mensaje: " . strip_tags($request->mensaje) . "
+                        <br>Correo: " . strip_tags($request->email) . "
                         <br>
                         <br><strong><h3>Partner al cual consulta</h3></strong>
                         <br>Nombre: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . "
@@ -1138,6 +1139,7 @@ class WebController extends Controller
                         <br><p style='font-size: 15px; margin:0'>Queremos informarle que un cliente ha consultado por usted, no olvide ponerse en contacto con el mismo y brindarle sus servicios 📃</p>  
                         <br><strong><h3>La información del cliente es la siguiente:</h3></strong>
                         <p><b>Nombre:</b> " . strip_tags($request->name). "</p>
+                        <p><b>Email:</b> " . strip_tags($request->email) . "</p>
                         <p><b>País de residencia:</b> " . strip_tags($request->country_residence) ."</p>
                         <p><b>Teléfono:</b> " . strip_tags($request->codpais) . " " . strip_tags($request->phone) ."</p>
                         <p><b>Mensaje:</b> " . strip_tags($request->mensaje) . "</p>
@@ -1145,8 +1147,6 @@ class WebController extends Controller
                         <a href='https://notarialatina.com'><img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'></a>
                         </div>
             ";
-
-            //<p><b>Email:</b> " . strip_tags($request->email) . "</p>
     
             $headerPartner = 'From: <no-reply@notarialatina.com>' . "\r\n" .
                     'MIME-Version: 1.0' . "\r\n".
