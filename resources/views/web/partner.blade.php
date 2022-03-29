@@ -562,6 +562,7 @@
                 case "Costa Rica":codigo = "+506";break;
                 case "Ecuador":codigo = "+593";break;
                 case "El Salvador":codigo = "+503";break;
+                case "Estados Unidos":codigo = "+1";break;
                 case "Guatemala":codigo = "+502";break;
                 case "Honduras":codigo = "+504";break;
                 case "México":codigo = "+52";break;
