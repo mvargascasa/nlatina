@@ -420,7 +420,6 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">Nombre</th>
-                                    <th scope="col">Correo</th>
                                     <th scope="col">País</th>
                                     <th scope="col">Teléfono</th>
                                     <th scope="col">Mensaje</th>
@@ -431,11 +430,10 @@
                                     @foreach($partner->customers as $customer)
                                         <tr>
                                             <th>{{ $customer->nombre }}</th>
-                                            <td><a href="mailto:{{$customer->email}}">{{ $customer->email }}</a></td>
                                             <td>{{ $customer->pais }}</td>
                                             <td>{{ $customer->telefono }}</td>
                                             <td>{{ $customer->mensaje }}</td>
-                                            <td>{{ $customer->pivot->created_at }}</td>
+                                            <td>{{ Str::limit($$customer->pivot->created_at, 10, '') }}</td>
                                         </tr>      
                                     @endforeach
                                 </tbody>
