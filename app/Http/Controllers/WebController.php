@@ -1085,6 +1085,7 @@ class WebController extends Controller
             $subject = 'Alguien ha intentado ingresar en formulario del partner ' . $partner->name . " " . $partner->lastname;
             $message = "<br><strong><h3>Datos del cliente</h3></strong>
                         <br>Nombre: " . strip_tags($request->name). "
+                        <br>Email: " . strip_tags($request->email) . "
                         <br>País de residencia: " . strip_tags($request->country_residence) ."
                         <br>Teléfono: " . strip_tags($request->codpais) . " " . strip_tags($request->phone) ."
                         <br>Mensaje: " . strip_tags($request->mensaje) . "
@@ -1118,8 +1119,6 @@ class WebController extends Controller
                         <br><strong><h3>Partner al cual consulta</h3></strong>
                         <br>Nombre: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . "
                         <br>Pais: " . strip_tags($partner->country_residence) . "
-                        <br>Teléfono: " . strip_tags($partner->codigo_pais) . " " . strip_tags($partner->phone) ."
-                        <br>Email: " . strip_tags($partner->email) ."
                         <br>
                         <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
             ";
@@ -1140,13 +1139,14 @@ class WebController extends Controller
                         <br><strong><h3>La información del cliente es la siguiente:</h3></strong>
                         <p><b>Nombre:</b> " . strip_tags($request->name). "</p>
                         <p><b>País de residencia:</b> " . strip_tags($request->country_residence) ."</p>
-                        <p><b>Email:</b> " . strip_tags($request->email) . "</p>
                         <p><b>Teléfono:</b> " . strip_tags($request->codpais) . " " . strip_tags($request->phone) ."</p>
                         <p><b>Mensaje:</b> " . strip_tags($request->mensaje) . "</p>
                         <br>
                         <a href='https://notarialatina.com'><img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'></a>
                         </div>
             ";
+
+            //<p><b>Email:</b> " . strip_tags($request->email) . "</p>
     
             $headerPartner = 'From: <no-reply@notarialatina.com>' . "\r\n" .
                     'MIME-Version: 1.0' . "\r\n".

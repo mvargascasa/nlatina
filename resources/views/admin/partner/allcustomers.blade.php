@@ -15,7 +15,6 @@
                         <tr>
                             <th scope="col">Nombre</th>
                             <th scope="col">País</th>
-                            <th scope="col">Email</th>
                             <th scope="col">Teléfono</th>
                             <th scope="col">Mensaje</th>
                             <th scope="col">Partner</th>
@@ -31,7 +30,6 @@
                                         @endforeach
                                     </th>
                                     <td>{{ $customer->pais }}</td>
-                                    <td>{{ $customer->email }}</td>
                                     <td>{{ $customer->telefono }}</td>
                                     <td>{{ $customer->mensaje }}</td>
                                     <td>
