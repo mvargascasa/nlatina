@@ -247,8 +247,6 @@ class PartnerController extends Controller
     public function destroy($id)
     {
         $partner = Partner::find($id);
-
-        return $partner;
         
         // if($partner->img_profile != null){
         //     Storage::delete($partner->img_profile);
