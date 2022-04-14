@@ -430,9 +430,9 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 @if ($partner->numlicencia != null)
-                                                    {!! Form::label('numlicencia', 'Número de Licencia/Título Registrado', ['id' => 'Número de Licencia', 'style' => 'font-weight: bold']) !!}
+                                                    {!! Form::label('numlicencia', 'Número de Registro de Título', ['id' => 'Número de Licencia', 'style' => 'font-weight: bold']) !!}
                                                 @else
-                                                    {!! Form::label('numlicencia', 'Número de Licencia/Título Registrado *', ['id' => 'Número de Licencia', 'style' => 'color: red; font-weight: bold']) !!}
+                                                    {!! Form::label('numlicencia', 'Número de Registro de Título *', ['id' => 'Número de Licencia', 'style' => 'color: red; font-weight: bold']) !!}
                                                 @endif
                                                 @if ($partner->numlicencia != null)
                                                 {!! Form::text('numlicencia', $partner->numlicencia, ['class' => 'form-control']) !!}
