@@ -32,10 +32,10 @@
             </div>
             @endif --}}
             <div class="float-right" style="margin-right: 5px">
-                {!! Form::open(['route' => ['partner.destroy', $partner->id], 'method' => 'POST']) !!}
+                {!! Form::open(['route' => ['partner.destroy', $partner->id], 'method' => 'POST', 'id' => 'formdeletepartner']) !!}
                 @csrf
                 @method('delete')
-                {!! Form::submit('Eliminar Partner', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Estas seguro de eliminar este partner?')"]) !!}
+                {!! Form::button('Eliminar Partner', ['class' => 'btn btn-danger', 'onclick' => "validateDelete()"]) !!}
                 {!! Form::close() !!}
             </div>
             <div class="float-right mr-1">
@@ -522,6 +522,13 @@
             } else {
                 divCompanyName.style.display = "none";
             }
+        }
+
+        function validateDelete(){
+            let partner = prompt("Ingrese el nombre del partner a eliminar");
+            let name_partner = document.getElementById('name').value + " " + document.getElementById('lastname').value;
+            if(partner == name_partner)document.getElementById('formdeletepartner').submit();
+            else alert('Los nombres no coinciden, inténtelo nuevamente');    
         }
     </script>
 @endsection
