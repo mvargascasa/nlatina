@@ -31,13 +31,13 @@
                 {!! Form::close() !!}
             </div>
             @endif --}}
-            <div class="float-right" style="margin-right: 5px">
+            {{-- <div class="float-right" style="margin-right: 5px">
                 {!! Form::open(['route' => ['partner.destroy', $partner->id], 'method' => 'POST', 'id' => 'formdeletepartner']) !!}
                 @csrf
                 @method('delete')
                 {!! Form::button('Eliminar Partner', ['class' => 'btn btn-danger', 'onclick' => "validateDelete()"]) !!}
                 {!! Form::close() !!}
-            </div>
+            </div> --}}
             <div class="float-right mr-1">
                 <button class="btn btn-success" data-toggle="modal" data-target="#modalSendEmail">
                     Enviar correo
@@ -524,12 +524,12 @@
             }
         }
 
-        function validateDelete(){
-            let partner = prompt("Ingrese el nombre del partner a eliminar");
-            let name_partner = document.getElementById('name').value + " " + document.getElementById('lastname').value;
-            if(partner == name_partner)document.getElementById('formdeletepartner').submit();
-            else alert('Los nombres no coinciden, inténtelo nuevamente');    
-        }
+        // function validateDelete(){
+        //     let partner = prompt("Ingrese el nombre del partner a eliminar");
+        //     let name_partner = document.getElementById('name').value + " " + document.getElementById('lastname').value;
+        //     if(partner == name_partner)document.getElementById('formdeletepartner').submit();
+        //     else alert('Los nombres no coinciden, inténtelo nuevamente');    
+        // }
     </script>
 @endsection
 

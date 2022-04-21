@@ -41,7 +41,7 @@ Route::get('/home/partners/all-customers', 'PartnerController@showallcustomers')
 Route::post('/home/partners/verify/{partner}', 'PartnerController@verifiEmailAdmin')->name('verify.email.admin');
 Route::get('/home/partners/{partner}/show', 'PartnerController@show')->name('partner.show');
 Route::put('/home/partners/{partner}', 'PartnerController@update')->name('partner.update');
-Route::delete('/home/partners/delete/{id}', 'PartnerController@destroy')->name('partner.destroy');
+//Route::delete('/home/partners/delete/{id}', 'PartnerController@destroy')->name('partner.destroy');
 Route::post('home/partners/send-notification/{partner}', 'PartnerController@sendEmailPartner')->name('send.email.notification.partner');
 Route::post('home/partners/send/email/masivo', 'PartnerController@sendEmailMasivo')->name('partner.send.email.masivo');
 

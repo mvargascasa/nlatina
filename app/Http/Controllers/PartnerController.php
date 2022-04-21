@@ -244,18 +244,18 @@ class PartnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $partner = Partner::find($id);
+    // public function destroy($id)
+    // {
+    //     $partner = Partner::find($id);
         
-        // if($partner->img_profile != null){
-        //     Storage::delete($partner->img_profile);
-        // }
+    //     // if($partner->img_profile != null){
+    //     //     Storage::delete($partner->img_profile);
+    //     // }
 
-        $partner->delete();
+    //     $partner->delete();
 
-        return redirect()->route('partner.index');
-    }
+    //     return redirect()->route('partner.index');
+    // }
 
     public function verifiEmailAdmin(Partner $partner)
     {
