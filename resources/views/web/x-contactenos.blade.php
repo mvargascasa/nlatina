@@ -60,21 +60,23 @@
             <div class="row py-4">
               <div class="col-12 col-sm-6">
                       <p><b>New Jersey:</b>   
-                        <a href="https://goo.gl/maps/Vyp1NNQUZfyHsbGK8" target="_blank">
+                        <a href="https://g.page/r/CVNRV-zNuJiZEAE" target="_blank">
                           <span class="text-muted d-block"> 1146 East Jersey St  </span>
                           <span class="text-muted"> Elizabeth, NJ 07201</span>
                         </a> <br> 
                         <a href="tel:+19088009046" class="text-muted"><i class="fa fa-phone-square-alt"></i> 908 800 9046</a> <br> 
                       </p> 
               </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.415072742891!2d-74.21549248479062!3d40.664822548437684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24d541387e7ff%3A0x335c07b09362e483!2s1146%20E%20Jersey%20St%2C%20Elizabeth%2C%20NJ%2007201%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1627749319027!5m2!1ses!2sec" 
+              {{-- https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.415072742891!2d-74.21549248479062!3d40.664822548437684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24d541387e7ff%3A0x335c07b09362e483!2s1146%20E%20Jersey%20St%2C%20Elizabeth%2C%20NJ%2007201%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1627749319027!5m2!1ses!2sec --}}
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.4152619231436!2d-74.21548678459651!3d40.664818379336985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24dde7100d355%3A0x9998b8cdec575153!2sNotar%C3%ADa%20Latina%20en%20New%20Jersey!5e0!3m2!1ses-419!2sec!4v1650664174107!5m2!1ses-419!2sec" 
               class="col-12 col-sm-6" style="border:0;" allowfullscreen="" loading="lazy"></iframe>              
             </div>
+
 
             <div class="row py-4">
               <div class="col-12 col-sm-6">
                       <p><b>Florida:</b>   
-                        <a href="https://goo.gl/maps/eMiktdusgcyN3pXJ8" target="_blank">
+                        <a href="https://g.page/r/CeRrwPx_W2-xEAE" target="_blank">
                           <span class="text-muted d-block"> 2104 N University Dr </span>
                           <span class="text-muted"> Sunrise, FL 33322</span>
                         </a> <br> 
@@ -82,7 +84,8 @@
                         <!-- <a href="tel:+13053948840" class="text-muted"><i class="fa fa-phone-square-alt"></i> 305-394-8840</a> <br> -->
                       </p>
               </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4043926136424!2d-80.25914568500467!3d26.15095628346161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90638fe895e7b%3A0xaa63cebf0d7899!2s2104%20N%20University%20Dr%2C%20Sunrise%2C%20FL%2033322%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1620329582622!5m2!1ses!2sec" 
+              {{-- https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4043926136424!2d-80.25914568500467!3d26.15095628346161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90638fe895e7b%3A0xaa63cebf0d7899!2s2104%20N%20University%20Dr%2C%20Sunrise%2C%20FL%2033322%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1620329582622!5m2!1ses!2sec --}}
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4033736727556!2d-80.25873468497107!3d26.150989483461544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9072fab0cb6ff%3A0xb16f5b7ffcc06be4!2sNotar%C3%ADa%20P%C3%BAblica%20Latina%20en%20Florida!5e0!3m2!1ses-419!2sec!4v1650664300481!5m2!1ses-419!2sec" 
               class="col-12 col-sm-6" style="border:0;" allowfullscreen="" loading="lazy"></iframe>              
             </div>
 
