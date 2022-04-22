@@ -775,9 +775,9 @@ class WebController extends Controller
             $data['widthimgdown'] = '70%';
             $data['heightimgdown'] = '25rem';
             $data['paddingtop'] = '15px';
-            $data['urlmap'] = 'https://goo.gl/maps/au6rYtAggrYZ73XZ8';
-            $data['imgurlmap'] = "img/oficinas/maps-nj.webp";
-            $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile.webp";
+            $data['urlmap'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
+            $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
+            $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
             $data['metadescription'] .= 'Apostillamos todo tipo de documentos en New Jersey, de una manera rápida y segura';
             $data['keywords'] = 'notaria en new jersey, notarizar en new jersey, notaria cerca de mi, notary near me, apostille near me, apostille new jersey, carta poder en new jersey, traduccion en new jersey, apostillar documentos en new jersey, affidavít en new jersey, travel authorization en new jersey, certificar documentos en new jersey';
     
@@ -1066,9 +1066,9 @@ class WebController extends Controller
             $data['widthimgdown'] = '100%';
             $data['heightimgdown'] = '100%';
             $data['paddingtop'] = '0px';
-            $data['urlmap'] = "https://goo.gl/maps/FHLU1u7Atawjt3Xb8";
-            $data['imgurlmap'] = "img/oficinas/maps-fl.webp";
-            $data['imgurlmapmobile'] = "img/oficinas/maps-fl-mobile.webp";
+            $data['urlmap'] = "https://g.page/r/CeRrwPx_W2-xEAE";
+            $data['imgurlmap'] = "img/oficinas/maps-fl-2.webp";
+            $data['imgurlmapmobile'] = "img/oficinas/maps-fl-mobile-2.webp";
             $data['metadescription'] .= 'Apostillamos todo tipo de documentos en Florida, de una manera rápida y segura';
             $data['keywords'] = 'notaria en florida, notarizar en florida, notaria cerca de mi, notary near me, apostille near me, apostille florida, carta poder en florida, traduccion en florida, apostillar documentos en florida, affidavít en florida, travel authorization en florida, certificar documentos en florida';
 
