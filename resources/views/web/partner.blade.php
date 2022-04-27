@@ -234,9 +234,9 @@
                     <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p>
                     <p class="ml-5" style="cursor: pointer; background-color: #002542; padding-left: 1%; padding-right: 1%; border-radius: 5px;">Ver número</p>
                 </div> --}}
-                <div class="row d-flex">
+                {{-- <div class="row d-flex">
                     <a id="txtemail" style="text-decoration: none; color: #ffffff" href="mailto:{{$partner->email}}"><p class="ml-3"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p></a>
-                </div>
+                </div> --}}
             </div>
         </div>
 

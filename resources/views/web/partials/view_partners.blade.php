@@ -42,11 +42,11 @@
                                             </div>
                                             <br>
                                         </div>	
-                                        <div class="row" style="margin-top: -15px">
+                                        {{-- <div class="row" style="margin-top: -15px">
                                             <div class="col-sm-12">
                                                 <p class="txtDataPartner" style="font-size: 10px"><i class="far fa-envelope" style="margin-right: 5px;"></i>{{ Str::limit($partner->email, 42, '...') }}</p>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
