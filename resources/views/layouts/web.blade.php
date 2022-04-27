@@ -335,14 +335,16 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
     //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS
     if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida'))){
-
         document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
-
     } else {
         if(screen.width > 580){
             document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
         } 
     }
+    if(!path.match('/partners')){
+
+        console.log('true');
+
         var script3 = document.createElement("script");
 
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
@@ -357,17 +359,20 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             document.getElementsByTagName("script")[0].parentNode.appendChild(script);
         });
     
-    var script = document.createElement("script");
-    var script2 = document.createElement("script");
-    // var script3 = document.createElement("script");
-    
+        var script = document.createElement("script");
+        var script2 = document.createElement("script");
+        // var script3 = document.createElement("script");
+        
 
-    // script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
-    // script3.async = true;
-    script2.src = "{{ asset('js/popper.min.js') }}";
-    script2.async = true;
-    script.src = "{{ asset('js/bootstrap.min.js') }}";
-    script.async = true;
+        // script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
+        // script3.async = true;
+        script2.src = "{{ asset('js/popper.min.js') }}";
+        script2.async = true;
+        script.src = "{{ asset('js/bootstrap.min.js') }}";
+        script.async = true;
+
+    }
+
 
     // window.addEventListener("load", function(event){
     //     document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
