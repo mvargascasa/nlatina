@@ -122,6 +122,7 @@
                         @foreach ($partners as $partner)
                         <tr>
                             <td>
+                                
                                 @isset($partner->img_profile)
                                     <img src="{{ asset('storage/'.$partner->img_profile)}}" width="80px" height="80px">
                                 @else
@@ -156,7 +157,11 @@
                                     <b>Sin información</b> 
                                 @endisset
                             </td>
-                            <td>{{ $partner->status}}</td>
+                            <td>
+                                <div style="padding: 5px; border-radius: 5px; font-weight: 600; background-color: @if($partner->status == 'PUBLICADO') #38E51C; @elseif($partner->status == 'NO PUBLICADO') #BEBEBE; @elseif($partner->status == 'NO APLICA') #E53D19; @endif">
+                                    {{ $partner->status}}
+                                </div>
+                            </td>
                             <td>
                                 <a href="{{ route('partner.show', $partner ) }}" class="btn btn-info">Editar</a>
                             </td>
