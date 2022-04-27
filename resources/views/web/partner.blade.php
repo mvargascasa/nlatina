@@ -213,7 +213,7 @@
             <div id="divImgPartner" class="col-sm-2">
                 <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="200" height="260">
             </div>
-            <div class="col-sm-8 mt-3 info-header">
+            <div class="col-sm-8 mt-5 info-header">
                 <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
                 <h3 id="txtnamelastname"><b>
                     @if ($partner->title == "Abogado")
