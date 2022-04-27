@@ -353,8 +353,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
         });
 
-    if(!path.match('/partners')){
-        
         script3.addEventListener("load", function(event) {
             document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
             document.getElementsByTagName("script")[0].parentNode.appendChild(script);
@@ -371,8 +369,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         script2.async = true;
         script.src = "{{ asset('js/bootstrap.min.js') }}";
         script.async = true;
-
-    }
 
 
     // window.addEventListener("load", function(event){
