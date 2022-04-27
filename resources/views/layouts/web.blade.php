@@ -341,7 +341,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
         } 
     }
-    if(!path.match('/partners')){
 
         console.log('true');
 
@@ -354,6 +353,8 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
         });
 
+    if(!path.match('/partners')){
+        
         script3.addEventListener("load", function(event) {
             document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
             document.getElementsByTagName("script")[0].parentNode.appendChild(script);
