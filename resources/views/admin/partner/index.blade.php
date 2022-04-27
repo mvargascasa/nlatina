@@ -157,9 +157,9 @@
                                     <b>Sin información</b> 
                                 @endisset
                             </td>
-                            <td>
-                                <div style="padding: 5px; border-radius: 5px; font-weight: 600; background-color: @if($partner->status == 'PUBLICADO') #38E51C; @elseif($partner->status == 'NO PUBLICADO') #BEBEBE; @elseif($partner->status == 'NO APLICA') #E53D19; @endif">
-                                    {{ $partner->status}}
+                            <td class="text-center">
+                                {{ $partner->status}}
+                                <div style="padding: 2px; border-radius: 5px; font-weight: 600; background-color: @if($partner->status == 'PUBLICADO') #38E51C; @elseif($partner->status == 'NO PUBLICADO') #BEBEBE; @elseif($partner->status == 'NO APLICA') #E53D19; @endif">
                                 </div>
                             </td>
                             <td>
