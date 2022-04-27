@@ -8,6 +8,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Traits\GetCodByCountryTrait;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 
@@ -22,6 +23,9 @@ class RegisterController extends Controller
     }
 
     public function register(Request $request){
+
+        $statement = DB::select("SHOW TABLE STATUS LIKE 'partners'");
+        $nextId = $statement[0]->Auto_increment;
 
         // $codigoPais = $this->getCodByPais($request->country_residence);
         //CONDICION PARA QUE NO GUARDE LA INFO SI EL CODIGO DE PAIS NO EMPIEZA CON + | BOTS ESTABAN GUARDANDO ESTE CAMPO CON LETRAS ALEATORIAS (TLiCEZogI)
@@ -46,7 +50,7 @@ class RegisterController extends Controller
                 'company' => strip_tags($request['company']),
                 'email'=> $request['email'],
                 'password'=> bcrypt($request['password']),
-                'slug' => Str::slug($request['name'] . ' ' . $request['lastname'], '-')
+                'slug' => Str::slug($request['name'] . ' ' . $request['lastname'] . ' ' . $nextId, '-')
             ]);
     
             // event(new Registered($partner));

@@ -199,10 +199,6 @@ class PartnerController extends Controller
 
         $partner->save();
 
-        // if($request->status == "PUBLICADO" && $partner->fecha_publicado != null && Str::limit($partner->fecha_publicado, 10, '') == Str::limit(date(now()), 10, '')){ //|| ($request->status == "PUBLICADO" && $partner->fecha_publicado != date(now()))
-            
-        // }
-        
         return redirect()->back()->with('success', 'Se actualizaron los datos');
     }
 

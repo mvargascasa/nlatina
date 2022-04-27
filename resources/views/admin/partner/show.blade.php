@@ -73,7 +73,7 @@
                 <div class="col-sm-9">
                     <div class="d-flex">
                         <div>
-                            {!! Form::select('status',[null => 'SELECCIONE', 'NO PUBLICADO' => 'NO PUBLICADO','PUBLICADO' => 'PUBLICADO'], $partner->status,    ['class' => 'form-control custom-select']) !!}
+                            {!! Form::select('status',[null => 'SELECCIONE', 'NO PUBLICADO' => 'NO PUBLICADO','PUBLICADO' => 'PUBLICADO', 'NO APLICA' => 'NO APLICA'], $partner->status, ['class' => 'form-control custom-select']) !!}
                         @error('status')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
