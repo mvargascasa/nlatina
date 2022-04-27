@@ -1,7 +1,7 @@
 <div class="row justify-content-center" style="position: relative">
     <img id="imgBanner" style="width: 100%; height: 250px;"  src="{{ asset('img/partners/FONDO-PARTNERS.webp') }}" alt="">
     <div id="imgPareja" style="position: absolute; bottom: 0; left: 0; margin-left: 25%;">
-        <img style="width: 40%; bottom: 0" class="img-fluid float-rigth" src="{{ asset('img/partners/PAREJA NUEV-04.webp') }}" alt="">
+        <img style="width: 40%; height: 100%; bottom: 0" class="img-fluid float-rigth" src="{{ asset('img/partners/PAREJA NUEV-04.webp') }}" alt="">
     </div>
     <div class="row" style="position: absolute; top: 35%">
         <div class="col-4 col-sm-4">
