@@ -1238,6 +1238,9 @@ class WebController extends Controller
         $rating = new Rating();
         $rating->user_id = $partner->id;
         $rating->rating = $request->input('star');
+        $rating->comment = strip_tags($request->mensajeRating);
+        $rating->name_customer = strip_tags($request->nameRating);
+        $rating->country = $request->country_residenceRating;
         $partner->ratings()->save($rating);
 
         $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com," . $partner->email;

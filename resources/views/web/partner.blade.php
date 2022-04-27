@@ -317,9 +317,23 @@
                             </span>
                         @endforeach
                     </div>
-                    <div style="color: #9A7A2E">  
-                        <p>{{ $partner->timesRated()}} opiniones</p>
-                    </div>
+                    @php
+                        $bandera = false;
+                        foreach($partner->ratings as $rating){
+                            if($rating->comment != null){
+                                $bandera = true;
+                            }
+                        }   
+                    @endphp
+                    @if ($bandera)
+                        <div class="mt-2" style="color: #9A7A2E; cursor: pointer" data-toggle="modal" data-target="#modalComentarios">  
+                            <p>{{ $partner->timesRated()}} @if($partner->timesRated() > 1) comentarios @else comentario @endif</p>
+                        </div>
+                    @else
+                        <div class="mt-2" style="color: #9A7A2E">  
+                            <p>{{ $partner->timesRated()}} @if($partner->timesRated() > 1) comentarios @else comentario @endif</p>
+                        </div>
+                    @endif
                 </div>
                 <div class="formContact mt-4 rounded">
                     <h5 class="text-white text-center p-3">Realice aquí una consulta</h5>
@@ -462,6 +476,34 @@
                 </div>
             </div>
         </div>
+
+        {{-- modal para mostrar los comentarios que le hicieron al partner --}}
+        <div class="modal fade" id="modalComentarios" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: #002542; color: #ffffff">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Comentarios</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    @foreach ($partner->ratings as $rating)
+                        <i>"{{ $rating->comment }}"</i>
+                        @php
+                            $country = $rating->country;
+                            if(str_contains($country, 'á')){$country = str_replace('á', 'a', $country);}
+                            elseif(str_contains($country, 'é')){$country = str_replace('é', 'e', $country);}
+                            elseif(str_contains($country, 'ú')){$country = str_replace('ú', 'u', $country);}
+                            $country = strtolower($country);
+                        @endphp
+                        <p class="text-muted" style="font-size: 15px"><img src="{{ asset('img/partners/' . Str::studly($country) . '.png') }}" alt="{{ $rating->country }}"> {{ $rating->name_customer }}</p>
+                        <hr>             
+                    @endforeach
+                </div>
+              </div>
+            </div>
+          </div>
 
         {{--ESTO ES PARA MI PERFIL--}}
         @if ($partner->name . " " . $partner->lastname == "Sebastian Armijos")

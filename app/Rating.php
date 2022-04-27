@@ -11,7 +11,10 @@ class Rating extends Model
     public $fillable = [
         'rating',
         // 'rateable_id',
-        'partner_id'
+        'partner_id',
+        'comment',
+        'name_customer',
+        'country'
     ];
 
     // public function rateable(){
