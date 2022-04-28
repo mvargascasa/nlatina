@@ -495,9 +495,8 @@
                             if(str_contains($country, 'á')){$country = str_replace('á', 'a', $country);}
                             elseif(str_contains($country, 'é')){$country = str_replace('é', 'e', $country);}
                             elseif(str_contains($country, 'ú')){$country = str_replace('ú', 'u', $country);}
-                            $country = strtolower($country);
                         @endphp
-                        <p class="text-muted" style="font-size: 15px"><img src="{{ asset('img/partners/' . Str::studly($country) . '.png') }}" alt="{{ $rating->country }}"> {{ $rating->name_customer }}</p>
+                        <p class="text-muted" style="font-size: 15px"><img src="{{ asset('img/partners/' . Str::lower(Str::studly($country)) . '.png') }}" alt="{{ $rating->country }}"> {{ $rating->name_customer }}</p>
                         <hr>             
                     @endforeach
                 </div>
