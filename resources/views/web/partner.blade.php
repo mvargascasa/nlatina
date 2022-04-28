@@ -489,15 +489,17 @@
                 </div>
                 <div class="modal-body">
                     @foreach ($partner->ratings as $rating)
-                        <i>"{{ $rating->comment }}"</i>
-                        @php
-                            $country = $rating->country;
-                            if(str_contains($country, 'á')){$country = str_replace('á', 'a', $country);}
-                            elseif(str_contains($country, 'é')){$country = str_replace('é', 'e', $country);}
-                            elseif(str_contains($country, 'ú')){$country = str_replace('ú', 'u', $country);}
-                        @endphp
-                        <p class="text-muted" style="font-size: 15px"><img src="{{ asset('img/partners/' . Str::lower(Str::studly($country)) . '.png') }}" alt="{{ $rating->country }}"> {{ $rating->name_customer }}</p>
-                        <hr>             
+                        @if($rating->comment != null || $rating->name_customer != null)
+                            <i>"{{ $rating->comment }}"</i>
+                            @php
+                                $country = $rating->country;
+                                if(str_contains($country, 'á')){$country = str_replace('á', 'a', $country);}
+                                elseif(str_contains($country, 'é')){$country = str_replace('é', 'e', $country);}
+                                elseif(str_contains($country, 'ú')){$country = str_replace('ú', 'u', $country);}
+                            @endphp
+                            <p class="text-muted" style="font-size: 15px"><img src="{{ asset('img/partners/' . Str::lower(Str::studly($country)) . '.png') }}" alt="{{ $rating->country }}"> {{ $rating->name_customer }}</p>
+                            <hr>   
+                        @endif          
                     @endforeach
                 </div>
               </div>
