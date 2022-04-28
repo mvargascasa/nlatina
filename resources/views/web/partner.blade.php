@@ -366,7 +366,7 @@
                             <input type="hidden" name="codpais" id="codTelfPais">
                             <input class="form-control" type="number" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
                         </div>
-                        <textarea class="form-control" id="mensaje" rows="4" placeholder="Mensaje" name="mensaje" autocomplete="off" required></textarea>
+                        <textarea class="form-control" id="mensaje" rows="4" placeholder="Me encantaría poder ayudarle..." name="mensaje" autocomplete="off" required>Hola, me interesa consultar por sus servicios y deseo que me contacten</textarea>
                         <div style="display: none">
                             <input type="hidden" name="aux">
                         </div>
