@@ -14,7 +14,7 @@
     <meta property="og:description" content="Abogados y Notarias en Latinoamérica a su alcance | Notaria Latina"/>
     <meta property="og:type" content="article"/>
     <meta property="og:locale" content="es"/>
-    <meta property="og:image" content="https://notarialatina.com/img/partners/ogimg-partners.jpeg"/>
+    <meta property="og:image" content="https://notarialatina.com/img/partners/ogimg-partners.jpg"/>
 
     <style>
         /*QUITAR LA ETIQUETA DE TELEFONO DE LA ESQUINA SUPERIOR DERECHA EN LA PAGINA DE LOS PARTNERS*/
