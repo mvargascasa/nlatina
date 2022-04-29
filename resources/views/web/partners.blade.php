@@ -8,6 +8,14 @@
     <title>Abogados y Notarias en Latinoamérica a su alcance | Notaria Latina</title>
     <meta name="description" content="👨‍⚖️ Contamos con un amplio directorio de abogados y notarios en Latinoamérica para ayudarlo a gestionar sus trámites | Notaria Latina">
     <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil, @foreach($countriesmeta as $country)abogado en {{Str::lower($country->country_residence)}},@endforeach abogados latinos, notarias cerca de mi abiertas">
+    
+    <meta property="og:site_name" content="https://notarialatina.com"/>
+    <meta property="og:url" content="{{ Request::url() }}"/>
+    <meta property="og:description" content="Abogados y Notarias en Latinoamérica a su alcance | Notaria Latina"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:locale" content="es"/>
+    <meta property="og:image" content="https://notarialatina.com/img/partners/ogimg-partners.jpeg"/>
+
     <style>
         /*QUITAR LA ETIQUETA DE TELEFONO DE LA ESQUINA SUPERIOR DERECHA EN LA PAGINA DE LOS PARTNERS*/
         #etiquetaPhone{
