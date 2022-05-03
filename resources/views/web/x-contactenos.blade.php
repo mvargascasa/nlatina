@@ -73,7 +73,7 @@
             </div>
 
 
-            <div class="row py-4">
+            {{-- <div class="row py-4">
               <div class="col-12 col-sm-6">
                       <p><b>Florida:</b>   
                         <a href="https://g.page/r/CeRrwPx_W2-xEAE" target="_blank">
@@ -83,11 +83,11 @@
                         <a href="tel:+13056003290" class="text-muted"><i class="fa fa-phone-square-alt"></i> 305-600-3290</a> <br> 
                         <!-- <a href="tel:+13053948840" class="text-muted"><i class="fa fa-phone-square-alt"></i> 305-394-8840</a> <br> -->
                       </p>
-              </div>
+              </div> --}}
               {{-- https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4043926136424!2d-80.25914568500467!3d26.15095628346161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90638fe895e7b%3A0xaa63cebf0d7899!2s2104%20N%20University%20Dr%2C%20Sunrise%2C%20FL%2033322%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1620329582622!5m2!1ses!2sec --}}
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4033736727556!2d-80.25873468497107!3d26.150989483461544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9072fab0cb6ff%3A0xb16f5b7ffcc06be4!2sNotar%C3%ADa%20P%C3%BAblica%20Latina%20en%20Florida!5e0!3m2!1ses-419!2sec!4v1650664300481!5m2!1ses-419!2sec" 
+              {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4033736727556!2d-80.25873468497107!3d26.150989483461544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9072fab0cb6ff%3A0xb16f5b7ffcc06be4!2sNotar%C3%ADa%20P%C3%BAblica%20Latina%20en%20Florida!5e0!3m2!1ses-419!2sec!4v1650664300481!5m2!1ses-419!2sec" 
               class="col-12 col-sm-6" style="border:0;" allowfullscreen="" loading="lazy"></iframe>              
-            </div>
+            </div> --}}
 
             <h4 class="p-1">Whatsapp</h4>
             <a class="text-muted d-block" href="https://api.whatsapp.com/send?phone=+13478460082" target="_blank"><i class="fab fa-whatsapp"></i> 347 846 0082</a>
