@@ -32,29 +32,38 @@
   </section>
 
 <div class="container pt-4">
-    <h3>Los acuerdos son un pacto firmado entre dos o más personas que están de acuerdo con lo estipulado en el documento.</h3>
-            <h3>¿Para que me sirve realizar un acuerdo?</h3>
-            <p class="text-muted">Para comprometer a las dos personas a cumplir con  obligaciones y derechos establecidos por ley.</p>
-
-            <h3>¿Que requisitos necesito para realizar un acuerdo?</h3>
-            <ul class="text-muted">
-                <li>Identificación válida de las personas que van a realizar el acuerdo.</li>
-                <li>Información de lo que se quiere dejar estipulado en el acuerdo.</li>
-            </ul>
-
-            <h3>¿Donde puedo realizar un acuerdo?</h3>
-            <p class="text-muted">Acérquese a nuestra oficina y un asesor lo guiará en la gestión del documento para que realice el trámite de manera correcta y segura.</p>
-
-       <h3>¿En que tiempo me entregan los acuerdos?</h3>
-        <ul class="text-muted">
-            <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
-            <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
-            <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
-        </ul>
-        <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
-            <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 border-left border-right pl-5 pr-5">
+      <h3>¿Qué es un acuerdo?</h3>
+      <p class="text-muted">Un acuerdo en un convenio firmado entre dos o más personas frente a un tema en el cual se tienen opiniones diferentes por ambas partes.</p>
+              <h3>¿Para que me sirve realizar un acuerdo?</h3>
+              <p class="text-muted">El objetivo de un acuerdo es el de buscar una posición común entre ambas partes y de esta manera llegar a un acuerdo. Una vez realizado el mismo, este sirve para comprometer a las dos personas a cumplir con obligaciones y derechos establecidos por ley.</p>
+  
+              <h3>¿Que requisitos necesito para realizar un acuerdo?</h3>
+              <ul class="text-muted">
+                  <li>Identificación válida de las personas que van a realizar el acuerdo.</li>
+                  <li>Información de lo que se quiere dejar estipulado en el acuerdo.</li>
+              </ul>
+  
+              <h3>¿Donde puedo realizar un acuerdo?</h3>
+              <p class="text-muted"><b style="font-weight: 500; cursor: pointer" data-toggle="modal" data-target="#exampleModal">Complete el siguiente formulario </b> con toda su informacion o acérquese a nuestra oficina y un asesor lo guiará en la gestión del documento para que realice el trámite de manera correcta y segura.</p>
+  
+         <h3>¿En que tiempo me entregan los acuerdos?</h3>
+          <ul class="text-muted">
+              <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+              <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+              <li>El documento digital estará disponible en 24 horas.</li>
+              <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+          </ul>
+          <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+              <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+              <div class="d-flex justify-content-center">
+                <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+              </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
 </div>
 
  <!-- Modal -->

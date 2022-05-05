@@ -659,7 +659,7 @@ class WebController extends Controller
                     </ol>
                     <ul><li><h3 id='title'>¿Ante que autoridad puedo solicitar una autorización de viaje?</h3></li></ul>
                     <p>Las autorizaciones de viaje se pueden tramitar ante cualquier Notaría Pública en el territorio en el que se encuentre. Si necesita solicitar o apostillar
-                        una autorización de viaje acérquese a nuestra oficina con los requisitos necesarios o <b>complete el siguiente formulario</b> y una asesor lo contáctara
+                        una autorización de viaje acérquese a nuestra oficina en ". $data['office']." con los requisitos necesarios o <b>complete el siguiente formulario</b> y una asesor lo contáctara
                         para guiarlo de una manera correcta y segura.
                     </p>";
                     return view('web.office.apostille_layout', compact('data'));
