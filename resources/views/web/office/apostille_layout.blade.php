@@ -46,7 +46,7 @@
             @foreach ($data['content'] as $content)
                 <p>{{$index++}}. {{ $content}}</p>
             @endforeach
-            <p><a href="#card" style="text-decoration: none; color: #000000; font-weight: 500">{{ $index }}. SOLICITAR AUTORIZACIÓN DE VIAJE</a></p>
+            <p><a href="#card" style="text-decoration: none; color: #000000; font-weight: 500">{{ $index }}. Solicitar {{ $data['description'] }}</a></p>
         </div>
         <div class="col-sm-8">
             {!! $data['body'] !!}

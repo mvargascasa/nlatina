@@ -579,12 +579,53 @@ class WebController extends Controller
                     $data['description'] = 'Certificados de Matrimonio';
                     $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Matrimonio en New Jersey? Notaria Latina te ayuda de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar certificado de matrimonio near me, apostillar certificado de matrimonio en new jersey, apostillar acta de matrimonio en new jersey, apostilla matrimonio new jersey, apostillar partida de matrimonio new jersey, apostille marriage certificate, apostille marriage certificate new jersey, donde apostillar certificado de matrimonio en new jersey";
+                    $data['content'] = ['¿Qué es un certificado de matrimonio?','¿Para qué sirve el certificado de matrimonio?','¿Cómo registrar un matrimonio en el extranjero?','¿Qué requisitos se necesita para un certificado de matrimonio?','¿Donde puedo obtener un certificado de matrimonio?'];
+                    $data['body'] = "<ul><li><h3>¿Qué es un certificado de matrimonio?</h3></li></ul>
+                    <p>El acta o certificado de matrimonio es un documento que se encarga afirmar y legalizar la unión matrimonial entre dos personas. Dicho documento 
+                        contiene información importante como el lugar, fecha y hora en el cual se realizó dicho proceso.
+                    </p>
+                    <ul><li><h3>¿Para qué sirve el certificado de matrimonio?</h3></li></ul>
+                    En pocas palabras, el certificado o acta de matrimonio sirve para preservar y garantizar la unión matrimonial. Además de esto, este documento
+                    permite verificar que contrajo matrimonio, lo cual lo ayudará para realizar ciertos trámites.
+                    <ul><li><h3>¿Cómo registrar un matrimonio en el extranjero?</h3></li></ul> 
+                    <p>Si un acto matrimonial se lleva a cabo en el exterior, deberá inscribir y certificar en el Consulado respectivo, el cual a su vez se comunicará
+                        con el registro civil del país para proceder con el trámite.
+                    </p>
+                    <ul><li><h3>¿Qué requisitos se necesita para un certificado de matrimonio?</h3></li></ul>
+                    <p>Para dar paso con el proceso de obtención del certificado de matrimonio, necesita tener presente lo siguiente:</p>
+                    <ul>
+                        <li>Nombres completos de las personas a contraer matrimonio</li>
+                        <li>Fecha que se llevo a cabo el matrimonio</li>
+                        <li>Lugar donde se celebró el matrimonio</li>
+                        <li>Parentesco de quien lo solicita</li>
+                        <li>Nombre completo del solicitante</li>
+                    </ul>
+                    <ul><li><h3>¿Donde puedo obtener un certificado de matrimonio?</h3></li></ul>
+                    <p>
+                        Si desea solicitar o apostillar un certificado de matrimonio puede realizarlo completando el siguiente formulario con su información o acercarse a nuestras oficinas donde un asesor se contactará para ayudarlo
+                        en el proceso de una manera correcta y segura.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-defuncion-new-jersey':
                     $data['description'] = 'Certificados de Defunción';
                     $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Defunción en New Jersey? Nosotros te ayudamos con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar certificado de defuncion, apostillar certificado de defuncion near me, apostillar certificado de defuncion en new jersey, apostillar acta de defuncion en new jersey, como apostillar un certificado de defuncion, apostillado de certificado de defuncion, apostille death certificate new jersey, apostille death certificate near me, donde apostillar certificado de defuncion en new jersey";
+                    $data['content'] = ['¿Qué es un certificado de defunción?','¿Para que me sirve un certificado de defunción?','¿Quién puede tramitar el certificado de defunción?','¿Ante que autoridad puedo solicitar un certificado de defunción?'];
+                    $data['body'] = "<ul><li><h3>¿Qué es un certificado de defunción?</h3></li></ul>
+                    <p>Un acta, partida o certificado de defunción es un documento mediante el cual termina cualquier proceso administrativo que la persona haya tenido en vida.</p>
+                    <ul><li><h3>¿Para que me sirve un certificado de defunción?</h3></li></ul>
+                    <p>Además de que un certificado de defunción permite a los familiares de la persona difunta llevar ciertos trámites, es el único medio de suspender completamente sus obligaciones frente al Estado y ante cualquier otra
+                        institución con la que hubiera tenido algún compromiso.
+                    </p>
+                    <ul><li><h3>¿Quién puede tramitar el certificado de defunción?</h3></li></ul>
+                    <p>La primera persona que tiene derecho ha tramitar este certificado de defunción es la pareja o cónyuge del difunto. Ante cualquier circunstancia
+                        de que esta persona no pueda hacerlo, lo realizarán los familiares más cercanos de la persona que falleció.
+                    </p>
+                    <ul><li><h3 id='title'>¿Ante que autoridad puedo solicitar un certificado de defunción?</h3></li></ul>
+                    <p>Si desea tramitar o apostillar un acta o certificado de defunción puede completar el siguiente formulario con su información o acercarse a nuestras oficinas en 
+                        donde un asesor se comunicará con usted para guiarlo en el trámite de una manera correcta y segura.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-divorcio-new-jersey':
