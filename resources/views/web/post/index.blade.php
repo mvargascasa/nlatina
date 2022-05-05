@@ -49,7 +49,7 @@
                         <span class="d-block text-muted font-weight-bold text-truncate "
                                 style="font-size:1rem">{{$post->name}}</span>
                         <span class="d-block text-muted text-truncate">
-                            <?php echo strip_tags(substr($post->body,0,100))  ?>
+                            <?php echo strip_tags(substr($post->body,0,300))  ?>
                         </span>
                         <div class="small text-muted float-left">{{$post->created_at->format('M d')}}</div>
                         </div>

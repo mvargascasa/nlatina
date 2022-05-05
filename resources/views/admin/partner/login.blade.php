@@ -38,10 +38,10 @@
         }
         @media screen and (max-width: 580px){
             #lista{
-                margin-top: 20% !important;
+                margin-top: 0px !important;
             }
             #lista > li{
-                color: #000000;
+                color: #ffffff;
             }
             #formLoginOculto{
                 display: block;
@@ -62,7 +62,7 @@
             {{--DIV PARA MOSTRAR EM MOVIL QUE SALGA PRIMERO--}}
             <div id="formLoginOculto" class="col-sm-4 mb-4">
                 <div class="mx-2 mt-1">
-                    <h4 style="font-weight: bold">Iniciar Sesión</h4>
+                    <h1 style="font-weight: bold">Iniciar Sesión</h1>
                     <form action="{{ route('socios.login') }}" method="POST">
                         @csrf
                         <div class="form-outline mb-4">
@@ -132,7 +132,7 @@
             </div>
             <div id="formLogin" class="col-sm-4">
                 <div class="mx-2 mt-1">
-                    <h4 style="font-weight: bold">Iniciar Sesión</h4>
+                    <h1 style="font-weight: bold">Iniciar Sesión</h1>
                     <form action="{{ route('socios.login') }}" method="POST">
                         @csrf
                         <div class="form-outline mb-4">

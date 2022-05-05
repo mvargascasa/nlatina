@@ -290,8 +290,8 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
     <div>
         <div class="row justify-content-center align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-sm-6 col-12 text-white">
-                <h4 id="titlemovil" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> <br> en los <b>ESTADOS UNIDOS</b></h4>
-                <h4 id="titlepc" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> en los <b>ESTADOS UNIDOS</b></h4>
+                <h1 id="titlemovil" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> <br> en los <b>ESTADOS UNIDOS</b></h1>
+                <h1 id="titlepc" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> en los <b>ESTADOS UNIDOS</b></h1>
                 <h4 style="margin-left: 25%; color: #fec02f" class="font-weight-bold subtitle"><i>Regístrese ahora..!</i></h4>
             </div>
             <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
