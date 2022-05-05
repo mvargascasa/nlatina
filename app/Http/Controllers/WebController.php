@@ -639,6 +639,29 @@ class WebController extends Controller
                     $data['description'] = 'Autorización de Viaje';
                     $data['metadescription'] .= "¿Necesitas apostillar una Autorización de Viaje en New Jersey? Notaria Latina podemos ayudarte con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar autorizacion de viaje, apostillar autorizacion de viaje near me, apostillar autorizacion de viaje new jersey, apostille travel authorization, apostille travel authorization near me, apostille travel authorization new jersey, donde apostillar autorizacion de viaje en new jersey";
+                    $data['content'] = ['¿Qué es una autorización de viaje?','¿En qué situaciones se pide una autorización de viaje?','¿Qué requisitos necesito para la autorización de un viaje?','¿Ante que autoridad puedo solicitar una autorización de viaje?'];
+                    $data['body'] = "<ul><li><h3 id='title'>¿Qué es una autorización de viaje?</h3></li></ul>
+                    <p>Una autorización de viaje es un escrito en el cual uno o ambos padres autorizan el viaje, dentro o fuera del país, de su hijo o hija menor de edad, ya sea con los mismos, algún familiar o solos.</p>
+                    <ul><li><h3 id='title'>¿En qué situaciones piden la autorización de viaje?</h3></li></ul>
+                    <p>La autorización de viaje se puede solicitar cuando:</p>
+                    <ol>
+                        <li>El menor de edad viaja dentro o fuera del país sin ninguno de sus padres</li>
+                        <li>El menor de edad viaje con terceras personas, las cuales pueden ser familiares</li>
+                    </ol>
+                    <ul><li><h3 id='title'>¿Qué requisitos necesito para la autorización de viaje?</h3></li></ul>
+                    <p>Los requerimientos para solicitar una autorización de viaje son los siguientes:</p>
+                    <ol>
+                        <li>Identificación de uno o ambos padres o de su representante legal</li>
+                        <li>Nombres y apellidos del menor de edad</li>
+                        <li>Fecha de nacimiento del menor</li>
+                        <li>En caso de que viaje con una tercera persona, nombres y apellidos de la misma</li>
+                        <li>Información del vuelo</li>
+                    </ol>
+                    <ul><li><h3 id='title'>¿Ante que autoridad puedo solicitar una autorización de viaje?</h3></li></ul>
+                    <p>Las autorizaciones de viaje se pueden tramitar ante cualquier Notaría Pública en el territorio en el que se encuentre. Si necesita solicitar o apostillar
+                        una autorización de viaje acérquese a nuestra oficina con los requisitos necesarios o <b>complete el siguiente formulario</b> y una asesor lo contáctara
+                        para guiarlo de una manera correcta y segura.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-poder-notarial-personal-new-jersey':
