@@ -650,6 +650,28 @@ class WebController extends Controller
                     $data['description'] = 'Certificados de Divorcio';
                     $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Divorcio en New Jersey? En Notaria Latina te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar certificado de divorcio, apostillar acta de divorcio, apostillar certificado de divorcio near me, apostillar certificado de divorcio en new jersey, apostilllar acta de divorcio new jersey, apostillar sentencia de divorcio new jersey, apostille divorce certificate new jersey, apostille divorce certificate near me, donde apostillar certificado de divorcio en new jersey";
+                    $data['content'] = ['¿Qué es un acta o certificado de divorcio?','¿Para qué se utiliza un certificado de divorcio?','¿Cuáles son los requisitos necesarios para un certificado de divorcio?','¿Donde puedo obtener el certificado de divorcio?'];
+                    $data['body'] = "<ul><li><h3>¿Qué es un acta o certificado de divorcio?</h3></li></ul>
+                    <p>El certificado de divorcio es un escrito mediante el cual constata legalmente la separación de una pareja que estaba unida en matrimonio</p>
+                    <ul><li><h3>¿Para qué se utiliza un certificado de divorcio?</h3></li></ul>
+                    <p>Dicho documento es necesario para realizar distintos trámites dependiendo del país en el que se encuentre. Por ejemplo se solicita este documento cuando
+                        una persona contrae nuevamente matrimonio.
+                    </p>
+                    <p>En Estados Unidos, este certificado es obligado para aquellos migrantes que soliciten el <i>Green Card</i> (Permiso de residencia permanente), para realizar cualquier tipo de trámite, renovar visa o pasaporte, etc.</p>
+                    <ul><li><h3>¿Cuáles son los requisitos necesarios para un certificado de divorcio?</h3></li></ul>
+                    <p>Entre los requerimientos que se solicitan para obtener dicho documento se encuentran los siguientes:</p>
+                    <ol>
+                        <li>Copia de certificado de nacimiento del esposa y esposa</li>
+                        <li>En caso de tener hijos, copia del certificado de nacimiento de cada uno de ellos</li>
+                        <li>Copia del certificado de matrimonio</li>
+                        <li>Copia del documento de identidad</li>
+                        <li>Solicitud y acuerdo de divorcio realizado por el abogado</li>
+                        <li>Poder que se concede al abogado</li>
+                    </ol>
+                    <ul><li><h3>¿Donde puedo obtener el certificado de divorcio?</h3></li></ul>
+                    <p>Si desea realizar dicho trámite puede completar el siguiente formulario con su información y un asesor se contactará con usted. O puede visitar
+                        nuestras oficinas en ... donde se le brindará la ayuda necesaria con el trámite en gestión.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-naturalizacion-new-jersey':
@@ -839,6 +861,29 @@ class WebController extends Controller
                     $data['description'] = 'Declaración Jurada Comercial';
                     $data['metadescription'] .= "¿Necesitas apostillar una Declaración Jurada Comercial en New Jersey? Nosotros te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar declaracion jurada comercial, apostillar affidavit comercial, apostillar declaracion jurada comercial near me, apostillar declaracion jurada comercial new jersey, apostille commercial affidavit new jersey, apostillar affidavir comercial new jersey, donde apostillar affidavit comercial en new jersey";
+                    $data['content'] = ['¿Qué es una declaración juramentada comercial?','¿Para qué sirve una declaración juramentada?','¿Ante que situaciones necesito una declaración juramentada?','¿Qué requisitos son necesarios para una declaración juramentada?','¿Donde puedo solicitar una declaración juramentada?'];
+                    $data['body'] = "<ul><li><h3>¿Qué es una declaración juramentada comercial?</h3></li></ul>
+                    <p>Una declaración juramentada es una documento mediante el cual una persona manifiesta una situación o un hecho, el mismo que es verificado y garantizado mediante una autoridad competente</p>
+                    <ul><li><h3>¿Para qué sirve una declaración juramentada?</h3></li></ul>
+                    <p>El objetivo de dicho documento es generar un compromiso legal de la persona que hace la declaración acorde a lo que esta estipulado en el escrito. Es decir, el declarante se compromote
+                        con la veracidad de lo que ha manifestado. En la mayoría de los casos se utilizan para reunir pruebas en un juicio o en otros aspectos como asuntos familiares, bienes raíces, etc.
+                    </p>
+                    <ul><li><h3>¿Ante que situaciones necesito una declaración juramentada?</h3></li></ul>
+                    <p>La declaración juramentada puede ser necesaria para diferentes situaciones, entre las cuales perfilan los ingresos de una persona, situación familiar o para declarar que una personas cumple con ciertos
+                        requerimientos necesarios para realizar algún trámite legal.
+                    </p>
+                    <ul><li><h3>¿Qué requisitos son necesarios para una declaración juramentada?</h3></li></ul>
+                    <p>Una declaración juramentada debe satisfacer los siguientes requisitos:</p>
+                    <ol>
+                        <li>Nombres y dirección del solicitante</li>
+                        <li>Firma de la persona que solicita, testigos y notario</li>
+                        <li>La declaración debe estar acorde a la postura del declarante</li>
+                        <li>Dicho documento no debe ser obligado para los testigos, es decir debe ser voluntaria</li>
+                    </ol>
+                    <ul><li><h3>¿Donde puedo solicitar una declaración juramentada?</h3></li></ul>
+                    <p>Si necesita apostillar u obtener una declaración juramentada puede completar el siguiente formulario o acercarse a nuestras oficinas en ... para que un asesor pueda
+                        contactarse con usted y brindarle la asesoría necesaria.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-fda-new-jersey':
