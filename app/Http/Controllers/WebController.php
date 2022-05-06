@@ -670,7 +670,7 @@ class WebController extends Controller
                     </ol>
                     <ul><li><h3>¿Donde puedo obtener el certificado de divorcio?</h3></li></ul>
                     <p>Si desea realizar dicho trámite puede completar el siguiente formulario con su información y un asesor se contactará con usted. O puede visitar
-                        nuestras oficinas en ... donde se le brindará la ayuda necesaria con el trámite en gestión.
+                        nuestras oficinas en ".$data['office']." donde se le brindará la ayuda necesaria con el trámite en gestión.
                     </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
