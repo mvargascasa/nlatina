@@ -567,6 +567,25 @@ class WebController extends Controller
                     $data['description'] = 'Certificados de Nacimiento';
                     $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Nacimiento en New Jersey? En Notaria Latina te ayudamos de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar acta de nacimiento near me, apostillar partida de nacimiento new jersey, apostillar inscripcion de nacimiento new jersey, apostillar certificado de nacimiento new jersey, apostillar acta de nacimiento new jersey, donde apostillar certificado de nacimiento en new jersey";
+                    $data['content'] = ['¿Qué es un certificado de nacimiento?','¿Qué información contiene el certificado de nacimiento?','¿Para qué sirve la partida de nacimiento?','¿Donde puedo obtener un certificado de nacimiento?'];
+                    $data['body'] = "<ul><li><h3>¿Qué es un certificado de nacimiento?</h3></li></ul>
+                    <p>El certificado o acta de nacimiento es un documento emitido por el Registro Civil o Consulado respectivo, en el cual se da prueba del lugar, fecha
+                        y hora del nacimiento, al igual que toda la información correspondiente como nombres y apellidos, sexo, etc.
+                    </p>
+                    <ul><li><h3>¿Qué información contiene el certificado de nacimiento?</h3></li></ul>
+                    <p>En sí, el certificado de nacimiento contiene información básica del nacimiento y su inscripción. Entre estos consta datos como 
+                        los nombres y apellidos del titular, lugar, fecha y hora del nacimiento, al igual que el nombre de los progenitores. 
+                    </p>
+                    <ul><li><h3>¿Para qué sirve la partida de nacimiento?</h3></li></ul>
+                    <p>El acta o certificado de nacimiento es un documento esencial para llevar a cabo distintos trámites.</p>
+                    <p>Entre estos pueden perfilar los siguientes:</p>
+                    <ul>
+                        <li>Obtener o renovar el documento de Identidad o Pasaporte</li>
+                        <li>Para contraer matrimonio, trabajar fuera del país u obtener algun beneficio social</li>
+                        <li>Solicitar permiso de paternidad</li>
+                    </ul>
+                    <ul><li><h3>¿Donde puedo obtener un certificado de nacimiento?</h3></li></ul>
+                    <p>Puede completar el siguiente formulario o dirigirse personalmente a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera correcta y segura.</p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-reporte-consular-new-jersey':
@@ -602,7 +621,7 @@ class WebController extends Controller
                     </ul>
                     <ul><li><h3>¿Donde puedo obtener un certificado de matrimonio?</h3></li></ul>
                     <p>
-                        Si desea solicitar o apostillar un certificado de matrimonio puede realizarlo completando el siguiente formulario con su información o acercarse a nuestras oficinas donde un asesor se contactará para ayudarlo
+                        Si desea solicitar o apostillar un certificado de matrimonio puede realizarlo completando el siguiente formulario con su información o acercarse a nuestras oficinas en ".$data['office']." donde un asesor se contactará para ayudarlo
                         en el proceso de una manera correcta y segura.
                     </p>";
                     return view('web.office.apostille_layout', compact('data'));
@@ -623,8 +642,7 @@ class WebController extends Controller
                         de que esta persona no pueda hacerlo, lo realizarán los familiares más cercanos de la persona que falleció.
                     </p>
                     <ul><li><h3 id='title'>¿Ante que autoridad puedo solicitar un certificado de defunción?</h3></li></ul>
-                    <p>Si desea tramitar o apostillar un acta o certificado de defunción puede completar el siguiente formulario con su información o acercarse a nuestras oficinas en 
-                        donde un asesor se comunicará con usted para guiarlo en el trámite de una manera correcta y segura.
+                    <p>Si desea tramitar o apostillar un acta o certificado de defunción puede completar el siguiente formulario con su información o acercarse a nuestras oficinas en ".$data['office']." donde un asesor se comunicará con usted para guiarlo en el trámite de una manera correcta y segura.
                     </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
@@ -638,6 +656,26 @@ class WebController extends Controller
                     $data['description'] = 'Certificados de Naturalización';
                     $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Naturalización en New Jersey? Nosotros podemos ayudarte con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar certificado de naturalizacion, apostillar acta de naturalizacion, apostillar certificado de naturalizacion near me, apostillar certificado de naturalizacion new jersey, apostillar acta de naturalizacion new jersey, apostille naturalization certificate near me, apostille naturalization certificate new jersey, donde apostillar certificado de naturalizacion en new jersey";
+                    $data['content'] = ['¿Qué es un certificado de naturalización?','¿Para qué sirve un certificado de naturalización?','¿Cuáles son los requisitos para obtener el certificado de naturalización?','¿Donde puedo hacer el trámite para el certificado de naturalización?'];
+                    $data['body'] = "<ul><li><h3>¿Qué es un certificado de naturalización?</h3></li></ul>
+                    <p>El certificado de naturalización es un documento el cual acredita que una persona extranjera se conveirte en ciudadano del país en que reside.</p>
+                    <ul><li><h3>¿Para qué sirve un certificado de naturalización?</h3></li></ul>
+                    <p>Lo que hace el acta o certificado de naturalización es otorgarle a los ciudadanos naturalizados algunos privilegios y beneficios en el país que se encuentra, 
+                        entre los cuales se encuentra la capacidad de votar. Sobre todo es un documento el cual le permite demostrar que es un ciudadano más de dicho país
+                    </p>
+                    <ul><li><h3>¿Cuáles son los requisitos para obtener el certificado de naturalización?</h3></li></ul>
+                    <p>Algunos de los requerimientos para obtener su certificado de naturalización son los siguientes:</p>
+                    <ol>
+                        <li>Tener al menos 18 años</li>
+                        <li>Ser residente al menos 5 años</li>
+                        <li>Poder leer, escribir y hablar inglés básico</li>
+                        <li>Comprender la historia básica del gobierno de los Estados Unidos</li>
+                        <li>Ser una persona de buen carácter moral</li>
+                    </ol>
+                    <ul><li><h3>¿Donde puedo hacer el trámite para el certificado de naturalización?</h3></li></ul>
+                    <p>Si desea empezar el proceso para adquirir el acta de naturalización puede completar el siguiente formulario con su información
+                        o acercarse a nuestras oficinas en ".$data['office']." donde un asesor lo orientará en la gestión de dicho documento de una manera ágil y segura.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-expediente-de-adopcion-new-jersey':
@@ -763,6 +801,26 @@ class WebController extends Controller
                     $data['description'] = 'Certificado de Origen';
                     $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Origen en New Jersey? Nosotros te ayudamos con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar certificado de origen, apostillar certificado de origen near me, apostillar certificado de origen new jersey, apostille certificate of origin new jersey, donde apostillar certificado de origen en new jersey";
+                    $data['content'] = ['¿Qué es el certificado de origen?','¿Para qué sirve el certificado de origen?','¿Cómo puedo obtener el certificado de origen?','¿Donde puedo tramitar el certificado de origen?'];
+                    $data['body'] = "<ul><li><h3>¿Qué es el certificado de origen?</h3></li></ul>
+                    <p>El certificado de origen es un documento cuyo objetivo es determinar el país de procedencia de dicha mercancia, por ello dispone
+                        de algunas preferencias o beneficios debido algunos acuerdos comerciales entre países.
+                    </p>
+                    <ul><li><h3>¿Para qué sirve el certificado de origen?</h3></li></ul>
+                    <p>Este certificado de origen sirve para garantizar la procedencia de los productos que pretende entrar a un territorio.</p>
+                    <ul><li><h3>¿Cómo puedo obtener el certificado de origen?</h3></li></ul>
+                    <p>La información básica y necesario para la obtención de un certificado de origen es la siguiente:</p>
+                    <ol>
+                        <li>Información de la autoridad que certifica el documento</li>
+                        <li>Información de las personas que exporta e importa</li>
+                        <li>Características del producto (Peso, Marca, Cantidad, etc.)</li>
+                        <li>Identificar la mercancía mediante la clasificación arancelaria</li>
+                        <li>Tipo de embalaje</li>
+                    </ol>
+                    <ul><li><h3>¿Donde puedo tramitar el certificado de origen?</h3></li></ul>
+                    <p>Para poder comenzar con el proceso del certificado de origen puede completar el siguiente formulario con su información correspondiente o dirigirse 
+                        a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera ágil y segura.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-marca-patente-new-jersey':
