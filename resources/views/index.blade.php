@@ -91,7 +91,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active"  style="background:rgba(2, 2, 2, 0.5);">
-          <img src="{{asset('img/5.jpg')}}" class="d-block w-100" alt="..." 
+          <img src="{{asset('img/5.webp')}}" class="d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left top;">
           <div class="carousel-caption">
               <h1 class="tit-not">Notaría Pública</h1>
