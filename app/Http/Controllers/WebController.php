@@ -817,6 +817,29 @@ class WebController extends Controller
                     $data['description'] = 'Certificado de Buena Reputación';
                     $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Buena Reputación en New Jersey? Notaria Latina te ayuda con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar certificado de buena reputacion, apostillar certificado de buena reputacion near me, apostillar certificado de buena reputacion new jersey, apostille certificate of good standing new jersey, donde apostillar certificado de buena reputacion en new jersey";
+                    $data['content'] = ['¿Qué es un certificado de buena reputación?','¿Para qué sirve un certificado de buena reputación?','¿Qué necesito para obtener el certificado de buena reputación?','¿Donde puedo obtener el certificado de buena reputación?'];
+                    $data['body'] = "<ul><li><h3>¿Qué es un certificado de buena reputación?</h3></li></ul>
+                    <p>Un certificado de buena reputación es un documento que avala que una institución comercial en la actualidad esta registrada y con los permisos correspondientes
+                        para realizar negocios-
+                    </p>
+                    <ul><li><h3>¿Para qué sirve un certificado de buena reputación?</h3></li></ul>
+                    <p>El obtener un certificado de buena reputación no es obligado. sin embargo es útil cuando necesite realizar una serie de trámites como por ejemplo abrir una cuenta bancaria comercial,
+                        obtener pagos de clientes por medio de tarjetas de crédito o débito, requerir algpun tipo de crédito para su negocio, etc.
+                    </p>
+                    <ul><li><h3>¿Qué necesito para obtener el certificado de buena reputación?</h3></li></ul>
+                    <p>El principal requisito para obtener su certificado de buena reputación es estar registrado en la Secretaría de Estado dependiento en el que se encuentre. Para esto, deberá
+                        contar con el nombre de su institución y el número de registro.
+                    </p>
+                    <p>Para que el certificado sea emitido, su entidad comercial deberá constar con lo siguiente:</p>
+                    <ol>
+                        <li>Estar registrado</li>
+                        <li>Contar con los documentos necesarios, por ejemplo una declaración anual</li>
+                        <li>Pagar la tarifa requerida</li>
+                    </ol>
+                    <ul><li><h3>¿Donde puedo obtener el certificado de buena reputación?</h3></li></ul>
+                    <p>Si desea realizar el trámite para obtener dicho documento complete el siguiente formulario con su información o puede acercarse a nuestra oficinas
+                        en ... donde un asesir se contactará con usted para brindarle la ayuda necesaria.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-origen-new-jersey':
