@@ -82,9 +82,9 @@ class WebController extends Controller
 
         $specialties = Specialty::all();           
 
-        $country = $request->get('country');
-        $specialty = $request->get('specialty');
-        $state = $request->get('state');
+        // $country = $request->get('country');
+        // $specialty = $request->get('specialty');
+        // $state = $request->get('state');
 
         // $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
         //         ->where('status', 'PUBLICADO')
@@ -125,12 +125,13 @@ class WebController extends Controller
 
     //ESTA FUNCION ES PARA CARGAR LOS ESTADOS CUANDO HAYA UN CAMBIO EN EL SELECT DE COUNTRIES
     public function fetchStateAfter(Request $request){
+        // $country = Country::where('name_country', $request->name_country)->first();
         $states = State::where('country_id', $request->id)->get();
         return response()->json($states);
     }
 
     public function fetchState(Request $request){
-
+        //$country = Country::where('name_country', $request->country)->first();
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
         $states = State::where('country_id', $request->country)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
@@ -160,7 +161,7 @@ class WebController extends Controller
     }
 
     public function fetchStateB(Request $request){
-
+        //$country = Country::where('name_country', $request->country)->first();
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
         $states = State::where('country_id', $request->country)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
@@ -496,7 +497,7 @@ class WebController extends Controller
 
     public function oficinasnj(?string $service = null){
         $data['telfHidden'] = '+19088009046'; //+19082249260
-        $data['telfWpp'] = '19082249260';
+        $data['telfWpp'] = '13479739888';
         $data['telfShow'] = '908-800-9046';
         $data['office'] = 'New Jersey';
         $data['metadescription'] = "";
@@ -957,7 +958,7 @@ class WebController extends Controller
             $data['imggrid'] = 'img/oficinas/ICONOS-17.webp';
             $data['txtgrid'] = 'Affidávit Support';
             $data['telfHidden'] = '+19088009046';
-            $data['telfWpp'] = '19082249260';
+            $data['telfWpp'] = '13479739888';
             $data['telfShow'] = '908-800-9046';
             $data['imgapostilla'] = 'img/oficinas/apostillanj.webp';
             $data['imgup'] = 'img/newjersey-landing-notaria-latina.webp';
