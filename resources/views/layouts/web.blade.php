@@ -346,17 +346,22 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     });
 
     var script3 = document.createElement("script");
+
     function downloadJSAtOnload() {
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
         document.body.appendChild(script3);
         console.log('cargando script3...');
     }
 
-    if (window.addEventListener)
-        window.addEventListener("load", downloadJSAtOnload, false);
-    else if (window.attachEvent)
-        window.attachEvent("onload", downloadJSAtOnload);
-    else window.onload = downloadJSAtOnload;
+    setTimeout(downloadJSAtOnload, 3000);
+
+    // if (window.addEventListener)
+    //     window.addEventListener("load", downloadJSAtOnload, false);
+    // else if (window.attachEvent)
+    //     window.attachEvent("onload", downloadJSAtOnload);
+    // else window.onload = downloadJSAtOnload;
+
+
 
 
         // var script3 = document.createElement("script");
