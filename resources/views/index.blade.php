@@ -180,8 +180,8 @@
                 <span class="text-muted font-weight-bold">¿Por qué elegirnos?</span> <br><br>
                 <h3 class="heading-title pb-4">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</h3>
                 <hr class="hrwf">
-                <img id="imgdoc" class="mx-4" src="{{asset('img/docverify-approved-enotary-small.png')}}" height="80" alt="">
-                <img id="imgnna" class="mx-4" src="{{asset('img/national-notary-association.png')}}" height="80" alt="">
+                <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.png')}}" width="60" height="80" alt="">
+                <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.png')}}" height="80" alt="">
             </div>
             <div class="col-12 col-sm-6 p-4 my-4  d-flex align-items-center">
 
