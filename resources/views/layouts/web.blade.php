@@ -26,7 +26,7 @@ if(strpos($actual_link, 'localhost') === false){
 
         gtag('config', 'UA-124437679-3');
         gtag('config', 'AW-702844945');
-    }, 2500);
+    }, 3000);
 </script>
 
 <!-- Event snippet for Enviar formulario de clientes potenciales conversion page
@@ -62,7 +62,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 fbq('track', 'PageView');
             }
             console.log('cargando script de facebook pixel code...');
-        }, 2500);
+        }, 3000);
     </script>
     <noscript>
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
@@ -363,7 +363,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         downloadFacebookJSAtOnLoad();
         downloadJSAtOnload();
         console.log('cargando scripts de facebook snippet y jquery...');
-    }, 2500);
+    }, 3000);
 
     // if (window.addEventListener)
     //     window.addEventListener("load", downloadJSAtOnload, false);
