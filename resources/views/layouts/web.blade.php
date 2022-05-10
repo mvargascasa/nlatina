@@ -268,19 +268,19 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                     </a>
 
                     <a href="https://www.messenger.com/t/notariapublicalatina" class="lazy" target="_blank">
-                        <img data-src="{{asset('img/notary-public-near-me-messenger.svg')}}" alt="Messenger Notary Public Near Me" width="30" height="30">
+                        <img data-src="{{asset('img/notary-public-near-me-messenger.svg')}}" class="lazy" alt="Messenger Notary Public Near Me" width="30" height="30">
                     </a>
 
                     <a href="https://api.whatsapp.com/send?phone=+13479739888" class="lazy" target="_blank">
-                        <img data-src="{{asset('img/notary-public-near-me-whatsapp.svg')}}" alt="Whatsapp Notary Public Near Me" width="30" height="30">
+                        <img data-src="{{asset('img/notary-public-near-me-whatsapp.svg')}}" class="lazy" alt="Whatsapp Notary Public Near Me" width="30" height="30">
                     </a>
 
                     <a href="https://www.instagram.com/notarialatina" class="lazy" target="_blank">
-                        <img data-src="{{asset('img/notary-public-near-me-instagram.svg')}}" alt="Instagram Notary Public Near Me" width="30" height="30">
+                        <img data-src="{{asset('img/notary-public-near-me-instagram.svg')}}" class="lazy" alt="Instagram Notary Public Near Me" width="30" height="30">
                     </a>
 
                     <a href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A" class="lazy" target="_blank">
-                        <img data-src="{{asset('img/notary-public-near-me-youtube.svg')}}" alt="Youtube Notary Public Near Me" width="30" height="30">
+                        <img data-src="{{asset('img/notary-public-near-me-youtube.svg')}}" class="lazy" alt="Youtube Notary Public Near Me" width="30" height="30">
                     </a>
 
                     <div id="fb-root"></div>
