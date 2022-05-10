@@ -335,7 +335,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     var path = window.location.pathname;
 
     //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS
-    window.addEventListener('DOMContentLoaded', function(){
+    function downloadFacebookJSAtOnLoad(){
         if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida') || path.match('/partners'))){
             document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
         } else {
@@ -343,7 +343,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                 document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
             }
         }
-    });
+    }
 
     var script3 = document.createElement("script");
 
@@ -353,7 +353,11 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         console.log('cargando script3...');
     }
 
-    setTimeout(downloadJSAtOnload, 3000);
+    setTimeout(function(){
+        downloadFacebookJSAtOnLoad();
+        downloadJSAtOnload();
+        console.log('archivos cargados');
+    }, 2000);
 
     // if (window.addEventListener)
     //     window.addEventListener("load", downloadJSAtOnload, false);
