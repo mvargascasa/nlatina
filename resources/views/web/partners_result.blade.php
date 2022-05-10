@@ -5,13 +5,14 @@
 @php 
     $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
     $country = DB::table('countries')->where('name_country', Request::get('pais'))->first();
+    $currentURL = url()->full(); //Obtener toda la url para mandar og:url
 @endphp
 
     <title>Abogados y Notarias en Latinoamérica a su alcance en {{ $country->name_country }} | Notaria Latina</title>
     <meta name="description" content="👨‍⚖️ Contamos con un amplio directorio de abogados y notarios en Latinoamérica para ayudarlo a gestionar sus trámites, utilice nuestro buscador para filtrarlos por País, Estado-Departamento o Especialidad | Notaria Latina">
     <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil, @foreach($countriesmeta as $country)abogado en {{Str::lower($country->country_residence)}},@endforeach abogados latinos, notarias cerca de mi abiertas">
     <meta property="og:site_name" content="https://notarialatina.com"/>
-    <meta property="og:url" content="{{ Request::url() }}"/>
+    <meta property="og:url" content="{{ $currentURL }}"/>
     <meta property="og:description" content="Abogados y Notarias en Latinoamérica a su alcance | Notaria Latina"/>
     <meta property="og:type" content="article"/>
     <meta property="og:locale" content="es"/>
