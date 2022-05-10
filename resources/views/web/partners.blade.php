@@ -184,11 +184,11 @@
         }
     }
                             //page = 1 Este parametro iba en SelectCountry
-    function selectCountry(id){       
+    function selectCountry(name_country){       
         var form = document.getElementById('formSearchPartner');
         var inputCountryId = document.getElementById('countryHidden');
-        inputCountryId.value = id;
-        Country.setCountryId(id); 
+        inputCountryId.value = name_country;
+        //Country.setCountryId(id); 
         form.submit();
 
 

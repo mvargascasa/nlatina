@@ -72,7 +72,7 @@
 <script>
     $('#formSearchPartnersAfter').submit(function(event){
         event.preventDefault();
-        const countryId = $("#country").val();
+        const countryId = $("#pais").val();
         const specialty = $('#specialty').val();
         const state = $('#stateSelect').val();
         $('#contentPartner').html("<div class='loading text-center img-fluid'><img width='400px' height='400px' src='{{ asset('img/loader.gif') }}' alt='loading' /></div>");
@@ -80,7 +80,7 @@
             type: "GET",
             url: "{{ route('partners.fetch.state.b') }}",
             data: {
-                "country" : countryId,
+                "pais" : countryId,
                 "specialty" : specialty,
                 "state" : state
             },
@@ -91,7 +91,7 @@
                 //Cambiar el parametro de la url
                 var queryParams = new URLSearchParams(window.location.search);
                 // Set new or modify existing parameter value. 
-                queryParams.set("country", countryId); 
+                queryParams.set("pais", countryId); 
                 // Replace current querystring with the new one.
                 history.replaceState(null, null, "?"+queryParams.toString());
             },

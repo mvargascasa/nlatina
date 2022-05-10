@@ -25,13 +25,13 @@
                 @endphp
                 @foreach ($countries as $country)
                     @if ($country->name_country != "Estados Unidos" && $country->name_country != "España")
-                        <div onclick="selectCountry({{$country->id}});" style="cursor: pointer" class="col-sm-4 col-6 mb-2">
+                        <div onclick="selectCountry('{{$country->name_country}}');" style="cursor: pointer" class="col-sm-4 col-6 mb-2">
                             <img width="25" height="25" src="{{ asset('img/partners/'.$country->name_country_lower.'.png') }}" alt=""> {{ $country->name_country}}
                         </div>    
                     @endif
                 @endforeach
             </div>
-            <input id="countryHidden" type="hidden" name="country">
+            <input id="countryHidden" type="hidden" name="pais">
         </form>
         {!! Form::close() !!}
     </div>

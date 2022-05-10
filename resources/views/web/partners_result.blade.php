@@ -4,10 +4,10 @@
 
 @php 
     $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
-    $country = DB::table('countries')->where('id', Request::get('country'))->first();
+    $country = DB::table('countries')->where('name_country', Request::get('pais'))->first();
 @endphp
 
-    <title>Abogados y Notarias en Latinoamérica a su alcance en {{$country->name_country}} | Notaria Latina</title>
+    <title>Abogados y Notarias en Latinoamérica a su alcance en {{ $country->name_country }}| Notaria Latina</title>
     <meta name="description" content="👨‍⚖️ Contamos con un amplio directorio de abogados y notarios en Latinoamérica para ayudarlo a gestionar sus trámites, utilice nuestro buscador para filtrarlos por País, Estado-Departamento o Especialidad | Notaria Latina">
     <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil, @foreach($countriesmeta as $country)abogado en {{Str::lower($country->country_residence)}},@endforeach abogados latinos, notarias cerca de mi abiertas">
     <meta property="og:site_name" content="https://notarialatina.com"/>
@@ -281,7 +281,7 @@
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
         
-        var country_id = $('#country').val();
+        var country_id = $('#pais').val();
         // if(country_id == null || country_id == undefined){
         //     country_id = Country.getCountryId();
         // }
@@ -294,7 +294,7 @@
     });
 
     function loadStates(){
-        var idCountry = $('#country').val();
+        var idCountry = $('#pais').val();
             $.ajax({
                 url: "{{ route('partners.fetch.state.a') }}",
                 type: "POST",
