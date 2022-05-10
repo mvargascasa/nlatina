@@ -181,7 +181,7 @@
                 <h3 class="heading-title pb-4">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</h3>
                 <hr class="hrwf">
                 <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.png')}}" width="60" height="80" alt="">
-                <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.png')}}" height="80" alt="">
+                <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.png')}}" width="190" height="80" alt="">
             </div>
             <div class="col-12 col-sm-6 p-4 my-4  d-flex align-items-center">
 
@@ -207,7 +207,7 @@
               <h3 class="title">Apostillas</h3>
               <a class="stretched-link" href="{{route('web.apostillas')}}">
               <div class="service-icon">
-                  <img class="pt-3" src="{{asset('img/apostillas.png')}}" width="50" alt="">
+                  <img class="lazy pt-3" data-src="{{asset('img/apostillas.png')}}" width="50" height="65" alt="">
               </div>
               </a>
               <p class="description">
@@ -221,7 +221,7 @@
               <h3 class="title">Poderes</h3>
               <a class="stretched-link" href="{{route('web.poderes')}}">
               <div class="service-icon">
-                  <img class="pt-4" src="{{asset('img/poderes.png')}}" width="40" alt="">
+                  <img class="lazy pt-4" data-src="{{asset('img/poderes.png')}}" width="40" height="65" alt="">
               </div>
               </a>
               <p class="description">
@@ -235,7 +235,7 @@
               <h3 class="title">Traducciones</h3>
               <a class="stretched-link" href="{{route('web.traducciones')}}">
               <div class="service-icon">
-                  <img class="pt-4" src="{{asset('img/traducciones.png')}}" width="40" alt="">
+                  <img class="lazy pt-4" data-src="{{asset('img/traducciones.png')}}" width="40" height="70" alt="">
               </div>
               </a>
               <p class="description">
