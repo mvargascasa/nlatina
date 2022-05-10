@@ -324,7 +324,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
 @yield('script')
 
-<script>
+<script type="text/javascript">
     //CARGAR EL SCRIPT DE PLUGIN DE FACEBOOK
     var scriptFacebookPlugin = document.createElement('script');
     scriptFacebookPlugin.id = "plugin-facebook";
@@ -345,14 +345,28 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         }
     });
 
-        var script3 = document.createElement("script");
-
+    var script3 = document.createElement("script");
+    function downloadJSAtOnload() {
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
-        script3.async = true;
+        document.body.appendChild(script3);
+        console.log('cargando script3...');
+    }
 
-        document.addEventListener("DOMContentLoaded", function(event){
-            document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
-        });
+    if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+
+
+        // var script3 = document.createElement("script");
+
+        // script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
+        // script3.async = true;
+
+        // document.addEventListener("DOMContentLoaded", function(event){
+        //     document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
+        // });
 
         script3.addEventListener("load", function(event) {
             document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
