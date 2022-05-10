@@ -43,7 +43,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 </script>
 
 <!-- Facebook Pixel Code -->
-    <script>
+    <script defer>
         if(!(window.location.pathname.match('/newjersey') || window.location.pathname.match('/newyork') || window.location.pathname.match('/florida') || window.location.pathname.match('/partners'))){
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -346,7 +346,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         var script3 = document.createElement("script");
 
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
-        script3.defer = true;
+        script3.async = true;
 
         document.addEventListener("DOMContentLoaded", function(event){
             document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
