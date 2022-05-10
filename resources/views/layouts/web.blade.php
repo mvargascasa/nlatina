@@ -340,13 +340,13 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     } else {
         if(screen.width > 580){
             document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
-        } 
+        }
     }
 
         var script3 = document.createElement("script");
 
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
-        script3.async = true;
+        script3.defer = true;
 
         document.addEventListener("DOMContentLoaded", function(event){
             document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
