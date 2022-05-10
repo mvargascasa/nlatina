@@ -19,6 +19,7 @@ if(strpos($actual_link, 'localhost') === false){
 <script>
     setTimeout(function(){
         document.getElementById('scriptanalytics').src = 'https://www.googletagmanager.com/gtag/js?id=UA-124437679-3';
+        console.log('caargando script de analytics...');
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -60,6 +61,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 fbq('init', '757596345081494');
                 fbq('track', 'PageView');
             }
+            console.log('cargando script de facebook pixel code...');
         }, 3000);
     </script>
     <noscript>
@@ -355,13 +357,12 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     function downloadJSAtOnload() {
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
         document.body.appendChild(script3);
-        console.log('cargando script3...');
     }
 
     setTimeout(function(){
         downloadFacebookJSAtOnLoad();
         downloadJSAtOnload();
-        console.log('archivos cargados');
+        console.log('cargando scripts de facebook snippet y jquery...');
     }, 3000);
 
     // if (window.addEventListener)
