@@ -14,7 +14,7 @@
                                 <option value="">País</option>
                                 @foreach ($countries as $country)
                                     @if ($country->name_country != "Estados Unidos" && $country->name_country != "España")
-                                        <option value="{{ $country->name_country }}" @if(Request::get('country') == $country->name_country) selected @endif>{{ $country->name_country }}</option>
+                                        <option value="{{ $country->id }}" @if(Request::get('country') == $country->id) selected @endif>{{ $country->name_country }}</option>
                                     @endif
                                 @endforeach
                             </select>
