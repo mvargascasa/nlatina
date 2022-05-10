@@ -357,7 +357,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         downloadFacebookJSAtOnLoad();
         downloadJSAtOnload();
         console.log('archivos cargados');
-    }, 2000);
+    }, 3000);
 
     // if (window.addEventListener)
     //     window.addEventListener("load", downloadJSAtOnload, false);
