@@ -262,23 +262,23 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                 <p class="text-muted">
 
                     <a href="https://www.facebook.com/notariapublicalatina" target="_blank">
-                        <img src="{{asset('img/notary-public-near-me-facebook.svg')}}" alt="Facebook Notary Public Near Me" width="30" height="30">
+                        <img data-src="{{asset('img/notary-public-near-me-facebook.svg')}}" class="lazy" alt="Facebook Notary Public Near Me" width="30" height="30">
                     </a>
 
-                    <a href="https://www.messenger.com/t/notariapublicalatina" target="_blank">
-                        <img src="{{asset('img/notary-public-near-me-messenger.svg')}}" alt="Messenger Notary Public Near Me" width="30" height="30">
+                    <a href="https://www.messenger.com/t/notariapublicalatina" class="lazy" target="_blank">
+                        <img data-src="{{asset('img/notary-public-near-me-messenger.svg')}}" alt="Messenger Notary Public Near Me" width="30" height="30">
                     </a>
 
-                    <a href="https://api.whatsapp.com/send?phone=+13479739888" target="_blank">
-                        <img src="{{asset('img/notary-public-near-me-whatsapp.svg')}}" alt="Whatsapp Notary Public Near Me" width="30" height="30">
+                    <a href="https://api.whatsapp.com/send?phone=+13479739888" class="lazy" target="_blank">
+                        <img data-src="{{asset('img/notary-public-near-me-whatsapp.svg')}}" alt="Whatsapp Notary Public Near Me" width="30" height="30">
                     </a>
 
-                    <a href="https://www.instagram.com/notarialatina" target="_blank">
-                        <img src="{{asset('img/notary-public-near-me-instagram.svg')}}" alt="Instagram Notary Public Near Me" width="30" height="30">
+                    <a href="https://www.instagram.com/notarialatina" class="lazy" target="_blank">
+                        <img data-src="{{asset('img/notary-public-near-me-instagram.svg')}}" alt="Instagram Notary Public Near Me" width="30" height="30">
                     </a>
 
-                    <a href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A" target="_blank">
-                        <img src="{{asset('img/notary-public-near-me-youtube.svg')}}" alt="Youtube Notary Public Near Me" width="30" height="30">
+                    <a href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A" class="lazy" target="_blank">
+                        <img data-src="{{asset('img/notary-public-near-me-youtube.svg')}}" alt="Youtube Notary Public Near Me" width="30" height="30">
                     </a>
 
                     <div id="fb-root"></div>
@@ -413,6 +413,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         localStorage.setItem("statusCardWhatsapp", "Off");
         document.getElementById('card_whatsapp').classList.toggle("hide-card-whatsapp");
     }
+    document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
     
 </script>
 </body>
