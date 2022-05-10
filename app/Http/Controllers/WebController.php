@@ -82,9 +82,9 @@ class WebController extends Controller
 
         $specialties = Specialty::all();           
 
-        // $country = $request->get('country');
-        // $specialty = $request->get('specialty');
-        // $state = $request->get('state');
+        $country = $request->get('country');
+        $specialty = $request->get('specialty');
+        $state = $request->get('state');
 
         // $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
         //         ->where('status', 'PUBLICADO')
@@ -125,17 +125,17 @@ class WebController extends Controller
 
     //ESTA FUNCION ES PARA CARGAR LOS ESTADOS CUANDO HAYA UN CAMBIO EN EL SELECT DE COUNTRIES
     public function fetchStateAfter(Request $request){
-        // $country = Country::where('name_country', $request->name_country)->first();
-        $states = State::where('country_id', $request->id)->get();
+        $country = Country::where('name_country', $request->id)->first();
+        $states = State::where('country_id', $country->id)->get();
         return response()->json($states);
     }
 
     public function fetchState(Request $request){
-        //$country = Country::where('name_country', $request->country)->first();
+        $country = Country::where('name_country', $request->country)->first();
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
-        $states = State::where('country_id', $request->country)->get();
+        $states = State::where('country_id', $country->id)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
-                ->country($request->country)
+                ->country($country->id)
                 // ->state($request->state)
                 // ->specialties($request->specialty)
                 ->where('status', 'PUBLICADO')
@@ -148,7 +148,7 @@ class WebController extends Controller
 
         $partnersCount = Partner::where('status', 'PUBLICADO')
                     ->orderBy('id', 'DESC')
-                    ->country($request->country)
+                    ->country($country->id)
                     ->state($request->state)
                     ->specialties($request->specialty)
                     ->get();
@@ -161,15 +161,15 @@ class WebController extends Controller
     }
 
     public function fetchStateB(Request $request){
-        //$country = Country::where('name_country', $request->country)->first();
+        $country = Country::where('name_country', $request->country)->first();
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
-        $states = State::where('country_id', $request->country)->get();
+        $states = State::where('country_id', $country->id)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
-                ->country($request->country)
+                ->country($country->id)
                 ->state($request->state)
                 ->specialties($request->specialty)
                 ->where('status', 'PUBLICADO')
-                //->inRandomOrder('name')
+                // ->inRandomOrder('name')
                 ->orderBy('name', 'DESC')
                 // ->limit($dataToLoad)
                 ->paginate(16);
@@ -178,11 +178,11 @@ class WebController extends Controller
 
         $partnersCount = Partner::where('status', 'PUBLICADO')
                     ->orderBy('id', 'DESC')
-                    ->country($request->country)
+                    ->country($country->id)
                     ->state($request->state)
                     ->specialties($request->specialty)
                     ->get();
-                    
+
         $totalPartners = $partnersCount->count();
 
         $countryID = $request->country;

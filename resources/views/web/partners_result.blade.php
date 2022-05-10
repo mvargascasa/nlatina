@@ -4,7 +4,7 @@
 
 @php 
     $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
-    $country = DB::table('countries')->where('id', Request::get('country'))->first();
+    $country = DB::table('countries')->where('name_country', Request::get('country'))->first();
 @endphp
 
     <title>Abogados y Notarias en Latinoamérica a su alcance en {{$country->name_country}} | Notaria Latina</title>
