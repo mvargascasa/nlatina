@@ -126,7 +126,7 @@
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
-          <img src="{{asset('img/3.jpg')}}" class="d-block w-100" alt="..." 
+          <img data-src="{{asset('img/3.jpg')}}" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left top;">
           <div class="carousel-caption">
               <h1 id="titleApostillas" class="tit-not" style="margin-bottom: 6%">APOSTILLAS</h1>
