@@ -343,14 +343,12 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         } 
     }
 
-        console.log('true');
-
         var script3 = document.createElement("script");
 
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
         script3.async = true;
 
-        window.addEventListener("load", function(event){
+        document.addEventListener("DOMContentLoaded", function(event){
             document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
         });
 
