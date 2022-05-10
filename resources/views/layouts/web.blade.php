@@ -335,13 +335,15 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     var path = window.location.pathname;
 
     //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS
-    if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida') || path.match('/partners'))){
-        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
-    } else {
-        if(screen.width > 580){
+    document.addEventListener('DOMContentLoaded', function(){
+        if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida') || path.match('/partners'))){
             document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
+        } else {
+            if(screen.width > 580){
+                document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
+            }
         }
-    }
+    });
 
         var script3 = document.createElement("script");
 
