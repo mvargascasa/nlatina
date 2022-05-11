@@ -36,7 +36,7 @@ if(strpos($actual_link, 'localhost') === false){
 
         gtag('config', 'UA-124437679-3');
         gtag('config', 'AW-702844945');
-    }, 3000);
+    }, 4000);
 </script>
 
 <!-- Event snippet for Enviar formulario de clientes potenciales conversion page
