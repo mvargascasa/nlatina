@@ -103,9 +103,9 @@
               </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
-  
-              <a href="javascript:void(0)" class="btn btn-warning btn-lg" data-toggle="modal" 
-              data-target="#exampleModal">INICIAR TRAMITE</a>
+              {{-- href="javascript:void(0)" --}}
+              <button class="btn btn-warning btn-lg button" data-toggle="modal" 
+              data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
 
