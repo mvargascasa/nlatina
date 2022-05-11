@@ -373,10 +373,10 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         document.body.appendChild(script3);
     }
    
-    var timeToLoad = 5000;
+    var timeToLoad = 1000;
     
     if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida') || path.match('/partners')))timeToLoad=1500;
-    else timeToLoad=3000;
+    else timeToLoad=5000;
 
     setTimeout(function(){
         downloadFacebookJSAtOnLoad();
