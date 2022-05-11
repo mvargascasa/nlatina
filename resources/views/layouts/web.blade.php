@@ -344,7 +344,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 <script type="text/javascript">
 
     var button = document.querySelector('.button');
-    button.disabled = true;
+    if(button)button.disabled = true;
 
     //CARGAR EL SCRIPT DE PLUGIN DE FACEBOOK
     var scriptFacebookPlugin = document.createElement('script');
@@ -381,7 +381,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     setTimeout(function () {
         downloadJSAtOnload();
         console.log('cargando script de jquery...');
-        button.disabled = false;
+        if(button)button.disabled = false;
     }, 1000);
 
     // if (window.addEventListener)
