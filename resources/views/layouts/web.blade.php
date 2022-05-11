@@ -372,11 +372,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
         document.body.appendChild(script3);
     }
-   
-    var timeToLoad = 1000;
-    
-    if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida') || path.match('/partners')))timeToLoad=1500;
-    else timeToLoad=5000;
 
     setTimeout(function(){
         downloadFacebookJSAtOnLoad();
@@ -387,7 +382,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         downloadJSAtOnload();
         console.log('cargando script de jquery...');
         if(button)button.disabled = false;
-    }, timeToLoad);
+    }, 1000);
 
     // if (window.addEventListener)
     //     window.addEventListener("load", downloadJSAtOnload, false);
