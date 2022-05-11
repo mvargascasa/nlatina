@@ -27,6 +27,10 @@ if(strpos($actual_link, 'localhost') === false){
   <!-- Global site tag (gtag.js) - Google Analytics  src=https://www.googletagmanager.com/gtag/js?id=UA-124437679-3 -->
 <script id="scriptanalytics"></script>
 <script>
+    var path = window.location.pathname;
+    var timeToLoad = 0;
+    if(!path.match('/newjersey'))timeToLoad=3000;
+
     setTimeout(function(){
         document.getElementById('scriptanalytics').src = 'https://www.googletagmanager.com/gtag/js?id=UA-124437679-3';
         console.log('caargando script de analytics...');
@@ -36,7 +40,7 @@ if(strpos($actual_link, 'localhost') === false){
 
         gtag('config', 'UA-124437679-3');
         gtag('config', 'AW-702844945');
-    }, 4000);
+    }, timeToLoad);
 </script>
 
 <!-- Event snippet for Enviar formulario de clientes potenciales conversion page
