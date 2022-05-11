@@ -126,6 +126,7 @@
         input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
     </style>
     <script type="text/javascript">
+
         function callbackThen(response){
             // read HTTP status
             console.log(response.status);
@@ -145,7 +146,7 @@
         'callback_then' => 'callbackThen',
         'callback_catch' => 'callbackCatch'
         ]) !!}
-    <script defer src="{{ asset('js/lazysizes.min.js') }}"></script>
+
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
@@ -167,19 +168,19 @@
             <h2 style="font-weight: bold">¿Por qué elegirnos?</h2>
             <p style="font-size: 15px;">Brindamos el mejor servicio y asesoría en trámites de notaría para Latinos en Estados Unidos.</p>
             <div>
-                <img class="lazyload" width="50px" height="60px" data-src="{{ asset('img/docverify-approved-enotary-small.webp') }}" alt="Notaria Latina en {{ $data['office'] }}">
-                <img class="lazyload" width="160px" height="55px" data-src="{{ asset('img/logo.webp') }}" alt="Notaria Latina en {{ $data['office'] }}">
+                <img class="lazy" width="50px" height="60px" data-src="{{ asset('img/docverify-approved-enotary-small.webp') }}" alt="Notaria Latina en {{ $data['office'] }}">
+                <img class="lazy" width="160px" height="55px" data-src="{{ asset('img/logo.webp') }}" alt="Notaria Latina en {{ $data['office'] }}">
             </div>
         </div>
         
         <div class="col-sm-6">
-            <img class="lazyload" style="width: 100%; height: 100%" data-src="{{ asset('img/oficinas/IMAGENES-NEW-JERSEY2.webp') }}" alt="">
+            <img class="lazy" style="width: 100%; height: 100%" data-src="{{ asset('img/oficinas/IMAGENES-NEW-JERSEY2.webp') }}" alt="">
         </div>
     </div>
     
     <div class="row" id="sectionthree" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <div class="col-sm-6 d-flex justify-content-center align-items-center" id="imgApostille">
-            <img class="lazyload" style="width: 500px; height: 350px;" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
+            <img class="lazy" style="width: 500px; height: 350px;" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
         </div>
         <div class="col-sm-6">
             <div>
@@ -191,7 +192,7 @@
                     <div id="linkServices" class="text-center border pt-4 pb-4 pl-3 pr-3 mb-3" style="border-radius: 10px; border: 2px solid #e4b63e !important;">
                         <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
                             <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
-                                <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                                <img class="lazy imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
                             </div>
                             <h4 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Poderes</h4>
                         </a>
@@ -201,7 +202,7 @@
                     <div id="linkServices" class="d-flex text-center border pt-4 pb-4 pl-3 pr-3 mb-3" style="border-radius: 10px; border: 2px solid #e4b63e !important">
                         <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-documentos-'.Str::slug($data['office'])) }}">
                             <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
-                                <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-19.webp')}}" alt="">
+                                <img class="lazy imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-19.webp')}}" alt="">
                             </div>
                             <h4 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Apostillas</h4>
                         </a>
@@ -211,7 +212,7 @@
                     <div id="linkServices" class="d-flex text-center border pt-4 pb-4 pl-3 pr-3 mb-3" style="border-radius: 10px; border: 2px solid #e4b63e !important">
                         <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'traducir-documentos-'.Str::slug($data['office'])) }}">
                             <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
-                                <img class="lazyload imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-18.webp')}}" alt="">
+                                <img class="lazy imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-18.webp')}}" alt="">
                             </div>
                             <h4 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Traducciones</h4>
                         </a>
@@ -274,7 +275,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'travel-authorization-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-08.webp') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-08.webp') }}" alt="">
                     </div>
                     <p>Travel Authorization</p>
                 </a>
@@ -282,7 +283,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'certificaciones-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
                     </div>
                     <p>Certificaciones</p>
                 </a>
@@ -290,7 +291,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'acuerdos-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-10.webp') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-10.webp') }}" alt="">
                     </div>
                     <p>Acuerdos</p>
                 </a>
@@ -298,7 +299,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90%" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'cartas-de-invitacion-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-11.webp') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-11.webp') }}" alt="">
                     </div>
                     <p>Cartas de Invitación</p>
                 </a>
@@ -309,7 +310,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'revocatorias-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-12.webp') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-12.webp') }}" alt="">
                     </div>
                     <p>Revocatorias</p>
                 </a>
@@ -317,7 +318,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'contratos-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-13.webp') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-13.webp') }}" alt="">
                     </div>
                     <p>Contratos</p>
                 </a>
@@ -325,7 +326,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'testamentos-en-'.Str::slug($data['office'])) }}">
                     <div class="grow">
-                        <img style="width: 50px; height: 50px" class="img-fluid lazyload" data-src="{{ asset('img/oficinas/ICONOS-14.webp') }}" alt="">
+                        <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-14.webp') }}" alt="">
                     </div>
                     <p>Testamentos</p>
                 </a>
@@ -333,7 +334,7 @@
             <div class="col-12 col-sm-3 text-center border" style="padding:25px 25px 25px 25px; width: 90px" id="colService">
                 <div class="grow">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), Str::lower(Str::slug($data['txtgrid'])).'-en-'.Str::slug($data['office'])) }}"">
-                        <img style="width: 50px; height: 50px; filter: brightness(0.85) saturate(85%);" class="img-fluid lazyload" data-src="{{ asset($data['imggrid']) }}" alt="">
+                        <img style="width: 50px; height: 50px; filter: brightness(0.85) saturate(85%);" class="img-fluid lazy" data-src="{{ asset($data['imggrid']) }}" alt="">
                         <p>{{ $data['txtgrid'] }}</p>
                     </a>
                 </div>
@@ -348,7 +349,7 @@
             <p class="text-muted" style="margin-left: 10%; margin-right: 10%">Apostille actas de nacimiento, actas de matrimonio, certificados, poderes, traducciones, diplomas, contratos, testamentos</p>
         </div>
         <div class="col-sm-6">
-            <img @if($data['office'] == "New York") class="float-right lazyload" @endif id="imgrowapostille" style="width: {{$data['widthimgdown']}}; height: {{$data['heightimgdown']}}; padding-top: {{$data['paddingtop']}}" class="img-fluid lazyload" data-src="{{$data['imgdown']}}" alt="Notaria Latina en {{$data['office']}}">
+            <img @if($data['office'] == "New York") class="float-right lazy" @endif id="imgrowapostille" style="width: {{$data['widthimgdown']}}; height: {{$data['heightimgdown']}}; padding-top: {{$data['paddingtop']}}" class="img-fluid lazy" data-src="{{$data['imgdown']}}" alt="Notaria Latina en {{$data['office']}}">
         </div>
     </div>
 
@@ -444,7 +445,7 @@
 
     <div class="row">
         <a href="{{ $data['urlmap']}}" target="_blank">
-            <img id="imgurlmap" class="img-fluid lazyload" src="{{ asset($data['imgurlmap']) }}" alt="Apostillar Documentos en {{ $data['office'] }}">
+            <img id="imgurlmap" class="img-fluid lazy" src="{{ asset($data['imgurlmap']) }}" alt="Apostillar Documentos en {{ $data['office'] }}">
         </a>
     </div>
 
@@ -623,18 +624,6 @@
             }
         }
 
-        // var pais = document.getElementById('pais');
-        // var telf = document.getElementById('telf');
-
-        // pais.onchange = function(e) {
-        // telf.value = this.value;
-        //     if((this.value).trim() != '') {
-        //         telf.disabled = false;
-        //     } else {
-        //         telf.disabled = true;
-        //     }
-        // }
-
         var selectPaisResidencia = document.getElementById('pais');
         var inputCodPais = document.getElementById('telf');
 
@@ -678,5 +667,6 @@
                 behavior: "smooth"
             });
         }
+        document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
     </script>
 @endsection
