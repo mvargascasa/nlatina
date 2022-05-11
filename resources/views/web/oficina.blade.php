@@ -445,7 +445,7 @@
 
     <div class="row">
         <a href="{{ $data['urlmap']}}" target="_blank">
-            <img id="imgurlmap" class="img-fluid lazy" src="{{ asset($data['imgurlmap']) }}" alt="Apostillar Documentos en {{ $data['office'] }}">
+            <img id="imgurlmap" class="lazy img-fluid" data-src="{{ asset($data['imgurlmap']) }}" alt="Apostillar Documentos en {{ $data['office'] }}">
         </a>
     </div>
 
