@@ -258,7 +258,7 @@
             type: "GET",
             url: "{{ route('partners.fetch.state.b') }}",
             data:{
-                "country" : id,
+                "pais" : id,
                 "state" : null,
                 "specialty": null,
                 "page": page,
