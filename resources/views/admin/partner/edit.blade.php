@@ -165,9 +165,13 @@
                                 </button>
                             </div>
                         @endif
-                        @if (count($camposVacios) > 0)
+                        @if (count($camposVacios) > 0 && $partner->terminos_verified_at != null)
                             <div id="divcamposvacios" class="alert alert-danger">
-                                Por favor complete los siguientes campos:
+                                @if(count($camposVacios) < 5)
+                                    <b>Está muy cerca de que su perfil sea publicado</b>, por favor complete los siguientes campos:
+                                @else
+                                    Por favor complete los siguientes campos:
+                                @endif
                                 <div class="row">
                                     @foreach ($camposVacios as $campoVacio)
                                     <div class="col-12 col-sm-6 col-md-3">
@@ -176,7 +180,7 @@
                                     @endforeach
                                 </div>
                                 <div class="mt-2" style="font-size: 13px">
-                                    Si su información no esta completa, su perfil no podrá anunciarse <b>gratis</b> en nuestro sitio web
+                                    Es necesario que su información este completa para poder publicar su perfil <b>gratis</b> en nuestro sitio web
                                 </div>
                             </div>
                         @endif
@@ -190,9 +194,8 @@
                                     </div>
                                     @endforeach
                                 </div>
-                                <div class="mt-2" style="font-size: 13px">
-                                    Si su información no cumple los requisitos, su perfil no podrá anunciarse <b>gratis</b> en nuestro sitio web
-                                </div>
+                                {{-- <div class="mt-2" style="font-size: 13px">
+                                </div> --}}
                             </div>
                         @endif
                             <div id="card1" class="card">
