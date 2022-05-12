@@ -140,12 +140,42 @@
             console.error('Error:', error)
         }
         </script>
+
+    <script id="scriptrecaptcha"></script>
+    <script>
+        setTimeout(() => {
+           document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
+            console.log('cargando script recaptcha...');
+        }, 3000);
+
+        setTimeout(() => {
+            var csrfToken = document.head.querySelector('meta[name="csrf-token"]');
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8', {action: 'homepage'}).then(function(token) {
+                        
+                fetch('/biscolab-recaptcha/validate?token=' + token, {
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest",
+                        "X-CSRF-TOKEN": csrfToken.content
+                    }
+                })
+                .then(function(response) {
+                    callbackThen(response)
+                })
+                .catch(function(err) {
+                    callbackCatch(err)
+                });
+                    });
+                });
+                console.log('ejecutando codigo del recaptcha...');
+        }, 3500);
+    </script>
     
     
-        {!! htmlScriptTagJsApi([
-        'callback_then' => 'callbackThen',
-        'callback_catch' => 'callbackCatch'
-        ]) !!}
+            {{--  {!! htmlScriptTagJsApi([
+             'callback_then' => 'callbackThen',
+             'callback_catch' => 'callbackCatch'
+            ]) !!} --}}
 
 @endsection
 
