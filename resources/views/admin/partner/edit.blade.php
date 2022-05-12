@@ -583,6 +583,12 @@
                                             <span id="txtMaxMinChar" class="text-success" style="margin-left: 5px">(Mínimo: 400 caracteres)</span>
                                         </div>
                                     </div>
+                                    @if(!isset($partner->attached_file))
+                                    <div class="form-group">
+                                        {!! Form::label('attached_file', 'Archivo adjunto') !!}
+                                        {!! Form::file('attached_file', ['class' => 'form-control-file', 'accept' => '.pdf,.doc,.docx']) !!}
+                                    </div>
+                                    @endif
                                     <br>
                                     <div class="float-right">
                                         @if ($partner->terminos_verified_at != null)

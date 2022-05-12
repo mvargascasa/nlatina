@@ -118,6 +118,11 @@ class HomeController extends Controller
             $partner->img_profile = $url;
         }
 
+        $url_cv = null;
+        if($partner->attached_file == null && $request->attached_file != null){
+            $url_cv = Storage::put('cvs', $request->file('attached_file'));
+        }
+
         if(Str::startsWith($request->link_facebook, 'www')){
             $request->link_facebook = 'https://' . $request->link_facebook;
         } else if (Str::startsWith($request->link_facebook, 'facebook')) {
@@ -155,6 +160,9 @@ class HomeController extends Controller
         $partner->link_instagram =  Purify::clean($request->link_instagram);
         $partner->link_linkedin = Purify::clean($request->link_linkedin);
         $partner->website = Purify::clean($request->website);
+        if($url_cv != null){
+            $partner->attached_file = $url_cv;
+        }
         
         if($request->company == "Empresa"){
             $partner->company = $request->company;

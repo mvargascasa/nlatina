@@ -82,11 +82,21 @@
                             {!! Form::submit('Guardar',  ['class' => 'btn btn-primary']) !!}
                         </div>
                         
-                            @if ($partner->fecha_publicado != null)
-                                <div class="mt-2 ml-5">
-                                    <p>Fecha Publicado: <b>{{ Str::limit($partner->fecha_publicado, 10, '')}}</b></p>
-                                </div>
-                            @endif       
+                        @if ($partner->fecha_publicado != null)
+                            <div class="mt-2 ml-5">
+                                <p>Fecha Publicado: <b>{{ Str::limit($partner->fecha_publicado, 10, '')}}</b></p>
+                            </div>
+                        @endif
+                        
+                        @if($partner->attached_file != null)
+                        <div class="mt-2 ml-5">
+                            <p><a target="_blank" href="{{ asset('storage/'.$partner->attached_file) }}">Ver adjunto</a></p>
+                        </div>
+                        @else
+                        <div class="mt-2 ml-5">
+                            <p style="font-weight: bold">No hay archivos adjuntos</p>
+                        </div>
+                        @endif
                     </div>
 
                     {{--NOMBRE Y APELLIDO, EMAIL, NACIONALIDAD--}}
