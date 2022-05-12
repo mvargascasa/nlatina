@@ -520,6 +520,17 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    @if(!isset($partner->attached_file))
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                {!! Form::label('attached_file', 'Adjuntar hoja de vida / CV (Requerido)*', ['class' => 'text-danger', 'style' => 'font-weight:bold;font-size:15px']) !!}
+                                                {!! Form::file('attached_file', ['class' => 'form-control-file', 'accept' => '.pdf,.doc,.docx']) !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
 
                                     @if (count($partner->specialties) > 0)
                                         <p style="font-size: 14px" id="Áreas de especialización">Áreas en las que trabaja <b>(Escoja entre 1 a 3 opciones)</b></p>
@@ -583,12 +594,6 @@
                                             <span id="txtMaxMinChar" class="text-success" style="margin-left: 5px">(Mínimo: 400 caracteres)</span>
                                         </div>
                                     </div>
-                                    @if(!isset($partner->attached_file))
-                                    <div class="form-group">
-                                        {!! Form::label('attached_file', 'Archivo adjunto') !!}
-                                        {!! Form::file('attached_file', ['class' => 'form-control-file', 'accept' => '.pdf,.doc,.docx']) !!}
-                                    </div>
-                                    @endif
                                     <br>
                                     <div class="float-right">
                                         @if ($partner->terminos_verified_at != null)
