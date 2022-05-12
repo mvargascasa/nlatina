@@ -5,6 +5,11 @@
 <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 <title>@yield('title-socios')</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+
+{{-- font family Lato --}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <style>
 
   html, body {

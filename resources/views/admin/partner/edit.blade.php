@@ -57,6 +57,7 @@
                 height: 40px !important;
                 border-radius: 25px !important;
             }
+            #specialty_help,#biography_help{margin-left:-25vw !important; width: 50vw !important;}
             /* #divcamposvacios{
                 margin-left: -20px;
                 width: 100rem !important;
@@ -338,14 +339,15 @@
                             <div id="card2" class="card mt-4">
                                 <div class="card-body">
                                     <p style="font-weight: bold">• REDES SOCIALES</p>
+                                    <p style="font-weight: 400">Para esta sección es necesario que complete su información con al menos una red social</p>
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                @if ($partner->link_facebook != null)
-                                                    {!! Form::label('link_facebook', 'Link de perfil de Facebook', ['id' => 'Link de Facebook']) !!} <i class="fab fa-facebook-square" style="color: #3b5998"></i>
-                                                @else
+                                                {{-- @if ($partner->link_facebook != null) --}}
+                                                {!! Form::label('link_facebook', 'Link de perfil de Facebook', ['id' => 'Link de Facebook']) !!} <i class="fab fa-facebook-square" style="color: #3b5998"></i>
+                                                {{-- @else
                                                     {!! Form::label('link_facebook', 'Link de perfil de Facebook *', ['id' => 'Link de Facebook', 'style' => 'color: red; font-weight: bold']) !!} <i class="fab fa-facebook-square" style="color: #3b5998"></i>
-                                                @endif
+                                                @endif --}}
                                                 @if ($partner->link_facebook != null)
                                                 {!! Form::text('link_facebook', $partner->link_facebook, ['class' => 'form-control']) !!}
                                                 @else
@@ -361,11 +363,11 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                @if ($partner->link_instagram != null)
-                                                    {!! Form::label('link_instagram', 'Link de perfil de Instagram', ['id' => 'Link de Instagram']) !!} <i class="fab fa-instagram" style="color: #ac2bac"></i>
-                                                @else
+                                                {{-- @if ($partner->link_instagram != null) --}}
+                                                {!! Form::label('link_instagram', 'Link de perfil de Instagram', ['id' => 'Link de Instagram']) !!} <i class="fab fa-instagram" style="color: #ac2bac"></i>
+                                                {{-- @else
                                                     {!! Form::label('link_instagram', 'Link de perfil de Instagram *', ['id' => 'Link de Instagram', 'style' => 'color: red; font-weight: bold;']) !!} <i class="fab fa-instagram" style="color: #ac2bac;"></i>
-                                                @endif
+                                                @endif --}}
                                                 @if ($partner->link_instagram != null)
                                                 {!! Form::text('link_instagram', $partner->link_instagram, ['class' => 'form-control']) !!}
                                                 @else
@@ -381,11 +383,11 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                @if ($partner->link_linkedin != null)
-                                                    {!! Form::label('link_linkedin', 'Link de perfil de LinkedIn', ['id' => 'Link de LinkedIn']) !!} <i class="fab fa-linkedin text-primary"></i>
-                                                @else
+                                                {{-- @if ($partner->link_linkedin != null) --}}
+                                                {!! Form::label('link_linkedin', 'Link de perfil de LinkedIn', ['id' => 'Link de LinkedIn']) !!} <i class="fab fa-linkedin text-primary"></i>
+                                                {{-- @else
                                                     {!! Form::label('link_linkedin', 'Link de perfil de LinkedIn *', ['id' => 'Link de LinkedIn', 'style' => 'color: red; font-weight: bold']) !!} <i class="fab fa-linkedin text-primary"></i>
-                                                @endif
+                                                @endif --}}
                                                 @if ($partner->link_linkedin != null)
                                                 {!! Form::text('link_linkedin', $partner->link_linkedin, ['class' => 'form-control']) !!}
                                                 @else
@@ -401,11 +403,11 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                @if ($partner->website != null)
-                                                    {!! Form::label('website', 'Sitio Web', ['id' => 'Link de Sitio Web']) !!} <i class="fas fa-globe" style="color: #3b5998"></i>
-                                                @else
+                                                {{-- @if ($partner->website != null) --}}
+                                                {!! Form::label('website', 'Sitio Web', ['id' => 'Link de Sitio Web']) !!} <i class="fas fa-globe" style="color: #3b5998"></i>
+                                                {{-- @else
                                                     {!! Form::label('website', 'Sitio Web *', ['id' => 'Link de Sitio Web', 'style' => 'color: red; font-weight: bold']) !!} <i class="fas fa-globe" style="color: #3b5998"></i>
-                                                @endif
+                                                @endif --}}
                                                 @if ($partner->website != null)
                                                 {!! Form::text('website', $partner->website, ['class' => 'form-control']) !!}
                                                 @else
@@ -536,11 +538,19 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                @if ($partner->specialty != null)
-                                                    {!! Form::label('specialty', 'Especialidad(es)', ['id' => 'Especialidad (Descripción)']) !!} <b style="font-size: 14px">(Descripción más detallada)</b>
-                                                @else
-                                                    {!! Form::label('specialty', 'Especialidad(es) *', ['id' => 'Especialidad (Descripción)', 'style' => 'color: red; font-weight: bold']) !!} <b style="font-size: 14px">(Descripción más detallada)</b>
-                                                @endif
+                                                <div class="d-flex">
+                                                    @if ($partner->specialty != null)
+                                                        {!! Form::label('specialty', 'Especialidad(es)', ['id' => 'Especialidad (Descripción)']) !!} <b style="font-size: 14px">(Descripción más detallada)</b>
+                                                    @else
+                                                        {!! Form::label('specialty', 'Especialidad(es) *', ['id' => 'Especialidad (Descripción)', 'style' => 'color: red; font-weight: bold']) !!} <b style="font-size: 14px">(Descripción más detallada)</b>
+                                                    @endif
+                                                    <div style="margin-left: 5px; margin-top: -3px; position: relative;" onclick="viewHelp('specialty_help');">
+                                                        <label style="background-color: #002542; color: #ffffff; padding-left: 5px; padding-right: 5px; border-radius: 5px; cursor: pointer">?</label>
+                                                        <div id="specialty_help" style="background-color: #002542; color: #ffffff; display: none; position: absolute; width: 40vw; padding: 5px; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                                                            Breve descripción del área o áreas en las que se especializa, por ejemplo si es abogado especialista familiar puede especificar temas como alimentos, divorcios, custodia de hijos, etc.
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 {!! Form::text('specialty', Purify::clean($partner->specialty), ['class' => 'form-control', 'onkeyup' => 'countChars();', 'minlength' => '100', 'maxlength' => '200']) !!}
                                                 <div class="d-flex float-right" style="font-size: 13px">
                                                     <p id="charNum">0 caracteres</p>
@@ -550,11 +560,21 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        @if ($partner->biography_html != null)
-                                            {!! Form::label('biography_html', 'Biografia', ['id' => 'Biografía']) !!} <b style="font-size: 14px">(Descripción de trayectoria y experiencia en su área)</b>
-                                        @else
-                                            {!! Form::label('biography_html', 'Biografia *', ['id' => 'Biografía', 'style' => 'color: red; font-weight: bold']) !!} <b style="font-size: 14px">(Descripción de trayectoria y experiencia en su área)</b>
-                                        @endif
+                                        <div class="d-flex">
+                                            @if ($partner->biography_html != null)
+                                                {!! Form::label('biography_html', 'Biografia y Experiencia', ['id' => 'Biografía']) !!} <b style="font-size: 14px">
+                                            @else
+                                                {!! Form::label('biography_html', 'Biografia y Experiencia *', ['id' => 'Biografía', 'style' => 'color: red; font-weight: bold']) !!}
+                                            @endif
+                                            <div style="margin-left: 5px; margin-top: -3px; position: relative;" onclick="viewHelp('biography_help');">
+                                                <label style="background-color: #002542; color: #ffffff; padding-left: 5px; padding-right: 5px; border-radius: 5px; cursor: pointer">?</label>
+                                                <div id="biography_help" style="background-color: #002542; color: #ffffff; display: none; position: absolute; width: 40vw; padding: 5px; border-radius: 5px;">
+                                                    Reseña de algunos aspectos de su carrera profesional, por ejemplo donde obtuvo su título, experiencia en casos que ha manejado, certificados o reconocimientos que ha obtenido, etc.
+                                                    <br>
+                                                    <b><i>No olvide compartir su entusiamo por las leyes</i></b>
+                                                </div>
+                                            </div>
+                                        </div>
                                         {!! Form::textarea('biography_html', Purify::clean($partner->biography_html), ['class' => 'form-control','rows' => '4', 'minlength' => '100', 'maxlength' => '200']) !!}
                                         <div class="d-flex float-right" style="font-size: 13px">
                                             <span id="txtMaxMinChar" class="text-success" style="margin-left: 5px">(Mínimo: 400 caracteres)</span>
@@ -903,6 +923,13 @@
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        function viewHelp(div){
+            var div_help =  document.getElementById(div);
+            console.log(div_help);
+            if(div_help.style.display == 'none'){div_help.style.display = 'block';}
+            else {div_help.style.display = 'none';}
+        }
+
         if(localStorage.getItem('modalwaslaunchedaux') != null){
             console.log(localStorage.getItem('modalwaslaunchedaux'));
         }

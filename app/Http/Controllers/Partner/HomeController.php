@@ -54,10 +54,10 @@ class HomeController extends Controller
         if($partner->name == null){ array_push ( $camposVacios , "Nombre"); }
         if($partner->lastname == null){ array_push ( $camposVacios , "Apellido"); }
         if($partner->email == null){ array_push ( $camposVacios , "Email"); }
-        if($partner->link_facebook == null){ array_push( $camposVacios, "Link de Facebook");}
-        if($partner->link_instagram == null){ array_push( $camposVacios, "Link de Instagram");}
-        if($partner->link_linkedin == null){ array_push( $camposVacios, "Link de LinkedIn");}
-        if($partner->website == null){ array_push( $camposVacios, "Link de Sitio Web");}
+        // if($partner->link_facebook == null){ array_push( $camposVacios, "Link de Facebook");}
+        // if($partner->link_instagram == null){ array_push( $camposVacios, "Link de Instagram");}
+        // if($partner->link_linkedin == null){ array_push( $camposVacios, "Link de LinkedIn");}
+        // if($partner->website == null){ array_push( $camposVacios, "Link de Sitio Web");}
         if($partner->country_residence == null){ array_push ( $camposVacios , "País de residencia"); }
         if($partner->phone == null){ array_push ( $camposVacios , "Teléfono"); }
         if($partner->state == null){ array_push ( $camposVacios , "Estado, Departamento o Provincia"); }
