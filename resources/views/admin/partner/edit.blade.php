@@ -565,7 +565,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {!! Form::text('specialty', Purify::clean($partner->specialty), ['class' => 'form-control', 'onkeyup' => 'countChars();', 'minlength' => '100', 'maxlength' => '200']) !!}
+                                                {!! Form::text('specialty', Purify::clean($partner->specialty), ['class' => 'form-control', 'onkeyup' => 'countChars();', 'maxlength' => '200']) !!}
                                                 <div class="d-flex float-right" style="font-size: 13px">
                                                     <p id="charNum">0 caracteres</p>
                                                     <span id="txtMaxMinChar" class="text-success" style="margin-left: 5px">(Mínimo: 100 caracteres - Máximo: 200 caracteres)</span>
