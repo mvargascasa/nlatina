@@ -386,7 +386,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         downloadJSAtOnload();
         console.log('cargando script de jquery...');
         if(button)button.disabled = false;
-    }, 1000);
+    }, 2000);
 
     // if (window.addEventListener)
     //     window.addEventListener("load", downloadJSAtOnload, false);
