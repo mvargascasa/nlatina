@@ -353,22 +353,25 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     //CARGAR EL SCRIPT DE PLUGIN DE FACEBOOK
     var scriptFacebookPlugin = document.createElement('script');
     scriptFacebookPlugin.id = "plugin-facebook";
-    scriptFacebookPlugin.async = true;
+    //scriptFacebookPlugin.async = true;
     scriptFacebookPlugin.defer = true;
-    scriptFacebookPlugin.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1";
 
     var path = window.location.pathname;
 
     //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS
     function downloadFacebookJSAtOnLoad(){
-        if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida') || path.match('/partners'))){
-            document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
-        } else {
-            if(screen.width > 580){
-                document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
-            }
-        }
+        // if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida') || path.match('/partners'))){
+        //     document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
+        // } else {
+        //     if(screen.width > 580){
+        //         document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
+        //     }
+        // }
+        scriptFacebookPlugin.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1";
+        document.body.appendChild(scriptFacebookPlugin);
     }
+
+    setTimeout(downloadFacebookJSAtOnLoad, 3000);
 
     var script3 = document.createElement("script");
 
