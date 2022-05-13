@@ -63,7 +63,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 <!-- Facebook Pixel Code -->
     <script>
         setTimeout(function(){
-            if(!(window.location.pathname.match('/newjersey') || window.location.pathname.match('/newyork') || window.location.pathname.match('/florida') || window.location.pathname.match('/partners'))){
+            //if(!(window.location.pathname.match('/newjersey') || window.location.pathname.match('/newyork') || window.location.pathname.match('/florida') || window.location.pathname.match('/partners'))){
                 !function(f,b,e,v,n,t,s)
                 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -74,8 +74,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 'https://connect.facebook.net/en_US/fbevents.js');
                 fbq('init', '757596345081494');
                 fbq('track', 'PageView');
-            }
-            console.log('cargando script de facebook pixel code...');
+            //}
+            //console.log('cargando script de facebook pixel code...');
         }, 3000);
     </script>
     <noscript>
@@ -383,7 +383,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     }, 3000);
 
     var timeToLoadJquery = 1000;
-    if(path.match('/newjersey')) timeToLoadJquery = 3000;
+    if(path.match('/newjersey') || path.match('/newyork')) timeToLoadJquery = 3000;
 
     setTimeout(function () {
         downloadJSAtOnload();
