@@ -382,11 +382,14 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         console.log('cargando script de facebook snippet...');
     }, 3000);
 
+    var timeToLoadJquery = 1000;
+    if(path.match('/newjersey')) timeToLoadJquery = 3000;
+
     setTimeout(function () {
         downloadJSAtOnload();
         console.log('cargando script de jquery...');
         if(button)button.disabled = false;
-    }, 3000);
+    }, timeToLoadJquery);
 
     // if (window.addEventListener)
     //     window.addEventListener("load", downloadJSAtOnload, false);
