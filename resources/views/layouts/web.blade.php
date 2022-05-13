@@ -28,8 +28,8 @@ if(strpos($actual_link, 'localhost') === false){
 <script id="scriptanalytics"></script>
 <script>
     var path = window.location.pathname;
-    var timeToLoad = 0;
-    if(!path.match('/newjersey'))timeToLoad=3000;
+    var timeToLoad = 1000;
+    if(path.match('/newjersey'))timeToLoad=2000;
 
     setTimeout(function(){
         document.getElementById('scriptanalytics').src = 'https://www.googletagmanager.com/gtag/js?id=UA-124437679-3';
