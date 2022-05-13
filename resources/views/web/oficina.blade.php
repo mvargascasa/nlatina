@@ -182,6 +182,16 @@
 @section('phoneNumberHidden', $data['telfHidden'])
 @section('phoneNumber', $data['telfShow'])
 
+@php
+// detectando si el dispositivo es movil para cargar la imagen del mapa de google
+    $detect = new \Detection\MobileDetect();
+    $isMobile = FALSE;
+
+    if($detect->isMobile()){
+        $isMobile = TRUE;
+    }
+@endphp
+
 @section('content')
     <section id="prisection" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <div class="row justify-content-center align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
@@ -475,7 +485,7 @@
 
     <div class="row">
         <a href="{{ $data['urlmap']}}" target="_blank">
-            <img id="imgurlmap" class="lazy img-fluid" data-src="{{ asset($data['imgurlmap']) }}" alt="Apostillar Documentos en {{ $data['office'] }}">
+            <img id="imgurlmap" class="lazy img-fluid" data-src="@if($isMobile) {{ asset($data['imgurlmapmobile']) }} @else {{ asset($data['imgurlmap']) }} @endif" alt="Apostillar Documentos en {{ $data['office'] }}">
         </a>
     </div>
 
@@ -635,24 +645,24 @@
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgup'])}})";
             document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/BANNER-NEGRO.webp')}}')";
-            setImageUrlByViewport();
+            //setImageUrlByViewport();
         });
 
-        window.addEventListener('resize', setImageUrlByViewport);
+        //window.addEventListener('resize', setImageUrlByViewport);
 
         //FUNCION PARA SETEAR SRC DE LA IMAGEN DEPENDIENDO DEL TAMAÑO DE LA PANTALLA
-        function setImageUrlByViewport(){
-            var imgUrlMap = document.getElementById('imgurlmap');
-            if (screen.width < 580){
-                imgUrlMap.src = "{{ $data['imgurlmapmobile'] }}";
-                imgUrlMap.style.width = "100%";
-                imgUrlMap.style.height = "100%";
-            } else {
-                imgUrlMap.src = "{{ $data['imgurlmap'] }}";
-                imgUrlMap.style.width = "100%";
-                imgUrlMap.style.height = "100%";
-            }
-        }
+        // function setImageUrlByViewport(){
+        //     var imgUrlMap = document.getElementById('imgurlmap');
+        //     if (screen.width < 580){
+        //         imgUrlMap.src = "{{ $data['imgurlmapmobile'] }}";
+        //         imgUrlMap.style.width = "100%";
+        //         imgUrlMap.style.height = "100%";
+        //     } else {
+        //         imgUrlMap.src = "{{ $data['imgurlmap'] }}";
+        //         imgUrlMap.style.width = "100%";
+        //         imgUrlMap.style.height = "100%";
+        //     }
+        // }
 
         var selectPaisResidencia = document.getElementById('pais');
         var inputCodPais = document.getElementById('telf');
