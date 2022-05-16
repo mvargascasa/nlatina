@@ -500,8 +500,8 @@ class WebController extends Controller
         $data['telfWpp'] = '13479739888';
         $data['telfShow'] = '908-800-9046';
         $data['office'] = 'New Jersey';
-        $data['metadescription'] = "";
-        $data['keywords'] = 'tramitar documentos new jersey, certificar documentos new jersey, traducir documentos new jersey, apostillar cerca de mi, apostille near me, apostille new jersey, apostillar new jersey, apostillar documentos rapido new jersey, apostillar documentos new jersey, donde puedo apostillar un documento, donde apostillar en new jersey, apostillado de documentos, fast document apostille new jersey, tramitar documentos nj, apostillar documentos nj, notarizar documentos nj';
+        $data['metadescription'] = "Notarizamos todo tipo de documentos en New Jersey tales como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítalo aquí! ✔";
+        $data['keywords'] = 'notaria en new jersey, notaria publica en new jersey, notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-jersey':
@@ -969,8 +969,7 @@ class WebController extends Controller
             $data['urlmap'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
             $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
-            $data['metadescription'] .= 'Apostillamos todo tipo de documentos en New Jersey, de una manera rápida y segura';
-            $data['keywords'] = 'notaria en new jersey, notarizar en new jersey, notaria cerca de mi, notary near me, apostille near me, apostille new jersey, carta poder en new jersey, traduccion en new jersey, apostillar documentos en new jersey, affidavít en new jersey, travel authorization en new jersey, certificar documentos en new jersey';
+            $data['keywords'] = 'notaria en new jersey, notaria publica en new jersey, notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey';
     
             return view('web.oficina', compact('data'));
         }
