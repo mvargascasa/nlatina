@@ -210,8 +210,8 @@ class WebController extends Controller
         $data['telfWpp'] = '13479739888';
         $data['telfShow'] = '347-973-9888';
         $data['office'] = 'New York';
-        $data['metadescription'] = "";
-        $data['keywords'] = 'tramitar documentos new york, certificar documentos new york, traducir documentos new york, apostille new york, apostillar new york, apostillar documentos rapido new york, apostillar documentos new york, donde puedo apostillar un documento, donde apostillar en new york, apostillado de documentos, fast document apostille new york, apostillar documentos ny, tramitar documentos ny, notarizar documentos ny';
+        $data['metadescription'] = "Notarizamos todo tipo de documentos en New York tales como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✔";
+        $data['keywords'] = 'notaria en new york, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-york':
@@ -488,8 +488,7 @@ class WebController extends Controller
             $data['urlmap'] = 'https://goo.gl/maps/ovKfQSvTmA5SBqqF6';
             $data['imgurlmap'] = "img/oficinas/maps-ny.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-ny-mobile.webp";
-            $data['metadescription'] .= 'Apostillamos todo tipo de documentos en New York, de una manera rápida y segura';
-            $data['keywords'] = 'notaria en new york, notarizar en new york, notaria cerca de mi, notary near me, apostille near me, apostille new york, carta poder en new york, traduccion en new york, apostillar documentos en new york, affidavít en new york, travel authorization en new york, certificar documentos en new york';
+            $data['keywords'] = 'notaria en new york, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york';
 
             return view('web.oficina', compact('data'));
         }
@@ -500,7 +499,7 @@ class WebController extends Controller
         $data['telfWpp'] = '13479739888';
         $data['telfShow'] = '908-800-9046';
         $data['office'] = 'New Jersey';
-        $data['metadescription'] = "Notarizamos todo tipo de documentos en New Jersey tales como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítalo aquí! ✔";
+        $data['metadescription'] = "Notarizamos todo tipo de documentos en New Jersey tales como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✔";
         $data['keywords'] = 'notaria en new jersey, notaria publica en new jersey, notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey';
         if($service != null){
             switch ($service) {
