@@ -163,8 +163,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Notaría Pública <br> New Jersey <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = '¿Estas buscando apostillar un documento, una carta poder o traducir un certificado? Notaria Latina ofrece estos y otros servicios en New Jersey. Contáctanos y te asesoraremos en tus trámites';
-        $data['keywords'] = 'notaria, notaría cerca, notaria new jersey, notaria en new jersey, notarizar documentos en new jersey, apostillar certificado de nacimiento new jersey, apostillar poderes new jersey, apostillar carta poder en new jersey, traducir documentos new jersey';
+        $data['meta_description'] = 'Realizamos todo tipo de notarización de documentos en New York como apostillas, poderes, traducciones de una manera rápida y segura. Contáctenos ahora! ✔';
+        $data['keywords'] = 'notaria en new jersey, notaria latina en new jersey, notaria publica latina en new jersey, notaria en elizabeth new jersey, notario publico en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en elizabeth new jersey, traducir documentos en elizabeth new jersey';
         $data['imgup'] = 'img/newjersey-landing-notaria-latina.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
