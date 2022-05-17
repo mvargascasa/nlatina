@@ -178,7 +178,7 @@ class LandingController extends Controller
 
     public function njtrad() {
         $data['oficina'] = 'New Jersey';
-        $data['header'] = 'Traducci]on de documentos <br> en New Jersey';  
+        $data['header'] = 'Traducción de documentos <br> en New Jersey';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español'; 
         $data['meta_description'] = '¿Necesita traducir un documento en New Jersey? Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. Solicite su cita aquí! ✔';
         $data['keywords'] = 'traducir documentos en new jersey, traducir documentos en elizabeth nj, traducir documentos en new jersey a español, traducir certificados en new jersey, traducir acuerdos en new jersey, donde puedo traducir un documento en new jersey, donde traducir un documento en new jersey, traducir actas en new jersey, traducir diploma en new jersey';
