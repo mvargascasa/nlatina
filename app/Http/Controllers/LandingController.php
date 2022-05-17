@@ -378,10 +378,10 @@ class LandingController extends Controller
 
     public function flpod() {
         $data['oficina'] = 'Florida';
-        $data['header']  = 'Poderes <br> en Florida'; 
+        $data['header']  = 'Poder Especial o General <br> en Florida'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
-        $data['meta_description'] = 'Notaria Latina ofrece servicios para Poderes Generales y Especiales. Contáctanos y te asesoraremos en tus trámites.';
-        $data['keywords'] = 'carta poder, carta poder florida, notarizar carta poder en florida,  poder especial en florida, poder general en florida, bienes, compra o venta propiedades florida, carta poder créditos bienes, pasaportes bienes';
+        $data['meta_description'] = '¿Necesita realizar un poder notarial en Florida? Contáctese con nosotros y lo ayudamos en el trámite de un poder general o especial de una forma rápida ✔';
+        $data['keywords'] = 'poder especial en florida, poder general en florida, tramitar poder especial en florida, tramitar poder general en florida, realizar tramite para poder especial en florida, obtener carta poder en florida, donde puedo tramitar un poder en florida, donde puedo obtener un poder en florida';
         $data['imgup']   = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
@@ -390,6 +390,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13053177826';
         $data['tlfshow'] = '305 317 7826';
         $data['landing'] = 'Poderes';
+        $data['title'] = 'Notaría Latina | Realizamos todo tipo de poderes en Florida';
         return view('landing.general',$data);
     }   
 
