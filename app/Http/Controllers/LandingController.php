@@ -196,10 +196,10 @@ class LandingController extends Controller
 
     public function njpod() {
         $data['oficina'] = 'New Jersey';
-        $data['header']  = 'Poderes <br> en New Jersey'; 
+        $data['header']  = 'Poder Especial o General <br> en New Jersey'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
-        $data['meta_description'] = $data['service'];
-        $data['keywords'] = 'New Jersey, Poderes Especiales, Poderes Generales, Trámites Bancarios, Carta Poder, Menor de edad, Compra Venta Propiedades, Créditos, Pasaporte, Pleitos, Cobranzas';
+        $data['meta_description'] = '¿Necesita realizar un poder notarial en New Jersey? Contáctese con nosotros y lo ayudamos con el trámite para un poder especial o general de una manera segura ✔';
+        $data['keywords'] = 'poder especial en new jersey, poder general en new jersey, tramitar poder especial en new jersey, tramitar poder general en new jersey, realizar tramite para poder especial en new jersey, obtener carta poder en new jersey, donde puedo tramitar un poder en new jersey, donde puedo obtener un poder en new jersey';
         $data['imgup'] = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -208,6 +208,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249258';
         $data['tlfshow'] = '908 224-9258';
         $data['landing'] = "Poderes"; 
+        $data['title'] = 'Notaría Latina | Realizamos todo tipo de poderes en New Jersey';
         return view('landing.general',$data);
     }   
 
