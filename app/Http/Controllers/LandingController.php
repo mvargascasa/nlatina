@@ -213,7 +213,7 @@ class LandingController extends Controller
 
     public function njapos() {
         $data['oficina'] = 'New Jersey';
-        $data['header'] = 'Apostillas <br> en New Jersey';
+        $data['header'] = 'Apostilla de documentos <br> en New Jersey';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
         $data['meta_description'] = '¿Necesita apostillar un documento en New Jersey? Lo ayudamos con la apostilla de certificados, poderes, traducciones, diplomas, entre otros. Solicítelo aquí! ✔';
         $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en new jersey, apostillar documentos en elizabeth nj, apostillar certificados en new jersey, apostillar poderes en new jersey, apostillar traduccion en new jersey, apostillar diploma en new jersey, donde apostillar documentos en new jersey, donde puedo apostillar documentos en new jersey';
