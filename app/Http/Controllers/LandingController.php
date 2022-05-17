@@ -178,10 +178,10 @@ class LandingController extends Controller
 
     public function njtrad() {
         $data['oficina'] = 'New Jersey';
-        $data['header'] = 'Servicio de Traducción <br> en New Jersey';  
+        $data['header'] = 'Traducci]on de documentos <br> en New Jersey';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español'; 
-        $data['meta_description'] = '¿Necesitas traducir un tipo de documento en New Jersey pero no sabes donde hacerlo? Notaria Latina esta a tu servicio!. Contamos con personal calificado para ayudarte en tus trámites. Contáctanos';
-        $data['keywords'] = 'servicio de traduccion new jersey, agencia de traduccion new jersey, traducir documentos new jersey, traductor certificado new jersey, traducir certificados new jersey, traduccion certificada new jersey, notario traductor new jersey, traductor jurado new jersey, traducir licencia de conducir, traducir acta de nacimiento, traducir documentos en new jersey, traducir acta de nacimiento en new jersey, traducir diploma en new jersey, traducir certificado de matrimonio en new jersey, traducir documento de divorcio en new jersey, traducir certificado de defuncion en new jersey, traducir documentos legales en new jersey, donde puedo traducir documentos en new jersey';
+        $data['meta_description'] = '¿Necesita traducir un documento en New Jersey? Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. Solicite su cita aquí! ✔';
+        $data['keywords'] = 'traducir documentos en new jersey, traducir documentos en elizabeth nj, traducir documentos en new jersey a español, traducir certificados en new jersey, traducir acuerdos en new jersey, donde puedo traducir un documento en new jersey, donde traducir un documento en new jersey, traducir actas en new jersey, traducir diploma en new jersey';
         $data['imgup'] = 'img/landing-traducciones.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -190,6 +190,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249259';
         $data['tlfshow'] = '908 224-9259';
         $data['landing'] = 'Traducciones';
+        $data['title'] = 'Notaría Latina | Traducir documentos notariales en New Jersey';
         return view('landing.general',$data);
     }  
 

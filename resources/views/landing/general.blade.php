@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   
-  <title>Notaria Latina en {{$oficina}} - Apostillas, Poderes y Traducciones</title>
+  <title>@isset($title) {{ $title }} @else Notaria Latina en {{$oficina}} - Apostillas, Poderes y Traducciones @endisset</title>
 
   <script type="text/javascript">
     function callbackThen(response){
