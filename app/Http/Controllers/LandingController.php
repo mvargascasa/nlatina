@@ -286,10 +286,10 @@ class LandingController extends Controller
 
     public function nypod() {
         $data['oficina'] = 'New York';
-        $data['header']  = 'Poderes <br> en New York'; 
+        $data['header']  = 'Poder Especial o General <br> en New York'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
-        $data['meta_description'] = 'Notaria Latina cuenta con servicios para Poderes Generales y Especiales. ¡Contáctanos!';
-        $data['keywords'] = 'carta poder, carta poder new york, carta poder simple, carta poder legal, poder general, notarizar carta poder,  poder especial, notaria ecuatoriana, carta notariada, carta poder para viajar un menor';
+        $data['meta_description'] = '¿Necesita realizar un poder notarial en New York? Contáctese con nosotros y lo ayudamos con el trámite para realizar un poder general o especial ✔';
+        $data['keywords'] = 'poder especial en new york, poder general en new york, tramitar poder especial en new york, tramitar poder general en new york, realizar trámite para poder especial en new york, obtener carta poder en new york, donde puedo tramitar un poder en new york, donde puedo obtener un poder en new york';
         $data['imgup']   = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -297,7 +297,8 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '13474281516';
         $data['tlfshow'] = '347 428-1516';
-        $data['landing'] = 'Poderes'; 
+        $data['landing'] = 'Poderes';
+        $data['title'] = 'Notaría Latina | Realizamos todo tipo de poderes en New York'; 
         return view('landing.general',$data);
     }   
 
