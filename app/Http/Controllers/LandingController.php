@@ -303,10 +303,10 @@ class LandingController extends Controller
 
     public function nyapos() {
         $data['oficina'] = 'New York';
-        $data['header'] = 'Apostillas <br> en New York';
+        $data['header'] = 'Apostilla de documentos <br> en New York';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
-        $data['meta_description'] = 'Apostillamos todo tipo de documentos como Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos en New York';
-        $data['keywords'] = 'apostillar, apostillar documentos, apostillar documentos en new york, apostillar cerca de mi, apostillar acta de nacimiento new york, apostillar carta poder new york, apostillar certificado de matrimonio new york, apostillar actas de divorcio new york';
+        $data['meta_description'] = '¿Necesita apostillar un documento en New Jersey? Brindamos nuestro servicio de apostillas en certificados, poderes, traducciones, entre otros. Agende su cita! ✔';
+        $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en new york, apostillar documentos en queens ny, apostillar certificados en new york, apostillar poderes en new york, apostillar traduccion en new york, apostillar diploma en new york, donde apostillar documentos en new york, donde puedo apostillar documentos en new york';
         $data['imgup'] = 'img/landing-apostillas-ny.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -315,6 +315,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13474281518';
         $data['tlfshow'] = '347 428-1518';
         $data['landing'] = 'Apostillas';
+        $data['title'] = 'Notaría Latina | Apostillar documentos en New York';
         return view('landing.general',$data);
     }  
 
