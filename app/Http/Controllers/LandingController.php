@@ -215,8 +215,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Apostillas <br> en New Jersey';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
-        $data['meta_description'] = 'Apostillamos todo tipo de documentos como Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos en New Jersey';
-        $data['keywords'] = 'apostillar, apostillar documentos, apostillas en new jersey, apostillar partida de nacimiento, apostillar documentos en new jersey, apostille near me, apostillar cerca de mi, apostille in new jersey, apostillado de actas, apostillar acta de nacimiento new jersey, apostillar carta poder new jersey, apostillar certificado de matrimonio new jersey, carta poder apostillada, donde apostillar documentos en new jersey';
+        $data['meta_description'] = '¿Necesita apostillar un documento en New Jersey? Lo ayudamos con la apostilla de certificados, poderes, traducciones, diplomas, entre otros. Solicítelo aquí! ✔';
+        $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en new jersey, apostillar documentos en elizabeth nj, apostillar certificados en new jersey, apostillar poderes en new jersey, apostillar traduccion en new jersey, apostillar diploma en new jersey, donde apostillar documentos en new jersey, donde puedo apostillar documentos en new jersey';
         $data['imgup'] = 'img/landing-apostillas-nj.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.jpg';
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
@@ -225,6 +225,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249552';
         $data['tlfshow'] = '908 224-9552';
         $data['landing'] = 'Apostillas';
+        $data['title'] = 'Notaria Latina | Apostillar documentos en New Jersey';
         return view('landing.general',$data);
     }
 
