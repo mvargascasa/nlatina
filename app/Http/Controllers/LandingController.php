@@ -268,10 +268,10 @@ class LandingController extends Controller
 
     public function nytrad() {
         $data['oficina'] = 'New York';
-        $data['header'] = 'Servicio de Traducción <br> en New York';  
+        $data['header'] = 'Traducción de documentos <br> en New York';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
-        $data['meta_description'] = '¿Necesitas traducir un tipo de documento en New Jersey pero no sabes donde hacerlo? Notaria Latina esta a tu servicio!. Contamos con personal calificado para ayudarte en tus trámites. Contáctanos';
-        $data['keywords'] = 'traducir documentos, traducir documentos en new york, traducir acta de nacimiento en new york, traducir diploma en new york, traducir certificado de matrimonio en new york, traducir documento de divorcio en new york, traducir certificado de defuncion en new york, traducir documentos legales en new york, donde puedo traducir documentos en new york';
+        $data['meta_description'] = '¿Necesita traducir un documento en New York? Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. Contáctese con nosotros! ✔';
+        $data['keywords'] = 'traducir documentos en new york, traducir documentos en queens ny, traducir documentos en new york a español, traducir certificados en new york, traducir acuerdos en new york, donde puedo traducir un documento en new york, donde traducir un documento en new york, traducir actas en new york, traducir diploma en new york';
         $data['imgup'] = 'img/landing-traducciones.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
@@ -280,6 +280,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13474281517';
         $data['tlfshow'] = '347 428-1517';
         $data['landing'] = 'Traducciones';
+        $data['title'] = 'Notaría Latina | Traducir documentos notariales en New York';
         return view('landing.general',$data);
     }  
 
