@@ -395,10 +395,10 @@ class LandingController extends Controller
 
     public function flapos() {
         $data['oficina'] = 'Florida';
-        $data['header'] = 'Apostillas <br> en Florida';
+        $data['header'] = 'Apostilla de documentos <br> en Florida';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
-        $data['meta_description'] = 'Apostillamos todo tipo de documentos como: Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos en Florida';
-        $data['keywords'] = 'apostillar, apostillamiento, apostillar documentos, apostillar documentos en florida, apostillar cerca de mi, apostillar acta de nacimiento florida, apostillar carta poder florida, apostillar certificado de matrimonio florida, apostillar actas de divorcio florida, apostillado de actas florida, apostillar pasaporte florida, como apostillar florida';
+        $data['meta_description'] = '¿Necesita apostillar un documento en Florida? Lo ayudamos con el servicio de apostilla en certificados, poderes, traducciones de una manera segura. Consulte aquí! ✔';
+        $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en florida, apostillar documentos en sunrise florida, apostillar certificados en florida, apostillar poderes en florida, apostillar traduccion en florida, apostillar diploma en florida, donde apostillar documentos en florida, donde puedo apostillar documentos en florida';
         $data['imgup'] = 'img/landing-apostillas-fl.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
@@ -407,6 +407,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13053177820';
         $data['tlfshow'] = '305 317 7820';
         $data['landing'] = 'Apostillas';
+        $data['title'] = 'Notaría Latina | Apostillar documentos en Florida';
         return view('landing.general',$data);
     }
     
