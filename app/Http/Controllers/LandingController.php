@@ -328,8 +328,8 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = '¿Necesitas apostillar un documento en Florida? ¿Tramitar un poder general o especial? ¿Traducir un certificado? Notaria Latina lo hace por ti, contáctate con nosotros y te asesoraremos con personal calificado.';
-        $data['keywords'] = 'apostillas en florida, cartas poder en florida, traducciones florida, notaria en florida, notarizar documentos en florida, notaria en florida, notario publico florida, servicios notariales florida, notarias cerca, notaria latina';
+        $data['meta_description'] = 'Realizamos todo tipo de trámites notariales en Florida tales como apostillas, certificados, poderes, traducciones, de una manera segura. Solicitar aquí! ✔';
+        $data['keywords'] = 'notaria en florida, notaria latina en florida, notaria publica latina en florida, notaria en sunrise florida, notario publico en florida, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en sunrise florida, traducir documentos en sunrise florida';
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
