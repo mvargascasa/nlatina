@@ -236,8 +236,8 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = '¿Necesitas apostillar un documento en New York? ¿Tramitar una carta poder? ¿Traducir un certificado? Notaria Latina lo hace por ti, contáctate con nosotros y te asesoraremos con personal calificado.';
-        $data['keywords'] = 'notaría, notaria near me, notaría pública, notaria en new york, notarizar documentos, notarizar documentos en new york, carta poder notariada, notaría cerca, notario cerca, notaría ecuador, notaria publico cercano';
+        $data['meta_description'] = 'Realizamos todo tipo de trámites notariales en New York tales como apostillas, certificados, poderes, traducciones de una manera segura. Contáctese con nosotros! ✔';
+        $data['keywords'] = 'notaria en new york, notaria latina en new york, notaria publica latina en new york, notaria en queens new york, notario publico en new york, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en queens new york, traducir documentos en queens new york';
         $data['imgup'] = 'img/newyork-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.jpg';
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
