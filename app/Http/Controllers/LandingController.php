@@ -328,7 +328,7 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Realizamos todo tipo de trámites notariales en Florida tales como apostillas, certificados, poderes, traducciones, de una manera segura. Solicitar aquí! ✔';
+        $data['meta_description'] = 'Realizamos todo tipo de trámites notariales en Florida tales como apostillas, certificados, poderes, traducciones de una manera segura. Solicitar aquí! ✔';
         $data['keywords'] = 'notaria en florida, notaria latina en florida, notaria publica latina en florida, notaria en sunrise florida, notario publico en florida, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en sunrise florida, traducir documentos en sunrise florida';
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
@@ -345,8 +345,8 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = '¿Estas buscando apostillar un documento, una carta poder o traducir un certificado? Notaria Latina ofrece estos y otros servicios en New Jersey. Contáctanos y te asesoraremos en tus trámites';
-        $data['keywords'] = 'florida, notaria, direccion de notarias florida, documentos notarias florida, notaria en florida, notario publico cerca de mi, notarios publicos, notario publico mas cercano cerca de mi, notarizar documentos en florida, apostillar certificado de nacimiento florida, apostillar poderes florida, apostillar carta poder en florida, traducir documentos en florida';
+        $data['meta_description'] = 'Tramitamos todo tipo de documentos en Florida como apostillas, certificados, poderes, traducciones de una manera rápida y segura. Contáctenos ahora! ✔';
+        $data['keywords'] = 'notaria en florida, notaria latina en florida, notaria publica latina en florida, notaria en sunrise florida, notario publico en florida, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en sunrise florida, traducir documentos en sunrise florida';
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
