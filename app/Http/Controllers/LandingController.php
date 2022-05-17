@@ -163,7 +163,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Notaría Pública <br> New Jersey <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Realizamos todo tipo de notarización de documentos en New York como apostillas, poderes, traducciones de una manera rápida y segura. Contáctenos ahora! ✔';
+        $data['meta_description'] = 'Tramitamos todo tipo de documentos en New Jersey tales como apostillas, poderes, traducciones de una manera rápida y segura. Contáctenos ahora! ✔';
         $data['keywords'] = 'notaria en new jersey, notaria latina en new jersey, notaria publica latina en new jersey, notaria en elizabeth new jersey, notario publico en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en elizabeth new jersey, traducir documentos en elizabeth new jersey';
         $data['imgup'] = 'img/newjersey-landing-notaria-latina.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
