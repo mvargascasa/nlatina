@@ -360,10 +360,10 @@ class LandingController extends Controller
 
     public function fltrad() {
         $data['oficina'] = 'Florida';
-        $data['header'] = 'Servicio de Traducción <br> en Florida';  
+        $data['header'] = 'Traducción de documentos <br> en Florida';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
-        $data['meta_description'] = '¿Necesitas traducir un documento notarial en New Jersey pero no sabes donde hacerlo? Notaria Latina esta a tu servicio!. Contamos con personal calificado para ayudarte en tus trámites. Ponte en contacto con nosotros y te asesoraremos.';
-        $data['keywords'] = 'traducir documentos, traducir documentos en florida, traducir acta de nacimiento en florida, traducir diploma en florida, traducir certificado de matrimonio en florida, traducir documento de divorcio en florida, traducir certificado de defuncion en florida, traducir documentos legales en florida, donde puedo traducir documentos en florida, interprete traductor florida, traductor técnico florida, notario traductor florida, traducciones notariadas florida, traductor certificado florida';
+        $data['meta_description'] = '¿Necesita traducir un documento en Florida? Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. Contáctenos! ✔';
+        $data['keywords'] = 'traducir documentos en florida, traducir documentos en sunrise florida, traducir documentos en florida a español, traducir certificados en florida, traducir acuerdos en florida, donde puedo traducir un documento en florida, donde traducir un documentos en florida, traducir acta en florida, traducir diploma en florida';
         $data['imgup'] = 'img/landing-traducciones.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
         $data['dirtext'] = '2104 N University Dr <br> Sunrise, FL 33322 ';
@@ -372,6 +372,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13053177819';
         $data['tlfshow'] = '305 317 7819';
         $data['landing'] = 'Traducciones';
+        $data['title'] = 'Notaría Latina | Traducir documentos notariales en Florida';
         return view('landing.general',$data);
     }  
 
