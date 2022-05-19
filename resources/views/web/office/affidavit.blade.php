@@ -2,8 +2,8 @@
 @section('header')
 <title>Affidávit Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
 <meta name="title" content="Affidávit Notarizados y Apostillas en {{ $data['office'] }} - Notaria Latina">
-<meta name="description" content="Una declaración jurada o Affidávit es una manifestación escrita o verbal cuya veracidad es asegurada mediante un juramento ante una autoridad judicial o administrativa. Affidavit Support en {{ $data['office'] }}">       
-<meta name="keywords" content="Affidávit Notarizados y Apostillados en {{ $data['office'] }}, Affidávit Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es un affidavit, para que sirve un affidavit, como hacer una declaracion jurada, requisitos affidavit, obtener affidavit en {{ Str::lower($data['office']) }}, declaracion jurada en {{ Str::lower($data['office']) }}" />
+<meta name="description" content="Una declaración jurada (Affidávit) es una manifestación cuya veracidad se asegura mediante un juramento. Consulte por nuestros servicios de dicho documento">       
+<meta name="keywords" content="que es un affidavit, para que sirve un affidavit, requisitos para realizar affidavit en {{ Str::lower($data['office']) }}, como hacer una declaracion jurada en {{ Str::lower($data['office']) }}, realizar declaracion jurada en {{ Str::lower($data['office']) }}, donde puedo realizar una declaracion jurada notarial en {{ Str::lower($data['office']) }}, donde hacer declaracion juramentada en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"                content="{{ Request::url() }}" />
 <meta property="og:type"               content="article" />
@@ -21,7 +21,7 @@
     <div>
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title" >Affidávit en {{ $data['office'] }}</h1>
+              <h1 class="font-weight-bold heading-title" >Declaración Jurada (Affidávit) en {{ $data['office'] }}</h1>
               <a href="javascript:void(0)" class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</a>
           </div>

@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
-<title>Apostillas en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description" content="Autentificamos sus documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos. Apostillas en {{ $data['office'] }}">       
-<meta name="keywords" content="Apostillas en {{ $data['office'] }}, Affidávit near me, notaria latina, apostillar, apostillar cerca de mi, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es una apostilla, para que sirve apostillar un documento, apostillar documentos cerca de mi, requisitos para apostillar un documento, apostillar en {{ Str::lower($data['office']) }}, apostillar acta de nacimiento {{ Str::lower($data['office']) }}, apostillar poder en {{ Str::lower($data['office']) }}, apostillar carta poder en {{ Str::lower($data['office']) }}" />
+<title>Apostilla de documentos en {{ $data['office'] }} - Notaria Latina</title> 
+<meta name="description" content="Apostillamos todo tipo de documentos en {{ $data['office']}} como certificados, diplomas, poderes, contratos, entre otros de una manera segura. Contáctenos! ✔">       
+<meta name="keywords" content="que es una apostilla, para que sirve apostillar un documento, en que documentos se necesita apostillar, requisitos para apostillar un documento en {{ Str::lower($data['office']) }}, apostillar en {{ Str::lower($data['office']) }}, apostillar documentos en {{ Str::lower($data['office']) }}, apostillar documentos en elizabeth nj, apostillar diploma en {{ Str::lower($data['office']) }}, apostillar certificado de nacimiento en {{ Str::lower($data['office']) }}, apostillar carta poder en {{ Str::lower($data['office']) }}, apostillar certificado de matrimonio en {{ Str::lower($data['office']) }}, apostillar certificado de defuncion en {{ Str::lower($data['office']) }}, apostillar carta de invitacion en {{ Str::lower($data['office']) }}, apostillar declaracion jurada en {{ Str::lower($data['office']) }}, donde puedo apostillar un documento en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"                content="{{Request::url()}}" />
 <meta property="og:type"               content="article" />
@@ -22,7 +22,7 @@
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
 
             <div class="col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title" >Apostillas en {{ $data['office'] }}</h1>
+              <h1 class="font-weight-bold heading-title" >Apostilla de documentos en {{ $data['office'] }}</h1>
   
               <a href="javascript:void(0)" class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</a>

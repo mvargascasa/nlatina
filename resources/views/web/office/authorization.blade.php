@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
 <title>Autorizaciones de viaje en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description" content="Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres. Travel Authorization en {{ $data['office'] }}">       
-<meta name="keywords" content="Autorizaciones de Viaje Notarizadas y Apostillados en {{ $data['office'] }}, Autorizaciones de Viaje Notarizadas y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es una autorizacion de viaje, travel authorization, para que sirve una autorizacion de viaje, autorizacion de viaje menor de edad, requisitos autorizacion de viaje, autorizacion de viaje cerca de mi, autorizacion de viaje en {{ Str::lower($data['office']) }}, travel authorization in {{ Str::lower($data['office']) }}" />
+<meta name="description" content="Una autorización de viaje es un permiso para viajar fuera del país. Lo ayudamos con el trámite de dicho documento de una manera segura. Agende su cita! ✔">       
+<meta name="keywords" content="que es una autorizacion de viaje, requisitos para realizar una autorizacion de viaje en {{ Str::lower($data['office']) }}, para que sirve una autorizacion de viaje, cuanto dura una autorizacion de viaje en {{ Str::lower($data['office']) }}, realizar autorizacion de viaje en {{ Str::lower($data['office']) }}, donde puedo realizar una autorizacion de viaje en {{ Str::lower($data['office']) }}, autorizacion de viaje para niños en {{ Str::lower($data['office']) }}, donde puedo realizar una carta de autorizacion de viaje en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"                content="{{ Request::url() }}" />
 <meta property="og:type"               content="article" />

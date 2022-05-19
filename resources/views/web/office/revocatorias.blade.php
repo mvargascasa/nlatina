@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
-<title>Revocatorias Notarizadas y Apostilladas en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="¿Qué es una Revocatoria? Es una escritura pública expedida por un notario a través de la cual se deja sin efecto un poder otorgado con antelación. Revocatorias en {{ $data['office'] }}">       
-<meta name="keywords"           content="Revocatorias Notarizadas y Apostilladas en {{ $data['office'] }}, Revocatorias Notarizadas y Apostilladas near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }} , que es una revocatoria, requisitos para una revocatoria, revocatoria en {{ Str::lower($data['office']) }}, revocatoria de carta poder en {{ Str::lower($data['office']) }}, revocatoria de carta poder cerca de mi" />
+<title>Revocatorias Notariales Apostilladas en {{ $data['office'] }} - Notaria Latina</title> 
+<meta name="description"        content="Una revocatoria es un documento que deja sin efecto un poder. Contáctenos y lo ayudamos en el trámite del documento de una manera rápida y segura! ✔">       
+<meta name="keywords"           content="que es una revocatoria, requisitos para realizar una revocatoria en {{ Str::lower($data['office']) }}, realizar una revocatoria en {{ Str::lower($data['office']) }}, revocatoria de carta poder en {{ Str::lower($data['office']) }}, donde puedo realizar una revocatoria de un poder en {{ Str::lower($data['office']) }}, donde puedo realizar la revocatoria de una carta poder en {{ Str::lower($data['office']) }}, donde puedo revocar un poder en {{ Str::lower($data['office']) }}, solicitar revocatoria de poder en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{Request::url()}}" />
 <meta property="og:type"        content="article" />

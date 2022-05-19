@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
 <title>Contratos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Los contratos notarizados son un documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada. Contratos en {{ $data['office']}}">       
-<meta name="keywords"           content="Contratos Notarizados y Apostillados en {{ $data['office'] }}, Contratos Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public queens, que es un contrato, tipos de contrato, requisitos para realizar un contrato, realizar contrato en {{ Str::lower($data['office']) }}, tramitar contrato {{ Str::lower($data['office']) }}, tramitar contraro cerca de mi" />
+<meta name="description"        content="Los contratos son documentos donde dos personas se comprometen a cumplir ciertas obligaciones. Contáctenos y lo ayudamos en el trámite del documento ✔">       
+<meta name="keywords"           content="que es un contrato, tipos de contratos en {{ Str::lower($data['office']) }}, requisitos para realizar un contrato en {{ Str::lower($data['office']) }}, realizar un contrato en {{ Str::lower($data['office']) }}, donde puedo realizar un contrato en {{ Str::lower($data['office']) }}, como puedo hacer un contrato en {{ Str::lower($data['office']) }}, donde puedo hacer un contrato de arrendamiento en {{ Str::lower($data['office']) }}, donde puedo hacer un contrato de compra venta en {{ Str::lower($data['office']) }}, donde puedo hacer un contrato prenupcial en {{ Str::lower($data['office']) }}, donde puedo apostillar un contrato en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{ Request::url() }}" />
 <meta property="og:type"        content="article" />

@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
 <title>Certificaciones de documentos en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description" content="Las certificaciones son documentos firmados y sellados por un notario, que le proporciona autenticidad a nuestros documentos, pueden ser utilizados en todo aquel trámite legale donde se requiera total veracidad. Certificaciones en {{ $data['office'] }}">       
-<meta name="keywords" content="Certificaciones de Documentos Notarizados y Apostillados en {{ $data['office'] }}, Certificaciones de Documentos near me, notaria, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es una certificacion, para que sirve una certificacion, certificar acta de nacimiento en  {{ Str::lower($data['office']) }}, certificar acta de matrimonio en {{ Str::lower($data['office']) }}, certificar declaracion jurada en  {{ Str::lower($data['office']) }}, certificar documentos cerca de mi, notarizar certificacion en  {{ Str::lower($data['office']) }}" />
+<meta name="description" content="Las certificaciones son documentos sellados y firmados por un notario. Contáctenos para realizar la certificación de su documento de una manera segura! ✔">       
+<meta name="keywords" content="que es una certificacion, para que sirve una certificacion, requisitos para certificar un documento en {{ Str::lower($data['office']) }}, certificar documentos en {{ Str::lower($data['office']) }}, certificar acta de nacimiento en {{ Str::lower($data['office']) }}, certificar acta de matrimonio en {{ Str::lower($data['office']) }}, certificar declaracion jurada en {{ Str::lower($data['office']) }}, certificar licencia de conducir en {{ Str::lower($data['office']) }}, donde puedo certificar un documento en {{ Str::lower($data['office']) }}, donde puedo realizar un certificado en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"                content="{{ Request::url() }}" />
 <meta property="og:type"               content="article" />

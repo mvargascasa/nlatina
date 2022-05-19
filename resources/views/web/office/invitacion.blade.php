@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
 <title>Cartas de Invitación Notarizadas en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Las cartas de invitación son un requisito válido que se presenta ante el consulado que lo requiera para la gestión de la visa de turista; la carta tiene que ser genuina y contener datos reales. Carta de invitación en {{ $data['office'] }}">       
-<meta name="keywords"           content="Cartas de Invitación Notarizadas y Apostilladas en {{ $data['office'] }}, Cartas de Invitación near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es una carta de invitacion, para que sirve la carta de invitacion, donde puedo realizar una carta de invitacion, realizar carta de invitacion cerca de mi, tramitar carta de invitacion cerca de mi, tramitar carta de invitacion en {{ Str::lower($data['office']) }}" />
+<meta name="description"        content="Las cartas de invitación son un documento para tramitar la visa turista. Contáctenos y lo ayudamos en el trámite de dicho documento de una manera segura ✔">       
+<meta name="keywords"           content="que es una carta de invitacion, para que sirve una carta de invitacion, realizar carta de invitacion en {{ Str::lower($data['office']) }}, donde puedo realizar una carta de invitacion en {{ Str::lower($data['office']) }}, como hacer una carta de invitacion en {{ Str::lower($data['office']) }}, donde puedo realizar una carta de invitacion a estados unidos, donde apostillar una carta de invitacion en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{ Request::url() }}" />
 <meta property="og:type"        content="article" />

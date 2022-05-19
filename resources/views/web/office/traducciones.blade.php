@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
-<title>Traducciones Notarizadas y Apostilladas en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Realizamos traducciones de documentos para sus trámites más importantes.Para las traducciones de documentos el único requisito es presentar el documento original que desea traducir. Traducciones en {{ $data['office'] }}">       
-<meta name="keywords"           content="Traducciones Notarizadas y Apostilladas en {{ $data['office'] }}, Traducciones Notarizadas y Apostilladas near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es una traduccion, para que sirve la traduccion de documentos, traducir documento en {{ Str::lower($data['office']) }}, traducir acta de nacimiento en {{ Str::lower($data['office']) }}, traducir certificado de matrimonio en {{ Str::lower($data['office']) }}, traducir documento de divorcio {{ Str::lower($data['office']) }}, traducir certificado de defuncion {{ Str::lower($data['office']) }}" />
+<title>Traducción de documentos en {{ $data['office'] }} - Notaria Latina</title> 
+<meta name="description"        content="Realizamos traducciones de documentos en {{ $data['office'] }} para sus trámites más importantes. Contáctenos ahora y lo asesoramos en el proceso! ✔">       
+<meta name="keywords"           content="que es una traduccion de documento, para que sirve la traduccion de un documento, que tipo de documento se puede traducir, requisitos para la traduccion de un documento en {{ Str::lower($data['office']) }}, traduccion de documentos en {{ Str::lower($data['office']) }}, apostilla y traduccion de documentos en {{ Str::lower($data['office']) }}, donde puedo traducir un documento en {{ Str::lower($data['office']) }}, donde puedo traducir un certificado en {{ Str::lower($data['office']) }}, donde puedo traducir un diploma en {{ Str::lower($data['office']) }}, traduccion de documentos notariales en {{ Str::lower($data['office']) }}, traduccion y apostilla de documentos en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{ Request::url() }}" />
 <meta property="og:type"        content="article" />
@@ -22,7 +22,7 @@
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
 
             <div class="col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title" >Traducciones en {{ $data['office'] }}</h1>
+              <h1 class="font-weight-bold heading-title" >Traducción de documentos en {{ $data['office'] }}</h1>
   
               <a href="javascript:void(0)" class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</a>

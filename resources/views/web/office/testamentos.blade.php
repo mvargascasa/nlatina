@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
 <title>Testamentos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte. Testamentos en {{ $data['office'] }}">       
-<meta name="keywords"           content="Testamentos Notarizados y Apostillados en {{ $data['office'] }}, Testamentos Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es un testamento, para que sirve un testamento, requisitos para testamento, realizar un testamento en {{ Str::lower($data['office']) }}, notarizar testamento en {{ Str::lower($data['office']) }}" />
+<meta name="description"        content="Un testamento es un documento que refleja la voluntad de una persona de distribuir sus bienes. Solicite nuestros servicios para realizar dicho documento ✔">       
+<meta name="keywords"           content=" que es un testamento, para que sirve un testamento, requisitos para realizar un testamento en {{ Str::lower($data['office']) }}, realizar un testamento en {{ Str::lower($data['office']) }}, donde realizar un testamento en {{ Str::lower($data['office']) }}, donde hacer un testamento en {{ Str::lower($data['office']) }}, como hacer un testamento en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{Request::url()}}" />
 <meta property="og:type"        content="article" />

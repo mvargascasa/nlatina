@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
 <title>Poderes Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Un poder o carta poder, es un documento legal que se utiliza para otorgar control total sobre sus activos a otra persona si usted no pudiera estar presente. Carta Poder en {{ $data['office'] }}">       
-<meta name="keywords"           content="Poderes Notarizados y Apostillados  en {{ $data['office'] }}, Poderes Notarizados near me, carta poder, poder especial, poder general, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es un poder notarial, que es una carta poder, para que sirve una carta poder, requisitos carta poder, carta poder en {{ Str::lower($data['office']) }}, realizar carta poder en {{ Str::lower($data['office']) }}, poder general en {{ Str::lower($data['office']) }}, poder especial en {{ Str::lower($data['office']) }}" />
+<meta name="description"        content="Una carta poder es un documento para otorgar control sobre sus activos a otra persona. Contáctenos para brindarle más información ✔">       
+<meta name="keywords"           content="que es un poder, que es una carta poder, para que sirve una carta poder, tipos de carta poder en {{ Str::lower($data['office']) }}, requisitos para carta poder en {{ Str::lower($data['office']) }}, notarizar carta poder en {{ Str::lower($data['office']) }}, notarizar carta poder en {{ Str::lower($data['office']) }}, apostillar carta poder en {{ Str::lower($data['office']) }}, apostillar carta poder en {{ Str::lower($data['office']) }}, donde puedo notarizar una carta poder en {{ Str::lower($data['office']) }}, donde puedo apostillar una carta poder en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{Request::url()}}" />
 <meta property="og:type"        content="article" />

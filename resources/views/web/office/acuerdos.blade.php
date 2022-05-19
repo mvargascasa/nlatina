@@ -1,8 +1,8 @@
 @extends('layouts.web')
 @section('header')
-    <title>Acuerdos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
-    <meta name="description"        content="Los acuerdos son un pacto firmado entre dos o más personas que están de acuerdo con lo estipulado en el documento. Acuerdos en {{ $data['office'] }}">       
-    <meta name="keywords"           content="Acuerdos Notarizados y Apostillados en {{ Str::lower($data['office']) }}, Acuerdos Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría {{ Str::lower($data['office']) }}, notary public {{ Str::lower($data['office']) }}, que es un acuerdo notaria, para que sirve un acuerdo notaria, requisitos para un acuerdo notaria, realizar un acuerdo en {{ Str::lower($data['office']) }}, tramitar acuerdo {{ Str::lower($data['office']) }}, notarizar acuerdo en {{ Str::lower($data['office']) }}" />
+    <title>Acuerdos Notariales Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
+    <meta name="description"        content="Los acuerdos son un pacto firmado entre dos o más personas. Consulte por nuestros servicios y lo ayudamos con el trámite para realizar un acuerdo ✔">       
+    <meta name="keywords"           content="que es un acuerdo notarial, para que sirve un acuerdo, requisitos para realizar un acuerdo en {{ Str::lower($data['office']) }}, realizar un acuerdo en {{ Str::lower($data['office']) }}, donde puedo realizar un acuerdo en {{ Str::lower($data['office']) }}, donde puedo realizar un acuerdo notarial en {{ Str::lower($data['office']) }}, apostillar acuerdon en {{ Str::lower($data['office']) }}, donde puedo apostillar un acuerdo notarial en {{ Str::lower($data['office']) }}" />
     
     <meta property="og:url"         content="{{ Request::url() }}" />
     <meta property="og:type"        content="article" />
@@ -21,7 +21,7 @@
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
 
             <div class="col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title" >Acuerdos en {{ $data['office'] }}</h1>
+              <h1 class="font-weight-bold heading-title" >Acuerdos Notariales en {{ $data['office'] }}</h1>
   
               <a href="javascript:void(0)" class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</a>
