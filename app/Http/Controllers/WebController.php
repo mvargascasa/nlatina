@@ -565,8 +565,8 @@ class WebController extends Controller
                     break;
                 case 'apostillar-certificado-de-nacimiento-new-jersey':
                     $data['description'] = 'Certificados de Nacimiento';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Nacimiento en New Jersey? En Notaria Latina te ayudamos de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar acta de nacimiento near me, apostillar partida de nacimiento new jersey, apostillar inscripcion de nacimiento new jersey, apostillar certificado de nacimiento new jersey, apostillar acta de nacimiento new jersey, donde apostillar certificado de nacimiento en new jersey";
+                    $data['metadescription'] = "Consulte por nuestro servicio de apostilla en certificados de nacimiento en New Jersey. Lo asesoramos de una manera segura. Solicítelo ahora! ✔";
+                    $data['keywords'] = "que es un certificado de nacimiento, apostillar certificado de nacimiento en new jersey, apostillar acta de nacimiento en new jersey, apostillar partida de nacimiento en new jersey, donde apostillar certificado de nacimiento en new jersey, donde puedo realizar un certificado de nacimiento en new jersey, como apostillar un certificado de nacimiento en new jersey, apostillar certificado de nacimiento nj";
                     $data['content'] = ['¿Qué es un certificado de nacimiento?','¿Qué información contiene el certificado de nacimiento?','¿Para qué sirve la partida de nacimiento?','¿Donde puedo obtener un certificado de nacimiento?'];
                     $data['body'] = "<ul><li><h3>¿Qué es un certificado de nacimiento?</h3></li></ul>
                     <p>El certificado o acta de nacimiento es un documento emitido por el Registro Civil o Consulado respectivo, en el cual se da prueba del lugar, fecha
@@ -590,14 +590,14 @@ class WebController extends Controller
                     break;
                 case 'apostillar-reporte-consular-new-jersey':
                     $data['description'] = 'Reporte Consular';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Reporte Consular (CRBA) en New Jersey? En Notaria Latina lo hacemos de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar crba near me, apostillar crba new jersey, apostillar reporte consular de nacimiento en el extranjero new jersey, apostillar certificado de nacimiento en el extranjero new jersey, apostillar inscripcion de nacimiento extranjero new jersey, apostillar acta de nacimiento extranjero new jersey, apostille birth certificate abroad new jersey, donde apostillar crba en new jersey";
+                    $data['metadescription'] = "Consulte por nuestro servicio de apostilla en reporte consular en New Jersey. Lo asesoramos de una manera segura. Solicítelo aquí! ✔";
+                    $data['keywords'] = " apostillar crba new jersey, apostillar reporte consular en new jersey, donde puedo apostillar un reporte consular en new jersey, donde puedo apostillar un reporte consular de nacimiento en new jersey, donde solicitar el reporte consular en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-matrimonio-new-jersey':
                     $data['description'] = 'Certificados de Matrimonio';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Matrimonio en New Jersey? Notaria Latina te ayuda de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar certificado de matrimonio near me, apostillar certificado de matrimonio en new jersey, apostillar acta de matrimonio en new jersey, apostilla matrimonio new jersey, apostillar partida de matrimonio new jersey, apostille marriage certificate, apostille marriage certificate new jersey, donde apostillar certificado de matrimonio en new jersey";
+                    $data['metadescription'] = "Notarizamos y Apostillamos certificados de matrimonio en New Jersey de una manera ágil y rápida. Contáctenos y lo ayudamos con el proceso ✔";
+                    $data['keywords'] = "que es un certificado de matrimonio, requisitos para realizar un certificado de matrimonio en new jersey, donde puedo solicitar un certificado de matrimonio, apostillar certificado de matrimonio en new jersey, apostillar acta de matrimonio en new jersey, donde puedo apostillar un certificado de matrimonio en new jersey, donde apostillar certificado de matrimonio en new jersey";
                     $data['content'] = ['¿Qué es un certificado de matrimonio?','¿Para qué sirve el certificado de matrimonio?','¿Cómo registrar un matrimonio en el extranjero?','¿Qué requisitos se necesita para un certificado de matrimonio?','¿Donde puedo obtener un certificado de matrimonio?'];
                     $data['body'] = "<ul><li><h3>¿Qué es un certificado de matrimonio?</h3></li></ul>
                     <p>El acta o certificado de matrimonio es un documento que se encarga afirmar y legalizar la unión matrimonial entre dos personas. Dicho documento 
@@ -628,8 +628,8 @@ class WebController extends Controller
                     break;
                 case 'apostillar-certificado-de-defuncion-new-jersey':
                     $data['description'] = 'Certificados de Defunción';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Defunción en New Jersey? Nosotros te ayudamos con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar certificado de defuncion, apostillar certificado de defuncion near me, apostillar certificado de defuncion en new jersey, apostillar acta de defuncion en new jersey, como apostillar un certificado de defuncion, apostillado de certificado de defuncion, apostille death certificate new jersey, apostille death certificate near me, donde apostillar certificado de defuncion en new jersey";
+                    $data['metadescription'] = "Notarizamos y Apostillamos certificados de defunción en New Jersey de una manera segura y rápida. Contáctenos y lo asesoramos en el trámite ✔";
+                    $data['keywords'] = "que es un certificado de defuncion, para que sirve un certificado de defuncion, donde puedo solicitar un certificado de defuncion en new jersey, apostillar certificado de defuncion en new jersey, apostillar acta de defuncion en new jersey, como apostillar un certificado de defuncion en new jersey, certificado de defuncion new jersey apostillar, como solicitar certificado de defuncion en new jersey";
                     $data['content'] = ['¿Qué es un certificado de defunción?','¿Para que me sirve un certificado de defunción?','¿Quién puede tramitar el certificado de defunción?','¿Ante que autoridad puedo solicitar un certificado de defunción?'];
                     $data['body'] = "<ul><li><h3>¿Qué es un certificado de defunción?</h3></li></ul>
                     <p>Un acta, partida o certificado de defunción es un documento mediante el cual termina cualquier proceso administrativo que la persona haya tenido en vida.</p>
@@ -648,8 +648,8 @@ class WebController extends Controller
                     break;
                 case 'apostillar-certificado-de-divorcio-new-jersey':
                     $data['description'] = 'Certificados de Divorcio';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Divorcio en New Jersey? En Notaria Latina te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar certificado de divorcio, apostillar acta de divorcio, apostillar certificado de divorcio near me, apostillar certificado de divorcio en new jersey, apostilllar acta de divorcio new jersey, apostillar sentencia de divorcio new jersey, apostille divorce certificate new jersey, apostille divorce certificate near me, donde apostillar certificado de divorcio en new jersey";
+                    $data['metadescription'] = "El certificado de divorcio es un escrito que constata la separación de una pareja. Para apostillar dicho documento contáctenos y lo asesoramos! ✔";
+                    $data['keywords'] = "que es un certificado de divorcio, requisitos para un certificado de divorcio new jersey, solicitar certificado de divorcio en new jersey, apostillar documentos en new jersey, apostillar certificado de divorcio en new jersey, apostillar acta de divorcio en new jersey, donde apostillar certificado de divorcio en new jersey, donde puedo apostillar un certificado de divorcio en new jersey, donde puedo sacar el certificado de divorcio en new jersey";
                     $data['content'] = ['¿Qué es un acta o certificado de divorcio?','¿Para qué se utiliza un certificado de divorcio?','¿Cuáles son los requisitos necesarios para un certificado de divorcio?','¿Donde puedo obtener el certificado de divorcio?'];
                     $data['body'] = "<ul><li><h3>¿Qué es un acta o certificado de divorcio?</h3></li></ul>
                     <p>El certificado de divorcio es un escrito mediante el cual constata legalmente la separación de una pareja que estaba unida en matrimonio</p>
@@ -676,8 +676,8 @@ class WebController extends Controller
                     break;
                 case 'apostillar-certificado-de-naturalizacion-new-jersey':
                     $data['description'] = 'Certificados de Naturalización';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Naturalización en New Jersey? Nosotros podemos ayudarte con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar certificado de naturalizacion, apostillar acta de naturalizacion, apostillar certificado de naturalizacion near me, apostillar certificado de naturalizacion new jersey, apostillar acta de naturalizacion new jersey, apostille naturalization certificate near me, apostille naturalization certificate new jersey, donde apostillar certificado de naturalizacion en new jersey";
+                    $data['metadescription'] = "El certificado de naturalización es un escrito que acredita la ciudadania a una persona extranjera. Contáctenos para el trámite de dicho documento ✔";
+                    $data['keywords'] = "que es un certificado de naturalizacion, requisitos para sacar el certificado de naturalizacion en new jersey, apostillar certificado de naturalizacion en new jersey, apostillar acta de naturalizacion en new jersey, donde apostillar certificado de naturalizacion en new jersey, como sacar el certificado de naturalizacion en new jersey, como solicitar certificado de naturalizacion en new jersey, certificado de naturalizacion americana";
                     $data['content'] = ['¿Qué es un certificado de naturalización?','¿Para qué sirve un certificado de naturalización?','¿Cuáles son los requisitos para obtener el certificado de naturalización?','¿Donde puedo hacer el trámite para el certificado de naturalización?'];
                     $data['body'] = "<ul><li><h3>¿Qué es un certificado de naturalización?</h3></li></ul>
                     <p>El certificado de naturalización es un documento el cual acredita que una persona extranjera se conveirte en ciudadano del país en que reside.</p>
@@ -702,44 +702,44 @@ class WebController extends Controller
                     break;
                 case 'apostillar-expediente-de-adopcion-new-jersey':
                     $data['description'] = 'Expediente de Adopción';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Expediente de Adopción en New Jersey? En Notaria Latina te ayudamos con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar expediente de adopcion, apostillar expediente de adopcion near me, apostillar expediente de adopcion new jersey, apostille adoption file, apostille adoption file near me, apostille adoption file new jersey, donde apostillar expediente de adopcion en new jersey";
+                    $data['metadescription'] = "Notarizamos y Apostillamos todo tipo de documentos como el Expediente de Adopción de una manera rápida y segura. Contáctenos ahora! ✔";
+                    $data['keywords'] = "apostillar expediente de adopcion en new jersey, apostillar expediente de adopcion cerca de mi, donde apostillar expediente de adopcion en new jersey, donde puedo apostillar expediente de adopcion en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-copia-de-pasaporte-new-jersey':
                     $data['description'] = 'Copia de pasaporte';
-                    $data['metadescription'] .= "¿Necesitas apostillar una copia de pasaporte en New Jersey? Nosotros podemos ayudarte con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar copia de pasaporte, apostillar copia de pasaporte near me, apostillar copia de pasaporte new jersey, apostille copy of passport, apostille copy of passport near me, apostille copy of passport new jersey, donde apostillar copia de pasaporte en new jersey";
+                    $data['metadescription'] = "Notarizamos y Apostillamos todo tipo de documentos como copia de pasaporte en New Jersey de una manerá ágil y segura. Contáctenos! ✔";
+                    $data['keywords'] = "apostillar copia de pasaporte en new jersey, apostillar copia de pasaporte cerca de mi, donde apostillar copia de pasaporte en new jersey, como sacar copia de pasaporte en new jersey, donde puedo apostillar copia de pasaporte en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-copia-de-licencia-de-conducir-new-jersey':
                     $data['description'] = 'Copia de Licencia de Conducir';
-                    $data['metadescription'] .= "¿Necesitas apostillar una copia de licencia de conducir en New Jersey? Notaria Latina te ayuda con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar licencia de conducir, apostillar copia de licencia de conducir, apostillar copia de licencia de conducir near me, apostillar copia de licencia de conducir new jersey, apostille copy of driver's license, apostille copy of driver's license near me, apostille copy of driver's license new jersey, donde apostillar copia de licencia de conducir en new jersey";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos como copia de licencia de conducir en New Jersey de una forma rápida y segura. Contáctenos! ✔";
+                    $data['keywords'] = "apostillar copia licencia de conducir en new jersey, apostillar copia de licencia de conducir cerca de mi, donde apostillar copia de licencia de conducir en new jersey, donde puedo apostillar copia de licencia de conducir en new jersey, donde puedo solicitar una copia de licencia de conducir en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-escrituras-testamentos-new-jersey':
                     $data['description'] = 'Escrituras y Testamentos';
-                    $data['metadescription'] .= "¿Necesitas apostillar una escritura o testamento en New Jersey? Nosotros te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar escrituras, apostillar testamento, apostillar escrituras near me, apostillar testamentos near me, apostillar escrituras new jersey, apostillar testamentos new jersey, apostille deeds near me, apostille deeds new jersey, apostille wills near me, apostille wills new jersey, donde apostillar escrituras en new jersey, donde apostillar testamentos en new jersey";
+                    $data['metadescription'] = "Notarizamos y Apostillamos todo tipo de documentos como Escrituras y Testamentos en New Jersey de una forma segura. Solicite aquí! ✔";
+                    $data['keywords'] = "apostillar escrituras en new jersey, apostillar testamento en new jersey, donde apostillar escrituras en new jersey, donde apostillar testamento en new jersey, donde puedo apostillar una escritura en new jersey, donde puedo apostillar un testamento en new jersey, apostillar escritura notarial en new jersey, apostillar escritura publica en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaraciones-juradas-de-estado-unico-new-jersey':
                     $data['description'] = 'Declaraciones Juradas';
-                    $data['metadescription'] .= "¿Necesitas apostillar una Declaración Jurada (Affidávit) en New Jersey? En Notaria Latina te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar affidavit, apostillar declaracion jurada, apostillar affidavit near me, apostillar declaracion jurada near me, apostillar affidavit near me, apostillar declaracion jurada new jersey, apostille affidavit, donde apostillar affidavit en new jersey";
+                    $data['metadescription'] = "Notarizamos y Apostillamos Declaraciones Juradas (Affidávit) en New Jersey de una manera rápida y segura. Agende su cita ahora! ✔";
+                    $data['keywords'] = "apostillar declaracion jurada en new jersey, apostillar declaracion juramentada en new jersey, apostillar affidavit support en new jersey, apostillar declaracion jurada cerca de mi, donde apostillar una declaracion jurada en new jersey, donde apostillar una declaracion juramentada en new jersey, donde apostillar affidavit en new jersey, apostillar declaracion juramentada en new jersey estados unidos";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-titulo-de-automovil-new-jersey':
                     $data['description'] = 'Título de coche/automóvil';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Título de Automóvil en New Jersey? Nosotros te ayudamos con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar titulo de automovil, apostillar titulo de automovil near me, apostillar titulo de automovil new jersey, apostille car title, apostille car title near me, apostille car title new jersey, donde apostillar titulo de automovil en new jersey";
+                    $data['metadescription'] = "Notarizamos y Apostillamos Título de Automóvil en New Jersey de una forma ágil y segura. Consulte por nuestros servicios y lo ayudamos en el trámite ✔";
+                    $data['keywords'] = "apostillar documentos en new jersey, apostillar titulo de automovil en new jersey, apostillar titulo de coche en new jersey, donde apostillar titulo de automovil en new jersey, donde apostillar titulo de coche en new jersey, apostillar titulo de auto en new jersey, apostillar titulo de vehiculo en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-autorizacion-de-viaje-new-jersey':
                     $data['description'] = 'Autorización de Viaje';
-                    $data['metadescription'] .= "¿Necesitas apostillar una Autorización de Viaje en New Jersey? Notaria Latina podemos ayudarte con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar autorizacion de viaje, apostillar autorizacion de viaje near me, apostillar autorizacion de viaje new jersey, apostille travel authorization, apostille travel authorization near me, apostille travel authorization new jersey, donde apostillar autorizacion de viaje en new jersey";
+                    $data['metadescription'] = "Notarizamos y Apostillamos todo tipo de documentos como Autorización de Viaje en New Jersey de una manera segura. Consulte por nuestros servicios ✔";
+                    $data['keywords'] = "que es una autorizacion de viaje, requisitos para autorizacion de viaje en new jersey, apostillar autorizacion de viaje en new jersey, apostillar autorizacion de viaje cerca de mi, donde apostillar una autorizacion de viaje en new jersey, donde puedo apostillar una autorizacion de viaje en new jersey, apostillar autorizacion de viaje para menor de edad en new jersey, donde puedo hacer una autorizacion de viaje para niños en new jersey, carta de autorizacion de viaje en new jersey";
                     $data['content'] = ['¿Qué es una autorización de viaje?','¿En qué situaciones se pide una autorización de viaje?','¿Qué requisitos necesito para la autorización de un viaje?','¿Ante que autoridad puedo solicitar una autorización de viaje?'];
                     $data['body'] = "<ul><li><h3 id='title'>¿Qué es una autorización de viaje?</h3></li></ul>
                     <p>Una autorización de viaje es un escrito en el cual uno o ambos padres autorizan el viaje, dentro o fuera del país, de su hijo o hija menor de edad, ya sea con los mismos, algún familiar o solos.</p>
@@ -767,44 +767,44 @@ class WebController extends Controller
                     break;
                 case 'apostillar-poder-notarial-personal-new-jersey':
                     $data['description'] = 'Poder Notarial Personal';
-                    $data['metadescription'] .= "¿Necesitas apostillar una Carta Poder en New Jersey? Nosotros te ayudamos con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar poder notarial, apostillar carta poder new jersey, apostillar poder notarial near me, apostillar poder notarial new jersey, apostillar poder personal new jersey, apostille power of attorney, apostille power of attorney new jersey, donde apostillar carta poder en new jersey, donde apostillar poder notarial en new jersey";
+                    $data['metadescription'] = "Notarizamos y Apostillamos todo tipo de documentos como Poder Notarial Personal en New Jersey de una forma segura. Contáctenos ahora! ✔";
+                    $data['keywords'] = "apostillar documentos en new jersey, apostillar poder notarial en new jersey, apostillar carta poder en new jersey, apostillar poder notarial cerca de mi, donde apostillar carta poder en new jersey, donde apostillar poder notarial en new jersey, donde puedo apostillar un poder en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-registro-de-policia-estatal-new-jersey':
                     $data['description'] = 'Registro de la policía estatal';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Registro Policial en New Jersey? En Notaria Latina te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar registro policial, apostillar registro de policia estatal, apostillar registro policial near me, apostillar registro policial new jersey, apostille police record new jersey, apostill police record new jersey, donde apostillar registro policial new jersey";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Registro de la Policía Estatal en New Jersey de una manera ágil y segura. Contáctenos! ✔";
+                    $data['keywords'] = "apostillar documentos en new jersey, apostillar registro policial en new jersey, apostillar registro de la policia en new jersey, apostillar registro policial cerca de mi, donde apostillar registro policial en new jersey, donde puedo apostillar un registro policial en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-registro-de-antecedentes-fbi-new-jersey':
                     $data['description'] = 'Registros de antecedentes del FBI';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Registro de Antecedentes FBI en New Jersey? Notaria Latina lo hace por ti de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar antecedentes del fbi, apostillar registro de antecentes del fbi, apostillar registros de antecedentes del fbi near me, apostillar registros de antecedentes del fbi new jersey, apostille fbi background check new jersey, donde apostillar antecedentes del fbi new jersey";
+                    $data['metadescription'] = "Apostillamos Registro de Antecedentes del FBI en New Jersey de una forma rápida y segura. Consulte ahora por nuestros servicios! ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, apostillar documentos en new jersey, apostillar antecedentes del fbi en new jersey, apostillar registro de antecentes del fbi en new jersey, apostillar registros de antecedentes del fbi cerca de mi, donde apostillar antecedentes del fbi en new jersey, donde apostillar registro de antecedentes del fbi en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-diploma-universitario-new-jersey':
                     $data['description'] = 'Diploma Universitario';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Diploma Universitario en New Jersey? Nosotros te ayudamos con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar diploma, apostillar diploma universitario near me, apostillar diploma universitario new jersey, apostillar titulo universitario new jersey, apostille university diploma new jersey, donde apostillar diploma universitario en new jersey";
+                    $data['metadescription'] = "Apostillamos Diplomas Universitarios en New Jersey de una forma segura. Contáctese con nosotros ahora y lo asesoramos en el trámite ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar diploma universitario en new jersey, apostillar diploma universitario cerca de mi, apostillar titulo universitario en new jersey, donde apostillar diploma universitario en new jersey, donde puedo apostillar un titulo universitario en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-transcripcion-universitaria-new-jersey':
                     $data['description'] = 'Transcripción Universitaria';
-                    $data['metadescription'] .= "¿Necesitas apostillar una Transcripción Universitaria en New Jersey? En Notaria Latina te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar transcripcion universitaria, apostillar transcripcion universitaria near me, apostillar transcripcion universitaria new jersey, apostillar transcripcion titulo universitario new jersey, apostille university transcript new jersey, donde apostillar transcripcion universitaria new jersey";
+                    $data['metadescription'] = "Apostillamos Transcripción Universitaria en New Jersey de una manera rápida y segura. Contáctese con nosotros y lo ayudamos en el trámite! ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar transcripcion universitaria en new jersey, apostillar transcripcion universitaria cerca de mi, apostillar transcripcion de titulo universitario en new jersey, donde apostillar transcripcion universitaria en new jersey, donde apostillar transcripcion de titulo universitario en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-diploma-de-escuela-secundaria-new-jersey':
                     $data['description'] = 'Diploma de Escuela Secundaria';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Diploma de Escuela Secundaria en New Jersey? Notaria Latina te ayuda con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar diploma secundario, apostillar diploma escuela secundaria, apostillar diploma escuela secundaria near me, apostillar diploma escuela secundaria new jersey, apostille high school diploma new jersey, donde apostillar diploma secundaria en new jersey";
+                    $data['metadescription'] = "Apostillamos Diploma de Escuela Secundaria en New Jersey de una forma ágil y segura. Contáctenos y lo asesoramos con el trámite ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar diploma secundario en new jersey, apostillar diploma de escuela secundaria en new jersey, apostillar diploma escuela secundaria cerca de mi, donde apostillar diploma de secundaria en new jersey, donde apostillar diploma de escuela secundaria en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-transcripcion-de-escuela-secundaria-new-jersey':
                     $data['description'] = 'Transcripción de Escuela Secundaria';
-                    $data['metadescription'] .= "¿Necesitas apostillar una Transcripción de Escuela Secundaria en New Jersey? Nosotros te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar transcripcion de escuela secundaria, apostillar transcripcion de escuela secundaria near me, apostillar transcripcion de escuela secundaria new jersey, apostille high school transcript new jersey, donde apostillar transcripcion de escuela secundaria new jersey";
+                    $data['metadescription'] = "Apostillamos Transcripción de Escuela Secundaria en New Jersey de una manera rápida y segura. Agende su cita aquí para ayudarlo con el trámite! ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar transcripcion de secundaria en new jersey, apostillar transcripcion de escuela secundaria en new jersey, donde apostillar transcripcion de escuela secundaria en new jersey, donde puedo apostillar una transcripcion de secundaria en new jersey, apostillar transcripcion de secundaria cerca de mi";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-incorporacion-new-jersey':
