@@ -809,14 +809,14 @@ class WebController extends Controller
                     break;  
                 case 'apostillar-certificado-de-incorporacion-new-jersey':
                     $data['description'] = 'Certificado de Incorporación';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Incorporación en New Jersey? En Notaria Latina podemos ayudarte con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar certificado de incorporacion, apostillar acta de incorporacion, apostillar certificado de incorporacion near me, apostillar certificado de incorporacion new jersey, apostille certificate of incorporation new jersey, donde apostillar certificado de incorporacion en new jersey";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Certificado de Incorporacion en New Jersey de una forma segura. Consulte por nuestro servicio aquí! ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar certificado de incorporacion en new jersey, apostillar acta de incorporacion en new jersey, apostillar certificado de incorporacion cerca de mi, donde apostillar certificado de incorporacion en new jersey, donde puedo apostillar un certificado de incorporacion en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-buena-reputacion-new-jersey':
                     $data['description'] = 'Certificado de Buena Reputación';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Buena Reputación en New Jersey? Notaria Latina te ayuda con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar certificado de buena reputacion, apostillar certificado de buena reputacion near me, apostillar certificado de buena reputacion new jersey, apostille certificate of good standing new jersey, donde apostillar certificado de buena reputacion en new jersey";
+                    $data['metadescription'] = "Apostillamos Certificado de Buena Reputación en New Jersey de una manera segura. Envíe su documento por nuestro sitio web o contáctese con nosotros ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar certificado de buena reputacion en new jersey, apostillar certificado de buena reputacion cerca de mi, donde apostillar certificado de buena reputacion en new jersey, donde puedo apostillar un certificado de buena reputación en new jersey, apostillar certificado de buena conducta en new jersey";
                     $data['content'] = ['¿Qué es un certificado de buena reputación?','¿Para qué sirve un certificado de buena reputación?','¿Qué necesito para obtener el certificado de buena reputación?','¿Donde puedo obtener el certificado de buena reputación?'];
                     $data['body'] = "<ul><li><h3>¿Qué es un certificado de buena reputación?</h3></li></ul>
                     <p>Un certificado de buena reputación es un documento que avala que una institución comercial en la actualidad esta registrada y con los permisos correspondientes
@@ -844,8 +844,8 @@ class WebController extends Controller
                     break;  
                 case 'apostillar-certificado-de-origen-new-jersey':
                     $data['description'] = 'Certificado de Origen';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Origen en New Jersey? Nosotros te ayudamos con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar certificado de origen, apostillar certificado de origen near me, apostillar certificado de origen new jersey, apostille certificate of origin new jersey, donde apostillar certificado de origen en new jersey";
+                    $data['metadescription'] = "Apostillamos Certificados de Origen en New Jersey de una manera segura. Envíe su documento o contáctese con nosotros para asesorarlo en el trámite ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar certificado de origen en new jersey, apostillar certificado de origen cerca de mi, donde apostillar certificado de origen en new jersey, donde puedo apostillar certificado de origen en new jersey, apostillar acta de origen en new jersey";
                     $data['content'] = ['¿Qué es el certificado de origen?','¿Para qué sirve el certificado de origen?','¿Cómo puedo obtener el certificado de origen?','¿Donde puedo tramitar el certificado de origen?'];
                     $data['body'] = "<ul><li><h3>¿Qué es el certificado de origen?</h3></li></ul>
                     <p>El certificado de origen es un documento cuyo objetivo es determinar el país de procedencia de dicha mercancia, por ello dispone
@@ -870,20 +870,20 @@ class WebController extends Controller
                     break;
                 case 'apostillar-marca-patente-new-jersey':
                     $data['description'] = 'Marcas o Patentes';
-                    $data['metadescription'] .= "¿Necesitas apostillar una Marca o Patente en New Jersey? En Notaria Latina te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar marca new jersey, apostillar patente new jersey, apostillar marca near me, apostillar patente near me, apostillar marca, apostille mark new jersey, apostille patent new jersey, donde apostillar marca en new jersey, donde apostillar patente en new jersey";
+                    $data['metadescription'] = "Apostillamos Marca o Patente en New Jersey de una manera rápida y segura. Contáctenos o puede enviar su documento para ayudarlo con el proceso ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar marca en new jersey, apostillar patente en new jersey, apostillar marca cerca de mi, apostillar patente cerca de mi, donde apostillar marca en new jersey, donde apostillar patente en new jersey, donde puedo apostillar una marca en new jersey, donde puedo apostillar una patente en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-poder-comercial-new-jersey':
                     $data['description'] = 'Poder Comercial';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Poder Comercial en New Jersey? Notaria Latina te ayuda con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar poder comercial,  apostillar poder comercial new jersey, apostillar poder comercial near me, apostille commercial power new jersey, donde apostillar poder comercial new jersey";
+                    $data['metadescription'] = "Apostillamos Poder Comercial en New Jersey de una manera segura y rápida. Envíe su documento o puede consultar por nuestros servicios ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostillar poder comercial,  apostillar poder comercial new jersey, apostillar poder comercial near me, apostille commercial power new jersey, donde apostillar poder comercial new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaracion-jurada-comercial-new-jersey':
                     $data['description'] = 'Declaración Jurada Comercial';
-                    $data['metadescription'] .= "¿Necesitas apostillar una Declaración Jurada Comercial en New Jersey? Nosotros te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar declaracion jurada comercial, apostillar affidavit comercial, apostillar declaracion jurada comercial near me, apostillar declaracion jurada comercial new jersey, apostille commercial affidavit new jersey, apostillar affidavir comercial new jersey, donde apostillar affidavit comercial en new jersey";
+                    $data['metadescription'] = "Apostillamos Declaración Jurada Comercial en New Jersey de una forma segura. Contáctese con nosotros o envíe su documento por nuestro sitio web ✔";
+                    $data['keywords'] = "que es una declaracion juramentada comercial, para que sirve una declaracion juramentada en new jersey, requisitos para una declaracion juramentada en new jersey, apostillar documentos en new jersey, apostillar declaracion jurada comercial en new jersey, apostillar affidavit comercial en new jersey, apostillar declaracion jurada comercial cerca de mi, donde apostillar affidavit comercial en new jersey, donde apostillar declaracion jurada comercial en new jersey, apostillar declaracion juramentada comercial en new jersey";
                     $data['content'] = ['¿Qué es una declaración juramentada comercial?','¿Para qué sirve una declaración juramentada?','¿Ante que situaciones necesito una declaración juramentada?','¿Qué requisitos son necesarios para una declaración juramentada?','¿Donde puedo solicitar una declaración juramentada?'];
                     $data['body'] = "<ul><li><h3>¿Qué es una declaración juramentada comercial?</h3></li></ul>
                     <p>Una declaración juramentada es una documento mediante el cual una persona manifiesta una situación o un hecho, el mismo que es verificado y garantizado mediante una autoridad competente</p>
@@ -911,38 +911,38 @@ class WebController extends Controller
                     break;
                 case 'apostillar-certificado-fda-new-jersey':
                     $data['description'] = 'Certificado FDA';
-                    $data['metadescription'] .= "¿Necesitas apostillar un certificado FDA en New Jersey? En Notaria Latina te ayudamos con el trámite de una manera ágil y rápida 😉";
-                    $data['keywords'] .= ", apostillar certificado fda, apostillar certificado fda near me, apostillar certificado fda new jersey, apostille fda certificate new jersey, donde apostillar certificado fda en new jersey";
+                    $data['metadescription'] = "Apostillamos Certificados FDA en New Jersey de una manera rápida y segura. Acérquese a nuestras oficinas o envíe su documento por nuestro sitio web ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar certificado fda en new jersey, apostillar certificado fda cerca de mi, donde apostillar certificado fda en new jersey, donde puedo apostillar un certificado fda en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-facturas-new-jersey':
                     $data['description'] = 'Facturas';
-                    $data['metadescription'] .= "¿Necesitas apostillar Facturas en New Jersey? Notaria Latina te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar facturas, apostillar facturas near me, apostillar factura new jersey, apostille invoices new jersey, donde apostillar facturas en new jersey";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Facturas en New Jersey de una manera segura. Contáctenos o envíe su documento y lo ayudamos en el trámite ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar una factura en new jersey, apostillar facturas cerca de mi, donde apostillar facturas en new jersey, donde puedo apostillar una factura en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;   
                 case 'apostillar-departamento-de-hacienda-new-jersey':
                     $data['description'] = 'Departamento de Hacienda';
-                    $data['metadescription'] .= "Apostillamos Departamento de Hacienda en New Jersey de una manera ágil y rápida 😉";
-                    $data['keywords'] .= ", apostillar documento departamento de hacienda, apostillar departamento de hacienda near me, apostillar departamento de hacienda new jersey, apostille department of finance new jersey, donde apostillar departamento de hacienda en new jersey";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos en New Jersey como departamento de hacienda. Contáctese con nosotros y lo asesoramos en el trámite ✔";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar documento departamento de hacienda en new jersey, apostillar departamento de hacienda cerca de mi, donde apostillar departamento de hacienda en new jersey, donde puedo apostillar departamento de hacienda en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-gobierno-extranjero-new-jersey':
                     $data['description'] = 'Certificado de Gobierno Extranjero';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Gobierno Extranjero en New Jersey? Nosotros te ayudamos con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar certificado de gobierno extranjero, apostillar certificado de gobierno extranjero near me, apostillar certificado de gobierno extranjero new jersey, apostille foreign government certificate new jersey, apostillar certificado de gobierno extranjero en new jersey";
+                    $data['metadescription'] = "Apostillamos Certificado de Gobierno Extranjero en New Jersey de una manera rápida y segura. Contáctenos y ayudamos con el proceso ✔";
+                    $data['keywords'] = "apostillar documentos en new jersey, apostillar certificado de gobierno extranjero en new jersey, apostillar certificado de gobierno extranjero cerca de mi, donde apostillar certificado de gobierno extranjero en new jersey, donde puedo apostillar certificado de gobierno extranjero en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-venta-gratis-new-jersey':
                     $data['description'] = 'Certificado de Venta gratis';
-                    $data['metadescription'] .= "¿Necesitas apostillar un Certificado de Venta en New Jersey? En Notaria Latina te ayudamos con el proceso de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar certificado de venta, apostillar acta de venta, apostillar certificado de venta near me, apostillar acta de venta near me, apostillar certificado de venta new jersey, apostillar acta de venta new jersey, apostille sales certificate new jersey, donde apostillar certificado de venta en new jersey";
+                    $data['metadescription'] = "Apostillamos Certificado de Venta Gratis en New Jersey de una manera segura. Contáctenos para asesorarle correctamento con el trámite ✔";
+                    $data['keywords'] = "apostillar documentos en new jersey, apostillar certificado de venta gratis en new jersey, apostillar acta de venta gratis en new jersey, apostillar certificado de venta cerca de mi, apostillar acta de venta cerca de mi, donde apostillar certificado de venta en new jersey, donde puedo apostillar certificado de venta gratis en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-ordenes-de-compra-new-jersey':
                     $data['description'] = 'Órdenes de compra';
-                    $data['metadescription'] .= "¿Necesitas apostillar una Órden de Compra en New Jersey? Nosotros te ayudamos con el trámite de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
-                    $data['keywords'] .= ", apostillar orden de compra, apostillar orden de compra near me, apostillar orden de compra new jersey, apostille purchase order new jersey, donde apostillar orden de compra en new jersey";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Órdenes de Compra en New Jersey de una forma segura. Contáctenos y lo asesoramos en el proceso ✔";
+                    $data['keywords'] = "apostillar documentos en new jersey, apostillar orden de compra en new jersey, apostillar orden de compra cerca de mi, donde apostillar una orden de compra en new jersey, donde puedo apostillar una orden de compra en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 default:
