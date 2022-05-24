@@ -87,6 +87,7 @@
 </script>
 <?php } ?>
   <style>
+    html, body {max-width: 100% !important;overflow-x: hidden !important;}
     .quienes-somos{      background: rgb(24,55,84);      background: radial-gradient(circle, rgba(24,55,84,1) 0%, rgba(26,29,34,1) 100%);    }
     .f-blue{      background-color: #122944;    }
     .navfoot{      background-color: #333 !important;      height: 70px;    }
