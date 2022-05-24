@@ -156,6 +156,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249594 ';
         $data['tlfshow'] = '908 224-9594';
         $data['landing'] = 'General';
+        $data['title'] = 'Notaría Latina en New Jersey - Apostillas, Poderes y Traducciones';
         return view('landing.general',$data);
     }
 
@@ -173,6 +174,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249596';
         $data['tlfshow'] = '908 224-9596';
         $data['landing'] = 'General Web';
+        $data['title'] = 'Apostillas, Poderes y Traducciones en New Jersey | Notaría Latina';
         return view('landing.general',$data);
     }  
 
@@ -246,6 +248,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13474281520';
         $data['tlfshow'] = '347 428-1520';
         $data['landing'] = 'General';
+        $data['title'] = 'Notaría Latina en New York - Apostillas, Poderes y Traducciones';
         return view('landing.general',$data);
     }
 
@@ -263,6 +266,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13474281519';
         $data['tlfshow'] = '347 428-1519';
         $data['landing'] = 'General Web';
+        $data['title'] = 'Apostillas, Poderes y Traducciones en New York | Notaría Latina';
         return view('landing.general',$data);
     }  
 

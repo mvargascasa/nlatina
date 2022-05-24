@@ -877,7 +877,7 @@ class WebController extends Controller
                 case 'apostillar-poder-comercial-new-jersey':
                     $data['description'] = 'Poder Comercial';
                     $data['metadescription'] = "Apostillamos Poder Comercial en New Jersey de una manera segura y rápida. Envíe su documento o puede consultar por nuestros servicios ✔";
-                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostillar poder comercial,  apostillar poder comercial new jersey, apostillar poder comercial near me, apostille commercial power new jersey, donde apostillar poder comercial new jersey";
+                    $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar poder comercial new jersey, apostillar poder comercial near me, donde apostillar poder comercial new jersey, donde puedo apostillar una carta poder comercial en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaracion-jurada-comercial-new-jersey':
