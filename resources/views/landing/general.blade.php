@@ -109,7 +109,7 @@
 <header>
   <nav class="navbar navbar-dark navfoot">
     <a class="navbar-brand pl-3" href="{{ route('web.index') }}">
-      <img src="{{asset('img/marca-notaria-latina.png')}}" width="140" height="30" alt="Notaria Latina en {{ $oficina }}">
+      <img src="{{asset('img/marca-notaria-latina.png')}}" width="140" height="30" alt="@isset($title){{$title}} @else Notaria Latina en {{ $oficina }} - Apostillas, Poderes y Traducciones @endisset">
     </a>
       <div class="d-flex justify-content-end pr-3">
         <ul class="navbar-nav mr-auto">
@@ -123,7 +123,7 @@
 
 
 <section class="card text-white" style="border-radius:0;border:0" >
-  <img id="prisection" src="" class="card-img" alt="Notaria Pública en {{ $oficina }}" style="max-height: 90vh;min-height: 40vh;  object-fit: cover;">
+  <img id="prisection" src="" class="card-img" alt="@isset($title) {{ $title }} @else Notaria Latina en {{ $oficina }} - Apostillas, Poderes, Traducciones @endisset" style="max-height: 90vh;min-height: 40vh;  object-fit: cover; width: 100%; height: 100%">
   <div class="card-img-overlay my-auto" style="background:rgba(2, 2, 2, 0.5)">
     <div class="d-sm-block d-md-none text-center" style="margin-top: 20%;">
         <div class="font-italic"><h1 style="font-size: 22px; font-weight: 600">{!!$header!!}</h1></div>
@@ -234,7 +234,7 @@
 
 <section class="row quienes-somos text-white  m-0">
   <div class="card col-12 p-0" style="border-radius:0;border:0" >
-    <img src="{{asset($imgdown)}}" class="card-img" style="height: 100%;object-fit: cover;" alt="Oficina en {{ $oficina }}" >
+    <img src="{{asset($imgdown)}}" class="card-img" style="height: 100%;object-fit: cover;" alt="@isset($title){{$title}}@else Notaria Latina en {{$oficina}} - Apostillas, Poderes, Traducciones @endisset" >
   </div>
 </section>
 
@@ -250,7 +250,7 @@
   </div>
   <div class="col-12 col-md-6  text-center pb-4 ">
     <a href="{{$dirlink}}" target="_blank">
-      <img id="dirmap" width="350vw" height="280vh" src="" alt="Notaria Latina en New Jersey - Apostillas, Poderes y Traducciones">
+      <img id="dirmap" width="350vw" height="280vh" src="" alt="@isset($title){{$title}} @else Notaria Latina en {{$oficina}} - Apostillas, Poderes y Traducciones @endisset">
     </a>
   </div>
 </section>
