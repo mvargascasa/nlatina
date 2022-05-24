@@ -72,7 +72,13 @@
   if(strpos($actual_link, 'localhost') === false){
 ?>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL"></script>
+<script id="script_analytics" async></script>
+<script>
+  setTimeout(() => {
+    document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
+    console.log('cargando script de analytics despues de 3seg...');
+  }, 3000);
+</script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
