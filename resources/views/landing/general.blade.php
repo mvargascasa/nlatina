@@ -250,7 +250,7 @@
   </div>
   <div class="col-12 col-md-6  text-center pb-4 ">
     <a href="{{$dirlink}}" target="_blank">
-      <img id="dirmap" src="" alt="Direccion en {{ $oficina }}">
+      <img id="dirmap" style="height: 100%" src="" alt="Direccion en {{ $oficina }}">
     </a>
   </div>
 </section>
