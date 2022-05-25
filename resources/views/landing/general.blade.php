@@ -13,7 +13,11 @@
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
+  <meta property="og:url" content="{{ Request::url() }}">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="@isset($title){{$title}}@else Notaria Latina en {{ $oficina }} - Apostillas, Poderes y Traducciones @endisset">
+  <meta property="og:description" content="{{ $data['metadescription'] }}">
+  <meta property="og:image" content="{{asset($imgup)}}">
   <title>@isset($title) {{ $title }} @else Notaria Latina en {{$oficina}} - Apostillas, Poderes y Traducciones @endisset</title>
 
   <script type="text/javascript">
