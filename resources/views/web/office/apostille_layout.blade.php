@@ -5,8 +5,27 @@
     <meta name="description"     content="{{ $data['metadescription'] }}">
     <meta name="keywords"        content="{{ $data['keywords'] }}">
     <title>Apostillar {{ $data['description'] }} en {{ $data['office'] }} | Notaria Latina</title>
+
+    <meta property="og:url" content="{{Request::url()}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Apostillar {{ $data['description'] }} en {{ $data['office'] }} | Notaria Latina">
+    <meta property="og:description" content="{{ $data['metadescription'] }}">
+    <meta property="og:image" content="{{ asset('img/IMG-NOTARIA-02.jpg') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <style>
+        h2{font-size: 25px}
+        #card_posts:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}
+        #div_map{padding-top:2%;padding-bottom:2%}
+        #div_visitenos{margin-right: 5vw;}
+        #div_visitenos h3{font-size: 25px}
         @media screen and (max-width: 580px){
+            h2{font-size: 18px}
+            #div_map{padding-top:0%;padding-bottom:0%}
+            #div_visitenos{margin-right: 0vw;margin-top:10%;}
+            #div_visitenos h3{font-size: 20px}
             #title{
                 font-size: 20px !important;
             }
@@ -37,28 +56,26 @@
 <div id="prisection" class="d-flex justify-content-center align-items-center text-center" style="height: 35vh;background-size: cover; background-position: left top; background-repeat: no-repeat;">
     <h1 id="title" style="font-size: 40px; color: #ffffff">Apostillamos <b>{{ $data['description']}}</b> en {{ $data['office']}}</h1>
 </div>
-    @if(isset($data['content']) && isset($data['body']))
-    <div class="row mx-4 mt-5">
-        <div class="col-sm-3 border-right">
-            <h6>CONTENIDO</h6>
-            <hr>
-            @php $index=1; @endphp
-            @foreach ($data['content'] as $content)
-                <p>{{$index++}}. {{ $content}}</p>
-            @endforeach
-            <p><a href="#card" style="text-decoration: none; color: #000000; font-weight: 500">{{ $index }}. Solicitar {{ $data['description'] }}</a></p>
+
+    @if(isset($data['body']))
+        <div class="container mt-5">
+            <div class="row d-flex mx-1">
+                <div class="d-flex">
+                    <section>
+                        {!! $data['body'] !!}    
+                    </section>
+                </div>
+                <div>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-8">
-            {!! $data['body'] !!}    
-        </div>
-        <div class="col-sm-1 border-left"></div>
-    </div>
     @endif
+
     <div class="container mt-5">
         <div class="row">
-            <div class="col-sm-2"></div>
+            <div class="col-sm-1"></div>
             <div class="col-sm-10">
-                <div id="card" class="card ml-5 mr-5" style="box-shadow: 1px 1px 4px 4px #d5d4d4; border-radius: 0px; margin-left: 10%; margin-right: 10%;">
+                <div data-aos="zoom-in" id="card" class="card" style="box-shadow: 1px 1px 4px 4px #d5d4d4; border-radius: 0px;">
                     <div class="card-header" style="border-bottom: none; background-color: #333333">
                         <div class="d-flex justify-content-center align-items-center">
                             <h5 id="txtSubtitle" class="text-center text-white" style="font-size: 30px; margin-left: 5%; margin-right: 5%; margin-top: 1%; padding-top: 2%; padding-bottom: 2%">Para apostillar <b>{{ $data['description'] }}</b>, complete el formulario y nos pondrémos en contacto</h5>
@@ -84,7 +101,7 @@
                                 <div class="mb-5 d-flex">
                                     <textarea name="mensaje" id="mensaje" rows="4" style=" border-radius: 0px; border-color: rgb(228, 216, 216)" class="form-control inputs" placeholder="Mensaje"></textarea>
                                 </div>
-                                <label class="mb-2 inputs" for="adjunto">Subir un archivo</label>
+                                <label class="mb-2 inputs" for="adjunto">Adjuntar un archivo</label>
                                 <div class="mb-5 d-flex">
                                     <input type="file" name="adjunto" id="adjunto" class="form-control inputs">
                                 </div>
@@ -96,6 +113,70 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+    <hr style="width: 40vw; margin-top: 50px; margin-bottom: 40px">
+
+    <div data-aos="fade-up" style="background-color: #122944" class="mt-5 mb-5 pt-5 pb-5 text-center text-white">
+        <h2>¿Desea saber más información para apostillar <b style="color: #FFC107">{{ $data['description']}}</b>?</h2>
+        <p style="font-size: 16px">Llámenos y lo guiamos en el proceso de una manera segura <i class="fa-solid fa-check"></i></p>
+        <a href="tel:{{$data['telfHidden']}}" class="btn" style="background-color: #FFC107"><i class="fa-solid fa-phone-flip"></i> LLAMAR</a>
+    </div>
+
+    <div data-aos="flip-up" id="div_map" class="mt-5">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="d-flex justify-content-center">
+                    @php
+                        switch ($data['office']) {
+                            case 'New Jersey': $img_location = 'map-newjersey-notaria.webp'; break;
+                            case 'New York': $img_location = 'maps-newyork-notaria.webp'; break;
+                            case 'Florida': $img_location = 'map-florida-notaria.jpg'; break;
+                            default:break;
+                        }
+                    @endphp
+                    <a target="_blank" href="{{ $data['location'] }}">
+                        <img width="400vw" height="100vh" class="lazy img-fluid" data-src="{{ asset('img/'.$img_location) }}" alt="Apostillar {{ $data['description'] }} en {{ $data['office'] }} | Notaria Latina">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 d-flex justify-content-center align-items-center text-center">
+                <div id="div_visitenos">
+                    <h3 style="color: #122944; font-weight:600">¡Visítenos en nuestras oficinas en {{ $data['office']}} para asesorarlo con el trámite personalmente!</h3>
+                    <p style="font-size: 20px; margin-bottom: 5px">Dirección:</p>
+                    <i class="fa-solid fa-location-dot" style="color: #122944; font-size: 20px"></i> <a target="_blank" style="color: #000000; font-size: 19px" href="{{$data['location']}}">{{$data['address']}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @php
+        $posts = DB::table('posts')->where('name', 'LIKE', '%apostilla%')->inRandomOrder()->limit(3)->get();
+    @endphp
+
+    <div class="mt-5" style="margin-left: 7%; margin-right: 7%">
+        <h4>Artículos que pueden interesarle</h4>
+        <div class="row">
+            @foreach ($posts as $post)
+            <div class="col-12 col-md-4">
+                <div data-aos="flip-left" id="card_posts" class="card my-2">
+                    <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
+                        <img data-src="{{url('uploads/'.$post->imgdir)}}" class="lazy card-img-top" alt="Imagen {{ $post->name }}" style="object-fit: cover;width: 100%; height: 150px !important;">
+                        {{-- {{url('uploads/'.$post->imgdir)}} --}}
+                    </a>
+                    <div class="card-body p-2" style="position:relative;">
+                    <span class="d-block text-muted font-weight-bold text-truncate "
+                            style="font-size:1rem">{{$post->name}}</span>
+                    <span class="d-block text-muted text-truncate">
+                        <?php echo strip_tags(substr($post->body,0,300))  ?>
+                    </span>
+                    {{-- <div class="small text-muted float-left">{{$post->created_at->format('M d')}}</div> --}}
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
 
@@ -125,9 +206,14 @@
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 <script>
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/Apostilla-General.webp')}}')";
     });
+    document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
 </script>
 @endsection

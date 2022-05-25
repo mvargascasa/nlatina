@@ -210,6 +210,8 @@ class WebController extends Controller
         $data['telfWpp'] = '13479739888';
         $data['telfShow'] = '347-973-9888';
         $data['office'] = 'New York';
+        $data['address'] = '67-03 Roosevelt Avenue, Woodside Queens, NY 11377';
+        $data['location'] = 'https://g.page/notariapublicalatina';
         $data['metadescription'] = "Notarizamos todo tipo de documentos en New York tales como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✔";
         $data['keywords'] = 'notaria en new york, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york';
         if($service != null){
@@ -499,6 +501,8 @@ class WebController extends Controller
         $data['telfWpp'] = '13479739888';
         $data['telfShow'] = '908-800-9046';
         $data['office'] = 'New Jersey';
+        $data['address'] = '1146 East Jersey St Elizabeth, NJ 07201';
+        $data['location'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
         $data['metadescription'] = "Notarizamos todo tipo de documentos en New Jersey tales como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✔";
         $data['keywords'] = 'notaria en new jersey, notaria publica en new jersey, notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey';
         if($service != null){
@@ -568,24 +572,22 @@ class WebController extends Controller
                     $data['metadescription'] = "Consulte por nuestro servicio de apostilla en certificados de nacimiento en New Jersey. Lo asesoramos de una manera segura. Solicítelo ahora! ✔";
                     $data['keywords'] = "que es un certificado de nacimiento, apostillar certificado de nacimiento en new jersey, apostillar acta de nacimiento en new jersey, apostillar partida de nacimiento en new jersey, donde apostillar certificado de nacimiento en new jersey, donde puedo realizar un certificado de nacimiento en new jersey, como apostillar un certificado de nacimiento en new jersey, apostillar certificado de nacimiento nj";
                     $data['content'] = ['¿Qué es un certificado de nacimiento?','¿Qué información contiene el certificado de nacimiento?','¿Para qué sirve la partida de nacimiento?','¿Donde puedo obtener un certificado de nacimiento?'];
-                    $data['body'] = "<ul><li><h3>¿Qué es un certificado de nacimiento?</h3></li></ul>
+                    $data['body'] = "<ul><li><h2>¿Qué es un certificado de nacimiento?</h2></li></ul>
                     <p>El certificado o acta de nacimiento es un documento emitido por el Registro Civil o Consulado respectivo, en el cual se da prueba del lugar, fecha
                         y hora del nacimiento, al igual que toda la información correspondiente como nombres y apellidos, sexo, etc.
                     </p>
-                    <ul><li><h3>¿Qué información contiene el certificado de nacimiento?</h3></li></ul>
+                    <ul><li><h2>¿Qué información contiene el certificado de nacimiento?</h2></li></ul>
                     <p>En sí, el certificado de nacimiento contiene información básica del nacimiento y su inscripción. Entre estos consta datos como 
                         los nombres y apellidos del titular, lugar, fecha y hora del nacimiento, al igual que el nombre de los progenitores. 
                     </p>
-                    <ul><li><h3>¿Para qué sirve la partida de nacimiento?</h3></li></ul>
+                    <ul><li><h2>¿Para qué sirve la partida de nacimiento?</h2></li></ul>
                     <p>El acta o certificado de nacimiento es un documento esencial para llevar a cabo distintos trámites.</p>
                     <p>Entre estos pueden perfilar los siguientes:</p>
-                    <ul>
-                        <li>Obtener o renovar el documento de Identidad o Pasaporte</li>
-                        <li>Para contraer matrimonio, trabajar fuera del país u obtener algun beneficio social</li>
-                        <li>Solicitar permiso de paternidad</li>
-                    </ul>
-                    <ul><li><h3>¿Donde puedo obtener un certificado de nacimiento?</h3></li></ul>
-                    <p>Puede completar el siguiente formulario o dirigirse personalmente a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera correcta y segura.</p>";
+                        <p>✔ Obtener o renovar el documento de Identidad o Pasaporte</p>
+                        <p>✔ Para contraer matrimonio, trabajar fuera del país u obtener algun beneficio social</p>
+                        <p>✔ Solicitar permiso de paternidad</p>
+                    <ul><li><h2>¿Donde puedo obtener un certificado de nacimiento?</h2></li></ul>
+                    <p>Puede <a href='#card'>completar el siguiente formulario</a> o dirigirse personalmente a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera correcta y segura.</p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-reporte-consular-new-jersey':
@@ -979,6 +981,8 @@ class WebController extends Controller
         $data['telfHidden'] = '+13056003290';
         $data['telfWpp'] = '13056003290';
         $data['telfShow'] = '305-600-3290';
+        $data['address'] = '2104 N University Dr, Sunrise, FL 33322';
+        $data['location'] = 'https://g.page/r/CeRrwPx_W2-xEAE';
         $data['metadescription'] = "";
         $data['keywords'] = 'tramitar documentos florida, certificar documentos florida, traducir documentos florida, apostillar cerca de mi, apostille near me, apostille florida, apostillar florida, apostillar documentos rapido florida, apostillar documentos florida, donde puedo apostillar un documento, donde apostillar en florida, apostillado de documentos, fast document apostille florida, apostillar documentos fl, tramitar documentos fl, notarizar documentos fl';
         if($service != null){
