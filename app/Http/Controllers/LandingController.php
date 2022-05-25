@@ -238,7 +238,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Realizamos todo tipo de trámites notariales en New York tales como apostillas, certificados, poderes, traducciones de una manera segura. Contáctese con nosotros! ✔';
+        $data['meta_description'] = 'Realizamos todo tipo de trámites notariales en New York tales como apostillas, certificados, poderes, traducciones de una manera segura. Contáctenos! ✔';
         $data['keywords'] = 'notaria en new york, notaria latina en new york, notaria publica latina en new york, notaria en queens new york, notario publico en new york, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en queens new york, traducir documentos en queens new york';
         $data['imgup'] = 'img/newyork-landing-notaria-latina.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
