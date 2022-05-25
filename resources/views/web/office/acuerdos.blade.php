@@ -1,7 +1,7 @@
 @extends('layouts.web')
 @section('header')
     <title>Acuerdos Notariales Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
-    <meta name="description"        content="Los acuerdos son un pacto firmado entre dos o más personas. Consulte por nuestros servicios y lo ayudamos con el trámite para realizar un acuerdo ✔">       
+    <meta name="description"        content="Los acuerdos son un pacto firmado entre dos o más personas. Consulte por nuestros servicios en {{$data['office']}} para realizar el trámite ✔">       
     <meta name="keywords"           content="que es un acuerdo notarial, para que sirve un acuerdo, requisitos para realizar un acuerdo en {{ Str::lower($data['office']) }}, realizar un acuerdo en {{ Str::lower($data['office']) }}, donde puedo realizar un acuerdo en {{ Str::lower($data['office']) }}, donde puedo realizar un acuerdo notarial en {{ Str::lower($data['office']) }}, apostillar acuerdon en {{ Str::lower($data['office']) }}, donde puedo apostillar un acuerdo notarial en {{ Str::lower($data['office']) }}" />
     
     <meta property="og:url"         content="{{ Request::url() }}" />

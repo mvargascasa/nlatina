@@ -1,7 +1,7 @@
 @extends('layouts.web')
 @section('header')
 <title>Revocatorias Notariales Apostilladas en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Una revocatoria es un documento que deja sin efecto un poder. Contáctenos y lo ayudamos en el trámite del documento de una manera rápida y segura! ✔">       
+<meta name="description"        content="Una revocatoria es un documento que deja sin efecto un poder. Lo ayudamos en el trámite del documento en {{ $data['office'] }} de una manera segura! ✔">       
 <meta name="keywords"           content="que es una revocatoria, requisitos para realizar una revocatoria en {{ Str::lower($data['office']) }}, realizar una revocatoria en {{ Str::lower($data['office']) }}, revocatoria de carta poder en {{ Str::lower($data['office']) }}, donde puedo realizar una revocatoria de un poder en {{ Str::lower($data['office']) }}, donde puedo realizar la revocatoria de una carta poder en {{ Str::lower($data['office']) }}, donde puedo revocar un poder en {{ Str::lower($data['office']) }}, solicitar revocatoria de poder en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{Request::url()}}" />

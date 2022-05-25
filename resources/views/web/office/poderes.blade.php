@@ -1,7 +1,7 @@
 @extends('layouts.web')
 @section('header')
 <title>Poderes Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Una carta poder es un documento para otorgar control sobre sus activos a otra persona. Contáctenos para brindarle más información ✔">       
+<meta name="description"        content="Un poder es un documento que otorga control sobre sus activos a otra persona. Contáctenos para ayudarlo con el trámite en {{$data['office']}} ✔">       
 <meta name="keywords"           content="que es un poder, que es una carta poder, para que sirve una carta poder, tipos de carta poder en {{ Str::lower($data['office']) }}, requisitos para carta poder en {{ Str::lower($data['office']) }}, notarizar carta poder en {{ Str::lower($data['office']) }}, notarizar carta poder en {{ Str::lower($data['office']) }}, apostillar carta poder en {{ Str::lower($data['office']) }}, apostillar carta poder en {{ Str::lower($data['office']) }}, donde puedo notarizar una carta poder en {{ Str::lower($data['office']) }}, donde puedo apostillar una carta poder en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{Request::url()}}" />

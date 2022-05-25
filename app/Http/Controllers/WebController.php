@@ -650,7 +650,7 @@ class WebController extends Controller
                     break;
                 case 'apostillar-certificado-de-divorcio-new-jersey':
                     $data['description'] = 'Certificados de Divorcio';
-                    $data['metadescription'] = "El certificado de divorcio es un escrito que constata la separación de una pareja. Para apostillar dicho documento contáctenos y lo asesoramos! ✔";
+                    $data['metadescription'] = "El certificado de divorcio es un escrito que constata la separación de una pareja. Para apostillar dicho documento contáctenos para asesorarlo! ✔";
                     $data['keywords'] = "que es un certificado de divorcio, requisitos para un certificado de divorcio new jersey, solicitar certificado de divorcio en new jersey, apostillar documentos en new jersey, apostillar certificado de divorcio en new jersey, apostillar acta de divorcio en new jersey, donde apostillar certificado de divorcio en new jersey, donde puedo apostillar un certificado de divorcio en new jersey, donde puedo sacar el certificado de divorcio en new jersey";
                     $data['content'] = ['¿Qué es un acta o certificado de divorcio?','¿Para qué se utiliza un certificado de divorcio?','¿Cuáles son los requisitos necesarios para un certificado de divorcio?','¿Donde puedo obtener el certificado de divorcio?'];
                     $data['body'] = "<ul><li><h3>¿Qué es un acta o certificado de divorcio?</h3></li></ul>

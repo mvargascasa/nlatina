@@ -1,7 +1,7 @@
 @extends('layouts.web')
 @section('header')
 <title>Certificaciones de documentos en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description" content="Las certificaciones son documentos sellados y firmados por un notario. Contáctenos para realizar la certificación de su documento de una manera segura! ✔">       
+<meta name="description" content="Las certificaciones son documentos sellados y firmados por un notario. Contáctenos y lo ayudamos en el trámite del documento en {{$data['office']}} ✔">       
 <meta name="keywords" content="que es una certificacion, para que sirve una certificacion, requisitos para certificar un documento en {{ Str::lower($data['office']) }}, certificar documentos en {{ Str::lower($data['office']) }}, certificar acta de nacimiento en {{ Str::lower($data['office']) }}, certificar acta de matrimonio en {{ Str::lower($data['office']) }}, certificar declaracion jurada en {{ Str::lower($data['office']) }}, certificar licencia de conducir en {{ Str::lower($data['office']) }}, donde puedo certificar un documento en {{ Str::lower($data['office']) }}, donde puedo realizar un certificado en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"                content="{{ Request::url() }}" />

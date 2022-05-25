@@ -1,7 +1,7 @@
 @extends('layouts.web')
 @section('header')
 <title>Autorizaciones de viaje en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description" content="Una autorización de viaje es un permiso para viajar fuera del país. Lo ayudamos con el trámite de dicho documento de una manera segura. Agende su cita! ✔">       
+<meta name="description" content="Una autorización de viaje es un permiso para viajar fuera del país. Lo ayudamos con el trámite del documento en {{ $data['office'] }} de una forma segura! ✔">       
 <meta name="keywords" content="que es una autorizacion de viaje, requisitos para realizar una autorizacion de viaje en {{ Str::lower($data['office']) }}, para que sirve una autorizacion de viaje, cuanto dura una autorizacion de viaje en {{ Str::lower($data['office']) }}, realizar autorizacion de viaje en {{ Str::lower($data['office']) }}, donde puedo realizar una autorizacion de viaje en {{ Str::lower($data['office']) }}, autorizacion de viaje para niños en {{ Str::lower($data['office']) }}, donde puedo realizar una carta de autorizacion de viaje en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"                content="{{ Request::url() }}" />

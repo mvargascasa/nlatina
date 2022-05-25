@@ -1,7 +1,7 @@
 @extends('layouts.web')
 @section('header')
 <title>Cartas de Invitación Notarizadas en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Las cartas de invitación son un documento para tramitar la visa turista. Contáctenos y lo ayudamos en el trámite de dicho documento de una manera segura ✔">       
+<meta name="description"        content="Las cartas de invitación son un documento para tramitar la visa turista. Lo ayudamos en el trámite en {{$data['office']}} de una manera segura ✔">       
 <meta name="keywords"           content="que es una carta de invitacion, para que sirve una carta de invitacion, realizar carta de invitacion en {{ Str::lower($data['office']) }}, donde puedo realizar una carta de invitacion en {{ Str::lower($data['office']) }}, como hacer una carta de invitacion en {{ Str::lower($data['office']) }}, donde puedo realizar una carta de invitacion a estados unidos, donde apostillar una carta de invitacion en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{ Request::url() }}" />
