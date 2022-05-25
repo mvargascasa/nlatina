@@ -18,6 +18,9 @@
   <meta property="og:title" content="@isset($title){{$title}}@else Notaria Latina en {{ $oficina }} - Apostillas, Poderes y Traducciones @endisset">
   <meta property="og:description" content="@isset($meta_description){{$meta_description}}@else Realizamos todo tipo de notarización de documentos en New Jersey como apostillas, poderes, traducciones de una manera rápida y segura. Contáctenos ahora! ✔ @endisset">
   <meta property="og:image" content="{{asset($imgup)}}">
+
+  <meta name="robots" content="max-snippet:156, max-image-preview:standard" />
+
   <title>@isset($title) {{ $title }} @else Notaria Latina en {{$oficina}} - Apostillas, Poderes y Traducciones @endisset</title>
 
   <script type="text/javascript">
