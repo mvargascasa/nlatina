@@ -1,7 +1,8 @@
 @extends('layouts.web')
 
 @section('header')
-    <title>Notaría Latina - @if(strlen($post->name) <= 53){{$post->name}} @else{{ substr($post->name, 0, 53) }}@endif</title>
+    {{-- <title>@if(strlen($post->name) <= 53){{$post->name}} @else {{ substr($post->name, 0, 53) }}@endif</title> --}}
+    <title>{{$post->name}}</title>
     <meta name="description" content="{{$post->metadescrip}}"/>
     <meta name="keywords" content="{{ $post->keywords }}">
     <meta property="og:url"                content="{{route('post.slug',$post->slug)}}" />
