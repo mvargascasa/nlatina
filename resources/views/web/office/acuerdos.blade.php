@@ -32,9 +32,6 @@
   </section>
 
 <div class="container pt-4">
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-10 border-left border-right pl-5 pr-5">
       <h3>¿Qué es un acuerdo?</h3>
       <p class="text-muted">Un acuerdo en un convenio firmado entre dos o más personas frente a un tema en el cual se tienen opiniones diferentes por ambas partes.</p>
               <h3>¿Para que me sirve realizar un acuerdo?</h3>
@@ -61,9 +58,6 @@
               <div class="d-flex justify-content-center">
                 <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
               </div>
-    </div>
-    <div class="col-sm-1"></div>
-  </div>
 </div>
 
  <!-- Modal -->
