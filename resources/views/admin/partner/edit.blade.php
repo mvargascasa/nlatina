@@ -525,12 +525,22 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                {!! Form::label('attached_file', 'Adjuntar hoja de vida / CV (Requerido)*', ['class' => 'text-danger', 'style' => 'font-weight:bold;font-size:15px']) !!}
+                                                {!! Form::label('attached_file', 'Adjuntar hoja de vida / CV', ['class' => 'text-danger', 'style' => 'font-weight:bold;font-size:15px']) !!}
                                                 {!! Form::file('attached_file', ['class' => 'form-control-file', 'accept' => '.pdf,.doc,.docx']) !!}
                                             </div>
                                         </div>
                                     </div>
                                     @endif
+
+                                    @isset($partner->attached_file)
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <a target="_blank" class="btn text-white" style="background-color: #002542" href="{{ asset('storage/' . $partner->attached_file) }}">Ver Hoja de Vida/CV guardada</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endisset
 
                                     @if (count($partner->specialties) > 0)
                                         <p style="font-size: 14px" id="Áreas de especialización">Áreas en las que trabaja <b>(Escoja entre 1 a 3 opciones)</b></p>

@@ -13,6 +13,8 @@
     <meta property="og:title" content="Apostillar {{ $data['description'] }} en {{ $data['office'] }} | Notaria Latina">
     <meta property="og:description" content="{{ $data['metadescription'] }}">
     <meta property="og:image" content="{{ asset('img/IMG-NOTARIA-02.jpg') }}">
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
 
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" as="style" onload="this.rel='stylesheet'" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
