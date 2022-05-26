@@ -246,7 +246,7 @@
             </div>
             <div class="col-sm-6 border-right">
                 <div class="rowinfobody">
-                    <h2 style="font-size: 20px"><b>Biografía</b></h2>
+                    <h2 style="font-size: 18px"><b>Biografía</b></h2>
                     <div>
                         {!! Purify::clean($partner->biography_html) !!}
                     </div>
@@ -259,14 +259,14 @@
                     </div> --}}
                     @isset($partner->specialty)
                         <div class="mt-3">
-                            <h2 style="font-weight: 600; font-size: 20px">Especialidades</h2>
+                            <h2 style="font-weight: 600; font-size: 18px">Especialidades</h2>
                             <p style="font-weight: 400">{{ Purify::clean($partner->specialty) }}</p>
                         </div>
                     @endisset
                 </div>
                 @isset($partner->numlicencia)
                     <div class="rowinfobody">
-                        <h2 style="font-weight: 600; font-size: 20px">Número de Licencia - Título</h2>
+                        <h2 style="font-weight: 600; font-size: 18px">Número de Licencia - Título</h2>
                         <div class="d-flex">
                             <p style="font-weight: 400; padding: 5px; border-radius: 5px" class="border">{{ Purify::clean($partner->numlicencia) }}</p>
                         </div>
