@@ -6,6 +6,8 @@
     <meta name="keywords"        content="{{ $data['keywords'] }}">
     <title>Apostillar {{ $data['description'] }} en {{ $data['office'] }} | Notaria Latina</title>
 
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
     <meta property="og:url" content="{{Request::url()}}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Apostillar {{ $data['description'] }} en {{ $data['office'] }} | Notaria Latina">
