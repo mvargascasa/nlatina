@@ -211,23 +211,24 @@
         <div id="rowinfoheader" class="row mt-3">
             <div class="col-sm-2"></div>
             <div id="divImgPartner" class="col-sm-2">
-                <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Imagen 1" width="200" height="260">
+                <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Abogado en {{ $partner->city }}, {{ $partner->state }}, {{ $partner->country_residence }}" width="200" height="260">
             </div>
             <div class="col-sm-8 mt-5 info-header">
                 <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
-                <h3 id="txtnamelastname"><b>
+                <h1 style="font-size: 30px" id="txtnamelastname"><b>
                     @if ($partner->title == "Abogado")
                         Abg.
                     @elseif($partner->title == "Licenciado")
                         Lic.
                     @endif
                     {{ $partner->name }} {{ $partner->lastname }}
-                </b></h3>
-                <p><img src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt=""> {{ $partner->country_residence}}, {{ $partner->city }}</p>
+                    </b>
+                    <p style="font-size: 20px; margin-top: 15px"><img src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="Abogado en {{ $partner->city }}, {{ $partner->state }}, {{ $partner->country_residence }}"> {{ $partner->country_residence}}, {{ $partner->city }}</p>
+                </h1>
                 @if ($partner->company == "Empresa")
-                    <p>{{ $partner->company_name }}</p>
+                    <p style="margin-top: 10px">{{ $partner->company_name }}</p>
                 @else
-                    <p style="margin-top: -10px">{{ $partner->company}}</p>
+                    <p style="margin-top: 10px">{{ $partner->company}}</p>
                 @endif
                 <br>
                 {{-- <div id="divPhoneAndEmail" class="row d-flex">
@@ -245,7 +246,7 @@
             </div>
             <div class="col-sm-6 border-right">
                 <div class="rowinfobody">
-                    <h6><b>Biografía</b></h6>
+                    <h2 style="font-size: 20px"><b>Biografía</b></h2>
                     <div>
                         {!! Purify::clean($partner->biography_html) !!}
                     </div>
@@ -258,14 +259,14 @@
                     </div> --}}
                     @isset($partner->specialty)
                         <div class="mt-3">
-                            <p style="font-weight: 600">Especialidades</p>
+                            <h2 style="font-weight: 600; font-size: 20px">Especialidades</h2>
                             <p style="font-weight: 400">{{ Purify::clean($partner->specialty) }}</p>
                         </div>
                     @endisset
                 </div>
                 @isset($partner->numlicencia)
                     <div class="rowinfobody">
-                        <p style="font-weight: 600">Número de Licencia - Título</p>
+                        <h2 style="font-weight: 600; font-size: 20px">Número de Licencia - Título</h2>
                         <div class="d-flex">
                             <p style="font-weight: 400; padding: 5px; border-radius: 5px" class="border">{{ Purify::clean($partner->numlicencia) }}</p>
                         </div>
@@ -276,15 +277,15 @@
                 <div class="rowinfobody">
                     <div style="color: #9A7A2E">
                         @isset($partner->address)
-                            <h6 style="font-weight: bold"><i class="fas fa-map-marker-alt"></i> Dirección</h6>
+                            <h3 style="font-weight: bold; font-size: 18px"><i class="fas fa-map-marker-alt"></i> Dirección</h3>
                             <p>{{ $partner->address}}</p>
                         @endisset
                         @if($partner->website != null && Str::startsWith($partner->website, 'https'))
-                            <h6 style="font-weight: bold"><i class="fas fa-globe"></i> Sitio web</h6>
+                            <h3 style="font-weight: bold; font-size: 18px"><i class="fas fa-globe"></i> Sitio web</h3>
                             <a target="_blank" style="color: #9A7A2E" href="{{$partner->website}}">{{ $partner->website }}</a>
                         @endif
                         @if(Str::startsWith($partner->link_facebook, 'https') || Str::startsWith($partner->link_instagram, 'https') || Str::startsWith($partner->link_linkedin, 'https'))
-                            <h6 style="font-weight: bold; margin-top: 10px">Redes Sociales</h6>
+                            <h3 style="font-weight: bold; margin-top: 10px; font-size: 18px">Redes Sociales</h3>
                             <div style="margin-top: 20px">
                                 @if($partner->link_facebook != null && Str::startsWith($partner->link_facebook, 'https'))
                                     <a target="_blank" class="social" href="{{$partner->link_facebook}}"><i class="fab fa-facebook-square fa-2x"></i></a>
@@ -298,7 +299,7 @@
                             </div>
                         @endif
                     </div>
-                    <h6 style="font-weight: bold; margin-top: 10px; color: #9A7A2E">Reviews</h6>
+                    <h3 style="font-weight: bold; margin-top: 10px; color: #9A7A2E; font-size: 18px">Reviews</h3>
                         @php
                           $rating = $partner->averageRating();
                         @endphp
@@ -336,7 +337,7 @@
                     @endif
                 </div>
                 <div class="formContact mt-4 rounded">
-                    <h5 class="text-white text-center p-3">Realice aquí una consulta</h5>
+                    <h4 class="text-white text-center p-3">Realice aquí una consulta</h4>
                     <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
                         @csrf
                         <input class="form-control" type="text" id="nombre" placeholder="Nombre y Apellido" name="name" autocomplete="off" required>
@@ -497,7 +498,7 @@
                                 elseif(str_contains($country, 'é')){$country = str_replace('é', 'e', $country);}
                                 elseif(str_contains($country, 'ú')){$country = str_replace('ú', 'u', $country);}
                             @endphp
-                            <p class="text-muted" style="font-size: 15px"><img src="{{ asset('img/partners/' . Str::lower(Str::studly($country)) . '.png') }}" alt="{{ $rating->country }}"> {{ $rating->name_customer }}</p>
+                            <p class="text-muted" style="font-size: 15px"><img src="{{ asset('img/partners/' . Str::lower(Str::studly($country)) . '.png') }}" alt="Abogado en {{ $partner->city }}, {{ $partner->state }}, {{ $partner->country_residence }}"> {{ $rating->name_customer }}</p>
                             <hr>   
                         @endif          
                     @endforeach
