@@ -283,7 +283,7 @@
                             <a style="color: #9A7A2E" target="_blank" href="https://www.google.com.ec/maps/place/{{$partner->address}}">{{ $partner->address}}</a>
                         @endisset
                         @if($partner->website != null && Str::startsWith($partner->website, 'https'))
-                            <h3 style="font-weight: bold; font-size: 18px"><i class="fas fa-globe"></i> Sitio web</h3>
+                            <h3 class="mt-2" style="font-weight: bold; font-size: 18px"><i class="fas fa-globe"></i> Sitio web</h3>
                             <a target="_blank" style="color: #9A7A2E" href="{{$partner->website}}">{{ $partner->website }}</a>
                         @endif
                         @if(Str::startsWith($partner->link_facebook, 'https') || Str::startsWith($partner->link_instagram, 'https') || Str::startsWith($partner->link_linkedin, 'https'))
