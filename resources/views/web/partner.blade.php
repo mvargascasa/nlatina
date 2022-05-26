@@ -47,6 +47,7 @@
         .info-header{
             color: white;
         }
+        #info_biografia{margin-top:4% !important}
 
         @media screen and (max-width: 580px){
             .info-header{
@@ -69,6 +70,7 @@
             #txtemail{
                 color: #000000 !important;
             }
+            #info_biografia{margin-top: 0px !important;}
         }
 
         #nombre, #telefono, #mensaje{
@@ -241,7 +243,7 @@
             </div>
         </div>
 
-        <div class="row mt-5 pt-2">
+        <div id="info_biografia" class="row">
             <div class="col-sm-2">
             </div>
             <div class="col-sm-6 border-right">
