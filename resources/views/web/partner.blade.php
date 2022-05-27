@@ -568,7 +568,7 @@
 @section('numberWpp', '13479739888')
 
 @section('script')
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script id="script-jquery"></script>
 <script>
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/FONDO-PARTNER-INDIVIDUAL.webp')}}')";
@@ -580,6 +580,14 @@
             divshowphone.innerHTML = "<p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px' class='ml-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p><a class='ml-5' style='color: #002542; text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>Llamar</a>";
         }
     });
+
+    setTimeout(() => {
+        var scriptjquery = document.getElementById('script-jquery');
+        scriptjquery.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+        scriptjquery.integrity = "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=";
+        scriptjquery.crossorigin = "anonymous";
+        console.log('cargando script jquery 3.6.0');
+    }, 3000);
 
     function openModalPhone(){
         $('.bd-example-modal-sm').modal('show');
