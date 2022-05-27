@@ -255,7 +255,7 @@
                     @endif
                     {{ $partner->name }} {{ $partner->lastname }}
                     </b>
-                    <p style="font-size: 20px; margin-top: 15px"><img src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="Abogado en {{ $partner->city }}, {{ $partner->state }}, {{ $partner->country_residence }}"> {{ $partner->country_residence}}, {{ $partner->city }}</p>
+                    <p style="font-size: 20px; margin-top: 15px"><img width="25" height="25" src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="Abogado en {{ $partner->city }}, {{ $partner->state }}, {{ $partner->country_residence }}"> {{ $partner->country_residence}}, {{ $partner->city }}</p>
                 </h1>
                 @if ($partner->company == "Empresa")
                     <p style="margin-top: 10px">{{ $partner->company_name }}</p>
