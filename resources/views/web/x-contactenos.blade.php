@@ -54,7 +54,7 @@
 
                 </div>
                 <div class="col-12 col-sm-6">
-                  <a target="_blank" href="https://g.page/notariapublicalatina"><img class="lazy img-fluid" data-src="{{ asset('img/map-ny-contact.webp') }}" alt="Notaria Latina en New York - Poderes, Apostillas, Traducciones"></a>
+                  <a target="_blank" href="https://g.page/notariapublicalatina"><img width="100%" height="100%" class="lazy img-fluid" data-src="{{ asset('img/map-ny-contact.webp') }}" alt="Notaria Latina en New York - Poderes, Apostillas, Traducciones"></a>
                 </div>
                 {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.711832710689!2d-73.90010968462246!3d40.746365979328054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f030415024b%3A0x3b391bcaf4cd7c10!2sNotaria%20Latina%20-%20Queens%20New%20York!5e0!3m2!1ses!2sec!4v1620329311697!5m2!1ses!2sec" 
                 class="col-12 col-sm-6" style="border:0;" allowfullscreen="" loading="lazy"></iframe>               --}}
@@ -71,7 +71,7 @@
                       </p> 
               </div>
               <div class="col-12 col-sm-6">
-                <a target="_blank" href="https://g.page/r/CVNRV-zNuJiZEAE"><img class="lazy img-fluid" data-src="{{ asset('img/map-nj-contact.webp') }}" alt="Notaria Latina en New Jersey - Poderes, Apostillas, Traducciones"></a>
+                <a target="_blank" href="https://g.page/r/CVNRV-zNuJiZEAE"><img width="100%" height="100%" class="lazy img-fluid" data-src="{{ asset('img/map-nj-contact.webp') }}" alt="Notaria Latina en New Jersey - Poderes, Apostillas, Traducciones"></a>
               </div>
               {{-- https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.415072742891!2d-74.21549248479062!3d40.664822548437684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24d541387e7ff%3A0x335c07b09362e483!2s1146%20E%20Jersey%20St%2C%20Elizabeth%2C%20NJ%2007201%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1627749319027!5m2!1ses!2sec --}}
               {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.4152619231436!2d-74.21548678459651!3d40.664818379336985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24dde7100d355%3A0x9998b8cdec575153!2sNotar%C3%ADa%20Latina%20en%20New%20Jersey!5e0!3m2!1ses-419!2sec!4v1650664174107!5m2!1ses-419!2sec" 
