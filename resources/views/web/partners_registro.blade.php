@@ -362,10 +362,14 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 @section('numberWpp', '13479739888')
 
 @section('script')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script id="script-jquery" defer></script>
 {{-- <script src="https://www.google.com/recaptcha/api.js"></script> --}}
 <script>
 
+    setTimeout(() => {
+        document.getElementById('script-jquery').src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
+        console.log('cargando script jquery 3.5.1...');
+    }, 3000);
     // function onSubmit(token) {
     //     document.getElementById("demo-form").submit();
     // }
