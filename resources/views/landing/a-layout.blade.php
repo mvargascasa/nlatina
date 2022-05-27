@@ -58,6 +58,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
       border: 1px solid #122944;
       width: 100px;
     }
+    @media screen and (max-width: 580px){
+      #dirmap{width: 90% !important}
+      #div-image-map{display: flex !important;justify-content: center !important;}
+    }
   </style>
 </head>
 <body>
@@ -117,9 +121,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <h5 class="font-weight-bold">Email</h5>
     <p class="lead">info@notarialatina.com</p>
   </div>
-  <div class="col-12 col-md-6  text-left pb-4 ">
-    <a href="https://g.page/notariapublicalatina" target="_blank">
-      <img id="dirmap" class="img-fluid" src="" alt="Notaria Latina en Estados Unidos en Linea - Apostillas, Poderes, Traducciones">
+  <div class="col-12 col-md-6 pb-4">
+    <a id="div-image-map" href="https://g.page/notariapublicalatina" target="_blank">
+      <img width="50%" height="100%" id="dirmap" class="img-fluid" src="" alt="Notaria Latina en Estados Unidos en Linea - Apostillas, Poderes, Traducciones">
     </a>
   </div>
 </section>
