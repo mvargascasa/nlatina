@@ -277,11 +277,40 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
     }
     </script>
 
+    <script id="scriptrecaptcha"></script>
+    <script>
+        setTimeout(() => {
+        document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
+            console.log('cargando script recaptcha...');
+        }, 3000);
 
-    {!! htmlScriptTagJsApi([
+        setTimeout(() => {
+            var csrfToken = document.head.querySelector('meta[name="csrf-token"]');
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8', {action: 'homepage'}).then(function(token) {
+                        
+                fetch('/biscolab-recaptcha/validate?token=' + token, {
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest",
+                        "X-CSRF-TOKEN": csrfToken.content
+                    }
+                })
+                .then(function(response) {
+                    callbackThen(response)
+                })
+                .catch(function(err) {
+                    callbackCatch(err)
+                });
+                    });
+                });
+                console.log('ejecutando codigo del recaptcha...');
+        }, 3500);
+    </script>
+
+    {{-- {!! htmlScriptTagJsApi([
     'callback_then' => 'callbackThen',
     'callback_catch' => 'callbackCatch'
-    ]) !!}
+    ]) !!} --}}
 <script src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
 
@@ -314,7 +343,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
             </div>
         </div>
         <div id="divImageAbogado" class="col-sm-6 mt-4">
-            <img width="35%" src="{{ asset('img/partners/DISEÑO PARTNERS Y ABOGADOS -03.webp') }}" alt="">
+            <img width="35%" height="100%" src="{{ asset('img/partners/DISEÑO PARTNERS Y ABOGADOS -03.webp') }}" alt="Abogados en Latinoamerica - Notaria Latina">
         </div>
     </div>
 </div>
@@ -323,17 +352,17 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
     <div class="container mt-5">
         <div class="row text-white">
             <div class="col-sm-4 text-center mb-4">
-                <img width="15%" src="{{ asset('img/partners/REGISTRO.svg') }}" alt="">
+                <img width="15%" height="50%" src="{{ asset('img/partners/REGISTRO.svg') }}" alt="Abogados en Latinoamerica - Notaria Latina">
                 <h6 style="margin-top: 5px"><b>PASO 1.</b></h6>
                 <p style="margin: 0px">Llene el formulario de registro</p>
             </div>
             <div class="col-sm-4 text-center mb-4">
-                <img width="14%" src="{{ asset('img/partners/BIO-01.svg') }}" alt="">
+                <img width="14%" height="50%" src="{{ asset('img/partners/BIO-01.svg') }}" alt="Abogados en Latinoamerica - Notaria Latina">
                 <h6><b>PASO 2.</b></h6>
                 <p style="margin: 0px">Complete su biografía</p>
             </div>
             <div class="col-sm-4 text-center mb-4">
-                <img width="16%" src="{{ asset('img/partners/TERMINOS-01.svg') }}" alt="">
+                <img width="16%" height="50%" src="{{ asset('img/partners/TERMINOS-01.svg') }}" alt="Abogados en Latinoamerica - Notaria Latina">
                 <h6 style="margin-top: 6px"><b>PASO 3.</b></h6>
                 <p style="margin: 0px">Acepte los términos y condiciones</p>
             </div>
