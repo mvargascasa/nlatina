@@ -118,8 +118,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <p class="lead">info@notarialatina.com</p>
   </div>
   <div class="col-12 col-md-6  text-left pb-4 ">
-    <a href="https://goo.gl/maps/T6uyypZS7JCXPUEV7" target="_blank">
-      <img id="dirmap" src="" alt="">
+    <a href="https://g.page/notariapublicalatina" target="_blank">
+      <img id="dirmap" class="img-fluid" src="" alt="Notaria Latina en Estados Unidos en Linea - Apostillas, Poderes, Traducciones">
     </a>
   </div>
 </section>
@@ -132,7 +132,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 <script>
   window.addEventListener('load', (event) => {
       document.getElementById('prisection').style.backgroundImage = "url('img/a-ini.webp')";
-      document.getElementById('dirmap').src = "img/map.jpg";
+      document.getElementById('dirmap').src = "img/maps-newyork-notaria.webp";
   });
 </script>
 
