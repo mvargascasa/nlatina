@@ -368,7 +368,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 
     setTimeout(() => {
         document.getElementById('script-jquery').src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
-        console.log('cargando script jquery 3.5.1...');
+        console.log('cargando script jquery 3.5.1');
     }, 3000);
     // function onSubmit(token) {
     //     document.getElementById("demo-form").submit();
