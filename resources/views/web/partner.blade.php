@@ -568,7 +568,7 @@
 @section('numberWpp', '13479739888')
 
 @section('script')
-<script id="script-jquery"></script>
+{{-- <script id="script_jquery"></script> --}}
 <script>
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/FONDO-PARTNER-INDIVIDUAL.webp')}}')";
@@ -581,13 +581,14 @@
         }
     });
 
-    setTimeout(() => {
-        var scriptjquery = document.getElementById('script-jquery');
-        scriptjquery.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-        scriptjquery.integrity = "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=";
-        scriptjquery.crossorigin = "anonymous";
-        console.log('cargando script jquery 3.6.0');
-    }, 3000);
+    //RETIRANDO CARGA DEL SCRIPT - NO SE OCUPA
+    // setTimeout(() => {
+    //     var scriptjquery = document.getElementById('script_jquery');
+    //     scriptjquery.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+    //     scriptjquery.integrity = "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=";
+    //     scriptjquery.crossorigin = "anonymous";
+    //     console.log('cargando script jquery 3.6.0');
+    // }, 3000);
 
     function openModalPhone(){
         $('.bd-example-modal-sm').modal('show');
