@@ -9,7 +9,7 @@
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1' />
 
     <meta property="og:url" content="{{Request::url()}}">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:title" content="Apostillar {{ $data['description'] }} en {{ $data['office'] }} | Notaria Latina">
     <meta property="og:description" content="{{ $data['metadescription'] }}">
     <meta property="og:image" content="{{ asset('img/IMG-NOTARIA-02.jpg') }}">
