@@ -96,7 +96,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 <section class="row quienes-somos text-white">
   <div class="col-12 text-center p-4"> <h2 class="font-italic font-weight-bold">Quienes Somos</h2> <hr class="hrw"> </div>
   <div class="col-12 col-md-6 text-center">
-    <img class="py-5 img-fluid" src="img/marca-notaria-latina.png" alt="" height="180">
+    <img class="py-5 img-fluid" src="img/marca-notaria-latina.png" alt="Notaria Latina en Estados Unidos - Apostillas, Poderes, Traducciones en Linea" width="260" height="180">
   </div>
   <div class="col-12 col-md-6 pb-5 px-5">
       <p class="lead">
