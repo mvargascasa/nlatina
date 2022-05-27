@@ -131,7 +131,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
 <script>
   window.addEventListener('load', (event) => {
-      document.getElementById('prisection').style.backgroundImage = "url('img/a-ini.jpg')";
+      document.getElementById('prisection').style.backgroundImage = "url('img/a-ini.webp')";
       document.getElementById('dirmap').src = "img/map.jpg";
   });
 </script>
