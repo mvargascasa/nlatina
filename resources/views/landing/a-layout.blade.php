@@ -96,7 +96,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 <section class="row quienes-somos text-white">
   <div class="col-12 text-center p-4"> <h2 class="font-italic font-weight-bold">Quienes Somos</h2> <hr class="hrw"> </div>
   <div class="col-12 col-md-6 text-center">
-    <img class="py-5 img-fluid" src="img/marca-notaria-latina.png" alt="Notaria Latina en Estados Unidos - Apostillas, Poderes, Traducciones en Linea" width="260" height="180">
+    <img class="lazy py-5 img-fluid" data-src="img/marca-notaria-latina.png" alt="Notaria Latina en Estados Unidos - Apostillas, Poderes, Traducciones en Linea" width="260" height="180">
   </div>
   <div class="col-12 col-md-6 pb-5 px-5">
       <p class="lead">
@@ -123,7 +123,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   </div>
   <div class="col-12 col-md-6 pb-4">
     <a id="div-image-map" href="https://g.page/notariapublicalatina" target="_blank">
-      <img width="50%" height="100%" id="dirmap" class="img-fluid" src="" alt="Notaria Latina en Estados Unidos en Linea - Apostillas, Poderes, Traducciones">
+      <img width="50%" height="100%" id="dirmap" class="lazy img-fluid" data-src="{{ asset('img/maps-newyork-notaria.webp') }}" alt="Notaria Latina en Estados Unidos en Linea - Apostillas, Poderes, Traducciones">
     </a>
   </div>
 </section>
@@ -136,8 +136,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 <script>
   window.addEventListener('load', (event) => {
       document.getElementById('prisection').style.backgroundImage = "url('img/a-ini.webp')";
-      document.getElementById('dirmap').src = "img/maps-newyork-notaria.webp";
+      //document.getElementById('dirmap').data-src = "img/maps-newyork-notaria.webp";
   });
+  document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
 </script>
 
 </body>
