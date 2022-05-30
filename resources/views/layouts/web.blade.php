@@ -258,12 +258,12 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                         {{-- 908 800 9046 --}}
                     <br> 
 
-                    {{-- <span class="font-weight-bold text-white"> Florida </span><br>
+                    <span class="font-weight-bold text-white"> Florida </span><br>
                     <a href="https://g.page/r/CeRrwPx_W2-xEAE" target="_blank" class="text-muted">
                         2104 N University Dr, Sunrise, FL 33322 </a><br>
                         <a href="tel:+13056003290" class="text-muted pr-2"><i class="fa fa-phone-square-alt"></i> 305 600 3290</a> 
                         <!-- <a href="tel:+13053948840" class="text-muted pr-2"><i class="fa fa-phone-square-alt"></i> 305 394 8840</a><br> -->
-                    <br> --}}
+                    <br>
 
                     <a href="mailto:info@notarialatina.com" class="text-muted"><i class="fas fa-envelope"></i> info@notarialatina.com</a>
                 </p>
