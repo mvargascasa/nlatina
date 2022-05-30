@@ -34,7 +34,8 @@
 
 @section('end-scripts')
 
-<script src="https://cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script>
+{{-- <script src="https://cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script> --}}
+<script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
         CKEDITOR.replace('body');
