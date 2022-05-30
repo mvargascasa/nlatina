@@ -7,7 +7,7 @@
     <meta name="keywords" content="{{ $post->keywords }}">
     <meta property="og:url"                content="{{route('post.slug',$post->slug)}}" />
     <meta property="og:type"               content="website" />
-    <meta property="og:title"              content="Notaría Latina - {{$post->name}}" />
+    <meta property="og:title"              content="{{$post->name}}" />
     <meta property="og:description"        content="{{$post->metadescrip}}" />
     <meta property="og:image"              content="{{url('uploads/i600_'.$post->imgsmall)}}" />
 
