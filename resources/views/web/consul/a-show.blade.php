@@ -40,9 +40,12 @@
                 <hr>
                 <p><b>{{$consul->country}}</b> es miembro del Convenio de La Haya sobre Apostilla y cualquier documento oficial destinado a este país requiere una Apostilla del Secretario de Estado. El Convenio del 5 de octubre de 1961 por el que se abroga el requisito de legalización de documentos públicos extranjeros.</p>
                 <p>Podemos Apostillar documentos emitidos desde cualquier estado de los EE.UU. Incluidos los documentos emitidos por el gobierno federal de EE.UU.</p>
+
                 <p><b>Horario de atención:</b> de 8 AM a  6 PM De lunes a sábado</p>
                 <p><b>Atención al cliente:</b> <a href="tel:+17187665041">+1 718 766 5041</a></p>
                 <p><b>Correo electrónico:</b> <a href="mailto:info@notarialatina.com ">info@notarialatina.com </a></p>
+                <p><b>Contáctenos</b> y lo ayudamos en el proceso de una manera segura.</p>
+                <a class="btn mb-3" style="background-color: #122944; color: #ffffff" href="https://notarialatina.com/gestion-online-estados-unidos">Solicitar Trámite 📑</a>
                 <p>Los documentos comunes que recibimos son:</p>
                 <ul>
                     <li>Certificados de nacimiento</li>
