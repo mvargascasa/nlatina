@@ -27,7 +27,7 @@
             h1{
                  font-size: 25px !important; 
             }
-            h2{font-size: 20px !important; font-weight: 500 !important}
+            h2{font-size: 20px !important; font-weight: 600 !important}
         }
     </style>
 @endsection
