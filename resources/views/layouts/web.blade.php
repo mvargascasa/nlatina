@@ -383,7 +383,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     }, 3000);
 
     var timeToLoadJquery = 1000;
-    if(path.match('/newjersey') || path.match('/newyork')) timeToLoadJquery = 3000;
+    if(path.match('/newjersey') || path.match('/newyork') || path.match('/consulado')) timeToLoadJquery = 3000;
 
     setTimeout(function () {
         downloadJSAtOnload();
