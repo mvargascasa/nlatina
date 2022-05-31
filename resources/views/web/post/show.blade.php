@@ -24,9 +24,10 @@
             #prisection{
                 height: 350px !important;
             }
-            #title{
-                font-size: 25px !important;
+            h1{
+                 font-size: 25px !important; 
             }
+            h2{font-size: 20px !important}
         }
     </style>
 @endsection
