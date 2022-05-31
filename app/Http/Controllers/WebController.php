@@ -278,7 +278,7 @@ class WebController extends Controller
                     break;
                 case 'apostillar-certificado-de-nacimiento-new-york':
                     $data['description'] = 'Certificados de Nacimiento';
-                    $data['metadescription'] = "Consulte por nuestro servicio de apostilla en certificados de nacimiento en New Jersey 🗽​​. Lo asesoramos de una manera segura. Solicítelo ahora! ✅";
+                    $data['metadescription'] = "Consulte por nuestro servicio de apostilla en certificados de nacimiento en New York 🗽​​. Lo asesoramos de una manera segura. Solicítelo ahora! ✅";
                     $data['keywords'] = "que es un certificado de nacimiento, apostillar certificado de nacimiento en new york, apostillar acta de nacimiento en new york, apostillar partida de nacimiento en new york, donde apostillar certificado de nacimiento en new york, donde puedo realizar un certificado de nacimiento en new york, como apostillar un certificado de nacimiento en new york, apostillar certificado de nacimiento ny";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
