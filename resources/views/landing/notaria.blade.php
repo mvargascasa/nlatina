@@ -3,6 +3,12 @@
     <title>Servicios de Notaría en Linea - Notaria Latina</title>
     <meta name="description" content="Servicios de notaría, Gestión Fácil en línea, Entregas en 24 horas en Estados Unidos">
     <meta name="keywords" content="Servicio de notaría en Estados Unidos, Apostillas en Estados Unidos, Cartas Poder Estados Unidos, Traducciones Estados Unidos">
+    <style>
+      @media screen and (max-width: 580px){
+        #pri-txt{text-align: center !important}
+        input, select, textarea{font-size: 14px !important}
+      }
+    </style>
 @endsection
 
 @section('content')
@@ -14,7 +20,7 @@
 
     <div class="row p-4 p-md-5">
 
-      <div class="col-md-7 text-right">
+      <div id="pri-txt" class="col-md-7 text-right">
         <h1 class="font-italic font-weight-bold mb-0" >Servicios de</h1>
         <h2 class="font-italic font-weight-bold" style="font-size: 60px;">Notaría</h2>
         <h3 class="font-italic font-weight-bold">Gestion Facíl en Línea</h3>
@@ -26,7 +32,7 @@
 
       <div class="col-md-5" >
         <div class="row  text-white">
-          <div class="card f-blue col-12 col-md-12 col-lg-10 col-xl-11" >
+          <div class="card pb-3 f-blue col-12 col-md-12 col-lg-10 col-xl-11" >
             <div class="card-body">
 
             <h2 class="font-italic font-weight-bold">Solicitar Ahora</h2>
@@ -73,7 +79,8 @@
                 <input id="ccc" name="ccc" type="email" class="form-control" placeholder="Email" maxlength="50" minlength="8" autocomplete="off" required>
               </div>
               <div class="form-group">
-                <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje" maxlength="100" autocomplete="off" required>
+                {{-- <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje" maxlength="100" autocomplete="off" required> --}}
+                <textarea name="ddd" id="ddd" class="form-control" rows="3" placeholder="Mensaje" maxlength="100" autocomplete="off" required></textarea>
               </div>
 
               <button class="btn btn-lg btn-warning btn-block" type="submit">INICIAR TRAMITE</button>
