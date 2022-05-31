@@ -12,6 +12,7 @@
     <meta property="og:image"              content="{{url('uploads/i600_'.$post->imgsmall)}}" />
 
     <style>
+        h2{font-size: 25px !important}
         @media screen and (max-width: 580px){
             #imgBlog{
                 float: none !important;
