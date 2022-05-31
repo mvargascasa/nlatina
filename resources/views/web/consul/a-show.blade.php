@@ -84,7 +84,7 @@
                     <div class="col-12 col-md-4">
                         <div class="card my-2">
                             <a href="{{route('post.slug',$lpost->slug)}}" class="stretched-link">
-                                <img src="{{url('uploads/'.$lpost->imgdir)}}" class="card-img-top" alt="Consulado de {{ $consul->country }}" style="object-fit: cover;height: 150px !important;">
+                                <img data-src="{{url('uploads/'.$lpost->imgdir)}}" class="lazy card-img-top" alt="Consulado de {{ $consul->country }} en Estados Unidos" style="object-fit: cover;height: 150px !important;">
                             </a>
                             <div class="card-body p-2" style="position:relative;">
                             <span class="d-block text-muted font-weight-bold text-truncate "
@@ -119,6 +119,7 @@
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('uploads/'.$consul->header)}}')";
     });
+    document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
   </script>
 @endsection
 
