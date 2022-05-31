@@ -4,13 +4,13 @@
     <meta name="title" content="Apostillar {{ $data['description'] }} en {{ $data['office'] }}">
     <meta name="description"     content="{{ $data['metadescription'] }}">
     <meta name="keywords"        content="{{ $data['keywords'] }}">
-    <title>Apostillar {{ $data['description'] }} en {{ $data['office'] }}</title>
+    <title>Apostillar {{ $data['description'] }} en {{ $data['office'] }} 📃</title>
 
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1' />
 
     <meta property="og:url" content="{{Request::url()}}">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Apostillar {{ $data['description'] }} en {{ $data['office'] }}">
+    <meta property="og:title" content="Apostillar {{ $data['description'] }} en {{ $data['office'] }} 📃">
     <meta property="og:description" content="{{ $data['metadescription'] }}">
     <meta property="og:image" content="{{ asset('img/IMG-NOTARIA-02.jpg') }}">
     <meta property="og:image:width" content="400" />
