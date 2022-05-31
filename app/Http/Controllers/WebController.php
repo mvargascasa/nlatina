@@ -283,188 +283,188 @@ class WebController extends Controller
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-reporte-consular-new-york':
-                    $data['description'] = 'Reporte Consular';
-                    $data['metadescription'] = "Consulte por nuestro servicio de apostilla en reporte consular en New York. Lo asesoramos de una manera segura. Solicítelo aquí! ✔";
+                    $data['description'] = 'Reporte Consular (CRBA)';
+                    $data['metadescription'] = "Consulte por nuestro servicio de apostilla en reporte consular en New York 🗽. Lo asesoramos de una manera segura. Solicítelo aquí! ✅";
                     $data['keywords'] = "apostillar crba new york, apostillar reporte consular en new york, donde puedo apostillar un reporte consular en new york, donde puedo apostillar un reporte consular de nacimiento en new york, donde solicitar el reporte consular en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-matrimonio-new-york':
                     $data['description'] = 'Certificados de Matrimonio';
-                    $data['metadescription'] = "Notarizamos y Apostillamos certificado de matrimonio en New York de una manera ágil y rápida. Contáctenos y lo ayudamos en el proceso ✔";
+                    $data['metadescription'] = "Notarizamos y Apostillamos certificado de matrimonio en New York 🗽 de una manera ágil y rápida. Contáctenos y lo ayudamos en el proceso ✅";
                     $data['keywords'] = "que es un certificado de matrimonio, requisitos para realizar un certificado de matrimonio en new york, donde puedo solicitar un certificado de matrimonio, apostillar certificado de matrimonio en new york, apostillar acta de matrimonio en new york, donde puedo apostillar un certificado de matrimonio en new york, donde apostillar certificado de matrimonio en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-defuncion-new-york':
                     $data['description'] = 'Certificados de Defunción';
-                    $data['metadescription'] = "Notarizamos y Apostillamos certificados de defunción en New York de una manera segura y rápida. Contáctenos y lo asesoramos en el trámite ✔";
+                    $data['metadescription'] = "Notarizamos y Apostillamos certificados de defunción en New York 🗽 de una manera segura y rápida. Contáctenos y lo asesoramos en el trámite ✅";
                     $data['keywords'] = "que es un certificado de defuncion, para que sirve un certificado de defuncion, donde puedo solicitar un certificado de defuncion en new york, apostillar certificado de defuncion en new york, apostillar acta de defuncion en new york, como apostillar un certificado de defuncion en new york, certificado de defuncion new york apostillar, como solicitar certificado de defuncion en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-divorcio-new-york':
                     $data['description'] = 'Certificados de Divorcio';
-                    $data['metadescription'] = "El certificado de divorcio es un escrito que constata la separación de una pareja. Para apostillar dicho documento contáctenos y lo asesoramos! ✔";
+                    $data['metadescription'] = "El certificado de divorcio es un documento necesario para realizar diversos trámites ⚖. Para apostillar dicho documento contáctenos y lo asesoramos! ✅";
                     $data['keywords'] = "que es un certificado de divorcio, requisitos para un certificado de divorcio new york, solicitar certificado de divorcio en new york, apostillar documentos en new york, apostillar certificado de divorcio en new york, apostillar acta de divorcio en new york, donde apostillar certificado de divorcio en new york, donde puedo apostillar un certificado de divorcio en new york, donde puedo sacar el certificado de divorcio en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-naturalizacion-new-york':
                     $data['description'] = 'Certificados de Naturalización';
-                    $data['metadescription'] = "El certificado de naturalización es un escrito que acredita la ciudadania a una persona extranjera. Agende una cita con nosotros! ✔";
+                    $data['metadescription'] = "El certificado de naturalización es un escrito necesario para realizar diversos trámites notariales ⚖. Agende una cita aquí para asesorarlo en el proceso! ✅";
                     $data['keywords'] = "que es un certificado de naturalizacion, requisitos para sacar el certificado de naturalizacion en new york, apostillar certificado de naturalizacion en new york, apostillar acta de naturalizacion en new york, donde apostillar certificado de naturalizacion en new york, como sacar el certificado de naturalizacion en new york, como solicitar certificado de naturalizacion en new york, certificado de naturalizacion americana";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-expediente-de-adopcion-new-york':
                     $data['description'] = 'Expediente de Adopción';
-                    $data['metadescription'] = "Notarizamos y apostillamos todo tipo de documentos como el expediente de adopción en New York de una manera rápida y segura. Contáctenos! ✔";
+                    $data['metadescription'] = "Notarizamos y apostillamos todo tipo de documentos como el expediente de adopción en New York 🗽 de una manera rápida y segura. Contáctenos! ✅";
                     $data['keywords'] = "apostillar expediente de adopcion en new york, apostillar expediente de adopcion cerca de mi, donde apostillar expediente de adopcion en new york, donde puedo apostillar expediente de adopcion en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-copia-de-pasaporte-new-york':
-                    $data['description'] = 'Copia de pasaporte';
-                    $data['metadescription'] = "Notarizamos y apostillamos todo tipo de documentos como copia de pasaporte en New York de una manerá ágil y segura. Contáctenos! ✔";
+                    $data['description'] = 'Copia de Pasaporte';
+                    $data['metadescription'] = "Notarizamos y apostillamos todo tipo de documentos como copia de pasaporte en New York 🗽 de una manera ágil y segura. Contáctenos! ✅";
                     $data['keywords'] = "apostillar copia de pasaporte en new york, apostillar copia de pasaporte cerca de mi, donde apostillar copia de pasaporte en new york, como sacar copia de pasaporte en new york, donde puedo apostillar copia de pasaporte en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-copia-de-licencia-de-conducir-new-york':
                     $data['description'] = 'Copia de Licencia de Conducir';
-                    $data['metadescription'] = "Apostillamos todo tipo de documentos como copia de licencia de conducir en New York de una forma rápida y segura. Contáctenos! ✔";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos como copia de licencia de conducir en New York 🗽 de una forma rápida y segura. Contáctenos! ✅";
                     $data['keywords'] = "apostillar copia licencia de conducir en new york, apostillar copia de licencia de conducir cerca de mi, donde apostillar copia de licencia de conducir en new york, donde puedo apostillar copia de licencia de conducir en new york, donde puedo solicitar una copia de licencia de conducir en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-escrituras-testamentos-new-york':
                     $data['description'] = 'Escrituras y Testamentos';
-                    $data['metadescription'] = "Notarizamos y apostillamos todo tipo de documentos como Escrituras y Testamentos en New York de una forma segura. Solicite aquí! ✔";
+                    $data['metadescription'] = "Notarizamos y apostillamos todo tipo de documentos como Escrituras y Testamentos en New York 🗽 de una forma segura. Solicite aquí! ✅";
                     $data['keywords'] = "apostillar escrituras en new york, apostillar testamento en new york, donde apostillar escrituras en new york, donde apostillar testamento en new york, donde puedo apostillar una escritura en new york, donde puedo apostillar un testamento en new york, apostillar escritura notarial en new york, apostillar escritura publica en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaraciones-juradas-de-estado-unico-new-york':
                     $data['description'] = 'Declaraciones Juradas';
-                    $data['metadescription'] = "Notarizamos y Apostillamos Declaraciones Juradas (Affidávit) en New York de una manera rápida y segura. Agende su cita ahora! ✔";
+                    $data['metadescription'] = "Notarizamos y Apostillamos Declaraciones Juradas (Affidávit) en New York 🗽 de una manera rápida y segura. Agende su cita ahora! ✅";
                     $data['keywords'] = "apostillar declaracion jurada en new york, apostillar declaracion juramentada en new york, apostillar affidavit support en new york, apostillar declaracion jurada cerca de mi, donde apostillar una declaracion jurada en new york, donde apostillar una declaracion juramentada en new york, donde apostillar affidavit en new york, apostillar declaracion juramentada en new york estados unidos";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-titulo-de-automovil-new-york':
-                    $data['description'] = 'Título de coche/automóvil';
-                    $data['metadescription'] = "Notarizamos y Apostillamos Título de Automóvil en New York de una forma segura. Consulte por nuestros servicios y lo ayudamos en el trámite ✔";
+                    $data['description'] = 'Título de Coche/Automóvil';
+                    $data['metadescription'] = "Notarizamos y Apostillamos Título de Automóvil en New York 🗽 de una forma segura. Consulte por nuestros servicios y lo ayudamos en el trámite ✅";
                     $data['keywords'] = "apostillar documentos en new york, apostillar titulo de automovil en new york, apostillar titulo de coche en new york, donde apostillar titulo de automovil en new york, donde apostillar titulo de coche en new york, apostillar titulo de auto en new york, apostillar titulo de vehiculo en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-autorizacion-de-viaje-new-york':
                     $data['description'] = 'Autorización de Viaje';
-                    $data['metadescription'] = "Notarizamos y Apostillamos todo tipo de documentos como Autorización de Viaje en New York de una manera segura. Consulte por nuestro servicio ✔";
+                    $data['metadescription'] = "Notarizamos y Apostillamos todo tipo de documentos como Autorización de Viaje en New York 🗽 de una manera segura. Consulte por nuestro servicio ✅";
                     $data['keywords'] = "que es una autorizacion de viaje, requisitos para autorizacion de viaje en new york, apostillar autorizacion de viaje en new york, apostillar autorizacion de viaje cerca de mi, donde apostillar una autorizacion de viaje en new york, donde puedo apostillar una autorizacion de viaje en new york, apostillar autorizacion de viaje para menor de edad en new york, donde puedo hacer una autorizacion de viaje para niños en new york, carta de autorizacion de viaje en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-poder-notarial-personal-new-york':
                     $data['description'] = 'Poder Notarial Personal';
-                    $data['metadescription'] = "Notarizamos y Apostillamos todo tipo de documentos como Poder Notarial Personal en New York de una forma segura. Contáctenos ahora! ✔";
+                    $data['metadescription'] = "Notarizamos y Apostillamos todo tipo de documentos como Poder Notarial Personal en New York 🗽 de una forma segura. Contáctenos ahora! ✅";
                     $data['keywords'] = "apostillar documentos en new york, apostillar poder notarial en new york, apostillar carta poder en new york, apostillar poder notarial cerca de mi, donde apostillar carta poder en new york, donde apostillar poder notarial en new york, donde puedo apostillar un poder en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-registro-de-policia-estatal-new-york':
-                    $data['description'] = 'Registro de la policía estatal';
-                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Registro de la Policía Estatal en New York de una manera ágil y segura. Contáctenos! ✔";
+                    $data['description'] = 'Registro de la Policía Estatal';
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Registro de la Policía Estatal en New York 🗽 de una manera ágil y segura. Contáctenos! ✅";
                     $data['keywords'] = "apostillar documentos en new york, apostillar registro policial en new york, apostillar registro de la policia en new york, apostillar registro policial cerca de mi, donde apostillar registro policial en new york, donde puedo apostillar un registro policial en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-registro-de-antecedentes-fbi-new-york':
-                    $data['description'] = 'Registros de antecedentes del FBI';
-                    $data['metadescription'] = "Apostillamos Registro de Antecedentes del FBI en New York de una forma rápida y segura. Consulte ahora por nuestros servicios! ✔";
+                    $data['description'] = 'Registros de Antecedentes del FBI';
+                    $data['metadescription'] = "Apostillamos Registro de Antecedentes del FBI en New York 🗽 de una forma rápida y segura. Consulte ahora por nuestros servicios! ✅";
                     $data['keywords'] = "notaria latina en queens new york, apostillar documentos en new york, apostillar antecedentes del fbi en new york, apostillar registro de antecentes del fbi en new york, apostillar registros de antecedentes del fbi cerca de mi, donde apostillar antecedentes del fbi en new york, donde apostillar registro de antecedentes del fbi en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-diploma-universitario-new-york':
                     $data['description'] = 'Diploma Universitario';
-                    $data['metadescription'] = "Apostillamos Diplomas Universitarios en New York de una forma segura. Contáctese con nosotros ahora y lo asesoramos en el trámite ✔";
+                    $data['metadescription'] = "Apostillamos Diplomas Universitarios en New York 🗽 de una forma segura. Contáctese con nosotros ahora y lo asesoramos en el trámite ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar diploma universitario en new york, apostillar diploma universitario cerca de mi, apostillar titulo universitario en new york, donde apostillar diploma universitario en new york, donde puedo apostillar un titulo universitario en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-transcripcion-universitaria-new-york':
                     $data['description'] = 'Transcripción Universitaria';
-                    $data['metadescription'] = "Apostillamos Transcripción Universitaria en New York de una manera rápida y segura. Contáctese con nosotros y lo ayudamos en el trámite! ✔";
+                    $data['metadescription'] = "Apostillamos Transcripción Universitaria en New York 🗽 de una manera rápida y segura. Contáctese con nosotros y lo ayudamos en el trámite! ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar transcripcion universitaria en new york, apostillar transcripcion universitaria cerca de mi, apostillar transcripcion de titulo universitario en new york, donde apostillar transcripcion universitaria en new york, donde apostillar transcripcion de titulo universitario en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-diploma-de-escuela-secundaria-new-york':
                     $data['description'] = 'Diploma de Escuela Secundaria';
-                    $data['metadescription'] = "Apostillamos Diploma de Escuela Secundaria en New York de una forma ágil y segura. Contáctenos y lo asesoramos con el trámite ✔";
+                    $data['metadescription'] = "Apostillamos Diploma de Escuela Secundaria en New York 🗽 de una forma ágil y segura. Contáctenos y lo asesoramos con el trámite ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar diploma secundario en new york, apostillar diploma de escuela secundaria en new york, apostillar diploma escuela secundaria cerca de mi, donde apostillar diploma de secundaria en new york, donde apostillar diploma de escuela secundaria en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-transcripcion-de-escuela-secundaria-new-york':
                     $data['description'] = 'Transcripción de Escuela Secundaria';
-                    $data['metadescription'] = "Apostillamos Transcripción de Escuela Secundaria en New York de una manera rápida y segura. Agende su cita aquí para ayudarlo con el trámite! ✔";
+                    $data['metadescription'] = "Apostillamos Transcripción de Escuela Secundaria en New York 🗽 de una manera rápida y segura. Agende su cita aquí para ayudarlo con el trámite! ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar transcripcion de secundaria en new york, apostillar transcripcion de escuela secundaria en new york, donde apostillar transcripcion de escuela secundaria en new york, donde puedo apostillar una transcripcion de secundaria en new york, apostillar transcripcion de secundaria cerca de mi";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-incorporacion-new-york':
                     $data['description'] = 'Certificado de Incorporación';
-                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Certificado de Incorporacion en New York de una forma segura. Consulte por nuestro servicio aquí! ✔";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Certificado de Incorporación en New York 🗽 de una forma segura. Consulte por nuestro servicio aquí! ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar certificado de incorporacion en new york, apostillar acta de incorporacion en new york, apostillar certificado de incorporacion cerca de mi, donde apostillar certificado de incorporacion en new york, donde puedo apostillar un certificado de incorporacion en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-buena-reputacion-new-york':
                     $data['description'] = 'Certificado de Buena Reputación';
-                    $data['metadescription'] = "Apostillamos Certificado de Buena Reputación en New York de una manera segura. Envíe su documento por nuestro sitio web o contáctese con nosotros ✔";
+                    $data['metadescription'] = "Apostillamos Certificado de Buena Reputación en New York 🗽 de una manera segura. Envíe su documento por nuestro sitio web o contáctenos! ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar certificado de buena reputacion en new york, apostillar certificado de buena reputacion cerca de mi, donde apostillar certificado de buena reputacion en new york, donde puedo apostillar un certificado de buena reputación en new york, apostillar certificado de buena conducta en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-origen-new-york':
                     $data['description'] = 'Certificado de Origen';
-                    $data['metadescription'] = "Apostillamos Certificados de Origen en New York de una manera segura. Envíe su documento o contáctese con nosotros para asesorarlo en el trámite ✔";
+                    $data['metadescription'] = "Apostillamos Certificados de Origen en New York 🗽 de una manera segura. Envíe su documento o contáctese con nosotros para asesorarlo en el trámite ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar certificado de origen en new york, apostillar certificado de origen cerca de mi, donde apostillar certificado de origen en new york, donde puedo apostillar certificado de origen en new york, apostillar acta de origen en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-marca-patente-new-york':
                     $data['description'] = 'Marcas o Patentes';
-                    $data['metadescription'] = "Apostillamos Marca o Patente en New York de una manera rápida y segura. Contáctenos o puede enviar su documento para ayudarlo con el proceso ✔";
+                    $data['metadescription'] = "Apostillamos Marcas o Patentes en New York 🗽 de una manera rápida y segura. Contáctenos o puede enviar su documento para ayudarlo con el proceso ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar marca en new york, apostillar patente en new york, apostillar marca cerca de mi, apostillar patente cerca de mi, donde apostillar marca en new york, donde apostillar patente en new york, donde puedo apostillar una marca en new york, donde puedo apostillar una patente en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break; 
                 case 'apostillar-poder-comercial-new-york':
                     $data['description'] = 'Poder Comercial';
-                    $data['metadescription'] = "Apostillamos Poder Comercial en New York de una manera segura y rápida. Envíe su documento o puede consultar por nuestros servicios ✔";
+                    $data['metadescription'] = "Apostillamos Poder Comercial en New York 🗽 de una manera segura y rápida. Envíe su documento o puede consultar por nuestros servicios aquí! ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york,  apostillar poder comercial new york, donde apostillar poder comercial new jersey, donde puedo apostillar un poder comercial en new york, donde apostillar carta poder comercial en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-declaracion-jurada-comercial-new-york':
                     $data['description'] = 'Declaración Jurada Comercial';
-                    $data['metadescription'] = "Apostillamos Declaración Jurada Comercial en New York de una forma segura. Contáctese con nosotros o envíe su documento por nuestro sitio web ✔";
+                    $data['metadescription'] = "Apostillamos Declaración Jurada Comercial en New York 🗽 de una forma segura. Contáctese con nosotros o envíe su documento por nuestro sitio web ✅";
                     $data['keywords'] = "que es una declaracion juramentada comercial, para que sirve una declaracion juramentada en new york, requisitos para una declaracion juramentada en new york, apostillar documentos en new york, apostillar declaracion jurada comercial en new york, apostillar affidavit comercial en new york, apostillar declaracion jurada comercial cerca de mi, donde apostillar affidavit comercial en new york, donde apostillar declaracion jurada comercial en new york, apostillar declaracion juramentada comercial en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-fda-new-york':
                     $data['description'] = 'Certificado FDA';
-                    $data['metadescription'] = "Apostillamos Certificados FDA en New York de una manera rápida y segura. Acérquese a nuestras oficinas o envíe su documento por nuestro sitio web ✔";
+                    $data['metadescription'] = "Apostillamos Certificados FDA en New York 🗽 de una manera rápida y segura. Acérquese a nuestras oficinas o envíe su documento por nuestro sitio web ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar certificado fda en new york, apostillar certificado fda cerca de mi, donde apostillar certificado fda en new york, donde puedo apostillar un certificado fda en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-facturas-new-york':
                     $data['description'] = 'Facturas';
-                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Facturas en New York de una manera segura. Contáctenos o envíe su documento y lo ayudamos en el trámite ✔";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Facturas en New York 🗽 de una manera segura. Contáctenos o envíe su documento y lo ayudamos en el trámite ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar una factura en new york, apostillar facturas cerca de mi, donde apostillar facturas en new york, donde puedo apostillar una factura en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;   
                 case 'apostillar-departamento-de-hacienda-new-york':
                     $data['description'] = 'Departamento de Hacienda';
-                    $data['metadescription'] = "Apostillamos todo tipo de documentos en New York como departamento de hacienda. Contáctese con nosotros y lo asesoramos en el trámite ✔";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos en New York 🗽 como departamento de hacienda. Contáctese con nosotros y lo asesoramos en el trámite ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar documento departamento de hacienda en new york, apostillar departamento de hacienda cerca de mi, donde apostillar departamento de hacienda en new york, donde puedo apostillar departamento de hacienda en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-gobierno-extranjero-new-york':
                     $data['description'] = 'Certificado de Gobierno Extranjero';
-                    $data['metadescription'] = "Apostillamos Certificado de Gobierno Extranjero en New York de una manera rápida y segura. Contáctenos y ayudamos con el proceso ✔";
+                    $data['metadescription'] = "Apostillamos Certificado de Gobierno Extranjero en New York 🗽 de una manera rápida y segura. Contáctenos y ayudamos con el proceso ✅";
                     $data['keywords'] = "apostillar documentos en new york, apostillar certificado de gobierno extranjero en new york, apostillar certificado de gobierno extranjero cerca de mi, donde apostillar certificado de gobierno extranjero en new york, donde puedo apostillar certificado de gobierno extranjero en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-venta-gratis-new-york':
                     $data['description'] = 'Certificado de Venta gratis';
-                    $data['metadescription'] = "Apostillamos Certificado de Venta Gratis en New York de una manera segura. Contáctenos para asesorarle correctamento con el trámite ✔";
+                    $data['metadescription'] = "Apostillamos Certificado de Venta Gratis en New York 🗽 de una manera segura. Contáctenos para asesorarle correctamento con el trámite ✅";
                     $data['keywords'] = "apostillar documentos en new york, apostillar certificado de venta gratis en new york, apostillar acta de venta gratis en new york, apostillar certificado de venta cerca de mi, apostillar acta de venta cerca de mi, donde apostillar certificado de venta en new york, donde puedo apostillar certificado de venta gratis en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-ordenes-de-compra-new-york':
                     $data['description'] = 'Órdenes de Compra';
-                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Órdenes de Compra en New York de una forma segura. Contáctenos y lo asesoramos en el proceso ✔";
+                    $data['metadescription'] = "Apostillamos todo tipo de documentos como Órdenes de Compra en New York 🗽 de una forma segura. Contáctenos y lo asesoramos en el proceso ✅";
                     $data['keywords'] = "apostillar documentos en new york, apostillar orden de compra en new york, apostillar orden de compra cerca de mi, donde apostillar una orden de compra en new york, donde puedo apostillar una orden de compra en new york";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
