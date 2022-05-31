@@ -39,6 +39,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
 
   <style>
+    html, body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
     .quienes-somos{
       background: rgb(24,55,84);
       background: radial-gradient(circle, rgba(24,55,84,1) 0%, rgba(26,29,34,1) 100%);
