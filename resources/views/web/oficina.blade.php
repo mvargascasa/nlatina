@@ -496,7 +496,7 @@
   <div class="mt-5 checks">
       <h3 class="text-center">Servicios Adicionales</h3>
       <hr style="width: 10%; border: 1px solid #000000">
-      <h6 class="text-center" style="font-size:25px">Documentos que requieren una apostilla en {{ $data['office'] }}</h6>
+      <h2 class="text-center" style="font-size:25px">Documentos que requieren una apostilla en {{ $data['office'] }}</h2>
       <p style="padding-left: 15%; font-size: 18px; margin-top: 15px">Documentos Personales</p>
       <div class="row" style="padding-left:15%; padding-right:15%;">
         <div class="col-12 col-sm-3">
