@@ -473,15 +473,15 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         document.body.appendChild(bootstrap);
     }
 
-    document.addEventListener("DOMContentLoaded", function(event) {
-        if (localStorage.getItem("statusCardWhatsapp") === null) {
-            localStorage.setItem("statusCardWhatsapp", "On");
-        }
-        if (localStorage.getItem("statusCardWhatsapp") == "On") {
-            document.getElementById('card_whatsapp').classList.toggle('hide-card-whatsapp');;
-            console.log('if on load');
-        }       
-    });
+    // document.addEventListener("DOMContentLoaded", function(event) {
+    //     if (localStorage.getItem("statusCardWhatsapp") === null) {
+    //         localStorage.setItem("statusCardWhatsapp", "On");
+    //     }
+    //     if (localStorage.getItem("statusCardWhatsapp") == "On") {
+    //         document.getElementById('card_whatsapp').classList.toggle('hide-card-whatsapp');;
+    //         console.log('if on load');
+    //     }       
+    // });
     const testWsapp = () => {
         document.getElementById('card_whatsapp').classList.toggle('hide-card-whatsapp');
     }
