@@ -310,12 +310,50 @@ class WebController extends Controller
                     $data['description'] = 'Certificados de Matrimonio';
                     $data['metadescription'] = "Notarizamos y Apostillamos certificado de matrimonio en New York 🗽 de una manera ágil y rápida. Contáctenos y lo ayudamos en el proceso ✅";
                     $data['keywords'] = "que es un certificado de matrimonio, requisitos para realizar un certificado de matrimonio en new york, donde puedo solicitar un certificado de matrimonio, apostillar certificado de matrimonio en new york, apostillar acta de matrimonio en new york, donde puedo apostillar un certificado de matrimonio en new york, donde apostillar certificado de matrimonio en new york";
+                    $data['body'] = "<ul><li><h2>¿Qué es un certificado de matrimonio?</h2></li></ul>
+                    <p>El acta o certificado de matrimonio es un documento que se encarga afirmar y legalizar la unión matrimonial entre dos personas. Dicho documento 
+                        contiene información importante como el lugar, fecha y hora en el cual se realizó dicho proceso.
+                    </p>
+                    <ul><li><h2>¿Para qué sirve el certificado de matrimonio?</h2></li></ul>
+                    En pocas palabras, el certificado o acta de matrimonio sirve para preservar y garantizar la unión matrimonial. Además de esto, este documento
+                    permite verificar que contrajo matrimonio, lo cual lo ayudará para realizar ciertos trámites.
+                    <ul><li><h2>¿Cómo registrar un matrimonio en el extranjero?</h2></li></ul> 
+                    <p>Si un acto matrimonial se lleva a cabo en el exterior, deberá inscribir y certificar en el Consulado respectivo, el cual a su vez se comunicará
+                        con el registro civil del país para proceder con el trámite.
+                    </p>
+                    <ul><li><h2>¿Qué requisitos se necesita para un certificado de matrimonio?</h2></li></ul>
+                    <p>Para dar paso con el proceso de obtención del certificado de matrimonio, necesita tener presente lo siguiente:</p>
+                    <ul>
+                        <li>Nombres completos de las personas a contraer matrimonio</li>
+                        <li>Fecha que se llevo a cabo el matrimonio</li>
+                        <li>Lugar donde se celebró el matrimonio</li>
+                        <li>Parentesco de quien lo solicita</li>
+                        <li>Nombre completo del solicitante</li>
+                    </ul>
+                    <ul><li><h2>¿Donde puedo obtener un certificado de matrimonio?</h2></li></ul>
+                    <p>
+                        Si desea solicitar o apostillar un certificado de matrimonio puede realizarlo completando el siguiente formulario con su información o acercarse a nuestras oficinas en ".$data['office']." donde un asesor se contactará para ayudarlo
+                        en el proceso de una manera correcta y segura.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-defuncion-new-york':
                     $data['description'] = 'Certificados de Defunción';
                     $data['metadescription'] = "Notarizamos y Apostillamos certificados de defunción en New York 🗽 de una manera segura y rápida. Contáctenos y lo asesoramos en el trámite ✅";
                     $data['keywords'] = "que es un certificado de defuncion, para que sirve un certificado de defuncion, donde puedo solicitar un certificado de defuncion en new york, apostillar certificado de defuncion en new york, apostillar acta de defuncion en new york, como apostillar un certificado de defuncion en new york, certificado de defuncion new york apostillar, como solicitar certificado de defuncion en new york";
+                    $data['body'] = "<ul><li><h2>¿Qué es un certificado de defunción?</h2></li></ul>
+                    <p>Un acta o certificado de defunción es un documento mediante el cual termina cualquier proceso administrativo que la persona haya tenido en vida.</p>
+                    <ul><li><h2>¿Para que me sirve un certificado de defunción?</h2></li></ul>
+                    <p>Además de que un certificado de defunción permite a los familiares de la persona difunta llevar ciertos trámites, es el único medio de suspender completamente sus obligaciones frente al Estado y ante cualquier otra
+                        institución con la que hubiera tenido algún compromiso.
+                    </p>
+                    <ul><li><h2>¿Quién puede tramitar el certificado de defunción?</h2></li></ul>
+                    <p>La primera persona que tiene derecho ha tramitar este certificado de defunción es la pareja o cónyuge del difunto. Ante cualquier circunstancia
+                        de que esta persona no pueda hacerlo, lo realizarán los familiares más cercanos de la persona que falleció.
+                    </p>
+                    <ul><li><h2 id='title'>¿Ante que autoridad puedo solicitar un certificado de defunción?</h2></li></ul>
+                    <p>Si desea tramitar o apostillar un acta o certificado de defunción puede completar el <a href='#card'>siguiente formulario</a> con su información o acercarse a nuestras oficinas en ".$data['office']." donde un asesor se comunicará con usted para guiarlo en el trámite de una manera correcta y segura.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-divorcio-new-york':
@@ -619,18 +657,18 @@ class WebController extends Controller
                     $data['metadescription'] = "Notarizamos y Apostillamos certificados de matrimonio en New Jersey 🗽 de una manera ágil y rápida. ¡Contáctenos! Lo ayudamos con el proceso ✅";
                     $data['keywords'] = "que es un certificado de matrimonio, requisitos para realizar un certificado de matrimonio en new jersey, donde puedo solicitar un certificado de matrimonio, apostillar certificado de matrimonio en new jersey, apostillar acta de matrimonio en new jersey, donde puedo apostillar un certificado de matrimonio en new jersey, donde apostillar certificado de matrimonio en new jersey";
                     $data['content'] = ['¿Qué es un certificado de matrimonio?','¿Para qué sirve el certificado de matrimonio?','¿Cómo registrar un matrimonio en el extranjero?','¿Qué requisitos se necesita para un certificado de matrimonio?','¿Donde puedo obtener un certificado de matrimonio?'];
-                    $data['body'] = "<ul><li><h3>¿Qué es un certificado de matrimonio?</h3></li></ul>
+                    $data['body'] = "<ul><li><h2>¿Qué es un certificado de matrimonio?</h2></li></ul>
                     <p>El acta o certificado de matrimonio es un documento que se encarga afirmar y legalizar la unión matrimonial entre dos personas. Dicho documento 
                         contiene información importante como el lugar, fecha y hora en el cual se realizó dicho proceso.
                     </p>
-                    <ul><li><h3>¿Para qué sirve el certificado de matrimonio?</h3></li></ul>
+                    <ul><li><h2>¿Para qué sirve el certificado de matrimonio?</h2></li></ul>
                     En pocas palabras, el certificado o acta de matrimonio sirve para preservar y garantizar la unión matrimonial. Además de esto, este documento
                     permite verificar que contrajo matrimonio, lo cual lo ayudará para realizar ciertos trámites.
-                    <ul><li><h3>¿Cómo registrar un matrimonio en el extranjero?</h3></li></ul> 
+                    <ul><li><h2>¿Cómo registrar un matrimonio en el extranjero?</h2></li></ul> 
                     <p>Si un acto matrimonial se lleva a cabo en el exterior, deberá inscribir y certificar en el Consulado respectivo, el cual a su vez se comunicará
                         con el registro civil del país para proceder con el trámite.
                     </p>
-                    <ul><li><h3>¿Qué requisitos se necesita para un certificado de matrimonio?</h3></li></ul>
+                    <ul><li><h2>¿Qué requisitos se necesita para un certificado de matrimonio?</h2></li></ul>
                     <p>Para dar paso con el proceso de obtención del certificado de matrimonio, necesita tener presente lo siguiente:</p>
                     <ul>
                         <li>Nombres completos de las personas a contraer matrimonio</li>
@@ -639,9 +677,9 @@ class WebController extends Controller
                         <li>Parentesco de quien lo solicita</li>
                         <li>Nombre completo del solicitante</li>
                     </ul>
-                    <ul><li><h3>¿Donde puedo obtener un certificado de matrimonio?</h3></li></ul>
+                    <ul><li><h2>¿Donde puedo obtener un certificado de matrimonio?</h2></li></ul>
                     <p>
-                        Si desea solicitar o apostillar un certificado de matrimonio puede realizarlo completando el siguiente formulario con su información o acercarse a nuestras oficinas en ".$data['office']." donde un asesor se contactará para ayudarlo
+                        Si desea solicitar o apostillar un certificado de matrimonio puede realizarlo completando el <a href='#card'>siguiente formulario</a> con su información o acercarse a nuestras oficinas en ".$data['office']." donde un asesor se contactará para ayudarlo
                         en el proceso de una manera correcta y segura.
                     </p>";
                     return view('web.office.apostille_layout', compact('data'));
@@ -651,17 +689,17 @@ class WebController extends Controller
                     $data['metadescription'] = "Notarizamos y Apostillamos certificados de defunción en New Jersey 🗽 de una manera segura y rápida. ¡Contáctenos! Y lo asesoramos en el trámite ✅";
                     $data['keywords'] = "que es un certificado de defuncion, para que sirve un certificado de defuncion, donde puedo solicitar un certificado de defuncion en new jersey, apostillar certificado de defuncion en new jersey, apostillar acta de defuncion en new jersey, como apostillar un certificado de defuncion en new jersey, certificado de defuncion new jersey apostillar, como solicitar certificado de defuncion en new jersey";
                     $data['content'] = ['¿Qué es un certificado de defunción?','¿Para que me sirve un certificado de defunción?','¿Quién puede tramitar el certificado de defunción?','¿Ante que autoridad puedo solicitar un certificado de defunción?'];
-                    $data['body'] = "<ul><li><h3>¿Qué es un certificado de defunción?</h3></li></ul>
+                    $data['body'] = "<ul><li><h2>¿Qué es un certificado de defunción?</h2></li></ul>
                     <p>Un acta, partida o certificado de defunción es un documento mediante el cual termina cualquier proceso administrativo que la persona haya tenido en vida.</p>
-                    <ul><li><h3>¿Para que me sirve un certificado de defunción?</h3></li></ul>
+                    <ul><li><h2>¿Para que me sirve un certificado de defunción?</h2></li></ul>
                     <p>Además de que un certificado de defunción permite a los familiares de la persona difunta llevar ciertos trámites, es el único medio de suspender completamente sus obligaciones frente al Estado y ante cualquier otra
                         institución con la que hubiera tenido algún compromiso.
                     </p>
-                    <ul><li><h3>¿Quién puede tramitar el certificado de defunción?</h3></li></ul>
+                    <ul><li><h2>¿Quién puede tramitar el certificado de defunción?</h2></li></ul>
                     <p>La primera persona que tiene derecho ha tramitar este certificado de defunción es la pareja o cónyuge del difunto. Ante cualquier circunstancia
                         de que esta persona no pueda hacerlo, lo realizarán los familiares más cercanos de la persona que falleció.
                     </p>
-                    <ul><li><h3 id='title'>¿Ante que autoridad puedo solicitar un certificado de defunción?</h3></li></ul>
+                    <ul><li><h2 id='title'>¿Ante que autoridad puedo solicitar un certificado de defunción?</h2></li></ul>
                     <p>Si desea tramitar o apostillar un acta o certificado de defunción puede completar el siguiente formulario con su información o acercarse a nuestras oficinas en ".$data['office']." donde un asesor se comunicará con usted para guiarlo en el trámite de una manera correcta y segura.
                     </p>";
                     return view('web.office.apostille_layout', compact('data'));
