@@ -279,7 +279,25 @@ class WebController extends Controller
                 case 'apostillar-certificado-de-nacimiento-new-york':
                     $data['description'] = 'Certificados de Nacimiento';
                     $data['metadescription'] = "Consulte por nuestro servicio de apostilla en certificados de nacimiento en New York 🗽​​. Lo asesoramos de una manera segura. Solicítelo ahora! ✅";
-                    $data['keywords'] = "que es un certificado de nacimiento, apostillar certificado de nacimiento en new york, apostillar acta de nacimiento en new york, apostillar partida de nacimiento en new york, donde apostillar certificado de nacimiento en new york, donde puedo realizar un certificado de nacimiento en new york, como apostillar un certificado de nacimiento en new york, apostillar certificado de nacimiento ny";
+                    $data['keywords'] = "que es un certificado de nacimiento, apostillar certificado de nacimiento en new york, apostillar acta de nacimiento en new york, apostillar partida de nacimiento en new york, donde apostillar certificado de nacimiento en new york, donde puedo realizar un certificado de nacimiento en queens ny, como apostillar un certificado de nacimiento en new york, apostillar certificado de nacimiento queens ny, birth certificate ny, birth certificate queens ny";
+                    $data['body'] = "<ul><li><h2>¿Qué es un certificado de nacimiento?</h2></li></ul>
+                    <p>El certificado o acta de nacimiento es un documento emitido por el Registro Civil o Consulado respectivo, en el cual se da prueba del lugar, fecha
+                        y hora del nacimiento, al igual que toda la información correspondiente como nombres y apellidos, sexo, etc.
+                    </p>
+                    <ul><li><h2>¿Qué información contiene el certificado de nacimiento?</h2></li></ul>
+                    <p>En sí, el certificado de nacimiento contiene información básica del nacimiento y su inscripción. Entre estos consta datos como 
+                        los nombres y apellidos del titular, lugar, fecha y hora del nacimiento, al igual que el nombre de los progenitores. 
+                    </p>
+                    <ul><li><h2>¿Para qué sirve la partida de nacimiento?</h2></li></ul>
+                    <p>La partida de nacimiento es un documento esencial para llevar a cabo distintos trámites.</p>
+                    <p>Entre estos pueden perfilar los siguientes:</p>
+                        <p>✔ Obtener o renovar el documento de Identidad o Pasaporte</p>
+                        <p>✔ Para contraer matrimonio, trabajar fuera del país u obtener algun beneficio social</p>
+                        <p>✔ Solicitar permiso de paternidad</p>
+                    <ul><li><h2>¿Donde puedo obtener un certificado de nacimiento?</h2></li></ul>
+                    <p>Puede <a href='#card'>completar el siguiente formulario</a> o dirigirse personalmente a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera correcta y segura.</p>
+                    <p><i><b>Para apostillar cualquier tipo de documento es necesario realizar la traducción del mismo. Consulte aquí <a href='https://notarialatina.com/traducciones'>como traducir un documento apostillado</a></b></i></p>
+                    ";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-reporte-consular-new-york':
