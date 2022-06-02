@@ -90,6 +90,20 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         max-width: 100% !important;
         overflow-x: hidden !important;
     }
+    #iconcall {
+        animation: wiggle 3s linear infinite;
+    }
+
+    /* Keyframes */
+    @keyframes wiggle {
+        0%, 7% {transform: rotateZ(0);}
+        15% {transform: rotateZ(-15deg);}
+        20% {transform: rotateZ(10deg);}
+        25% {transform: rotateZ(-10deg);}
+        30% {transform: rotateZ(6deg);}
+        35% {transform: rotateZ(-4deg);}
+        40%, 100% {transform: rotateZ(0);}
+    }
 </style>
 
   @yield('header')
