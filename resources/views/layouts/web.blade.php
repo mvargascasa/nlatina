@@ -331,12 +331,18 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div>        
       </div>
 
-      <div id="svgwpp" style="width: 60px; position: fixed; bottom: 10px; right: 25px; height: 50px;">
+      <div id="svgwpp" style="width: 60px; position: fixed; bottom: 10px; right: 0px; height: 50px;">
         <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});"
         href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">{{--+13479739888--}}
             <img src="{{asset('img/notary-public-near-me-whatsapp.svg')}}" 
             alt="Whatsapp Notary Public Near Me" width="40" height="40">
         </a> 
+        </div>
+
+        <div id="iconcall" style="width: 60px; position: fixed; bottom: 60px; right: 0px; height: 50px;">
+            <a href="tel:@yield('phoneNumberHidden')">
+                <img width="40" height="40" class="lazy img-fluid" data-src="{{ asset('img/notaria-latina-newyork.jpg') }}" alt="Notaria Latina en Queens New York">
+            </a>
         </div>
 </footer>
 {{-- <script defer src="{{asset('js/jquery-3.4.1.min.js')}}" ></script>
