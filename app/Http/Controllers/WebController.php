@@ -360,12 +360,52 @@ class WebController extends Controller
                     $data['description'] = 'Certificados de Divorcio';
                     $data['metadescription'] = "El certificado de divorcio es un documento necesario para realizar diversos trámites ⚖. Para apostillar dicho documento contáctenos y lo asesoramos! ✅";
                     $data['keywords'] = "que es un certificado de divorcio, requisitos para un certificado de divorcio new york, solicitar certificado de divorcio en new york, apostillar documentos en new york, apostillar certificado de divorcio en new york, apostillar acta de divorcio en new york, donde apostillar certificado de divorcio en new york, donde puedo apostillar un certificado de divorcio en new york, donde puedo sacar el certificado de divorcio en new york";
+                    $data['body'] = "<ul><li><h2>¿Qué es un acta o certificado de divorcio?</h2></li></ul>
+                    <p>El certificado de divorcio es un escrito mediante el cual constata legalmente la separación de una pareja que estaba unida en matrimonio</p>
+                    <ul><li><h2>¿Para qué se utiliza un certificado de divorcio?</h2></li></ul>
+                    <p>Dicho documento es necesario para realizar distintos trámites dependiendo del país en el que se encuentre. Por ejemplo se solicita este documento cuando
+                        una persona contrae nuevamente matrimonio.
+                    </p>
+                    <p>En Estados Unidos, este certificado es obligado para aquellos migrantes que soliciten el <i>Green Card</i> (Permiso de residencia permanente), para realizar cualquier tipo de trámite, renovar visa o pasaporte, etc.</p>
+                    <ul><li><h2>¿Cuáles son los requisitos necesarios para un certificado de divorcio?</h2></li></ul>
+                    <p>Entre los requerimientos que se solicitan para obtener dicho documento se encuentran los siguientes:</p>
+                    <ol>
+                        <li>Copia de certificado de nacimiento de los cónyuges</li>
+                        <li>En caso de tener hijos, copia del certificado de nacimiento de cada uno de ellos</li>
+                        <li>Copia del certificado de matrimonio</li>
+                        <li>Copia del documento de identidad</li>
+                        <li>Solicitud y acuerdo de divorcio realizado por el abogado</li>
+                        <li>Poder que se concede al abogado</li>
+                    </ol>
+                    <ul><li><h2>¿Donde puedo obtener el certificado de divorcio?</h2></li></ul>
+                    <p>Si desea realizar dicho trámite puede completar el <a href='#card'>siguiente formulario</a> con su información y un asesor se contactará con usted. O puede visitar
+                        nuestras oficinas en ".$data['office']." donde se le brindará la ayuda necesaria con el trámite en gestión.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-naturalizacion-new-york':
                     $data['description'] = 'Certificados de Naturalización';
                     $data['metadescription'] = "El certificado de naturalización es un escrito necesario para realizar diversos trámites notariales ⚖. Agende una cita aquí para asesorarlo en el proceso! ✅";
                     $data['keywords'] = "que es un certificado de naturalizacion, requisitos para sacar el certificado de naturalizacion en new york, apostillar certificado de naturalizacion en new york, apostillar acta de naturalizacion en new york, donde apostillar certificado de naturalizacion en new york, como sacar el certificado de naturalizacion en new york, como solicitar certificado de naturalizacion en new york, certificado de naturalizacion americana";
+                    $data['body'] = "<ul><li><h2>¿Qué es un certificado de naturalización?</h2></li></ul>
+                    <p>El certificado de naturalización es un documento el cual acredita que una persona extranjera se conveirte en ciudadano del país en que reside.</p>
+                    <ul><li><h2>¿Para qué sirve un certificado de naturalización?</h2></li></ul>
+                    <p>Lo que hace el acta o certificado de naturalización es otorgarle a los ciudadanos naturalizados algunos privilegios y beneficios en el país que se encuentra, 
+                        entre los cuales se encuentra la capacidad de votar. Sobre todo es un documento el cual le permite demostrar que es un ciudadano más de dicho país
+                    </p>
+                    <ul><li><h2>¿Cuáles son los requisitos para obtener el certificado de naturalización?</h2></li></ul>
+                    <p>Algunos de los requerimientos para obtener su certificado de naturalización son los siguientes:</p>
+                    <ol>
+                        <li>Tener al menos 18 años</li>
+                        <li>Ser residente al menos 5 años</li>
+                        <li>Poder leer, escribir y hablar inglés básico</li>
+                        <li>Comprender la historia básica del gobierno de los Estados Unidos</li>
+                        <li>Ser una persona de buen carácter moral</li>
+                    </ol>
+                    <ul><li><h2>¿Donde puedo hacer el trámite para el certificado de naturalización?</h2></li></ul>
+                    <p>Si desea empezar el proceso para adquirir el acta de naturalización puede completar el <a href='#card'>siguiente formulario</a> con su información
+                        o acercarse a nuestras oficinas en ".$data['office']." donde un asesor lo orientará en la gestión de dicho documento de una manera ágil y segura.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-expediente-de-adopcion-new-york':
@@ -408,6 +448,28 @@ class WebController extends Controller
                     $data['description'] = 'Autorización de Viaje';
                     $data['metadescription'] = "Notarizamos y Apostillamos todo tipo de documentos como Autorización de Viaje en New York 🗽 de una manera segura. Consulte por nuestro servicio ✅";
                     $data['keywords'] = "que es una autorizacion de viaje, requisitos para autorizacion de viaje en new york, apostillar autorizacion de viaje en new york, apostillar autorizacion de viaje cerca de mi, donde apostillar una autorizacion de viaje en new york, donde puedo apostillar una autorizacion de viaje en new york, apostillar autorizacion de viaje para menor de edad en new york, donde puedo hacer una autorizacion de viaje para niños en new york, carta de autorizacion de viaje en new york";
+                    $data['body'] = "<ul><li><h2 id='title'>¿Qué es una autorización de viaje?</h2></li></ul>
+                    <p>Una autorización de viaje es un escrito en el cual uno o ambos padres autorizan el viaje, dentro o fuera del país, de su hijo o hija menor de edad, ya sea con los mismos, algún familiar o solos.</p>
+                    <ul><li><h2 id='title'>¿En qué situaciones piden la autorización de viaje?</h2></li></ul>
+                    <p>La autorización de viaje se puede solicitar cuando:</p>
+                    <ol>
+                        <li>El menor de edad viaja dentro o fuera del país sin ninguno de sus padres</li>
+                        <li>El menor de edad viaje con terceras personas, las cuales pueden ser familiares</li>
+                    </ol>
+                    <ul><li><h2 id='title'>¿Qué requisitos necesito para la autorización de viaje?</h2></li></ul>
+                    <p>Los requerimientos para solicitar una autorización de viaje son los siguientes:</p>
+                    <ol>
+                        <li>Identificación de uno o ambos padres o de su representante legal</li>
+                        <li>Nombres y apellidos del menor de edad</li>
+                        <li>Fecha de nacimiento del menor</li>
+                        <li>En caso de que viaje con una tercera persona, nombres y apellidos de la misma</li>
+                        <li>Información del vuelo</li>
+                    </ol>
+                    <ul><li><h2 id='title'>¿Ante que autoridad puedo solicitar una autorización de viaje?</h2></li></ul>
+                    <p>Las autorizaciones de viaje se pueden tramitar ante cualquier Notaría Pública en el territorio en el que se encuentre. Si necesita solicitar o apostillar
+                        una autorización de viaje acérquese a nuestra oficina en ". $data['office']." con los requisitos necesarios o <b><a href='#card'>complete el siguiente formulario</a></b> y una asesor lo contactará
+                        para guiarlo de una manera correcta y segura.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-poder-notarial-personal-new-york':
@@ -462,12 +524,53 @@ class WebController extends Controller
                     $data['description'] = 'Certificado de Buena Reputación';
                     $data['metadescription'] = "Apostillamos Certificado de Buena Reputación en New York 🗽 de una manera segura. Envíe su documento por nuestro sitio web o contáctenos! ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar certificado de buena reputacion en new york, apostillar certificado de buena reputacion cerca de mi, donde apostillar certificado de buena reputacion en new york, donde puedo apostillar un certificado de buena reputación en new york, apostillar certificado de buena conducta en new york";
+                    $data['body'] = "<ul><li><h2>¿Qué es un certificado de buena reputación?</h2></li></ul>
+                    <p>Un certificado de buena reputación es un documento que avala que una institución comercial en la actualidad esta registrada y con los permisos correspondientes
+                        para realizar negocios.
+                    </p>
+                    <ul><li><h2>¿Para qué sirve un certificado de buena reputación?</h2></li></ul>
+                    <p>El obtener un certificado de buena reputación no es obligado. Sin embargo es útil cuando necesite realizar una serie de trámites como por ejemplo abrir una cuenta bancaria comercial,
+                        obtener pagos de clientes por medio de tarjetas de crédito o débito, requerir algún tipo de crédito para su negocio, etc.
+                    </p>
+                    <ul><li><h2>¿Qué necesito para obtener el certificado de buena reputación?</h2></li></ul>
+                    <p>El principal requisito para obtener su certificado de buena reputación es estar registrado en la Secretaría de Estado dependiento en el que se encuentre. Para esto, deberá
+                        contar con el nombre de su institución y el número de registro.
+                    </p>
+                    <p>Para que el certificado sea emitido, su entidad comercial deberá constar con lo siguiente:</p>
+                    <ol>
+                        <li>Estar registrado</li>
+                        <li>Contar con los documentos necesarios, por ejemplo una declaración anual</li>
+                        <li>Pagar la tarifa requerida</li>
+                    </ol>
+                    <ul><li><h2>¿Donde puedo obtener el certificado de buena reputación?</h2></li></ul>
+                    <p>Si desea realizar el trámite para obtener dicho documento complete el siguiente formulario con su información o puede acercarse a nuestra oficinas
+                        en " . $data['office'] . " donde un asesor lo ayudará brindando la atención necesaria.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
                 case 'apostillar-certificado-de-origen-new-york':
                     $data['description'] = 'Certificado de Origen';
                     $data['metadescription'] = "Apostillamos Certificados de Origen en New York 🗽 de una manera segura. Envíe su documento o contáctese con nosotros para asesorarlo en el trámite ✅";
                     $data['keywords'] = "notaria latina en queens new york, notaria en queens ny, apostillar documentos en new york, apostillar certificado de origen en new york, apostillar certificado de origen cerca de mi, donde apostillar certificado de origen en new york, donde puedo apostillar certificado de origen en new york, apostillar acta de origen en new york";
+                    $data['body'] = "<ul><li><h2>¿Qué es el certificado de origen?</h2></li></ul>
+                    <p>El certificado de origen es un documento cuyo objetivo es determinar el país de procedencia de dicha mercancia, por ello dispone
+                        de algunas preferencias o beneficios debido algunos acuerdos comerciales entre países.
+                    </p>
+                    <ul><li><h2>¿Para qué sirve el certificado de origen?</h2></li></ul>
+                    <p>Este certificado de origen sirve para garantizar la procedencia de los productos que pretende entrar a un territorio.</p>
+                    <ul><li><h2>¿Cómo puedo obtener el certificado de origen?</h2></li></ul>
+                    <p>La información básica y necesario para la obtención de un certificado de origen es la siguiente:</p>
+                    <ol>
+                        <li>Información de la autoridad que certifica el documento</li>
+                        <li>Información de las personas que exporta e importa</li>
+                        <li>Características del producto (Peso, Marca, Cantidad, etc.)</li>
+                        <li>Identificar la mercancía mediante la clasificación arancelaria</li>
+                        <li>Tipo de embalaje</li>
+                    </ol>
+                    <ul><li><h2>¿Donde puedo tramitar el certificado de origen?</h2></li></ul>
+                    <p>Para poder comenzar con el proceso del certificado de origen puede completar el siguiente formulario con su información correspondiente o dirigirse 
+                        a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera ágil y segura.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-marca-patente-new-york':
@@ -486,6 +589,28 @@ class WebController extends Controller
                     $data['description'] = 'Declaración Jurada Comercial';
                     $data['metadescription'] = "Apostillamos Declaración Jurada Comercial en New York 🗽 de una forma segura. Contáctese con nosotros o envíe su documento por nuestro sitio web ✅";
                     $data['keywords'] = "que es una declaracion juramentada comercial, para que sirve una declaracion juramentada en new york, requisitos para una declaracion juramentada en new york, apostillar documentos en new york, apostillar declaracion jurada comercial en new york, apostillar affidavit comercial en new york, apostillar declaracion jurada comercial cerca de mi, donde apostillar affidavit comercial en new york, donde apostillar declaracion jurada comercial en new york, apostillar declaracion juramentada comercial en new york";
+                    $data['body'] = "<ul><li><h2>¿Qué es una declaración juramentada comercial?</h2></li></ul>
+                    <p>Una declaración juramentada es una documento mediante el cual una persona manifiesta una situación o un hecho, el mismo que es verificado y garantizado mediante una autoridad competente</p>
+                    <ul><li><h2>¿Para qué sirve una declaración juramentada?</h2></li></ul>
+                    <p>El objetivo de dicho documento es generar un compromiso legal de la persona que hace la declaración acorde a lo que esta estipulado en el escrito. Es decir, el declarante se compromote
+                        con la veracidad de lo que ha manifestado. En la mayoría de los casos se utilizan para reunir pruebas en un juicio o en otros aspectos como asuntos familiares, bienes raíces, etc.
+                    </p>
+                    <ul><li><h2>¿Ante que situaciones necesito una declaración juramentada?</h2></li></ul>
+                    <p>La declaración juramentada puede ser necesaria para diferentes situaciones, entre las cuales perfilan los ingresos de una persona, situación familiar o para declarar que una personas cumple con ciertos
+                        requerimientos necesarios para realizar algún trámite legal.
+                    </p>
+                    <ul><li><h2>¿Qué requisitos son necesarios para una declaración juramentada?</h2></li></ul>
+                    <p>Una declaración juramentada debe satisfacer los siguientes requisitos:</p>
+                    <ol>
+                        <li>Nombres y dirección del solicitante</li>
+                        <li>Firma de la persona que solicita, testigos y notario</li>
+                        <li>La declaración debe estar acorde a la postura del declarante</li>
+                        <li>Dicho documento no debe ser obligado para los testigos, es decir debe ser voluntaria</li>
+                    </ol>
+                    <ul><li><h2>¿Donde puedo solicitar una declaración juramentada?</h2></li></ul>
+                    <p>Si necesita apostillar u obtener una declaración juramentada puede completar el <a href='#card'>siguiente formulario</a> o acercarse a nuestras oficinas en ".$data['office']." para que un asesor pueda
+                        contactarse con usted y brindarle la asesoría necesaria.
+                    </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-fda-new-york':
@@ -560,7 +685,7 @@ class WebController extends Controller
         $data['address'] = '1146 East Jersey St Elizabeth, NJ 07201';
         $data['location'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
         $data['metadescription'] = "Notarizamos todo tipo de documentos en New Jersey 🗽 como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✅";
-        $data['keywords'] = 'notaria en new jersey, notaria publica en new jersey, notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey';
+        $data['keywords'] = 'notaria en new jersey, notaria publica en new jersey, notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille nj';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-jersey':
@@ -709,14 +834,14 @@ class WebController extends Controller
                     $data['metadescription'] = "El Certificado de Divorcio es un escrito necesario para diversos trámites notariales ⚖ Consulte aquí para más información sobre nuestros servicios ✅";
                     $data['keywords'] = "que es un certificado de divorcio, requisitos para un certificado de divorcio new jersey, solicitar certificado de divorcio en new jersey, apostillar documentos en new jersey, apostillar certificado de divorcio en new jersey, apostillar acta de divorcio en new jersey, donde apostillar certificado de divorcio en new jersey, donde puedo apostillar un certificado de divorcio en new jersey, donde puedo sacar el certificado de divorcio en new jersey";
                     $data['content'] = ['¿Qué es un acta o certificado de divorcio?','¿Para qué se utiliza un certificado de divorcio?','¿Cuáles son los requisitos necesarios para un certificado de divorcio?','¿Donde puedo obtener el certificado de divorcio?'];
-                    $data['body'] = "<ul><li><h3>¿Qué es un acta o certificado de divorcio?</h3></li></ul>
+                    $data['body'] = "<ul><li><h2>¿Qué es un acta o certificado de divorcio?</h2></li></ul>
                     <p>El certificado de divorcio es un escrito mediante el cual constata legalmente la separación de una pareja que estaba unida en matrimonio</p>
-                    <ul><li><h3>¿Para qué se utiliza un certificado de divorcio?</h3></li></ul>
+                    <ul><li><h2>¿Para qué se utiliza un certificado de divorcio?</h2></li></ul>
                     <p>Dicho documento es necesario para realizar distintos trámites dependiendo del país en el que se encuentre. Por ejemplo se solicita este documento cuando
                         una persona contrae nuevamente matrimonio.
                     </p>
                     <p>En Estados Unidos, este certificado es obligado para aquellos migrantes que soliciten el <i>Green Card</i> (Permiso de residencia permanente), para realizar cualquier tipo de trámite, renovar visa o pasaporte, etc.</p>
-                    <ul><li><h3>¿Cuáles son los requisitos necesarios para un certificado de divorcio?</h3></li></ul>
+                    <ul><li><h2>¿Cuáles son los requisitos necesarios para un certificado de divorcio?</h2></li></ul>
                     <p>Entre los requerimientos que se solicitan para obtener dicho documento se encuentran los siguientes:</p>
                     <ol>
                         <li>Copia de certificado de nacimiento del esposa y esposa</li>
@@ -726,7 +851,7 @@ class WebController extends Controller
                         <li>Solicitud y acuerdo de divorcio realizado por el abogado</li>
                         <li>Poder que se concede al abogado</li>
                     </ol>
-                    <ul><li><h3>¿Donde puedo obtener el certificado de divorcio?</h3></li></ul>
+                    <ul><li><h2>¿Donde puedo obtener el certificado de divorcio?</h2></li></ul>
                     <p>Si desea realizar dicho trámite puede completar el siguiente formulario con su información y un asesor se contactará con usted. O puede visitar
                         nuestras oficinas en ".$data['office']." donde se le brindará la ayuda necesaria con el trámite en gestión.
                     </p>";
@@ -737,13 +862,13 @@ class WebController extends Controller
                     $data['metadescription'] = "El Certificado de Naturalización es un escrito que acredita la ciudadania a una persona extranjera 👨‍⚖️ Consulte aquí cómo realizar el trámite. ¡Vamos allá! ✅";
                     $data['keywords'] = "que es un certificado de naturalizacion, requisitos para sacar el certificado de naturalizacion en new jersey, apostillar certificado de naturalizacion en new jersey, apostillar acta de naturalizacion en new jersey, donde apostillar certificado de naturalizacion en new jersey, como sacar el certificado de naturalizacion en new jersey, como solicitar certificado de naturalizacion en new jersey, certificado de naturalizacion americana";
                     $data['content'] = ['¿Qué es un certificado de naturalización?','¿Para qué sirve un certificado de naturalización?','¿Cuáles son los requisitos para obtener el certificado de naturalización?','¿Donde puedo hacer el trámite para el certificado de naturalización?'];
-                    $data['body'] = "<ul><li><h3>¿Qué es un certificado de naturalización?</h3></li></ul>
+                    $data['body'] = "<ul><li><h2>¿Qué es un certificado de naturalización?</h2></li></ul>
                     <p>El certificado de naturalización es un documento el cual acredita que una persona extranjera se conveirte en ciudadano del país en que reside.</p>
-                    <ul><li><h3>¿Para qué sirve un certificado de naturalización?</h3></li></ul>
+                    <ul><li><h2>¿Para qué sirve un certificado de naturalización?</h2></li></ul>
                     <p>Lo que hace el acta o certificado de naturalización es otorgarle a los ciudadanos naturalizados algunos privilegios y beneficios en el país que se encuentra, 
                         entre los cuales se encuentra la capacidad de votar. Sobre todo es un documento el cual le permite demostrar que es un ciudadano más de dicho país
                     </p>
-                    <ul><li><h3>¿Cuáles son los requisitos para obtener el certificado de naturalización?</h3></li></ul>
+                    <ul><li><h2>¿Cuáles son los requisitos para obtener el certificado de naturalización?</h2></li></ul>
                     <p>Algunos de los requerimientos para obtener su certificado de naturalización son los siguientes:</p>
                     <ol>
                         <li>Tener al menos 18 años</li>
@@ -752,7 +877,7 @@ class WebController extends Controller
                         <li>Comprender la historia básica del gobierno de los Estados Unidos</li>
                         <li>Ser una persona de buen carácter moral</li>
                     </ol>
-                    <ul><li><h3>¿Donde puedo hacer el trámite para el certificado de naturalización?</h3></li></ul>
+                    <ul><li><h2>¿Donde puedo hacer el trámite para el certificado de naturalización?</h2></li></ul>
                     <p>Si desea empezar el proceso para adquirir el acta de naturalización puede completar el siguiente formulario con su información
                         o acercarse a nuestras oficinas en ".$data['office']." donde un asesor lo orientará en la gestión de dicho documento de una manera ágil y segura.
                     </p>";
@@ -799,15 +924,15 @@ class WebController extends Controller
                     $data['metadescription'] = "⚖ Notarizamos y Apostillamos todo tipo de documentos como Autorización de Viaje en New Jersey de una manera segura. Consulte por nuestros servicios ✅";
                     $data['keywords'] = "que es una autorizacion de viaje, requisitos para autorizacion de viaje en new jersey, apostillar autorizacion de viaje en new jersey, apostillar autorizacion de viaje cerca de mi, donde apostillar una autorizacion de viaje en new jersey, donde puedo apostillar una autorizacion de viaje en new jersey, apostillar autorizacion de viaje para menor de edad en new jersey, donde puedo hacer una autorizacion de viaje para niños en new jersey, carta de autorizacion de viaje en new jersey";
                     $data['content'] = ['¿Qué es una autorización de viaje?','¿En qué situaciones se pide una autorización de viaje?','¿Qué requisitos necesito para la autorización de un viaje?','¿Ante que autoridad puedo solicitar una autorización de viaje?'];
-                    $data['body'] = "<ul><li><h3 id='title'>¿Qué es una autorización de viaje?</h3></li></ul>
+                    $data['body'] = "<ul><li><h2 id='title'>¿Qué es una autorización de viaje?</h2></li></ul>
                     <p>Una autorización de viaje es un escrito en el cual uno o ambos padres autorizan el viaje, dentro o fuera del país, de su hijo o hija menor de edad, ya sea con los mismos, algún familiar o solos.</p>
-                    <ul><li><h3 id='title'>¿En qué situaciones piden la autorización de viaje?</h3></li></ul>
+                    <ul><li><h2 id='title'>¿En qué situaciones piden la autorización de viaje?</h2></li></ul>
                     <p>La autorización de viaje se puede solicitar cuando:</p>
                     <ol>
                         <li>El menor de edad viaja dentro o fuera del país sin ninguno de sus padres</li>
                         <li>El menor de edad viaje con terceras personas, las cuales pueden ser familiares</li>
                     </ol>
-                    <ul><li><h3 id='title'>¿Qué requisitos necesito para la autorización de viaje?</h3></li></ul>
+                    <ul><li><h2 id='title'>¿Qué requisitos necesito para la autorización de viaje?</h2></li></ul>
                     <p>Los requerimientos para solicitar una autorización de viaje son los siguientes:</p>
                     <ol>
                         <li>Identificación de uno o ambos padres o de su representante legal</li>
@@ -816,7 +941,7 @@ class WebController extends Controller
                         <li>En caso de que viaje con una tercera persona, nombres y apellidos de la misma</li>
                         <li>Información del vuelo</li>
                     </ol>
-                    <ul><li><h3 id='title'>¿Ante que autoridad puedo solicitar una autorización de viaje?</h3></li></ul>
+                    <ul><li><h2 id='title'>¿Ante que autoridad puedo solicitar una autorización de viaje?</h2></li></ul>
                     <p>Las autorizaciones de viaje se pueden tramitar ante cualquier Notaría Pública en el territorio en el que se encuentre. Si necesita solicitar o apostillar
                         una autorización de viaje acérquese a nuestra oficina en ". $data['office']." con los requisitos necesarios o <b>complete el siguiente formulario</b> y una asesor lo contáctara
                         para guiarlo de una manera correcta y segura.
@@ -876,15 +1001,15 @@ class WebController extends Controller
                     $data['metadescription'] = "Apostillamos Certificado de Buena Reputación en New Jersey 🗽 de una manera segura. Envíe su documento por nuestro sitio web o contáctenos ✅";
                     $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar certificado de buena reputacion en new jersey, apostillar certificado de buena reputacion cerca de mi, donde apostillar certificado de buena reputacion en new jersey, donde puedo apostillar un certificado de buena reputación en new jersey, apostillar certificado de buena conducta en new jersey";
                     $data['content'] = ['¿Qué es un certificado de buena reputación?','¿Para qué sirve un certificado de buena reputación?','¿Qué necesito para obtener el certificado de buena reputación?','¿Donde puedo obtener el certificado de buena reputación?'];
-                    $data['body'] = "<ul><li><h3>¿Qué es un certificado de buena reputación?</h3></li></ul>
+                    $data['body'] = "<ul><li><h2>¿Qué es un certificado de buena reputación?</h2></li></ul>
                     <p>Un certificado de buena reputación es un documento que avala que una institución comercial en la actualidad esta registrada y con los permisos correspondientes
-                        para realizar negocios-
+                        para realizar negocios.
                     </p>
-                    <ul><li><h3>¿Para qué sirve un certificado de buena reputación?</h3></li></ul>
+                    <ul><li><h2>¿Para qué sirve un certificado de buena reputación?</h2></li></ul>
                     <p>El obtener un certificado de buena reputación no es obligado. sin embargo es útil cuando necesite realizar una serie de trámites como por ejemplo abrir una cuenta bancaria comercial,
-                        obtener pagos de clientes por medio de tarjetas de crédito o débito, requerir algpun tipo de crédito para su negocio, etc.
+                        obtener pagos de clientes por medio de tarjetas de crédito o débito, requerir algún tipo de crédito para su negocio, etc.
                     </p>
-                    <ul><li><h3>¿Qué necesito para obtener el certificado de buena reputación?</h3></li></ul>
+                    <ul><li><h2>¿Qué necesito para obtener el certificado de buena reputación?</h2></li></ul>
                     <p>El principal requisito para obtener su certificado de buena reputación es estar registrado en la Secretaría de Estado dependiento en el que se encuentre. Para esto, deberá
                         contar con el nombre de su institución y el número de registro.
                     </p>
@@ -894,9 +1019,9 @@ class WebController extends Controller
                         <li>Contar con los documentos necesarios, por ejemplo una declaración anual</li>
                         <li>Pagar la tarifa requerida</li>
                     </ol>
-                    <ul><li><h3>¿Donde puedo obtener el certificado de buena reputación?</h3></li></ul>
+                    <ul><li><h2>¿Donde puedo obtener el certificado de buena reputación?</h2></li></ul>
                     <p>Si desea realizar el trámite para obtener dicho documento complete el siguiente formulario con su información o puede acercarse a nuestra oficinas
-                        en ... donde un asesir se contactará con usted para brindarle la ayuda necesaria.
+                        en " . $data['office'] . " donde un asesor se contactará con usted para brindarle la ayuda necesaria.
                     </p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;  
@@ -905,13 +1030,13 @@ class WebController extends Controller
                     $data['metadescription'] = "Apostillamos Certificados de Origen en New Jersey 🗽 de una manera segura. Envíe su documento o contáctenos para asesorarlo en el trámite ✅";
                     $data['keywords'] = "notaria latina en elizabeth new jersey, notaria en elizabeth nj, apostillar documentos en new jersey, apostillar certificado de origen en new jersey, apostillar certificado de origen cerca de mi, donde apostillar certificado de origen en new jersey, donde puedo apostillar certificado de origen en new jersey, apostillar acta de origen en new jersey";
                     $data['content'] = ['¿Qué es el certificado de origen?','¿Para qué sirve el certificado de origen?','¿Cómo puedo obtener el certificado de origen?','¿Donde puedo tramitar el certificado de origen?'];
-                    $data['body'] = "<ul><li><h3>¿Qué es el certificado de origen?</h3></li></ul>
+                    $data['body'] = "<ul><li><h2>¿Qué es el certificado de origen?</h2></li></ul>
                     <p>El certificado de origen es un documento cuyo objetivo es determinar el país de procedencia de dicha mercancia, por ello dispone
                         de algunas preferencias o beneficios debido algunos acuerdos comerciales entre países.
                     </p>
-                    <ul><li><h3>¿Para qué sirve el certificado de origen?</h3></li></ul>
+                    <ul><li><h2>¿Para qué sirve el certificado de origen?</h2></li></ul>
                     <p>Este certificado de origen sirve para garantizar la procedencia de los productos que pretende entrar a un territorio.</p>
-                    <ul><li><h3>¿Cómo puedo obtener el certificado de origen?</h3></li></ul>
+                    <ul><li><h2>¿Cómo puedo obtener el certificado de origen?</h2></li></ul>
                     <p>La información básica y necesario para la obtención de un certificado de origen es la siguiente:</p>
                     <ol>
                         <li>Información de la autoridad que certifica el documento</li>
@@ -920,7 +1045,7 @@ class WebController extends Controller
                         <li>Identificar la mercancía mediante la clasificación arancelaria</li>
                         <li>Tipo de embalaje</li>
                     </ol>
-                    <ul><li><h3>¿Donde puedo tramitar el certificado de origen?</h3></li></ul>
+                    <ul><li><h2>¿Donde puedo tramitar el certificado de origen?</h2></li></ul>
                     <p>Para poder comenzar con el proceso del certificado de origen puede completar el siguiente formulario con su información correspondiente o dirigirse 
                         a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera ágil y segura.
                     </p>";
@@ -943,17 +1068,17 @@ class WebController extends Controller
                     $data['metadescription'] = "Apostillamos Declaración Jurada Comercial en New Jersey 🗽 de una forma segura. Contáctenos o envíe su documento por nuestro sitio web ¡Que espera! ✅";
                     $data['keywords'] = "que es una declaracion juramentada comercial, para que sirve una declaracion juramentada en new jersey, requisitos para una declaracion juramentada en new jersey, apostillar documentos en new jersey, apostillar declaracion jurada comercial en new jersey, apostillar affidavit comercial en new jersey, apostillar declaracion jurada comercial cerca de mi, donde apostillar affidavit comercial en new jersey, donde apostillar declaracion jurada comercial en new jersey, apostillar declaracion juramentada comercial en new jersey";
                     $data['content'] = ['¿Qué es una declaración juramentada comercial?','¿Para qué sirve una declaración juramentada?','¿Ante que situaciones necesito una declaración juramentada?','¿Qué requisitos son necesarios para una declaración juramentada?','¿Donde puedo solicitar una declaración juramentada?'];
-                    $data['body'] = "<ul><li><h3>¿Qué es una declaración juramentada comercial?</h3></li></ul>
+                    $data['body'] = "<ul><li><h2>¿Qué es una declaración juramentada comercial?</h2></li></ul>
                     <p>Una declaración juramentada es una documento mediante el cual una persona manifiesta una situación o un hecho, el mismo que es verificado y garantizado mediante una autoridad competente</p>
-                    <ul><li><h3>¿Para qué sirve una declaración juramentada?</h3></li></ul>
+                    <ul><li><h2>¿Para qué sirve una declaración juramentada?</h2></li></ul>
                     <p>El objetivo de dicho documento es generar un compromiso legal de la persona que hace la declaración acorde a lo que esta estipulado en el escrito. Es decir, el declarante se compromote
                         con la veracidad de lo que ha manifestado. En la mayoría de los casos se utilizan para reunir pruebas en un juicio o en otros aspectos como asuntos familiares, bienes raíces, etc.
                     </p>
-                    <ul><li><h3>¿Ante que situaciones necesito una declaración juramentada?</h3></li></ul>
+                    <ul><li><h2>¿Ante que situaciones necesito una declaración juramentada?</h2></li></ul>
                     <p>La declaración juramentada puede ser necesaria para diferentes situaciones, entre las cuales perfilan los ingresos de una persona, situación familiar o para declarar que una personas cumple con ciertos
                         requerimientos necesarios para realizar algún trámite legal.
                     </p>
-                    <ul><li><h3>¿Qué requisitos son necesarios para una declaración juramentada?</h3></li></ul>
+                    <ul><li><h2>¿Qué requisitos son necesarios para una declaración juramentada?</h2></li></ul>
                     <p>Una declaración juramentada debe satisfacer los siguientes requisitos:</p>
                     <ol>
                         <li>Nombres y dirección del solicitante</li>
@@ -961,8 +1086,8 @@ class WebController extends Controller
                         <li>La declaración debe estar acorde a la postura del declarante</li>
                         <li>Dicho documento no debe ser obligado para los testigos, es decir debe ser voluntaria</li>
                     </ol>
-                    <ul><li><h3>¿Donde puedo solicitar una declaración juramentada?</h3></li></ul>
-                    <p>Si necesita apostillar u obtener una declaración juramentada puede completar el siguiente formulario o acercarse a nuestras oficinas en ... para que un asesor pueda
+                    <ul><li><h2>¿Donde puedo solicitar una declaración juramentada?</h2></li></ul>
+                    <p>Si necesita apostillar u obtener una declaración juramentada puede completar el <a>siguiente formulario</a> o acercarse a nuestras oficinas en ".$data['office']." para que un asesor pueda
                         contactarse con usted y brindarle la asesoría necesaria.
                     </p>";
                     return view('web.office.apostille_layout', compact('data'));
@@ -1026,7 +1151,7 @@ class WebController extends Controller
             $data['urlmap'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
             $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
-            $data['keywords'] = 'notaria en new jersey, notaria publica en new jersey, notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey';
+            $data['keywords'] = 'notaria en new jersey, notaria publica en new jersey, notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille nj';
     
             return view('web.oficina', compact('data'));
         }
