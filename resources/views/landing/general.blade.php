@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <meta property="og:url" content="{{ Request::url() }}">
@@ -21,6 +21,15 @@
   <meta property="og:image" content="{{asset($imgup)}}">
 
   <title>@isset($title) {{ $title }} @else Notaria Latina en {{$oficina}} - Apostillas, Poderes y Traducciones @endisset</title>
+
+  <script>
+    var stylesheet = document.createElement('link');
+    stylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css";
+    stylesheet.rel = 'stylesheet';
+    setTimeout(function () {
+        document.getElementsByTagName('head')[0].appendChild(stylesheet);
+    }, 3000);
+  </script>
 
   <script type="text/javascript">
     function callbackThen(response){
