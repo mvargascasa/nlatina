@@ -41,7 +41,7 @@ class LandingController extends Controller
     {
         // falta capturar URL que solicita
 
-        $pais = $this->getCodPais($request->get('cod_pais'));
+        //$pais = $this->getCodPais($request->get('cod_pais'));
         
         $interest = $request->interest ?? 'General';
         $sendoffices = '';
@@ -55,11 +55,12 @@ class LandingController extends Controller
             $message = "<br><strong>Nuevo Lead Landing</strong>
             <br> Nombre: ". strip_tags($request->aaa)."
             <br> Telef: ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
-            <br> País: " . strip_tags($pais)."
             <br> Interes: ".strip_tags($interest)."
             <br> Mensaje: ".strip_tags($request->ddd)."
             <br> Fuente: GoogleAds ";
-        
+
+            //<br> País: " . strip_tags($pais)."
+
             $header='';
             $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
             $header .= "MIME-Version: 1.0\r\n";
@@ -72,10 +73,11 @@ class LandingController extends Controller
             $message = "<br><strong>Nuevo Lead Landing</strong>
             <br> Nombre: ". strip_tags($request->fname)."
             <br> Telef: ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->tlf)."
-            <br> País: ". strip_tags($pais)."
             <br> Interes: ".strip_tags($interest)."
             <br> Mensaje: ".strip_tags($request->message)."
             <br> Fuente: GoogleAds ";
+
+            // <br> País: ". strip_tags($pais)."
         
             $header='';
             $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";

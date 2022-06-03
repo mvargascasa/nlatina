@@ -15,6 +15,8 @@
                 min-height: 385px !important;
             }
         }
+        #phone {animation: wiggle 2s linear infinite;}
+        #emailicon{animation: wiggle 2s linear infinite;}
     </style>
     @endsection
 
@@ -42,10 +44,20 @@
                 <p>Podemos Apostillar documentos emitidos desde cualquier estado de los EE.UU. Incluidos los documentos emitidos por el gobierno federal de EE.UU.</p>
 
                 <p><b>Horario de atención:</b> de 8 AM a  6 PM De lunes a sábado</p>
-                <p><b>Atención al cliente:</b> <a href="tel:+17187665041">+1 718 766 5041</a></p>
-                <p><b>Correo electrónico:</b> <a href="mailto:info@notarialatina.com ">info@notarialatina.com </a></p>
-                <p><b>Contáctenos</b> y lo ayudamos en el proceso de una manera segura.</p>
-                <a class="btn mb-3" style="background-color: #122944; color: #ffffff" href="https://notarialatina.com/gestion-online-estados-unidos">Solicitar Trámite 📑</a>
+                <p style="font-weight: 500"><i>Apostillamos sus documentos de una manera rápida con personal calificado</i></p>
+                <div class="row">
+                    <div class="col-12 col-sm-6 mb-3 text-center border-right">
+                        <p style="font-weight: 500">¡Llámenos ahora!</p>
+                        <a class="btn btn-outline-danger" style="border-radius: 0px !important;" href="tel:+17187665041">+1 718 766 5041 <i id="phone" class="fas fa-phone"></i></a>
+                    </div>
+                    <div class="col-12 col-sm-6 mb-3 text-center border-left">
+                        <p style="font-weight: 500">Solicitar trámite</p>
+                        <button class="btn btn-outline-danger mb-3" style="border-radius: 0px !important;" data-toggle="modal" data-target="#exampleModal">Iniciar <i id="emailicon" class="fas fa-envelope"></i></button>
+                    </div>
+                </div>
+                {{-- <p><b>Contáctenos:</b> <a class="btn" style="background-color: #122944; color: #ffffff" href="tel:+17187665041">+1 718 766 5041 📞</a></p> --}}
+                {{-- <p><b>Correo electrónico:</b> <a  href="mailto:info@notarialatina.com ">info@notarialatina.com </a></p> --}}
+                {{-- <p><b>Contáctenos</b> y lo ayudamos en el proceso de una manera segura.</p> --}}
                 <p>Los documentos comunes que recibimos son:</p>
                 <ul>
                     <li>Certificados de nacimiento</li>
@@ -108,6 +120,23 @@
             </div>
         </div>
 </div>
+
+{{-- modal de contacto --}}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-white" style="background-color: #333 !important;">
+          <h5 class="modal-title" id="exampleModalLabel">Complete el siguiente formulario y en breve le contactamos.</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="color: #FFF !important;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          @include('z-form')
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 @endsection
