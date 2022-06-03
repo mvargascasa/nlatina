@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <meta property="og:url" content="{{ Request::url() }}">
@@ -108,7 +109,17 @@
     /* OTHER */
     input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
     @media screen and (max-width: 580px){#divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}}
-    #iconcall{bottom: 75px !important; right: 0px !important;}
+    #iconcall{bottom: 75px !important; right: 10px !important; animation: wiggle 3s linear infinite}
+    @keyframes wiggle {
+        0%, 7% {transform: rotateZ(0);}
+        15% {transform: rotateZ(-15deg);}
+        20% {transform: rotateZ(10deg);}
+        25% {transform: rotateZ(-10deg);}
+        30% {transform: rotateZ(6deg);}
+        35% {transform: rotateZ(-4deg);}
+        40%, 100% {transform: rotateZ(0);}
+    }
+    .grecaptcha-badge { visibility: hidden; }
   </style>
 </head>
 <body>
@@ -353,9 +364,16 @@
       </div>
 </section>
 
-<div id="iconcall" style="width: 60px; position: fixed; bottom: 60px; right: 0px; height: 50px;" class="d-flex">
+<a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}" target="_blank">
+  <div class="d-flex justify-content-center align-items-center px-3 py-2 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
+  {{-- Consultar en linea <i class="fab fa-whatsapp ml-1"></i> --}}
+  Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
+  </div>
+</a>
+
+<div id="iconcall" style="padding: 8px 12px 8px 12px; border-radius: 25px; position: fixed; bottom: 60px; right: 10px; background-color: #122944;" class="d-flex">
   <a href="tel:+{{$tlfhidden}}">
-      <img width="40" height="40" class="lazy img-fluid" data-src="{{ asset('img/notaria-latina-newyork.jpg') }}" alt="Notaria Latina en Queens New York">
+    <i style="color: #ffffff" class="fas fa-phone"></i>
   </a>
 </div>
 

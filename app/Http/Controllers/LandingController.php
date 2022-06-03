@@ -150,7 +150,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Notaría Pública <br> <b>New Jersey</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Realizamos todo tipo de notarización de documentos en New Jersey como apostillas, poderes, traducciones de una manera rápida y segura. Contáctenos ahora! ✔';
+        $data['meta_description'] = 'Notarizamos todo tipo de documentos en New Jersey 🗽 como apostillas, poderes, traducciones de una manera rápida y segura. ¡Contáctenos ahora! ✅';
         $data['keywords'] = 'notaria en new jersey, notaria latina en new jersey, notaria publica latina en new jersey, notaria en elizabeth new jersey, notario publico en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en elizabeth new jersey, traducir documentos en elizabeth new jersey';
         $data['imgup'] = 'img/newjersey-landing-notaria-latina.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
@@ -160,7 +160,8 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249594 ';
         $data['tlfshow'] = '908 224-9594';
         $data['landing'] = 'General';
-        $data['title'] = 'Notaría Latina en New Jersey - Apostillas, Poderes y Traducciones';
+        $data['title'] = 'Notaría Latina en New Jersey | Apostillas, Poderes, Traducciones';
+        $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }
 
@@ -178,7 +179,8 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249596';
         $data['tlfshow'] = '908 224-9596';
         $data['landing'] = 'General Web';
-        $data['title'] = 'Apostillas, Poderes y Traducciones en New Jersey | Notaría Latina';
+        $data['title'] = 'Apostillas, Poderes, Traducciones | Notaría Latina en New Jersey';
+        $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }  
 
@@ -186,7 +188,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Traducción de documentos <br> en New Jersey';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español'; 
-        $data['meta_description'] = '¿Necesita traducir un documento en New Jersey? Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. Solicite su cita aquí! ✔';
+        $data['meta_description'] = '📄 ¿Necesita traducir un documento en New Jersey? Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. ¡Agende su cita aquí! ✅';
         $data['keywords'] = 'traducir documentos en new jersey, traducir documentos en elizabeth nj, traducir documentos en new jersey a español, traducir certificados en new jersey, traducir acuerdos en new jersey, donde puedo traducir un documento en new jersey, donde traducir un documento en new jersey, traducir actas en new jersey, traducir diploma en new jersey';
         $data['imgup'] = 'img/landing-traducciones.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
@@ -196,10 +198,12 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249259';
         $data['tlfshow'] = '908 224-9259';
         $data['landing'] = 'Traducciones';
-        $data['title'] = 'Notaría Latina | Traducir documentos notariales en New Jersey';
+        $data['title'] = 'Notaría Latina | Traducir Documentos Notariales en New Jersey';
+        $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }  
 
+    //Me quedo hasta aqui
     public function njpod() {
         $data['oficina'] = 'New Jersey';
         $data['header']  = 'Poder Especial o General <br> en New Jersey'; 
@@ -215,6 +219,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '908 224-9258';
         $data['landing'] = "Poderes"; 
         $data['title'] = 'Notaría Latina | Realizamos todo tipo de poderes en New Jersey';
+        $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }   
 
@@ -233,6 +238,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '908 224-9552';
         $data['landing'] = 'Apostillas';
         $data['title'] = 'Notaria Latina | Apostillar documentos en New Jersey';
+        $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }
 
@@ -253,6 +259,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '347 428-1520';
         $data['landing'] = 'General';
         $data['title'] = 'Notaría Latina en New York - Apostillas, Poderes y Traducciones';
+        $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }
 
@@ -271,6 +278,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '347 428-1519';
         $data['landing'] = 'General Web';
         $data['title'] = 'Apostillas, Poderes y Traducciones en New York | Notaría Latina';
+        $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }  
 
@@ -289,6 +297,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '347 428-1517';
         $data['landing'] = 'Traducciones';
         $data['title'] = 'Notaría Latina | Traducir documentos notariales en New York';
+        $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }  
 
@@ -307,6 +316,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '347 428-1516';
         $data['landing'] = 'Poderes';
         $data['title'] = 'Notaría Latina | Realizamos todo tipo de poderes en New York'; 
+        $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }   
 
@@ -325,6 +335,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '347 428-1518';
         $data['landing'] = 'Apostillas';
         $data['title'] = 'Notaría Latina | Apostillar documentos en New York';
+        $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }  
 
@@ -346,6 +357,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13054229149';
         $data['tlfshow'] = '305 422 9149';
         $data['landing'] = 'General';
+        $data['tlfwpp'] = '13056003290';
         return view('landing.general',$data);
     }
 
@@ -363,6 +375,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13053177811';
         $data['tlfshow'] = '305 317 7811';
         $data['landing'] = 'General Web';
+        $data['tlfwpp'] = '13056003290';
         return view('landing.general',$data);
     }  
 
@@ -381,6 +394,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '305 317 7819';
         $data['landing'] = 'Traducciones';
         $data['title'] = 'Notaría Latina | Traducir documentos notariales en Florida';
+        $data['tlfwpp'] = '13056003290';
         return view('landing.general',$data);
     }  
 
@@ -399,6 +413,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '305 317 7826';
         $data['landing'] = 'Poderes';
         $data['title'] = 'Notaría Latina | Realizamos todo tipo de poderes en Florida';
+        $data['tlfwpp'] = '13056003290';
         return view('landing.general',$data);
     }   
 
@@ -417,6 +432,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '305 317 7820';
         $data['landing'] = 'Apostillas';
         $data['title'] = 'Notaría Latina | Apostillar documentos en Florida';
+        $data['tlfwpp'] = '13056003290';
         return view('landing.general',$data);
     }
     

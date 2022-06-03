@@ -346,17 +346,26 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div>        
       </div> --}}
 
-      <div id="svgwpp" style="width: 60px; position: fixed; bottom: 10px; right: 0px; height: 50px;">
+    <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">
+        <div class="d-flex justify-content-center align-items-center px-3 py-2 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
+        {{-- Consultar en linea <i class="fab fa-whatsapp ml-1"></i> --}}
+        Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
+        </div>
+    </a>
+
+      {{-- <div id="svgwpp" style="width: 60px; position: fixed; bottom: 10px; right: 0px; height: 50px;">
         <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});"
-        href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">{{--+13479739888--}}
+        href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">
             <img src="{{asset('img/notary-public-near-me-whatsapp.svg')}}" 
             alt="Whatsapp Notary Public Near Me" width="40" height="40">
         </a> 
-        </div>
+        </div> --}}
+        {{--+13479739888--}}
 
-        <div id="iconcall" style="width: 60px; position: fixed; bottom: 60px; right: 0px; height: 50px;">
+        <div id="iconcall" style="padding: 8px 12px 8px 12px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 50px; right: 0px;background-color: #122944;">
             <a href="tel:@yield('phoneNumberHidden')">
-                <img width="40" height="40" class="lazy img-fluid" data-src="{{ asset('img/notaria-latina-newyork.jpg') }}" alt="Notaria Latina en Queens New York">
+                {{-- <img width="40" height="40" class="lazy img-fluid" data-src="{{ asset('img/notaria-latina-newyork.jpg') }}" alt="Notaria Latina en Queens New York"> --}}
+                <i style="color: #ffffff" class="fas fa-phone"></i>
             </a>
         </div>
 </footer>
