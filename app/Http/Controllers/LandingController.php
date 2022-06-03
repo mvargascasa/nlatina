@@ -198,7 +198,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249259';
         $data['tlfshow'] = '908 224-9259';
         $data['landing'] = 'Traducciones';
-        $data['title'] = 'Notaría Latina | Traducir Documentos Notariales en New Jersey';
+        $data['title'] = 'Traducir Documentos Notariales en New Jersey | Notaria Latina';
         $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }  
@@ -208,7 +208,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header']  = 'Poder Especial o General <br> en New Jersey'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
-        $data['meta_description'] = '¿Necesita realizar un poder notarial en New Jersey? Contáctese con nosotros y lo ayudamos con el trámite para un poder especial o general de una manera segura ✔';
+        $data['meta_description'] = '📄 ¿Necesita realizar un Poder Notarial en New Jersey? Contáctenos y lo ayudamos con el trámite de un poder especial o general de una manera segura ✅';
         $data['keywords'] = 'poder especial en new jersey, poder general en new jersey, tramitar poder especial en new jersey, tramitar poder general en new jersey, realizar tramite para poder especial en new jersey, obtener carta poder en new jersey, donde puedo tramitar un poder en new jersey, donde puedo obtener un poder en new jersey';
         $data['imgup'] = 'img/landing-poderes.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
@@ -218,7 +218,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249258';
         $data['tlfshow'] = '908 224-9258';
         $data['landing'] = "Poderes"; 
-        $data['title'] = 'Notaría Latina | Realizamos todo tipo de poderes en New Jersey';
+        $data['title'] = 'Realizamos todo tipo de Poderes en New Jersey | Notaria Latina';
         $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }   
@@ -227,7 +227,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Apostilla de documentos <br> en New Jersey';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
-        $data['meta_description'] = '¿Necesita apostillar un documento en New Jersey? Lo ayudamos con la apostilla de certificados, poderes, traducciones, diplomas, entre otros. Solicítelo aquí! ✔';
+        $data['meta_description'] = '📄 ¿Necesita Apostillar un documento en New Jersey? Lo ayudamos con la apostilla de certificados, poderes, traducciones, entre otros. ¡Solicítelo aquí! ✅';
         $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en new jersey, apostillar documentos en elizabeth nj, apostillar certificados en new jersey, apostillar poderes en new jersey, apostillar traduccion en new jersey, apostillar diploma en new jersey, donde apostillar documentos en new jersey, donde puedo apostillar documentos en new jersey';
         $data['imgup'] = 'img/landing-apostillas-nj.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
@@ -237,7 +237,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '19082249552';
         $data['tlfshow'] = '908 224-9552';
         $data['landing'] = 'Apostillas';
-        $data['title'] = 'Notaria Latina | Apostillar documentos en New Jersey';
+        $data['title'] = 'Apostillar Documentos en New Jersey | Notaria Latina';
         $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }
@@ -248,7 +248,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Realizamos todo tipo de trámites notariales en New York tales como apostillas, certificados, poderes, traducciones de una manera segura. Contáctenos! ✔';
+        $data['meta_description'] = 'Realizamos todo tipo de trámites notariales en New York tales como apostillas, certificados, poderes, traducciones de una manera segura. ¡Contáctenos! ✅';
         $data['keywords'] = 'notaria en new york, notaria latina en new york, notaria publica latina en new york, notaria en queens new york, notario publico en new york, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en queens new york, traducir documentos en queens new york';
         $data['imgup'] = 'img/newyork-landing-notaria-latina.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
@@ -267,7 +267,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Tramitamos todo tipo de documentos en New York como apostillas, certificados, poderes, traducciones de una manera rápida y segura. Contáctenos ahora! ✔';
+        $data['meta_description'] = 'Tramitamos todo tipo de documentos en New York 🗽 como apostillas, certificados, poderes, traducciones de una manera rápida y segura. ¡Iniciar trámite! ✅';
         $data['keywords'] = 'notaria en new york, notaria latina en new york, notaria publica latina en new york, notaria en queens new york, notario publico en new york, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en queens new york, traducir documentos en queens new york';
         $data['imgup'] = 'img/newyork-landing-notaria-latina.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
@@ -286,7 +286,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Traducción de documentos <br> en New York';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
-        $data['meta_description'] = '¿Necesita traducir un documento en New York? Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. Contáctese con nosotros! ✔';
+        $data['meta_description'] = '¿Necesita Traducir un documento en New York? 📄 Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. ¡Escríbanos ahora! ✅';
         $data['keywords'] = 'traducir documentos en new york, traducir documentos en queens ny, traducir documentos en new york a español, traducir certificados en new york, traducir acuerdos en new york, donde puedo traducir un documento en new york, donde traducir un documento en new york, traducir actas en new york, traducir diploma en new york';
         $data['imgup'] = 'img/landing-traducciones.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
@@ -296,7 +296,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13474281517';
         $data['tlfshow'] = '347 428-1517';
         $data['landing'] = 'Traducciones';
-        $data['title'] = 'Notaría Latina | Traducir documentos notariales en New York';
+        $data['title'] = 'Traducir Documentos Notariales en New York | Notaría Latina';
         $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }  
@@ -305,7 +305,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header']  = 'Poder Especial o General <br> en New York'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
-        $data['meta_description'] = '¿Necesita realizar un poder notarial en New York? Contáctese con nosotros y lo ayudamos con el trámite para realizar un poder general o especial ✔';
+        $data['meta_description'] = '¿Necesita realizar un Poder Notarial en New York? 📃 Contáctese con nosotros y lo ayudamos con el trámite para realizar un poder general o especial ✅';
         $data['keywords'] = 'poder especial en new york, poder general en new york, tramitar poder especial en new york, tramitar poder general en new york, realizar trámite para poder especial en new york, obtener carta poder en new york, donde puedo tramitar un poder en new york, donde puedo obtener un poder en new york';
         $data['imgup']   = 'img/landing-poderes.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
@@ -315,7 +315,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13474281516';
         $data['tlfshow'] = '347 428-1516';
         $data['landing'] = 'Poderes';
-        $data['title'] = 'Notaría Latina | Realizamos todo tipo de poderes en New York'; 
+        $data['title'] = 'Realizamos todo tipo de Poderes en New York | Notaria Latina'; 
         $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }   
@@ -324,7 +324,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Apostilla de documentos <br> en New York';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
-        $data['meta_description'] = '¿Necesita apostillar un documento en New Jersey? Brindamos nuestro servicio de apostillas en certificados, poderes, traducciones, entre otros. Agende su cita! ✔';
+        $data['meta_description'] = '¿Necesita Apostillar un Documento en New York? 📃 Nuestro servicio de apostillas en certificados, poderes, traducciones a su alcance. ¡Solicitar ahora! ✅';
         $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en new york, apostillar documentos en queens ny, apostillar certificados en new york, apostillar poderes en new york, apostillar traduccion en new york, apostillar diploma en new york, donde apostillar documentos en new york, donde puedo apostillar documentos en new york';
         $data['imgup'] = 'img/landing-apostillas-ny.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
@@ -334,7 +334,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13474281518';
         $data['tlfshow'] = '347 428-1518';
         $data['landing'] = 'Apostillas';
-        $data['title'] = 'Notaría Latina | Apostillar documentos en New York';
+        $data['title'] = 'Apostillar Documentos en New York | Notaría Latina';
         $data['tlfwpp'] = '13479739888';
         return view('landing.general',$data);
     }  
@@ -347,7 +347,7 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Realizamos todo tipo de trámites notariales en Florida tales como apostillas, certificados, poderes, traducciones de una manera segura. Solicitar aquí! ✔';
+        $data['meta_description'] = 'Realizamos todo tipo de Trámites Notariales en Florida 📃 como Apostillas, Certificados, Poderes, Traducciones de una manera segura ✅';
         $data['keywords'] = 'notaria en florida, notaria latina en florida, notaria publica latina en florida, notaria en sunrise florida, notario publico en florida, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en sunrise florida, traducir documentos en sunrise florida';
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
@@ -357,6 +357,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13054229149';
         $data['tlfshow'] = '305 422 9149';
         $data['landing'] = 'General';
+        $data['title'] = 'Notaría Latina en Florida - Apostillas, Poderes y Traducciones';
         $data['tlfwpp'] = '13056003290';
         return view('landing.general',$data);
     }
@@ -365,7 +366,7 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Tramitamos todo tipo de documentos en Florida como apostillas, certificados, poderes, traducciones de una manera rápida y segura. Contáctenos ahora! ✔';
+        $data['meta_description'] = 'Tramitamos todo tipo de Documentos en Florida 🗽 como Apostillas, Certificados, Poderes, Traducciones de una manera ágil y segura ¡Contáctenos ahora! ✅';
         $data['keywords'] = 'notaria en florida, notaria latina en florida, notaria publica latina en florida, notaria en sunrise florida, notario publico en florida, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en sunrise florida, traducir documentos en sunrise florida';
         $data['imgup'] = 'img/florida-landing-notaria-latina.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
@@ -375,6 +376,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13053177811';
         $data['tlfshow'] = '305 317 7811';
         $data['landing'] = 'General Web';
+        $data['title'] = 'Apostillas, Poderes y Traducciones en Florida | Notaría Latina';
         $data['tlfwpp'] = '13056003290';
         return view('landing.general',$data);
     }  
@@ -383,7 +385,7 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Traducción de documentos <br> en Florida';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
-        $data['meta_description'] = '¿Necesita traducir un documento en Florida? Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. Contáctenos! ✔';
+        $data['meta_description'] = '¿Necesita Traducir un Documento en Florida? 🗽 Lo ayudamos con la Traducción de Certificados, Poderes, Acuerdos, entre otros. ¡Solicitar traducción! ✅';
         $data['keywords'] = 'traducir documentos en florida, traducir documentos en sunrise florida, traducir documentos en florida a español, traducir certificados en florida, traducir acuerdos en florida, donde puedo traducir un documento en florida, donde traducir un documentos en florida, traducir acta en florida, traducir diploma en florida';
         $data['imgup'] = 'img/landing-traducciones.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
@@ -393,7 +395,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13053177819';
         $data['tlfshow'] = '305 317 7819';
         $data['landing'] = 'Traducciones';
-        $data['title'] = 'Notaría Latina | Traducir documentos notariales en Florida';
+        $data['title'] = 'Traducir Documentos Notariales en Florida | Notaria Latina';
         $data['tlfwpp'] = '13056003290';
         return view('landing.general',$data);
     }  
@@ -402,7 +404,7 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header']  = 'Poder Especial o General <br> en Florida'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
-        $data['meta_description'] = '¿Necesita realizar un poder notarial en Florida? Contáctese con nosotros y lo ayudamos en el trámite de un poder general o especial de una forma rápida ✔';
+        $data['meta_description'] = '¿Necesita realizar un Poder Notarial en Florida? 🗽 Nos especializamos en el Trámite de Poderes Generales y Especiales. ¡Solicitar Poder ahora! ✅';
         $data['keywords'] = 'poder especial en florida, poder general en florida, tramitar poder especial en florida, tramitar poder general en florida, realizar tramite para poder especial en florida, obtener carta poder en florida, donde puedo tramitar un poder en florida, donde puedo obtener un poder en florida';
         $data['imgup']   = 'img/landing-poderes.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
@@ -412,7 +414,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13053177826';
         $data['tlfshow'] = '305 317 7826';
         $data['landing'] = 'Poderes';
-        $data['title'] = 'Notaría Latina | Realizamos todo tipo de poderes en Florida';
+        $data['title'] = 'Tramitamos todo tipo de Poderes en Florida | Notaria Latina';
         $data['tlfwpp'] = '13056003290';
         return view('landing.general',$data);
     }   
@@ -421,7 +423,7 @@ class LandingController extends Controller
         $data['oficina'] = 'Florida';
         $data['header'] = 'Apostilla de documentos <br> en Florida';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
-        $data['meta_description'] = '¿Necesita apostillar un documento en Florida? Lo ayudamos con el servicio de apostilla en certificados, poderes, traducciones de una manera segura. Consulte aquí! ✔';
+        $data['meta_description'] = '¿Necesita Apostillar un Documento en Florida? 📃 Nuestro servicio de apostilla en Certificados, Poderes, Traducciones a su alcance. ¡Solicítelo ahora! ✅';
         $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en florida, apostillar documentos en sunrise florida, apostillar certificados en florida, apostillar poderes en florida, apostillar traduccion en florida, apostillar diploma en florida, donde apostillar documentos en florida, donde puedo apostillar documentos en florida';
         $data['imgup'] = 'img/landing-apostillas-fl.jpg';
         $data['imgdown'] = 'img/oficina-notaria-florida.jpg';
@@ -431,7 +433,7 @@ class LandingController extends Controller
         $data['tlfhidden'] = '13053177820';
         $data['tlfshow'] = '305 317 7820';
         $data['landing'] = 'Apostillas';
-        $data['title'] = 'Notaría Latina | Apostillar documentos en Florida';
+        $data['title'] = 'Apostillar Documentos en Florida | Notaria Latina';
         $data['tlfwpp'] = '13056003290';
         return view('landing.general',$data);
     }
