@@ -150,7 +150,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Notaría Pública <br> <b>New Jersey</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Notarizamos todo tipo de documentos en New Jersey 🗽 como apostillas, poderes, traducciones de una manera rápida y segura. ¡Contáctenos ahora! ✅';
+        $data['meta_description'] = 'Notarizamos todo tipo de Documentos en New Jersey 🗽 como Apostillas, Poderes, Traducciones de una manera rápida y segura. ¡Contáctenos ahora! ✅';
         $data['keywords'] = 'notaria en new jersey, notaria latina en new jersey, notaria publica latina en new jersey, notaria en elizabeth new jersey, notario publico en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en elizabeth new jersey, traducir documentos en elizabeth new jersey';
         $data['imgup'] = 'img/newjersey-landing-notaria-latina.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
@@ -169,7 +169,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Notaría Pública <br> New Jersey <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Tramitamos todo tipo de documentos en New Jersey tales como apostillas, poderes, traducciones de una manera rápida y segura. Contáctenos ahora! ✔';
+        $data['meta_description'] = 'Tramitamos todo tipo de Documentos en New Jersey como Apostillas, Poderes, Traducciones 📃 de una manera rápida y segura. ¡Contáctenos ahora! ✅';
         $data['keywords'] = 'notaria en new jersey, notaria latina en new jersey, notaria publica latina en new jersey, notaria en elizabeth new jersey, notario publico en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en elizabeth new jersey, traducir documentos en elizabeth new jersey';
         $data['imgup'] = 'img/newjersey-landing-notaria-latina.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
@@ -188,7 +188,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Traducción de documentos <br> en New Jersey';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español'; 
-        $data['meta_description'] = '📄 ¿Necesita traducir un documento en New Jersey? Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. ¡Agende su cita aquí! ✅';
+        $data['meta_description'] = '📄 ¿Necesita Traducir un Documento en New Jersey? Lo ayudamos con la Traducción de Certificados, Diplomas, Acuerdos, entre otros. ¡Agende su cita aquí! ✅';
         $data['keywords'] = 'traducir documentos en new jersey, traducir documentos en elizabeth nj, traducir documentos en new jersey a español, traducir certificados en new jersey, traducir acuerdos en new jersey, donde puedo traducir un documento en new jersey, donde traducir un documento en new jersey, traducir actas en new jersey, traducir diploma en new jersey';
         $data['imgup'] = 'img/landing-traducciones.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
@@ -208,7 +208,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header']  = 'Poder Especial o General <br> en New Jersey'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
-        $data['meta_description'] = '📄 ¿Necesita realizar un Poder Notarial en New Jersey? Contáctenos y lo ayudamos con el trámite de un poder especial o general de una manera segura ✅';
+        $data['meta_description'] = '📄 ¿Necesita realizar un Poder Notarial en New Jersey? Contáctenos y lo ayudamos con el trámite de un Poder Especial o General de una manera segura ✅';
         $data['keywords'] = 'poder especial en new jersey, poder general en new jersey, tramitar poder especial en new jersey, tramitar poder general en new jersey, realizar tramite para poder especial en new jersey, obtener carta poder en new jersey, donde puedo tramitar un poder en new jersey, donde puedo obtener un poder en new jersey';
         $data['imgup'] = 'img/landing-poderes.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
@@ -227,7 +227,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Apostilla de documentos <br> en New Jersey';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
-        $data['meta_description'] = '📄 ¿Necesita Apostillar un documento en New Jersey? Lo ayudamos con la apostilla de certificados, poderes, traducciones, entre otros. ¡Solicítelo aquí! ✅';
+        $data['meta_description'] = '📄 ¿Necesita Apostillar un Documento en New Jersey? Lo ayudamos con la Apostilla de Certificados, Poderes, Traducciones, entre otros. ¡Solicítelo aquí! ✅';
         $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en new jersey, apostillar documentos en elizabeth nj, apostillar certificados en new jersey, apostillar poderes en new jersey, apostillar traduccion en new jersey, apostillar diploma en new jersey, donde apostillar documentos en new jersey, donde puedo apostillar documentos en new jersey';
         $data['imgup'] = 'img/landing-apostillas-nj.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newjersey.webp';
@@ -248,7 +248,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Realizamos todo tipo de trámites notariales en New York tales como apostillas, certificados, poderes, traducciones de una manera segura. ¡Contáctenos! ✅';
+        $data['meta_description'] = 'Realizamos todo tipo de Trámites Notariales en New York tales como Apostillas, Certificados, Poderes, Traducciones de una manera segura. ¡Contáctenos! ✅';
         $data['keywords'] = 'notaria en new york, notaria latina en new york, notaria publica latina en new york, notaria en queens new york, notario publico en new york, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en queens new york, traducir documentos en queens new york';
         $data['imgup'] = 'img/newyork-landing-notaria-latina.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
@@ -267,7 +267,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
         $data['service'] = 'General';// General Imprime todos los servicios
-        $data['meta_description'] = 'Tramitamos todo tipo de documentos en New York 🗽 como apostillas, certificados, poderes, traducciones de una manera rápida y segura. ¡Iniciar trámite! ✅';
+        $data['meta_description'] = 'Tramitamos todo tipo de Documentos en New York 🗽 como Apostillas, Certificados, Poderes, Traducciones de una manera rápida y segura. ¡Iniciar trámite! ✅';
         $data['keywords'] = 'notaria en new york, notaria latina en new york, notaria publica latina en new york, notaria en queens new york, notario publico en new york, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en queens new york, traducir documentos en queens new york';
         $data['imgup'] = 'img/newyork-landing-notaria-latina.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
@@ -286,7 +286,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Traducción de documentos <br> en New York';  
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
-        $data['meta_description'] = '¿Necesita Traducir un documento en New York? 📄 Lo ayudamos con la traducción de certificados, diplomas, acuerdos, entre otros. ¡Escríbanos ahora! ✅';
+        $data['meta_description'] = '¿Necesita Traducir un Documento en New York? 📄 Lo ayudamos con la Traducción de Certificados, Diplomas, Acuerdos, entre otros. ¡Escríbanos ahora! ✅';
         $data['keywords'] = 'traducir documentos en new york, traducir documentos en queens ny, traducir documentos en new york a español, traducir certificados en new york, traducir acuerdos en new york, donde puedo traducir un documento en new york, donde traducir un documento en new york, traducir actas en new york, traducir diploma en new york';
         $data['imgup'] = 'img/landing-traducciones.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
@@ -305,7 +305,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header']  = 'Poder Especial o General <br> en New York'; 
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
-        $data['meta_description'] = '¿Necesita realizar un Poder Notarial en New York? 📃 Contáctese con nosotros y lo ayudamos con el trámite para realizar un poder general o especial ✅';
+        $data['meta_description'] = '¿Necesita realizar un Poder Notarial en New York? 📃 Contáctese con nosotros y lo ayudamos con el trámite para realizar un Poder General o Especial ✅';
         $data['keywords'] = 'poder especial en new york, poder general en new york, tramitar poder especial en new york, tramitar poder general en new york, realizar trámite para poder especial en new york, obtener carta poder en new york, donde puedo tramitar un poder en new york, donde puedo obtener un poder en new york';
         $data['imgup']   = 'img/landing-poderes.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
@@ -324,7 +324,7 @@ class LandingController extends Controller
         $data['oficina'] = 'New York';
         $data['header'] = 'Apostilla de documentos <br> en New York';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
-        $data['meta_description'] = '¿Necesita Apostillar un Documento en New York? 📃 Nuestro servicio de apostillas en certificados, poderes, traducciones a su alcance. ¡Solicitar ahora! ✅';
+        $data['meta_description'] = '¿Necesita Apostillar un Documento en New York? 📃 Nuestro servicio de Apostilla en Certificados, Poderes, Traducciones a su alcance. ¡Solicitar ahora! ✅';
         $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en new york, apostillar documentos en queens ny, apostillar certificados en new york, apostillar poderes en new york, apostillar traduccion en new york, apostillar diploma en new york, donde apostillar documentos en new york, donde puedo apostillar documentos en new york';
         $data['imgup'] = 'img/landing-apostillas-ny.webp';
         $data['imgdown'] = 'img/oficina-notaria-latina-newyork.webp';
