@@ -109,7 +109,7 @@
     /* OTHER */
     input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
     @media screen and (max-width: 580px){#divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}}
-    #iconcall{bottom: 75px !important; right: 10px !important; animation: wiggle 3s linear infinite}
+    #iconcall{bottom: 50px !important; right: 10px !important; animation: wiggle 3s linear infinite}
     @keyframes wiggle {
         0%, 7% {transform: rotateZ(0);}
         15% {transform: rotateZ(-15deg);}
