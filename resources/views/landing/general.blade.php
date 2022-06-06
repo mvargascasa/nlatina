@@ -390,7 +390,7 @@
   </div>
 </a>
 
-<div id="iconcall" style="padding: 11px 15px 11px 15px; border-radius: 25px; position: fixed; bottom: 60px; right: 10px; background-color: #122944; border: 2px solid #ffffff" class="d-flex">
+<div id="iconcall" style="padding: 11px 15px 11px 15px; border-radius: 25px; position: fixed; bottom: 60px; right: 10px; background-color: #122944; border: 2px solid #ffffff; display: none !important" class="d-flex">
   <a href="tel:+{{$tlfhidden}}">
     <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i>
   </a>
@@ -404,6 +404,10 @@
       document.getElementById('dirmap').src = "{{asset($dirmap)}}";
       console.log('ok');
   });
+
+  setTimeout(() => {
+    document.getElementById('iconcall').style.display = "block";
+  }, 3000);
 
   // var pais = document.getElementById('pais');
   // var telf = document.getElementById('telf');
