@@ -29,6 +29,7 @@
         // read Promise object
         response.json().then(function(data){
           if(data.success && data.score > 0.5){
+            alert(data);
             console.log(data);
           } else {
             document.getElementById('formlead').addEventListener('submit', function (event) {
