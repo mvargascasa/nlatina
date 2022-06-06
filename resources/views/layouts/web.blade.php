@@ -33,7 +33,7 @@ if(strpos($actual_link, 'localhost') === false){
 
     setTimeout(function(){
         document.getElementById('scriptanalytics').src = 'https://www.googletagmanager.com/gtag/js?id=UA-124437679-3';
-        console.log('caargando script de analytics...');
+        // console.log('caargando script de analytics...');
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -409,7 +409,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
     setTimeout(function(){
         downloadFacebookJSAtOnLoad();
-        console.log('cargando script de facebook snippet...');
+        //console.log('cargando script de facebook snippet...');
     }, 3000);
 
     var timeToLoadJquery = 1000;
@@ -417,7 +417,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
     setTimeout(function () {
         downloadJSAtOnload();
-        console.log('cargando script de jquery...');
+        //console.log('cargando script de jquery...');
         if(button)button.disabled = false;
     }, timeToLoadJquery);
 

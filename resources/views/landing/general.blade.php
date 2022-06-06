@@ -38,7 +38,14 @@
         console.log(response.status);
         // read Promise object
         response.json().then(function(data){
-        console.log(data);
+          if(data.success && data.score > 0.5){
+            console.log(data);
+          } else {
+            document.getElementById('formlead').addEventListener('submit', function (event) {
+              event.preventDefault();
+              console.log('recaptcha error. Stop form submission!');
+            });
+          }
         });
     }
 
@@ -290,7 +297,7 @@
           <div class="card-body text-center">  
             <h2 class="font-italic font-weight-bold">Solicitar Tramite</h2>      
             <small> Envíe el formulario y un asesor le contactará breve. </small>     
-            <form method="POST" action="{{route('landing.thankpostnj')}}">
+            <form method="POST" action="{{route('landing.thankpostnj')}}" id="formlead">
                 @csrf
               <input type="hidden" id="interest" name="interest" value="Landing {{$oficina}}">
               <div class="form-group pt-4">
