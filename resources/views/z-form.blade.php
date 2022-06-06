@@ -3,16 +3,16 @@
 
 <div class="form-group">
     {!! Form::label('fname', 'Nombres:') !!}
-    {!! Form::text('fname', null, ['class' => 'form-control']) !!}
+    {!! Form::text('fname', null, ['class' => 'form-control', 'required']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('lname', 'Apellidos:') !!}
-    {!! Form::text('lname', null, ['class' => 'form-control']) !!}
+    {!! Form::text('lname', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('tlf', 'Teléfonos:') !!}
-    {!! Form::text('tlf', null, ['class' => 'form-control','rows' => '2']) !!}
+    {!! Form::number('tlf', null, ['class' => 'form-control','rows' => '2', 'required']) !!}
 </div>
 
 <div class="form-group">
@@ -40,7 +40,7 @@
 
 <div class="form-group">
     {!! Form::label('message', 'Comentario:') !!}
-    {!! Form::textarea('message', null, ['class' => 'form-control', 'maxlength'=>"100", 'rows' => '2']) !!}
+    {!! Form::textarea('message', null, ['class' => 'form-control', 'maxlength'=>"100", 'rows' => '2', 'id' => 'message', 'required']) !!}
 </div>
 
 <div class="form-group">

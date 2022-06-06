@@ -46,7 +46,7 @@
 
 <div class="form-group">
     {!! Form::label('message', 'Mensaje') !!}
-    {!! Form::textarea('message', null, ['class' => 'form-control',  'maxlength'=>"100",'rows' => '2']) !!}
+    {!! Form::textarea('message', null, ['class' => 'form-control',  'maxlength'=>"100",'rows' => '2', 'id' => 'message']) !!}
 </div>
 
 <div class="form-group">
