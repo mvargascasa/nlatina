@@ -362,10 +362,10 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div> --}}
         {{--+13479739888--}}
 
-        <div id="iconcall" style="padding: 8px 12px 8px 12px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 50px; right: 10px;background-color: #122944;">
+        <div id="iconcall" style="padding: 11px 15px 11px 15px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 50px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
             <a href="tel:@yield('phoneNumberHidden')">
                 {{-- <img width="40" height="40" class="lazy img-fluid" data-src="{{ asset('img/notaria-latina-newyork.jpg') }}" alt="Notaria Latina en Queens New York"> --}}
-                <i style="color: #ffffff" class="fas fa-phone"></i>
+                <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i>
             </a>
         </div>
 </footer>
