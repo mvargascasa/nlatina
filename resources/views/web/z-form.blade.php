@@ -1,4 +1,4 @@
-{!! Form::open(['route' => 'landing.thankpost']) !!}
+{!! Form::open(['route' => 'landing.thankpost', 'id' => 'formlead']) !!}
 
 
 <div class="form-group">
