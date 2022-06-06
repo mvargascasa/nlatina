@@ -305,7 +305,7 @@
     <div data-aos="flip-down">
         <div class="row justify-content-center align-items-center" style="padding-top: 50px">
             <div class="text-center">
-                <i><p style="font-weight: bold; font-size: 20px">¿Necesita realizar un trámite de Notaría <br> en {{ $data['office'] }}?</p></i>
+                <i><h2 style="font-weight: bold; font-size: 20px">¿Necesita realizar un trámite de Notaría <br> en {{ $data['office'] }}?</h2></i>
                 <p style="font-size: 15px"><b>¡Contáctenos!</b> Estamos seguros que podemos ayudarle</p>
             </div>
         </div>
@@ -389,8 +389,8 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-6 fifth-row text-center" style="padding-top: 4%; padding-bottom: 4%">
-            <h3 style="font-weight: bold"><i>{{ Str::upper($data['title']) }}</i></h3>
+        <div class="col-sm-6 fifth-row text-center" style="padding-top: 3%; padding-bottom: 4%">
+            <h2 style="font-weight: bold"><i>{{ Str::upper($data['title']) }}</i></h2>
             <p>{{ $data['subtitle'] }}!</p>
             <p class="text-muted" style="margin-left: 10%; margin-right: 10%">Apostille actas de nacimiento, actas de matrimonio, certificados, poderes, traducciones, diplomas, contratos, testamentos</p>
         </div>
