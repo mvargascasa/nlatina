@@ -184,7 +184,7 @@
       <div class="col-sm-6 col-md-4 mb-2">
         <div class="card" style="width: 100%; height: 100%; background-color:rgb(247, 247, 247)">
           <div class="card-body text-center" style="color: rgb(102, 102, 102)">
-            <h6 class="card-title"><b>TIPOS DE CARTA PODER</b></h6>
+            <h2 class="card-title" style="font-size: 16px"><b>TIPOS DE CARTA PODER</b></h2>
             <p class="card-text">
               Realizamos todo tipo de Poder Especial o Poder General Apostillados
               para toda Latinoamérica
@@ -195,7 +195,7 @@
       <div class="col-sm-6 col-md-4 mb-2">
         <div class="card" style="width: 100%; height: 100%; background-color:rgb(247, 247, 247)">
           <div class="card-body" style="color: rgb(102, 102, 102)">
-            <h6 class="card-title text-center"><b>SOLICITE UN PODER PARA:</b></h6>
+            <h2 class="card-title text-center" style="font-size: 16px"><b>SOLICITE UN PODER PARA:</b></h2>
             <p class="card-text">
               <ul>
                 <li>Gestionar sus bienes, trámites bancarios</li>
@@ -212,7 +212,7 @@
       <div class="col-sm-6 col-md-4 mb-2">
         <div class="card" style="width: 100%; height: 100%; background-color:rgb(247, 247, 247)">
           <div class="card-body text-center" style="color: rgb(102, 102, 102)">
-            <h6 class="card-title"><b>¿DONDE HACER UNA CARTA PODER EN <p style="text-transform: uppercase">{{ $oficina }}?</p></b></h6>
+            <h2 class="card-title" style="font-size: 16px"><b>¿DONDE HACER UNA CARTA PODER EN <p style="text-transform: uppercase">{{ $oficina }}?</p></b></h2>
             <p class="card-text">
               Llámenos y agende una cita en nuestras oficinas ubicadas en {{ $oficina }}
             </p>
@@ -233,7 +233,7 @@
   
     <div class="col lead col-12 col-md-4 col-lg-3 col-xl-3 px-4">
   
-      <span class="lead font-weight-bold ">Apostillas:</span>
+      <h2><span class="lead font-weight-bold ">Apostillas:</span></h2>
       <ul>
         <li>Diplomas</li>
         <li>Certificados de nacimiento.</li>
@@ -244,7 +244,7 @@
     </div>
   
     <div class="col lead col-12 col-md-4 col-lg-3 col-xl-3 px-4">
-      <span class="lead font-weight-bold ">Poderes:</span>
+      <h2><span class="lead font-weight-bold ">Poderes:</span></h2>
      <ul>
       <li>Para compra/venta.</li>
       <li>Administración de Propiedades.</li>
@@ -255,7 +255,7 @@
     </div>
   
     <div class="col lead col-12 col-md-4 col-lg-3 col-xl-3 px-4">
-      <span class="lead font-weight-bold ">Traducciones:</span>
+      <h2><span class="lead font-weight-bold ">Traducciones:</span></h2>
      <ul>
       <li>Certificados de nacimiento.</li>
       <li>Diplomas.</li>
