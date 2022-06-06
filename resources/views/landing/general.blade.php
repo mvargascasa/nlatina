@@ -125,7 +125,9 @@
     input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
     /* OTHER */
     input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
-    @media screen and (max-width: 580px){#divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}}
+    @media screen and (max-width: 1000px){h1{font-size: 50px !important}}
+    @media screen and (max-width: 800px){h1{font-size: 40px !important}}
+    @media screen and (max-width: 580px){#divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}}
     #iconcall{bottom: 50px !important; right: 10px !important; animation: wiggle 3s linear infinite}
     @keyframes wiggle {
         0%, 7% {transform: rotateZ(0);}
@@ -161,10 +163,10 @@
 <section class="card text-white" style="border-radius:0;border:0" >
   <img id="prisection" src="" class="card-img" alt="@isset($title) {{ $title }} @else Notaria Latina en {{ $oficina }} - Apostillas, Poderes, Traducciones @endisset" style="max-height: 90vh;min-height: 40vh;  object-fit: cover; width: 100%; height: 100%">
   <div class="card-img-overlay my-auto" style="background:rgba(2, 2, 2, 0.5)">
-    <div class="d-sm-block d-md-none text-center" style="margin-top: 20%;">
+    {{-- <div class="d-sm-block d-md-none text-center" style="margin-top: 20%;">
         <div class="font-italic"><h1 style="font-size: 22px; font-weight: 600">{!!$header!!}</h1></div>
-    </div>    
-    <div class="text-center d-none d-sm-none d-md-block" style="margin-top: 10%;">
+    </div>     --}}
+    <div class="text-center d-md-block" style="margin-top: 12%;">
       <div class="font-italic"><h1 style="font-size: 60px; font-weight: 600">{!!$header!!}</h1></div>
     </div>
   </div>
