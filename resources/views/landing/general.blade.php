@@ -388,9 +388,9 @@
   </div>
 </a>
 
-<div id="iconcall" style="padding: 8px 12px 8px 12px; border-radius: 25px; position: fixed; bottom: 60px; right: 10px; background-color: #122944;" class="d-flex">
+<div id="iconcall" style="padding: 11px 15px 11px 15px; border-radius: 25px; position: fixed; bottom: 60px; right: 10px; background-color: #122944; border: 2px solid #ffffff" class="d-flex">
   <a href="tel:+{{$tlfhidden}}">
-    <i style="color: #ffffff" class="fas fa-phone"></i>
+    <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i>
   </a>
 </div>
 
