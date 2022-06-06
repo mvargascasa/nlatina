@@ -13,6 +13,8 @@
     <meta name="description" content="Notaría Latina - Notario Público en Queens New York. Gestión en Línea en todo EE.UU. Poderes, Apostillas, Traducciones, Autorizaciones de Viaje, Affidavit."/>
     <meta name="keywords" content="notaria en new york, notaria en queens new york, notario publico en queens new york, notary public in queens new york, notaria publica cerca de mi, notarizar documentos en new york, notarizar documentos en queens new york, apostillar documentos en new york, poderes en queens new york, apostillas, carta poder, notario" />
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta property="og:url"                content="{{route('web.index')}}" />
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="Notaría Latina - Notario Público en Queens New York." />
@@ -20,6 +22,59 @@
     <meta property="og:image"              content="{{asset('img/IMG-NOTARIA-02.jpg')}}" />
     
     <meta name="google-site-verification" content="dJnD6aMr-q5ldI-YRk2UM1KC0A8GEBUok__9ZpS0CiQ" />
+
+    <script type="text/javascript">
+      function callbackThen(response){
+          // read HTTP status
+          console.log(response.status);
+          // read Promise object
+          response.json().then(function(data){
+            if(data.success && data.score > 0.5){
+              console.log(data);
+            } else {
+              document.getElementById('formlead').addEventListener('submit', function (event) {
+                event.preventDefault();
+                console.log('recaptcha error. Stop form submission!');
+              });
+            }
+          });
+      }
+  
+      function callbackCatch(error){
+          console.error('Error:', error)
+      }
+      </script>
+  
+  <script id="scriptrecaptcha"></script>
+  <script>
+      setTimeout(() => {
+         document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
+          //console.log('cargando script recaptcha...');
+      }, 3000);
+  
+      setTimeout(() => {
+          var csrfToken = document.head.querySelector('meta[name="csrf-token"]');
+          grecaptcha.ready(function() {
+              grecaptcha.execute('6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8', {action: 'homepage'}).then(function(token) {
+                      
+              fetch('/biscolab-recaptcha/validate?token=' + token, {
+                  headers: {
+                      "X-Requested-With": "XMLHttpRequest",
+                      "X-CSRF-TOKEN": csrfToken.content
+                  }
+              })
+              .then(function(response) {
+                  callbackThen(response)
+              })
+              .catch(function(err) {
+                  callbackCatch(err)
+              });
+                  });
+              });
+              //console.log('ejecutando codigo del recaptcha...');
+      }, 3500);
+  </script>
+
     <style>
       @media screen and (max-width: 580px){
         #titleTraducciones{
