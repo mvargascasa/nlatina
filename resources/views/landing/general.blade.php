@@ -226,7 +226,7 @@
 <section class="row justify-content-md-center py-4">
 @if($service=='General')
     <div class="col-12 text-center py-4">
-        <h2 class="font-italic font-weight-bold">Nuestros Servicios</h2>
+        <h2 class="font-italic font-weight-bold">Nuestros Servicios en {{ $oficina }}</h2>
         <hr class="hrb">
       </div>
   
