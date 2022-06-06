@@ -86,14 +86,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 <?php };// fin de if url localhost ?>
 <style>
     /*iframe{ width: 250px !important;    } */
-    html, body {
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-    }
-    #iconcall {
-        animation: wiggle 3s linear infinite;
-    }
-
+    html, body {max-width: 100% !important;overflow-x: hidden !important;}
+    #iconcall {animation: wiggle 3s linear infinite;}
+    .grecaptcha-badge { visibility: hidden; }
     /* Keyframes */
     @keyframes wiggle {
         0%, 7% {transform: rotateZ(0);}

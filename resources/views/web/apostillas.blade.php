@@ -10,6 +10,60 @@
 <meta property="og:description"        content="Autentificamos sus documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos." />
 <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
+<script type="text/javascript">
+  function callbackThen(response){
+      // read HTTP status
+      console.log(response.status);
+      // read Promise object
+      response.json().then(function(data){
+        if(data.success && data.score > 0.5){
+          console.log(data);
+        } else {
+          document.getElementById('formlead').addEventListener('submit', function (event) {
+            event.preventDefault();
+            console.log('recaptcha error. Stop form submission!');
+          });
+        }
+      });
+  }
+
+  function callbackCatch(error){
+      console.error('Error:', error)
+  }
+  </script>
+
+<script id="scriptrecaptcha"></script>
+<script>
+  setTimeout(() => {
+     document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
+      //console.log('cargando script recaptcha...');
+  }, 3000);
+
+  setTimeout(() => {
+      var csrfToken = document.head.querySelector('meta[name="csrf-token"]');
+      grecaptcha.ready(function() {
+          grecaptcha.execute('6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8', {action: 'homepage'}).then(function(token) {
+                  
+          fetch('/biscolab-recaptcha/validate?token=' + token, {
+              headers: {
+                  "X-Requested-With": "XMLHttpRequest",
+                  "X-CSRF-TOKEN": csrfToken.content
+              }
+          })
+          .then(function(response) {
+              callbackThen(response)
+          })
+          .catch(function(err) {
+              callbackCatch(err)
+          });
+              });
+          });
+          //console.log('ejecutando codigo del recaptcha...');
+  }, 3500);
+</script>
+
 @endsection
 @section('phoneNumberHidden', '+18007428602')
 @section('phoneNumber', '800-742-8602')
