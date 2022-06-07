@@ -42,51 +42,52 @@ class LandingController extends Controller
         // falta capturar URL que solicita
 
         //$pais = $this->getCodPais($request->get('cod_pais'));
-        
-        $interest = $request->interest ?? 'General';
-        $sendoffices = '';
-        if ($interest == 'General')             $sendoffices = ',newyork@notarialatina.com';
-        if ($interest == 'Landing New York')    $sendoffices = ',newyork@notarialatina.com';
-        if ($interest == 'Landing New Jersey')  $sendoffices = ',newjersey@notarialatina.com';
-        if ($interest == 'Landing Florida')     $sendoffices = ',florida@notarialatina.com';
-
-        if(isset($request->aaa) && isset($request->bbb) && isset($request->ddd)){
-
-            $message = "<br><strong>Nuevo Lead Landing</strong>
-            <br> Nombre: ". strip_tags($request->aaa)."
-            <br> Telef: ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
-            <br> Interes: ".strip_tags($interest)."
-            <br> Mensaje: ".strip_tags($request->ddd)."
-            <br> Fuente: GoogleAds ";
-
-            //<br> País: " . strip_tags($pais)."
-
-            $header='';
-            $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
-            $header .= "MIME-Version: 1.0\r\n";
-            $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);  
-            mail('sebas31051999@gmail.com','Lead Landing: '.strip_tags($request->aaa), $message, $header);  
+        if(!Str::contains($request->message, 'https')){
+            $interest = $request->interest ?? 'General';
+            $sendoffices = '';
+            if ($interest == 'General')             $sendoffices = ',newyork@notarialatina.com';
+            if ($interest == 'Landing New York')    $sendoffices = ',newyork@notarialatina.com';
+            if ($interest == 'Landing New Jersey')  $sendoffices = ',newjersey@notarialatina.com';
+            if ($interest == 'Landing Florida')     $sendoffices = ',florida@notarialatina.com';
+    
+            if(isset($request->aaa) && isset($request->bbb) && isset($request->ddd)){
+    
+                $message = "<br><strong>Nuevo Lead Landing</strong>
+                <br> Nombre: ". strip_tags($request->aaa)."
+                <br> Telef: ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
+                <br> Interes: ".strip_tags($interest)."
+                <br> Mensaje: ".strip_tags($request->ddd)."
+                <br> Fuente: GoogleAds ";
+    
+                //<br> País: " . strip_tags($pais)."
+    
+                $header='';
+                $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
+                $header .= "MIME-Version: 1.0\r\n";
+                $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);  
+                mail('sebas31051999@gmail.com','Lead Landing: '.strip_tags($request->aaa), $message, $header);  
+            }
+    
+            if(isset($request->fname)){
+    
+                $message = "<br><strong>Nuevo Lead Landing</strong>
+                <br> Nombre: ". strip_tags($request->fname)."
+                <br> Telef: ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->tlf)."
+                <br> Interes: ".strip_tags($interest)."
+                <br> Mensaje: ".strip_tags($request->message)."
+                <br> Fuente: GoogleAds ";
+    
+                // <br> País: ". strip_tags($pais)."
+            
+                $header='';
+                $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
+                $header .= "MIME-Version: 1.0\r\n";
+                $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
+                mail('sebas31051999@gmail.com','Lead Landing: '.strip_tags($request->aaa), $message, $header);      
+            }
         }
-
-        if(isset($request->fname)){
-            $message = "<br><strong>Nuevo Lead Landing</strong>
-            <br> Nombre: ". strip_tags($request->fname)."
-            <br> Telef: ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->tlf)."
-            <br> Interes: ".strip_tags($interest)."
-            <br> Mensaje: ".strip_tags($request->message)."
-            <br> Fuente: GoogleAds ";
-
-            // <br> País: ". strip_tags($pais)."
-        
-            $header='';
-            $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
-            $header .= "MIME-Version: 1.0\r\n";
-            $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
-            mail('sebas31051999@gmail.com','Lead Landing: '.strip_tags($request->aaa), $message, $header);      
-        }
-
         return view('landing.thank');
     }
 
