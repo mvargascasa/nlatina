@@ -78,9 +78,9 @@ class LandingController extends Controller
             if(isset($request->fname)){
     
                 $message = "<br><strong>Nuevo Lead</strong>
-                <br> Nombre: ". strip_tags($request->fname)."
+                <br> Nombre: ". strip_tags($request->fname)." ". strip_tags($request->lname) . " 
                 <br> País: " . strip_tags($country) . "
-                <br> Telef: ". strip_tags($request->cod_country) . " " . strip_tags($request->tlf)."
+                <br> Telef: ". strip_tags($request->cod) . " " . strip_tags($request->tlf)."
                 <br> Interes: ".strip_tags($interest)."
                 <br> Mensaje: ".strip_tags($request->message)."
                 <br> Fuente: GoogleAds 
