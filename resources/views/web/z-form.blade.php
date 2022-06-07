@@ -11,14 +11,41 @@
     {!! Form::text('lname', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
-<div class="form-group">
+{{-- <div class="form-group">
     {!! Form::label('nation', 'Nacionalidad:') !!}
     {!! Form::text('nation', null, ['class' => 'form-control', 'required']) !!}
-</div>
+</div> --}}
 
 <div class="form-group">
-    {!! Form::label('tlf', 'Teléfono') !!}
-    {!! Form::number('tlf', null, ['class' => 'form-control','rows' => '2', 'required']) !!}
+    {!! Form::label('country', 'País de residencia') !!}
+    {!! Form::select('country', [
+        null => 'Seleccione',
+        '+54' => 'Argentina',
+        '+591' => 'Bolivia',
+        '+57' => 'Colombia',
+        '+506' => 'Costa Rica',
+        '+593' => 'Ecuador',
+        '+503' => 'El Salvador',
+        '+34' => 'España',
+        '+1' => 'Estados Unidos',
+        '+502' => 'Guatemala',
+        '+504' => 'Honduras',
+        '+52' => 'México',
+        '+505' => 'Nicaragua',
+        '+507' => 'Panamá',
+        '+595' => 'Paraguay',
+        '+51' => 'Perú',
+        '+1 787' => 'Puerto Rico',
+        '+1 809' => 'República Dominicana',
+        '+598' => 'Uruguay',
+        '+58' => 'Venezuela'
+    ], null, ['class' => 'form-control custom-select', 'id' => 'sel_country', 'required']) !!}
+</div>
+
+{!! Form::label('tlf', 'Teléfono') !!}
+<div class="form-group d-flex">
+    {!! Form::text('cod', null, ['class' => 'form-control', 'style' => 'border-radius: 5px 0px 0px 5px; width: 25%; background-color: #ffffff', 'id' => 'cod_country', 'readonly']) !!}
+    {!! Form::number('tlf', null, ['class' => 'form-control','rows' => '2', 'style' => 'border-radius: 0px 5px 5px 0px; width: 100%', 'required']) !!}
 </div>
 
 <div class="form-group">
