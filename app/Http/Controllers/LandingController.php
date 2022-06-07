@@ -58,7 +58,7 @@ class LandingController extends Controller
                 <br> Interes: ".strip_tags($interest)."
                 <br> Mensaje: ".strip_tags($request->ddd)."
                 <br> Fuente: GoogleAds 
-                <br> Página: " . $request->url() . " "; 
+                <br> Página: " . url()->previous() . " "; 
                 
     
                 //<br> País: " . strip_tags($pais)."
@@ -79,7 +79,7 @@ class LandingController extends Controller
                 <br> Interes: ".strip_tags($interest)."
                 <br> Mensaje: ".strip_tags($request->message)."
                 <br> Fuente: GoogleAds 
-                <br> Página: " . $request->url() . "
+                <br> Página: " . url()->previous() . "
                 ";
     
                 // <br> País: ". strip_tags($pais)."
