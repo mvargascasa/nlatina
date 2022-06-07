@@ -380,12 +380,12 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     }, 3000);
 
     //validacion para formularios con datos de paginas web
-    // document.getElementById('formlead').addEventListener('submit', (e) => {
-    //     var message = document.getElementById('message').value;
-    //     if(message.includes('https')){
-    //         e.preventDefault();
-    //     }
-    // })
+    document.getElementById('formlead').addEventListener('submit', (e) => {
+        var message = document.getElementById('message').value;
+        if(message.includes('https')){
+            e.preventDefault();
+        }
+    })
 
     //CARGAR EL SCRIPT DE PLUGIN DE FACEBOOK
     var scriptFacebookPlugin = document.createElement('script');

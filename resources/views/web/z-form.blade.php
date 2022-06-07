@@ -3,33 +3,34 @@
 
 <div class="form-group">
     {!! Form::label('fname', 'Nombres') !!}
-    {!! Form::text('fname', null, ['class' => 'form-control']) !!}
+    {!! Form::text('fname', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('lname', 'Apellidos') !!}
-    {!! Form::text('lname', null, ['class' => 'form-control']) !!}
+    {!! Form::text('lname', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('nation', 'Nacionalidad:') !!}
-    {!! Form::text('nation', null, ['class' => 'form-control']) !!}
+    {!! Form::text('nation', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('tlf', 'Teléfono') !!}
-    {!! Form::text('tlf', null, ['class' => 'form-control','rows' => '2']) !!}
+    {!! Form::number('tlf', null, ['class' => 'form-control','rows' => '2', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('email', 'Email') !!}
-    {!! Form::text('email', null, ['class' => 'form-control','rows' => '2']) !!}
+    {!! Form::text('email', null, ['class' => 'form-control','rows' => '2', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('service', 'Servicio') !!}
     {!! Form::select('service',
-                                ['Apostillas'=>'Apostillas',
+                                [null => 'Seleccione',
+                                'Apostillas'=>'Apostillas',
                                 'Poderes'=>'Poderes',
                                 'Traducciones'=>'Traducciones',
                                 'Affidavit'=>'Affidavit',
@@ -41,12 +42,12 @@
                                 'Poderes Especiales'=>'Poderes Especiales',
                                 'Revocatorias'=>'Revocatorias',
                                 'Testamentos'=>'Testamentos',]
-    ,    null,    ['class' => 'form-control custom-select']) !!}
+    ,    null,    ['class' => 'form-control custom-select', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('message', 'Mensaje') !!}
-    {!! Form::textarea('message', null, ['class' => 'form-control',  'maxlength'=>"100",'rows' => '2', 'id' => 'message']) !!}
+    {!! Form::textarea('message', null, ['class' => 'form-control',  'maxlength'=>"100",'rows' => '2', 'id' => 'message', 'required']) !!}
 </div>
 
 <div class="form-group">

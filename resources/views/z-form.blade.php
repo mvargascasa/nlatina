@@ -17,13 +17,14 @@
 
 <div class="form-group">
     {!! Form::label('email', 'Email:') !!}
-    {!! Form::email('email', null, ['class' => 'form-control','rows' => '2']) !!}
+    {!! Form::email('email', null, ['class' => 'form-control','rows' => '2', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('service', 'Servicio:') !!}
     {!! Form::select('service',
-                                ['Apostilla'=>'Apostilla',
+                                [null => 'Seleccione',
+                                'Apostilla'=>'Apostilla',
                                 'Poder Notariado'=>'Poder Notariado',
                                 'Traducción'=>'Traducción',
                                 'Affidavit'=>'Affidavit',
@@ -35,7 +36,7 @@
                                 'Revocatorias'=>'Revocatorias',
                                 'Testamentos'=>'Testamentos',
                                 'Otro'=>'Otro']
-    ,    null,    ['class' => 'form-control custom-select']) !!}
+    ,    null,    ['class' => 'form-control custom-select', 'required']) !!}
 </div>
 
 <div class="form-group">
