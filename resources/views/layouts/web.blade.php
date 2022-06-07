@@ -379,6 +379,13 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         document.getElementById('iconcall').style.display = "block";
     }, 3000);
 
+    //mostrando codigo de pais al cambiar el select
+    document.getElementById('sel_country').addEventListener('change', () => {
+        var country     = document.getElementById('sel_country');
+        var cod_country = document.getElementById('cod_country');
+        cod_country.value = country.value;
+    });
+
     //validacion para formularios con datos de paginas web
     document.getElementById('formlead').addEventListener('submit', (e) => {
         var message = document.getElementById('message').value;

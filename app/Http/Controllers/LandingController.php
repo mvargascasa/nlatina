@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Traits\GetCountryByCodTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
@@ -9,6 +10,7 @@ use Illuminate\Support\Str;
 
 class LandingController extends Controller
 {
+    use GetCountryByCodTrait;
 
     public function apostilla(){
         $data['oficina'] = 'New York';
@@ -39,6 +41,8 @@ class LandingController extends Controller
 
     public function thankpost(Request $request)
     {
+
+        $country = $this->getPaisByCodigo($request->country);
         // falta capturar URL que solicita
 
         //$pais = $this->getCodPais($request->get('cod_pais'));
@@ -67,7 +71,7 @@ class LandingController extends Controller
                 $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);  
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead: '.strip_tags($request->aaa), $message, $header);  
             }
     
@@ -75,7 +79,8 @@ class LandingController extends Controller
     
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br> Nombre: ". strip_tags($request->fname)."
-                <br> Telef: ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->tlf)."
+                <br> País: " . strip_tags($country) . "
+                <br> Telef: ". strip_tags($request->cod_country) . " " . strip_tags($request->tlf)."
                 <br> Interes: ".strip_tags($interest)."
                 <br> Mensaje: ".strip_tags($request->message)."
                 <br> Fuente: GoogleAds 
@@ -88,7 +93,7 @@ class LandingController extends Controller
                 $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead: '.strip_tags($request->aaa), $message, $header);      
             }
         }
