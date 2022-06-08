@@ -17,38 +17,19 @@
     <meta property="og:image" content="https://notarialatina.com/img/partners/ogimg-partners.jpg"/>
 
     <style>
-        /*QUITAR LA ETIQUETA DE TELEFONO DE LA ESQUINA SUPERIOR DERECHA EN LA PAGINA DE LOS PARTNERS*/
-        #etiquetaPhone{
-            display: none;
-        }
-
-        .form{
-            margin-left: 20%;
-            margin-right: 20%;
-            margin-top: 5%;
-            margin-bottom: 10px;
-        }
-
+        /* ocultar etiqueta del numero que hace la llamada */
+        #etiquetaPhone{display: none;}
+        /* ocultar el icono de llamada en la parte inferior derecha */
+        #iconcall{display:none}
+        /* ocultar la tarjeta de wpp */
+        #divwpp{display:none}
+        .form{margin-left: 20%;margin-right: 20%;margin-top: 5%;margin-bottom: 10px;}
         @media screen and (max-width: 860px){
-            .countrysearch{
-                margin-left: 0% !important;
-                font-size: 13px;
-            }
-
-            .form{
-                margin-left: 0%;
-                margin-right: 0%;
-            }
-
-            .titulo{
-                font-size: 25px !important;
-            }
-            #rowTxt{
-                padding-top: 15px !important;  
-            }
-            #rowTxt h5{
-                font-size: 16px;  
-            }
+            .countrysearch{margin-left: 0% !important;font-size: 13px;}
+            .form{margin-left: 0%;margin-right: 0%;}
+            .titulo{font-size: 25px !important;}
+            #rowTxt{padding-top: 15px !important;  }
+            #rowTxt h5{font-size: 16px;  }
             #rowTxt p{
                 font-size: 15px; 
             }

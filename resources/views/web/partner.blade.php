@@ -20,9 +20,11 @@
 @endphp
     <title>Abogado en {{ Str::ucfirst($partner->city)}}, {{ Str::ucfirst($partner->state)}} - #{{ $partner->id }} | Notaria Latina</title>
     <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-        }
+        body{font-family: Arial, Helvetica, sans-serif;}
+        /* ocultar el icono de llamada en la parte inferior derecha */
+        #iconcall{display:none}
+        /* ocultar la tarjeta de wpp */
+        #divwpp{display:none}
         #svgwpp{
             display: none;
         }

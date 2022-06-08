@@ -18,6 +18,10 @@
     <meta property="og:locale" content="es"/>
     <meta property="og:image" content="https://notarialatina.com/img/partners/ogimg-partners.jpg"/>
     <style>
+        /* ocultar el icono de llamada en la parte inferior derecha */
+        #iconcall{display:none}
+        /* ocultar la tarjeta de wpp */
+        #divwpp{display:none}
          #etiquetaPhone{
             display: none;
         }
