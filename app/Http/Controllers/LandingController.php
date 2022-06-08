@@ -41,7 +41,9 @@ class LandingController extends Controller
 
     public function thankpost(Request $request)
     {
-        $country = $this->getPaisByCodigo($request->country);
+        if(isset($request->country)){
+            $country = $this->getPaisByCodigo($request->country);
+        }
         // falta capturar URL que solicita
 
         //$pais = $this->getCodPais($request->get('cod_pais'));
@@ -74,7 +76,7 @@ class LandingController extends Controller
                 mail('sebas31051999@gmail.com','Lead: '.strip_tags($request->aaa), $message, $header);  
             }
     
-            if(isset($request->fname)){
+            if(isset($request->fname) && isset($request->cod)){
     
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br> Nombre: ". strip_tags($request->fname)." ". strip_tags($request->lname) . " 
