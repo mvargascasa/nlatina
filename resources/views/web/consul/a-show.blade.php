@@ -108,7 +108,7 @@
                     </div>
                     <div class="col-12 col-sm-6 mb-3 text-center border-left">
                         <p style="font-weight: 500">Solicitar trámite</p>
-                        <button class="btn btn-outline-danger mb-3" style="border-radius: 0px !important;" data-toggle="modal" data-target="#exampleModal">Iniciar <i id="emailicon" class="fas fa-envelope"></i></button>
+                        <button class="btn btn-outline-danger mb-3" style="border-radius: 0px !important;" data-toggle="modal" data-target="#exampleModal">Iniciar Proceso <i id="emailicon" class="fas fa-envelope"></i></button>
                     </div>
                 </div>
                 {{-- <p><b>Contáctenos:</b> <a class="btn" style="background-color: #122944; color: #ffffff" href="tel:+17187665041">+1 718 766 5041 📞</a></p> --}}
