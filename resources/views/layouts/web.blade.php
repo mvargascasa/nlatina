@@ -357,10 +357,10 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div> --}}
         {{--+13479739888--}}
 
-        <div id="iconcall" style="padding: 11px 15px 11px 15px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 50px; right: 10px;background-color: #122944; border: 2px solid #ffffff;display: none">
+        <div id="iconcall" style="padding: 10px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 50px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
             <a href="tel:@yield('phoneNumberHidden')">
-                {{-- <img width="40" height="40" class="lazy img-fluid" data-src="{{ asset('img/notaria-latina-newyork.jpg') }}" alt="Notaria Latina en Queens New York"> --}}
-                <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i>
+                <img width="25" height="25" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina en Queens New York">
+                {{-- <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i> --}}
             </a>
         </div>
 </footer>
@@ -375,9 +375,9 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     var button = document.querySelector('.button');
     if(button)button.disabled = true;
 
-    setTimeout(() => {
-        document.getElementById('iconcall').style.display = "block";
-    }, 3000);
+    // setTimeout(() => {
+    //     document.getElementById('iconcall').style.display = "block";
+    // }, 3000);
 
     //mostrando codigo de pais al cambiar el select
     var country = document.getElementById('sel_country');
