@@ -150,13 +150,14 @@
                 @endphp
                 @foreach ($printposts as $lpost)
                     <div class="col-12 col-md-4">
-                        <div class="card my-2">
+                        <div class="card my-2 h-100">
                             <a href="{{route('post.slug',$lpost->slug)}}" class="stretched-link">
-                                <img data-src="{{url('uploads/'.$lpost->imgdir)}}" class="lazy card-img-top" alt="Consulado de {{ $consul->country }} en Estados Unidos" style="object-fit: cover;height: 150px !important;">
+                                <img data-src="https://notarialatina.com/uploads/{{$lpost->imgdir}}" class="lazy card-img-top" alt="Consulado de {{ $consul->country }} en Estados Unidos" style="object-fit: cover;height: 150px !important;">
+                                {{-- {{url('uploads/'.$lpost->imgdir)}} --}}
                             </a>
                             <div class="card-body p-2" style="position:relative;">
-                            <span class="d-block text-muted font-weight-bold text-truncate "
-                                    style="font-size:1rem">{{$lpost->name}}</span>
+                            <span class="d-block text-muted font-weight-bold"
+                                    style="font-size:15px">{{$lpost->name}}</span>
                             <span class="d-block text-muted text-truncate">
                                 <?php echo strip_tags(substr($lpost->body,0,100))  ?>
                             </span>
