@@ -25,7 +25,8 @@ class LandingController extends Controller
         $data['dirmap']  = 'img/map.jpg';
         $data['tlfhidden'] = '17187665041';
         $data['tlfshow'] = '718 766-5041';
-        $data['landing'] = "Apostillas"; 
+        $data['landing'] = "Apostillas";
+        $data['tlfwpp'] = '13479739888'; 
         return view('landing.general',$data);
     }
 
