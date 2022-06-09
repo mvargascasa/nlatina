@@ -140,7 +140,9 @@ class LandingController extends Controller
                             <br> País: " .strip_tags($request->pais)."
                             <br> Interes: ".  strip_tags($interest)."
                             <br> Mensaje: ".strip_tags($request->ddd)." 
-                            <br> Fuente: GoogleAds ";
+                            <br> Fuente: GoogleAds 
+                            <br> Página: " . url()->previous() . "
+                            ";
                         
                 $header='';
                 $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
