@@ -751,7 +751,7 @@ class WebController extends Controller
                 case 'apostillar-certificado-de-nacimiento-new-jersey':
                     $data['description'] = 'Certificados de Nacimiento';
                     $data['metadescription'] = "Consulte por nuestro servicio de apostilla en certificados de nacimiento en New Jersey 🗽 Lo asesoramos de una manera segura. Solicítelo ahora! ✅";
-                    $data['keywords'] = "que es un certificado de nacimiento, apostillar certificado de nacimiento en new jersey, apostillar acta de nacimiento en new jersey, apostillar partida de nacimiento en new jersey, donde apostillar certificado de nacimiento en new jersey, donde puedo realizar un certificado de nacimiento en new jersey, como apostillar un certificado de nacimiento en new jersey, apostillar certificado de nacimiento nj";
+                    $data['keywords'] = "certificados en estados unidos, certificado de nacimiento, acta de nacimiento, que es un certificado de nacimiento, apostillar certificado de nacimiento en new jersey, apostillar acta de nacimiento en new jersey, apostillar partida de nacimiento en new jersey, donde apostillar certificado de nacimiento en new jersey, donde puedo realizar un certificado de nacimiento en new jersey, como apostillar un certificado de nacimiento en new jersey, apostillar certificado de nacimiento nj";
                     $data['content'] = ['¿Qué es un certificado de nacimiento?','¿Qué información contiene el certificado de nacimiento?','¿Para qué sirve la partida de nacimiento?','¿Donde puedo obtener un certificado de nacimiento?'];
                     $data['body'] = "<ul><li><h2>¿Qué es un certificado de nacimiento?</h2></li></ul>
                     <p>El certificado o acta de nacimiento es un documento emitido por el Registro Civil o Consulado respectivo, en el cual se da prueba del lugar, fecha
@@ -774,7 +774,7 @@ class WebController extends Controller
                 case 'apostillar-reporte-consular-new-jersey':
                     $data['description'] = 'Reporte Consular (CRBA)';
                     $data['metadescription'] = "Consulte por nuestros servicios de apostilla en reporte consular (CRBA) en New Jersey 🗽 Lo asesoramos de una manera segura. Solicítelo aquí! ✅";
-                    $data['keywords'] = " apostillar crba new jersey, apostillar reporte consular en new jersey, donde puedo apostillar un reporte consular en new jersey, donde puedo apostillar un reporte consular de nacimiento en new jersey, donde solicitar el reporte consular en new jersey";
+                    $data['keywords'] = "reporte consular, reporte consular new jersey, crba estados unidos, apostillar crba new jersey, apostillar reporte consular en new jersey, donde puedo apostillar un reporte consular en new jersey, donde puedo apostillar un reporte consular de nacimiento en new jersey, donde solicitar el reporte consular en new jersey";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-matrimonio-new-jersey':
