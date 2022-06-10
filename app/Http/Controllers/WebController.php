@@ -213,7 +213,7 @@ class WebController extends Controller
         $data['address'] = '67-03 Roosevelt Avenue, Woodside Queens, NY 11377';
         $data['location'] = 'https://g.page/notariapublicalatina';
         $data['metadescription'] = "Notarizamos todo tipo de documentos en New York tales como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✔";
-        $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york';
+        $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york, apostille new york';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-york':
@@ -671,7 +671,7 @@ class WebController extends Controller
             $data['urlmap'] = 'https://goo.gl/maps/ovKfQSvTmA5SBqqF6';
             $data['imgurlmap'] = "img/oficinas/maps-ny.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-ny-mobile.webp";
-            $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york';
+            $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york, apostille new york';
 
             return view('web.oficina', compact('data'));
         }
