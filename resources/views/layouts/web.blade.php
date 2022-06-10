@@ -433,9 +433,9 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         }
     }
 
-    var script3 = document.createElement("script");
 
     function downloadJSAtOnload() {
+        var script3 = document.createElement("script");
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
         document.body.appendChild(script3);
     }
@@ -445,7 +445,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         //console.log('cargando script de facebook snippet...');
     }, 3000);
 
-    var timeToLoadJquery = 1000;
+    var timeToLoadJquery = 1500;
     if(path.match('/newjersey') || path.match('/newyork') || path.match('/consulado')) timeToLoadJquery = 3000;
 
     setTimeout(function () {
