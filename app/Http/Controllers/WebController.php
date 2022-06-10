@@ -1644,6 +1644,10 @@ class WebController extends Controller
     //FUNCION PARA ENVIAR SOLICITUD DE APOSTILLA CON ADJUNTO
     public function sendEmailApostille(Request $request){
 
+        $codigo_pais = $this->getCodByPais($request->cod_pais);
+
+        //return $codigo_pais;
+
         $from_email		 = "apostillas@notarialatina.com"; //from mail, sender email address
         $recipient_email = 'info@notarialatina.com,hserrano@notarialatina.com'; //recipient email address info@notarialatina.com,hserrano@notarialatina.com
         
@@ -1651,9 +1655,9 @@ class WebController extends Controller
         $message = "<br><strong><h3>Información del cliente</h3></strong>
         <br><b>Nombre:</b> " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
         <br><b>País de residencia:</b> " . strip_tags($request->cod_pais) . "
-        <br><b>Teléfono:</b> " . strip_tags($request->phone) . "
+        <br><b>Teléfono:</b> " . $codigo_pais ." " . strip_tags($request->phone) . "
         <br><b>Email:</b> " . strip_tags($request->email) . "
-        <br><b>Página proveniente: </b> Oficina " . strip_tags($request->from) . "
+        <br><b>Página proveniente: </b> " . url()->previous() . "
         <br><b>Documento a Apostillar:</b> " . strip_tags($request->document) . "
         <br><b>Mensaje:</b> " . strip_tags($request->mensaje) . "
         "; //body of the email
@@ -1712,11 +1716,11 @@ class WebController extends Controller
         }
         
         if($request->file('adjunto') != null){
-            $sentMailResult = mail($recipient_email, $subject, $body, $headers);
-            mail('sebas31051999@gmail.com', $subject, $body, $headers);
+            //$sentMailResult = mail($recipient_email, $subject, $body, $headers);
+            $sentMailResult = mail('sebas31051999@gmail.com', $subject, $body, $headers);
         } else {
-            $sentMailResult = mail($recipient_email, $subject, $message, $headers);
-            mail('sebas31051999@gmail.com', $subject, $message, $headers);
+            //$sentMailResult = mail($recipient_email, $subject, $message, $headers);
+            $sentMailResult = mail('sebas31051999@gmail.com', $subject, $message, $headers);
         }
 
         if($sentMailResult){

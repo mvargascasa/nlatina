@@ -199,7 +199,7 @@
             echo "
                 <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
                 <script>
-                    swal('Algo salió mal!', 'Intenta enviando nuevamente', 'success');
+                    swal('Algo salió mal!', 'Intenta enviando nuevamente', 'error');
                 </script>
                 ";    
         @endphp

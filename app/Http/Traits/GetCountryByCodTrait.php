@@ -26,7 +26,7 @@ trait GetCountryByCodTrait{
             case '+598': $pais = "Uruguay"; break;
             case '+58': $pais = "Venezuela"; break;
             default:
-                # code...
+                $pais = "undefined";
                 break;
         }
         return $pais;
