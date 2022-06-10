@@ -434,9 +434,9 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         }
     }
 
+    var script3 = document.createElement("script");
 
     function downloadJSAtOnload() {
-        var script3 = document.createElement("script");
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
         document.body.appendChild(script3);
         console.log('cargando script de jquery');
