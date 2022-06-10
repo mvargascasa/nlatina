@@ -213,7 +213,7 @@ class WebController extends Controller
         $data['address'] = '67-03 Roosevelt Avenue, Woodside Queens, NY 11377';
         $data['location'] = 'https://g.page/notariapublicalatina';
         $data['metadescription'] = "Notarizamos todo tipo de documentos en New York tales como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✔";
-        $data['keywords'] = 'notaria en new york, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york';
+        $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-york':
@@ -671,7 +671,7 @@ class WebController extends Controller
             $data['urlmap'] = 'https://goo.gl/maps/ovKfQSvTmA5SBqqF6';
             $data['imgurlmap'] = "img/oficinas/maps-ny.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-ny-mobile.webp";
-            $data['keywords'] = 'notaria en new york, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york';
+            $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york';
 
             return view('web.oficina', compact('data'));
         }
@@ -685,7 +685,7 @@ class WebController extends Controller
         $data['address'] = '1146 East Jersey St Elizabeth, NJ 07201';
         $data['location'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
         $data['metadescription'] = "Notarizamos todo tipo de documentos en New Jersey 🗽 como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✅";
-        $data['keywords'] = 'notaria en new jersey, notaria publica en new jersey, notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille nj';
+        $data['keywords'] = 'notaria latina, notaria new jersey, notaria nj, notaria elizabeth new jersey, notaria en new jersey, notaria publica en new jersey, notaria latina new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille nj';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-jersey':
@@ -1151,7 +1151,7 @@ class WebController extends Controller
             $data['urlmap'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
             $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
-            $data['keywords'] = 'notaria en new jersey, notaria publica en new jersey, notaria latina en elizabeth new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille nj';
+            $data['keywords'] = 'notaria latina, notaria new jersey, notaria nj, notaria elizabeth new jersey, notaria en new jersey, notaria publica en new jersey, notaria latina new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille nj';
     
             return view('web.oficina', compact('data'));
         }
@@ -1164,8 +1164,8 @@ class WebController extends Controller
         $data['telfShow'] = '305-600-3290';
         $data['address'] = '2104 N University Dr, Sunrise Miami, FL 33322';
         $data['location'] = 'https://g.page/r/CeRrwPx_W2-xEAE';
-        $data['metadescription'] = "";
-        $data['keywords'] = 'tramitar documentos florida, certificar documentos florida, traducir documentos florida, apostillar cerca de mi, apostille near me, apostille florida, apostillar florida, apostillar documentos rapido florida, apostillar documentos florida, donde puedo apostillar un documento, donde apostillar en florida, apostillado de documentos, fast document apostille florida, apostillar documentos fl, tramitar documentos fl, notarizar documentos fl';
+        $data['metadescription'] = "Realizamos Poderes Generales y Especiales, Apostilla y Traducción de todo tipo de documentos en Florida. ¿Desea saber más? ¡Contáctenos ahora! ✅";
+        $data['keywords'] = 'notaria latina, notaria florida, notario cerca de mi, notaria en florida, notaria fl, notaria sunrise, notaria latina sunrise, notaria en sunrise florida, notaria latina en sunrise florida, notaria cerca de mi, notario publico en florida, notarizar documentos en sunrise florida, notario publico cerca de mi, apostillar documentos en sunrise florida, donde puedo tramitar documentos en florida';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-florida':
@@ -1443,8 +1443,8 @@ class WebController extends Controller
             $data['urlmap'] = "https://g.page/r/CeRrwPx_W2-xEAE";
             $data['imgurlmap'] = "img/oficinas/maps-fl-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-fl-mobile-2.webp";
-            $data['metadescription'] .= 'Apostillamos todo tipo de documentos en Florida, de una manera rápida y segura';
-            $data['keywords'] = 'notaria en florida, notarizar en florida, notaria cerca de mi, notary near me, apostille near me, apostille florida, carta poder en florida, traduccion en florida, apostillar documentos en florida, affidavít en florida, travel authorization en florida, certificar documentos en florida';
+            $data['metadescription'] = 'Realizamos Poderes Generales y Especiales, Apostilla y Traducción de todo tipo de documentos en Florida. ¿Desea saber más? ¡Contáctenos ahora! ✅';
+            $data['keywords'] = 'notaria latina, notaria florida, notario cerca de mi, notaria en florida, notaria fl, notaria sunrise, notaria latina sunrise, notaria en sunrise florida, notaria latina en sunrise florida, notaria cerca de mi, notario publico en florida, notarizar documentos en sunrise florida, notario publico cerca de mi, apostillar documentos en sunrise florida, donde puedo tramitar documentos en florida';
 
             return view('web.oficina', compact('data'));
         }
