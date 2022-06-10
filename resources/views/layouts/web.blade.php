@@ -33,7 +33,7 @@ if(strpos($actual_link, 'localhost') === false){
 
     setTimeout(function(){
         document.getElementById('scriptanalytics').src = 'https://www.googletagmanager.com/gtag/js?id=UA-124437679-3';
-        // console.log('caargando script de analytics...');
+        console.log('caargando script de analytics...');
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -48,6 +48,7 @@ if(strpos($actual_link, 'localhost') === false){
 <script>
     setTimeout(() => {
         document.getElementById('analytics_4').src = 'https://www.googletagmanager.com/gtag/js?id=G-TFNJT2W9R9';
+        console.log('cargando script de analytics v4');
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -438,6 +439,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         var script3 = document.createElement("script");
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
         document.body.appendChild(script3);
+        console.log('cargando script de jquery');
     }
 
     setTimeout(function(){
