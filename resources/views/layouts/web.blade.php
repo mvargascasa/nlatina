@@ -44,10 +44,10 @@ if(strpos($actual_link, 'localhost') === false){
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script id="analytics_4" async></script>
+<script id="analytics_4"></script>
 <script>
     setTimeout(() => {
-        document.getElementById('analytics_4').src = "https://www.googletagmanager.com/gtag/js?id=G-TFNJT2W9R9";
+        document.getElementById('analytics_4').src = 'https://www.googletagmanager.com/gtag/js?id=G-TFNJT2W9R9';
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
