@@ -25,7 +25,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 if(strpos($actual_link, 'localhost') === false){
 ?>
   <!-- Global site tag (gtag.js) - Google Analytics  src=https://www.googletagmanager.com/gtag/js?id=UA-124437679-3 -->
-<script id="scriptanalytics"></script>
+<script id="scriptanalytics" defer></script>
 <script>
     var path = window.location.pathname;
     var timeToLoad = 0;
@@ -44,7 +44,7 @@ if(strpos($actual_link, 'localhost') === false){
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script id="analytics_4"></script>
+<script id="analytics_4" defer></script>
 <script>
     setTimeout(() => {
         document.getElementById('analytics_4').src = 'https://www.googletagmanager.com/gtag/js?id=G-TFNJT2W9R9';
