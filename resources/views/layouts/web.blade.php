@@ -117,9 +117,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         from {bottom: 0px;opacity:0;}
         to {opacity:1;}
     }
-    .a-to-call-icon{
-        position: relative !important;
-    }
 </style>
 
   @yield('header')

@@ -138,6 +138,10 @@
         35% {transform: rotateZ(-4deg);}
         40%, 100% {transform: rotateZ(0);}
     }
+    @keyframes jump {
+        from {bottom: 0px;opacity:0;}
+        to {opacity:1;}
+    }
     .grecaptcha-badge { visibility: hidden; }
   </style>
 </head>
@@ -390,7 +394,7 @@
   </div>
 </a>
 
-<div id="divpreguntas" style="position: fixed; bottom: 48px; right: 60px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: block">
+<div id="divpreguntas" style="position: fixed; bottom: 48px; right: 60px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none">
   <div style="position: relative">
       <div style="position: absolute; right: -10px; top: -16px; background-color: #122944; color: #ffffff; padding: 0px 6px 3px 6px; border-radius: 25px; border: 2px solid #ffffff; font-size: 10px; font-weight: 500; cursor: pointer" onclick="document.getElementById('divpreguntas').style.display = 'none'">
           x
@@ -416,6 +420,9 @@
       document.getElementById('dirmap').src = "{{asset($dirmap)}}";
       console.log('ok');
   });
+
+  //mostrando div que va al lado del icono de llamar
+  setTimeout(() => {document.getElementById('divpreguntas').style.display='block';document.getElementById("divpreguntas").style.animation = "jump 1s ease";}, 5000);
 
   // var pais = document.getElementById('pais');
   // var telf = document.getElementById('telf');
