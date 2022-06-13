@@ -258,45 +258,45 @@
           <hr class="hrb">
         </div>
       <div class="col-12 col-sm-12 col-md-4">
+        <a style="text-decoration: none" href="{{route('web.apostillas')}}">
           <div class="serviceBox">
               <h3 class="title">Apostillas</h3>
-              <a class="stretched-link" href="{{route('web.apostillas')}}">
               <div class="service-icon">
-                  <img class="lazy pt-3" data-src="{{asset('img/apostillas.png')}}" width="50" height="65" alt="">
+                  <img class="lazy pt-3" data-src="{{asset('img/apostillas.png')}}" width="50" height="65" alt="Apostillas - Notaria Latina">
               </div>
-              </a>
               <p class="description">
-                  Autentificamos sus documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos.
+                Autentificamos sus documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos.
               </p>
-          </div>
+            </div>
+          </a>
       </div>
 
       <div class="col-12 col-sm-12 col-md-4">
+        <a style="text-decoration: none" href="{{route('web.poderes')}}">
           <div class="serviceBox">
               <h3 class="title">Poderes</h3>
-              <a class="stretched-link" href="{{route('web.poderes')}}">
               <div class="service-icon">
-                  <img class="lazy pt-4" data-src="{{asset('img/poderes.png')}}" width="40" height="65" alt="">
+                  <img class="lazy pt-4" data-src="{{asset('img/poderes.png')}}" width="40" height="65" alt="Poderes - Notaria Latina">
               </div>
-              </a>
               <p class="description">
-                  Gestione sus trámites legales sin estar presente por medio de un apoderado de confianza, una solución para gestionar bienes y trámites importantes.
+                Gestione sus trámites legales sin estar presente por medio de un apoderado de confianza, una solución para gestionar bienes y trámites importantes.
               </p>
-          </div>
+            </div>
+          </a>
       </div>
 
       <div class="col-12 col-sm-12 col-md-4">
+        <a style="text-decoration: none" href="{{route('web.traducciones')}}">
           <div class="serviceBox">
               <h3 class="title">Traducciones</h3>
-              <a class="stretched-link" href="{{route('web.traducciones')}}">
               <div class="service-icon">
-                  <img class="lazy pt-4" data-src="{{asset('img/traducciones.png')}}" width="40" height="70" alt="">
+                  <img class="lazy pt-4" data-src="{{asset('img/traducciones.png')}}" width="40" height="70" alt="Traducciones - Notaria Latina">
               </div>
-              </a>
               <p class="description">
-                  Transcripción de documentos de un idioma a otro diferente, certificados por un notario para ser presentados frente a las entidades que lo soliciten.
+                Transcripción de documentos de un idioma a otro diferente, certificados por un notario para ser presentados frente a las entidades que lo soliciten.
               </p>
-          </div>
+            </div>
+          </a>
       </div>
 
   </div>

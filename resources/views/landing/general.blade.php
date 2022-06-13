@@ -128,7 +128,7 @@
     @media screen and (max-width: 1000px){h1{font-size: 50px !important}}
     @media screen and (max-width: 800px){h1{font-size: 40px !important}}
     @media screen and (max-width: 580px){#divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}}
-    #iconcall{bottom: 50px !important; right: 10px !important; animation: wiggle 3s linear infinite}
+    #iconcall{bottom: 40px !important; right: 10px !important; animation: wiggle 3s linear infinite}
     @keyframes wiggle {
         0%, 7% {transform: rotateZ(0);}
         15% {transform: rotateZ(-15deg);}
@@ -384,15 +384,27 @@
 </section>
 
 <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}" target="_blank">
-  <div class="d-flex justify-content-center align-items-center px-3 py-2 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
+  <div class="d-flex justify-content-center align-items-center px-3 py-1 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
   {{-- Consultar en linea <i class="fab fa-whatsapp ml-1"></i> --}}
   Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
   </div>
 </a>
 
-<div id="iconcall" style="padding: 11px 15px 11px 15px; border-radius: 25px; position: fixed; bottom: 60px; right: 10px; background-color: #122944; border: 2px solid #ffffff; display: none !important" class="d-flex">
+<div id="divpreguntas" style="position: fixed; bottom: 48px; right: 60px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: block">
+  <div style="position: relative">
+      <div style="position: absolute; right: -10px; top: -16px; background-color: #122944; color: #ffffff; padding: 0px 6px 3px 6px; border-radius: 25px; border: 2px solid #ffffff; font-size: 10px; font-weight: 500; cursor: pointer" onclick="document.getElementById('divpreguntas').style.display = 'none'">
+          x
+      </div>
+  </div>
+  <div style="font-size: 14px">
+      <b style="font-weight: 500">¿Tiene preguntas?</b> Llámenos ahora
+  </div>
+</div>
+
+<div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px; position: fixed; bottom: 50px; right: 10px; background-color: #122944; border: 2px solid #ffffff;" class="d-flex">
   <a href="tel:+{{$tlfhidden}}">
-    <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i>
+    <img width="20" height="20" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina">
+    {{-- <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i> --}}
   </a>
 </div>
 
@@ -404,10 +416,6 @@
       document.getElementById('dirmap').src = "{{asset($dirmap)}}";
       console.log('ok');
   });
-
-  setTimeout(() => {
-    document.getElementById('iconcall').style.display = "block";
-  }, 3000);
 
   // var pais = document.getElementById('pais');
   // var telf = document.getElementById('telf');

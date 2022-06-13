@@ -113,6 +113,13 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         35% {transform: rotateZ(-4deg);}
         40%, 100% {transform: rotateZ(0);}
     }
+    @keyframes jump {
+        from {bottom: 0px;opacity:0;}
+        to {opacity:1;}
+    }
+    .a-to-call-icon{
+        position: relative !important;
+    }
 </style>
 
   @yield('header')
@@ -233,15 +240,17 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
           </div>
           @foreach ($indexPosts as $post)
                 <div class="col-12 col-md-6">
-                    <div class="card my-2">
-                        <div class="card-body p-2" style="position:relative;">
-                        <span class="d-block font-weight-bold text-truncate " style="font-size:1rem;color:#122944">{{$post->name}}</span>
-                        <span class="d-block text-muted text-truncate"><?php echo strip_tags(substr($post->body,0,100))  ?></span>
-                        <div class="small text-muted float-left">
-                          <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">{{$post->created_at->format('M d')}}</a>
+                    <a href="{{route('post.slug',$post->slug)}}" style="text-decoration: none">
+                        <div class="card my-2">
+                            <div class="card-body p-2" style="position:relative;">
+                            <span class="d-block font-weight-bold text-truncate " style="font-size:1rem;color:#122944">{{$post->name}}</span>
+                            <span class="d-block text-muted text-truncate"><?php echo strip_tags(substr($post->body,0,100))  ?></span>
+                            <div class="small text-muted float-left">
+                            <a href="{{route('post.slug',$post->slug)}}">{{$post->created_at->format('M d')}}</a>
+                            </div>
+                            </div>
                         </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             @endforeach
             <div class="col-12">
@@ -356,7 +365,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
       </div> --}}
 
     <a id="divwpp" onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">
-        <div class="d-flex justify-content-center align-items-center px-3 py-2 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
+        <div class="d-flex justify-content-center align-items-center px-3 py-1 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
         {{-- Consultar en linea <i class="fab fa-whatsapp ml-1"></i> --}}
         Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
         </div>
@@ -369,11 +378,22 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             alt="Whatsapp Notary Public Near Me" width="40" height="40">
         </a> 
         </div> --}}
-        {{--+13479739888--}}
-
-        <div id="iconcall" style="padding: 10px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 50px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
+        {{--+13479739888--}}            
+        <div style="position: relative">
+            <div id="divpreguntas" style="position: fixed; bottom: 48px; right: 60px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none">
+                {{-- <div style="position: absolute"> --}}
+                    <div style="position: absolute; right: -10px; top: -16px; background-color: #122944; color: #ffffff; padding: 0px 6px 3px 6px; border-radius: 25px; border: 2px solid #ffffff; font-size: 10px; font-weight: 500; cursor: pointer" onclick="document.getElementById('divpreguntas').style.display = 'none'">
+                        x
+                    </div>
+                {{-- </div> --}}
+                <div style="font-size: 14px">
+                    <b style="font-weight: 500">¿Tiene preguntas?</b> Llámenos ahora
+                </div>
+            </div>
+        </div>
+        <div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 40px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
             <a href="tel:@yield('phoneNumberHidden')">
-                <img width="25" height="25" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina en Queens New York">
+                <img width="20" height="20" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina">
                 {{-- <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i> --}}
             </a>
         </div>
@@ -385,6 +405,13 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 @yield('script')
 
 <script type="text/javascript">
+
+    //get ip address
+    // function getip(){
+    //     $.getJSON("https://api.ipify.org?format=json", function(response) {
+    //         console.log(response.ip);
+    //     })
+    // }
 
     var button = document.querySelector('.button');
     if(button)button.disabled = true;
@@ -413,6 +440,9 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             }
         });
     }
+
+    //mostrando div de preguntas despues de 5seg
+    setTimeout(() => {document.getElementById('divpreguntas').style.display='block';document.getElementById("divpreguntas").style.animation = "jump 1s ease";}, 7000);
 
     //CARGAR EL SCRIPT DE PLUGIN DE FACEBOOK
     var scriptFacebookPlugin = document.createElement('script');
@@ -477,6 +507,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         script3.addEventListener("load", function(event) {
             document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
             document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+            //getip();
         });
     
         var script = document.createElement("script");
