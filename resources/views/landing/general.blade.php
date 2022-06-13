@@ -101,7 +101,7 @@
   setTimeout(() => {
     document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
     //console.log('cargando script de analytics despues de 3seg...');
-  }, 3000);
+  }, 2000);
 </script>
 <script>
     window.dataLayer = window.dataLayer || [];
