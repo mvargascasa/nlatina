@@ -1552,8 +1552,6 @@ class WebController extends Controller
     public function sendEmailOficina(Request $request){
         // $pais = $this->getPaisByCodigo($request->cod_pais);
 
-        //return $request;
-
         if($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+')){
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
@@ -1585,7 +1583,7 @@ class WebController extends Controller
             $message = "<br><strong><h3>Información del Lead</h3></strong>
                     <br><b>Nombre:</b> " . strip_tags($request->aaa). "
                     <br><b>País de residencia:</b> " . strip_tags($request->pais) ."
-                    <br><b>Teléfono:</b> " .strip_tags($request->cod_pais) . " " . strip_tags($request->bbb) ."
+                    <br><b>Teléfono:</b> " .strip_tags($request->codpais) . " " . strip_tags($request->bbb) ."
                     <br><b>Mensaje:</b> " . strip_tags($request->ddd) . "
                     <br><b>Proveniente:</b> Página de " . strip_tags($request->interest) . "
                     <br><b>Página: </b> " . url()->previous() . "
