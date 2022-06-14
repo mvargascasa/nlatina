@@ -9,7 +9,7 @@
 <meta property="og:type"               content="article" />
 <meta property="og:title"              content="Affidávit Notarizados y Apostillados en {{ $data['office'] }}" />
 <meta property="og:description"        content="Una declaración jurada o Affidávit es una manifestación escrita o verbal cuya veracidad es asegurada mediante un juramento ante una autoridad judicial o administrativa." />
-<meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
+<meta property="og:image"              content="{{asset('img/affidavit.jpg')}}" />
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
