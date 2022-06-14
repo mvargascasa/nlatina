@@ -8,7 +8,7 @@
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Revocatorias Notarizadas y Apostilladas en {{ $data['office'] }}" />
 <meta property="og:description" content="Una Revocatoria es una escritura pública expedida por un notario a través de la cual se deja sin efecto un poder otorgado con antelación." />
-<meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
+<meta property="og:image"       content="{{asset('img/revocatoria.jpg')}}" />
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
