@@ -8,7 +8,7 @@
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Contratos Notarizados y Apostillados en {{ $data['office'] }}" />
 <meta property="og:description" content="Los contratos notarizados son documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada." />
-<meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
+<meta property="og:image"       content="{{asset('img/contratos.jpg')}}" />
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
