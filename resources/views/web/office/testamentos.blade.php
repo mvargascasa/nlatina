@@ -1,14 +1,14 @@
 @extends('layouts.web')
 @section('header')
-<title>Testamentos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
-<meta name="description"        content="Un testamento es un documento que refleja la voluntad de una persona de distribuir sus bienes. Solicite nuestros servicios en {{ $data['office'] }} ✔">       
+<title>Testamentos Notarizados y Apostillados en {{ $data['office'] }}</title> 
+<meta name="description"        content="Un testamento es un documento válido para realizar diferentes trámites notariales. ¿Dónde puede solicitarlo? Consulte por nuestro servicio en {{ $data['office'] }} 📃">       
 <meta name="keywords"           content="que es un testamento, para que sirve un testamento, requisitos para realizar un testamento en {{ Str::lower($data['office']) }}, realizar un testamento en {{ Str::lower($data['office']) }}, donde realizar un testamento en {{ Str::lower($data['office']) }}, donde hacer un testamento en {{ Str::lower($data['office']) }}, como hacer un testamento en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{Request::url()}}" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Testamentos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina" />
-<meta property="og:description" content="Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte." />
-<meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
+<meta property="og:title"       content="Testamentos Notarizados y Apostillados en {{ $data['office'] }}" />
+<meta property="og:description" content="Un testamento es un documento válido para realizar diferentes trámites notariales. ¿Dónde puede solicitarlo? Consulte por nuestro servicio en {{ $data['office'] }} 📃" />
+<meta property="og:image"       content="{{asset('img/testamento.jpg')}}" />
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])

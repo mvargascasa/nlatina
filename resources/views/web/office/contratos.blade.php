@@ -1,12 +1,12 @@
 @extends('layouts.web')
 @section('header')
-<title>Contratos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina</title> 
+<title>Contratos Notarizados y Apostillados en {{ $data['office'] }}</title> 
 <meta name="description"        content="Los contratos son documentos donde dos personas se comprometen a cumplir ciertas obligaciones. Lo ayudamos con el trámite en {{$data['office']}} ✔">       
 <meta name="keywords"           content="que es un contrato, tipos de contratos en {{ Str::lower($data['office']) }}, requisitos para realizar un contrato en {{ Str::lower($data['office']) }}, realizar un contrato en {{ Str::lower($data['office']) }}, donde puedo realizar un contrato en {{ Str::lower($data['office']) }}, como puedo hacer un contrato en {{ Str::lower($data['office']) }}, donde puedo hacer un contrato de arrendamiento en {{ Str::lower($data['office']) }}, donde puedo hacer un contrato de compra venta en {{ Str::lower($data['office']) }}, donde puedo hacer un contrato prenupcial en {{ Str::lower($data['office']) }}, donde puedo apostillar un contrato en {{ Str::lower($data['office']) }}" />
 
 <meta property="og:url"         content="{{ Request::url() }}" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Contratos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina" />
+<meta property="og:title"       content="Contratos Notarizados y Apostillados en {{ $data['office'] }}" />
 <meta property="og:description" content="Los contratos notarizados son documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada." />
 <meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 @endsection

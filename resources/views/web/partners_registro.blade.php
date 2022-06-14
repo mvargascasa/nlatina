@@ -4,10 +4,16 @@
 $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 @endphp --}}
 
-<title>Abogados y Notarias en Latinoamérica a su alcance | Notaria Latina - Registro</title>
-<meta name="description" content="Regístrese gratis y forme parte de nuestro directorio de partners en Latinoamérica para que sus servicios sean solicitados por clientes potenciales | Notaria Latina">
+<title>Abogados en Latinoamérica a su alcance | Registro</title>
+<meta name="description" content="Regístrese gratis y forme parte de nuestro directorio de Partners en Latinoamérica 👨‍⚖️ Ofrezca sus servicios a clientes potenciales | Notaria Latina ⚖">
 <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil">
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
+<meta property="og:url" content="{{ Request::url() }}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Abogados en Latinoamérica a su alcance | Registro">
+<meta property="og:description" content="Regístrese gratis y forme parte de nuestro directorio de Partners en Latinoamérica 👨‍⚖️ Ofrezca sus servicios a clientes potenciales | Notaria Latina ⚖">
+<meta property="og:image" content="{{ asset('img/partners/BANNER-PARTNERS.webp') }}">
 <style>
     html, body {
         max-width: 100% !important;
