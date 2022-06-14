@@ -2,6 +2,14 @@
 
 @section('header')
     <title>Matrimonios en {{ $data['office'] }} </title>
+    <meta name="description" content="Si desea dar este paso importante en su vida, que mejor para hacerlo que en Florida. ¿Necesita saber como realizar el proceso de matrimonio? Consulte aquí!">
+    <meta name="keywords" content="matrimonios, matrimonios florida, matrimonios miami, matrimonio en florida requisitos, boda en florida, como casarse en florida, requisitos para matrimonio en florida, requisitos para boda en florida, requisitos para casarse en florida, certificado de matrimonio florida, ">
+
+    <meta property="og:url" content="{{ Request::url() }}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Matrimonios en {{ $data['office'] }}">
+    <meta property="og:description" content="Si desea dar este paso importante en su vida, que mejor para hacerlo que en Florida. ¿Necesita saber como realizar el proceso de matrimonio?">
+    <meta property="og:image" content="{{ asset('img/matrimonios.webp') }}">
 @endsection
 
 @section('content')
