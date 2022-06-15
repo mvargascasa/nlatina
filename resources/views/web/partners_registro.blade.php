@@ -24,9 +24,8 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         display: none;
     }
     /*QUITAR LA ETIQUETA DE TELEFONO DE LA ESQUINA SUPERIOR DERECHA EN LA PAGINA DE LOS PARTNERS*/
-    #etiquetaPhone{
-        display: none;
-    }
+    #etiquetaPhone{display: none;}
+    #divpreguntas{ display: none !important}
     .testimotionals {width:100%;display:inline-block;}
     .testimotionals .card {
         position:relative;

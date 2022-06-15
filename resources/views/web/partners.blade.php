@@ -23,6 +23,7 @@
         #iconcall{display:none}
         /* ocultar la tarjeta de wpp */
         #divwpp{display:none}
+        #divpreguntas{display:none !important}
         .form{margin-left: 20%;margin-right: 20%;margin-top: 5%;margin-bottom: 10px;}
         @media screen and (max-width: 860px){
             .countrysearch{margin-left: 0% !important;font-size: 13px;}

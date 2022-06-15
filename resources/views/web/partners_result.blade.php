@@ -22,9 +22,8 @@
         #iconcall{display:none}
         /* ocultar la tarjeta de wpp */
         #divwpp{display:none}
-         #etiquetaPhone{
-            display: none;
-        }
+        #etiquetaPhone{display: none;}
+        #divpreguntas{display: none !important}
         .testimotionals {width:100%;display:inline-block;}
         .testimotionals .card {
             position:relative;
