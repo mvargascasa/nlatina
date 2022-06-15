@@ -182,9 +182,8 @@
         input[type="radio"]:checked ~ label {
         color: orange;
         }
-        #divcallphone{
-            display: none;
-        }
+        #divcallphone{display: none;}
+        #divpreguntas{display: none !important}
     </style>
     <script type="text/javascript">
         function callbackThen(response){
