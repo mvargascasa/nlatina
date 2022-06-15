@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// use App\Conversion;
 use App\Http\Traits\GetCountryByCodTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -77,7 +78,7 @@ class LandingController extends Controller
                 mail('sebas31051999@gmail.com','Lead: '.strip_tags($request->aaa), $message, $header);  
             }
     
-            if(isset($request->fname) && isset($request->cod)){
+            if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
     
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br> Nombre: ". strip_tags($request->fname)." ". strip_tags($request->lname) . " 
@@ -98,6 +99,17 @@ class LandingController extends Controller
                 mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead: '.strip_tags($request->aaa), $message, $header);      
             }
+
+            // $conversion = Conversion::where('url', url()->previous())->first();
+            // if(isset($conversion)){
+            //     $conversion->amount = $conversion->amount + 1;
+            //     $conversion->save();
+            // } else {
+            //     Conversion::create([
+            //         'url' => url()->previous(),
+            //         'amount' => 1
+            //     ]);
+            // }
         }
         return view('landing.thank');
     }
