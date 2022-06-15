@@ -46,12 +46,12 @@
     </section>
 
     <div class="container pt-4">
-        <div class="row mt-2 mb-2">
-            <div class="col-sm-6">
+        <div class="row mt-2 mb-2 ml-1">
+            <div class="col-sm-6 border-left">
                 <p class="d-flex align-items-center"><img class="lazy" width="20" height="20" data-src="{{ asset('img/calendar.webp') }}" alt="{{$post->name}}"><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
             </div>
             @isset($post->reading_time)
-            <div class="col-sm-6">
+            <div class="col-sm-6 border-left">
                 <p class="d-flex align-items-center"><img class="lazy" width="20" height="20" data-src="{{ asset('img/reloj.webp') }}" alt="{{ $post->name}}"><b style="font-weight: 500" class="ml-1 mr-1">Tiempo de Lectura:</b> {{ $post->reading_time}} min.</p>
             </div>
             @endisset
