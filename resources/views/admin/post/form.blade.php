@@ -18,6 +18,11 @@
                 {!! Form::label('status', 'Status') !!}
                 {!! Form::select('status',['BORRADOR' => 'BORRADOR','PUBLICADO' => 'PUBLICADO'],    null,    ['class' => 'form-control custom-select']) !!}
             </div>
+
+            <div class="form-group col-md-5">
+                {!! Form::label('reading_time', 'Tiempo de Lectura') !!}
+                {!! Form::number('reading_time', null, ['class' => 'form-control']) !!}
+            </div>
         </div>
         <div class="form-group">
         {!! Form::label('name', 'Titulo de Publicación') !!}
