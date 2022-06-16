@@ -21,6 +21,7 @@
     {!! Form::select('country', [
         null => 'Seleccione',
         '+54' => 'Argentina',
+        '+56' => 'Chile',
         '+591' => 'Bolivia',
         '+57' => 'Colombia',
         '+506' => 'Costa Rica',

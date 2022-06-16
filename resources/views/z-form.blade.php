@@ -17,6 +17,7 @@
         null => 'Seleccione',
         '+54' => 'Argentina',
         '+591' => 'Bolivia',
+        '+56' => 'Chile',
         '+57' => 'Colombia',
         '+506' => 'Costa Rica',
         '+593' => 'Ecuador',

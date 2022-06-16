@@ -2,6 +2,7 @@
     <option value="">Nacionalidad</option>
     <option value="Argentina">Argentina</option>
     <option value="Bolivia">Bolivia</option>
+    <option value="Chile">Chile</option>
     <option value="Colombia">Colombia</option>
     <option value="Costa Rica">Costa Rica</option>
     <option value="Ecuador">Ecuador</option>

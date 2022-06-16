@@ -8,6 +8,7 @@ trait GetCountryByCodTrait{
         switch ($codigoPais) {
             case '+54': $pais = "Argentina"; break;
             case '+591': $pais = "Bolivia"; break;
+            case '+56': $pais = "Chile"; break;
             case '+57': $pais = "Colombia"; break;
             case '+506': $pais = "Costa Rica"; break;
             case '+593': $pais = "Ecuador"; break;
