@@ -52,6 +52,32 @@ class WebController extends Controller
         $posts = Post::where('status','PUBLICADO')->orderBy('id','desc')->paginate(12);
         return view('web.post.index',compact('posts'));
     }
+
+    public function commentpost(Request $request, $slug){
+        $post = Post::where('slug', $slug)->where('status', 'PUBLICADO')->first();
+        $to = "sebas31051999@gmail.com";
+        $subject = 'Comentario en Post de Notaria Latina | ' . date('d-m-y');
+        $message = "<br><strong><h3>Información</h3></strong>
+                    <br><b>Nombre:</b> " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
+                    <br><b>Email:</b> " . strip_tags($request->email) . "
+                    <br><b>Mensaje:</b> " . strip_tags($request->message) . "
+                    <br><b>Post:</b> " . strip_tags($post->name) . "
+                    <br><b>Página:</b> https://notarialatina.com/post/" . strip_tags($post->slug) . "
+                    <br> 
+                    <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+        ";
+
+        $header = 'From: <blog@notarialatina.com>' . "\r\n" .
+                'MIME-Version: 1.0' . "\r\n".
+                'Content-type:text/html;charset=UTF-8' . "\r\n"
+                ;
+            
+        mail($to, $subject, $message, $header);
+
+        $request->session()->flash('sendcomment', 'Gracias por enviar su información');
+
+        return back();
+    }   
     
     public function consulado(Request $request)
     {

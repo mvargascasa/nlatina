@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr class="mt-4 mb-4">
         <div class="col-12 text-center">
             <h2 class="tit-not">Temas Relacionados</h2>
         </div>
@@ -93,8 +93,54 @@
                 </div>
                 @endforeach
             </div>
+
+            <div class="mt-5">
+                <h2>Su opinión nos interesa</h2>
+                <p style="font-weight: 300">Su dirección de correo electrónico no será publicado en nuestra página</p>
+                <div class="row">
+                    <div class="col-sm-8">
+                        {!! Form::open(['route' => ['send.comment.post', $post->slug], 'method' => 'POST']) !!}
+                        @csrf
+                        <div class="d-flex">
+                            <div class="form-group w-100">
+                                {!! Form::label('name', 'Nombre') !!}
+                                {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
+                            </div>
+        
+                            <div class="form-group w-100 ml-1">
+                                {!! Form::label('lastname', 'Apellido') !!}
+                                {!! Form::text('lastname', null, ['class' => 'form-control', 'required']) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('email', 'Correo electrónico') !!}
+                            {!! Form::email('email', null, ['class' => 'form-control', 'required']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('message', 'Comentario') !!}
+                            {!! Form::textarea('message', null, ['class' => 'form-control', 'rows' => 3, 'required']) !!}
+                        </div>
+
+                        {!! Form::submit('Enviar', ['class' => 'btn btn-warning']) !!}
+    
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
     </div>
 
+    @if (session('sendcomment'))
+        @php
+            echo "
+                <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+                <script>
+                    swal('Gracias por enviar su comentario', 'Valoramos mucho su opinión', 'success');
+                </script>
+                ";    
+        @endphp
+    @endif
 @endsection
 
 @section('numberWpp', '13479739888')
