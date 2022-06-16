@@ -175,13 +175,8 @@
         }
 
         label:hover,
-        label:hover ~ label {
-        color: orange;
-        }
-
-        input[type="radio"]:checked ~ label {
-        color: orange;
-        }
+        label:hover ~ label {color: orange;}
+        input[type="radio"]:checked ~ label {color: orange;}
         #divcallphone{display: none;}
         #divpreguntas{display: none !important}
     </style>

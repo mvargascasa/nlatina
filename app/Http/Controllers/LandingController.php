@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use App\Conversion;
+//use App\Conversion;
 use App\Http\Traits\GetCountryByCodTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -12,6 +12,72 @@ use Illuminate\Support\Str;
 class LandingController extends Controller
 {
     use GetCountryByCodTrait;
+
+    public $more_reviewsnj = 'https://g.page/r/CVNRV-zNuJiZEAE';
+    public $reviewsnj = [
+        [
+            'name' => 'Ronald Pacheco',
+            'stars' => 5,
+            'message' => 'Rápida y muy amable. He ido para traducir una licencia de conducir y poder presentarla a la NJMVC  y en apenas unos minutos pudieron hacerlo. Cuando vuelva a necesitar hacer algún otro trámite seguro que volveré allí. Muchas Gracias',
+            'link' => 'https://goo.gl/maps/qB6rXkmXYBwkD25v5'
+        ],
+        [
+            'name' => 'Linda Madrid',
+            'stars' => 5,
+            'message' => 'Excelente servicio el que se me brindo el dia de hoy. Su personal es atento y logro solventar todas mis gestiones en un buen tiempo y con mucha cortesía. Recomiendo el lugar',
+            'link' => 'https://goo.gl/maps/7D4uE3NVJXP6oY2g7'
+        ],
+        [
+            'name' => 'Gabriela Anchaluisa',
+            'stars' => 5,
+            'message' => 'Excelente atención!!! El servicio es muy eficiente y las personas muy amables en la atención. Felicitaciones 👏',
+            'link' => 'https://goo.gl/maps/VLUsbPvBEi6ZwyA99'
+        ]
+    ];
+
+    public $more_reviewsny = 'https://g.page/notariapublicalatina';
+    public $reviewsny = [
+        [
+            'name' => 'Cesar Augusto Tonuzco',
+            'stars' => 5,
+            'message' => 'Excelente servicio me hicieron la traducción  en un momento 🤩',
+            'link' => 'https://goo.gl/maps/bPRSyrCHDkBpF7cU8'
+        ],
+        [
+            'name' => 'Yessenia Hernandez',
+            'stars' => 5,
+            'message' => 'Servicios muy buenos y super atentos a las necesidades del cliente. Profesionales en todo momento.',
+            'link' => 'https://goo.gl/maps/kQTmXqC9oQRCBhZr9'
+        ],
+        [
+            'name' => 'Vladimir Paccha',
+            'stars' => 5,
+            'message' => 'Quedo muy agradecido por el servicio de la Notaria Latina son muy buenos en su trabajo y también los recomiendo.',
+            'link' => 'https://goo.gl/maps/MyFgAdFhdZa959sf8'
+        ]
+    ];
+
+    public $more_reviewsfl = 'https://g.page/r/CeRrwPx_W2-xEAE';
+    public $reviewsfl = [
+        [
+            'name' => 'Maria Sampayo',
+            'stars' => 5,
+            'message' => 'Quiero resaltar el excelente servicio de la Notaría Pública Latina. Llegue a ellos a través de Google porque necesitaba traducir y apostillar mi licencia de maternidad y el certificado de nacimiento de mi hija. [...] Si ustedes requieren traducir y apostillar documentos, no duden en hacerlo con esta notaría. Son los mejores.',
+            'link' => 'https://goo.gl/maps/J8uRSU1H2JG4oLaT6'
+        ],
+        [
+            'name' => 'Vangie Vazquez',
+            'stars' => 5,
+            'message' => 'Son los mejores y más diligentes! Hicieron que este proceso fuera fácil. Apostillar express un documento en la Florida no es fácil pero con este equipo de trabajo nada es imposible. No se preocupe deje que ellos les oriente y tendrán unos resultados positivos tal como todo lo que uno sueña con la tranquilidad del deber cumplido.',
+            'link' => 'https://goo.gl/maps/D6m7fLHLuZXXDSLj7'
+        ],
+        [
+            'name' => 'Melba Gomes',
+            'stars' => 5,
+            'message' => 'Super recomendable y segura me ayudaron con todos los trámites, me hicieron más fácil todo mil gracias no sabía que existía esta oficina y me la recomendaron desde Colombia',
+            'link' => 'https://goo.gl/maps/gXmSRnL8Yy8Nb3DE9'
+        ]
+    ];
 
     public function apostilla(){
         $data['oficina'] = 'New York';
@@ -188,6 +254,8 @@ class LandingController extends Controller
         $data['landing'] = 'General';
         $data['title'] = 'Notaría Latina en New Jersey | Apostillas, Poderes, Traducciones';
         $data['tlfwpp'] = '13479739888';
+        $data['reviews'] = $this->reviewsnj;
+        $data['more_reviews'] = $this->more_reviewsnj;
         return view('landing.general',$data);
     }
 
@@ -207,6 +275,8 @@ class LandingController extends Controller
         $data['landing'] = 'General Web';
         $data['title'] = 'Apostillas, Poderes, Traducciones | Notaría Latina en New Jersey';
         $data['tlfwpp'] = '13479739888';
+        $data['reviews'] = $this->reviewsnj;
+        $data['more_reviews'] = $this->more_reviewsnj;
         return view('landing.general',$data);
     }  
 
@@ -226,6 +296,8 @@ class LandingController extends Controller
         $data['landing'] = 'Traducciones';
         $data['title'] = 'Traducir Documentos Notariales en New Jersey | Notaria Latina';
         $data['tlfwpp'] = '13479739888';
+        $data['reviews'] = $this->reviewsnj;
+        $data['more_reviews'] = $this->more_reviewsnj;
         return view('landing.general',$data);
     }  
 
@@ -246,6 +318,8 @@ class LandingController extends Controller
         $data['landing'] = "Poderes"; 
         $data['title'] = 'Realizamos todo tipo de Poderes en New Jersey | Notaria Latina';
         $data['tlfwpp'] = '13479739888';
+        $data['reviews'] = $this->reviewsnj;
+        $data['more_reviews'] = $this->more_reviewsnj;
         return view('landing.general',$data);
     }   
 
@@ -265,6 +339,8 @@ class LandingController extends Controller
         $data['landing'] = 'Apostillas';
         $data['title'] = 'Apostillar Documentos en New Jersey | Notaria Latina';
         $data['tlfwpp'] = '13479739888';
+        $data['reviews'] = $this->reviewsnj;
+        $data['more_reviews'] = $this->more_reviewsnj;
         return view('landing.general',$data);
     }
 
@@ -286,6 +362,8 @@ class LandingController extends Controller
         $data['landing'] = 'General';
         $data['title'] = 'Notaría Latina en New York - Apostillas, Poderes y Traducciones';
         $data['tlfwpp'] = '13479739888';
+        $data['reviews'] = $this->reviewsny;
+        $data['more_reviews'] = $this->more_reviewsny;
         return view('landing.general',$data);
     }
 
@@ -305,6 +383,8 @@ class LandingController extends Controller
         $data['landing'] = 'General Web';
         $data['title'] = 'Apostillas, Poderes y Traducciones en New York | Notaría Latina';
         $data['tlfwpp'] = '13479739888';
+        $data['reviews'] = $this->reviewsny;
+        $data['more_reviews'] = $this->more_reviewsny;
         return view('landing.general',$data);
     }  
 
@@ -324,6 +404,8 @@ class LandingController extends Controller
         $data['landing'] = 'Traducciones';
         $data['title'] = 'Traducir Documentos Notariales en New York | Notaría Latina';
         $data['tlfwpp'] = '13479739888';
+        $data['reviews'] = $this->reviewsny;
+        $data['more_reviews'] = $this->more_reviewsny;
         return view('landing.general',$data);
     }  
 
@@ -343,6 +425,8 @@ class LandingController extends Controller
         $data['landing'] = 'Poderes';
         $data['title'] = 'Realizamos todo tipo de Poderes en New York | Notaria Latina'; 
         $data['tlfwpp'] = '13479739888';
+        $data['reviews'] = $this->reviewsny;
+        $data['more_reviews'] = $this->more_reviewsny;
         return view('landing.general',$data);
     }   
 
@@ -362,6 +446,8 @@ class LandingController extends Controller
         $data['landing'] = 'Apostillas';
         $data['title'] = 'Apostillar Documentos en New York | Notaría Latina';
         $data['tlfwpp'] = '13479739888';
+        $data['reviews'] = $this->reviewsny;
+        $data['more_reviews'] = $this->more_reviewsny;
         return view('landing.general',$data);
     }  
 
@@ -385,6 +471,8 @@ class LandingController extends Controller
         $data['landing'] = 'General';
         $data['title'] = 'Notaría Latina en Florida - Apostillas, Poderes y Traducciones';
         $data['tlfwpp'] = '13056003290';
+        $data['reviews'] = $this->reviewsfl;
+        $data['more_reviews'] = $this->more_reviewsfl;
         return view('landing.general',$data);
     }
 
@@ -404,6 +492,8 @@ class LandingController extends Controller
         $data['landing'] = 'General Web';
         $data['title'] = 'Apostillas, Poderes y Traducciones en Florida | Notaría Latina';
         $data['tlfwpp'] = '13056003290';
+        $data['reviews'] = $this->reviewsfl;
+        $data['more_reviews'] = $this->more_reviewsfl;
         return view('landing.general',$data);
     }  
 
@@ -423,6 +513,8 @@ class LandingController extends Controller
         $data['landing'] = 'Traducciones';
         $data['title'] = 'Traducir Documentos Notariales en Florida | Notaria Latina';
         $data['tlfwpp'] = '13056003290';
+        $data['reviews'] = $this->reviewsfl;
+        $data['more_reviews'] = $this->more_reviewsfl;
         return view('landing.general',$data);
     }  
 
@@ -442,6 +534,8 @@ class LandingController extends Controller
         $data['landing'] = 'Poderes';
         $data['title'] = 'Tramitamos todo tipo de Poderes en Florida | Notaria Latina';
         $data['tlfwpp'] = '13056003290';
+        $data['reviews'] = $this->reviewsfl;
+        $data['more_reviews'] = $this->more_reviewsfl;
         return view('landing.general',$data);
     }   
 
@@ -461,6 +555,8 @@ class LandingController extends Controller
         $data['landing'] = 'Apostillas';
         $data['title'] = 'Apostillar Documentos en Florida | Notaria Latina';
         $data['tlfwpp'] = '13056003290';
+        $data['reviews'] = $this->reviewsfl;
+        $data['more_reviews'] = $this->more_reviewsfl;
         return view('landing.general',$data);
     }
     

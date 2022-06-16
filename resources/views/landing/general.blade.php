@@ -143,6 +143,10 @@
         to {opacity:1;}
     }
     .grecaptcha-badge { visibility: hidden; }
+    .card-reviews{box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;}
+    .card-reviews:hover{
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    }
   </style>
 </head>
 <body>
@@ -385,6 +389,82 @@
             </form>
           </div> 
       </div>
+</section>
+
+{{-- section para valoraciones de clientes --}}
+<section>
+  <div class="container text-center mt-3 mb-4">
+    <h2 class="mt-5 mb-5">Lo que opinan nuestros clientes</h2>
+    <div class="row justify-content-center">
+      @foreach ($reviews as $review)
+        <div class="col-sm-4 d-flex justify-content-center mb-3">
+          <div class="card card-reviews" style="width: 18rem; height: 100%">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ $review['name'] }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-center">
+                @for ($i = 0; $i < $review['stars']; $i++)
+                  <img width="15" height="15" src="{{ asset('img/estrella.png') }}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+                @endfor
+              </h6>
+              <p class="card-text">
+                <i>
+                  "{{ $review['message']}}"
+                </i>
+              </p>
+            </div>
+            <div class="card-footer bg-white">
+              <a target="_blank" href="{{ $review['link']}}" class="card-link">Ver comentario</a>
+            </div>
+          </div>
+        </div>
+      @endforeach
+      {{-- <div class="col-sm-4 d-flex justify-content-center mb-3">
+        <div class="card card-reviews mb-3" style="width: 18rem; height: 100%;">
+          <div class="card-body">
+            <h5 class="card-title">Linda Madrid</h5>
+            <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-center">
+              @for ($i = 0; $i < 5; $i++)
+                <img width="15" height="15" src="{{ asset('img/estrella.png') }}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+              @endfor
+            </h6>
+            <p class="card-text">
+              <i>
+                "Excelente servicio el que se me brindo el dia de hoy.  
+                Su personal es atento y logro solventar todas mis gestiones en un buen tiempo y con mucha cortesía. 
+                Recomiendo el lugar"
+              </i>
+            </p>
+          </div>
+          <div class="card-footer bg-white">
+            <a target="_blank" href="https://goo.gl/maps/7D4uE3NVJXP6oY2g7" class="card-link">Ver comentario</a>
+          </div>
+        </div>
+      </div> --}}
+      {{-- <div class="col-sm-4 d-flex justify-content-center mb-3">
+        <div class="card card-reviews mb-3" style="width: 18rem; height: 100%">
+          <div class="card-body">
+            <h5 class="card-title">Gabriela Anchaluisa</h5>
+            <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-center">
+              @for ($i = 0; $i < 5; $i++)
+                <img width="15" height="15" src="{{ asset('img/estrella.png') }}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+              @endfor
+            </h6>
+            <p class="card-text">
+              <i>
+                "Excelente atención!!! El servicio es muy eficiente y las personas muy amables en la atención. Felicitaciones 👏"
+              </i>
+            </p>
+          </div>
+          <div class="card-footer bg-white">
+            <a target="_blank" href="https://goo.gl/maps/VLUsbPvBEi6ZwyA99" class="card-link">Ver comentario</a>
+          </div>
+        </div>
+      </div> --}}
+      <div class="mt-5 mb-5">
+        <a target="_blank" href="{{ $more_reviews }}" style="color: #192939;" class="btn btn-warning"><b style="font-weight: 500; font-size: 17px">Ver más reseñas</b> <i class="fas fa-long-arrow-alt-right"></i></a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}" target="_blank">
