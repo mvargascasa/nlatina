@@ -1,7 +1,6 @@
 @extends('layouts.web')
 
 @section('header')
-    {{-- <title>@if(strlen($post->name) <= 53){{$post->name}} @else {{ substr($post->name, 0, 53) }}@endif</title> --}}
     <title>{{$post->name}}</title>
     <meta name="description" content="{{$post->metadescrip}}"/>
     <meta name="keywords" content="{{ $post->keywords }}">
@@ -11,7 +10,13 @@
     <meta property="og:description"        content="{{$post->metadescrip}}" />
     <meta property="og:image"              content="{{url('uploads/i600_'.$post->imgsmall)}}" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
     <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap'); */
+        @font-face{font-family: 'Roboto',sans-serif !important} */
         h2{font-size: 25px !important}
         @media screen and (max-width: 580px){
             #imgBlog{
@@ -45,7 +50,7 @@
         </div>
     </section>
 
-    <div class="container pt-4">
+    <div class="container pt-4" style="font-family: 'Roboto' !important">
         <div class="row mt-2 mb-2 ml-1">
             <div class="col-sm-6 border-left">
                 <p class="d-flex align-items-center"><img class="lazy" width="20" height="20" data-src="{{ asset('img/calendar.webp') }}" alt="{{$post->name}}"><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
@@ -60,7 +65,7 @@
         <div class="row">
             <div class="col-12" style="text-align: justify">
                 <img id="imgBlog" class="p-4 float-right img-fluid lazy" width="500" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
-                <div class="mt-3" style="font-family: 'Times New Roman', Times, serif">
+                <div class="mt-3" style="font-family: 'Roboto', Times, serif">
                     <?php echo htmlspecialchars_decode($post->body)?>
                 </div>
             </div>
