@@ -65,7 +65,7 @@
         <h1 id="title" class="font-weight-bold heading-title">{{$post->name}}</h1>
         <div class="row">
             <div class="col-12" style="text-align: justify">
-                <img id="imgBlog" class="p-4 float-right img-fluid lazy" width="500" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
+                <img id="imgBlog" class="p-4 float-right img-fluid lazy" width="500" height="100%" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
                 <div class="mt-3" style="font-family: 'Roboto', Times, serif">
                     <?php echo htmlspecialchars_decode($post->body)?>
                 </div>
