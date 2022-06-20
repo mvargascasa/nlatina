@@ -9,7 +9,7 @@
   <!-- Global site tag (gtag.js) - Google Ads: 806267889 -->
   <meta name="robots" content="noindex">
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-806267889"></script>
-<script id="scriptanalytics"></script>
+{{-- <script id="scriptanalytics"></script> --}}
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -17,16 +17,16 @@
 
   gtag('config', 'AW-806267889');
 
-  setTimeout(function(){
-        document.getElementById('scriptanalytics').src = 'https://www.googletagmanager.com/gtag/js?id=UA-124437679-3';
-        console.log('cargando script de analytics...');
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+//   setTimeout(function(){
+//         document.getElementById('scriptanalytics').src = 'https://www.googletagmanager.com/gtag/js?id=UA-124437679-3';
+//         console.log('cargando script de analytics...');
+//         window.dataLayer = window.dataLayer || [];
+//         function gtag(){dataLayer.push(arguments);}
+//         gtag('js', new Date());
 
-        gtag('config', 'UA-124437679-3');
-        gtag('config', 'AW-702844945');
-    }, 1600);
+//         gtag('config', 'UA-124437679-3');
+//         gtag('config', 'AW-702844945');
+//     }, 1600);
 </script>
 
   <style>
@@ -131,7 +131,7 @@
             <h1 class="font-italic font-weight-bold" style="font-size: 60px;">¡Gracias!</h1>
         </div>
         <div class="col-12 col-md-5 text-right">
-            <img id="imghelp" class="img-fluid p-4" src="{{asset('img/helpline.jpg')}}" alt="">
+            <img id="imghelp" width="100%" height="100%" class="img-fluid p-4" src="{{asset('img/helpline.jpg')}}" alt="">
         </div>
         <div class="col-md-7 text-center">
 
@@ -144,9 +144,9 @@
 
 
                   <ul class="nav flex-column">
-                    <li class="nav-item p-3"><img src="{{asset('img/pencil.svg')}}" width="30" alt="..." > PODERES</li>
-                    <li class="nav-item p-3"><img src="{{asset('img/pencil.svg')}}" width="30" alt="..." > APOSTILLAS</li>
-                    <li class="nav-item p-3"><img src="{{asset('img/pencil.svg')}}" width="30" alt="..." > TRADUCCIONES</li>
+                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > PODERES</li>
+                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > APOSTILLAS</li>
+                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > TRADUCCIONES</li>
                   </ul>
         </div>
     </div>
