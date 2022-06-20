@@ -14,6 +14,7 @@
 
 <style>
     .pagination li.active .page-link, .pagination li .page-link:hover {background-color: #122944;color: #ffffff;font-weight: bold;}
+    .card:hover{box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;}
 </style>
 @endsection
 
@@ -47,8 +48,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card my-2 h-100">
                         <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
-                            <img data-src="https://notarialatina.com/uploads/{{$post->imgdir}}" class="lazy card-img-top" alt="Imagen {{ $post->name }}" style="object-fit: cover;height: 150px !important;">
-                            {{-- {{url('uploads/'.$post->imgdir)}} --}}
+                            <img data-src="{{url('uploads/'.$post->imgdir)}}" class="lazy card-img-top" alt="Imagen {{ $post->name }}" style="object-fit: cover;height: 150px !important;">
                         </a>
                         <div class="card-body p-2" style="position:relative;">
                         <span class="d-block text-muted font-weight-bold"
