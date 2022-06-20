@@ -9,7 +9,7 @@
   <!-- Global site tag (gtag.js) - Google Ads: 806267889 -->
   <meta name="robots" content="noindex">
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-806267889"></script>
-{{-- <script id="scriptanalytics"></script> --}}
+<script id="scriptanalytics"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -17,16 +17,16 @@
 
   gtag('config', 'AW-806267889');
 
-//   setTimeout(function(){
-//         document.getElementById('scriptanalytics').src = 'https://www.googletagmanager.com/gtag/js?id=UA-124437679-3';
-//         console.log('cargando script de analytics...');
-//         window.dataLayer = window.dataLayer || [];
-//         function gtag(){dataLayer.push(arguments);}
-//         gtag('js', new Date());
+  setTimeout(function(){
+        document.getElementById('scriptanalytics').src = 'https://www.googletagmanager.com/gtag/js?id=UA-124437679-3';
+        console.log('cargando script de analytics...');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-//         gtag('config', 'UA-124437679-3');
-//         gtag('config', 'AW-702844945');
-//     }, 1600);
+        gtag('config', 'UA-124437679-3');
+        gtag('config', 'AW-702844945');
+    }, 1600);
 </script>
 
   <style>
