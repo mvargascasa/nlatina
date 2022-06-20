@@ -52,6 +52,7 @@
                     <option value="">País de residencia</option>
                     <option value="+54">Argentina</option>
                     <option value="+591">Bolivia</option>
+                    <option value="+56">Chile</option>
                     <option value="+57">Colombia</option>
                     <option value="+506">Costa Rica</option>
                     <option value="+593">Ecuador</option>

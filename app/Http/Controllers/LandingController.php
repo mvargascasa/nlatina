@@ -124,14 +124,19 @@ class LandingController extends Controller
             if ($interest == 'Landing Florida')     $sendoffices = ',florida@notarialatina.com';
     
             if(isset($request->aaa) && isset($request->bbb) && isset($request->ddd)){
+
+                if(isset($request->cod_pais)){
+                    $country = $this->getPaisByCodigo($request->cod_pais);
+                } else {$country = "undefined";}
     
                 $message = "<br><strong>Nuevo Lead</strong>
-                <br> Nombre: ". strip_tags($request->aaa)."
-                <br> Telef: ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
-                <br> Interes: ".strip_tags($interest)."
-                <br> Mensaje: ".strip_tags($request->ddd)."
-                <br> Fuente: GoogleAds 
-                <br> Página: " . url()->previous() . " "; 
+                <br><b> Nombre: </b> ". strip_tags($request->aaa)."
+                <br><b> País: </b> " . strip_tags($country) . "
+                <br><b> Telef: </b> ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
+                <br><b> Interes: </b> ".strip_tags($interest)."
+                <br><b> Mensaje: </b> ".strip_tags($request->ddd)."
+                <br><b> Fuente: </b> GoogleAds 
+                <br><b> Página: </b> " . url()->previous() . " "; 
                 
     
                 //<br> País: " . strip_tags($pais)."
@@ -162,7 +167,7 @@ class LandingController extends Controller
                 $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead: '.strip_tags($request->aaa), $message, $header);      
             }
 
