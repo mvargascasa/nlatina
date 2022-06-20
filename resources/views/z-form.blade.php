@@ -50,7 +50,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('service', 'Servicio:') !!}
+    {!! Form::label('service', 'Servicio que desea tramitar:') !!}
     {!! Form::select('service',
                                 [null => 'Seleccione',
                                 'Apostilla'=>'Apostilla',
@@ -74,7 +74,11 @@
 </div>
 
 <div class="form-group">
-    {!! Form::submit('Enviar',  ['class' => 'btn btn-lg btn-warning btn-block']) !!}
+    @if (str_contains(url()->current(), '/post'))
+        {!! Form::submit('Agendar una cita',  ['class' => 'btn btn-lg btn-warning btn-block']) !!}
+    @else
+        {!! Form::submit('Enviar',  ['class' => 'btn btn-lg btn-warning btn-block']) !!}
+    @endif
 </div>
 
 

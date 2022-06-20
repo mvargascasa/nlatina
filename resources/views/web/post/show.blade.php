@@ -34,6 +34,7 @@
                  font-size: 25px !important; 
             }
             h2{font-size: 20px !important; font-weight: 600 !important}
+            #benefits{margin-top:25px !important}
         }
     </style>
 @endsection
@@ -94,12 +95,13 @@
                 @endforeach
             </div>
 
-            <div class="mt-5">
-                <h2>Su opinión nos interesa</h2>
-                <p style="font-weight: 300">Su dirección de correo electrónico no será publicado en nuestra página</p>
-                <div class="row">
-                    <div class="col-sm-8">
-                        {!! Form::open(['route' => ['send.comment.post', $post->slug], 'method' => 'POST']) !!}
+            <div class="mt-4">
+                <h2 class="text-center">¿Necesita realizar un trámite notarial?</h2>
+                <p style="font-weight: 300; font-size: 20px" class="text-center mb-4">Gestionamos el proceso de una manera correcta y diligente.</p>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 border p-3" style="border-radius: 5px">
+                        @include('z-form')
+                        {{-- {!! Form::open(['route' => ['send.comment.post', $post->slug], 'method' => 'POST']) !!}
                         @csrf
                         <div class="d-flex">
                             <div class="form-group w-100">
@@ -125,7 +127,15 @@
 
                         {!! Form::submit('Enviar', ['class' => 'btn btn-warning']) !!}
     
-                        {!! Form::close() !!}
+                        {!! Form::close() !!} --}}
+                    </div>
+                    <div class="col-sm-6 w-100 justify-content-center" style="margin-top: auto !important; margin-bottom: auto !important">
+                        <div id="benefits" class="text-center">
+                            <p style="font-size: 23px"><span>Contáctenos y lo ayudamos con el procedimiento</span></p>
+                            <p style="font-size: 17px"><i class="far fa-calendar-check" style="color: #FFC206"></i> Agende una cita en línea</p>
+                            <p style="font-size: 17px"><i class="fas fa-headset" style="color: #FFC206"></i> Asesoramiento con personal calificado</p>
+                            <p style="font-size: 17px"><i class="far fa-clock" style="color: #FFC206"></i> Trámites en el menor tiempo posible</p>
+                        </div>
                     </div>
                 </div>
             </div>
