@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('header')
-    <title>Acuerdos Notarizados y Apostillados en Queens New York - Notaria Latina</title> 
+    <title>Acuerdos Notarizados y Apostillados en Queens New York</title> 
     <meta name="description"        content="Los acuerdos son un pacto firmado entre dos o más personas que están de acuerdo con lo estipulado en el documento.">       
     <meta name="keywords"           content="Acuerdos Notarizados y Apostillados en Queens New York, Acuerdos Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un acuerdo notaria, para que sirve un acuerdo notaria, requisitos para un acuerdo notaria, realizar un acuerdo en new york, tramitar acuerdo new york, notarizar acuerdo en new york" />
     

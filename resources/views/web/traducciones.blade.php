@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('header')
-<title>Traducciones Notarizadas y Apostilladas en Queens New York - Notaria Latina</title> 
+<title>Traducciones Notarizadas y Apostilladas en Queens New York</title> 
 <meta name="description"        content="Realizamos traducciones de documentos para sus trámites más importantes.Para las traducciones de documentos el único requisito es presentar el documento original que desea traducir.">       
 <meta name="keywords"           content="Traducciones Notarizadas y Apostilladas en Queens New York, Traducciones Notarizadas y Apostilladas near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es una traduccion, para que sirve la traduccion de documentos, traducir documento en new york, traducir acta de nacimiento en new york, traducir certificado de matrimonio en new york, traducir documento de divorcio new york, traducir certificado de defuncion new york" />
 

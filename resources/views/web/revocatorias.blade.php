@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('header')
-<title>Revocatorias Notarizadas y Apostilladas en Queens New York - Notaria Latina</title> 
+<title>Revocatorias Notarizadas y Apostilladas en Queens New York</title> 
 <meta name="description"        content="¿Qué es una Revocatoria? Es una escritura pública expedida por un notario a través de la cual se deja sin efecto un poder otorgado con antelación.">       
 <meta name="keywords"           content="Revocatorias Notarizadas y Apostilladas en Queens New York, Revocatorias Notarizadas y Apostilladas near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es una revocatoria, requisitos para una revocatoria, revocatoria en new york, revocatoria de carta poder en new york, revocatoria de carta poder cerca de mi" />
 
