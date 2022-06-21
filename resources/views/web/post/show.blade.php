@@ -19,20 +19,10 @@
         @font-face{font-family: 'Roboto',sans-serif !important} */
         h2{font-size: 25px !important}
         @media screen and (max-width: 580px){
-            #imgBlog{
-                float: none !important;
-                justify-content: center !important;
-                padding: 0px !important;
-            }
-            #rowImageBanner{
-                min-height: 350px !important;
-            }
-            #prisection{
-                height: 350px !important;
-            }
-            h1{
-                 font-size: 25px !important; 
-            }
+            #imgBlog{float: none !important;justify-content: center !important;padding: 0px !important;}
+            #rowImageBanner{min-height: 350px !important;}
+            #prisection{height: 350px !important;}
+            h1{font-size: 25px !important; }
             h2{font-size: 20px !important; font-weight: 600 !important}
             #benefits{margin-top:25px !important}
         }
