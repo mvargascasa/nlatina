@@ -30,7 +30,7 @@
   </section>
 
 <div class="container pt-4">
-        <h3>Usted puede gestionar un trámite legal especifico sin estar presente.</h3>
+        <h2 style="font-weight: 500; font-size: 28px">Usted puede gestionar un trámite legal especifico sin estar presente.</h2>
         <p class="text-muted">Un Poder Especial, es un documento legal que se utiliza para otorgar control a una actividad especifica sobre sus activos a otra
             persona en el caso de que usted no pudiera estar presente.</p>
         <p class="text-muted">Por lo tanto le permite realizar trámites a distancia siendo una solución para gestionar sus bienes, trámites bancarios y otras tareas importantes.</p>
@@ -39,7 +39,7 @@
             en la carta, de esta manera evita futuros inconvenientes que se puedan presentar.</p>
         <p class="text-muted">Este poder a diferencia del poder general, es limitado y específico, no genera un poder total sino especifico sobre una actividad en particular.</p>
 
-        <h3>Para que se utiliza un poder especial?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿Para que se utiliza un poder especial?</h2>
         <ul class="text-muted">
             <li>Delegar la administración de propiedades.</li>
             <li>Solicitar permisos o documentos en instituciones públicas y privadas.</li>
@@ -48,7 +48,7 @@
             <li>Reclamar pensiones.</li>
         </ul>
 
-        <h3>Que requisitos necesito para realizarlo?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para realizarlo?</h2>
         <ul class="text-muted">
             <li>Identificación válida del poderdante.</li>
             <li>Nombres y apellidos del apoderado.</li>
@@ -56,12 +56,12 @@
             <li>Es aconsejable asignar una persona de absoluta confianza para que realice las tareas encomendadas.</li>
         </ul>
 
-        <h3>En donde puedo solicitar un poder especial?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo solicitar un poder especial?</h2>
         <p class="text-muted">Acérquese a nuestra oficina y solicite su carta poder, un asesor lo guiará para que usted realice el trámite de manera correcta y segura.</p>
 
 
 
-        <h3>En que tiempo se gestiona el poder?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo se gestiona el poder?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>

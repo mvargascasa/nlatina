@@ -91,7 +91,7 @@
             <p class="text-muted">Este documento le va ayudar a evitar inconvenientes con promesas de «palabra» y así poder hacer cumplir lo que ya se estipuló en el mismo, teniendo así un respaldo legal para hacer valer lo acordado en el contrato.</p>
 
 
-            <h3>Qué tipos de contratos puedo realizar?</h3>
+            <h2 style="font-weight: 500; font-size: 28px">¿Qué tipos de contratos puedo realizar?</h2>
             <ul class="text-muted">
                 <li>Arriendo.</li>
                 <li>Compra-venta.</li>
@@ -102,19 +102,19 @@
             </ul>
             <p class="text-muted">Todo tipo de contrato está regulado por leyes que obligan a cumplir las cláusulas establecidas en el mismo.</p>
 
-            <h3>Que requisitos necesito para realizar un contrato?</h3>
+            <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para realizar un contrato?</h2>
             <ul class="text-muted">
                 <li>Identificación valida de las personas que van a realizar el contrato.</li>
                 <li>Información de lo que se quiere dejar estipulado en el contrato.</li>
             </ul>
 
-        <h3>En donde puedo realizar un contrato?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo realizar un contrato?</h2>
         <p class="text-muted">Acérquese a nuestra oficina y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
 
 
 
 
-        <h3>En que tiempo me entregan los contratos?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan los contratos?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>

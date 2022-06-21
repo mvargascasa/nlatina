@@ -87,18 +87,18 @@
   </section>
 
 <div class="container pt-4">
-        <h3>Gestione su Revocatoria de forma rápida y segura.</h3>
+        <h2 style="font-weight: 500; font-size: 28px">Gestione su Revocatoria de forma rápida y segura.</h2>
         <p class="text-muted">Una Revocatoria es una escritura pública expedida por un notario a través de la cual se deja sin efecto un poder otorgado con antelación.</p>
         <p class="text-muted">Este trámite es muy importante realizarlo si ya no desea que la persona apoderada continúe con la gestiónes por la cual se realizó el poder inicial.</p>
 
-        <h3>Que tipo de poderes se pueden revocar?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿Que tipo de poderes se pueden revocar?</h2>
         <ul class="text-muted">
             <li>Poderes generales.</li>
             <li>Poderes especiales.</li>
         </ul>
 
 
-        <h3>Que requisitos necesito para realizar una revocatoria de poder?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para realizar una revocatoria de poder?</h2>
         <ul class="text-muted">
             <li>Identificación válida de la persona que otorgó el poder.</li>
             <li>Nombres y apellidos del nuevo apoderado.</li>
@@ -107,11 +107,11 @@
             <li>Es aconsejable asignar una persona de absoluta confianza para que realice el trámite necesario para realizar la revocación de un poder.</li>
         </ul>
 
-        <h3>En donde puedo solicitar la revocatoria de un poder?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo solicitar la revocatoria de un poder?</h2>
         <p class="text-muted">Acérquese a nuestra oficina y solicite la revocatoria del poder, un asesor lo guiará para que usted realice el trámite de manera correcta y segura.</p>
 
 
-        <h3>En que tiempo me entregan los documentos necesarios?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan los documentos necesarios?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>

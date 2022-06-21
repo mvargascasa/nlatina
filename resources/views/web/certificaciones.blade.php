@@ -87,20 +87,20 @@
   </section>
 
 <div class="container pt-4">
-            <h3>Realizamos Certificaciones de documentos.</h3>
+            <h2 style="font-weight: 500; font-size: 28px">Realizamos Certificaciones de documentos.</h2>
             <p class="text-muted">Las certificaciones son documentos firmados y sellados por un notario.</p>
             <p class="text-muted">Este trámite consta en una firma y sello en la que se declara que la copia emitida es fiel copia del documento original.</p>
             <p class="text-muted">Es decir, es un documento que el mismo notario expide o en base a un documento preexistente, así como la afirmación de que
                 una transcripción o reproducción coincide fielmente con su original.</p>
 
-            <h3>Para que me sirven las certificaciones?</h3>
+            <h2 style="font-weight: 500; font-size: 28px">¿Para que me sirven las certificaciones?</h2>
             <p class="text-muted">Al ser la certificación un documento que le proporciona autenticidad a nuestros documentos, pueden ser utilizados
                 en todo aquel trámite legal donde se requiera total veracidad.</p>
             <p class="text-muted">Esta certificación nos sirve para realizar tanto trámites nacionales como internacionales.</p>
             <p class="text-muted">Es importante que certifique documentos que puedan estar en deterioro para evitar gestionar este documento desde un
                 inicion. Esto le evitará contratiempos a la hora de realizar trámites y gestiones importantes.</p>
 
-            <h3>Qué tipo de documentos puedo certificar?</h3>
+            <h2 style="font-weight: 500; font-size: 28px">¿Qué tipo de documentos puedo certificar?</h2>
             <ul class="text-muted">
                 <li>Actas de nacimiento.</li>
                 <li>Actas de matrimonio.</li>
@@ -110,20 +110,20 @@
                 <li>Escrituras.</li>
             </ul>
 
-        <h3>Qué validez tienen las certificaciones?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿Qué validez tienen las certificaciones?</h2>
         <p class="text-muted">Cualquier documento que sea certificado tiene la misma validez que el documento original, no vence en el tiempo y se puede
             utilizar el cualquier trámite legal que se necesite.</p>
 
-        <h3>Que requisitos necesito para certificar un documento?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para certificar un documento?</h2>
         <p class="text-muted">El único requisito es presentar el documento original que desea certificar, siempre que el notario pueda constatar que este es original.</p>
 
-        <h3>En donde puedo certificar un documento?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo certificar un documento?</h2>
         <p class="text-muted">Acérquese a nuestra oficina con el documento que desea certificar y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
 
 
 
 
-        <h3>En que tiempo me entregan mi documento certificado?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan mi documento certificado?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>

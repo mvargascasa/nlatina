@@ -87,18 +87,18 @@
   </section>
 
 <div class="container pt-4">
-            <h3>Autentificamos sus documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos.</h3>
+            <h2 style="font-weight: 500; font-size: 28px">Autentificamos sus documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos.</h2>
             <p class="text-muted">La Apostilla, es la manera más simple de certificar la autenticidad de documentos públicos expedidos en otro país. Por lo tanto es un
                 requisito indispensable para gestionar trámites internacionales.</p>
             <p class="text-muted">De acuerdo al Convenio de la Haya, algunos de los países latinos miembros del convenio donde es válida la apostilla son Argentina, Bolivia,
                 Venezuela, Colombia, Chile, Costa Rica, Ecuador, Estados Unidos, El Salvador, Guatemala, Honduras, Perú, México, entre otros.</p>
 
-            <h3>Para que me sirve apostillar un documento?</h3>
+            <h2 style="font-weight: 500; font-size: 28px">¿Para que me sirve apostillar un documento?</h2>
             <p class="text-muted">El documento que porte la apostilla tiene validez legal en cualquiera de los países miembros del Convenio. La cual consiste en un sello
                 que la autoridad encargada estampa en seco y se agrega como nota al reverso o como hoja adicional de los documentos que se quisiera
                 autenticar. Es por eso que los únicos autorizados para validar esta apostilla son los notarios debidamente acreditados.</p>
 
-                <h3>En que documentos se necesita la apostilla?</h3>
+                <h2 style="font-weight: 500; font-size: 28px">¿En que documentos se necesita la apostilla?</h2>
         <ul class="text-muted">
             <li>Diplomas</li>
             <li>Certificados de nacimiento.</li>
@@ -116,13 +116,13 @@
             <li>Documentos corporativos.</li>
         </ul>
 
-        <h3>Que requisitos necesito para la apostilla de un documento?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para la apostilla de un documento?</h2>
         <p class="text-muted">El único requisito es poseer el documento original que desea apostillar. Por lo tanto es un trámite simple.</p>
 
-        <h3>En donde puedo apostillar un documento?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo apostillar un documento?</h2>
         <p class="text-muted">Puede <a href="{{route('web.contactenos')}}">contactarnos</a> o acercarse a nuestra oficina con el documento que desea
             apostillar y un asesor lo guiará para que realice el trámite de manera correcta, rápida y segura.</p>
-        <h3>En que tiempo se realiza una apostilla?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo se realiza una apostilla?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>

@@ -88,28 +88,28 @@
   </section>
 
 <div class="container pt-4">
-            <h3>Realizamos Declaraciones Juradas (Affidávit).</h3>
+            <h2 style="font-weight: 500; font-size: 28px">Realizamos Declaraciones Juradas (Affidávit).</h2>
             <p class="text-muted">Una declaración jurada o Affidávit es una manifestación escrita o verbal cuya veracidad es asegurada mediante un juramento
                 ante una autoridad judicial o administrativa.</p>
             <p class="text-muted">Esto hace que el contenido de la declaración sea tomado como cierto hasta que se demuestre lo contrario.</p>
 
-            <h3>Para que sirve un Affidávit?</h3>
+            <h2 style="font-weight: 500; font-size: 28px">¿Para que sirve un Affidávit?</h2>
             <p class="text-muted">Este documento es necesario para algunos trámites de inmigración cuando quieres solicitar que un familiar obtenga la visa o
                 residencia en Estados Unidos.</p>
             <p class="text-muted">Este documento del affidavit también se conoce entre los migrantes como declaración jurada de sostenimiento, mantenimiento o
                 solvencia económica.</p>
 
-            <h3>Que requisitos necesito para realizar los acuerdos?</h3>
+            <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para realizar los acuerdos?</h2>
             <ul class="text-muted">
                 <li>Identificación válida de la persona que va a realizar la declaración jurada.</li>
                 <li>Información de lo que se quiere dejar estipulado en el documento.</li>
             </ul>
 
-            <h3>Donde puedo realizar un acuerdo?</h3>
+            <h2 style="font-weight: 500; font-size: 28px">¿Donde puedo realizar un acuerdo?</h2>
             <p class="text-muted">Acérquese a nuestra oficina y un asesor lo guiará en la gestión del documento para que realice el trámite de manera correcta y segura.</p>
 
 
-        <h3>En que tiempo me entregan un Affidávit?</h3>
+        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan un Affidávit?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
