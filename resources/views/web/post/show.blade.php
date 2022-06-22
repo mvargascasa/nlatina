@@ -62,13 +62,13 @@
             </div>
         </div>
         {{-- share row --}}
-        <div class="row">
-            <div class="col-sm-3">
-                <a id="shareToFacebook">Facebook</a>
+        <div class="container mt-5 mb-5">
+            <h5 class="text-center">Compartir post</h5>
+            <div class="row">
+                <div class="col-sm-12 d-flex justify-content-center">
+                    <a id="shareToFacebook" href=""><i class="fab fa-facebook fa-2x"></i></a>
+                </div>
             </div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3"></div>
         </div>
 
         <hr class="mt-4 mb-4">
