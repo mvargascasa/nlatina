@@ -430,7 +430,7 @@
                         <option value="Venezuela">Venezuela</option>                    
                       </select>
                       <div id="divcodigoandtelefono" class="d-flex" style="width: 50%">
-                          <input type="text" id="telf" name="codpais" class="form-control" style="border-radius: 5px 0px 0px 5px; width: 75px" readonly/>
+                          <input type="text" id="telf" name="codpais" class="form-control" style="border-radius: 5px 0px 0px 5px; width: 75px; background-color: #ffffff" readonly/>
                           <input id="bbb" name="bbb" type="number" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required>
                       </div>
                 </div>
