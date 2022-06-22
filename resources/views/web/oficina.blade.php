@@ -6,6 +6,7 @@
     <meta name="keywords" content="{{ $data['keywords'] }}">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="robots" content="index, follow, snippet">
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
