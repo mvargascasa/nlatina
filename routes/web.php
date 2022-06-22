@@ -167,18 +167,18 @@ Route::get('/contactenos', function () {    return view('web.x-contactenos');   
 Route::get('/nosotros', function () {    return view('web.x-nosotros');    })->name('web.nosotros');
 Route::get('/politicas-de-privacidad', function () {    return view('web.politicas');    })->name('web.politicas');
 
-Route::get('/argentina', function () {    return view('web.consul.argentina');    })->name('web.argentina');
-Route::get('/bolivia', function () {    return view('web.consul.bolivia');    })->name('web.bolivia');
-Route::get('/colombia', function () {    return view('web.consul.colombia');    })->name('web.colombia');
-Route::get('/costarica', function () {    return view('web.consul.costarica');    })->name('web.costarica');
-Route::get('/ecuador', function () {    return view('web.consul.ecuador');    })->name('web.ecuador');
-Route::get('/salvador', function () {    return view('web.consul.salvador');    })->name('web.salvador');
-Route::get('/honduras', function () {    return view('web.consul.honduras');    })->name('web.honduras');
-Route::get('/mexico', function () {    return view('web.consul.mexico');    })->name('web.mexico');
-Route::get('/paraguay', function () {    return view('web.consul.paraguay');    })->name('web.paraguay');
-Route::get('/peru', function () {    return view('web.consul.peru');    })->name('web.peru');
-Route::get('/uruguay', function () {    return view('web.consul.uruguay');    })->name('web.uruguay');
-Route::get('/venezuela', function () {    return view('web.consul.venezuela');    })->name('web.venezuela');
+Route::get('/argentina', function () {    return redirect()->route('consul.slug', 'argentina');/*view('web.consul.argentina');*/ })->name('web.argentina');
+Route::get('/bolivia', function () {    return redirect()->route('consul.slug', 'bolivia'); /*view('web.consul.bolivia');*/    })->name('web.bolivia');
+Route::get('/colombia', function () {    return redirect()->route('consul.slug', 'colombia'); /*view('web.consul.colombia');*/    })->name('web.colombia');
+Route::get('/costarica', function () {    return redirect()->route('consul.slug', 'costa-rica'); /*view('web.consul.costarica');*/    })->name('web.costarica');
+Route::get('/ecuador', function () {    return redirect()->route('consul.slug', 'ecuador'); /*view('web.consul.ecuador');*/    })->name('web.ecuador');
+Route::get('/salvador', function () {    return redirect()->route('consul.slug', 'el-salvador'); /*view('web.consul.salvador');*/    })->name('web.salvador');
+Route::get('/honduras', function () {    return redirect()->route('consul.slug', 'honduras');/*view('web.consul.honduras');*/    })->name('web.honduras');
+Route::get('/mexico', function () {    return redirect()->route('consul.slug', 'mexico');/*view('web.consul.mexico'); */   })->name('web.mexico');
+Route::get('/paraguay', function () {    return redirect()->route('consul.slug', 'paraguay'); /*view('web.consul.paraguay');*/    })->name('web.paraguay');
+Route::get('/peru', function () {    return redirect()->route('consul.slug', 'peru');/*view('web.consul.peru'); */   })->name('web.peru');
+Route::get('/uruguay', function () {    return redirect()->route('consul.slug', 'uruguay');/*view('web.consul.uruguay');*/    })->name('web.uruguay');
+Route::get('/venezuela', function () {    return redirect()->route('consul.slug', 'venezuela');/*view('web.consul.venezuela');*/    })->name('web.venezuela');
 
 
 Route::get('getvisits', function () {
