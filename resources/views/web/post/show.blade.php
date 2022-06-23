@@ -44,11 +44,11 @@
     <div class="container pt-4" style="font-family: 'Roboto' !important">
         <div class="row mt-2 mb-2 ml-1">
             <div class="col-sm-6 border-left">
-                <p class="d-flex align-items-center"><img class="lazy" width="20" height="20" data-src="{{ asset('img/calendar.webp') }}" alt="{{$post->name}}"><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
+                <p class="d-flex align-items-center"><img class="lazy" width="20" height="20" data-src="{{ asset('img/calendar.webp') }}" alt="..."><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
             </div>
             @isset($post->reading_time)
             <div class="col-sm-6 border-left">
-                <p class="d-flex align-items-center"><img class="lazy" width="20" height="20" data-src="{{ asset('img/reloj.webp') }}" alt="{{ $post->name}}"><b style="font-weight: 500" class="ml-1 mr-1">Tiempo de Lectura:</b> {{ $post->reading_time}} min.</p>
+                <p class="d-flex align-items-center"><img class="lazy" width="20" height="20" data-src="{{ asset('img/reloj.webp') }}" alt="..."><b style="font-weight: 500" class="ml-1 mr-1">Tiempo de Lectura:</b> {{ $post->reading_time}} min.</p>
             </div>
             @endisset
         </div>
@@ -91,7 +91,8 @@
                                 <span class="d-block text-muted text-truncate">
                                     <?php echo strip_tags(substr($lpost->body,0,100))  ?>
                                 </span>
-                            <div class="small text-muted float-left">{{$lpost->created_at->format('M d')}}</div>
+                            <div class="small text-muted float-left"><i class="far fa-calendar-alt" style="font-size: 17px"></i> {{$lpost->created_at->format('M d, Y')}}</div>
+                            <div class="small text-muted float-right"><i class="far fa-clock mr-1" style="font-size: 17px"></i> {{ $lpost->reading_time}} min.</div>
                         </div>
                     </div>
                 </div>
