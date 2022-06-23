@@ -159,7 +159,7 @@
             </div>
 
             <h4 class="p-1">Whatsapp</h4>
-            <a class="text-muted d-block" href="https://api.whatsapp.com/send?phone=+13478460082" target="_blank"><i class="fab fa-whatsapp"></i> 347 846 0082</a>
+            <a class="text-muted d-block" href="https://api.whatsapp.com/send?phone=+13479739888" target="_blank"><i class="fab fa-whatsapp"> 347-973-9888</i> </a>
             
             <h4 class="p-1">Email</h4>
             <a href="mailto:info@notarialatina.com" class="text-muted"><i class="fas fa-envelope"></i> info@notarialatina.com</a>
