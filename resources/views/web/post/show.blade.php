@@ -91,8 +91,8 @@
                                 <span class="d-block text-muted text-truncate">
                                     <?php echo strip_tags(substr($lpost->body,0,100))  ?>
                                 </span>
-                            <div class="small text-muted float-left"><i class="far fa-calendar-alt" style="font-size: 17px"></i> {{$lpost->created_at->format('M d, Y')}}</div>
-                            <div class="small text-muted float-right"><i class="far fa-clock mr-1" style="font-size: 17px"></i> {{ $lpost->reading_time}} min.</div>
+                            <div class="small text-muted float-left mt-3"><i class="far fa-calendar-alt" style="font-size: 17px"></i> {{$lpost->created_at->format('M d, Y')}}</div>
+                            <div class="small text-muted float-right mt-3"><i class="far fa-clock mr-1" style="font-size: 17px"></i> {{ $lpost->reading_time}} min.</div>
                         </div>
                     </div>
                 </div>
