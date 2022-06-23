@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
   <title>Apostillas Inmediatas en Estados Unidos - Notaria Latina</title>
   <!-- Global site tag (gtag.js) - Google Ads: 806267889 -->
-  <meta name="robots" content="noindex">
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-806267889"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124437679-3"></script>
