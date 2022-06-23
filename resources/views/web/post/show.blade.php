@@ -68,9 +68,9 @@
             <h4 class="text-center">Compartir post</h4>
             <div class="row">
                 <div class="col-sm-12 d-flex justify-content-center">
-                    <a id="shareToFacebook" href=""><i class="fab fa-facebook fa-2x"></i></a>
-                    <a id="shareToTwitter" href=""><i class="fab fa-twitter fa-2x ml-4"></i></a>
-                    <a id="shareToWpp" href=""><i class="fab fa-whatsapp fa-2x ml-4" style="color: #25D366"></i></a>
+                    <p style="cursor: pointer" id="shareToFacebook"><i class="fab fa-facebook fa-2x" style="color: #0165E1"></i></p>
+                    <p id="shareToTwitter" style="cursor: pointer"><i class="fab fa-twitter fa-2x ml-4" style="color: #1DA1F2"></i></p>
+                    <p id="shareToWpp" style="cursor: pointer"><i class="fab fa-whatsapp fa-2x ml-4" style="color: #25D366"></i></p>
                 </div>
             </div>
         </div>
@@ -163,7 +163,7 @@
 @section('script')
     <script>
         window.addEventListener('load', (event) => {
-            document.getElementById('prisection').style.backgroundImage = "url('{{url('uploads/'.$post->imgdir)}}')";
+            document.getElementById('prisection').style.backgroundImage = "url('{{url('uploads/i900_'.$post->imgdir)}}')";
         });
         let shareLink = window.location.href;
         document.getElementById('shareToFacebook').addEventListener('click', () => {window.open('https://www.facebook.com/sharer/sharer.php?u=' + shareLink, 'facebook-share-dialog', 'width=626, height=436');});
