@@ -97,7 +97,7 @@ class PostController extends Controller
             }
         }
 
-        return redirect()->route('post.edit',compact('post'))->with('status','Publiación Creada');
+        return redirect()->route('post.edit',compact('post'))->with('status','Publicación Creada');
     }
 
     public function edit(Post $post)
