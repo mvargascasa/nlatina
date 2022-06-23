@@ -12,7 +12,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" as="style" onload="this.rel='stylesheet'">
 
     <style>
         /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap'); */
@@ -163,7 +163,7 @@
 @section('script')
     <script>
         window.addEventListener('load', (event) => {
-            document.getElementById('prisection').style.backgroundImage = "url('{{url('uploads/i900_'.$post->imgdir)}}')";
+            document.getElementById('prisection').style.backgroundImage = "url('{{url('uploads/'.$post->imgdir)}}')";
         });
         let shareLink = window.location.href;
         document.getElementById('shareToFacebook').addEventListener('click', () => {window.open('https://www.facebook.com/sharer/sharer.php?u=' + shareLink, 'facebook-share-dialog', 'width=626, height=436');});
