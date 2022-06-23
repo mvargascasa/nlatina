@@ -48,7 +48,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card my-2 h-100">
                         <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
-                            <img src="https://notarialatina.com/uploads/i600_{{$post->imgdir}}" class="card-img-top" alt="Imagen" style="object-fit: cover;height: 150px !important;">
+                            <img src="{{url('uploads/i600_'.$post->imgdir)}}" class="card-img-top" alt="Imagen" style="object-fit: cover;height: 150px !important;">
                             {{-- {{url('uploads/i900_'.$post->imgdir)}} --}}
                         </a>
                         <div class="card-body p-2" style="position:relative;">

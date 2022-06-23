@@ -152,7 +152,7 @@
                     <div class="col-12 col-md-4">
                         <div class="card my-2 h-100">
                             <a href="{{route('post.slug',$lpost->slug)}}" class="stretched-link">
-                                <img data-src="https://notarialatina.com/uploads/{{$lpost->imgdir}}" class="lazy card-img-top" alt="Consulado de {{ $consul->country }} en Estados Unidos" style="object-fit: cover;height: 150px !important;">
+                                <img data-src="{{url('uploads/i600_'.$lpost->imgdir)}}" class="lazy card-img-top" alt="Consulado de {{ $consul->country }} en Estados Unidos" style="object-fit: cover;height: 150px !important;">
                                 {{-- {{url('uploads/'.$lpost->imgdir)}} --}}
                             </a>
                             <div class="card-body p-2" style="position:relative;">
