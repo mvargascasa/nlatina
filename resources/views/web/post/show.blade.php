@@ -163,7 +163,7 @@
 @section('script')
     <script>
         window.addEventListener('load', (event) => {
-            document.getElementById('prisection').style.backgroundImage = "url('{{url('uploads/'.$post->imgdir)}}')";
+            document.getElementById('prisection').style.backgroundImage = "url('{{url('uploads/i900_'.$post->imgdir)}}')";
         });
         let shareLink = window.location.href;
         document.getElementById('shareToFacebook').addEventListener('click', () => {window.open('https://www.facebook.com/sharer/sharer.php?u=' + shareLink, 'facebook-share-dialog', 'width=626, height=436');});
