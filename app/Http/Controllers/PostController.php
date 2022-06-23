@@ -50,9 +50,10 @@ class PostController extends Controller
                     if(strlen($ext)>0){
                         $folder = 'uploads/';
                         $nameFile = "IMG_$post->id-".uniqid().$ext;
-                        $img->save($folder.$nameFile);
+                        $img->fit(1200, 800, function($constraint){ $constraint->upsize(); $constraint->aspectRatio(); });
+                        $img->save($folder.$nameFile, 72);
 
-                        $img->fit(900, 600 , function ($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
+                        $img->fit(900, 600 , function($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
                         $img->save($folder."i900_".$nameFile, 40);
 
                         $img->fit(600,320 , function ($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
@@ -125,7 +126,8 @@ class PostController extends Controller
                     if(strlen($ext)>0){
                         $folder = 'uploads/';
                         $nameFile = "IMG_$post->id-".uniqid().$ext;
-                        $img->save($folder.$nameFile);
+                        $img->fit(1200, 800, function($constraint){ $constraint->upsize(); $constraint->aspectRatio(); });
+                        $img->save($folder.$nameFile, 72);
 
                         $img->fit(900, 600 , function ($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
                         $img->save($folder."i900_".$nameFile, 40);
@@ -173,7 +175,7 @@ class PostController extends Controller
             }
         }
 
-        return redirect()->route('post.edit',compact('post'))->with('status','Publiación Actualizada');
+        return redirect()->route('post.edit',compact('post'))->with('status','Publicación Actualizada');
     }
 
     public function destroy(Post $post)
