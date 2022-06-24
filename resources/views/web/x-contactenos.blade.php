@@ -108,8 +108,9 @@
                             <span class="text-muted d-block">67-03 Roosevelt Avenue</span>
                             <span class="text-muted">Woodside, NY 11377</span>
                           </a> <br> 
-                          <a href="tel:+17187665041" class="text-muted"><i class="fa fa-phone-square-alt"></i> 718-766-5041</a> <br> 
-                          <a href="tel:+13479739888" class="text-muted"><i class="fa fa-phone-square-alt"></i> 347-973-9888</a> <br>
+                          <a href="tel:+17187665041" class="text-muted"><i class="fa fa-phone-square-alt" style="color: #EF5261;"></i> 718-766-5041</a> <br> 
+                          <a href="tel:+13479739888" class="text-muted"><i class="fa fa-phone-square-alt" style="color: #EF5261"></i> 347-973-9888</a> <br>
+                          <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-muted" target="_blank"><i class="fab fa-whatsapp" style="color: #4CAF50"></i> 347-973-9888</a> <br>
                         </p>
 
                 </div>
@@ -127,7 +128,8 @@
                           <span class="text-muted d-block"> 1146 East Jersey St  </span>
                           <span class="text-muted"> Elizabeth, NJ 07201</span>
                         </a> <br> 
-                        <a href="tel:+19088009046" class="text-muted"><i class="fa fa-phone-square-alt"></i> 908-800-9046</a> <br> 
+                        <a href="tel:+19088009046" class="text-muted"><i class="fa fa-phone-square-alt" style="color: #EF5261"></i> 908-800-9046</a> <br>
+                        <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-muted" target="_blank"><i class="fab fa-whatsapp" style="color: #4CAF50"></i> 908-800-9046</a> <br> 
                       </p> 
               </div>
               <div class="col-12 col-sm-6">
@@ -146,7 +148,8 @@
                           <span class="text-muted d-block"> 2104 N University Dr </span>
                           <span class="text-muted"> Sunrise, FL 33322</span>
                         </a> <br> 
-                        <a href="tel:+13056003290" class="text-muted"><i class="fa fa-phone-square-alt"></i> 305-600-3290</a> <br> 
+                        <a href="tel:+13056003290" class="text-muted"><i class="fa fa-phone-square-alt" style="color: #EF5261"></i> 305-600-3290</a> <br> 
+                        <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-muted" target="_blank"><i class="fab fa-whatsapp" style="color: #4CAF50"></i> 305-600-3290</a> <br> 
                         <!-- <a href="tel:+13053948840" class="text-muted"><i class="fa fa-phone-square-alt"></i> 305-394-8840</a> <br> -->
                       </p>
               </div>
@@ -162,7 +165,7 @@
             <a class="text-muted d-block" href="https://api.whatsapp.com/send?phone=13478460082" target="_blank"><i class="fab fa-whatsapp"> 347 846 0082</i> </a>
             
             <h4 class="p-1">Email</h4>
-            <a href="mailto:info@notarialatina.com" class="text-muted"><i class="fas fa-envelope"></i> info@notarialatina.com</a>
+            <a href="mailto:info@notarialatina.com" class="text-muted"><i class="fas fa-envelope" style="color: #2196F3"></i> info@notarialatina.com</a>
               
         </div>
 
