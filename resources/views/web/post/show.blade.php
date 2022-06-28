@@ -64,7 +64,7 @@
         </div>
         {{-- video row --}}
         @isset($post->srcvideo)
-            <div class="row">
+            <div class="row mt-5 mb-5">
                 <div class="col-12 d-flex justify-content-center">
                     <iframe width="560" height="315" src="{{$post->srcvideo}}" title="{{ $post->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
