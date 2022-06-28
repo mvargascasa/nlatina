@@ -1572,9 +1572,9 @@ class WebController extends Controller
         }
         //partners@notarialatina.com,hserrano@notarialatina.com
     }
-
-
     //notariapublicalatina@gmail.com,hserrano@notarialatina.com
+
+    //Funcion que envia mail desde las paginas de las oficinas - /newjersey /newyork /florida
     public function sendEmailOficina(Request $request){
         // $pais = $this->getPaisByCodigo($request->cod_pais);
 
@@ -1626,9 +1626,11 @@ class WebController extends Controller
             mail('sebas31051999@gmail.com', $subject, $message, $header);
         }
 
-        $request->session()->flash('report', 'Se ha enviado el correo');
+        //$request->session()->flash('report', 'Se ha enviado el correo');
 
-        return back();
+        //return back();
+
+        return redirect()->route('landing.thank');
     }
 
     public function postStar(Request $request, Partner $partner){
