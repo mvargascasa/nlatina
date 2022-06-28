@@ -66,7 +66,7 @@
         @isset($post->srcvideo)
             <div class="row mt-5 mb-5">
                 <div class="col-12 d-flex justify-content-center">
-                    <iframe width="560" height="315" src="{{$post->srcvideo}}" title="{{ $post->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="iframevideo" width="560" height="315" title="{{ $post->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         @endisset
@@ -174,6 +174,9 @@
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url('{{url('uploads/i900_'.$post->imgdir)}}')";
         });
+        setTimeout(() => {
+            document.getElementById('iframevideo').src = "{{url('https://www.youtube.com/embed/AHE8EC0wsNA')}}";
+        }, 3000);
         let shareLink = window.location.href;
         document.getElementById('shareToFacebook').addEventListener('click', () => {window.open('https://www.facebook.com/sharer/sharer.php?u=' + shareLink, 'facebook-share-dialog', 'width=626, height=436');});
         document.getElementById('shareToTwitter').addEventListener('click', () => {window.open('https://twitter.com/intent/tweet?url='+shareLink)});
