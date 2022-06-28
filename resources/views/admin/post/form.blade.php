@@ -67,6 +67,18 @@
             @endisset
         </div>
 
+        <div class="form-row pt-4">
+            <div class="form-group col-md-6">
+                {!! Form::label('srcvideo', 'URL de Video') !!}
+                {!! Form::text('srcvideo', null, ['class' => 'form-control']) !!}
+            </div>
+            @isset($post->srcvideo)
+                <div class="form-group col-md-6">
+                    <iframe class="ml-3" width="200" height="150" src="{{$post->srcvideo}}" frameborder="0"></iframe>
+                </div>
+            @endisset
+        </div>
+
     </div>
     @if(isset($post))
     <div class="alert alert-secondary">       
