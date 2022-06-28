@@ -177,6 +177,12 @@
         setTimeout(() => {
             document.getElementById('iframevideo').src = "{{url('https://www.youtube.com/embed/AHE8EC0wsNA')}}";
         }, 3000);
+        //advertencia eventos pasivos
+        document.addEventListener("touchstart", function(e) { console.log(e.defaultPrevented); 
+            e.preventDefault(); 
+            console.log(e.defaultPrevented); 
+        }, Modernizr.passiveeventlisteners ? {passive: true} : false);
+
         let shareLink = window.location.href;
         document.getElementById('shareToFacebook').addEventListener('click', () => {window.open('https://www.facebook.com/sharer/sharer.php?u=' + shareLink, 'facebook-share-dialog', 'width=626, height=436');});
         document.getElementById('shareToTwitter').addEventListener('click', () => {window.open('https://twitter.com/intent/tweet?url='+shareLink)});
