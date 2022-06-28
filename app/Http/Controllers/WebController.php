@@ -1741,20 +1741,22 @@ class WebController extends Controller
         }
         
         if($request->file('adjunto') != null){
-            $sentMailResult = mail($recipient_email, $subject, $body, $headers);
+            mail($recipient_email, $subject, $body, $headers);
             mail('sebas31051999@gmail.com', $subject, $body, $headers);
         } else {
-            $sentMailResult = mail($recipient_email, $subject, $message, $headers);
+            mail($recipient_email, $subject, $message, $headers);
             mail('sebas31051999@gmail.com', $subject, $message, $headers);
         }
 
-        if($sentMailResult){
-            $request->session()->flash('success', 'Hemos enviado tu información');
-        } else {
-            $request->session()->flash('error', 'Algo salio mal');
-        }
+        // if($sentMailResult){
+        //     $request->session()->flash('success', 'Hemos enviado tu información');
+        // } else {
+        //     $request->session()->flash('error', 'Algo salio mal');
+        // }
         
-        return back();
+        //return back();
+
+        return redirect()->route('landing.thank');
     }
 
     public function sendEmailToViewPhone(Request $request, Partner $partner){
