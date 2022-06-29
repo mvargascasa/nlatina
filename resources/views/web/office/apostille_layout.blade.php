@@ -65,7 +65,7 @@
         <div class="container mt-5">
             <div class="row d-flex mx-1">
                 <div class="d-flex">
-                    <section>
+                    <section style="text-align: justify">
                         {!! $data['body'] !!}    
                     </section>
                 </div>

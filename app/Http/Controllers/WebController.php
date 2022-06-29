@@ -330,6 +330,20 @@ class WebController extends Controller
                     $data['description'] = 'Reporte Consular (CRBA)';
                     $data['metadescription'] = "Consulte por nuestro servicio de apostilla en reporte consular en New York 🗽. Lo asesoramos de una manera segura. Solicítelo aquí! ✅";
                     $data['keywords'] = "apostillar crba new york, apostillar reporte consular en new york, donde puedo apostillar un reporte consular en new york, donde puedo apostillar un reporte consular de nacimiento en new york, donde solicitar el reporte consular en new york";
+                    $data['body'] = "<ul><li><h2>¿Qué es un Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>
+                        Un Reporte Consular de Nacimiento en el Extranjero o CRBA, por sus siglas en inglés, es evidencia de ciudadanía estadounidense, emitida a una persona nacida en el extranjero de padre(s) estadounidenses que cumplan con los requisitos para la transmisión de la ciudadanía bajo La ley de Inmigración y Nacionalidad.
+                    </p>
+                    <ul><li><h2>¿Para qué sirve el Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>
+                        Es la manera en la cual un ciudadano estadounidense puede transmitir su ciudadanía a su hijo que ha nacido fuera de los Estados Unidos.  
+                    </p>
+                    <ul><li><h2>¿Cuáles son los requisitos para obtener el Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>
+                        El juntar los documentos requeridos para aplicar a un Reporte Consular de Nacimiento en el Extranjero (CRBA) puede ser difícil pero si se realiza correctamente le puede ahorrar varias visitas a la embajada o consulado, evitar que la que su aplicación sea puesta en espera o sea rechazada.                    
+                    </p>
+                    <ul><li><h2>¿Dónde puedo obtener un Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>Puede <a href='#card'>completar el siguiente formulario</a> o dirigirse personalmente a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera correcta y segura.</p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-matrimonio-new-york':
@@ -801,6 +815,20 @@ class WebController extends Controller
                     $data['description'] = 'Reporte Consular (CRBA)';
                     $data['metadescription'] = "Consulte por nuestros servicios de apostilla en reporte consular (CRBA) en New Jersey 🗽 Lo asesoramos de una manera segura. Solicítelo aquí! ✅";
                     $data['keywords'] = "reporte consular, reporte consular new jersey, crba estados unidos, apostillar crba new jersey, apostillar reporte consular en new jersey, donde puedo apostillar un reporte consular en new jersey, donde puedo apostillar un reporte consular de nacimiento en new jersey, donde solicitar el reporte consular en new jersey";
+                    $data['body'] = "<ul><li><h2>¿Qué es un Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>
+                        Un Reporte Consular de Nacimiento en el Extranjero o CRBA, por sus siglas en inglés, es evidencia de ciudadanía estadounidense, emitida a una persona nacida en el extranjero de padre(s) estadounidenses que cumplan con los requisitos para la transmisión de la ciudadanía bajo La ley de Inmigración y Nacionalidad.
+                    </p>
+                    <ul><li><h2>¿Para qué sirve el Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>
+                        Es la manera en la cual un ciudadano estadounidense puede transmitir su ciudadanía a su hijo que ha nacido fuera de los Estados Unidos.  
+                    </p>
+                    <ul><li><h2>¿Cuáles son los requisitos para obtener el Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>
+                        El juntar los documentos requeridos para aplicar a un Reporte Consular de Nacimiento en el Extranjero (CRBA) puede ser difícil pero si se realiza correctamente le puede ahorrar varias visitas a la embajada o consulado, evitar que la que su aplicación sea puesta en espera o sea rechazada.                    
+                    </p>
+                    <ul><li><h2>¿Dónde puedo obtener un Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>Puede <a href='#card'>completar el siguiente formulario</a> o dirigirse personalmente a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera correcta y segura.</p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-matrimonio-new-jersey':
@@ -1264,6 +1292,20 @@ class WebController extends Controller
                     $data['description'] = 'Reporte Consular';
                     $data['metadescription'] .= "¿Necesitas apostillar un Reporte Consular (CRBA) en Florida? En Notaria Latina lo hacemos de una manera ágil y rápida 😉 Puedes enviar tus documentos por nuestro sitio web o acercarte a nuestras oficinas";
                     $data['keywords'] .= ", apostillar crba near me, apostillar crba florida, apostillar reporte consular de nacimiento en el extranjero florida, apostillar certificado de nacimiento en el extranjero florida, apostillar inscripcion de nacimiento extranjero florida, apostillar acta de nacimiento extranjero florida, apostille birth certificate abroad florida, donde apostillar crba en florida";
+                    $data['body'] = "<ul><li><h2>¿Qué es un Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>
+                        Un Reporte Consular de Nacimiento en el Extranjero o CRBA, por sus siglas en inglés, es evidencia de ciudadanía estadounidense, emitida a una persona nacida en el extranjero de padre(s) estadounidenses que cumplan con los requisitos para la transmisión de la ciudadanía bajo La ley de Inmigración y Nacionalidad.
+                    </p>
+                    <ul><li><h2>¿Para qué sirve el Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>
+                        Es la manera en la cual un ciudadano estadounidense puede transmitir su ciudadanía a su hijo que ha nacido fuera de los Estados Unidos.  
+                    </p>
+                    <ul><li><h2>¿Cuáles son los requisitos para obtener el Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>
+                        El juntar los documentos requeridos para aplicar a un Reporte Consular de Nacimiento en el Extranjero (CRBA) puede ser difícil pero si se realiza correctamente le puede ahorrar varias visitas a la embajada o consulado, evitar que la que su aplicación sea puesta en espera o sea rechazada.                    
+                    </p>
+                    <ul><li><h2>¿Dónde puedo obtener un Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
+                    <p>Puede <a href='#card'>completar el siguiente formulario</a> o dirigirse personalmente a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera correcta y segura.</p>";
                     return view('web.office.apostille_layout', compact('data'));
                     break;
                 case 'apostillar-certificado-de-matrimonio-florida':

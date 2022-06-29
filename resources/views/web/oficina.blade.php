@@ -11,33 +11,13 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         @media screen and (max-width: 580px){
-            .titulo{
-                margin-top: 15%;
-            }
-            .first-row{
-                padding-bottom: 15px;
-            }
-            #sectionthree{
-                min-width: 110vw;
-                min-height: 130vh;
-            }
-            #imgApostille{
-                padding-top: 5%;
-            }
-            #imgApostille img{
-                width: 400px !important;
-                height: 250px !important;
-            }
-            #imgrowapostille{
-                width: 100%!important;
-                height: 100%!important;
-            }
-            .linkServices{
-                margin-left: -5px !important;
-                padding: 0px 0px 0px 0px !important; 
-                margin-top: 0% !important; 
-                margin-bottom: 0% !important;
-            }
+            .titulo{margin-top: 15%;}
+            .first-row{padding-bottom: 15px;}
+            #sectionthree{min-width: 110vw;min-height: 130vh;}
+            #imgApostille{padding-top: 5%;}
+            #imgApostille img{width: 400px !important;height: 250px !important;}
+            #imgrowapostille{width: 100%!important;height: 100%!important;}
+            .linkServices{margin-left: -5px !important;padding: 0px 0px 0px 0px !important; margin-top: 0% !important; margin-bottom: 0% !important;}
             #colServices{
                 padding-top: 0px !important;
                 margin-left: 10% !important;
