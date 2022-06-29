@@ -342,6 +342,12 @@ class WebController extends Controller
                     <p>
                         El juntar los documentos requeridos para aplicar a un Reporte Consular de Nacimiento en el Extranjero (CRBA) puede ser difícil pero si se realiza correctamente le puede ahorrar varias visitas a la embajada o consulado, evitar que la que su aplicación sea puesta en espera o sea rechazada.                    
                     </p>
+                    <p>Las condiciones para aplicar para este proceso son:</p>
+                    <ol>
+                        <p><li>Al menos uno de los padres debe ser ciudadano estadounidense al nacer su hijo.</li></p>
+                        <p><li>El padre que transmite la ciudadanía debe probar una estancia de tiempo mínima en el territorio de los Estados Unidos (presencia física) previo al nacimiento del menor. En general el periodo de residencia a demostrar es de 5 años.</li></p>
+                        <p><li>Debe existir una relación biológica (consanguínea) o legal entre el niño y el padre que transmite la ciudadanía.</li></p>
+                    </ol>
                     <ul><li><h2>¿Dónde puedo obtener un Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
                     <p>Puede <a href='#card'>completar el siguiente formulario</a> o dirigirse personalmente a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera correcta y segura.</p>";
                     return view('web.office.apostille_layout', compact('data'));
@@ -827,6 +833,12 @@ class WebController extends Controller
                     <p>
                         El juntar los documentos requeridos para aplicar a un Reporte Consular de Nacimiento en el Extranjero (CRBA) puede ser difícil pero si se realiza correctamente le puede ahorrar varias visitas a la embajada o consulado, evitar que la que su aplicación sea puesta en espera o sea rechazada.                    
                     </p>
+                    <p>Las condiciones para aplicar para este proceso son:</p>
+                    <ol>
+                        <p><li>Al menos uno de los padres debe ser ciudadano estadounidense al nacer su hijo.</li></p>
+                        <p><li>El padre que transmite la ciudadanía debe probar una estancia de tiempo mínima en el territorio de los Estados Unidos (presencia física) previo al nacimiento del menor. En general el periodo de residencia a demostrar es de 5 años.</li></p>
+                        <p><li>Debe existir una relación biológica (consanguínea) o legal entre el niño y el padre que transmite la ciudadanía.</li></p>
+                    </ol>
                     <ul><li><h2>¿Dónde puedo obtener un Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
                     <p>Puede <a href='#card'>completar el siguiente formulario</a> o dirigirse personalmente a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera correcta y segura.</p>";
                     return view('web.office.apostille_layout', compact('data'));
@@ -1304,6 +1316,12 @@ class WebController extends Controller
                     <p>
                         El juntar los documentos requeridos para aplicar a un Reporte Consular de Nacimiento en el Extranjero (CRBA) puede ser difícil pero si se realiza correctamente le puede ahorrar varias visitas a la embajada o consulado, evitar que la que su aplicación sea puesta en espera o sea rechazada.                    
                     </p>
+                    <p>Las condiciones para aplicar para este proceso son:</p>
+                    <ol>
+                        <p><li>Al menos uno de los padres debe ser ciudadano estadounidense al nacer su hijo.</li></p>
+                        <p><li>El padre que transmite la ciudadanía debe probar una estancia de tiempo mínima en el territorio de los Estados Unidos (presencia física) previo al nacimiento del menor. En general el periodo de residencia a demostrar es de 5 años.</li></p>
+                        <p><li>Debe existir una relación biológica (consanguínea) o legal entre el niño y el padre que transmite la ciudadanía.</li></p>
+                    </ol>
                     <ul><li><h2>¿Dónde puedo obtener un Reporte Consular de Nacimiento en el Extranjero (CRBA)?</h2></li></ul>
                     <p>Puede <a href='#card'>completar el siguiente formulario</a> o dirigirse personalmente a nuestras oficinas en ".$data['office']." donde un asesor lo guiará en el proceso de una manera correcta y segura.</p>";
                     return view('web.office.apostille_layout', compact('data'));
