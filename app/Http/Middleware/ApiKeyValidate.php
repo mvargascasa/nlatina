@@ -26,7 +26,7 @@ class ApiKeyValidate
         //     ], 401);
         // }
 
-        if(isset($key) && $key === "partnersNL*"){
+        if(isset($key) && $key === "NLPartners2022@*"){
             return $next($request);
         } else {
             return response()->json([
