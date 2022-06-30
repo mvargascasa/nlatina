@@ -12,7 +12,7 @@ class ApiController extends Controller
         //return Partner::with('specialties')->get();
 
         return Partner::select('id', 'name', 'lastname', 'phone', 'email', 'country_residence', 'state', 'city')
-                        ->with('specialties')
+                        ->with('specialties:name_specialty')
                         ->get();
     }
 }
