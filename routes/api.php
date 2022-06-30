@@ -18,4 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('partners', 'ApiController@showallpartners');
+Route::group(["middleware" => "apikey.validate"], function () {
+
+    Route::get('partners', 'ApiController@showallpartners');
+    
+});
