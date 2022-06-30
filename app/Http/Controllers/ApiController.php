@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 class ApiController extends Controller
 {
     public function showallpartners(){
-        return Partner::select('name', 'lastname', 'phone', 'city')->get();
+
+        //return Partner::with('specialties')->get();
+
+        return Partner::select('id', 'name', 'lastname', 'phone', 'email', 'country_residence', 'state', 'city')
+                        ->with('specialties')
+                        ->get();
     }
 }
