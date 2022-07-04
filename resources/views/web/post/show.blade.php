@@ -175,6 +175,8 @@
             document.getElementById('prisection').style.backgroundImage = "url('{{url('uploads/i900_'.$post->imgdir)}}')";
         });
         setTimeout(() => {
+            let iframevideo = document.getElementById('iframevideo');
+            if(iframevideo)
             document.getElementById('iframevideo').src = "{{url('https://www.youtube.com/embed/AHE8EC0wsNA')}}";
         }, 3000);
         let shareLink = window.location.href;
