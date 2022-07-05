@@ -361,7 +361,8 @@ class WebController extends Controller
                 case 'apostillar-documentos-new-york':
                     $data['metadescription'] .= "¿Necesitas apostillar un documento? Te ayudamos a tramitar todo tipo de Documentos en New York de una manera ágil y rápida!";
                     $data['keywords'] .= ", apostillar documentos new york, apostillar diploma new york, apostillar poder general new york, apostillar poder especial new york, apostillar certificado de matrimonio new york, apostillar certificado de defuncion new york, apostillar contrato new york, apostillar carta de invitacion new york, apostillar testamentos new york, apostillar declaraciones juradas new york, apostillar affidavit new york, apostillar acta de divorcio new york, apostillar facturas new york, apostille documents new york";
-                    return view('web.office.apostillas', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%apostilla%')->limit(3)->get();
+                    return view('web.office.apostillas', compact('data', 'posts'));
                     break;
                 case 'affidavit-support-en-new-york':
                     $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en New York de una manera ágil y rápida!";
@@ -855,7 +856,8 @@ class WebController extends Controller
                 case 'apostillar-documentos-new-jersey':
                     $data['metadescription'] .= "Apostillamos todo tipo de Documentos en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", apostillar documentos new jersey, apostillar diploma new jersey, apostillar poder general new jersey, apostillar poder especial new jersey, apostillar certificado de matrimonio new jersey, apostillar certificado de defuncion new jersey, apostillar contrato new jersey, apostillar carta de invitacion new jersey, apostillar testamentos new jersey, apostillar declaraciones juradas new jersey, apostillar affidavit new jersey, apostillar acta de divorcio new jersey, apostillar facturas new jersey, apostille documents new jersey";
-                    return view('web.office.apostillas', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%apostilla%')->limit(3)->get();
+                    return view('web.office.apostillas', compact('data', 'posts'));
                     break;
                 case 'affidavit-support-en-new-jersey':
                     $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en New Jersey de una manera ágil y rápida!";
@@ -1357,7 +1359,8 @@ class WebController extends Controller
                 case 'apostillar-documentos-florida':
                     $data['metadescription'] .= "Apostillamos todo tipo de Documentos en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", apostillar documentos florida, apostillar diploma florida, apostillar poder general florida, apostillar poder especial florida, apostillar certificado de matrimonio florida, apostillar certificado de defuncion florida, apostillar contrato florida, apostillar carta de invitacion florida, apostillar testamentos florida, apostillar declaraciones juradas florida, apostillar affidavit florida, apostillar acta de divorcio florida, apostillar facturas florida, apostille documents florida";
-                    return view('web.office.apostillas', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%apostilla%')->limit(3)->get();
+                    return view('web.office.apostillas', compact('data', 'posts'));
                     break;
                 case 'affidavit-support-en-florida':
                     $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en Florida de una manera ágil y rápida!";
