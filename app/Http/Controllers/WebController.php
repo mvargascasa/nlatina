@@ -24,6 +24,72 @@ class WebController extends Controller
 {
     use GetCountryByCodTrait, GetCodByCountryTrait;
 
+    public $more_reviewsnj = 'https://g.page/r/CVNRV-zNuJiZEAE';
+    public $reviewsnj = [
+        [
+            'name' => 'Ronald Pacheco',
+            'stars' => 5,
+            'message' => 'Rápida y muy amable. He ido para traducir una licencia de conducir y poder presentarla a la NJMVC  y en apenas unos minutos pudieron hacerlo. Cuando vuelva a necesitar hacer algún otro trámite seguro que volveré allí. Muchas Gracias',
+            'link' => 'https://goo.gl/maps/qB6rXkmXYBwkD25v5'
+        ],
+        [
+            'name' => 'Linda Madrid',
+            'stars' => 5,
+            'message' => 'Excelente servicio el que se me brindo el dia de hoy. Su personal es atento y logro solventar todas mis gestiones en un buen tiempo y con mucha cortesía. Recomiendo el lugar',
+            'link' => 'https://goo.gl/maps/7D4uE3NVJXP6oY2g7'
+        ],
+        [
+            'name' => 'Gabriela Anchaluisa',
+            'stars' => 5,
+            'message' => 'Excelente atención!!! El servicio es muy eficiente y las personas muy amables en la atención. Felicitaciones 👏',
+            'link' => 'https://goo.gl/maps/VLUsbPvBEi6ZwyA99'
+        ]
+    ];
+
+    public $more_reviewsny = 'https://g.page/notariapublicalatina';
+    public $reviewsny = [
+        [
+            'name' => 'Cesar Augusto Tonuzco',
+            'stars' => 5,
+            'message' => 'Excelente servicio me hicieron la traducción  en un momento 🤩',
+            'link' => 'https://goo.gl/maps/bPRSyrCHDkBpF7cU8'
+        ],
+        [
+            'name' => 'Yessenia Hernandez',
+            'stars' => 5,
+            'message' => 'Servicios muy buenos y super atentos a las necesidades del cliente. Profesionales en todo momento.',
+            'link' => 'https://goo.gl/maps/kQTmXqC9oQRCBhZr9'
+        ],
+        [
+            'name' => 'Vladimir Paccha',
+            'stars' => 5,
+            'message' => 'Quedo muy agradecido por el servicio de la Notaria Latina son muy buenos en su trabajo y también los recomiendo.',
+            'link' => 'https://goo.gl/maps/MyFgAdFhdZa959sf8'
+        ]
+    ];
+
+    public $more_reviewsfl = 'https://g.page/r/CeRrwPx_W2-xEAE';
+    public $reviewsfl = [
+        [
+            'name' => 'Maria Sampayo',
+            'stars' => 5,
+            'message' => 'Quiero resaltar el excelente servicio de la Notaría Pública Latina. Llegue a ellos a través de Google porque necesitaba traducir y apostillar mi licencia de maternidad y el certificado de nacimiento de mi hija. [...] Si ustedes requieren traducir y apostillar documentos, no duden en hacerlo con esta notaría. Son los mejores.',
+            'link' => 'https://goo.gl/maps/J8uRSU1H2JG4oLaT6'
+        ],
+        [
+            'name' => 'Vangie Vazquez',
+            'stars' => 5,
+            'message' => 'Son los mejores y más diligentes! Hicieron que este proceso fuera fácil. Apostillar express un documento en la Florida no es fácil pero con este equipo de trabajo nada es imposible. No se preocupe deje que ellos les oriente y tendrán unos resultados positivos tal como todo lo que uno sueña con la tranquilidad del deber cumplido.',
+            'link' => 'https://goo.gl/maps/D6m7fLHLuZXXDSLj7'
+        ],
+        [
+            'name' => 'Melba Gomes',
+            'stars' => 5,
+            'message' => 'Super recomendable y segura me ayudaron con todos los trámites, me hicieron más fácil todo mil gracias no sabía que existía esta oficina y me la recomendaron desde Colombia',
+            'link' => 'https://goo.gl/maps/gXmSRnL8Yy8Nb3DE9'
+        ]
+    ];
+
     public function index() {
         $indexPosts = Post::select('name', 'body', 'slug', 'created_at')
             ->where('status','PUBLICADO')
@@ -718,6 +784,8 @@ class WebController extends Controller
             $data['imgurlmap'] = "img/oficinas/maps-ny.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-ny-mobile.webp";
             $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york, apostille new york';
+            $data['reviews'] = $this->reviewsny;
+            $data['more_reviews'] = $this->more_reviewsny;
 
             return view('web.oficina', compact('data'));
         }
@@ -1218,7 +1286,9 @@ class WebController extends Controller
             $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
             $data['keywords'] = 'notaria latina, notaria new jersey, notaria nj, notaria elizabeth new jersey, notaria en new jersey, notaria publica en new jersey, notaria latina new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille nj';
-    
+            $data['reviews'] = $this->reviewsnj;
+            $data['more_reviews'] = $this->more_reviewsnj;
+
             return view('web.oficina', compact('data'));
         }
     }
@@ -1531,6 +1601,8 @@ class WebController extends Controller
             $data['imgurlmapmobile'] = "img/oficinas/maps-fl-mobile-2.webp";
             $data['metadescription'] = 'Realizamos Poderes Generales y Especiales, Apostilla y Traducción de todo tipo de documentos en Florida. ¿Desea saber más? ¡Contáctenos ahora! ✅';
             $data['keywords'] = 'notaria latina, notaria florida, notario cerca de mi, notaria en florida, notaria fl, notaria sunrise, notaria latina sunrise, notaria en sunrise florida, notaria latina en sunrise florida, notaria cerca de mi, notario publico en florida, notarizar documentos en sunrise florida, notario publico cerca de mi, apostillar documentos en sunrise florida, donde puedo tramitar documentos en florida';
+            $data['reviews'] = $this->reviewsfl;
+            $data['more_reviews'] = $this->more_reviewsfl;
 
             return view('web.oficina', compact('data'));
         }

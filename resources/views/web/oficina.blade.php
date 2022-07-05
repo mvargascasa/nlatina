@@ -40,61 +40,24 @@
                 width: 100% !important;
             }
         }
-        .titulo{
-            color: white;
-            font-weight: bold;
-        }
-
-        i{
-            color:#9A7A2E;
-        }
-
-        .checks > p{
-            color: #143b6b;
-        }
-
-        .checks > .row > .col > p{
-            color: #143b6b;
-        }
-        #sectionthree{
-            width: 100vw;
-            height: 55vh;
-        }
-        .fifth-row{
-            margin-top: 5%;
-            justify-content: center;
-            align-items: center;
-        }
-
+        .titulo{color: white;font-weight: bold;}
+        i{color:#9A7A2E;}
+        .checks > p{color: #143b6b;}
+        .checks > .row > .col > p{color: #143b6b;}
+        #sectionthree{width: 100vw;height: 55vh;}
+        .fifth-row{margin-top: 5%;justify-content: center;align-items: center;}
         /*HOVER IMAGENES DE SERVICIOS*/
         .grow:hover{background-color: #ece8e3;-webkit-transition: 600ms;-webkit-transform: initial;}
         .grow img{transition: 1s ease;}
         .grow:hover > img{-webkit-transform: scale(1.2);-ms-transform: scale(1.2);transform: scale(1.2);transition: 1s ease;}
-
-        #colService:hover{
-            background-color: #ece8e3;
-            -webkit-transition: 600ms;
-            -webkit-transform: initial;
-        }
-        .linkServices{
-            color: #d4aa41;
-        }
-        #linkServices:hover .linkServices{
-            color: #ffffff;
-        }
+        .card-footer:hover{background-color: #ece8e3 !important;-webkit-transition: 600ms !important;-webkit-transform: initial !important;}
+        #colService:hover{background-color: #ece8e3;-webkit-transition: 600ms;-webkit-transform: initial;}
+        .linkServices{color: #d4aa41;}
+        #linkServices:hover .linkServices{color: #ffffff;}
         #linkServices:hover{background-color: #122944}
         #linkServices:hover > .border {background-color: #ffffff}
-        #linkServices:hover .imgServices {
-            filter: grayscale(1);
-            -webkit-transform: scale(1.2);
-            -ms-transform: scale(1.2);
-            transform: scale(1.2);
-            transition: 1s ease;
-        }
-        #svgwpp{
-            bottom: 75px !important;
-            right: 0px !important;
-        }
+        #linkServices:hover .imgServices {filter: grayscale(1);-webkit-transform: scale(1.2);-ms-transform: scale(1.2);transform: scale(1.2);transition: 1s ease;}
+        #svgwpp{bottom: 75px !important;right: 0px !important;}
         #iconcall{bottom: 40px !important; }
         .grecaptcha-badge { visibility: hidden; }
         /* QUITAR SPINNERS DE INPUT TYPE NUMBER */
@@ -610,6 +573,39 @@
         </div>
       </div>
   </div>
+
+  <section style="background-color: #F5F4F4" class="pt-2 mt-5">
+    <div class="container text-center mt-3 mb-4">
+      <h2 class="mt-5 mb-5">Lo que opinan nuestros clientes</h2>
+      <div class="row justify-content-center">
+        @foreach ($data['reviews'] as $review)
+          <div class="col-sm-4 d-flex justify-content-center mb-3">
+            <div class="card card-reviews" style="width: 18rem; height: 100%; background-color: #F5F4F4">
+              <div class="card-body text-center">
+                <h5 class="card-title">{{ $review['name'] }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-center">
+                  @for ($i = 0; $i < $review['stars']; $i++)
+                    <img width="15" height="15" data-src="{{ asset('img/estrella.webp') }}" class="lazy img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="⭐">
+                  @endfor
+                </h6>
+                <p class="card-text">
+                  <i style="color: #000000">
+                    "{{ $review['message']}}"
+                  </i>
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: #F5F4F4">
+                <a target="_blank" href="{{ $review['link']}}" class="card-link">Ver comentario</a>
+              </div>
+            </div>
+          </div>
+        @endforeach
+        <div class="mt-5 mb-5">
+          <a target="_blank" href="{{ $data['more_reviews'] }}" style="color: #192939;" class="btn btn-warning"><b style="font-weight: 500; font-size: 17px">Ver más reseñas</b> <i class="fas fa-long-arrow-alt-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
   @if (session('report'))
         @php
             echo "
