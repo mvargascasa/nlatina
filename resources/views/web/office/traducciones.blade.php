@@ -9,6 +9,10 @@
 <meta property="og:title"       content="Traducciones Notarizadas y Apostilladas en {{ $data['office'] }} - Notaria Latina" />
 <meta property="og:description" content="Realizamos traducciones de documentos para sus trámites más importantes.Para las traducciones de documentos el único requisito es presentar el documento original que desea traducir." />
 <meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
+
+<style>
+  #card_posts:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}
+</style>
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
