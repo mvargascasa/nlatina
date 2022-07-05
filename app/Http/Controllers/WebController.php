@@ -824,7 +824,7 @@ class WebController extends Controller
                     $data['metadescription'] .= "Realizamos Acuerdos en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", tramitar acuerdo new jersey, realizar acuerdo new jersey, process agreement new jersey, make deal new jersey";
                     $posts = Post::where('name', 'LIKE', '%acuerdo%')->limit(3)->get();
-                    return view('web.office.acuerdos', compact('data'));
+                    return view('web.office.acuerdos', compact('data', 'posts'));
                     break;
                 case 'cartas-de-invitacion-en-new-jersey':
                     $data['metadescription'] .= "Tramitamos Cartas de Invitación en New Jersey de una manera ágil y rápida!";
@@ -1332,7 +1332,7 @@ class WebController extends Controller
                     $data['metadescription'] .= "Realizamos Acuerdos en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", tramitar acuerdo florida, realizar acuerdo florida, process agreement florida, make deal florida";
                     $posts = Post::where('name', 'LIKE', '%acuerdo%')->limit(3)->get();
-                    return view('web.office.acuerdos', compact('data'));
+                    return view('web.office.acuerdos', compact('data', 'posts'));
                     break;
                 case 'cartas-de-invitacion-en-florida':
                     $data['metadescription'] .= "Tramitamos Cartas de Invitación en Florida de una manera ágil y rápida!";
