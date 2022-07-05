@@ -83,8 +83,8 @@
             <div class="d-flex justify-content-center">
               <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
             </div>
-            
-            <div class="mt-5" style="margin-left: 7%; margin-right: 7%">
+
+            <div class="mt-5">
               <h4>Artículos que pueden interesarle</h4>
               <div class="row">
                   @foreach ($posts as $post)
