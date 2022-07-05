@@ -83,31 +83,32 @@
             <div class="d-flex justify-content-center">
               <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
             </div>
+            
+            <div class="mt-5" style="margin-left: 7%; margin-right: 7%">
+              <h4>Artículos que pueden interesarle</h4>
+              <div class="row">
+                  @foreach ($posts as $post)
+                  <div class="col-12 col-md-4">
+                      <div data-aos="flip-left" id="card_posts" class="card my-2">
+                          <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
+                              <img data-src="{{url('uploads/'.$post->imgdir)}}" class="lazy card-img-top" alt="Imagen {{ $post->name }}" style="object-fit: cover;width: 100%; height: 150px !important;">
+                              {{-- {{url('uploads/'.$post->imgdir)}} --}}
+                          </a>
+                          <div class="card-body p-2" style="position:relative;">
+                          <span class="d-block text-muted font-weight-bold text-truncate "
+                                  style="font-size:1rem">{{$post->name}}</span>
+                          <span class="d-block text-muted text-truncate">
+                              <?php echo strip_tags(substr($post->body,0,300))  ?>
+                          </span>
+                          {{-- <div class="small text-muted float-left">{{$post->created_at->format('M d')}}</div> --}}
+                          </div>
+                      </div>
+                  </div>
+                  @endforeach
+              </div>
+            </div>
 </div>
 
-<div class="mt-5" style="margin-left: 7%; margin-right: 7%">
-  <h4>Artículos que pueden interesarle</h4>
-  <div class="row">
-      @foreach ($posts as $post)
-      <div class="col-12 col-md-4">
-          <div data-aos="flip-left" id="card_posts" class="card my-2">
-              <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
-                  <img data-src="{{url('uploads/'.$post->imgdir)}}" class="lazy card-img-top" alt="Imagen {{ $post->name }}" style="object-fit: cover;width: 100%; height: 150px !important;">
-                  {{-- {{url('uploads/'.$post->imgdir)}} --}}
-              </a>
-              <div class="card-body p-2" style="position:relative;">
-              <span class="d-block text-muted font-weight-bold text-truncate "
-                      style="font-size:1rem">{{$post->name}}</span>
-              <span class="d-block text-muted text-truncate">
-                  <?php echo strip_tags(substr($post->body,0,300))  ?>
-              </span>
-              {{-- <div class="small text-muted float-left">{{$post->created_at->format('M d')}}</div> --}}
-              </div>
-          </div>
-      </div>
-      @endforeach
-  </div>
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 

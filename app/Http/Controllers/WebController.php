@@ -351,7 +351,8 @@ class WebController extends Controller
                 case 'poder-notarial-new-york':
                     $data['metadescription'] .= "Realizamos Poderes Generales y Especiales en New York de una manera ágil y rápida!";
                     $data['keywords'] .= ", realizar carta poder new york, realizar poder especial new york, realizar poder general new york, tramitar poder new york, make power of attorney new york, process power new york";
-                    return view('web.office.poderes', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%poder')->limit(3)->get();
+                    return view('web.office.poderes', compact('data', 'posts'));
                     break;
                 case 'traducir-documentos-new-york':
                     $data['metadescription'] .= "Traducimos todo tipo de Documentos en New York de una manera ágil y rápida! ";
@@ -846,7 +847,8 @@ class WebController extends Controller
                 case 'poder-notarial-new-jersey':
                     $data['metadescription'] .= "Realizamos Poderes Generales y Especiales en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", realizar carta poder new jersey, realizar poder especial new jersey, realizar poder general new jersey, tramitar poder new jersey, make power of attorney new jersey, process power new jersey";
-                    return view('web.office.poderes', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%poder')->limit(3)->get();
+                    return view('web.office.poderes', compact('data', 'posts'));
                     break;
                 case 'traducir-documentos-new-jersey':
                     $data['metadescription'] .= "Traducimos todo tipo de Documentos en New Jersey de una manera ágil y rápida! ";
@@ -1349,7 +1351,8 @@ class WebController extends Controller
                 case 'poder-notarial-florida':
                     $data['metadescription'] .= "Realizamos Poderes Generales y Especiales en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", realizar carta poder florida, realizar poder especial florida, realizar poder general florida, tramitar poder florida, make power of attorney florida, process power florida";
-                    return view('web.office.poderes', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%poder')->limit(3)->get();
+                    return view('web.office.poderes', compact('data', 'posts'));
                     break;
                 case 'traducir-documentos-florida':
                     $data['metadescription'] .= "Traducimos todo tipo de Documentos en Florida de una manera ágil y rápida! ";
