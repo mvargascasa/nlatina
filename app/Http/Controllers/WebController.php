@@ -316,7 +316,8 @@ class WebController extends Controller
                 case 'travel-authorization-en-new-york':
                     $data['metadescription'] .= "Realizamos Autorizaciones de Viaje para Menores de Edad en New York de una manera ágil y rápida!";
                     $data['keywords'] .= ", autorizacion de viaje new york, tramitar autorizacion de viaje new york, realizar autorizacion de viaje new york, obtener autorizacion de viaje new york, make new york travel authorization";
-                    return view('web.office.authorization', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%autorizacion%')->limit(3)->get();
+                    return view('web.office.authorization', compact('data', 'posts'));
                     break;
                 case 'acuerdos-en-new-york':
                     $data['metadescription'] = "Realizamos Acuerdos en New York de una manera ágil y rápida!";
@@ -813,7 +814,8 @@ class WebController extends Controller
                 case 'travel-authorization-en-new-jersey':
                     $data['metadescription'] .= "Realizamos Autorizaciones de Viaje para Menores de Edad en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", autorizacion de viaje new jersey, tramitar autorizacion de viaje new jersey, realizar autorizacion de viaje new jersey, obtener autorizacion de viaje new jersey, make new jersey travel authorization";
-                    return view('web.office.authorization', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%autorizacion%')->limit(3)->get();
+                    return view('web.office.authorization', compact('data', 'posts'));
                     break;
                 case 'acuerdos-en-new-jersey':
                     $data['metadescription'] .= "Realizamos Acuerdos en New Jersey de una manera ágil y rápida!";
@@ -1318,7 +1320,8 @@ class WebController extends Controller
                 case 'travel-authorization-en-florida':
                     $data['metadescription'] .= "Realizamos Autorizaciones de Viaje para Menores de Edad en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", autorizacion de viaje florida, tramitar autorizacion de viaje florida, realizar autorizacion de viaje florida, obtener autorizacion de viaje florida, make florida travel authorization";
-                    return view('web.office.authorization', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%autorizacion%')->limit(3)->get();
+                    return view('web.office.authorization', compact('data', 'posts'));
                     break;
                 case 'acuerdos-en-florida':
                     $data['metadescription'] .= "Realizamos Acuerdos en Florida de una manera ágil y rápida!";

@@ -9,6 +9,10 @@
 <meta property="og:title"              content="Autorizaciones de Viaje Notarizadas y Apostillados en {{ $data['office'] }} - Notaria Latina" />
 <meta property="og:description"        content="Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres." />
 <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
+
+<style>
+  #card_posts:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}
+</style>
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
@@ -33,14 +37,14 @@
   </section>
 
 <div class="container pt-4">
-        <h3>Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres.</h3>
+        <h2 style="font-size: 25px">Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres.</h2>
         <p class="text-muted">La autorización de viaje designa quién va a ser la persona que acompañe al menor;  esta persona puede ser un familiar,
             amigo o alguna auxiliar de viaje como ser una aeromoza de la propia aerolinea.</p>
         <p class="text-muted">Es decir que este documento deben dar fe ambos padres o tutores sobre la autorización del menor a realizar el viaje con la persona mencionada.
             La autorización puede realizarse tambien para que el menor viaje con solo uno de sus padres.</p>
 
 
-        <h3>¿Que requisitos se necesita para realizar autorizaciones de viaje?</h3>
+        <h2 style="font-size: 25px">¿Que requisitos se necesita para realizar autorizaciones de viaje?</h2>
         <ul class="text-muted">
             <li>Identificación válida del padre o madre que va a dar la autorización.</li>
             <li>Nombres y apellidos del menor que va a viajar.</li>
@@ -49,23 +53,51 @@
             <li>Información del vuelo.</li>
         </ul>
 
-        <h3>¿Que tiempo de validez tienen las autorizaciones de viaje?</h3>
+        <h2 style="font-size: 25px">¿Que tiempo de validez tienen las autorizaciones de viaje?</h2>
         <p class="text-muted">La autorización de viaje solo es válida por el tiempo que el menor vaya a estar fuera del país, entonces, terminado este periodo el documento
             pierde su validez automaticamente.  </p>
 
-        <h3>¿En donde puedo realizar una autorización de viaje?</h3>
+        <h2 style="font-size: 25px">¿En donde puedo realizar una autorización de viaje?</h2>
         <p class="text-muted">Acérquese a nuestra oficina con los requisitos necesarios y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
 
 
 
 
-        <h3>¿En que tiempo me entregan la autorización de viaje?</h3>
+        <h2 style="font-size: 25px">¿En que tiempo me entregan la autorización de viaje?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega es inmediato siempre que las personas que realiza el trámite se acerque con los requisitos correspondientes.</li>
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
-            <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+            </div>
+
+            @isset($posts)
+            <div class="mt-5">
+              <h4>Artículos que pueden interesarle</h4>
+              <div class="row">
+                  @foreach ($posts as $post)
+                  <div class="col-12 col-md-4">
+                      <div data-aos="flip-left" id="card_posts" class="card my-2">
+                          <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
+                              <img data-src="{{url('uploads/'.$post->imgdir)}}" class="lazy card-img-top" alt="Imagen {{ $post->name }}" style="object-fit: cover;width: 100%; height: 150px !important;">
+                              {{-- {{url('uploads/'.$post->imgdir)}} --}}
+                          </a>
+                          <div class="card-body p-2" style="position:relative;">
+                          <span class="d-block text-muted font-weight-bold text-truncate "
+                                  style="font-size:1rem">{{$post->name}}</span>
+                          <span class="d-block text-muted text-truncate">
+                              <?php echo strip_tags(substr($post->body,0,300))  ?>
+                          </span>
+                          {{-- <div class="small text-muted float-left">{{$post->created_at->format('M d')}}</div> --}}
+                          </div>
+                      </div>
+                  </div>
+                  @endforeach
+              </div>
+            </div>
+            @endisset
 </div>
 
 <!-- Modal -->
