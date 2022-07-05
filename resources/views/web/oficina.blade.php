@@ -580,7 +580,7 @@
       <div class="row justify-content-center">
         @foreach ($data['reviews'] as $review)
           <div class="col-sm-4 d-flex justify-content-center mb-3">
-            <div class="card card-reviews" style="width: 18rem; height: 100%; background-color: #F5F4F4">
+            <div data-aos="fade-up" class="card card-reviews" style="width: 18rem; height: 100%; background-color: #F5F4F4">
               <div class="card-body text-center">
                 <h5 class="card-title">{{ $review['name'] }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-center">
