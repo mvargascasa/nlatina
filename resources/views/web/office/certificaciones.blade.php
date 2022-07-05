@@ -9,6 +9,10 @@
 <meta property="og:title"              content="Certificaciones de Documentos Notarizados y Apostillados en {{ $data['office'] }} - Notaria Latina" />
 <meta property="og:description"        content="Las certificaciones son documentos firmados y sellados por un notario, que le proporciona autenticidad a nuestros documentos, pueden ser utilizados en todo aquel trámite legale donde se requiera total veracidad." />
 <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
+
+<style>
+  #card_posts:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}
+</style>
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
