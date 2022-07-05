@@ -357,7 +357,8 @@ class WebController extends Controller
                 case 'traducir-documentos-new-york':
                     $data['metadescription'] .= "Traducimos todo tipo de Documentos en New York de una manera ágil y rápida! ";
                     $data['keywords'] .= ", traducir documentos new york, traducir certificado de nacimiento new york, traducir diplomas new york, traducir certificado de matrimonio new york, traducir certificado de divorcio new york, traducir certificado de defuncion new york, traducir documentos medicos new york, traducir certificados estudiantiles new york, translate documents new york";
-                    return view('web.office.traducciones', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%traduccion%')->limit(3)->get();
+                    return view('web.office.traducciones', compact('data', 'posts'));
                     break;
                 case 'apostillar-documentos-new-york':
                     $data['metadescription'] .= "¿Necesitas apostillar un documento? Te ayudamos a tramitar todo tipo de Documentos en New York de una manera ágil y rápida!";
@@ -853,7 +854,8 @@ class WebController extends Controller
                 case 'traducir-documentos-new-jersey':
                     $data['metadescription'] .= "Traducimos todo tipo de Documentos en New Jersey de una manera ágil y rápida! ";
                     $data['keywords'] .= ", traducir documentos new jersey, traducir certificado de nacimiento new jersey, traducir diplomas new jersey, traducir certificado de matrimonio new jersey, traducir certificado de divorcio new jersey, traducir certificado de defuncion new jersey, traducir documentos medicos new jersey, traducir certificados estudiantiles new jersey, translate documents new jersey";
-                    return view('web.office.traducciones', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%traduccion%')->limit(3)->get();
+                    return view('web.office.traducciones', compact('data', 'posts'));
                     break;
                 case 'apostillar-documentos-new-jersey':
                     $data['metadescription'] .= "Apostillamos todo tipo de Documentos en New Jersey de una manera ágil y rápida!";
@@ -1357,7 +1359,8 @@ class WebController extends Controller
                 case 'traducir-documentos-florida':
                     $data['metadescription'] .= "Traducimos todo tipo de Documentos en Florida de una manera ágil y rápida! ";
                     $data['keywords'] .= ", traducir documentos florida, traducir certificado de nacimiento florida, traducir diplomas florida, traducir certificado de matrimonio florida, traducir certificado de divorcio florida, traducir certificado de defuncion florida, traducir documentos medicos florida, traducir certificados estudiantiles florida, translate documents florida";
-                    return view('web.office.traducciones', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%traduccion%')->limit(3)->get();
+                    return view('web.office.traducciones', compact('data', 'posts'));
                     break;
                 case 'apostillar-documentos-florida':
                     $data['metadescription'] .= "Apostillamos todo tipo de Documentos en Florida de una manera ágil y rápida!";
