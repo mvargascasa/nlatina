@@ -311,7 +311,8 @@ class WebController extends Controller
                 case 'certificaciones-en-new-york':
                     $data['metadescription'] = "Las certificaciones son documentos sellados y firmados por un notario. Contáctenos para realizar el trámite de su documento de una manera segura! ✔";
                     $data['keywords'] = "que es una certificacion, para que sirve una certificacion, requisitos para certificar un documento en new york, certificar documentos en new york, certificar acta de nacimiento en new york, certificar acta de matrimonio en new york, certificar declaracion jurada en new york, certificar licencia de conducir en new york, donde puedo certificar un documento en new york, donde puedo realizar un certificado en new york";
-                    return view('web.office.certificaciones', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%certificacion%')->limit(3)->get();
+                    return view('web.office.certificaciones', compact('data', 'posts'));
                     break;
                 case 'travel-authorization-en-new-york':
                     $data['metadescription'] .= "Realizamos Autorizaciones de Viaje para Menores de Edad en New York de una manera ágil y rápida!";
@@ -809,7 +810,8 @@ class WebController extends Controller
                 case 'certificaciones-en-new-jersey':
                     $data['metadescription'] .= "Realizamos todo tipo de Certificaciones en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", certificar acta de nacimiento new jersey, certificar acta de matrimonio new jersey, certificar cartas new jersey, certificar licencia de conducir new jersey, certificar declaracion jurada new jersey, certificar affidavit new jersey, certificar escrituras new jersey";
-                    return view('web.office.certificaciones', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%certificacion%')->limit(3)->get();
+                    return view('web.office.certificaciones', compact('data', 'posts'));
                     break;
                 case 'travel-authorization-en-new-jersey':
                     $data['metadescription'] .= "Realizamos Autorizaciones de Viaje para Menores de Edad en New Jersey de una manera ágil y rápida!";
@@ -1315,7 +1317,8 @@ class WebController extends Controller
                 case 'certificaciones-en-florida':
                     $data['metadescription'] .= "Realizamos todo tipo de Certificaciones en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", certificar acta de nacimiento florida, certificar acta de matrimonio florida, certificar cartas florida, certificar licencia de conducir florida, certificar declaracion jurada florida, certificar affidavit florida, certificar escrituras florida";
-                    return view('web.office.certificaciones', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%certificacion%')->limit(3)->get();
+                    return view('web.office.certificaciones', compact('data', 'posts'));
                     break;
                 case 'travel-authorization-en-florida':
                     $data['metadescription'] .= "Realizamos Autorizaciones de Viaje para Menores de Edad en Florida de una manera ágil y rápida!";
