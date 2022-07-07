@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Apostillas Inmediatas en Estados Unidos - Notaria Latina</title>
   <meta name="robots" content="noindex">
   <!-- Global site tag (gtag.js) - Google Ads: 806267889 -->
@@ -21,6 +23,7 @@
 
 
   <style>
+    html, body {max-width: 100% !important;overflow-x: hidden !important;}
     .quienes-somos{
       background: rgb(24,55,84);
       background: radial-gradient(circle, rgba(24,55,84,1) 0%, rgba(26,29,34,1) 100%);
@@ -40,9 +43,12 @@
             border: 1px solid #122944;
             width: 100px;
         }
+    .card > .card-header > img{border-radius: 5px 5px 0px 0px}
+    #first, #second, #third, #fourth{box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;}
+    #second:hover, #third:hover, #fourth:hover{box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;}
   </style>
 </head>
-<body>
+<body style="background-color: #F5F4F4">
     <header>
         <nav class="navbar navfoot navbar-dark navbar-expand-lg navbar-light bg-light">
           <div class="d-flex flex-grow-1">
@@ -115,7 +121,7 @@
       </header>
 
 
-<section class="container" style="min-height: 85vh;">
+{{-- <section class="container" style="min-height: 85vh;">
     <div class="row p-4 p-md-5">
 
         <div class="col-md-12 text-center">
@@ -141,7 +147,93 @@
                   </ul>
         </div>
     </div>
+</section> --}}
+
+<section class="container" style="min-height: 85vh;">
+    <div class="row p-4 p-md-5">
+
+        <div class="col-md-12 text-center">
+            <h1 class="font-weight-bold" style="font-size: 60px;">¡Gracias!</h1>
+        </div>
+        <div data-aos="zoom-in" class="col-md-12 text-center">
+
+            <h4 class="p-2">Gracias por comunicarte y confiar en nosotros</h4>
+
+            <div id="first" class="bg-white col-sm-5 pb-4 text-center mt-5" style="margin: 0px auto; border-radius: 20px">
+                <img id="imghelp" width="200rem" height="200rem" class="img-fluid p-4" src="{{asset('img/helpline.jpg')}}" alt="">
+                <p class="lead">En breve te contactaremos.</p>
+                <a class="btn btn-warning" href="/">Ir a NotariaLatina.com</a>
+            </div>
+                  {{-- <ul class="nav flex-column">
+                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > PODERES</li>
+                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > APOSTILLAS</li>
+                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > TRADUCCIONES</li>
+                  </ul> --}}
+        </div>
+    </div>
+    <h3 class="text-center">Más Servicios</h3>
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-4 d-flex justify-content-center mb-3">
+            <div id="second" data-aos="fade-right" class="card" style="width: 95%;">
+                <div class="card-header" style="padding: 0px !important">
+                    <img class="img-fluid" src="https://laverdad.com.mx/wp-content/uploads/2020/09/DATA_ART_132942_VERTIL.jpg" alt="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center"><img width="25" height="25" src="{{asset('img/pencil.svg')}}" alt="poderes" > PODERES</h5>
+                  {{-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
+                  <p class="card-text text-muted">
+                      Gestione sus trámites legales sin estar presente por medio de un apoderado de confianza, una solución para gestionar bienes y trámites importantes
+                  </p>
+                </div>
+                <div class="card-footer bg-white text-center" style="border: 0px">
+                    <a href="{{ route('web.poderes') }}" class="card-link btn btn-warning">Más Información <i class="fas fa-info-circle"></i></a>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-4 d-flex justify-content-center mb-3">
+            <div id="third" data-aos="fade-up" class="card" style="width: 95%">
+                <div class="card-header" style="padding: 0px !important">
+                    <img class="img-fluid" src="https://cdn.mequieroir.com/wp-content/uploads/2019/11/apostilla.jpg" alt="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center"><img width="25" height="25" src="{{asset('img/pencil.svg')}}" alt="apostillas" > APOSTILLAS</h5>
+                  {{-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
+                  <p class="card-text text-muted">
+                      Autentificación de documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos
+                  </p>
+                </div>
+                <div class="card-footer bg-white text-center" style="border: 0px">
+                    <a href="{{ route('web.apostillas') }}" class="card-link btn btn-warning">Más Información <i class="fas fa-info-circle"></i></a>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-4 d-flex justify-content-center mb-3">
+            <div id="fourth" data-aos="fade-left" class="card" style="width: 95%">
+                <div class="card-header" style="padding: 0px !important">
+                    <img class="img-fluid" src="https://uploads-ssl.webflow.com/61388d0210d654c3910bea20/61388edd7690956d2a06475c_60cb72f08be728702ffc6bbf_5f74afb5ac0d42bbcd049cc2_las-tres-grandes-preguntas-sobre-los-notarios-featured.jpeg" alt="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center"><img width="25" height="25" src="{{asset('img/pencil.svg')}}" alt="poderes" > TRADUCCIONES</h5>
+                  {{-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
+                  <p class="card-text text-muted">
+                      Transcripción de documentos de un idioma a otro diferente, certificados por un notario para ser presentados frente a las entidades que lo soliciten
+                  </p>
+                </div>
+                <div class="card-footer bg-white text-center" style="border: 0px">
+                    <a href="{{ route('web.traducciones') }}" class="card-link btn btn-warning">Más Información <i class="fas fa-info-circle"></i></a>
+                </div>
+              </div>
+        </div>
+    </div>
 </section>
+
+<div class="row justify-content-center">
+    <div class="col-sm-12 text-center p-5">
+        <a href="https://www.facebook.com/notariapublicalatina" title="Facebook Notaria Latina" target="_blank"><i class="fab fa-facebook fa-2x mx-1" style="color: #3b5998"></i></a>
+        <a href="https://www.instagram.com/notarialatina" title="Instagram Notaria Latina" target="_blank"><i class="fab fa-instagram fa-2x mx-1" style="color: #C13584"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=13479739888" title="WhatsApp Notaria Latina" target="_blank"><i class="fab fa-whatsapp fa-2x mx-1" style="color: #25D366"></i></a>
+    </div>
+</div>
 
 
 
@@ -157,6 +249,11 @@
 <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
 
 </body>
 </html>
