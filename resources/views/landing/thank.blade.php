@@ -9,11 +9,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Apostillas Inmediatas en Estados Unidos - Notaria Latina</title>
   <meta name="robots" content="noindex">
+
+<?php
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+if(strpos($actual_link, 'localhost') === false){
+?>
   <!-- Global site tag (gtag.js) - Google Ads: 806267889 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-806267889"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124437679-3"></script>
 <script>
+    console.log("cargando scripts analytics");
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -21,6 +27,7 @@
   gtag('config', 'UA-124437679-3');
 </script>
 
+<?php };// fin de if url localhost ?>
 
   <style>
     html, body {max-width: 100% !important;overflow-x: hidden !important;}
