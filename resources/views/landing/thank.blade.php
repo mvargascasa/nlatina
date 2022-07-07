@@ -19,7 +19,6 @@ if(strpos($actual_link, 'localhost') === false){
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124437679-3"></script>
 <script>
-    console.log("cargando scripts analytics");
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
