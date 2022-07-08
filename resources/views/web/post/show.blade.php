@@ -74,7 +74,7 @@
         {{-- share row --}}
         <hr style="width: 40%">
         <div class="container mt-5 mb-5">
-            <h4 class="text-center">Compartir post</h4>
+            <h4 class="text-center">¿Te gusto el artículo? Compartelo</h4>
             <div class="row">
                 <div class="col-sm-12 d-flex justify-content-center">
                     <p title="Compartir en Facebook" style="cursor: pointer" id="shareToFacebook"><i class="fab fa-facebook fa-2x" style="color: #0165E1"></i></p>
