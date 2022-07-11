@@ -9,6 +9,9 @@
 <meta property="og:title"       content="Cartas de Invitación Notarizadas y Apostilladas en {{ $data['office'] }} - Notaria Latina" />
 <meta property="og:description" content="Las cartas de invitación son un requisito válido que se presenta ante el consulado que lo requiera para la gestión de la visa de turista; la carta tiene que ser genuina y contener datos reales." />
 <meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
+<style>
+  #card_posts:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}
+</style>
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
@@ -29,28 +32,28 @@
   </section>
 
 <div class="container pt-4">
-            <h3>Realizamos cartas de invitación de forma segura y efectiva en {{ $data['office'] }}</h3>
+            <h2 style="font-size: 25px">Realizamos cartas de invitación de forma segura y efectiva en {{ $data['office'] }}</h2>
             <p class="text-muted">Las cartas de invitación son un requisito válido que se presenta ante el consulado que lo requiera para la
                 gestión de la visa de turista; la carta tiene que ser genuina y contener datos reales de la persona que va a realizarla.</p>
 
-            <h3>¿Para que me sirven las cartas de invitación?</h3>
+            <h2 style="font-size: 25px">¿Para que me sirven las cartas de invitación?</h2>
             <p class="text-muted">Puede ser utilizada para acompañar una solicitud de visa como turista para visitar a un familiar o amigo
                 que reside en otro país. Es así que esta carta es un documento de presentación voluntaria que puede ayudar a obtener la visa.</p>
             <p class="text-muted">Por lo tanto, la persona que realiza la invitación tiene que ser un ciudadano que goce de todos los
                 privilegios de su país y que además pueda soportar los gastos del viaje y estadía de la persona a la que invita.</p>
 
-            <h3>¿Que requisitos necesito para hacer una carta de invitación?</h3>
+            <h2 style="font-size: 25px">¿Que requisitos necesito para hacer una carta de invitación?</h2>
             <ul class="text-muted">
                 <li>Identificación válida de la persona que realiza la invitación.</li>
                 <li>Nombres y apellidos de la persona a la que se quiere invitar.</li>
                 <li>Presentar soporte de ingresos.</li>
             </ul>
 
-        <h3>¿En donde puedo realizar una carta de invitación?</h3>
+        <h2 style="font-size: 25px">¿En donde puedo realizar una carta de invitación?</h2>
         <p class="text-muted">Acérquese a nuestra oficina con los requisitos necesarios y nuestros asesores le guiarán en la redacción de su carta y en la certificación de la misma.</p>
 
 
-        <h3>¿En que tiempo me entregan mi carta de invitación?</h3>
+        <h2 style="font-size: 25px">¿En que tiempo me entregan mi carta de invitación?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
@@ -59,7 +62,33 @@
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
-            <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+            </div>
+
+            <div class="mt-5">
+              <h4>Artículos que pueden interesarle</h4>
+              <div class="row">
+                  @foreach ($posts as $post)
+                  <div class="col-12 col-md-4">
+                      <div data-aos="flip-left" id="card_posts" class="card my-2">
+                          <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
+                              <img data-src="{{url('uploads/'.$post->imgdir)}}" class="lazy card-img-top" alt="Imagen {{ $post->name }}" style="object-fit: cover;width: 100%; height: 150px !important;">
+                              {{-- {{url('uploads/'.$post->imgdir)}} --}}
+                          </a>
+                          <div class="card-body p-2" style="position:relative;">
+                          <span class="d-block text-muted font-weight-bold text-truncate "
+                                  style="font-size:1rem">{{$post->name}}</span>
+                          <span class="d-block text-muted text-truncate">
+                              <?php echo strip_tags(substr($post->body,0,300))  ?>
+                          </span>
+                          {{-- <div class="small text-muted float-left">{{$post->created_at->format('M d')}}</div> --}}
+                          </div>
+                      </div>
+                  </div>
+                  @endforeach
+              </div>
+            </div>
 </div>
 
 <!-- Modal -->

@@ -329,7 +329,8 @@ class WebController extends Controller
                 case 'cartas-de-invitacion-en-new-york':
                     $data['metadescription'] .= "Tramitamos Cartas de Invitación en New York de una manera ágil y rápida!";
                     $data['keywords'] .= ", realizar carta de invitacion new york, tramitar carta de invitacion new york, make invitation letter new york, process letter of invitation new york";
-                    return view('web.office.invitacion', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%invitacion%')->limit(3)->get();
+                    return view('web.office.invitacion', compact('data', 'posts'));
                     break;
                 case 'revocatorias-en-new-york':
                     $data['metadescription'] .= "Realizamos Revocatorias de Poderes en New York de una manera ágil y rápida!";
@@ -830,7 +831,8 @@ class WebController extends Controller
                 case 'cartas-de-invitacion-en-new-jersey':
                     $data['metadescription'] .= "Tramitamos Cartas de Invitación en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", realizar carta de invitacion new jersey, tramitar carta de invitacion new jersey, make invitation letter new jersey, process letter of invitation new jersey";
-                    return view('web.office.invitacion', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%invitacion%')->limit(3)->get();
+                    return view('web.office.invitacion', compact('data', 'posts'));
                     break;
                 case 'revocatorias-en-new-jersey':
                     $data['metadescription'] .= "Realizamos Revocatorias de Poderes en New Jersey de una manera ágil y rápida!";
@@ -1339,7 +1341,8 @@ class WebController extends Controller
                 case 'cartas-de-invitacion-en-florida':
                     $data['metadescription'] .= "Tramitamos Cartas de Invitación en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", realizar carta de invitacion florida, tramitar carta de invitacion florida, make invitation letter florida, process letter of invitation florida";
-                    return view('web.office.invitacion', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%invitacion%')->limit(3)->get();
+                    return view('web.office.invitacion', compact('data', 'posts'));
                     break;
                 case 'revocatorias-en-florida':
                     $data['metadescription'] .= "Realizamos Revocatorias de Poderes en Florida de una manera ágil y rápida!";
