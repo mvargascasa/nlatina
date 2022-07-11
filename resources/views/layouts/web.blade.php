@@ -395,14 +395,20 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             </a>
         </div>
 </footer>
-{{-- <script defer src="{{asset('js/jquery-3.4.1.min.js')}}" ></script>
-<script defer src="{{ asset('js/popper.min.js') }}"></script> --}}
-{{-- <script defer src="{{ asset('js/bootstrap.min.js') }}"></script> --}}
+<script defer id="scriptjquery"></script>
+<script defer id="scriptpopper" ></script>
+<script defer id="scriptbootstrap" ></script>
 
 @yield('script')
 
 <script type="text/javascript">
 
+setTimeout(() => {
+    document.getElementById('scriptjquery').src = "{{asset('js/jquery-3.4.1.min.js')}}";
+    document.getElementById('scriptpopper').src = "{{ asset('js/popper.min.js') }}";
+    document.getElementById('scriptbootstrap').src = "{{ asset('js/bootstrap.min.js') }}";
+    console.log('cargando los tres scripts');
+}, 3000);
     //get ip address
     // function getip(){
     //     $.getJSON("https://api.ipify.org?format=json", function(response) {
@@ -461,7 +467,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         }
     }
 
-    var script3 = document.createElement("script");
+    let script3 = document.createElement("script");
 
     function downloadJSAtOnload() {
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
@@ -474,28 +480,16 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         //console.log('cargando script de facebook snippet...');
     }, 3000);
 
-    var timeToLoadJquery = 1500;
-    if(path.match('/newjersey') || path.match('/newyork') || path.match('/consulado')) timeToLoadJquery = 3000;
+    let timeToLoadJquery = 1500;
+    if(path.match('/newjersey') || path.match('/newyork') || path.match('/consulado')) {
+        timeToLoadJquery = 3000;
+    }
 
-    setTimeout(function () {
-        downloadJSAtOnload();
-        //console.log('cargando script de jquery...');
-        if(button)button.disabled = false;
-    }, timeToLoadJquery);
-
-    // if (window.addEventListener)
-    //     window.addEventListener("load", downloadJSAtOnload, false);
-    // else if (window.attachEvent)
-    //     window.attachEvent("onload", downloadJSAtOnload);
-    // else window.onload = downloadJSAtOnload;
-
-
-
-
-        // var script3 = document.createElement("script");
-
-        // script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
-        // script3.async = true;
+    // setTimeout(function () {
+    //     downloadJSAtOnload();
+    //     //console.log('cargando script de jquery...');
+    //     if(button)button.disabled = false;
+    // }, 3000);
 
         // document.addEventListener("DOMContentLoaded", function(event){
         //     document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
@@ -509,9 +503,9 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         // script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
         // script3.async = true;
         script2.src = "{{ asset('js/popper.min.js') }}";
-        script2.async = true;
+        script2.defer = true;
         script.src = "{{ asset('js/bootstrap.min.js') }}";
-        script.async = true;
+        script.defer = true;
 
         script3.addEventListener("load", function(event) {
             document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
