@@ -93,9 +93,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             //console.log('cargando script de facebook pixel code...');
         }, 3000);
     </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
-    </noscript>
+    
 <!-- End Facebook Pixel Code -->
 
 <?php };// fin de if url localhost ?>
@@ -123,7 +121,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   @yield('header')
   </head>
 <body>
-
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
+    </noscript>
     <header>
         <nav class="navbar navfoot navbar-dark navbar-expand-lg navbar-light bg-light">
           <div class="d-flex flex-grow-1">
@@ -183,7 +183,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                 <li class="nav-item"> <a class="nav-link" href="{{ route('web.showallpartners') }}">Partners</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('web.nosotros')}}">Sobre Nosotros</a> </li>
                   <li class="nav-item"> <a class="nav-link" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
-                  </li>
                   <li class="nav-item"><a class="nav-link" href="{{ route('partners.registro') }}">Registrarse</a></li>
               </ul>
           </div>
