@@ -372,7 +372,8 @@ class WebController extends Controller
                 case 'affidavit-support-en-new-york':
                     $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en New York de una manera ágil y rápida!";
                     $data['keywords'] .= ", declaracion jurada new york, affidavit new york, realizar declaracion jurada new york, tramitar declaracion jurada new york, make an affidavit new york, process affidavit new york";
-                    return view('web.office.affidavit', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%affidavit%')->limit(3)->get();
+                    return view('web.office.affidavit', compact('data', 'posts'));
                     break;
                 case 'apostillar-certificado-de-nacimiento-new-york':
                     $data['description'] = 'Certificados de Nacimiento';
@@ -1381,7 +1382,8 @@ class WebController extends Controller
                 case 'affidavit-support-en-florida':
                     $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", declaracion jurada florida, affidavit florida, realizar declaracion jurada florida, tramitar declaracion jurada florida, make an affidavit florida, process affidavit florida";
-                    return view('web.office.affidavit', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%affidavit%')->limit(3)->get();
+                    return view('web.office.affidavit', compact('data', 'posts'));
                     break;
                 case 'apostillar-certificado-de-nacimiento-florida':
                     $data['description'] = 'Certificados de Nacimiento';
