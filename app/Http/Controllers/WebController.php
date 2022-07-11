@@ -872,7 +872,8 @@ class WebController extends Controller
                 case 'affidavit-support-en-new-jersey':
                     $data['metadescription'] .= "Realizamos Declaraciones Juradas (Affidavit) en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", declaracion jurada new jersey, affidavit new jersey, realizar declaracion jurada new jersey, tramitar declaracion jurada new jersey, make an affidavit new jersey, process affidavit new jersey";
-                    return view('web.office.affidavit', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%affidavit%')->limit(3)->get();
+                    return view('web.office.affidavit', compact('data', 'posts'));
                     break;
                 case 'apostillar-certificado-de-nacimiento-new-jersey':
                     $data['description'] = 'Certificados de Nacimiento';

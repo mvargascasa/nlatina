@@ -51,7 +51,7 @@
                 que la autoridad encargada estampa en seco y se agrega como nota al reverso o como hoja adicional de los documentos que se quisiera
                 autenticar. Es por eso que los únicos autorizados para validar esta apostilla son los notarios debidamente acreditados.</p>
 
-            <h2 style="font-size: 25px">¿Tipo de Poderes</h2>
+            <h2 style="font-size: 25px">Tipos de Poderes</h2>
             <ul class="text-muted">
                 <li>Poder Especial: Otorgar control a una actividad especifica sobre sus activos a otra persona en el caso de que usted no pudiera estar presente.</li>
                 <li>Poder General:  Otorgar control más amplio y con más atribuciones sobre sus activos a otra persona en el caso de que usted no pudiera estar presente.</li>
