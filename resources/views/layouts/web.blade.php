@@ -500,12 +500,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         // document.addEventListener("DOMContentLoaded", function(event){
         //     document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
         // });
-
-        script3.addEventListener("load", function(event) {
-            document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
-            document.getElementsByTagName("script")[0].parentNode.appendChild(script);
-            //getip();
-        });
     
         var script = document.createElement("script");
         var script2 = document.createElement("script");
@@ -519,31 +513,38 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         script.src = "{{ asset('js/bootstrap.min.js') }}";
         script.async = true;
 
+        script3.addEventListener("load", function(event) {
+            document.getElementsByTagName("script")[0].parentNode.appendChild(script2);
+            document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+            console.log('cargando scripts de popper y bootstrap');
+            //getip();
+        });
+
 
     // window.addEventListener("load", function(event){
     //     document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
     // });
 
-    function downloadJQueryAtOnLoad(){
-        var jquery = document.createElement("script");
-        jquery.src = "{{ asset('js/jquery-3.4.1.min.js') }}";
-        jquery.defer = true;
-        document.body.appendChild(jquery);
-    }
+    // function downloadJQueryAtOnLoad(){
+    //     var jquery = document.createElement("script");
+    //     jquery.src = "{{ asset('js/jquery-3.4.1.min.js') }}";
+    //     jquery.defer = true;
+    //     document.body.appendChild(jquery);
+    // }
 
-    function downloadPopperAtOnLoad(){
-        var popper = document.createElement("script");
-        popper.src = "{{ asset('js/popper.min.js') }}";
-        popper.defer = true;
-        document.body.appendChild(popper);
-    }
+    // function downloadPopperAtOnLoad(){
+    //     var popper = document.createElement("script");
+    //     popper.src = "{{ asset('js/popper.min.js') }}";
+    //     popper.defer = true;
+    //     document.body.appendChild(popper);
+    // }
 
-    function downloadBootstrapAtOnLoad(){
-        var bootstrap = document.createElement("script");
-        bootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
-        bootstrap.defer = true;
-        document.body.appendChild(bootstrap);
-    }
+    // function downloadBootstrapAtOnLoad(){
+    //     var bootstrap = document.createElement("script");
+    //     bootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
+    //     bootstrap.defer = true;
+    //     document.body.appendChild(bootstrap);
+    // }
 
     // document.addEventListener("DOMContentLoaded", function(event) {
     //     if (localStorage.getItem("statusCardWhatsapp") === null) {
