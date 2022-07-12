@@ -29,18 +29,18 @@
   </section>
 
 <div class="container pt-4">
-        <h3>Gestione su Revocatoria de forma rápida y segura en {{ $data['office'] }}</h3>
+        <h2 style="font-size: 25px">Gestione su Revocatoria de forma rápida y segura en {{ $data['office'] }}</h2>
         <p class="text-muted">Una Revocatoria es una escritura pública expedida por un notario a través de la cual se deja sin efecto un poder otorgado con antelación.</p>
         <p class="text-muted">Este trámite es muy importante realizarlo si ya no desea que la persona apoderada continúe con la gestiónes por la cual se realizó el poder inicial.</p>
 
-        <h3>¿Que tipo de poderes se pueden revocar?</h3>
+        <h2 style="font-size: 25px">¿Que tipo de poderes se pueden revocar?</h2>
         <ul class="text-muted">
             <li>Poderes generales.</li>
             <li>Poderes especiales.</li>
         </ul>
 
 
-        <h3>¿Que requisitos necesito para realizar una revocatoria de poder?</h3>
+        <h2 style="font-size: 25px">¿Que requisitos necesito para realizar una revocatoria de poder?</h2>
         <ul class="text-muted">
             <li>Identificación válida de la persona que otorgó el poder.</li>
             <li>Nombres y apellidos del nuevo apoderado.</li>
@@ -49,11 +49,11 @@
             <li>Es aconsejable asignar una persona de absoluta confianza para que realice el trámite necesario para realizar la revocación de un poder.</li>
         </ul>
 
-        <h3>¿En donde puedo solicitar la revocatoria de un poder?</h3>
+        <h2 style="font-size: 25px">¿En donde puedo solicitar la revocatoria de un poder?</h2>
         <p class="text-muted">Acérquese a nuestra oficina y solicite la revocatoria del poder, un asesor lo guiará para que usted realice el trámite de manera correcta y segura.</p>
 
 
-        <h3>¿En que tiempo me entregan los documentos necesarios?</h3>
+        <h2 style="font-size: 25px">¿En que tiempo me entregan los documentos necesarios?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
@@ -62,7 +62,33 @@
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
-            <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+            </div>
+
+            <div class="mt-5">
+              <h4>Artículos que pueden interesarle</h4>
+              <div class="row">
+                  @foreach ($posts as $post)
+                  <div class="col-12 col-md-4">
+                      <div data-aos="flip-left" id="card_posts" class="card my-2">
+                          <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
+                              <img data-src="{{url('uploads/'.$post->imgdir)}}" class="lazy card-img-top" alt="Imagen {{ $post->name }}" style="object-fit: cover;width: 100%; height: 150px !important;">
+                              {{-- {{url('uploads/'.$post->imgdir)}} --}}
+                          </a>
+                          <div class="card-body p-2" style="position:relative;">
+                          <span class="d-block text-muted font-weight-bold text-truncate "
+                                  style="font-size:1rem">{{$post->name}}</span>
+                          <span class="d-block text-muted text-truncate">
+                              <?php echo strip_tags(substr($post->body,0,300))  ?>
+                          </span>
+                          {{-- <div class="small text-muted float-left">{{$post->created_at->format('M d')}}</div> --}}
+                          </div>
+                      </div>
+                  </div>
+                  @endforeach
+              </div>
+            </div>
 </div>
 
 <!-- Modal -->

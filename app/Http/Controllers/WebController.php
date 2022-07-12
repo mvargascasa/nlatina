@@ -335,7 +335,8 @@ class WebController extends Controller
                 case 'revocatorias-en-new-york':
                     $data['metadescription'] .= "Realizamos Revocatorias de Poderes en New York de una manera ágil y rápida!";
                     $data['keywords'] .= ", revocar carta poder new york, revocar poder general new york, revocar poder especial new york, realizar revocatoria new york, anular poder new york, anular carta poder new york, cancelar poder new york, cancelar carta poder new york, revoke power new york, override power new york, cancel power new york";
-                    return view('web.office.revocatorias', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%revocatoria%')->limit(3)->get();
+                    return view('web.office.revocatorias', compact('data', 'posts'));
                     break;
                 case 'contratos-en-new-york':
                     $data['metadescription'] .= "Realizamos todo tipo de Contratos en New York de una manera ágil y rápida!";
@@ -837,7 +838,8 @@ class WebController extends Controller
                 case 'revocatorias-en-new-jersey':
                     $data['metadescription'] .= "Realizamos Revocatorias de Poderes en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", revocar carta poder new jersey, revocar poder general new jersey, revocar poder especial new jersey, realizar revocatoria new jersey, anular poder new jersey, anular carta poder new jersey, cancelar poder new jersey, cancelar carta poder new jersey, revoke power new jersey, override power new jersey, cancel power new jersey";
-                    return view('web.office.revocatorias', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%revocatoria%')->limit(3)->get();
+                    return view('web.office.revocatorias', compact('data', 'posts'));
                     break;
                 case 'contratos-en-new-jersey':
                     $data['metadescription'] .= "Realizamos todo tipo de Contratos en New Jersey de una manera ágil y rápida!";
@@ -1347,7 +1349,8 @@ class WebController extends Controller
                 case 'revocatorias-en-florida':
                     $data['metadescription'] .= "Realizamos Revocatorias de Poderes en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", revocar carta poder florida, revocar poder general florida, revocar poder especial florida, realizar revocatoria florida, anular poder florida, anular carta poder florida, cancelar poder florida, cancelar carta poder florida, revoke power florida, override power florida, cancel power florida";
-                    return view('web.office.revocatorias', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%revocatoria%')->limit(3)->get();
+                    return view('web.office.revocatorias', compact('data', 'posts'));
                     break;
                 case 'contratos-en-florida':
                     $data['metadescription'] .= "Realizamos todo tipo de Contratos en Florida de una manera ágil y rápida!";
