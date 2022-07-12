@@ -347,7 +347,8 @@ class WebController extends Controller
                 case 'testamentos-en-new-york':
                     $data['metadescription'] .= "Realizamos Testamentos en New York de una manera ágil y rápida!";
                     $data['keywords'] .= ", realizar testamento new york, hacer testamento new york, tramitar testamento new york, make a will new york";
-                    return view('web.office.testamentos', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%testamento%')->limit(3)->get();
+                    return view('web.office.testamentos', compact('data', 'posts'));
                     break;
                 case 'motor-vehicle-commission-en-new-york':
                     $data['metadescription'] .= "Motor Vehicle Commission en New York de una manera ágil y rápida!";
@@ -851,7 +852,8 @@ class WebController extends Controller
                 case 'testamentos-en-new-jersey':
                     $data['metadescription'] .= "Realizamos Testamentos en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", realizar testamento new jersey, hacer testamento new jersey, tramitar testamento new jersey, make a will new jersey";
-                    return view('web.office.testamentos', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%testamento%')->limit(3)->get();
+                    return view('web.office.testamentos', compact('data', 'posts'));
                     break;
                 case 'motor-vehicle-commission-en-new-jersey':
                     $data['metadescription'] .= "Motor Vehicle Commission en New Jersey de una manera ágil y rápida!";
@@ -1363,7 +1365,8 @@ class WebController extends Controller
                 case 'testamentos-en-florida':
                     $data['metadescription'] .= "Realizamos Testamentos en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", realizar testamento florida, hacer testamento florida, tramitar testamento florida, make a will florida";
-                    return view('web.office.testamentos', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%testamento%')->limit(3)->get();
+                    return view('web.office.testamentos', compact('data', 'posts'));
                     break;
                 case 'matrimonios-en-florida':
                     $data['metadescription'] .= "Notarizamos Certificados de Matrimonio en Florida de una manera ágil y rápida!";

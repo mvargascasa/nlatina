@@ -9,6 +9,9 @@
 <meta property="og:title"       content="Testamentos Notarizados y Apostillados en {{ $data['office'] }}" />
 <meta property="og:description" content="Un testamento es un documento válido para realizar diferentes trámites notariales. ¿Dónde puede solicitarlo? Consulte por nuestro servicio en {{ $data['office'] }} 📃" />
 <meta property="og:image"       content="{{asset('img/testamento.jpg')}}" />
+<style>
+  #card_posts:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}
+</style>
 @endsection
 
 @section('phoneNumberHidden', $data['telfHidden'])
@@ -33,11 +36,12 @@
   </section>
 
 <div class="container pt-4">
-        <h3>Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte.</h3>
+        <h2 style="font-size: 25px">¿Qué son los testamentos y para qué sirven?</h2>
+        <p class="text-muted">Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte.</p>
         <p class="text-muted">El documento tiene que realizarse en una notaría para que tenga validez y pueda ejecutarse de acuerdo a la voluntad del testador.</p>
         <p class="text-muted">Con la creación de su testamento usted puede evitar futuros inconvenientes familiares en la división de bienes ya que en éste documento usted define la división a su voluntad y este debe respetarse.</p>
 
-        <h3>¿Que requisitos se necesita para realizar testamentos?</h3>
+        <h2 style="font-size: 25px">¿Que requisitos se necesita para realizar testamentos?</h2>
         <ul class="text-muted">
             <li>Presentar una identificación válida del testador.</li>
             <li>Nombres y apellidos del albacea.</li>
@@ -46,11 +50,11 @@
             <li>Información de los herederos.</li>
         </ul>
 
-        <h3>¿En donde puedo realizar un testamento?</h3>
+        <h2 style="font-size: 25px">¿En donde puedo realizar un testamento?</h2>
         <p class="text-muted">Acérquese a nuestra oficina y solicite empezar su proceso, nuestro personal le va asesorar de la mejor manera para que éste trámite se lleve a cabo de manera correcta y segura.</p>
 
 
-        <h3>¿En que tiempo me entregan un testamento?</h3>
+        <h2 style="font-size: 25px">¿En que tiempo me entregan un testamento?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
@@ -59,7 +63,35 @@
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
-            <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+            </div>
+
+            @if(!sizeof($posts) == 0)
+              <div class="mt-5">
+                <h4>Artículos que pueden interesarle</h4>
+                <div class="row">
+                    @foreach ($posts as $post)
+                    <div class="col-12 col-md-4">
+                        <div data-aos="flip-left" id="card_posts" class="card my-2">
+                            <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
+                                <img data-src="{{url('uploads/'.$post->imgdir)}}" class="lazy card-img-top" alt="Imagen {{ $post->name }}" style="object-fit: cover;width: 100%; height: 150px !important;">
+                                {{-- {{url('uploads/'.$post->imgdir)}} --}}
+                            </a>
+                            <div class="card-body p-2" style="position:relative;">
+                            <span class="d-block text-muted font-weight-bold text-truncate "
+                                    style="font-size:1rem">{{$post->name}}</span>
+                            <span class="d-block text-muted text-truncate">
+                                <?php echo strip_tags(substr($post->body,0,300))  ?>
+                            </span>
+                            {{-- <div class="small text-muted float-left">{{$post->created_at->format('M d')}}</div> --}}
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+              </div>
+            @endif
 </div>
 
 <!-- Modal -->
