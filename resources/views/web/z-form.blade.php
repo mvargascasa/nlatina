@@ -2,12 +2,12 @@
 
 
 <div class="form-group">
-    {!! Form::label('fname', 'Nombres') !!}
+    {!! Form::label('fname', 'Nombres') !!}<b style="color: red">*</b>
     {!! Form::text('fname', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('lname', 'Apellidos') !!}
+    {!! Form::label('lname', 'Apellidos') !!}<b style="color: red">*</b>
     {!! Form::text('lname', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
@@ -17,7 +17,7 @@
 </div> --}}
 
 <div class="form-group">
-    {!! Form::label('country', 'País de residencia') !!}
+    {!! Form::label('country', 'País de residencia') !!}<b style="color: red">*</b>
     {!! Form::select('country', [
         null => 'Seleccione',
         '+54' => 'Argentina',
@@ -43,7 +43,7 @@
     ], null, ['class' => 'form-control custom-select', 'id' => 'sel_country', 'required']) !!}
 </div>
 
-{!! Form::label('tlf', 'Teléfono') !!}
+{!! Form::label('tlf', 'Teléfono') !!}<b style="color: red">*</b>
 <div class="form-group d-flex">
     {!! Form::text('cod', null, ['class' => 'form-control', 'style' => 'border-radius: 5px 0px 0px 5px; width: 25%; background-color: #ffffff', 'id' => 'cod_country', 'readonly']) !!}
     {!! Form::number('tlf', null, ['class' => 'form-control','rows' => '2', 'style' => 'border-radius: 0px 5px 5px 0px; width: 100%', 'required']) !!}
@@ -51,11 +51,11 @@
 
 <div class="form-group">
     {!! Form::label('email', 'Email') !!}
-    {!! Form::text('email', null, ['class' => 'form-control','rows' => '2', 'required']) !!}
+    {!! Form::text('email', null, ['class' => 'form-control','rows' => '2']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('service', 'Servicio') !!}
+    {!! Form::label('service', 'Servicio') !!}<b style="color: red">*</b>
     {!! Form::select('service',
                                 [null => 'Seleccione',
                                 'Apostillas'=>'Apostillas',
@@ -74,8 +74,8 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('message', 'Mensaje') !!}
-    {!! Form::textarea('message', null, ['class' => 'form-control',  'maxlength'=>"100",'rows' => '2', 'id' => 'message', 'required']) !!}
+    {!! Form::label('message', 'Mensaje') !!}<b style="color: red">*</b>
+    {!! Form::textarea('message', null, ['class' => 'form-control',  'maxlength'=>"100",'rows' => '2', 'id' => 'message', 'required', 'placeholder' => 'Hola, necesito ayuda con...']) !!}
 </div>
 
 <div class="form-group">
