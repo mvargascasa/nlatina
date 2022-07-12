@@ -395,20 +395,20 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             </a>
         </div>
 </footer>
-<script defer id="scriptjquery"></script>
+{{-- <script defer id="scriptjquery"></script>
 <script defer id="scriptpopper" ></script>
-<script defer id="scriptbootstrap" ></script>
+<script defer id="scriptbootstrap" ></script> --}}
 
 @yield('script')
 
 <script type="text/javascript">
 
-setTimeout(() => {
-    document.getElementById('scriptjquery').src = "{{asset('js/jquery-3.4.1.min.js')}}";
-    document.getElementById('scriptpopper').src = "{{ asset('js/popper.min.js') }}";
-    document.getElementById('scriptbootstrap').src = "{{ asset('js/bootstrap.min.js') }}";
-    console.log('cargando los tres scripts');
-}, 3000);
+// setTimeout(() => {
+//     document.getElementById('scriptjquery').src = "{{asset('js/jquery-3.4.1.min.js')}}";
+//     document.getElementById('scriptpopper').src = "{{ asset('js/popper.min.js') }}";
+//     document.getElementById('scriptbootstrap').src = "{{ asset('js/bootstrap.min.js') }}";
+//     console.log('cargando los tres scripts');
+// }, 3000);
     //get ip address
     // function getip(){
     //     $.getJSON("https://api.ipify.org?format=json", function(response) {
@@ -485,11 +485,11 @@ setTimeout(() => {
         timeToLoadJquery = 3000;
     }
 
-    // setTimeout(function () {
-    //     downloadJSAtOnload();
-    //     //console.log('cargando script de jquery...');
-    //     if(button)button.disabled = false;
-    // }, 3000);
+    setTimeout(function () {
+        downloadJSAtOnload();
+        //console.log('cargando script de jquery...');
+        if(button)button.disabled = false;
+    }, timeToLoadJquery);
 
         // document.addEventListener("DOMContentLoaded", function(event){
         //     document.getElementsByTagName("script")[0].parentNode.appendChild(script3);
