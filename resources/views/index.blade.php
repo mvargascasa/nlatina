@@ -11,7 +11,7 @@
 ?>
     <title>Notaría Latina - Notario Público en Queens New York</title>
     <meta name="description" content="Notaría Latina - Notario Público en Queens New York. Gestión en Línea en todo EE.UU. Poderes, Apostillas, Traducciones, Autorizaciones de Viaje, Affidavit."/>
-    <meta name="keywords" content="notaria latina, notarialatina, notaria americana, notaria estados unidos, apostillas, carta poder, notario, notaria en new york, notaria queens, notaria latina queens, notaria en queens new york, notario en queens new york, notary public in queens new york, notaria cerca de mi, notario cerca de mi, notarizar documentos en new york, notarizar documentos en queens new york, apostillar documentos en new york, poderes en queens new york" />
+    <meta name="keywords" content="notaria latina, notarialatina, notaria americana, notaria estados unidos, apostillas, carta poder, notario, notaria en new york, notaria queens, notaria latina queens, notaria en queens new york, notario en queens new york, notary public in queens new york, notaria cerca de mi, notario cerca de mi, notarizar documentos en new york, notarizar documentos en queens new york, apostillar documentos en new york, poderes en queens new york, servicios notariales estados unidos, servicios notariales" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
