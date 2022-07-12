@@ -86,7 +86,7 @@
               <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
             </div>
 
-            @isset($posts)
+            @if(!sizeof($posts) == 0)
             <div class="mt-5">
               <h4>Artículos que pueden interesarle</h4>
               <div class="row">
@@ -110,7 +110,7 @@
                   @endforeach
               </div>
             </div>
-            @endisset
+            @endif
 </div>
 
 <!-- Modal -->
