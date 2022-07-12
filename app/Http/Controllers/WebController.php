@@ -341,7 +341,8 @@ class WebController extends Controller
                 case 'contratos-en-new-york':
                     $data['metadescription'] .= "Realizamos todo tipo de Contratos en New York de una manera ágil y rápida!";
                     $data['keywords'] .= ", contrato de arrendamiento new york, contrato de trabajo new york, contrato de renta new york, realizar contrato de arriendo new york, realizar contrato compra venta new york, realizar contrato prestamo new york, realizar contrato prenupcial new york, realizar contrato de servicio new york, realizar contrato de transporte new york, make contract new york";
-                    return view('web.office.contratos', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%contrato%')->limit(3)->get();
+                    return view('web.office.contratos', compact('data', 'posts'));
                     break;
                 case 'testamentos-en-new-york':
                     $data['metadescription'] .= "Realizamos Testamentos en New York de una manera ágil y rápida!";
@@ -844,7 +845,8 @@ class WebController extends Controller
                 case 'contratos-en-new-jersey':
                     $data['metadescription'] .= "Realizamos todo tipo de Contratos en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] .= ", contrato de arrendamiento new jersey, contrato de trabajo new jersey, contrato de renta new jersey, realizar contrato de arriendo new jersey, realizar contrato compra venta new jersey, realizar contrato prestamo new jersey, realizar contrato prenupcial new jersey, realizar contrato de servicio new jersey, realizar contrato de transporte new jersey, make contract new jersey";
-                    return view('web.office.contratos', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%contrato%')->limit(3)->get();
+                    return view('web.office.contratos', compact('data', 'posts'));
                     break;
                 case 'testamentos-en-new-jersey':
                     $data['metadescription'] .= "Realizamos Testamentos en New Jersey de una manera ágil y rápida!";
@@ -1355,7 +1357,8 @@ class WebController extends Controller
                 case 'contratos-en-florida':
                     $data['metadescription'] .= "Realizamos todo tipo de Contratos en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", contrato de arrendamiento florida, contrato de trabajo florida, contrato de renta florida, realizar contrato de arriendo florida, realizar contrato compra venta florida, realizar contrato prestamo florida, realizar contrato prenupcial florida, realizar contrato de servicio florida, realizar contrato de transporte florida, make contract florida";
-                    return view('web.office.contratos', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%contrato%')->limit(3)->get();
+                    return view('web.office.contratos', compact('data', 'posts'));
                     break;
                 case 'testamentos-en-florida':
                     $data['metadescription'] .= "Realizamos Testamentos en Florida de una manera ágil y rápida!";
