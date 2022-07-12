@@ -91,15 +91,34 @@
   </div>
 </section>
 
+@php
+// detectando si el dispositivo es movil para cargar la imagen del mapa de google
+    $detect = new \Detection\MobileDetect();
+    $isMobile = FALSE;
+
+    if($detect->isMobile()){
+        $isMobile = TRUE;
+    }
+@endphp
 
 
 <div class="container">
-    <div class="row py-4">
+    <div class="row py-4 justify-content-center">
+      <h3 class="mt-1 mb-4 text-center">Contáctenos para servicios de Notaría Pública.</h3><br>
+
+      @if ($isMobile)
+        <div class="col-12 col-sm-4 col-md-4 px-4">
+
+          <h5>Envíenos su información y nos pondremos en contacto en breve.</h5>
+
+          @include('web.z-form')
+
+        </div>
+      @endif
 
         <div class="col-12 col-sm-8 col-md-8 pb-4">
           
-          <h3>Contáctenos para servicios de Notaría Pública.</h3><br>
-          <h4 class="p-1">Visite nuestras oficinas.</h4>
+          <h4 class="p-1 @if($isMobile) mt-3 @endif text-center">Visite nuestras oficinas.</h4>
 
             <div class="row py-4">
                 <div class="col-12 col-sm-6">
@@ -169,13 +188,15 @@
               
         </div>
 
+        @if (!$isMobile)
         <div class="col-12 col-sm-4 col-md-4 px-4">
 
-            <h4>Envíenos su información y nos pondremos en contacto en breve.</h4>
+            <h5>Envíenos su información y nos pondremos en contacto en breve.</h5>
 
               @include('web.z-form')
 
         </div>
+        @endif
 
     </div>
 
