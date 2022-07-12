@@ -132,8 +132,8 @@ aria-hidden="true">
 
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('../img/autorizaciones-de-viaje.jpg')";
-        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
-        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
+        // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
+        // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
     });
   </script>
 @endsection

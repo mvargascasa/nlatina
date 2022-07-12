@@ -122,8 +122,8 @@
 
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('../img/acuerdos.jpg')";
-        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
-        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
+        // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
+        // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
     });
   </script>
 @endsection
