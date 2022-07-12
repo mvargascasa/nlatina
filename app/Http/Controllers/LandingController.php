@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 //use App\Conversion;
 use App\Http\Traits\GetCountryByCodTrait;
+use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
@@ -145,7 +146,7 @@ class LandingController extends Controller
                 $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);  
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead: '.strip_tags($request->aaa), $message, $header);  
             }
     
@@ -156,10 +157,15 @@ class LandingController extends Controller
                 <br> País: " . strip_tags($country) . "
                 <br> Telef: ". strip_tags($request->cod) . " " . strip_tags($request->tlf)."
                 <br> Interes: ".strip_tags($interest)."
+                <br> Servicio: " . strip_tags($request->service) . "
                 <br> Mensaje: ".strip_tags($request->message)."
                 <br> Fuente: GoogleAds 
                 <br> Página: " . url()->previous() . "
                 ";
+
+                if(isset($request->email)){
+                    $this->setEmailToLead($request->fname, $request->email);
+                }
     
                 // <br> País: ". strip_tags($pais)."
             
@@ -167,7 +173,7 @@ class LandingController extends Controller
                 $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead: '.strip_tags($request->aaa), $message, $header);      
             }
 
@@ -221,7 +227,7 @@ class LandingController extends Controller
                 $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);      
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);      
                 mail('sebas31051999@gmail.com','Lead Landing: '.strip_tags($request->aaa), $message, $header);
                 //'notariapublicalatina@gmail.com'.$sendoffices
         }
@@ -229,7 +235,60 @@ class LandingController extends Controller
         return view('landing.thank');
 
         //'notariapublicalatina@gmail.com'.$sendoffices
-    }    
+    }
+
+    public function setEmailToLead($name, $email){
+        $posts = Post::select('slug', 'name')->where('status', 'PUBLICADO')->inRandomOrder()->limit(3)->get();
+        $post1="";$post2="";$post3="";
+        for ($i=0; $i < 3; $i++) { 
+            switch ($i) {
+                case 0: $post1 = $posts[$i]; break;
+                case 1: $post2 = $posts[$i]; break;
+                case 2: $post3 = $posts[$i]; break;
+                default:break;
+            }
+        }
+        $subject = 'Gracias por contactarse con Notaria Latina';
+        $message = "
+        <div style='border: 0.5px solid #AA9389; padding: 30px; border-radius: 10px'>
+            <div>
+                <div style='text-align:center'>
+                    <a href='https://notarialatina.com'><img style='margin-top:20px; width:150px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'></a>
+                </div>
+            </div>
+            <div>
+                <h1 style='text-align:center'>¡Gracias " . strip_tags($name) ." por confiar en nosotros!</h1>
+                <h4>Su solicitud está siendo procesada, en breve un asesor se pondrá en contacto con usted para ayudarlo con el trámite</h4>
+                <p>
+                    Brindamos diferentes servicios de Notaria como:
+                <p>
+                <ul>
+                    <li><a href='https://notarialatina.com/apostillas'>🖋 Apostillas</a></li>
+                    <li><a href='https://notarialatina.com/poderes'>📃 Poderes</a></li>
+                    <li><a href='https://notarialatina.com/traducciones'>📝 Traducciones</a></li>
+                </ul>
+            </div>
+            <hr style='margin-top: 25px'>
+            <h4>Algunos artículos que pueden interesarle:</h4>
+            <ul>
+                <li><i><a href='https://notarialatina.com/post/".$post1->slug."'>".$post1->name."</a></i></li>
+                <li><i><a href='https://notarialatina.com/post/".$post2->slug."'>".$post2->name."</a></i></li>
+                <li><i><a href='https://notarialatina.com/post/".$post3->slug."'>".$post3->name."</a></i></li>
+            </ul>
+            <hr style='margin-top: 25px'>
+            <div style='margin-top:10px'>
+                <h3>¡Notaria Latina agradece su confianza en nosotros! 😉</h3>
+            </div>
+        </div>
+        ";
+
+        $header = 'From: <no-reply@notarialatina.com>' . "\r\n" .
+        'MIME-Version: 1.0' . "\r\n".
+        'Content-type:text/html;charset=UTF-8' . "\r\n"
+        ;
+
+        mail($email, $subject, $message, $header);
+    }
 
     // correo notariapublicalatina@gmail.com
     // New Jersey
