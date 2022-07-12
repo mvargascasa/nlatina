@@ -154,8 +154,8 @@ aria-hidden="true">
   scriptPopper.src = "{{ asset('js/popper.min.js') }}";
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('../img/poder.jpg')";
-        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
-        document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
+        // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
+        // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
     });
   </script>
 @endsection
