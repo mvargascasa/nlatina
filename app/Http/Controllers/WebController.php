@@ -1371,7 +1371,8 @@ class WebController extends Controller
                 case 'matrimonios-en-florida':
                     $data['metadescription'] .= "Notarizamos Certificados de Matrimonio en Florida de una manera ágil y rápida!";
                     $data['keywords'] .= ", notarizar certificado de matrimonio florida, tramitar certificado de matrimonio florida, notarizar acta de matrimonio florida, tramitar acta de matrimonio florida, notarize marriage certificate florida, process marriage certificate florida";
-                    return view('web.office.matrimonios', compact('data'));
+                    $posts = Post::where('name', 'LIKE', '%matrimonio%')->limit(3)->get();
+                    return view('web.office.matrimonios', compact('data', 'posts'));
                     break;
                 case 'poder-notarial-florida':
                     $data['metadescription'] .= "Realizamos Poderes Generales y Especiales en Florida de una manera ágil y rápida!";
