@@ -306,23 +306,23 @@
                     <div style="color: #9A7A2E">
                         @isset($partner->address)
                             <h3 style="font-weight: bold; font-size: 18px"><i class="fas fa-map-marker-alt"></i> Dirección</h3>
-                            <a style="color: #9A7A2E" target="_blank" href="https://www.google.com.ec/maps/place/{{$partner->address}}">{{ $partner->address}}</a>
+                            <a style="color: #9A7A2E" target="_blank" rel="nofollow" href="https://www.google.com.ec/maps/place/{{$partner->address}}">{{ $partner->address}}</a>
                         @endisset
                         @if($partner->website != null && Str::startsWith($partner->website, 'https'))
                             <h3 class="mt-2" style="font-weight: bold; font-size: 18px"><i class="fas fa-globe"></i> Sitio web</h3>
-                            <a target="_blank" style="color: #9A7A2E" href="{{$partner->website}}">{{ $partner->website }}</a>
+                            <a target="_blank" rel="nofollow" style="color: #9A7A2E" href="{{$partner->website}}">{{ $partner->website }}</a>
                         @endif
                         @if(Str::startsWith($partner->link_facebook, 'https') || Str::startsWith($partner->link_instagram, 'https') || Str::startsWith($partner->link_linkedin, 'https'))
                             <h3 style="font-weight: bold; margin-top: 10px; font-size: 18px">Redes Sociales</h3>
                             <div style="margin-top: 20px">
                                 @if($partner->link_facebook != null && Str::startsWith($partner->link_facebook, 'https'))
-                                    <a target="_blank" class="social" href="{{$partner->link_facebook}}"><i class="fab fa-facebook-square fa-2x"></i></a>
+                                    <a target="_blank" rel="nofollow" class="social" href="{{$partner->link_facebook}}"><i class="fab fa-facebook-square fa-2x"></i></a>
                                 @endif
                                 @if($partner->link_instagram != null && Str::startsWith($partner->link_instagram, 'https'))
-                                    <a target="_blank" class="social" href="{{$partner->link_instagram}}"><i class="fab fa-instagram fa-2x"></i></a>
+                                    <a target="_blank" rel="nofollow" class="social" href="{{$partner->link_instagram}}"><i class="fab fa-instagram fa-2x"></i></a>
                                 @endif
                                 @if($partner->link_linkedin != null && Str::startsWith($partner->link_linkedin, 'https'))
-                                    <a target="_blank" class="social" href="{{ $partner->link_linkedin}}"><i class="fab fa-linkedin fa-2x"></i></a>
+                                    <a target="_blank" rel="nofollow" class="social" href="{{ $partner->link_linkedin}}"><i class="fab fa-linkedin fa-2x"></i></a>
                                 @endif
                             </div>
                         @endif
