@@ -2,7 +2,7 @@
 @section('header')
 <title>Apostilla de documentos en {{ $data['office'] }} - Notaria Latina</title> 
 <meta name="description" content="Apostillamos todo tipo de documentos en {{ $data['office']}} como certificados, diplomas, poderes, contratos, entre otros de una manera segura. Contáctenos! ✔">       
-<meta name="keywords" content="apostillar documento, que es una apostilla, para que sirve apostillar un documento, en que documentos se necesita apostillar, requisitos para apostillar un documento en {{ Str::lower($data['office']) }}, como apostillar un documento en {{ Str::lower($data['office']) }}, apostilla de la haya en {{ Str::lower($data['office']) }}, apostillar en {{ Str::lower($data['office']) }}, apostillar documentos en {{ Str::lower($data['office']) }}, apostillar documentos {{ Str::lower($data['office'])}}, donde apostillar documentos en {{ Str::lower($data['office']) }}, donde se apostilla en {{ Str::lower($data['office']) }}, apostille nj" />
+<meta name="keywords" content="apostillar documento, documentos apostillados, apostillar que significa, apostillar documentos que es, que significa apostillar documentos, que es una apostilla, para que sirve apostillar un documento, en que documentos se necesita apostillar, requisitos para apostillar un documento, requisitos para apostillar un documento en {{ Str::lower($data['office']) }}, como apostillar un documento en {{ Str::lower($data['office']) }}, apostilla de la haya en {{ Str::lower($data['office']) }}, apostillar en {{ Str::lower($data['office']) }}, apostillar documentos en {{ Str::lower($data['office']) }}, apostillar documentos {{ Str::lower($data['office'])}}, donde apostillar documentos en {{ Str::lower($data['office']) }}, donde se apostilla en {{ Str::lower($data['office']) }}, apostille {{Str::lower($data['office'])}}" />
 
 <meta property="og:url"                content="{{Request::url()}}" />
 <meta property="og:type"               content="article" />
@@ -36,50 +36,11 @@
   </section>
 
 <div class="container pt-4">
-            <h2 style="font-size: 25px;">Autentificamos sus documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos.</h2>
-            <p class="text-muted">La Apostilla, es la manera más simple de certificar la autenticidad de documentos públicos expedidos en otro país. Por lo tanto es un
-                requisito indispensable para gestionar trámites internacionales.</p>
-            <p class="text-muted">De acuerdo al Convenio de la Haya, algunos de los países latinos miembros del convenio donde es válida la apostilla son Argentina, Bolivia,
-                Venezuela, Colombia, Chile, Costa Rica, Ecuador, Estados Unidos, El Salvador, Guatemala, Honduras, Perú, México, entre otros.</p>
-
-            <h2 style="font-size: 25px">¿Para que me sirve apostillar un documento?</h2>
-            <p class="text-muted">El documento que porte la apostilla tiene validez legal en cualquiera de los países miembros del Convenio. La cual consiste en un sello
-                que la autoridad encargada estampa en seco y se agrega como nota al reverso o como hoja adicional de los documentos que se quisiera
-                autenticar. Es por eso que los únicos autorizados para validar esta apostilla son los notarios debidamente acreditados.</p>
-
-            <h2 style="font-size: 25px">¿En que documentos se necesita la apostilla?</h2>
-            <ul class="text-muted">
-                <li>Diplomas</li>
-                <li>Certificados de nacimiento.</li>
-                <li>Poderes Generales</li>
-                <li>Poderes Especiales</li>
-                <li>Certificados de matrimonio.</li>
-                <li>Certificados de defunción.</li>
-                <li>Contratos.</li>
-                <li>Cartas de invitación.</li>
-                <li>Testamentos.</li>
-                <li>Declaraciones juradas.</li>
-                <li>Estados de cuenta.</li>
-                <li>Actas de divorcio.</li>
-                <li>Facturas.</li>
-                <li>Documentos corporativos.</li>
-            </ul>
-
-        <h2 style="font-size: 25px">¿Que requisitos necesito para la apostilla de un documento?</h2>
-        <p class="text-muted">El único requisito es poseer el documento original que desea apostillar. Por lo tanto es un trámite simple.</p>
-
-        <h2 style="font-size: 25px">¿En donde puedo apostillar un documento?</h2>
-        <p class="text-muted">Puede <a href="{{route('web.contactenos')}}">contactarnos</a> o acercarse a nuestra oficina con el documento que desea
-            apostillar y un asesor lo guiará para que realice el trámite de manera correcta, rápida y segura.</p>
-        <h2 style="font-size: 25px">¿En que tiempo se realiza una apostilla?</h2>
-        <ul class="text-muted">
-            <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
-            <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
-            <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
-        </ul>
-        <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+            
+            <div>
+              {!! $data['body'] !!}
+            </div>
+            
             <div class="d-flex justify-content-center">
               <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
             </div>

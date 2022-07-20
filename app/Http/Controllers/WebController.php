@@ -430,8 +430,51 @@ class WebController extends Controller
                     return view('web.office.traducciones', compact('data', 'posts'));
                     break;
                 case 'apostillar-documentos-new-york':
-                    $data['metadescription'] .= "¿Necesitas apostillar un documento? Te ayudamos a tramitar todo tipo de Documentos en New York de una manera ágil y rápida!";
-                    $data['keywords'] .= ", apostillar documentos new york, apostillar diploma new york, apostillar poder general new york, apostillar poder especial new york, apostillar certificado de matrimonio new york, apostillar certificado de defuncion new york, apostillar contrato new york, apostillar carta de invitacion new york, apostillar testamentos new york, apostillar declaraciones juradas new york, apostillar affidavit new york, apostillar acta de divorcio new york, apostillar facturas new york, apostille documents new york";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px;'>Apostillamos sus documentos requeridos por establecimientos de otro país para que tengan válidez dentro del mismo</h2>
+                    <p class='text-muted'>La Apostilla es la manera más sencilla de constatar la veracidad de documentos públicos expedidos en otro país.
+                        Es por ello que es un requisito indispensable si desea gestionar trámites internacionales.</p>
+                    <p class='text-muted'>De acuerdo al Convenio de la Haya, algunos de los países latinos miembros del convenio donde es válida la apostilla son Argentina, Bolivia,
+                        Venezuela, Colombia, Chile, Costa Rica, Ecuador, Estados Unidos, El Salvador, Guatemala, Honduras, Perú, México, entre otros.</p>
+        
+                    <h2 style='font-size: 25px'>¿Para que sirve apostillar un documento?</h2>
+                    <p class='text-muted'>El documento que contenga la apostilla es válido en cualquiera de los países miembros del Convenio mencionados anteriormente.
+                     Hablando físicamente, consiste en una hoja que se agrega a los documentos que la autoridad estampa sobre una copia del documento público 
+                     que se quisiera autenticar. Por esta razón, los únicos autorizados para validar esta apostilla son los notarios debidamente acreditados.</p>
+        
+                    <h2 style='font-size: 25px'>¿Qué documentos requieren de una apostilla?</h2>
+                    <ul class='text-muted'>
+                        <li>Diplomas (<a href='https://notarialatina.com/newyork/apostillar-diploma-de-escuela-secundaria-new-york'>Secundaria</a> o <a href='https://notarialatina.com/newyork/apostillar-diploma-universitario-new-york'>Universitario</a>).</li>
+                        <li><a href='https://notarialatina.com/newyork/apostillar-certificado-de-nacimiento-new-york'>Certificados de nacimiento.</a></li>
+                        <li><a href='https://notarialatina.com/newyork/apostillar-certificado-de-matrimonio-new-york'>Certificados de matrimonio.</a></li>
+                        <li><a href='https://notarialatina.com/newyork/apostillar-certificado-de-defuncion-new-york'>Certificados de defunción.</a></li>
+                        <li><a href='https://notarialatina.com/newyork/apostillar-poder-notarial-personal-new-york'>Poderes Generales y Especiales.</a></li>
+                        <li>Contratos.</li>
+                        <li>Cartas de invitación.</li>
+                        <li><a href='https://notarialatina.com/newyork/apostillar-escrituras-testamentos-new-york'>Testamentos.</a></li>
+                        <li><a href='https://notarialatina.com/newyork/apostillar-declaraciones-juradas-de-estado-unico-new-york'>Declaraciones juradas.</a></li>
+                        <li><a href=''>Estados de cuenta.</a></li>
+                        <li><a href='https://notarialatina.com/newyork/apostillar-certificado-de-divorcio-new-york'>Actas de divorcio.</a></li>
+                        <li><a href='https://notarialatina.com/newyork/apostillar-facturas-new-york'>Facturas.</a></li>
+                        <li>Documentos corporativos.</li>
+                    </ul>
+        
+                    <h2 style='font-size: 25px'>¿Cuáles son los requisitos para apostillar un documento?</h2>
+                    <p class='text-muted'>El único requisito es contar con el documento original que desea apostillar. Es por ello que es un trámite sencillo y fácil de hacerlo.</p>
+            
+                    <h2 style='font-size: 25px'>¿En donde se puede apostillar un documento?</h2>
+                    <p class='text-muted'>Puede <a href='https://notarialatina.com/contactenos'>contactarnos</a> completando el formulario en línea o acercarse a nuestra oficina con el documento a
+                        apostillar y un asesor lo guiará para que realice el trámite de manera correcta, rápida y segura.</p>
+                    <h2 style='font-size: 25px'>¿En que tiempo se realiza una apostilla?</h2>
+                    <ul class='text-muted'>
+                        <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+                        <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+                        <li>El documento digital estará disponible en 24 horas.</li>
+                        <li class='text-danger'>Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+                    </ul>
+                    <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     $posts = Post::where('name', 'LIKE', '%apostilla%')->limit(3)->get();
                     return view('web.office.apostillas', compact('data', 'posts'));
                     break;
@@ -999,8 +1042,53 @@ class WebController extends Controller
                     return view('web.office.traducciones', compact('data', 'posts'));
                     break;
                 case 'apostillar-documentos-new-jersey':
-                    $data['metadescription'] .= "Apostillamos todo tipo de Documentos en New Jersey de una manera ágil y rápida!";
-                    $data['keywords'] .= ", apostillar documentos new jersey, apostillar diploma new jersey, apostillar poder general new jersey, apostillar poder especial new jersey, apostillar certificado de matrimonio new jersey, apostillar certificado de defuncion new jersey, apostillar contrato new jersey, apostillar carta de invitacion new jersey, apostillar testamentos new jersey, apostillar declaraciones juradas new jersey, apostillar affidavit new jersey, apostillar acta de divorcio new jersey, apostillar facturas new jersey, apostille documents new jersey";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px;'>Realizamos la Apostilla de sus documentos requeridos por organismos de otro país mediante una Apostilla.</h2>
+                    <p class='text-muted'>La Apostilla es la manera más fácil de autentificar documentos públicos expedidos en otro país. Mediante esta es posible gestionar
+                        trámites internacionales, lo que la hacen un documento indispensable.
+                    </p>
+                    <p class='text-muted'>Acorde al Convenio de la Haya, algunos de los países latinos miembros del convenio donde es válida la apostilla son Argentina, Bolivia,
+                        Venezuela, Colombia, Chile, Costa Rica, Ecuador, Estados Unidos, El Salvador, Guatemala, Honduras, Perú, México, entre otros.</p>
+        
+                    <h2 style='font-size: 25px'>¿Cuál es el objetivo de apostillar un documento?</h2>
+                    <p class='text-muted'>El documento que porte la apostilla respalda la veracidad del mismo, lo cual permite ser válida y ejercer cierta autoridad acorde a lo que esta descrito. 
+                        En términos generales, consiste de un sello que la autoridad competente estampa en seco y se agrega como nota al reverso del escrito o como una hoja adicional. 
+                        Los únicos autorizados para constatar la veracidad de esta apostilla son los notarios debidamente acreditados.</p>
+        
+                    <h2 style='font-size: 25px'>¿Qué documentos necesitan de una apostilla?</h2>
+                    <ul class='text-muted'>
+                        <li>Diplomas (<a href='https://notarialatina.com/newjersey/apostillar-diploma-de-escuela-secundaria-new-jersey'>Escuela Secundaria</a> o <a href='https://notarialatina.com/newjersey/apostillar-diploma-universitario-new-jersey'>Universitarios</a>)</li>
+                        <li><a href='https://notarialatina.com/newjersey/apostillar-certificado-de-nacimiento-new-jersey'>Partida de nacimiento.</a></li>
+                        <li><a href='https://notarialatina.com/newjersey/apostillar-certificado-de-matrimonio-new-jersey'>Certificados de matrimonio.</a></li>
+                        <li><a href='https://notarialatina.com/newjersey/apostillar-certificado-de-defuncion-new-jersey'>Acta de defunción.</a></li>
+                        <li><a href='https://notarialatina.com/newjersey/apostillar-certificado-de-divorcio-new-jersey'>Acta de divorcio.</a></li>
+                        <li><a href='https://notarialatina.com/newjersey/apostillar-poder-notarial-personal-new-jersey'>Poderes Generales</a></li>
+                        <li><a href='https://notarialatina.com/newjersey/apostillar-poder-notarial-personal-new-jersey'>Poderes Especiales</a></li>
+                        <li>Contratos.</li>
+                        <li>Cartas de invitación.</li>
+                        <li><a href='https://notarialatina.com/newjersey/apostillar-escrituras-testamentos-new-jersey'>Testamentos.</a></li>
+                        <li><a href='https://notarialatina.com/newjersey/apostillar-declaraciones-juradas-de-estado-unico-new-jersey'>Declaraciones juradas.</a></li>
+                        <li>Estados de cuenta.</li>
+                        <li><a href='https://notarialatina.com/newjersey/apostillar-facturas-new-jersey'>Facturas.</a></li>
+                        <li>Documentos corporativos.</li>
+                    </ul>
+        
+                    <h2 style='font-size: 25px'>¿Qué necesito para apostillar de un documento?</h2>
+                    <p class='text-muted'>El requisito singular que necesita es poseer el documento original que va a ser apostillado. Por ello se trata de un trámite sencillo</p>
+            
+                    <h2 style='font-size: 25px'>¿En donde puedo obtener mi documento apostillado?</h2>
+                    <p class='text-muted'>Puede contactarnos completando el <a href='https://notarialatina.com/contactenos'>siguiente formulario</a> o dirigirse personalmente a nuestra oficina con el documento que desea
+                        apostillar. Un de nuestros asesores lo guiará en el proceso de una manera eficaz y segura</p>
+                    <h2 style='font-size: 25px'>¿En que tiempo se realiza una apostilla?</h2>
+                    <ul class='text-muted'>
+                        <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+                        <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+                        <li>El documento digital estará disponible en 24 horas.</li>
+                        <li class='text-danger'>Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+                    </ul>
+                    <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     $posts = Post::where('name', 'LIKE', '%apostilla%')->limit(3)->get();
                     return view('web.office.apostillas', compact('data', 'posts'));
                     break;
@@ -1575,8 +1663,53 @@ class WebController extends Controller
                     return view('web.office.traducciones', compact('data', 'posts'));
                     break;
                 case 'apostillar-documentos-florida':
-                    $data['metadescription'] .= "Apostillamos todo tipo de Documentos en Florida de una manera ágil y rápida!";
-                    $data['keywords'] .= ", apostillar documentos florida, apostillar diploma florida, apostillar poder general florida, apostillar poder especial florida, apostillar certificado de matrimonio florida, apostillar certificado de defuncion florida, apostillar contrato florida, apostillar carta de invitacion florida, apostillar testamentos florida, apostillar declaraciones juradas florida, apostillar affidavit florida, apostillar acta de divorcio florida, apostillar facturas florida, apostille documents florida";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px;'>Certificamos sus documentos requeridos por instituciones de otro país mediante la Apostilla de estos.</h2>
+                    <p class='text-muted'>La Apostilla es la mejor opción al momento de demostrar la veracidad de documentos públicos expedidos en otro país. Por medio de esta es posible administrar 
+                        trámites internacionales, entre otras gestiones que necesite realizarlas.
+                    </p>
+                    <p class='text-muted'>Algunos de los países latinos miembros del Convenio de la Haya donde es válida la apostilla son Argentina, Bolivia,
+                        Venezuela, Colombia, Chile, Costa Rica, Ecuador, Estados Unidos, El Salvador, Guatemala, Honduras, Perú, México, entre otros.</p>
+        
+                    <h2 style='font-size: 25px'>¿Cuál es la finalidad de apostillar un documento?</h2>
+                    <p class='text-muted'>Este proceso es muy necesario ya que respalda la veracidad del documento apostillado, lo cual le permite estar en vigor y ejercer cierto derecho acorde a lo que esta descrito. 
+                        En términos más sencillos, consiste de un sello que la autoridad competente estampa y se añade como nota al otro lado del escrito o como una hoja adicional. 
+                        Los Notarios acreditados son los únicos autorizados para efecutar este trámite y certificar la veracidad del escrito.</p>
+        
+                    <h2 style='font-size: 25px'>Documentos que requieren ser apostillados</h2>
+                    <ul class='text-muted'>
+                        <li>Diplomas de <a href='https://notarialatina.com/florida/apostillar-diploma-de-escuela-secundaria-florida'>Escuela Secundaria</a> o <a href='https://notarialatina.com/florida/apostillar-diploma-universitario-florida'>Universitarios</a></li>
+                        <li><a href='https://notarialatina.com/florida/apostillar-certificado-de-nacimiento-florida'>Certificado de nacimiento.</a></li>
+                        <li><a href='https://notarialatina.com/florida/apostillar-certificado-de-matrimonio-florida'>Acta de matrimonio.</a></li>
+                        <li><a href='https://notarialatina.com/florida/apostillar-certificado-de-defuncion-florida'>Certificado de defunción.</a></li>
+                        <li><a href='https://notarialatina.com/florida/apostillar-certificado-de-divorcio-florida'>Acta de divorcio.</a></li>
+                        <li><a href='https://notarialatina.com/florida/apostillar-poder-notarial-personal-florida'>Poderes Generales</a></li>
+                        <li><a href='https://notarialatina.com/florida/apostillar-poder-notarial-personal-florida'>Poderes Especiales</a></li>
+                        <li>Contratos.</li>
+                        <li>Cartas de invitación.</li>
+                        <li><a href='https://notarialatina.com/florida/apostillar-escrituras-testamentos-florida'>Testamentos.</a></li>
+                        <li><a href='https://notarialatina.com/florida/apostillar-escrituras-testamentos-florida'>Declaraciones juradas (Affidavit).</a></li>
+                        <li>Estados de cuenta.</li>
+                        <li><a href='https://notarialatina.com/florida/apostillar-facturas-florida'>Facturas.</a></li>
+                        <li>Documentos corporativos.</li>
+                    </ul>
+        
+                    <h2 style='font-size: 25px'>Requerimientos para apostillar un documento</h2>
+                    <p class='text-muted'>Para ejecutar este proceso solamente necesita poseer el documento original que va a ser apostillado. Es por eso que se trata de un trámite fácil y sencillo.</p>
+            
+                    <h2 style='font-size: 25px'>¿En donde se puede apostillar documentos?</h2>
+                    <p class='text-muted'>Contáctenos en línea completando el <a href='https://notarialatina.com/contactenos'>siguiente formulario</a> o acérquese personalmente a nuestra oficina con el documento que necesita
+                        apostillar. Nuestros asesores lo ayudarán con el trámite de una manera sencilla y eficaz</p>
+                    <h2 style='font-size: 25px'>¿En que tiempo se realiza una apostilla?</h2>
+                    <ul class='text-muted'>
+                        <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+                        <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+                        <li>El documento digital estará disponible en 24 horas.</li>
+                        <li class='text-danger'>Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+                    </ul>
+                    <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     $posts = Post::where('name', 'LIKE', '%apostilla%')->limit(3)->get();
                     return view('web.office.apostillas', compact('data', 'posts'));
                     break;
