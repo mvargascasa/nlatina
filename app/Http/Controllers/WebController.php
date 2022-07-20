@@ -356,8 +356,70 @@ class WebController extends Controller
                     return view('web.office.vehicle_comission', compact('data'));
                     break;
                 case 'poder-notarial-new-york':
-                    $data['metadescription'] .= "Realizamos Poderes Generales y Especiales en New York de una manera ágil y rápida!";
-                    $data['keywords'] .= ", realizar carta poder new york, realizar poder especial new york, realizar poder general new york, tramitar poder new york, make power of attorney new york, process power new york";
+                    // $data['metadescription'] .= "Realizamos Poderes Generales y Especiales en New York de una manera ágil y rápida!";
+                    // $data['keywords'] .= ", realizar carta poder new york, realizar poder especial new york, realizar poder general new york, tramitar poder new york, make power of attorney new york, process power new york";
+                    $data['body'] = "
+                        <h2 style='font-size: 25px'>Tramitamos todo tipo de Carta Poder en New York</h2>
+                        <p class='text-muted'>Un poder o carta poder es un documento legal con el objetivo de otorgar control, ya sea total o parcial, sobre sus activos a otra persona
+                            en el caso que usted no pudiera estar presente. Este documento le permite realizar trámites a distancia siendo una solución para gestionar sus bienes, trámites
+                            bancarios y otras tareas importantes.</p>
+                        <p class='text-muted'>La persona que realiza el poder generalmente se la conoce como <b>poderdante o mandante</b> y la que recibe ese documento se le denomina <b>apoderado o mandatario</b>.
+                            Es recomendable asignar una persona de absoluta confianza, de preferencia un familiar, para que realice las tareas asignadas que se especificaran en la carta poder,
+                            de esta manera evita futuros inconvenientes que se puedan presentar.</p>
+
+                        <h2 style='font-size: 25px'>¿Para que se utiliza un poder notarial?</h2>
+                        <p class='text-muted'>Este documento se lo puede utilizar para gestionar diversos trámites como comprar y vender propiedades o terrenos, así como obtener las escrituras y administrar las
+                        mismas, manejar cuentas bancarias, retiro de dinero de las entidades financieras, registro de menores, entre otros trámites.</p>
+                        <p class='text-muted'>El documento que porte la apostilla tiene validez legal en cualquiera de los países miembros del Convenio. La cual consiste en un sello
+                            que la autoridad encargada estampa en seco y se agrega como nota al reverso o como hoja adicional de los documentos que se quisiera
+                            autenticar. Es por eso que los únicos autorizados para validar esta apostilla son los notarios debidamente acreditados.</p>
+
+                        <h2 style='font-size: 25px'>Tipos de Poderes</h2>
+                        <p class='text-muted'>
+                            Existen dos tipos de poderes por los cuales el poderdante puede optar dependiendo de las necesidades que tenga. Estos pueden ser:
+                        </p>
+                        <ul class='text-muted'>
+                            <li><b>Poder Especial:</b> Otorgar control a una actividad especifica sobre sus activos a otra persona en el caso de que usted no pudiera estar presente. Este poder es un poco más restringido en cuanto a las actividades que tiene permitido realizar el apoderado</li>
+                            <li><b>Poder General:</b>  Otorgar control más amplio y con más atribuciones sobre sus activos a otra persona en el caso de que usted no pudiera estar presente. El poder general es más ilimitado con las tareas que el apoderado puede ejercer</li>
+                        </ul>
+
+                        <h2 style='font-size: 25px'>¿En que documentos es necesaria la apostilla?</h2>
+                        <ul class='text-muted'>
+                            <li>Compra y Venta de propiedades o terrenos</li>
+                            <li>Administración de propiedades.</li>
+                            <li>Administrar sus cuentas y transacciones bancarias.</li>
+                            <li>Inversiones de dinero.</li>
+                            <li>Hacer reclamos legales</li>
+                            <li>Procedimientos legales en su nombre.</li>
+                        </ul>
+
+                        <h2 style='font-size: 25px'>¿Cuáles son los requisitos para realizar el trámite?</h2>
+                        <p class='text-muted'>Entre los requerimientos que debe tener en cuenta para solicitar un poder notarial se encuentran los siguientes:</p>
+                        <ul class='text-muted'>
+                            <li>Identificación válida del poderdante.</li>
+                            <li>Nombres y apellidos del apoderado.</li>
+                            <li>Número de cédula del apoderado.</li>
+                        </ul>
+
+                    <h2 style='font-size: 25px'>¿Que tiempo de validez tiene un poder?</h2>
+                    <p class='text-muted'>Según sea el caso, un poder es válido por un tiempo limitado o indefinido según el poderdante lo establezca a la hora de realizar el poder con el notario.
+                        Existen algunas causas por las cuales un poder puede estar en vigor solo por cierto tiempo, por ejemplo por fallecimiento del poderdante o hasta  que por decisión propia solicite la revocatoria del documento.</p>
+                    <p class='text-muted'>El poder puede utilizarse aun si el poderdante no se encuentre con todas sus facultades físicas o mentales.</p>
+
+                    <h2 style='font-size: 25px'>¿En donde puedo solicitar un poder?</h2>
+                    <p class='text-muted'>Puede contactarnos completando el formulario en línea o acercándose a nuestra oficina. Un asesor lo guiará para que usted realice el trámite de manera correcta y segura.</p>
+
+
+                    <h2 style='font-size: 25px'>¿Cuánto se demora en entregar el poder?</h2>
+                    <ul class='text-muted'>
+                        <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+                        <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+                        <li>El documento digital estará disponible en 24 horas.</li>
+                        <li class='text-danger'>Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+                    </ul>
+                    <p class='text-muted'><b><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></b></p>
+                    ";
                     $posts = Post::where('name', 'LIKE', '%poder')->limit(3)->get();
                     return view('web.office.poderes', compact('data', 'posts'));
                     break;
@@ -861,8 +923,72 @@ class WebController extends Controller
                     return view('web.office.vehicle_comission', compact('data'));
                     break;
                 case 'poder-notarial-new-jersey':
-                    $data['metadescription'] .= "Realizamos Poderes Generales y Especiales en New Jersey de una manera ágil y rápida!";
-                    $data['keywords'] .= ", realizar carta poder new jersey, realizar poder especial new jersey, realizar poder general new jersey, tramitar poder new jersey, make power of attorney new jersey, process power new jersey";
+                    // $data['metadescription'] .= "Realizamos Poderes Generales y Especiales en New Jersey de una manera ágil y rápida!";
+                    // $data['keywords'] .= ", realizar carta poder new jersey, realizar poder especial new jersey, realizar poder general new jersey, tramitar poder new jersey, make power of attorney new jersey, process power new jersey";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px'>Realizamos todo tipo de Carta Poder en New Jersey</h2>
+                        <p class='text-muted'>Un poder consiste de un documento legal el cual sirve para conceder, ya sea total o parcial, cierta autoridad sobre sus activos a otra persona
+                            en el caso que usted no pudiera estar presente. Este le permite gestionar sus trámites a distancia siendo una solución para gestionar sus bienes, trámites
+                            bancarios y otras tareas importantes.</p>
+                        <p class='text-muted'>La persona que esta concediendo este poder se llama <b>poderdante o mandante</b> y la que recibe el mismo se la conoce como <b>apoderado o mandatario</b>.
+                            Lo recomendable es asignar una persona de confianza, de preferencia un familiar, para que realice las tareas encargadas que se especifican en la carta,
+                            asi previene futuros inconvenientes que podrían presentarse.</p>
+
+                        <h2 style='font-size: 25px'>¿Para que sirve un poder?</h2>
+                        <p class='text-muted'>Un poder sirve para administrar diferentes trámites como la compra y venta de propiedades, así como conseguir y administrar escrituras de 
+                        las mismas, gestionar cuentas bancarias, retiro de dinero, entro otros.
+                        </p>
+                        <p class='text-muted'>El documento con la apostilla tiene validez legal en cualquiera de los países miembros del Convenio, el cual consiste en un sello
+                            que la autoridad encargada estampa en seco y se agrega como nota al reverso o como hoja adicional de los documentos que se quisiera
+                            autenticar. Es por eso que los únicos autorizados para validar esta apostilla son los notarios debidamente acreditados.</p>
+
+                        <h2 style='font-size: 25px'>¿Cuantos tipos de Poderes existen?</h2>
+                        <p class='text-muted'>
+                            El poderdante puede escoger entre dos tipos de poderes que son los siguientes:
+                        </p>
+                        <ul class='text-muted'>
+                            <li><b>Poder Especial:</b> Este tipo de poder es un poco más restrictivo ya que otorga control limitado a una actividad especifica sobre sus activos o bienes a otra persona en el caso de que usted no pudiera estar presente.</li>
+                            <li><b>Poder General: </b> Este poder es más ilimitado debido a que otorga un control más amplio y con más atribuciones sobre sus activos a otra persona en el caso de que usted no pudiera estar presente.</li>
+                        </ul>
+
+                        <h2 style='font-size: 25px'>¿En que documentos se requiere la apostilla?</h2>
+                        <ul class='text-muted'>
+                            <li>Compra y Venta</li>
+                            <li>Administración de propiedades.</li>
+                            <li>Administrar sus cuentas y transacciones bancarias.</li>
+                            <li>Inversiones de dinero.</li>
+                            <li>Hacer reclamos legales</li>
+                            <li>Procedimientos legales en su nombre.</li>
+                        </ul>
+
+                        <h2 style='font-size: 25px'>¿Que requisitos se necesitan para realizar el trámite?</h2>
+                        <p class='text-muted'>Para realizar el trámite de una manera correcta, es necesario contar con lo siguiente:</p>
+                        <ul class='text-muted'>
+
+                            <li>Identificación válida del poderdante.</li>
+                            <li>Nombres y apellidos del apoderado.</li>
+                            <li>Número de cédula del apoderado.</li>
+                        </ul>
+
+                    <h2 style='font-size: 25px'>¿Cuanto tiempo es válido un poder?</h2>
+                        <p class='text-muted'>Una carta poder tiene validez por el tiempo  que el poderdante establezca a la hora de realizar el poder con el notario,
+                            por fallecimiento del mismo o hasta  que por voluntad propia solicite una revocatoria.</p>
+                        <p class='text-muted'>El poder puede utilizarse aun si el poderdante no se encuentre con todas sus facultades físicas o mentales.</p>
+
+                    <h2 style='font-size: 25px'>¿En donde puedo solicitar un poder?</h2>
+                        <p class='text-muted'>Puede completar nuestro formulario en línea o acercarse a nuestra oficina y solicitar su carta poder, un asesor lo guiará para que usted realice el trámite de manera correcta y segura.</p>
+
+
+                    <h2 style='font-size: 25px'>¿Cuanto tiempo tarda en hacer un poder?</h2>
+                        <ul class='text-muted'>
+                            <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+                            <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+                            <li>El documento digital estará disponible en 24 horas.</li>
+                            <li class='text-danger'>Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+                        </ul>
+                        <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     $posts = Post::where('name', 'LIKE', '%poder')->limit(3)->get();
                     return view('web.office.poderes', compact('data', 'posts'));
                     break;
@@ -1375,8 +1501,70 @@ class WebController extends Controller
                     return view('web.office.matrimonios', compact('data', 'posts'));
                     break;
                 case 'poder-notarial-florida':
-                    $data['metadescription'] .= "Realizamos Poderes Generales y Especiales en Florida de una manera ágil y rápida!";
-                    $data['keywords'] .= ", realizar carta poder florida, realizar poder especial florida, realizar poder general florida, tramitar poder florida, make power of attorney florida, process power florida";
+                    // $data['metadescription'] .= "Realizamos Poderes Generales y Especiales en Florida de una manera ágil y rápida!";
+                    // $data['keywords'] .= ", realizar carta poder florida, realizar poder especial florida, realizar poder general florida, tramitar poder florida, make power of attorney florida, process power florida";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px'>Hacemos todo tipo de Carta Poder en Florida</h2>
+                        <p class='text-muted'>Un poder consta de un documento legal con el propósito de ceder total o parcialmente cierto derecho a otra persona para que realice un trámite
+                            o acto jurídico a su nombre en el caso que usted no pudiera estar presente. Este le permite realizar firmas, procesos administrativos, entre otros según se describan en el documento, siendo una solución para gestionar sus bienes y otras tareas importantes.</p>
+                        <p class='text-muted'>La persona que otorga este documento se llama <b>poderdante o mandante</b> y la persona que lo recibe se le denomina <b>apoderado o mandatario</b>.
+                            Lo aconsejable es delegar a una persona de confianza, de preferencia que sea de la familia, para realizar las tareas descritas en el poder,
+                            de esta manera puede evitar futuros inconvenientes que podrían presentarse.</p>
+
+                        <h2 style='font-size: 25px'>¿Para que se puede usar una carta poder?</h2>
+                        <p class='text-muted'>Un poder notarial lo ayuda a gestionar diversos procedimientos administrativos o jurídicos, como la compra y venta de propiedades, al igual que obtener y administrar escrituras de 
+                        las mismas, gestionar cuentas bancarias, retiro de dinero, entro otros.
+                        </p>
+                        <p class='text-muted'>La carta poder apostillada tiene validez legal en los países miembros del Convenio, el cual consiste en un sello
+                            que la autoridad encargada estampa en seco y se agrega como nota al reverso o como hoja adicional de los documentos que se quisiera
+                            autenticar. Es por eso que los únicos autorizados para validar esta apostilla son los notarios debidamente acreditados.</p>
+
+                        <h2 style='font-size: 25px'>Tipos de Poderes</h2>
+                        <p class='text-muted'>
+                            La persona encargada de realizar el documento puede elegir entre dos tipos de poderes dependendiendo el alcance que desea. Estos pueden ser:
+                        </p>
+                        <ul class='text-muted'>
+                            <li><b>Poder Especial:</b> Este tipo de poder es más limitado ya que otorga control a una actividad especifica sobre sus posesiones o recursos a otra persona en el caso de que usted no pudiera estar presente.</li>
+                            <li><b>Poder General: </b> Este poder es más permisible debido a que otorga un control más amplio y con más atribuciones sobre sus activos a otra persona en el caso de que usted no pudiera estar presente.
+                                Sin embargo hay que tener mucho cuidado a la hora de optar por este, debido a que se puede hacer mal uso del mismo.
+                            </li>
+                        </ul>
+
+                        <h2 style='font-size: 25px'>Documentos que requieren de una Apostilla</h2>
+                        <ul class='text-muted'>
+                            <li>Compra y Venta</li>
+                            <li>Administración de propiedades.</li>
+                            <li>Administrar sus cuentas y transacciones bancarias.</li>
+                            <li>Inversiones de dinero.</li>
+                            <li>Hacer reclamos legales</li>
+                            <li>Procedimientos legales en su nombre.</li>
+                        </ul>
+
+                        <h2 style='font-size: 25px'>Requisitos para obtener un Poder</h2>
+                        <p class='text-muted'>Los requisitos para realizar un poder son simples:</p>
+                        <ul class='text-muted'>
+                            <li>Identificación válida de quien otorga el poder</li>
+                            <li>Nombres completos del apoderado.</li>
+                            <li>Número de cédula del apoderado.</li>
+                        </ul>
+
+                    <h2 style='font-size: 25px'>¿Cuanto tiempo tiene de válidez un poder?</h2>
+                        <p class='text-muted'>Una poder notarial es válido por el período que el poderdante establezca al momento de realizarlo con el notario.
+                            Existen causas por las cuales el poder queda sin efecto alguno, por ejemplo el fallecimiento de la persona que otorga el poder o hasta  que por voluntad propia solicite una revocatoria.</p>
+                        <p class='text-muted'>Aún si el poderdante no esta con las facultades físicas o mentales, el poder puede ser utilizado por el apoderado.</p>
+
+                    <h2 style='font-size: 25px'>¿En donde puedo solicitar un poder?</h2>
+                        <p class='text-muted'>Complete nuestro formulario en línea y nos contactaremos con usted. O puede acercarse a nuestra oficina y solicitar su poder, un asesor lo guiará para que usted realice el trámite de manera correcta y segura.</p>
+                    <h2 style='font-size: 25px'>¿Cuanto tiempo tarda en hacer un poder?</h2>
+                        <ul class='text-muted'>
+                            <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+                            <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+                            <li>El documento digital estará disponible en 24 horas.</li>
+                            <li class='text-danger'>Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+                        </ul>
+                        <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     $posts = Post::where('name', 'LIKE', '%poder')->limit(3)->get();
                     return view('web.office.poderes', compact('data', 'posts'));
                     break;
