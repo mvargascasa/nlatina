@@ -21,7 +21,7 @@
                     @endif
 
                     <table id="example" class="table table-sm" style="width:100%">
-                        <tr><th>ID</th><th>IMG</th><th>TITULO</th><th>SLUG</th><th>DESCRIPCION</th></tr>
+                        <tr><th>ID</th><th>IMG</th><th>TITULO</th><th>SLUG</th><th>DESCRIPCION</th><th>FECHA</th></tr>
                         @foreach ($posts as $post)
                         <tr>
                             <td>{{$post->id}}</td>
@@ -35,7 +35,7 @@
                         <td><span class="@if($post->status=='PUBLICADO') font-weight-bold text-primary @else text-muted @endif">
                             {{$post->status}}</span></td>
                         <td>{{$post->created_at->format('d/M/y')}}</td>
-
+                        <td><a target="_blank" href="{{ route('post.slug', $post->slug) }}">VER</a></td>
                         </tr>
                         @endforeach
                     </table>
