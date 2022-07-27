@@ -305,12 +305,11 @@ class WebController extends Controller
         $data['address'] = '67-03 Roosevelt Avenue, Woodside Queens, NY 11377';
         $data['location'] = 'https://g.page/notariapublicalatina';
         $data['metadescription'] = "Notarizamos todo tipo de documentos en New York tales como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✔";
-        $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york, apostille new york';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-york':
                     $data['metadescription'] = "Las certificaciones son documentos sellados y firmados por un notario. Contáctenos para realizar el trámite de su documento de una manera segura! ✔";
-                    $data['keywords'] = "que es una certificacion, para que sirve una certificacion, requisitos para certificar un documento en new york, certificar documentos en new york, certificar acta de nacimiento en new york, certificar acta de matrimonio en new york, certificar declaracion jurada en new york, certificar licencia de conducir en new york, donde puedo certificar un documento en new york, donde puedo realizar un certificado en new york";
+                    $data['keywords'] = "certificaciones en estados unidos, certificar documentos en estados unidos, que es una certificacion, para que sirve certificar un documento, como certificar documentos, que necesito para certificar un documento, requisitos para certificar un documento, que necesito para certificar un documento en new york, requisitos para certificar un documento en new york, certificar documentos en new york, certificar acta de nacimiento en new york, certificar partida de nacimiento en new york, certificar acta de matrimonio en new york, certificar declaracion jurada en new york, certificar affidavit en new york, certificar licencia de conducir en new york, certificar carta poder en new york, donde puedo certificar un documento en new york, quien puede certificar documentos";
                     $posts = Post::where('name', 'LIKE', '%certificacion%')->limit(3)->get();
                     return view('web.office.certificaciones', compact('data', 'posts'));
                     break;
@@ -899,7 +898,7 @@ class WebController extends Controller
             $data['urlmap'] = 'https://goo.gl/maps/ovKfQSvTmA5SBqqF6';
             $data['imgurlmap'] = "img/oficinas/maps-ny.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-ny-mobile.webp";
-            $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, apostillar documentos en queens new york, apostille new york';
+            $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, donde puedo tramitar documentos en new york, donde puedo notarizar documentos en new york, tramites notariales en new york, carta poder en new york, apostillas en new york, traduccion de documentos en new york, autorizacion de viaje new york, certificar documentos new york, acuerdos en new york, carta de invitacion new york estados unidos, revocatoria de poder en new york, contratos en new york, testamentos en new york, matrimonios en new york, apostillar documentos en new york, documentos que requieren una apostilla new york';
             $data['reviews'] = $this->reviewsny;
             $data['more_reviews'] = $this->more_reviewsny;
 
@@ -915,12 +914,11 @@ class WebController extends Controller
         $data['address'] = '1146 East Jersey St Elizabeth, NJ 07201';
         $data['location'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
         $data['metadescription'] = "Notarizamos todo tipo de documentos en New Jersey 🗽 como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✅";
-        $data['keywords'] = 'notaria latina, notaria new jersey, notaria nj, notaria elizabeth new jersey, notaria en new jersey, notaria publica en new jersey, notaria latina new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille nj';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-jersey':
                     $data['metadescription'] .= "Realizamos todo tipo de Certificaciones en New Jersey de una manera ágil y rápida!";
-                    $data['keywords'] .= ", certificar acta de nacimiento new jersey, certificar acta de matrimonio new jersey, certificar cartas new jersey, certificar licencia de conducir new jersey, certificar declaracion jurada new jersey, certificar affidavit new jersey, certificar escrituras new jersey";
+                    $data['keywords'] = "certificaciones en estados unidos, certificar documentos en estados unidos, que es una certificacion, para que sirve certificar un documento, como certificar documentos, que necesito para certificar un documento, requisitos para certificar un documento, que necesito para certificar un documento en new jersey, requisitos para certificar un documento en new jersey, certificar documentos en new jersey, certificar acta de nacimiento en new jersey, certificar partida de nacimiento en new jersey, certificar acta de matrimonio en new jersey, certificar declaracion jurada en new jersey, certificar affidavit en new jersey, certificar licencia de conducir en new jersey, certificar carta poder en new jersey, donde puedo certificar un documento en new jersey, quien puede certificar documentos";
                     $posts = Post::where('name', 'LIKE', '%certificacion%')->limit(3)->get();
                     return view('web.office.certificaciones', compact('data', 'posts'));
                     break;
@@ -1521,7 +1519,7 @@ class WebController extends Controller
             $data['urlmap'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
             $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
-            $data['keywords'] = 'notaria latina, notaria new jersey, notaria nj, notaria elizabeth new jersey, notaria en new jersey, notaria publica en new jersey, notaria latina new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille nj';
+            $data['keywords'] = 'notaria latina, notaria new jersey, notaria nj, notaria elizabeth new jersey, notaria en new jersey, notaria publica en new jersey, notaria latina new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille new jersey, donde puedo tramitar documentos en new jersey, donde puedo notarizar documentos en new jersey, tramites notariales en new jersey, carta poder en new jersey, apostillas en new jersey, traduccion de documentos en new jersey, autorizacion de viaje new jersey, certificar documentos new jersey, acuerdos en new jersey, carta de invitacion new jersey estados unidos, revocatoria de poder en new jersey, contratos en new jersey, testamentos en new jersey, matrimonios en new jersey, apostillar documentos en new jersey, documentos que requieren una apostilla new jersey';
             $data['reviews'] = $this->reviewsnj;
             $data['more_reviews'] = $this->more_reviewsnj;
 
@@ -1537,12 +1535,11 @@ class WebController extends Controller
         $data['address'] = '2104 N University Dr, Sunrise Miami, FL 33322';
         $data['location'] = 'https://g.page/r/CeRrwPx_W2-xEAE';
         $data['metadescription'] = "Realizamos Poderes Generales y Especiales, Apostilla y Traducción de todo tipo de documentos en Florida. ¿Desea saber más? ¡Contáctenos ahora! ✅";
-        $data['keywords'] = 'notaria latina, notaria florida, notario cerca de mi, notaria en florida, notaria fl, notaria sunrise, notaria latina sunrise, notaria en sunrise florida, notaria latina en sunrise florida, notaria cerca de mi, notario publico en florida, notarizar documentos en sunrise florida, notario publico cerca de mi, apostillar documentos en sunrise florida, donde puedo tramitar documentos en florida';
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-florida':
                     $data['metadescription'] .= "Realizamos todo tipo de Certificaciones en Florida de una manera ágil y rápida!";
-                    $data['keywords'] .= ", certificar acta de nacimiento florida, certificar acta de matrimonio florida, certificar cartas florida, certificar licencia de conducir florida, certificar declaracion jurada florida, certificar affidavit florida, certificar escrituras florida";
+                    $data['keywords'] = "certificaciones en estados unidos, certificar documentos en estados unidos, que es una certificacion, para que sirve certificar un documento, como certificar documentos, que necesito para certificar un documento, requisitos para certificar un documento, que necesito para certificar un documento en florida, requisitos para certificar un documento en florida, certificar documentos en florida, certificar acta de nacimiento en florida, certificar partida de nacimiento en florida, certificar acta de matrimonio en florida, certificar declaracion jurada en florida, certificar affidavit en florida, certificar licencia de conducir en florida, certificar carta poder en florida, donde puedo certificar un documento en florida, quien puede certificar documentos";
                     $posts = Post::where('name', 'LIKE', '%certificacion%')->limit(3)->get();
                     return view('web.office.certificaciones', compact('data', 'posts'));
                     break;
@@ -1955,7 +1952,7 @@ class WebController extends Controller
             $data['imgurlmap'] = "img/oficinas/maps-fl-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-fl-mobile-2.webp";
             $data['metadescription'] = 'Realizamos Poderes Generales y Especiales, Apostilla y Traducción de todo tipo de documentos en Florida. ¿Desea saber más? ¡Contáctenos ahora! ✅';
-            $data['keywords'] = 'notaria latina, notaria florida, notario cerca de mi, notaria en florida, notaria fl, notaria sunrise, notaria latina sunrise, notaria en sunrise florida, notaria latina en sunrise florida, notaria cerca de mi, notario publico en florida, notarizar documentos en sunrise florida, notario publico cerca de mi, apostillar documentos en sunrise florida, donde puedo tramitar documentos en florida';
+            $data['keywords'] = 'notaria latina, notaria florida, notario cerca de mi, notaria en florida, notaria fl, notaria sunrise, notaria latina sunrise, notaria en sunrise florida, notaria latina en sunrise florida, notaria cerca de mi, notario publico en florida, notarizar documentos en sunrise florida, notario publico cerca de mi, apostillar documentos en sunrise florida, donde puedo tramitar documentos en florida, donde puedo notarizar documentos en florida, tramites notariales en florida, carta poder en florida, apostillas en florida, traduccion de documentos en florida, autorizacion de viaje florida, certificar documentos florida, acuerdos en florida, carta de invitacion florida estados unidos, revocatoria de poder en florida, contratos en florida, testamentos en florida, matrimonios en florida, apostillar documentos en florida, documentos que requieren una apostilla florida';
             $data['reviews'] = $this->reviewsfl;
             $data['more_reviews'] = $this->more_reviewsfl;
 
