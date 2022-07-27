@@ -317,6 +317,37 @@ class WebController extends Controller
                     $data['metadescription'] .= "Realizamos Autorizaciones de Viaje para Menores de Edad en New York de una manera ágil y rápida!";
                     $data['keywords'] = "que es una autorizacion de viaje, requisitos para realizar una autorizacion de viaje en new york, para que sirve una autorizacion de viaje, cuanto dura una autorizacion de viaje en new york, realizar autorizacion de viaje en new york, donde puedo realizar una autorizacion de viaje en new york, autorizacion de viaje para niños en new york, donde puedo realizar una carta de autorizacion de viaje en new york, permiso de viaje en usa, autorizacion de viaje para niños, permiso notarial de viaje, permiso notarial de viaje en new york, permiso notarial de viaje en estados unidos, menor carta notarial para permiso de viaje, carta de permiso de viaje para niños en ingles, notario para sacar permiso de viaje, carta notarial para permiso de viaje, carta notarial para permiso de viaje en new york, carta notarial para permiso de viaje en estados unidos, autorizacion para viaje de menores al extranjero, carta autorizacion de viaje, carta para permiso de viaje, carta permiso de viaje para niños";
                     $posts = Post::where('name', 'LIKE', '%autorizacion%')->limit(3)->get();
+                    $data['imgback'] = "img/oficinas/permiso-viaje-de-menores-1.webp";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px'>Una Autorización de Viaje es un documento que le permite a su hijo o hija, menor de edad, viajar al extranjero sin necesidad que sus padres lo acompañen.</h2>
+                    <p class='text-muted'>Este documento, emitido por una autoridad competente, nombra a un titular quien será el encargado de viajar con el menor. Esta persona puede ser un familiar,
+                        un amigo o alguna auxiliar de viaje, por ejemplo una aeromoza de la propia aerolinea (persona que forma parte de la tripulación de un avión y tiene como función atender a los pasajeros prestándoles servicios para su comodidad y seguridad).</p>
+                    <p class='text-muted'>Este permiso de viaje debe expresar el consentimiento de los padres o tutor autorizando la salida del país de su hijo/a junto con la persona encargada.
+                        En el caso de que el niño o la niña necesiten viajar solo con uno de sus padres, también se puede realizar dicha autorización.</p>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué requisitos son necesarios para realizar una autorización de viaje?</h2>
+                    <ul class='text-muted'>
+                        <li>Identificación de los padres que van a dar la autorización.</li>
+                        <li>Nombres completos del menor que va a viajar.</li>
+                        <li>Fecha de nacimiento de su hijo/a.</li>
+                        <li>Nombres completos de la persona que va a acompañar al menor.</li>
+                        <li>Información del vuelo.</li>
+                    </ul>
+                    <p class='text-muted'>En algunos casos, puede que se requiera más información para realizar el permiso de viaje del menor, por ejemplo el país de destino del viaje, cuanto tiempo va a estar fuera del país, entre otros.</p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Por cuanto tiempo es válido un permiso de viaje?</h2>
+                    <p class='text-muted'>Esta carta otorgando el permiso de un viaje solo es válida por el período que el menor vaya a estar fuera del país. Finalizado este tiempo la autorización deja de estar en rigor automáticamente.  </p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿En donde puedo obtener una autorización de viaje?</h2>
+                    <p class='text-muted'>Puede contactarnos por medio de un formulario, mediante una llamada o acercándose personalmente a nuestra oficina en New York con los requisitos necesarios y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿En que tiempo me entregan la autorización de viaje?</h2>
+                    <p class='text-muted'>
+                        El tiempo de entrega es inmediato siempre que la persona que realiza el trámite se acerque con los requisitos correspondientes.
+                    </p>
+                    <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     return view('web.office.authorization', compact('data', 'posts'));
                     break;
                 case 'acuerdos-en-new-york':
@@ -926,6 +957,37 @@ class WebController extends Controller
                     $data['metadescription'] .= "Realizamos Autorizaciones de Viaje para Menores de Edad en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] = "que es una autorizacion de viaje, requisitos para realizar una autorizacion de viaje en new jersey, para que sirve una autorizacion de viaje, cuanto dura una autorizacion de viaje en new jersey, realizar autorizacion de viaje en new jersey, donde puedo realizar una autorizacion de viaje en new jersey, autorizacion de viaje para niños en new jersey, donde puedo realizar una carta de autorizacion de viaje en new jersey, permiso de viaje en usa, autorizacion de viaje para niños, permiso notarial de viaje, permiso notarial de viaje en new jersey, permiso notarial de viaje en estados unidos, menor carta notarial para permiso de viaje, carta de permiso de viaje para niños en ingles, notario para sacar permiso de viaje, carta notarial para permiso de viaje, carta notarial para permiso de viaje en new jersey, carta notarial para permiso de viaje en estados unidos, autorizacion para viaje de menores al extranjero, carta autorizacion de viaje, carta para permiso de viaje, carta permiso de viaje para niños";
                     $posts = Post::where('name', 'LIKE', '%autorizacion%')->limit(3)->get();
+                    $data['imgback'] = "img/oficinas/permiso-de-viaje-para-menores.webp";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px'>El Permiso de Viaje es un documento que autoriza a su hijo/a menor edad viajar fuera del país en caso de que los padres no puedan acompañarlo(a).</h2>
+                    <p class='text-muted'>Consta de una carta o escrito que se le otorga a una persona como el delegado de viajar con el menor. Este sujeto puede tratarse de un familiar,
+                        algún amigo o ayudante de viaje, por ejemplo una azafata de la aerolínea por la cual va a viajar (personal de un avión que tiene como objetivo atender a los pasajeros prestándoles servicios para su comodidad y seguridad).</p>
+                    <p class='text-muted'>Este permiso para viajar debe constar con la aprobación de los padres para que su hijo salga del país con el acompañante designado.
+                        Incluso puede realizar este trámite si el menor va a realizar el viaje con solo uno de sus padres.
+                    </p>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>Requisitos para obtener la autorización de viaje</h2>
+                    <ul class='text-muted'>
+                        <li>Identificación de los padres.</li>
+                        <li>Nombres completos y fecha de nacimiento del menor</li>
+                        <li>Nombres y apellidos de la persona designada a viajar con el menor.</li>
+                        <li>Información del vuelo.</li>
+                    </ul>
+                    <p class='text-muted'>Puede que se requiera de más información para realizar la carta de autorización para el niño/a, por ejemplo el país de destino al que va a viajar, lapso de tiempo que estará fuera del país, entre otros.</p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué tiempo es válido este documento?</h2>
+                    <p class='text-muted'>Una vez emitida la autorización por una autoridad competente, el tiempo de validez comprenderá el período en que el menor se encuentre fuera del país. Es decir, la autorización deja de ser válida automáticamente cuando el menor regrese a su país natal de residencia.</p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Donde puedo obtener este permiso?</h2>
+                    <p class='text-muted'>Puede contactarse con nosotros mediante un formulario en línea, una llamada o acercándose personalmente a nuestra oficina en Florida con los requisitos correspondientes y un asesor lo ayudará en el proceso de una manera correcta y segura.</p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuánto tiempo se demora en realizar este documento?</h2>
+                    <p class='text-muted'>
+                        La entrega de esta carta permiso es de inmediata, claro deberá contar con los requisitos respectivos y en orden mencionados anteriormente.
+                    </p>
+                    <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede seguirnos en nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     return view('web.office.authorization', compact('data', 'posts'));
                     break;
                 case 'acuerdos-en-new-jersey':
@@ -1547,6 +1609,38 @@ class WebController extends Controller
                     $data['metadescription'] .= "Realizamos Autorizaciones de Viaje para Menores de Edad en Florida de una manera ágil y rápida!";
                     $data['keywords'] = "que es una autorizacion de viaje, requisitos para realizar una autorizacion de viaje en florida, para que sirve una autorizacion de viaje, cuanto dura una autorizacion de viaje en florida, realizar autorizacion de viaje en florida, donde puedo realizar una autorizacion de viaje en florida, autorizacion de viaje para niños en florida, donde puedo realizar una carta de autorizacion de viaje en florida, permiso de viaje en usa, autorizacion de viaje para niños, permiso notarial de viaje, permiso notarial de viaje en florida, permiso notarial de viaje en estados unidos, menor carta notarial para permiso de viaje, carta de permiso de viaje para niños en ingles, notario para sacar permiso de viaje, carta notarial para permiso de viaje, carta notarial para permiso de viaje en florida, carta notarial para permiso de viaje en estados unidos, autorizacion para viaje de menores al extranjero, carta autorizacion de viaje, carta para permiso de viaje, carta permiso de viaje para niños";
                     $posts = Post::where('name', 'LIKE', '%autorizacion%')->limit(3)->get();
+                    $data['imgback'] = "img/oficinas/permiso-de-viaje-menores-2.webp";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px'>La Autorización de Viaje permitirá que su hijo(a) menor edad pueda viajar a otro país sin la compañia de sus padres en caso que no puedan hacerlo.</h2>
+                    <p class='text-muted'>Este escrito acredita a una tercera persona como el encargado de viajar con el menor. Dicho individuo puede ser un miembro de la familia,
+                        un amigo o alguna auxiliar de viaje, por ejemplo una azafata de la misma aerolinea (personal de la tripulación de un avión que tiene como función atender a los pasajeros prestándoles servicios para su comodidad y seguridad).</p>
+                    <p class='text-muted'>Esta carta de autorización debe manifestar la aprobación, por parte de los progenitores del menor, la salida del país del mismo acompañado de la persona hecha a cargo.
+                        También se puede realizar este permiso si el menor necesita viajar solo con uno de los padres. </p>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué necesito para realizar una autorización de viaje?</h2>
+                    <p class='text-muted'>Entre los requisitos necesarios para realizar este proceso se encuentran los siguientes:</p>
+                    <ul class='text-muted'>
+                        <li>Documento de identidad de los padres.</li>
+                        <li>Nombres y apellidos del hijo o hija.</li>
+                        <li>Fecha de nacimiento del menor.</li>
+                        <li>Nombres completos del acompañante del menor.</li>
+                        <li>Información del vuelo.</li>
+                    </ul>
+                    <p class='text-muted'>Es posible que en algunas situaciones requieran más información para realizar el permiso de viaje del niño/a, por ejemplo el país al que realiza el viaje, período en el que se encontrara fuera del país, entre otros.</p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuál es la duración de esta carta de autorización?</h2>
+                    <p class='text-muted'>Este permiso, emitido por una autoridad competente, solo es válido durante el tiempo en que el menor se encuentre fuera del país. Al terminar este período, la autorización deja de ser válida automáticamente.</p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿En donde puedo realizar el trámite?</h2>
+                    <p class='text-muted'>Contáctenos completando un formulario en línea, mediante una llamada o acercándose personalmente a nuestra oficina en New Jersey con los requisitos necesarios y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuál es el tiempo de entrega del documento?</h2>
+                    <p class='text-muted'>
+                        La entrega de la autorizacion es de inmediato, siempre y cuando la persona que realiza el trámite cuente con los requisitos respectivos y en orden.
+                    </p>
+                    <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede seguirnos en nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     return view('web.office.authorization', compact('data', 'posts'));
                     break;
                 case 'acuerdos-en-florida':

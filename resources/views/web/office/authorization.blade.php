@@ -11,6 +11,9 @@
 <meta property="og:image"              content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 
 <style>
+  @media screen and (max-width: 600px){h2{font-size: 18px !important}}
+  @media screen and (min-width: 600px){#rowimage{min-height: 550px !important}}
+  body{text-align: justify}
   #card_posts:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}
 </style>
 @endsection
@@ -23,7 +26,7 @@
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
 
-        <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
+        <div id="rowimage" class="row align-items-center" style="min-height: 500px;background:rgba(2, 2, 2, 0.5)">
 
             <div class="col-12 text-white text-center">
               <h1 class="font-weight-bold heading-title">Autorizaciones de viaje en {{ $data['office'] }}</h1>
@@ -37,6 +40,9 @@
   </section>
 
 <div class="container pt-4">
+  @isset($data['body'])
+    {!! $data['body'] !!}
+  @else
         <h2 style="font-size: 25px">Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres.</h2>
         <p class="text-muted">La autorización de viaje designa quién va a ser la persona que acompañe al menor;  esta persona puede ser un familiar,
             amigo o alguna auxiliar de viaje como ser una aeromoza de la propia aerolinea.</p>
@@ -60,17 +66,16 @@
         <h2 style="font-size: 25px">¿En donde puedo realizar una autorización de viaje?</h2>
         <p class="text-muted">Acérquese a nuestra oficina con los requisitos necesarios y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
 
-
-
-
         <h2 style="font-size: 25px">¿En que tiempo me entregan la autorización de viaje?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega es inmediato siempre que las personas que realiza el trámite se acerque con los requisitos correspondientes.</li>
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+          @endisset
             <div class="d-flex justify-content-center">
-              <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+              <a class="btn btn-warning text-white m-1" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+              <a class="btn btn-danger m-1" href="tel:{{$data['telfHidden']}}">Llamar ahora ☎</a>
             </div>
 
             @if(!sizeof($posts) == 0)
@@ -131,7 +136,7 @@ aria-hidden="true">
   scriptPopper.src = "{{ asset('js/popper.min.js') }}";
 
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('../img/autorizaciones-de-viaje.jpg')";
+        document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgback'])}})";
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
     });
