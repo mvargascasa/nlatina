@@ -13,6 +13,9 @@
 
 <style>
   #card_posts:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}
+  @media screen and (max-width: 600px){h2{font-size: 18px !important}}
+  @media screen and (min-width: 600px){#rowimage{min-height: 550px !important}}
+  body{text-align: justify}
 </style>
 @endsection
 
@@ -24,7 +27,7 @@
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
 
-        <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
+        <div id="rowimage" class="row align-items-center" style="min-height: 500px;background:rgba(2, 2, 2, 0.5)">
 
             <div class="col-12 text-white text-center">
               <h1 class="font-weight-bold heading-title">Certificaciones de documentos en {{ $data['office'] }}</h1>
@@ -38,6 +41,9 @@
   </section>
 
 <div class="container pt-4">
+          @isset($data['body'])
+            {!!$data['body']!!}
+          @else
             <h2 style="font-size: 25px">Realizamos Certificaciones de documentos en {{ $data['office'] }}</h2>
             <p class="text-muted">Las certificaciones son documentos firmados y sellados por un notario.</p>
             <p class="text-muted">Este trámite consta en una firma y sello en la que se declara que la copia emitida es fiel copia del documento original.</p>
@@ -83,8 +89,10 @@
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+            @endisset
             <div class="d-flex justify-content-center">
-              <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+              <a class="btn btn-warning text-white m-1" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+              <a class="btn btn-danger m-1" href="tel:{{$data['telfHidden']}}">Llamar ahora ☎</a>
             </div>
 
             @if(!sizeof($posts) == 0)
@@ -144,7 +152,7 @@ aria-hidden="true">
   var scriptPopper = document.createElement('script');
   scriptPopper.src = "{{ asset('js/popper.min.js') }}";
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('../img/inicio.jpg')";
+        document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgback'])}})";
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
     });

@@ -311,6 +311,70 @@ class WebController extends Controller
                     $data['metadescription'] = "Las certificaciones son documentos sellados y firmados por un notario. Contáctenos para realizar el trámite de su documento de una manera segura! ✔";
                     $data['keywords'] = "certificaciones en estados unidos, certificar documentos en estados unidos, que es una certificacion, para que sirve certificar un documento, como certificar documentos, que necesito para certificar un documento, requisitos para certificar un documento, que necesito para certificar un documento en new york, requisitos para certificar un documento en new york, certificar documentos en new york, certificar acta de nacimiento en new york, certificar partida de nacimiento en new york, certificar acta de matrimonio en new york, certificar declaracion jurada en new york, certificar affidavit en new york, certificar licencia de conducir en new york, certificar carta poder en new york, donde puedo certificar un documento en new york, donde puedo certificar documentos en new york, quien puede certificar documentos";
                     $posts = Post::where('name', 'LIKE', '%certificacion%')->limit(3)->get();
+                    $data['imgback'] = "img/oficinas/copia-certificada-de-documentos.webp";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px'>Obtenga el Certificado de su documento en New York</h2>
+                    <p class='text-muted'>
+                        El certificado de un documento consta de un escrito firmado y sellado por un notario. Mediante este archivo se manifiesta que la copia realizada
+                        es verídica copia del documento original.
+                    </p>
+                    <p class='text-muted'>Este certificado lo expide el mismo notario en base al documento original corroborando que es una reproducción exacta del documento principal.</p>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Para que sirve un certificado?</h2>
+                    <p class='text-muted'>Como se menciono anteriormente, al ser una copia fiel del documento original, este demuestra lo legítimos que son nuestros documentos. 
+                        Se pueden utilizar para cualquier trámite legal que necesite realizar, por ejemplo algún proceso judicial, por motivos de negocios, o por razones profesionales.</p>
+                    <p class='text-muted'>Estos trámites que requieran de un certificado se los puede realizar tanto nacional como internacionalmente.</p>
+                    
+                    <h2 style='font-size: 25px;font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Por qué es importante certificar un documento?</h2>
+                    <p class='text-muted'>Existen algunas razones por las cuales es necesario optar por la certificación de cualquier tipo de documento. La más relevante es cuando
+                        necesite enviar documentos personales importantes como su pasaporte, acta de matrimonio o de nacimiento, etc., para completar cualquier trámite que este gestionando.
+                        Es por ello que conviene optar por una copia certificada, ya que puede conservar el documento original y así evitar la pérdida o daño del mismo.
+                    </p>
+                    <p class='text-muted'>Otra razón podría ser que nuestros documentos se encuentren en deterioro y debido a esto no sean válidos por las entidades que lo soliciten. Para evitar
+                     gestionar este documento desde un principio, sería una buena opción obtener la certificación del mismo. Esto eludirá cualquier problema que se le presente cuando gestione trámites importantes.</p>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué tipo de documentos puedo certificar?</h2>
+                    <ul class='text-muted'>
+                        <li>Partidas de nacimiento.</li>
+                        <li>Actas de matrimonio.</li>
+                        <li>Cartas.</li>
+                        <li>Licencias de conducir.</li>
+                        <li>Declaraciones juradas.</li>
+                        <li>Escrituras.</li>
+                        <li>Entre otros</li>
+                    </ul>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuál es la validez de un certificado?</h2>
+                    <p class='text-muted'>
+                        Cualquier copia certificada que se haya emitido es válida igual que el documento original, no tiene una fecha de vencimiento 
+                        y se puede utilizar para gestionar cualquier trámite. Es por ello que conviene realizarlo con una autoridad competente para evitar
+                        cualquier tipo de fraude o contratiempo que puede presentarse a futuro.
+                    </p>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué necesito para certificar un documento?</h2>
+                    <p class='text-muted'>Lo único necesario para obtener una copia certificada es poseer el documento original que va a certificar. El notario verificará que es original
+                    y procederá con la certificación del mismo. Esto lo puede hacer de dos formas diferentes:
+                        <ul class='text-muted'>
+                            <li>Sellar la copia del documento original certificando que es exacta y legal</li>
+                            <li>Adjuntar un certificado notarial mencionando que la copia es legítima y verdadera acorde al documento original</li>
+                        </ul> 
+                    </p>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Donde puedo obtener este certificado?</h2>
+                    <p class='text-muted'>Puede acercarse a nuestra oficina en New York con el documento a certificar y un asesor lo guiará para que realice el trámite de manera correcta y segura.
+                        También puede contactarnos en línea mediante nuestro sitio web o llamándonos personalmente.
+                    </p>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuál es el tiempo de entrega de mi documento certificado?</h2>
+                    <ul class='text-muted'>
+                        <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+                        <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+                        <li>El documento digital estará disponible en 24 horas.</li>
+                        <li class='text-danger'>Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+                    </ul>
+                    <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     return view('web.office.certificaciones', compact('data', 'posts'));
                     break;
                 case 'travel-authorization-en-new-york':
@@ -951,6 +1015,67 @@ class WebController extends Controller
                     $data['metadescription'] .= "Realizamos todo tipo de Certificaciones en New Jersey de una manera ágil y rápida!";
                     $data['keywords'] = "certificaciones en estados unidos, certificar documentos en estados unidos, que es una certificacion, para que sirve certificar un documento, como certificar documentos, que necesito para certificar un documento, requisitos para certificar un documento, que necesito para certificar un documento en new jersey, requisitos para certificar un documento en new jersey, certificar documentos en new jersey, certificar acta de nacimiento en new jersey, certificar partida de nacimiento en new jersey, certificar acta de matrimonio en new jersey, certificar declaracion jurada en new jersey, certificar affidavit en new jersey, certificar licencia de conducir en new jersey, certificar carta poder en new jersey, donde puedo certificar un documento en new jersey, donde puedo certificar documentos en new jersey, quien puede certificar documentos";
                     $posts = Post::where('name', 'LIKE', '%certificacion%')->limit(3)->get();
+                    $data['imgback'] = "img/oficinas/copia-certificada-de-documentos-1.webp";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px;'>Copia Certificada de su documento en New Jersey</h2>
+                    <p class='text-muted'>
+                        Como su nombre lo menciona, la copia certificada de un documento es un impreso exacto del escrito que va a certificar el cual va sellado por un notario constatando que es una copia fidedigna del documento.
+                    </p>
+                    <p class='text-muted'>Este certificado es emitido por el notario que verifica que el duplicado sea una copia exacta del documento principal.</p>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Para que se utiliza un certificado?</h2>
+                    <p class='text-muted'>El uso principal de este documento es demostrar la legitimidad de nuestra documentación personal al momento de gestionar cualquier tipo de trámite, 
+                    como puede ser un proceso judicial, para algún tipo de comercio en su negocio, o por razones profesionales en cuanto a un empleo.</p>
+                    <p class='text-muted'>Este documento es válido para gestionar cualquier tipo de diligencia ya sea nacional o internacionalmente.</p>
+                    
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Por qué es fundamental certificar un documento?</h2>
+                    <p class='text-muted'>Una de las razones, y quizás la más importante, es al momento
+                        que necesite enviar sus documentos personales como pasaporte, partida de nacimiento, acta de matrimonio, etc., para efectuar cualquier tipo de diligencia que este tramitando.
+                        La opción más viable para no perder los documentos originales o evitar daños es decidir hacer una copia certificada.
+                    </p>
+                    <p class='text-muted'>Otra motivo puede ser que nuestra documentación se encuentra en mal estado físico y esto podría causar que las entidades que lo solicitan no lo acepten como válido. Para prevenir
+                     estos incidentes y tener que conseguir nuevamente estos papeles, una buena idea sería obtener el certificado del documento a solicitar. Esto evitará cualquier inconveniente que se le presente a última hora.</p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué documentos se pueden certificar?</h2>
+                    <ul class='text-muted'>
+                        <li>Actas de nacimiento, matrimonio, etc.</li>
+                        <li>Cartas</li>
+                        <li>Permisos de conducir.</li>
+                        <li>Declaraciones juradas (Affidávit).</li>
+                        <li>Escrituras.</li>
+                        <li>Entre otros</li>
+                    </ul>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuánto tiempo es válido la copia certificada?</h2>
+                    <p class='text-muted'>
+                        Cualquier certificado que haya sido expedido se mantiene en rigor del mismo modo que lo hace el documento original, no tiene un período determinado de validez 
+                        y su uso puede llevarse a cabo bajo cualquier tramitación. Por eso lo preferible es realizarlo con una autoridad con las facultades pertinentes para eludir
+                        cualquier tipo de violación de autoridad, falsificación o contratiempo que puede surgir con este documento a futuro.
+                    </p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué requirimiento es necesario para empezar con el procedimiento?</h2>
+                    <p class='text-muted'>El único requisito indispensable para adquirir una copia certificada es disponer del documento original. El notario comprobará que es verídico
+                    y continuará realizando la certificación de dicho documento. Existen dos formas en que se puede certificar un documento:
+                        <ul class='text-muted'>
+                            <li>La primera es que el notario sella la copia generada del documento, asegurando que es veraz y correcta</li>
+                            <li>La segunda manera es anexando un certificado notarial indicando que el duplicado del documento es auténtico en concordancia con el documento original</li>
+                        </ul> 
+                    </p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Donde puedo conseguir este documento?</h2>
+                    <p class='text-muted'>Contáctenos agendando una cita mediante nuestro sitio web, por medio de una llamada o acercándose a nuestra oficina en New Jersey con su documento a certificar. Un asesor lo guiará para que realice el trámite de manera correcta y segura.
+                    </p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuánto se demoran en entregar el documento?</h2>
+                    <ul class='text-muted'>
+                        <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+                        <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+                        <li>El documento digital estará disponible en 24 horas.</li>
+                        <li class='text-danger'>Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+                    </ul>
+                    <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     return view('web.office.certificaciones', compact('data', 'posts'));
                     break;
                 case 'travel-authorization-en-new-jersey':
@@ -1603,6 +1728,68 @@ class WebController extends Controller
                     $data['metadescription'] .= "Realizamos todo tipo de Certificaciones en Florida de una manera ágil y rápida!";
                     $data['keywords'] = "certificaciones en estados unidos, certificar documentos en estados unidos, que es una certificacion, para que sirve certificar un documento, como certificar documentos, que necesito para certificar un documento, requisitos para certificar un documento, que necesito para certificar un documento en florida, requisitos para certificar un documento en florida, certificar documentos en florida, certificar acta de nacimiento en florida, certificar partida de nacimiento en florida, certificar acta de matrimonio en florida, certificar declaracion jurada en florida, certificar affidavit en florida, certificar licencia de conducir en florida, certificar carta poder en florida, donde puedo certificar un documento en florida, donde puedo certificar documentos en florida, quien puede certificar documentos";
                     $posts = Post::where('name', 'LIKE', '%certificacion%')->limit(3)->get();
+                    $data['imgback'] = "img/oficinas/copia-certificada-de-documentos-2.webp";
+                    $data['body'] = "
+                    <h2 style='font-size: 25px;'>Realice su Copia Certificada de documentos en Florida</h2>
+                    <p class='text-muted'>
+                        Una copia certificada es un duplicado correcto y preciso de un documento personal que necesite certificar demostrando que esta bajo su nombre. Esta copia va a acompañada de un sello manifestando que es un documento de confianza y de procedencia veraz.
+                    </p>
+                    <p class='text-muted'>Este certificado es sellado y otorgado por el notario quien comprueba que la copia sea un duplicado preciso del documento original.</p>
+
+                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Para qué es necesario un certificado?</h2>
+                    <p class='text-muted'>El objetivo de este escrito es mostrar que nuestra documentación es lícita para administrar cualquier trámite que estemos realizando, 
+                    el cual podría ser un procedimiento jurídico, razones comerciales para nuestro negocio, o por motivos profesionales en cuanto a un empleo, entre otros.</p>
+                    <p class='text-muted'>Gracias a este certificado es posible llevar a cabo nuestra tramitación en territorio nacional e internacional.</p>
+                    
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuál es la importancia de obtener una copia certificada?</h2>
+                    <p class='text-muted'>Una de las causas, y quizás una de las principales, para optar por realizar este proceso es cuando alguna entidad o autoridad necesita de nuestros documentos personales y tenemos 
+                        que enviarlos, por ejemplo un pasaporte, partida de nacimiento, acta de matrimonio, etc.
+                        Por ello lo más conveniente es tramitar una copia certificada de nuestro documento para no extraviar el original o prevenir cualquier daño del mismo.
+                    </p>
+                    <p class='text-muted'>Otra razón por la cual optamos en obtener este certificado puede ser que nuestro documento personal se encuentra esta en mal estado, lo cual podría ocasionar que los organismos que lo requieren no lo aprueben como válido. Para impedir
+                     que esto suceda, una buena elección sería tramitar el certificado del documento. De esta manera evitará cualquier contratiempo que se le presente de último momento.</p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>Documentos que se pueden certificar</h2>
+                    <p>Entre los documentos que se puede solicitar una copia certificada se encuentran los siguientes:</p>
+                    <ul class='text-muted'>
+                        <li>Partidas de nacimiento, matrimonio, etc.</li>
+                        <li>Cartas</li>
+                        <li>Permisos de conducir.</li>
+                        <li>Declaraciones juradas (Affidávit).</li>
+                        <li>Escrituras.</li>
+                        <li>Entre otros</li>
+                    </ul>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Por cuanto tiempo está vigente el certificado?</h2>
+                    <p class='text-muted'>
+                        El certificado entra en rigor desde el momento en que es emitido y es válido mientras su documento original lo sea. Es decir, no cuenta con un período de caducidad 
+                        y se puede utilizar en cualquier trámite necesario. Es por esta razón que lo recomendable es hacerlo con una autoridad con la capacidad necesaria para evadir
+                        cualquier tipo de violación de derecho del escrito, fraude o percance que puede surgir con este archivo a futuro.
+                    </p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>Requisitos para solicitar un certificado de un documento</h2>
+                    <p class='text-muted'>El principal y único requisito es poseer del documento original que va a ser certificado. El notario estará encargado de cerciorarse que su documentación sea veraz
+                    y procederá con la certificación. Para este paso se puede hacer de dos maneras:
+                        <ul class='text-muted'>
+                            <li>Primero que el notario estampe con un sello la copia del documento, garantizando que es confiable y legítimo</li>
+                            <li>Segundo agregando otro documento conocido como certificado notarial, en el cual se indica que la copia del documento es válida de acuerdo con el documento principal</li>
+                        </ul> 
+                    </p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Donde puedo adquirir este certificado?</h2>
+                    <p class='text-muted'>Puede agendar una cita completando nuestro formulario de contacto o mediante una llamada. Un asesor lo guiará en el proceso para continuar con el trámite de manera eficiente y sencilla. También puede acercarse personalmente a nuestra oficina en Florida con su documento a certificar.
+                    </p>
+
+                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿En que tiempo me entregan el documento certificado?</h2>
+                    <ul class='text-muted'>
+                        <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+                        <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+                        <li>El documento digital estará disponible en 24 horas.</li>
+                        <li class='text-danger'>Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+                    </ul>
+                    <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                    ";
                     return view('web.office.certificaciones', compact('data', 'posts'));
                     break;
                 case 'travel-authorization-en-florida':
