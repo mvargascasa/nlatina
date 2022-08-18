@@ -288,7 +288,13 @@ class WebController extends Controller
 
     public function showPartner(Request $request, $slug){
 
-        $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first(); 
+        if(Str::startsWith($slug, 'abogado')) {
+            $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first();
+        } 
+        else {
+            $partner = Partner::where('old_slug', $slug)->where('status', 'PUBLICADO')->first();
+            return redirect()->route('web.showpartner', $partner->slug);
+        }
         
         if($partner){
             return view('web.partner', compact('partner'));

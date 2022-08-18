@@ -50,7 +50,8 @@ class RegisterController extends Controller
                 'company' => strip_tags($request['company']),
                 'email'=> $request['email'],
                 'password'=> bcrypt($request['password']),
-                'slug' => Str::slug($request['name'] . ' ' . $request['lastname'] . ' ' . $nextId, '-')
+                'slug' => Str::slug('abogado en ' . $request['country_residence'] . ' ' . $nextId, '-')
+                // 'slug' => Str::slug($request['name'] . ' ' . $request['lastname'] . ' ' . $nextId, '-')
             ]);
     
             // event(new Registered($partner));

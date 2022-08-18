@@ -186,7 +186,8 @@ class PartnerController extends Controller
         // $partner->company = $request->company;
         $partner->specialty = $request->specialty;
         $partner->biography_html = $request->biography_html;
-        $partner->slug = Str::slug($request->name . ' ' . $request->lastname . ' ' . $partner->id, '-'); 
+        //$partner->slug = Str::slug('abogado en ' . $partner->city . ' ' . $partner->state . ' ' . $partner->country_residence . ' ' . $partner->id, '-');
+        //$partner->slug = Str::slug($request->name . ' ' . $request->lastname . ' ' . $partner->id, '-'); 
         
         if($request->status == "PUBLICADO" && $partner->fecha_publicado == null){
             $partner->fecha_publicado = date(now());
@@ -199,7 +200,7 @@ class PartnerController extends Controller
 
         $partner->save();
 
-        return redirect()->back()->with('success', 'Se actualizaron los datos');
+        return redirect()->route('partner.show', $partner)->with('success', 'Se actualizaron los datos');
     }
 
     public function viewLastPublicated(){
@@ -330,6 +331,14 @@ class PartnerController extends Controller
         return view('admin.partner.allcustomers', compact('customers'));
     }
 
+    //funcion de prueba para setear un nuevo slug en el partner
+    public function setslug(Partner $partner){
+        $partner->old_slug = $partner->slug;
+        $newslug =  Str::slug('abogado en ' . $partner->city . ' ' . $partner->state . ' ' . $partner->country_residence . ' ' . $partner->id);
+        $partner->slug = $newslug;
+        $partner->save();
+        return redirect()->route('partner.show', $partner);
+    }
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
     // public function sendEmailMasivo(Request $request){
     //     $to = $request->emails;

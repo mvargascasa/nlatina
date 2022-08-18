@@ -40,6 +40,7 @@ class Partner extends Authenticatable implements MustVerifyEmail
         'password', 
         'biography_html',
         'slug',
+        'old_slug',
         'status',
         'attached_file',
         'fecha_publicado',

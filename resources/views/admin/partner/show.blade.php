@@ -38,6 +38,14 @@
                 {!! Form::button('Eliminar Partner', ['class' => 'btn btn-danger', 'onclick' => "validateDelete()"]) !!}
                 {!! Form::close() !!}
             </div> --}}
+            @if (Auth::user()->email == 'developer2@notarialatina.com')
+                <div class="float-right mr-1">
+                    <a href="{{ route('partner.set.slug', $partner) }}">
+                        Set Slug
+                    </a>
+                </div>
+            @endif
+            {{ Auth::user() }}
             <div class="float-right mr-1">
                 <button class="btn btn-success" data-toggle="modal" data-target="#modalSendEmail">
                     Enviar correo

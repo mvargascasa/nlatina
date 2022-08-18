@@ -183,7 +183,10 @@ class HomeController extends Controller
             $partner->checkterminos = $request->filled('checkTerminos');
             $partner->terminos_verified_at = date('y-m-d h:i:s');
         }
-        $partner->slug = Str::slug($partner->name . ' '. $partner->lastname . ' ' . $partner->id, '-');
+        // if(isset($partner->state)) $slug = Str::slug('abogado en '.$partner->state.' '.$partner->country_residence.' '.$partner->id);
+        // else if(isset($partner->))
+        //$partner->slug = Str::slug('abogado en ' . $partner->city . ' '. $partner->state . ' ' . $partner->country_residence . ' ' . $partner->id, '-');
+        //$partner->slug = Str::slug($partner->name . ' '. $partner->lastname . ' ' . $partner->id, '-');
 
         $partner->save();
 
