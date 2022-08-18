@@ -45,7 +45,6 @@
                     </a>
                 </div>
             @endif
-            {{ Auth::user() }}
             <div class="float-right mr-1">
                 <button class="btn btn-success" data-toggle="modal" data-target="#modalSendEmail">
                     Enviar correo
