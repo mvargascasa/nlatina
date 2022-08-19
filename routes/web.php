@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\Partner\LoginController;
 // use App\Http\Controllers\Partner\HomeController;
 
-Auth::routes(['register' => false]);
+//Auth::routes(['register' => false]);
+Auth::routes();
 Route::get('/test', 'LandingController@test');
 
 Route::get('/home', 'HomeController@index')->name('home');
