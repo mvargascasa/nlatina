@@ -4,7 +4,7 @@
             <li class="nav-item @if(Request::is('home')) bg-secondary @endif">
                 <a class="nav-link text-light" href="{{ url('home') }}">Dashboard</a>
             </li>
-            @if(Auth::user()->id == 1 || Auth::user()->id == 3)
+            @if(Auth::user()->id == 1 || Auth::user()->id == 2)
             <li class="nav-item @if(Request::is('home/post*')) bg-secondary @endif">
                 <a class="nav-link text-light" href="{{ url('home/posts') }}">Publicaciones</a>
             </li>
