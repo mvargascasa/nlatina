@@ -6,6 +6,7 @@ use App\Customer;
 use App\Partner;
 use App\Specialty;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -114,8 +115,9 @@ class PartnerController extends Controller
      */
     public function show(Partner $partner)
     {
+        $comments_status = DB::table('comments_status')->select('comment', 'created_at')->where('partner_id', $partner->id)->get();
         $specialties = Specialty::all();
-        return view('admin.partner.show', compact('partner', 'specialties'));
+        return view('admin.partner.show', compact('partner', 'specialties', 'comments_status'));
     }
 
     /**
@@ -138,6 +140,14 @@ class PartnerController extends Controller
      */
     public function update(Request $request, Partner $partner)
     {
+
+        //set comment into table comments_status if status = no aplica
+        if(isset($request->comment) && $request->status == "NO APLICA"){
+            DB::table('comments_status')->insert([
+                'partner_id' => $partner->id,
+                'comment' => $request->comment
+            ]);
+        };
 
         if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
             $request->img_profile = $partner->img_profile;

@@ -45,6 +45,13 @@
                     </a>
                 </div>
             @endif
+            @if(count($comments_status)>0 && $partner->status == "NO APLICA")
+                <div class="float-right">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalCommentsStatus">
+                        Comentarios
+                    </button>                              
+                </div>
+            @endif
             <div class="float-right mr-1">
                 <button class="btn btn-success" data-toggle="modal" data-target="#modalSendEmail">
                     Enviar correo
@@ -80,7 +87,7 @@
                 <div class="col-sm-9">
                     <div class="d-flex">
                         <div>
-                            {!! Form::select('status',[null => 'SELECCIONE', 'NO PUBLICADO' => 'NO PUBLICADO','PUBLICADO' => 'PUBLICADO', 'NO APLICA' => 'NO APLICA'], $partner->status, ['class' => 'form-control custom-select']) !!}
+                            {!! Form::select('status',[null => 'SELECCIONE', 'NO PUBLICADO' => 'NO PUBLICADO','PUBLICADO' => 'PUBLICADO', 'NO APLICA' => 'NO APLICA'], $partner->status, ['class' => 'form-control custom-select', 'onchange' => 'showCommentInput(this);']) !!}
                         @error('status')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -104,6 +111,10 @@
                             <p style="font-weight: bold">No hay archivos adjuntos</p>
                         </div>
                         @endif
+                    </div>
+                    <div class="mb-3 d-none" id="div_comment_status">
+                        {!! Form::label('comment', "Indique la razón del cambio de Estado", ['class' => 'font-weight-bold']) !!}
+                        {!! Form::text('comment', null, ['class' => 'form-control']) !!}
                     </div>
 
                     {{--NOMBRE Y APELLIDO, EMAIL, NACIONALIDAD--}}
@@ -470,6 +481,32 @@
               </div>
             </div>
           </div>
+
+          {{-- modal para mostrar los comentarios de no aplica --}}
+          @if(count($comments_status)>0 && $partner->status == "NO APLICA")
+          <div class="modal fade" id="modalCommentsStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Comentario de Estado "No Aplica"</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <ul>
+                      @foreach ($comments_status as $comment)
+                          <li>{{$comment->comment}} - <label class="text-muted">{{date_format(date_create($comment->created_at), "Y/m/d")}}</label></li>
+                      @endforeach
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endif
           
     </div>
 @endsection
@@ -477,6 +514,20 @@
 @section('end-scripts')
     <script src="{{ asset('ckeditoradmin/ckeditor.js') }}"></script>
     <script>
+
+        //show comment input when status = no aplica
+        function showCommentInput(object){
+            var div_comment_status = document.getElementById('div_comment_status');
+            if(object.value == "NO APLICA"){
+                div_comment_status.classList.remove("d-none");
+                div_comment_status.classList.add("d-block");
+                document.querySelector("input[name='comment']").required = true;
+            } else {
+                div_comment_status.classList.remove("d-block");
+                div_comment_status.classList.add("d-none");
+                document.querySelector("input[name='comment']").required = false;
+            }
+        }
 
         CKEDITOR.timestamp = "ABCD";
 

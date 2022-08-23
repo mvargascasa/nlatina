@@ -4,12 +4,14 @@
             <li class="nav-item @if(Request::is('home')) bg-secondary @endif">
                 <a class="nav-link text-light" href="{{ url('home') }}">Dashboard</a>
             </li>
+            @if(Auth::user()->id == 1 || Auth::user()->id == 3)
             <li class="nav-item @if(Request::is('home/post*')) bg-secondary @endif">
                 <a class="nav-link text-light" href="{{ url('home/posts') }}">Publicaciones</a>
             </li>
             <li class="nav-item @if(Request::is('home/categor*')) bg-secondary @endif">
                 <a class="nav-link text-light" href="{{ url('home/categories') }}">Categorias</a>
             </li>
+            @endif
             <li class="nav-item @if(Request::is('home/partners*')) bg-secondary @endif">
                 <a class="nav-link text-light" href="{{ url('home/partners') }}">Partners</a>
             </li>
