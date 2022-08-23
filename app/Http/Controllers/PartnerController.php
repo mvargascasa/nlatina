@@ -56,7 +56,7 @@ class PartnerController extends Controller
                 ->fechaPublicado($fecha_publicado)
                 ->createdAt($created_at)
                 ->status($status)
-                ->orderBy('id', 'asc')
+                ->orderBy('id', 'desc')
                 ->paginate($contadorPaginatePublicados);
         } else 
         if($request->registradosHoy != null){
@@ -70,7 +70,7 @@ class PartnerController extends Controller
                 ->fechaPublicado($fecha_publicado)
                 ->createdAt($created_at)
                 ->status($status)
-                ->orderBy('id', 'asc')
+                ->orderBy('id', 'desc')
                 ->paginate($contadorPaginateRegistrados);
         } else {
             $partners = Partner::name($name)
