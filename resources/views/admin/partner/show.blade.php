@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container mt-5 ">
+    <div class="container col-md-10 mt-5 ">
         @if (session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
