@@ -78,7 +78,7 @@ class PartnerController extends Controller
                 //->fechaPublicado($fecha_publicado)
                 //->createdAt($created_at)
                 ->status($status)
-                ->orderBy('id', 'asc')
+                ->orderBy('id', 'desc')
                 ->paginate(10);
         }
 
