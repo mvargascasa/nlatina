@@ -257,12 +257,13 @@
     <script src="{{ asset('js/Country.js') }}"></script>
     <script>
     function selectCountry(id, page = 1){
+        let state = document.querySelector("select[name='state']").value;
         $.ajax({
             type: "GET",
             url: "{{ route('partners.fetch.state.b') }}",
             data:{
                 "pais" : id,
-                "state" : null,
+                "state" : state,
                 "specialty": null,
                 "page": page,
             },
