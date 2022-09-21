@@ -8,7 +8,7 @@
     <div class="container">
         <h4 class="text-center mt-4">Listado de Clientes de los Partners</h4>
         <div class="row mt-4">
-            <h5 style="font-weight: 600">Total: {{count($customers)}}</h5>
+            <h5 style="font-weight: 600">Total: {{$totalCustomers}}</h5>
             <div class="col-sm-12">
                 @if (count($customers) > 0)
                     <table class="table">

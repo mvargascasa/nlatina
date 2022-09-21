@@ -338,7 +338,8 @@ class PartnerController extends Controller
         $customers = Customer::with('partners')
                     ->orderBy('id', 'desc')
                     ->paginate(10);
-        return view('admin.partner.allcustomers', compact('customers'));
+        $totalCustomers = Customer::count();
+        return view('admin.partner.allcustomers', compact('customers', 'totalCustomers'));
     }
 
     //funcion de prueba para setear un nuevo slug en el partner
