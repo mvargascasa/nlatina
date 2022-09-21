@@ -350,6 +350,11 @@ class PartnerController extends Controller
         $partner->save();
         return redirect()->route('partner.show', $partner);
     }
+
+    public function redirectIfPartnerId($id){
+        $partner = Partner::find($id);
+        return redirect()->route('partner.show', $partner);
+    }
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
     // public function sendEmailMasivo(Request $request){
     //     $to = $request->emails;

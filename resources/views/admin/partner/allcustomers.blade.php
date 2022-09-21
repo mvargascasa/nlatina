@@ -35,7 +35,9 @@
                                     <td>{{ $customer->mensaje }}</td>
                                     <td>
                                         @foreach ($customer->partners as $c)
-                                            <b>{{$c->name }} {{ $c->lastname}} - {{$c->pivot->partner_id}}</b><br>
+                                            <a href="{{route('partner.show.id', $c->pivot->partner_id)}}">
+                                                <b>{{$c->name }} {{ $c->lastname}}</b><br>
+                                            </a>
                                         @endforeach
                                     </td>
                                 </tr>

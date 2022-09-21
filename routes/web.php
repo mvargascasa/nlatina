@@ -40,6 +40,7 @@ Route::get('/home/partners/not-publicated', 'PartnerController@getAllNotPublicat
 Route::get('/home/partners/all-customers', 'PartnerController@showallcustomers')->name('partner.show.all.customers');
 Route::post('/home/partners/verify/{partner}', 'PartnerController@verifiEmailAdmin')->name('verify.email.admin');
 Route::get('/home/partners/{partner}/show', 'PartnerController@show')->name('partner.show');
+Route::get('/home/partners/{id}/showById', 'PartnerController@redirectIfPartnerId')->name('partner.show.id');
 Route::put('/home/partners/{partner}', 'PartnerController@update')->name('partner.update');
 //Route::delete('/home/partners/delete/{id}', 'PartnerController@destroy')->name('partner.destroy');
 //RUTAS PARA ENVIO DE EMAIL PARTNERS
@@ -76,6 +77,8 @@ Route::get('/landing/florida-web', 'LandingController@flweb')->name('office.flwe
 Route::get('/landing/florida-traducciones', 'LandingController@fltrad')->name('office.fltrad');
 Route::get('/landing/florida-apostillas', 'LandingController@flapos')->name('office.flapos');
 Route::get('/landing/florida-poderes', 'LandingController@flpod')->name('office.flpod');
+
+//Route::get('/landing/servicios-notariales', function(){return view('landing.service');});
 
 //WEBSITE
 Route::get('/', 'WebController@index')->name('web.index');
