@@ -35,7 +35,7 @@
                                     <td>{{ $customer->mensaje }}</td>
                                     <td>
                                         @foreach ($customer->partners as $c)
-                                            <b>{{$c->name }} {{ $c->lastname}}</b><br>
+                                            <b>{{$c->name }} {{ $c->lastname}} - {{$c->partner_id}}</b><br>
                                         @endforeach
                                     </td>
                                 </tr>
