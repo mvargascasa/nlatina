@@ -67,6 +67,8 @@
         input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
         /* OTHER */
         input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+        .add-services{box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px !important;}
+        .add-services:hover{box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;}
     </style>
     <script type="text/javascript">
 
@@ -260,7 +262,7 @@
             <div class="row justify-content-center">
                 <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90%">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'travel-authorization-en-'.Str::slug($data['office'])) }}">
-                        <div class="grow border" style="padding:25px; border-radius: 10px; height: 100%">
+                        <div class="grow border add-services" style="padding:25px; border-radius: 10px; height: 100%">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-08.webp') }}" alt="">
                             <p>Travel Authorization</p>
                         </div>
@@ -268,7 +270,7 @@
                 </div>
                 <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90%;">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'certificaciones-en-'.Str::slug($data['office'])) }}">
-                        <div class="grow border" style="padding:25px; border-radius: 10px; height: 100%">
+                        <div class="grow border add-services" style="padding:25px; border-radius: 10px; height: 100%">
                             <img style="width: 40px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
                             <p>Certificaciones</p>
                         </div>
@@ -276,7 +278,7 @@
                 </div>    
                 <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90%">
                     <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'acuerdos-en-'.Str::slug($data['office'])) }}">
-                        <div class="grow border" style="padding: 25px; border-radius: 10px; height: 100%">
+                        <div class="grow border add-services" style="padding: 25px; border-radius: 10px; height: 100%">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-10.webp') }}" alt="">
                             <p>Acuerdos</p>
                         </div>
@@ -284,7 +286,7 @@
                 </div>
                 <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90%">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'cartas-de-invitacion-en-'.Str::slug($data['office'])) }}">
-                        <div class="grow border" style="padding: 25px; border-radius: 10px; height: 100%">
+                        <div class="grow border add-services" style="padding: 25px; border-radius: 10px; height: 100%">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-11.webp') }}" alt="">
                             <p>Cartas de Invitación</p>
                         </div>
@@ -294,7 +296,7 @@
             <div class="row justify-content-center">
                 <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90px">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'revocatorias-en-'.Str::slug($data['office'])) }}">
-                        <div class="grow border" style="padding: 25px; border-radius: 10px">
+                        <div class="grow border add-services" style="padding: 25px; border-radius: 10px">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-12.webp') }}" alt="">
                             <p>Revocatorias</p>
                         </div>
@@ -302,7 +304,7 @@
                 </div>
                 <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90px">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'contratos-en-'.Str::slug($data['office'])) }}">
-                        <div class="grow border" style="padding: 25px; border-radius: 10px">
+                        <div class="grow border add-services" style="padding: 25px; border-radius: 10px">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-13.webp') }}" alt="">
                             <p>Contratos</p>
                         </div>
@@ -310,7 +312,7 @@
                 </div>
                 <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90px">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'testamentos-en-'.Str::slug($data['office'])) }}">
-                        <div class="grow border" style="padding: 25px; border-radius: 10px">
+                        <div class="grow border add-services" style="padding: 25px; border-radius: 10px">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-14.webp') }}" alt="">
                             <p>Testamentos</p>
                         </div>
@@ -318,7 +320,7 @@
                 </div>
                 <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90px">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), Str::lower(Str::slug($data['txtgrid'])).'-en-'.Str::slug($data['office'])) }}"">
-                        <div class="grow border" style="padding: 25px; border-radius: 10px">
+                        <div class="grow border add-services" style="padding: 25px; border-radius: 10px">
                             <img style="width: 50px; height: 50px; filter: brightness(0.85) saturate(85%);" class="img-fluid lazy" data-src="{{ asset($data['imggrid']) }}" alt="">
                             <p>{{ $data['txtgrid'] }}</p>
                         </div>
