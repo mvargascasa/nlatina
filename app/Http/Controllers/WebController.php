@@ -1706,10 +1706,10 @@ class WebController extends Controller
             $data['telfShow'] = '908-800-9046';
             $data['imgapostilla'] = 'img/oficinas/apostillanj.webp';
             $data['imgup'] = 'img/newjersey-landing-notaria-latina.webp';
-            $data['imgdown'] = 'img/oficinas/CHICA-APOST.webp';
-            $data['widthimgdown'] = '70%';
-            $data['heightimgdown'] = '25rem';
-            $data['paddingtop'] = '15px';
+            $data['imgdown'] = 'img/oficinas/apostillas-en-new-jersey.webp'; //img/oficinas/CHICA-APOST.webp
+            $data['widthimgdown'] = '85%';
+            $data['heightimgdown'] = '27rem';
+            $data['paddingtop'] = '0px';
             $data['urlmap'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
             $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
