@@ -180,8 +180,8 @@
               </div>
             </div>
 
-            <h4 class="p-1">Whatsapp</h4>
-            <a class="text-muted d-block" href="https://api.whatsapp.com/send?phone=13478460082" target="_blank"><i class="fab fa-whatsapp" style="color: #4CAF50"></i> 347 846 0082</a>
+            <h4 class="p-1 d-none">Whatsapp</h4>
+            <a class="text-muted d-none" href="https://api.whatsapp.com/send?phone=13478460082" target="_blank"><i class="fab fa-whatsapp" style="color: #4CAF50"></i> 347 846 0082</a>
             
             <h4 class="p-1">Email</h4>
             <a href="mailto:info@notarialatina.com" class="text-muted"><i class="fas fa-envelope" style="color: #2196F3"></i> info@notarialatina.com</a>
