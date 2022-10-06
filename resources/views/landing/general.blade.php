@@ -310,6 +310,7 @@
             <form method="POST" action="{{route('landing.thankpostnj')}}" id="formlead">
                 @csrf
               <input type="hidden" id="interest" name="interest" value="Landing {{$oficina}}">
+              <input type="hidden" id="service_aux" name="service_aux" value="{{$service_aux}} - {{$oficina}}">
               <div class="form-group pt-4">
                 <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombre y Apellido"  maxlength="40" minlength="2" autocomplete="off" required>
               </div>

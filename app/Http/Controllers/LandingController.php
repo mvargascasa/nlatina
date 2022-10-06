@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Traits\GetCountryByCodTrait;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 
@@ -110,6 +111,7 @@ class LandingController extends Controller
 
     public function thankpost(Request $request)
     {
+        //return $request;
         if(isset($request->country)){
             $country = $this->getPaisByCodigo($request->country);
         }
@@ -118,6 +120,9 @@ class LandingController extends Controller
         //$pais = $this->getCodPais($request->get('cod_pais'));
         if(!Str::contains($request->message, 'https')){
             $interest = $request->interest ?? 'General';
+            $servicename = $request->service ?? $request->servicename;
+            $servicename = Str::ucfirst(str_replace('-', ' ', $servicename));
+            //return $servicename;
             $sendoffices = '';
             if ($interest == 'General')             $sendoffices = ',newyork@notarialatina.com';
             if ($interest == 'Landing New York')    $sendoffices = ',newyork@notarialatina.com';
@@ -137,7 +142,7 @@ class LandingController extends Controller
                 <br><b> Interes: </b> ".strip_tags($interest)."
                 <br><b> Mensaje: </b> ".strip_tags($request->ddd)."
                 <br><b> Fuente: </b> GoogleAds 
-                <br><b> Página: </b> " . url()->previous() . " "; 
+                <br><b> Página: </b> " . url()->previous() . " ";
                 
     
                 //<br> País: " . strip_tags($pais)."
@@ -146,7 +151,7 @@ class LandingController extends Controller
                 $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);  
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead: '.strip_tags($request->aaa), $message, $header);  
             }
     
@@ -157,7 +162,7 @@ class LandingController extends Controller
                 <br> País: " . strip_tags($country) . "
                 <br> Telef: ". strip_tags($request->cod) . " " . strip_tags($request->tlf)."
                 <br> Interes: ".strip_tags($interest)."
-                <br> Servicio: " . strip_tags($request->service) . "
+                <br> Servicio: " . strip_tags($servicename) . "
                 <br> Mensaje: ".strip_tags($request->message)."
                 <br> Fuente: GoogleAds 
                 <br> Página: " . url()->previous() . "
@@ -170,11 +175,16 @@ class LandingController extends Controller
                 // <br> País: ". strip_tags($pais)."
             
                 $header='';
-                $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
+                $from = 'general';
+                if(isset($request->url_current) && $request->url_current == "web.index") $from = "home";
+                if(isset($request->url_current) && $request->url_current == "web.oficina.florida") $from = "oficina Florida";
+                if(isset($request->url_current) && $request->url_current == "web.oficina.newjersey") $from = "oficina New Jersey";
+                if(isset($request->url_current) && $request->url_current == "web.oficina.newyork") $from = "oficina New York";
+                $header .= 'From: <lead_'.$from.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
-                mail('sebas31051999@gmail.com','Lead: '.strip_tags($request->aaa), $message, $header);      
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->fname), $message, $header);
+                mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);      
             }
 
         }
@@ -207,28 +217,30 @@ class LandingController extends Controller
 
             $interest = $request->interest ?? 'General';
     
+            $abrev = "";
             $sendoffices = ',newyork@notarialatina.com';
-            if ($interest == 'General')             $sendoffices = ',newyork@notarialatina.com';
-            if ($interest == 'Landing New York')    $sendoffices = ',newyork@notarialatina.com';
-            if ($interest == 'Landing New Jersey')  $sendoffices = ',newjersey@notarialatina.com';
-            if ($interest == 'Landing Florida')     $sendoffices = ',florida@notarialatina.com';
+            if ($interest == 'General'){             $sendoffices = ',newyork@notarialatina.com';}
+            if ($interest == 'Landing New York'){    $sendoffices = ',newyork@notarialatina.com';$abrev='ny';}
+            if ($interest == 'Landing New Jersey'){  $sendoffices = ',newjersey@notarialatina.com';$abrev='nj';}
+            if ($interest == 'Landing Florida'){     $sendoffices = ',florida@notarialatina.com';$abrev='fl';}
     
                 $message = "<br><strong>Nuevo Lead Landing</strong>
                             <br> Nombre: ". strip_tags($request->aaa)."
                             <br> Telef: ".strip_tags($request->codpais). " ".  strip_tags($request->bbb)."
                             <br> País: " .strip_tags($request->pais)."
-                            <br> Interes: ".  strip_tags($interest)."
                             <br> Mensaje: ".strip_tags($request->ddd)." 
+                            <br> Interes: " .strip_tags($request->service_aux) ."
+                            <br> Proveniente: ".  strip_tags($interest)."
                             <br> Fuente: GoogleAds 
                             <br> Página: " . url()->previous() . "
                             ";
                         
                 $header='';
-                $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
+                $header .= 'From: <lead_landing_'.$abrev.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);      
-                mail('sebas31051999@gmail.com','Lead Landing: '.strip_tags($request->aaa), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead Landing: '.strip_tags($request->aaa), $message, $header);      
+                mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
                 //'notariapublicalatina@gmail.com'.$sendoffices
         }
 
@@ -295,6 +307,7 @@ class LandingController extends Controller
     public function newjersey() {
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Notaría Pública <br> <b>New Jersey</b> <br> Gestión Fácil y Rápida';
+        $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Notarizamos todo tipo de Documentos en New Jersey 🗽 como Apostillas, Poderes, Traducciones de una manera rápida y segura. ¡Contáctenos ahora! ✅';
         $data['keywords'] = 'notaria en new jersey, notaria latina en new jersey, notaria publica latina en new jersey, notaria en elizabeth new jersey, notario publico en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en elizabeth new jersey, traducir documentos en elizabeth new jersey';
@@ -316,6 +329,7 @@ class LandingController extends Controller
     public function njweb() {
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Notaría Pública <br> New Jersey <br> Gestión Fácil y Rápida';
+        $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Tramitamos todo tipo de Documentos en New Jersey como Apostillas, Poderes, Traducciones 📃 de una manera rápida y segura. ¡Contáctenos ahora! ✅';
         $data['keywords'] = 'notaria en new jersey, notaria latina en new jersey, notaria publica latina en new jersey, notaria en elizabeth new jersey, notario publico en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en elizabeth new jersey, traducir documentos en elizabeth new jersey';
@@ -337,6 +351,7 @@ class LandingController extends Controller
     public function njtrad() {
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Traducción de documentos <br> en New Jersey';  
+        $data['service_aux'] = 'Traduccion';
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español'; 
         $data['meta_description'] = '📄 ¿Necesita Traducir un Documento en New Jersey? Lo ayudamos con la Traducción de Certificados, Diplomas, Acuerdos, entre otros. ¡Agende su cita aquí! ✅';
         $data['keywords'] = 'traducir documentos en new jersey, traducir documentos en elizabeth nj, traducir documentos en new jersey a español, traducir certificados en new jersey, traducir acuerdos en new jersey, donde puedo traducir un documento en new jersey, donde traducir un documento en new jersey, traducir actas en new jersey, traducir diploma en new jersey';
@@ -359,6 +374,7 @@ class LandingController extends Controller
     public function njpod() {
         $data['oficina'] = 'New Jersey';
         $data['header']  = 'Poder Especial o General <br> en New Jersey'; 
+        $data['service_aux'] = 'Poderes';
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = '📄 ¿Necesita realizar un Poder Notarial en New Jersey? Contáctenos y lo ayudamos con el trámite de un Poder Especial o General de una manera segura ✅';
         $data['keywords'] = 'poder especial en new jersey, poder general en new jersey, tramitar poder especial en new jersey, tramitar poder general en new jersey, realizar tramite para poder especial en new jersey, obtener carta poder en new jersey, donde puedo tramitar un poder en new jersey, donde puedo obtener un poder en new jersey';
@@ -380,6 +396,7 @@ class LandingController extends Controller
     public function njapos() {
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Apostilla de documentos <br> en New Jersey';
+        $data['service_aux'] = 'Apostilla';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
         $data['meta_description'] = '📄 ¿Necesita Apostillar un Documento en New Jersey? Lo ayudamos con la Apostilla de Certificados, Poderes, Traducciones, entre otros. ¡Solicítelo aquí! ✅';
         $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en new jersey, apostillar documentos en elizabeth nj, apostillar certificados en new jersey, apostillar poderes en new jersey, apostillar traduccion en new jersey, apostillar diploma en new jersey, donde apostillar documentos en new jersey, donde puedo apostillar documentos en new jersey';
@@ -403,6 +420,7 @@ class LandingController extends Controller
     public function newyork() {
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
+        $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Realizamos todo tipo de Trámites Notariales en New York tales como Apostillas, Certificados, Poderes, Traducciones de una manera segura. ¡Contáctenos! ✅';
         $data['keywords'] = 'notaria en new york, notaria latina en new york, notaria publica latina en new york, notaria en queens new york, notario publico en new york, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en queens new york, traducir documentos en queens new york';
@@ -424,6 +442,7 @@ class LandingController extends Controller
     public function nyweb() {
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
+        $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Tramitamos todo tipo de Documentos en New York 🗽 como Apostillas, Certificados, Poderes, Traducciones de una manera rápida y segura. ¡Iniciar trámite! ✅';
         $data['keywords'] = 'notaria en new york, notaria latina en new york, notaria publica latina en new york, notaria en queens new york, notario publico en new york, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en queens new york, traducir documentos en queens new york';
@@ -445,6 +464,7 @@ class LandingController extends Controller
     public function nytrad() {
         $data['oficina'] = 'New York';
         $data['header'] = 'Traducción de documentos <br> en New York';  
+        $data['service_aux'] = 'Traduccion';
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
         $data['meta_description'] = '¿Necesita Traducir un Documento en New York? 📄 Lo ayudamos con la Traducción de Certificados, Diplomas, Acuerdos, entre otros. ¡Escríbanos ahora! ✅';
         $data['keywords'] = 'traducir documentos en new york, traducir documentos en queens ny, traducir documentos en new york a español, traducir certificados en new york, traducir acuerdos en new york, donde puedo traducir un documento en new york, donde traducir un documento en new york, traducir actas en new york, traducir diploma en new york';
@@ -466,6 +486,7 @@ class LandingController extends Controller
     public function nypod() {
         $data['oficina'] = 'New York';
         $data['header']  = 'Poder Especial o General <br> en New York'; 
+        $data['service_aux'] = 'Poderes';
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = '¿Necesita realizar un Poder Notarial en New York? 📃 Contáctese con nosotros y lo ayudamos con el trámite para realizar un Poder General o Especial ✅';
         $data['keywords'] = 'poder especial en new york, poder general en new york, tramitar poder especial en new york, tramitar poder general en new york, realizar trámite para poder especial en new york, obtener carta poder en new york, donde puedo tramitar un poder en new york, donde puedo obtener un poder en new york';
@@ -487,6 +508,7 @@ class LandingController extends Controller
     public function nyapos() {
         $data['oficina'] = 'New York';
         $data['header'] = 'Apostilla de documentos <br> en New York';
+        $data['service_aux'] = 'Apostilla';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
         $data['meta_description'] = '¿Necesita Apostillar un Documento en New York? 📃 Nuestro servicio de Apostilla en Certificados, Poderes, Traducciones a su alcance. ¡Solicitar ahora! ✅';
         $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en new york, apostillar documentos en queens ny, apostillar certificados en new york, apostillar poderes en new york, apostillar traduccion en new york, apostillar diploma en new york, donde apostillar documentos en new york, donde puedo apostillar documentos en new york';
@@ -512,6 +534,7 @@ class LandingController extends Controller
     public function florida() {
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
+        $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Realizamos todo tipo de Trámites Notariales en Florida 📃 como Apostillas, Certificados, Poderes, Traducciones de una manera segura ✅';
         $data['keywords'] = 'notaria en florida, notaria latina en florida, notaria publica latina en florida, notaria en sunrise florida, notario publico en florida, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en sunrise florida, traducir documentos en sunrise florida';
@@ -533,6 +556,7 @@ class LandingController extends Controller
     public function flweb() {
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
+        $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Tramitamos todo tipo de Documentos en Florida 🗽 como Apostillas, Certificados, Poderes, Traducciones de una manera ágil y segura ¡Contáctenos ahora! ✅';
         $data['keywords'] = 'notaria en florida, notaria latina en florida, notaria publica latina en florida, notaria en sunrise florida, notario publico en florida, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en sunrise florida, traducir documentos en sunrise florida';
@@ -554,6 +578,7 @@ class LandingController extends Controller
     public function fltrad() {
         $data['oficina'] = 'Florida';
         $data['header'] = 'Traducción de documentos <br> en Florida';  
+        $data['service_aux'] = 'Traduccion';
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
         $data['meta_description'] = '¿Necesita Traducir un Documento en Florida? 🗽 Lo ayudamos con la Traducción de Certificados, Poderes, Acuerdos, entre otros. ¡Solicitar traducción! ✅';
         $data['keywords'] = 'traducir documentos en florida, traducir documentos en sunrise florida, traducir documentos en florida a español, traducir certificados en florida, traducir acuerdos en florida, donde puedo traducir un documento en florida, donde traducir un documentos en florida, traducir acta en florida, traducir diploma en florida';
@@ -575,6 +600,7 @@ class LandingController extends Controller
     public function flpod() {
         $data['oficina'] = 'Florida';
         $data['header']  = 'Poder Especial o General <br> en Florida'; 
+        $data['service_aux'] = 'Poderes';
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = '¿Necesita realizar un Poder Notarial en Florida? 🗽 Nos especializamos en el Trámite de Poderes Generales y Especiales. ¡Solicitar Poder ahora! ✅';
         $data['keywords'] = 'poder especial en florida, poder general en florida, tramitar poder especial en florida, tramitar poder general en florida, realizar tramite para poder especial en florida, obtener carta poder en florida, donde puedo tramitar un poder en florida, donde puedo obtener un poder en florida';
@@ -596,6 +622,7 @@ class LandingController extends Controller
     public function flapos() {
         $data['oficina'] = 'Florida';
         $data['header'] = 'Apostilla de documentos <br> en Florida';
+        $data['service_aux'] = 'Apostilla';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
         $data['meta_description'] = '¿Necesita Apostillar un Documento en Florida? 📃 Nuestro servicio de apostilla en Certificados, Poderes, Traducciones a su alcance. ¡Solicítelo ahora! ✅';
         $data['keywords'] = 'apostillar documentos cerca de mi, apostillar documentos en florida, apostillar documentos en sunrise florida, apostillar certificados en florida, apostillar poderes en florida, apostillar traduccion en florida, apostillar diploma en florida, donde apostillar documentos en florida, donde puedo apostillar documentos en florida';

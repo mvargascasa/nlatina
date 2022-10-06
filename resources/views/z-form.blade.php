@@ -1,7 +1,12 @@
 {!! Form::open(['route' => 'landing.thankpost', 'id' => 'formlead']) !!}
 
+@php
+    $url_name = Route::current()->getName();     
+@endphp
+
 <div class="d-flex">
     <div class="form-group w-100">
+        {!! Form::hidden('url_current', $url_name) !!}
         {!! Form::label('fname', 'Nombres:') !!}
         {!! Form::text('fname', null, ['class' => 'form-control', 'required']) !!}
     </div>
@@ -49,25 +54,39 @@
     {!! Form::email('email', null, ['class' => 'form-control','rows' => '2', 'required']) !!}
 </div>
 
-<div class="form-group">
-    {!! Form::label('service', 'Servicio que desea tramitar:') !!}
-    {!! Form::select('service',
-                                [null => 'Seleccione',
-                                'Apostilla'=>'Apostilla',
-                                'Poder Notariado'=>'Poder Notariado',
-                                'Traducción'=>'Traducción',
-                                'Affidavit'=>'Affidavit',
-                                'Acuerdos'=>'Acuerdos',
-                                'Autorizaciones de Viaje'=>'Autorizaciones de Viaje',
-                                'Cartas de Invitación'=>'Cartas de Invitación',
-                                'Certificaciones'=>'Certificaciones',
-                                'Contratos'=>'Contratos',
-                                'Revocatorias'=>'Revocatorias',
-                                'Testamentos'=>'Testamentos',
-                                'Otro'=>'Otro']
-    ,    null,    ['class' => 'form-control custom-select', 'required']) !!}
-</div>
+@php
+    $segments = Request::segments(); $viewservice = false; $getservicename = "";
+    if(count($segments) < 1 || $segments[0] == "consulado" || $segments[0] == "post"){ $viewservice = true; }
+    else {
+        if(count($segments) > 0 && count($segments) < 2) $getservicename = $segments[0] . " general";
+        if(count($segments) > 1 && count($segments) < 3) $getservicename = $segments[1];
+    }
+@endphp
 
+@if(!$viewservice)
+    {!! Form::hidden('servicename', $getservicename) !!}
+@endif
+
+@if($viewservice)
+    <div class="form-group">
+        {!! Form::label('service', 'Servicio que desea tramitar:') !!}
+        {!! Form::select('service',
+                                    [null => 'Seleccione',
+                                    'Apostilla'=>'Apostilla',
+                                    'Poder Notariado'=>'Poder Notariado',
+                                    'Traducción'=>'Traducción',
+                                    'Affidavit'=>'Affidavit',
+                                    'Acuerdos'=>'Acuerdos',
+                                    'Autorizaciones de Viaje'=>'Autorizaciones de Viaje',
+                                    'Cartas de Invitación'=>'Cartas de Invitación',
+                                    'Certificaciones'=>'Certificaciones',
+                                    'Contratos'=>'Contratos',
+                                    'Revocatorias'=>'Revocatorias',
+                                    'Testamentos'=>'Testamentos',
+                                    'Otro'=>'Otro']
+        ,    null,    ['class' => 'form-control custom-select', 'required']) !!}
+    </div>
+@endif
 <div class="form-group">
     {!! Form::label('message', 'Comentario:') !!}
     {!! Form::textarea('message', null, ['class' => 'form-control', 'maxlength'=>"100", 'rows' => '2', 'id' => 'message', 'required']) !!}
