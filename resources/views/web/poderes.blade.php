@@ -86,8 +86,12 @@
     </div>
   </section>
 
-<div class="container pt-4">
-            <h2 style="font-weight: 500; font-size: 28px">Gestione sus trámites legales sin estar presente por medio de un apoderado de confianza.</h2>
+  <section style="width:100%; text-align:center; margin-top:10px;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/AHE8EC0wsNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </section>
+
+{{-- <div class="container pt-4">
+            <h2 style="font-weight: 500; font-size: 28px">¿Qué es un poder notarial?</h2>
             <p class="text-muted">Un poder o carta poder, es un documento legal que se utiliza para otorgar control total sobre sus activos a otra persona
                 si usted no pudiera estar presente. Por lo tanto le permite realizar trámites a distancia siendo una solución para gestionar sus bienes, trámites
                 bancarios y otras tareas importantes.</p>
@@ -143,6 +147,118 @@
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
             <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+</div> --}}
+
+<div class="container pt-4">
+  <h2 style="font-weight: 500; font-size: 28px">¿Qué es un poder notarial?</h2>
+          <p class="text-muted">Un poder o carta poder, es un documento legal que se utiliza para otorgar control total sobre sus activos a otra persona
+              si usted no pudiera estar presente. Por lo tanto le permite realizar trámites a distancia siendo una solución para gestionar sus bienes, trámites
+              bancarios y otras tareas importantes.</p>
+          <p class="text-muted">La persona que firma un poder se llama poderdante o mandante y la que recibe el mandato se llama apoderado o mandatario.
+              Es siempre aconsejable asignar una persona de absoluta confianza para que realice las tareas encomendadas que se especificaran en la carta,
+              de esta manera evita futuros inconvenientes que se puedan presentar.</p>
+
+          <h2 style="font-weight: 500; font-size: 28px">¿Para qué se utiliza un poder?</h2>
+          <p class="text-muted">El documento que porte la apostilla tiene validez legal en cualquiera de los países miembros del Convenio. La cual consiste en un sello
+              que la autoridad encargada estampa en seco y se agrega como nota al reverso o como hoja adicional de los documentos que se quisiera
+              autenticar. Es por eso que los únicos autorizados para validar esta apostilla son los notarios debidamente acreditados.</p>
+          
+              <p class="text-muted">En otras palabras los poderes notariales sirven para que usted pueda defenderse ante las autoridades judiciales, es decir, que usted pueda comparecer ante un juzgado en materia civil,
+               en materia penal, en materia laboral, en materia mercantil, y en materia agraria.</p>
+
+
+          <h2 style="font-weight: 500; font-size: 28px">Tipo de Poderes</h2>
+          <ul class="text-muted">
+              <li><a href="https://notarialatina.com/poderes-especiales">Poderes Especiales</a>: Otorgar control a una actividad especifica sobre sus activos a otra persona en el caso de que usted no pudiera estar presente.</li>
+              <li>Poderes Generales:  Otorgar control más amplio y con más atribuciones sobre sus activos a otra persona en el caso de que usted no pudiera estar presente.</li>
+          </ul>
+
+          <h2 style="font-weight: 500; font-size: 28px">¿Qué tipos de documentos se pueden firmar por medio de usar un poder notarial?</h2>
+          <p class="text-muted">
+              Casi cualquier documento que usted firma por usted mismo se puede firmar por la persona a la cual usted le otorgue el poder notarial. Una excepción sería un testamento, la persona con el poder notarial para usted, no puede hacer un testamento por usted ni cambiar su testamento existente, hay límites en lo que un apoderado puede hacer al usar un poder notarial.
+              Uno de los buenos detalles de un poder notarial es que usted puede hacerlo general o tan limitado y específico como usted lo desee, por ejemplo usted podría usar un poder notarial solo para autorizarlo a alguien que venda su casa, porque usted estará fuera de la ciudad cuando se llevará a cabo la venta. 
+              Sin embargo, hay casos en los que usted querrá que su poder notarial sea lo más general posible para que su apoderado pueda manejar todos sus asuntos si es necesario.
+          </p>
+
+          <h2 style="font-weight: 500; font-size: 28px">¿En qué documentos se necesita la apostilla?</h2>
+          <ul class="text-muted">
+              <li>Compra / Venta</li>
+              <li>Administración de propiedades.</li>
+              <li>Administrar sus cuentas y transacciones bancarias.</li>
+              <li>Inversiones de dinero.</li>
+              <li>Hacer reclamos legales</li>
+              <li>Procedimientos legales en su nombre.</li>
+
+              Para más información sobre apostillas <a href="https://notarialatina.com/apostillas">Servicio de Apostillas</a>
+          </ul>
+          <h2 style="font-weight: 500; font-size: 28px">¿Cómo elegir un apoderado?</h2>
+          <p class="text-muted">
+              Aquí hay algunas sugerencias para elegir un apoderado:
+
+              <ul class="text-muted">
+                  <li>Puede nombrar a familiares, amigos cercanos, pastores, pastores de iglesias o rabinos.</li>
+                  <li>Solo puede designar a una persona como su apoderado. Luego, designe uno o dos suplentes, ya que se necesita uno en caso de que no se pueda encontrar su primera opción cuando sea necesario.</li>
+                  <li>Administrar sus cuentas y transacciones bancarias.</li>
+                  <li>Hable con todas las personas que está considerando nombrar como su apoderado o suplente. Haga esto antes de decidir quién es responsable de implementar sus deseos.</li>
+              </ul>
+          </p>
+
+          <h2 style="font-weight: 500; font-size: 28px">¿Qué requisitos debe cumplir su apoderado?
+          </h2>
+          <p class="text-muted">
+              Aquí hay algunas sugerencias para elegir un apoderado:
+
+              <ul class="text-muted">
+                  <li> Adultos mayores de 18 años.
+                  </li>
+                  <li>Alguien en quien confíe plenamente.
+                  </li>
+              </ul>
+          </p>
+          <h2 style="font-weight: 500; font-size: 28px">¿Qué requisitos necesito para realizarlo?</h2>
+          <ul class="text-muted">
+
+              <li>Identificación válida del poderdante.</li>
+              <li>Nombres y apellidos del apoderado.</li>
+              <li>Número de cédula del apoderado.</li>
+          </ul>
+
+      <h2 style="font-weight: 500; font-size: 28px">¿Qué tiempo de validez tiene un poder?</h2>
+      <p class="text-muted">Una carta poder tiene validez por el tiempo  que el poderdante establezca a la hora de realizar el poder con el notario,
+          por fallecimiento del mismo o hasta  que por voluntad propia solicite una revocatoria.</p>
+      <p class="text-muted">El poder puede utilizarse aun si el poderdante no se encuentre con todas sus facultades físicas o mentales.</p>
+
+      <h2 style="font-weight: 500; font-size: 28px">¿Qué pasa con el poder notarial si yo quedo incapacitado?</h2>
+      <p class="text-muted">En el pasado antes de que tuviéramos poderes notariales duraderos su poder notarial hubiera terminado cuando usted quedara incapacitado, justamente cuando probablemente lo necesitaba más, 
+          ahora mientras que su poder notarial sea un poder notarial duradero permanecerá en  vigencia completa aun si usted queda incapacitado, cuando se convierte en vidente del poder notarial y cuando se termina.</p>
+
+          </p><p class="text-muted">Otro de los buenos detalles de un poder notarial es que usted decide cuándo se convierte en vigente y cuándo se termina la autoridad de su apoderado, por ejemplo su poder notarial puede proveer que tome vigencia cuando usted lo firme o puede decidir que no tomará vigencia a menos y hasta que usted quede incapacitado,  usted puede revocar su poder notarial en cualquier momento siempre y cuando usted puede entender lo que usted estará firmando.</p>
+          
+         <p class="text-muted"> Sea como sea un poder notarial duradero se termina el momento de que usted fallezca si es que usted no lo ha revocado antes. </p>
+          </p>
+      <p class="text-muted">El poder puede utilizarse aun si el poderdante no se encuentre con todas sus facultades físicas o mentales.</p>
+      
+      <h2 style="font-weight: 500; font-size: 28px"> ¿Esto le dará control a mi apoderado sobre mí?</h2>
+      <p class="text-muted"> No un poder notarial no le da a su apoderado el derecho de decirle que puede y que no puede hacer a usted, su apoderado no tomará decisiones por usted con las que usted no esté de acuerdo, el  tener un poder notarial tampoco le quita su habilidad de continuar manejando sus propios asuntos, siempre y cuando pueda hacerlo.</p>
+
+      <h2 style="font-weight: 500; font-size: 28px">¿Por qué no debe esperar a obtener un poder notarial cuando ya no pueda manejar sus asuntos?</h2>
+      <p class="text-muted"> Para crear un poder material para, necesita poder entender lo que usted está firmando sólo usted puede firmar su poder notarial, entonces si espera demasiado tiempo puede ser demasiado tarde para conseguir un poder notarial y si se hace demasiado tarde para crear su poder notarial entonces la única manera que alguien más puede tener autoridad de manejar sus asuntos sería por medio de que ellos hagan una 
+          petición al tribunal para que sean designados como su tutor o curador lo cual puede ser un proceso difícil de manejar y caro.
+      </p>
+
+      <h2 style="font-weight: 500; font-size: 28px">¿En dónde puedo solicitar un poder?</h2>
+      <p class="text-muted">Acérquese a nuestra oficina y solicite su carta poder, un asesor lo guiará para que usted realice el trámite de manera correcta y segura.</p>
+
+      <h2 style="font-weight: 500; font-size: 28px">¿Cuánto tiempo demora hacer un poder?</h2>
+      <ul class="text-muted">
+          <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+          <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+          <li>El documento digital estará disponible en 24 horas.</li>
+          <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+      </ul>
+      <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+          <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+          <a class="btn btn-lg btn-warning" href="https://notarialatina.com/contactenos">Solicite su Trámite</a>
 </div>
 
 <!-- Modal -->
