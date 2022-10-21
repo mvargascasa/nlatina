@@ -77,7 +77,7 @@
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
 
             <div class="col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title">Poderes <br> <b class="heading-title" style="font-size: 28px; font-weight: 100">Generales y Especiales</b></h1>
+              <h1 class="font-weight-bold heading-title">Poderes <br> <b class="heading-title" style="font-size: 28px; font-weight: 100">Notariales</b></h1>
   
               <a href="javascript:void(0)" class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</a>
