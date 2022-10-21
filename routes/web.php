@@ -128,6 +128,7 @@ Route::get('/cartas-de-invitacion', function () {    return view('web.invitacion
 Route::get('/certificaciones', function () {    return view('web.certificaciones');    })->name('web.certificaciones');
 Route::get('/contratos', function () {    return view('web.contratos');    })->name('web.contratos');
 Route::get('/poderes-especiales', function () {    return view('web.poderesp');    })->name('web.poderesp');
+Route::get('/poderes-generales', function (){ return view('web.poderesg');})->name('web.poderesg');
 Route::get('/revocatorias', function () {    return view('web.revocatorias');    })->name('web.revocatorias');
 Route::get('/testamentos', function () {    return view('web.testamentos');    })->name('web.testamentos');
 
