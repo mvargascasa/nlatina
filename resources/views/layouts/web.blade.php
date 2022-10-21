@@ -116,6 +116,54 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         from {bottom: 0px;opacity:0;}
         to {opacity:1;}
     }
+    
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
 </style>
 
   @yield('header')
@@ -151,7 +199,13 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li> <a class="dropdown-item" href="{{route('web.apostillas')}}"> Apostillas</a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.poderes')}}"> Poderes </a> </li>
+                            <li class="dropdown-submenu"> 
+                                <a class="dropdown-item" href="{{route('web.poderes')}}"> Poderes </a> 
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="{{route('web.poderesg')}}">Poderes Generales</a></li>
+                                    <li class="dropdown-item"><a href="{{route('web.poderesp')}}">Poderes Especiales</a></li>
+                                </ul>
+                            </li>
                             <li> <a class="dropdown-item" href="{{route('web.traducciones')}}"> Traducciones </a> </li>
                             <li> <a class="dropdown-item" href="{{route('web.affidavit')}}"> Affidavit </a> </li>
                             <li> <a class="dropdown-item" href="{{route('web.acuerdos')}}"> Acuerdos </a> </li>
@@ -556,8 +610,40 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         localStorage.setItem("statusCardWhatsapp", "Off");
         document.getElementById('card_whatsapp').classList.toggle("hide-card-whatsapp");
     }
-    document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
-    
+    document.addEventListener("DOMContentLoaded",function(){
+        var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)};
+        // make it as accordion for smaller screens
+        if (window.innerWidth < 992) {
+
+        // close all inner dropdowns when parent is closed
+        document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+            everydropdown.addEventListener('hidden.bs.dropdown', function () {
+            // after dropdown is hidden, then find all submenus
+                this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+                // hide every submenu as well
+                everysubmenu.style.display = 'none';
+                });
+            })
+        });
+
+        document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+            element.addEventListener('click', function (e) {
+                let nextEl = this.nextElementSibling;
+                if(nextEl && nextEl.classList.contains('submenu')) {	
+                // prevent opening link if link needs to open dropdown
+                e.preventDefault();
+                if(nextEl.style.display == 'block'){
+                    nextEl.style.display = 'none';
+                } else {
+                    nextEl.style.display = 'block';
+                }
+
+                }
+            });
+        })
+        };
+
+        });
 </script>
 </body>
 </html>
