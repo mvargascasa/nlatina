@@ -137,7 +137,7 @@
 @endsection
 
 @section('content')
-{!! Form::model($partner, ['route' => ['socios.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'put']) !!}
+{!! Form::model($partner, ['route' => ['socios.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'put', 'id' => 'formsavepartner']) !!}
 @csrf
 @method('put')
     <div class="col-12 mt-4">
@@ -217,7 +217,11 @@
                                                 @else
                                                     {!! Form::label('img_profile', 'Imagen de perfil *', ['id' => 'Imagen de perfil', 'style' => 'color: red; font-weight: bold']) !!}
                                                 @endif
+                                                @if($partner->img_profile != null)
                                                 {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);']) !!}
+                                                @else
+                                                {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);', 'required']) !!}
+                                                @endif
                                                 <hr>
                                             </div>
                                         </div>
@@ -442,7 +446,7 @@
                                                 @if ($partner->numlicencia != null)
                                                 {!! Form::text('numlicencia', $partner->numlicencia, ['class' => 'form-control']) !!}
                                                 @else
-                                                {!! Form::text('numlicencia', null, ['class' => 'form-control']) !!}
+                                                {!! Form::text('numlicencia', null, ['class' => 'form-control', 'required']) !!}
                                                 @endif
                                             </div>
                                         </div>
@@ -484,7 +488,7 @@
                                                 @if ($partner->address != null)
                                                 {!! Form::text('address', $partner->address, ['class' => 'form-control']) !!}
                                                 @else
-                                                {!! Form::text('address', null, ['class' => 'form-control']) !!}
+                                                {!! Form::text('address', null, ['class' => 'form-control', 'required']) !!}
                                                 @endif
                                             </div>
                                         </div>
@@ -501,7 +505,7 @@
                                                 @if ($partner->state != null)
                                                 {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
                                                 @else
-                                                {!! Form::text('state', null, ['class' => 'form-control']) !!}
+                                                {!! Form::text('state', null, ['class' => 'form-control', 'required']) !!}
                                                 @endif
                                             </div>
                                         </div>
@@ -515,7 +519,7 @@
                                                 @if ($partner->city != null)
                                                 {!! Form::text('city', $partner->city, ['class' => 'form-control']) !!}    
                                                 @else
-                                                {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                                                {!! Form::text('city', null, ['class' => 'form-control', 'required']) !!}
                                                 @endif
                                             </div>
                                         </div>
@@ -607,7 +611,7 @@
                                     <br>
                                     <div class="float-right">
                                         @if ($partner->terminos_verified_at != null)
-                                        {!! Form::submit('Guardar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b']) !!}
+                                        {!! Form::submit('Guardar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b', 'id' => 'btnsave']) !!}
                                         @else
                                         {!! Form::button('Guardar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b', 'data-toggle' => 'modal', 'data-target' => '#exampleModalCenter']) !!}
                                         @endif
@@ -947,6 +951,15 @@
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+
+        // let btnsave = document.getElementById('btnsave');
+        // let form = document.getElementById('formsavepartner');
+        // btnsave.addEventListener('click', (event) => {
+        //     event.preventDefault();
+        //     let validate = validatecheck();
+        //     if(validate) form.submit();
+        // });
+
         function viewHelp(div){
             var div_help =  document.getElementById(div);
             console.log(div_help);
@@ -1046,6 +1059,21 @@
             var bol = $(".checkSpecialties:checked").length >= 3;     
             $(".checkSpecialties").not(":checked").attr("disabled",bol);
         }
+
+        // function validatecheck(){
+        //     let validate = true;
+        //     //let inpimg = document.querySelector("input[name='img_profile']").value;
+        //     let inpnumlicencia = document.querySelector("input[name='numlicencia']").value;
+        //     let inpaddress = document.querySelector("input[name='address']").value;
+        //     let inpstate = document.querySelector("input[name='state']").value;
+        //     let inpcity = document.querySelector("input[name='city']").value;
+        //     let checkspecialties = $(".checkSpecialties:checked").length < 1;
+        //     if(inpnumlicencia.length < 1 || inpaddress.length < 1 || inpstate.length < 1 || inpcity.length < 1 || checkspecialties){
+        //         //alert("Por favor, elija entre 1 a 3 opciones en sus Áreas de Especialización para completar la información");
+        //         validate = false;
+        //     }
+        //     return validate;
+        // }
 
         $(".checkSpecialties").click(() => deshabilitarCheckBox());
 
