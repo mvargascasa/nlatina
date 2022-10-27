@@ -228,8 +228,10 @@
                                         <div class="col-sm-7">
                                             <h6>Al momento de subir su foto de perfil, <b>tenga en cuenta los siguientes puntos:</b></h6>
                                             <div>
-                                                <p><i class="fas fa-check"></i> La imagen debe ser tamaño carnet o pasaporte</p>
+                                                <p><i class="fas fa-check"></i> La imagen debe ser para foto de pasaporte</p>
                                                 <p><i class="fas fa-check"></i> Asegúrese que sea una imagen corporativa</p>
+                                                <p><i class="fas fa-check"></i> La foto deberá mostrar solamente la mitad del cuerpo</p>
+                                                <p><i class="fas fa-check"></i> El fondo de la fotografía debe ser de color <b>BLANCO</b></p>
                                                 @if ($partner->img_profile == null)
                                                 <p><i class="fas fa-check"></i> Puede tomar como referencia la imagen de ejemplo</p>
                                                 @endif
