@@ -512,7 +512,8 @@
 @endsection
 
 @section('end-scripts')
-    <script src="{{ asset('ckeditoradmin/ckeditor.js') }}"></script>
+    {{-- <script src="{{ asset('ckeditoradmin/ckeditor.js') }}"></script> --}}
+    <script src="//cdn.ckeditor.com/4.20.0/full/ckeditor.js"></script>
     <script>
 
         //show comment input when status = no aplica
