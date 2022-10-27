@@ -592,9 +592,9 @@
                                     <div class="form-group">
                                         <div class="d-flex">
                                             @if ($partner->biography_html != null)
-                                                {!! Form::label('biography_html', 'Biografia y Experiencia', ['id' => 'Biografía']) !!} <b style="font-size: 14px">
+                                                {!! Form::label('biography_html', 'Experiencia Laboral y Forma de Trabajo', ['id' => 'Biografía', 'style' => 'font-weight:bold']) !!}
                                             @else
-                                                {!! Form::label('biography_html', 'Biografia y Experiencia *', ['id' => 'Biografía', 'style' => 'color: red; font-weight: bold']) !!}
+                                                {!! Form::label('biography_html', 'Experiencia Laboral y Forma de Trabajo *', ['id' => 'Biografía', 'style' => 'color: red; font-weight: bold']) !!}
                                             @endif
                                             <div style="margin-left: 5px; margin-top: -3px; position: relative;" onclick="viewHelp('biography_help');">
                                                 <label style="background-color: #002542; color: #ffffff; padding-left: 5px; padding-right: 5px; border-radius: 5px; cursor: pointer">?</label>
