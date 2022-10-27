@@ -305,9 +305,19 @@ class PartnerController extends Controller
         'Content-type:text/html;charset=UTF-8' . "\r\n"
         ;
 
-        mail($to, $subject, $message, $header);
+        $send_email = mail($to, $subject, $message, $header);
 
-        $request->session()->flash('emailsent', 'Se ha enviado el correo');
+        $email_sended = DB::table('email_sended')->insert([
+            'partner_id' => $partner->id,
+            'partner_name' => $partner->name,
+            'partner_lastname' => $partner->lastname,
+            'partner_email' => $partner->email,
+            'subject' => $subject,
+            'message' => $message
+        ]);
+
+        if($send_email && $email_sended) $request->session()->flash('emailsent', 'Se ha enviado el correo');
+        else $request->session()->flash('emailsent', 'No se pudo enviar el mensaje');
 
         return back();
     }
@@ -354,6 +364,16 @@ class PartnerController extends Controller
     public function redirectIfPartnerId($id){
         $partner = Partner::find($id);
         return redirect()->route('partner.show', $partner);
+    }
+
+    public function viewemailsended(Request $request){
+        // if($request->name != null || $request->lastname != null){
+        //     $partner = Partner::select('id')->where('name', 'LIKE', "%$request->name%")->where('lastname', 'LIKE', "%$request->lastname%")->get();
+        //     if(count($partner)>0) $emails_sended = DB::table('email_sended')->where('partner_id', $partner->id)->get();
+        // } else {
+            $emails_sended = DB::table('email_sended')->get();
+        // }
+        return view('admin.partner.emails.index',compact('emails_sended'));
     }
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
     // public function sendEmailMasivo(Request $request){

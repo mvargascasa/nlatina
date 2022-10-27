@@ -18,6 +18,9 @@
             <li class="nav-item @if(Request::is('home/user*')) bg-secondary @endif">
                 <a class="nav-link text-light" href="{{ url('home/user') }}">Usuario</a>
             </li>
+            <li class="nav-item @if(Request::is('home/emails*')) bg-secondary @endif">
+                <a class="nav-link text-light" href="{{ url('home/emails') }}">Correos Enviados</a>
+            </li>
         </ul>
     </div>
 </nav>

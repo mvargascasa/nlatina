@@ -33,6 +33,7 @@ Route::delete('/home/post/{post}', 'PostController@destroy')->name('post.destroy
 //PARTNERS
 Route::get('/home/partners', 'PartnerController@index')->name('partner.index');
 Route::post('/home/partners', 'PartnerController@index')->name('partner.index');
+Route::get('home/emails', 'PartnerController@viewemailsended')->name('partner.email.sended');
 Route::get('/home/partners/create', 'PartnerController@create')->name('partner.form');
 Route::post('/home/partners/store', 'PartnerController@store')->name('partner.store');
 Route::get('/home/partners/publicated', 'PartnerController@viewLastPublicated')->name('partner.show.latest.public');
