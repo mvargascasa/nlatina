@@ -204,6 +204,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-item"><a href="{{route('web.poderesg')}}">Poderes Generales</a></li>
                                     <li class="dropdown-item"><a href="{{route('web.poderesp')}}">Poderes Especiales</a></li>
+                                    <li class="dropdown-item"><a href="{{route('web.poderesnf')}}">Poder Notarial Financiero</a></li>
                                 </ul>
                             </li>
                             <li> <a class="dropdown-item" href="{{route('web.traducciones')}}"> Traducciones </a> </li>
