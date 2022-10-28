@@ -375,6 +375,11 @@ class PartnerController extends Controller
         // }
         return view('admin.partner.emails.index',compact('emails_sended'));
     }
+
+    public function showemail($id){
+        $email = DB::table('email_sended')->where('id_email_sended', $id)->first();
+        return view('admin.partner.emails.show', compact('email'));
+    }
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
     // public function sendEmailMasivo(Request $request){
     //     $to = $request->emails;

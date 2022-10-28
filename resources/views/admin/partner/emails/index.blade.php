@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('scripts')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+
 @endsection
 
 @section('content')
@@ -34,13 +34,16 @@
             </thead>
             <tbody>
                 @foreach ($emails_sended as $email)
-                @php $date = date_create($email->created_at); $partner = \App\Partner::find($email->partner_id); @endphp
+                @php 
+                  $date = date_create($email->created_at); 
+                  $partner = \App\Partner::find($email->partner_id);
+                @endphp
                     <tr>
                     <th scope="row">{{$email->id_email_sended}}</th>
                     <td><a href="{{route('partner.show', $partner)}}">{{ $partner->name . " " . $partner->lastname}}</a></td>
                     <td>{{$email->subject}}</td>
                     <td>{{date_format($date, "d-M-y")}}</td>
-                    <td><button class="btn btn-secondary">Ver correo</button></td>
+                    <td><a href="{{route('partner.email.sended.show', $email->id_email_sended)}}">Ver correo</a></td>
                     </tr>
                 @endforeach
             </tbody>

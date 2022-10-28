@@ -43,6 +43,7 @@ Route::post('/home/partners/verify/{partner}', 'PartnerController@verifiEmailAdm
 Route::get('/home/partners/{partner}/show', 'PartnerController@show')->name('partner.show');
 Route::get('/home/partners/{id}/showById', 'PartnerController@redirectIfPartnerId')->name('partner.show.id');
 Route::put('/home/partners/{partner}', 'PartnerController@update')->name('partner.update');
+Route::get('home/email/show/{id}', 'PartnerController@showemail')->name('partner.email.sended.show');
 //Route::delete('/home/partners/delete/{id}', 'PartnerController@destroy')->name('partner.destroy');
 //RUTAS PARA ENVIO DE EMAIL PARTNERS
 Route::post('home/partners/send-notification/{partner}', 'PartnerController@sendEmailPartner')->name('send.email.notification.partner');
