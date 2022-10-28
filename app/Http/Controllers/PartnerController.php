@@ -371,7 +371,7 @@ class PartnerController extends Controller
         //     $partner = Partner::select('id')->where('name', 'LIKE', "%$request->name%")->where('lastname', 'LIKE', "%$request->lastname%")->get();
         //     if(count($partner)>0) $emails_sended = DB::table('email_sended')->where('partner_id', $partner->id)->get();
         // } else {
-            $emails_sended = DB::table('email_sended')->get();
+            $emails_sended = DB::table('email_sended')->paginate(10);
         // }
         return view('admin.partner.emails.index',compact('emails_sended'));
     }

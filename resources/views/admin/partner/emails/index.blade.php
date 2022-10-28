@@ -54,6 +54,9 @@
       </div>
       @endif
     </div>
+    <div>
+      {{$emails_sended->links()}}
+    </div>
 </div>
 @endsection
 
