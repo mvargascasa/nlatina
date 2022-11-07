@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="col-9 mt-4 mx-3">
         <h4 class="text-center mt-4">Listado de Clientes de los Partners</h4>
         <div class="row mt-4">
             <h5 style="font-weight: 600">Total: {{$totalCustomers}}</h5>
