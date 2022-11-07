@@ -136,6 +136,7 @@ Route::get('/poderes-generales', function (){ return view('web.poderesg');})->na
 Route::get('poder-notarial-financiero', function(){return view('web.podernf');})->name('web.poderesnf');
 Route::get('/revocatorias', function () {    return view('web.revocatorias');    })->name('web.revocatorias');
 Route::get('/testamentos', function () {    return view('web.testamentos');    })->name('web.testamentos');
+Route::get('/cambio-de-nombre', function() { return view('web.cambionombre');})->name('web.cambionombre');
 
 //PARTNERS
 Route::get('/registro', function(){return view('web.partners_registro');})->name('partners.registro');

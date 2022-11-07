@@ -2,7 +2,7 @@
 @section('header')
 <title>Poder Notarial Financiero</title> 
 <meta name="description"        content="Un Poder Especial, es un documento legal que se utiliza para otorgar control a una actividad especifica sobre sus activos a otra persona en el caso de que usted no pudiera estar presente.">       
-<meta name="keywords"           content="Poderes Especiales Notarizados y Apostillados  en Queens New York, Poderes Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un poder especial, para que sirve un poder especial, tramitar carta poder en new york, poder especial en new york, realizar poder especial cerca de mi" />
+{{-- <meta name="keywords"           content="Poderes Especiales Notarizados y Apostillados  en Queens New York, Poderes Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un poder especial, para que sirve un poder especial, tramitar carta poder en new york, poder especial en new york, realizar poder especial cerca de mi" /> --}}
 
 <meta property="og:url"         content="{{route('web.poderesp')}}" />
 <meta property="og:type"        content="article" />
