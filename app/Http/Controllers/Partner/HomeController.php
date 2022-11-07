@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Partner;
 use App\Specialty;
 use Detection\MobileDetect;
+use Illuminate\Broadcasting\Channel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -85,6 +87,35 @@ class HomeController extends Controller
     
     public function update(Partner $partner, Request $request)
     {
+
+        if($partner->checkterminos != null || $partner->terminos_verified_at != null){
+            $value_changed = "";
+            if($partner->name != $request->name) $value_changed = $value_changed . "nombre,";
+            if($partner->lastname != $request->lastname) $value_changed = $value_changed . "apellido,";
+            if($partner->title != $request->title) $value_changed = $value_changed . "titulo,";
+            if($partner->specialty != $request->specialty) $value_changed = $value_changed . "especialidad(descripcion),";
+            if($partner->specialties() != $request->specialties) $value_changed = $value_changed . "especialidades(check),";
+            if($partner->country_residence != $request->country_residence) $value_changed = $value_changed . "pais de residencia,";
+            if($partner->state != $request->state) $value_changed = $value_changed . "estado o provincia,";
+            if($partner->city != $request->city) $value_changed = $value_changed . "ciudad,";
+            if($partner->address != $request->address) $value_changed = $value_changed . "dirección,";
+            if($partner->link_facebook != $request->link_facebook) $value_changed = $value_changed . "link de facebook,";
+            if($partner->link_instagram != $request->link_instagram) $value_changed = $value_changed . "link de instagram,";
+            if($partner->link_linkedin != $request->link_linkedin) $value_changed = $value_changed . "link de linkedin,";
+            if($partner->website != $request->website) $value_changed = $value_changed . "link de website";
+            if($partner->numlicencia != $request->numlicencia) $value_changed = $value_changed . "número de licencia,";
+            if($partner->company != $request->company) $value_changed = $value_changed . "compañia,";
+            if($partner->company_name != $request->company_name) $value_changed = $value_changed . "nombre de la compañia,";
+            if($partner->phone != $request->phone) $value_changed = $value_changed . "teléfono,";
+            if($partner->email != $request->email) $value_changed = $value_changed . "email,";
+            if($partner->biography_html != $request->biography_html) $value_changed = $value_changed . "biografia,";
+            if($partner->img_profile != null && isset($request->img_profile)) $value_changed = $value_changed . "imagen de perfil,";
+            $updated_partner = DB::table('updated_partner')->insert([
+                'partner_id' => $partner->id,
+                'value_change' => $value_changed
+            ]);
+        }
+
         if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
             $request->img_profile = $partner->img_profile;
         } else if($request->img_profile != null && $partner->img_profile != null){

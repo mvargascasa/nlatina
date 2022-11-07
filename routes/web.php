@@ -34,6 +34,7 @@ Route::delete('/home/post/{post}', 'PostController@destroy')->name('post.destroy
 Route::get('/home/partners', 'PartnerController@index')->name('partner.index');
 Route::post('/home/partners', 'PartnerController@index')->name('partner.index');
 Route::get('home/emails', 'PartnerController@viewemailsended')->name('partner.email.sended');
+Route::get('home/notifications', 'PartnerController@indexnotifications')->name('partner.index.notifications');
 Route::get('/home/partners/create', 'PartnerController@create')->name('partner.form');
 Route::post('/home/partners/store', 'PartnerController@store')->name('partner.store');
 Route::get('/home/partners/publicated', 'PartnerController@viewLastPublicated')->name('partner.show.latest.public');
@@ -44,6 +45,7 @@ Route::get('/home/partners/{partner}/show', 'PartnerController@show')->name('par
 Route::get('/home/partners/{id}/showById', 'PartnerController@redirectIfPartnerId')->name('partner.show.id');
 Route::put('/home/partners/{partner}', 'PartnerController@update')->name('partner.update');
 Route::get('home/email/show/{id}', 'PartnerController@showemail')->name('partner.email.sended.show');
+Route::post('home/notifications/setviewed/{id_updated_partner}', 'PartnerController@setviewednotification')->name('partner.set.viewed.notification');
 //Route::delete('/home/partners/delete/{id}', 'PartnerController@destroy')->name('partner.destroy');
 //RUTAS PARA ENVIO DE EMAIL PARTNERS
 Route::post('home/partners/send-notification/{partner}', 'PartnerController@sendEmailPartner')->name('send.email.notification.partner');

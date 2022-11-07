@@ -380,6 +380,23 @@ class PartnerController extends Controller
         $email = DB::table('email_sended')->where('id_email_sended', $id)->first();
         return view('admin.partner.emails.show', compact('email'));
     }
+
+    public function indexnotifications(){
+        $changes = DB::table('updated_partner')->orderBy('id_updated_partner', 'DESC')->paginate(5);
+        return view('admin.partner.notifications.index', compact('changes'));
+    }
+
+    public function setviewednotification($id_updated_partner){
+        $updated_partner = DB::table('updated_partner')->where('id_updated_partner', $id_updated_partner)->first();
+        if($updated_partner){
+            if($updated_partner->viewed == false){
+                DB::update('update updated_partner set viewed = ? where id_updated_partner = ?', [true, $updated_partner->id_updated_partner]);
+            }
+            $partner = Partner::find($updated_partner->partner_id);
+            return redirect()->route('partner.show', $partner);
+        }
+        return "no se encontro";
+    }
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
     // public function sendEmailMasivo(Request $request){
     //     $to = $request->emails;
