@@ -94,7 +94,7 @@ class HomeController extends Controller
             if($partner->lastname != $request->lastname) $value_changed = $value_changed . "apellido,";
             if($partner->title != $request->title) $value_changed = $value_changed . "titulo,";
             if($partner->specialty != $request->specialty) $value_changed = $value_changed . "especialidad(descripcion),";
-            if($partner->specialties() != $request->specialties) $value_changed = $value_changed . "especialidades(check),";
+            //if($partner->specialties != $request->specialties) $value_changed = $value_changed . "especialidades(check),";
             if($partner->country_residence != $request->country_residence) $value_changed = $value_changed . "pais de residencia,";
             if($partner->state != $request->state) $value_changed = $value_changed . "estado o provincia,";
             if($partner->city != $request->city) $value_changed = $value_changed . "ciudad,";
@@ -110,10 +110,12 @@ class HomeController extends Controller
             if($partner->email != $request->email) $value_changed = $value_changed . "email,";
             if($partner->biography_html != $request->biography_html) $value_changed = $value_changed . "biografia,";
             if($partner->img_profile != null && isset($request->img_profile)) $value_changed = $value_changed . "imagen de perfil,";
-            $updated_partner = DB::table('updated_partner')->insert([
-                'partner_id' => $partner->id,
-                'value_change' => $value_changed
-            ]);
+            if($value_changed != ""){
+                $updated_partner = DB::table('updated_partner')->insert([
+                    'partner_id' => $partner->id,
+                    'value_change' => $value_changed
+                ]);
+            }
         }
 
         if($request->img_profile == null && $partner->img_profile != null){ //IF PARA VALIDAR SI EL USUARIO NO CAMBIA SU FOTO DE PERFIL
