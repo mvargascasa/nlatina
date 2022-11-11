@@ -2,12 +2,12 @@
 @section('header')
 <title>Poderes Notarizados y Apostillados en Queens New York</title> 
 <meta name="description"        content="Encuentre aquí toda la información que necesita sobre poderes generales. Le facilitamos también nuestro servicio de asesoría profesional.¡Ingrese ahora!">       
-<meta name="keywords"           content="Poderes Notarizados y Apostillados  en Queens New York, Poderes Notarizados near me, carta poder, poder especial, poder general, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un poder notaria, que es una carta poder, para que sirve una carta poder, requisitos carta poder, carta poder en new york, realizar carta poder en new york, poder general en new york, poder especial en new york" />
+<meta name="keywords"           content="poder general, que es un poder general, que es el poder general, que es un poder notarial general, que se necesita para dar un poder general, como tramitar un poder general, como solicitar un poder general, solicitar poder general en estados unidos" />
 
 <meta property="og:url"         content="{{route('web.poderes')}}" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Poderes Notarizados y Apostillados  en Queens New York - Notaria Latina" />
-<meta property="og:description" content="Un poder o carta poder, es un documento legal que se utiliza para otorgar control total sobre sus activos a otra persona si usted no pudiera estar presente." />
+<meta property="og:title"       content="Poderes Generales" />
+<meta property="og:description" content="Encuentre aquí toda la información que necesita sobre poderes generales. Le facilitamos también nuestro servicio de asesoría profesional.¡Ingrese ahora!" />
 <meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 
 <meta name="csrf-token" content="{{ csrf_token() }}">

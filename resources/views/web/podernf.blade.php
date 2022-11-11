@@ -2,7 +2,7 @@
 @section('header')
 <title>Poder Notarial Financiero</title> 
 <meta name="description"        content="Descubre toda la información que necesita entender sobre los poderes notariales financieros. Si tiene alguna duda le daremos la asesoría que necesita.">       
-<meta name="keywords"           content="" />
+<meta name="keywords"           content="que es un poder notarial, poder notarial financiero, que es un poder notarial financiero, poder notarial para asuntos financieros, como hacer un poder notarial financiero, como puedo hacer un poder notarial financiero, como hacer un poder notarial para tramites financieros" />
 
 <meta property="og:url"         content="{{route('web.poderesp')}}" />
 <meta property="og:type"        content="article" />
