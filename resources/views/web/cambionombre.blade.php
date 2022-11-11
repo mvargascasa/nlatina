@@ -1,13 +1,13 @@
 @extends('layouts.web')
 @section('header')
 <title>Cambio de Nombre</title> 
-<meta name="description"        content="Un Poder Especial, es un documento legal que se utiliza para otorgar control a una actividad especifica sobre sus activos a otra persona en el caso de que usted no pudiera estar presente.">       
-{{-- <meta name="keywords"           content="Poderes Especiales Notarizados y Apostillados  en Queens New York, Poderes Notarizados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un poder especial, para que sirve un poder especial, tramitar carta poder en new york, poder especial en new york, realizar poder especial cerca de mi" /> --}}
+<meta name="description"        content="¿Quiere cambiar su nombre? Aquí encontrará toda la información y la asesoría que necesita para hacer este trámite sin complicaciones, y sin costos elevados.">       
+<meta name="keywords"           content="cambio de nombre, como cambiar mi nombre en estados unidos, cambio de nombre en estados unidos, cambiar legalmente mi nombre en estados unidos, como puedo cambiar mi nombre en estados unidos" />
 
 <meta property="og:url"         content="{{route('web.poderesp')}}" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Poderes Especiales Notarizados y Apostillados  en Queens New York - Notaria Latina" />
-<meta property="og:description" content="Un Poder Especial, es un documento legal que se utiliza para otorgar control a una actividad especifica sobre sus activos a otra persona en el caso de que usted no pudiera estar presente." />
+<meta property="og:title"       content="Cambio de Nombre - Notaria Latina" />
+<meta property="og:description" content="¿Quiere cambiar su nombre? Aquí encontrará toda la información y la asesoría que necesita para hacer este trámite sin complicaciones, y sin costos elevados." />
 <meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 @endsection
 
