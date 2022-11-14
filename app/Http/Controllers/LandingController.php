@@ -152,7 +152,7 @@ class LandingController extends Controller
                 $header .= 'From: <lead_landing@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
             }
     
@@ -181,10 +181,10 @@ class LandingController extends Controller
                 if(isset($request->url_current) && $request->url_current == "web.oficina.florida") $from = "oficina Florida";
                 if(isset($request->url_current) && $request->url_current == "web.oficina.newjersey") $from = "oficina New Jersey";
                 if(isset($request->url_current) && $request->url_current == "web.oficina.newyork") $from = "oficina New York";
-                $header .= 'From: <lead_'.$from.'@notarialatina.com>' . "\r\n";
+                $header .= 'From: <lead_'.strtolower(str_replace(" ", "", $from)).'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);      
             }
 
