@@ -2280,7 +2280,7 @@ class WebController extends Controller
 
         } else {
             //ENVIO A NOTARIA LATINA
-            $to = "partners@notarialatina.com,hserrano@notarialatina.com"; //partners@notarialatina.com,hserrano@notarialatina.com
+            $to = "partners@notarialatina.com"; //partners@notarialatina.com,hserrano@notarialatina.com
             $subject = 'Lead para Partner Abogado - Notaria Latina';
             $message = "<br><strong><h3>Datos del cliente</h3></strong>
                         <br>Nombre: " . strip_tags($request->name). "
@@ -2416,7 +2416,7 @@ class WebController extends Controller
         $rating->country = $request->country_residenceRating;
         $partner->ratings()->save($rating);
 
-        $to = "notariapublicalatina@gmail.com,hserrano@notarialatina.com," . $partner->email;
+        $to = "notariapublicalatina@gmail.com," . $partner->email;
         $subject = "Valoración de Partner: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname);
         $message = "<br><strong><h3>Datos del cliente que lo evalúa</h3></strong>
                 <br>Nombre: " . strip_tags($request->nameRating). "
@@ -2447,7 +2447,7 @@ class WebController extends Controller
         //return $codigo_pais;
 
         $from_email		 = "apostillas@notarialatina.com"; //from mail, sender email address
-        $recipient_email = 'info@notarialatina.com,hserrano@notarialatina.com'; //recipient email address info@notarialatina.com,hserrano@notarialatina.com
+        $recipient_email = 'info@notarialatina.com'; //recipient email address info@notarialatina.com,hserrano@notarialatina.com
         
         $subject = 'Servicios de Apostilla | Notaria Latina - ' . date(now()); //subject for the email
         $message = "<br><strong><h3>Información del cliente</h3></strong>
