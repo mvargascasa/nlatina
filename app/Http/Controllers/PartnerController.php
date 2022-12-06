@@ -166,9 +166,9 @@ class PartnerController extends Controller
         }
 
         if($request->company == "Empresa"){
-            $request->validate([
-                'company_name' => 'required'
-            ]);
+            // $request->validate([
+            //     'company_name' => 'required'
+            // ]);
             $partner->company = $request->company;
             $partner->company_name = $request->company_name;
         } else {    
