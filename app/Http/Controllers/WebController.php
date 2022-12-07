@@ -2280,10 +2280,10 @@ class WebController extends Controller
 
         } else {
             //ENVIO A NOTARIA LATINA
-            $to = "partners@notarialatina.com"; //partners@notarialatina.com,hserrano@notarialatina.com
+            $to = "sebas31051999@gmail.com"; //partners@notarialatina.com,hserrano@notarialatina.com
             $subject = 'Lead para Partner Abogado - Notaria Latina';
             $message = "<br><strong><h3>Datos del cliente</h3></strong>
-                        <br>Nombre: " . strip_tags($request->name). "
+                        <br>Nombre: " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
                         <br>País de residencia: " . strip_tags($request->country_residence) ."
                         <br>Teléfono: " . strip_tags($request->codpais) . " " . strip_tags($request->phone) ."
                         <br>Mensaje: " . strip_tags($request->mensaje) . "

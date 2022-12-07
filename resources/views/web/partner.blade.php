@@ -243,20 +243,13 @@
             </div>
             <div class="col-sm-8 mt-5 info-header">
                 <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
-                <h1 style="font-size: 30px" id="txtnamelastname"><b>
-                    @if ($partner->title == "Abogado")
-                        Abg.
-                    @elseif($partner->title == "Licenciado")
-                        Lic.
-                    @endif
-                    {{ $partner->name }} {{ $partner->lastname }}
-                    </b>
-                    <p style="font-size: 20px; margin-top: 15px"><img width="25" height="25" src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="Abogado en {{ $partner->city }}, {{ $partner->state }}, {{ $partner->country_residence }}"> {{ $partner->country_residence}}, {{ $partner->city }}</p>
+                <h1 style="font-size: 30px" id="txtnamelastname"><b>Abogado en {{$partner->city}}, {{$partner->state}}</b> <img width="25" height="25" src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="IMG_BAND_{{ $partner->country_residence }}">
                 </h1>
+                <p style="font-size: 20px; margin-top: 15px">@if($partner->title=="Abogado")Abg.@elseif($partner->title=="Licenciado")Lic.@endif {{$partner->name . " " . $partner->lastname}}</p>
                 @if ($partner->company == "Empresa")
-                    <p style="margin-top: 10px">{{ $partner->company_name }}</p>
+                    <p style="margin-top: 10px"><i class="fas fa-building"></i> {{ $partner->company_name }}</p>
                 @else
-                    <p style="margin-top: 10px">{{ $partner->company}}</p>
+                    <p style="margin-top: 10px"><i class="fas fa-user"></i> {{ $partner->company}}</p>
                 @endif
                 <br>
                 {{-- <div id="divPhoneAndEmail" class="row d-flex">
@@ -365,13 +358,17 @@
                     @endif
                 </div>
                 <div class="formContact mt-4 rounded">
-                    <h4 class="text-white text-center p-3">Realice aquí una consulta</h4>
+                    <h4 class="text-white text-center p-3">¿Necesita realizar una consulta?</h4>
+                    <p class="text-white px-3">Complete el formulario con su información y el partner <b class="text-warning">{{$partner->name . " " . $partner->lastname}}</b> se comunicará con usted</p>
                     <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
                         @csrf
-                        <input class="form-control" type="text" id="nombre" placeholder="Nombre y Apellido" name="name" autocomplete="off" required>
+                        <div class="d-flex">
+                            <input class="form-control mr-1" type="text" id="nombre" placeholder="Nombre" name="name" autocomplete="off" required>
+                            <input class="form-control ml-1" type="text" id="apellido" placeholder="Apellido" name="lastname" autocomplete="off" required>
+                        </div>
                         <input type="email" name="email" id="email" placeholder="Correo electrónico" class="form-control" autocomplete="off" required>
                         <div class="d-flex mt-3">
-                            <select name="country_residence" id="country_residence" class="form-control" required>
+                            <select name="country_residence" id="country_residence" class="form-control mr-1" required>
                                 <option value="">País de residencia</option>
                                 <option value="Argentina">Argentina</option>
                                 <option value="Bolivia">Bolivia</option>
@@ -393,13 +390,13 @@
                                 <option value="Venezuela">Venezuela</option>
                             </select>
                             <input type="hidden" name="codpais" id="codTelfPais">
-                            <input class="form-control" type="number" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
+                            <input class="form-control ml-1" type="number" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
                         </div>
                         <textarea class="form-control" id="mensaje" rows="4" placeholder="Me encantaría poder ayudarle..." name="mensaje" autocomplete="off" required>Hola, me interesa consultar por sus servicios y deseo que me contacten</textarea>
                         <div style="display: none">
                             <input type="hidden" name="aux">
                         </div>
-                        <button class="btn mb-3" style="background-color: #FEC02F" type="submit">Enviar</button>
+                        <button class="btn mb-3" style="background-color: #FEC02F;" type="submit"><i class="fas fa-envelope"></i> Enviar</button>
                     </form>
                 </div>
                 @php
