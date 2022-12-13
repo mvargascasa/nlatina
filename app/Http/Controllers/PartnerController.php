@@ -145,6 +145,8 @@ class PartnerController extends Controller
         if(isset($request->comment) && $request->status == "NO APLICA"){
             DB::table('comments_status')->insert([
                 'partner_id' => $partner->id,
+                'type' => 'Status',
+                'type_value' => $request->status,
                 'comment' => $request->comment
             ]);
         };

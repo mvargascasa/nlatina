@@ -519,7 +519,7 @@
         //show comment input when status = no aplica
         function showCommentInput(object){
             var div_comment_status = document.getElementById('div_comment_status');
-            if(object.value == "NO APLICA"){
+            if(object.value == "NO APLICA" || object.value == "NO PUBLICADO"){
                 div_comment_status.classList.remove("d-none");
                 div_comment_status.classList.add("d-block");
                 document.querySelector("input[name='comment']").required = true;
