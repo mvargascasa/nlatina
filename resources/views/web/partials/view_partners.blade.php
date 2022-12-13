@@ -17,14 +17,7 @@
                                     </div>
                                     <div id="rowDataPartner" class="col-6 col-sm-12">
                                         <h5 style="font-size: 13px; text-align: left" class="txtNamePartner dismissMarginTopBottom">
-                                            <b>
-                                                @if ($partner->title == "Abogado")
-                                                Abg.
-                                                @elseif($partner->title == "Licenciado")
-                                                Lic.
-                                                @endif
-                                                {{ Str::ucfirst($partner->name) }} {{ Str::ucfirst($partner->lastname) }}
-                                            </b>
+                                            <b>{{ Str::ucfirst($partner->name) }} {{ Str::ucfirst($partner->lastname) }}</b>
                                         </h5>
                                         {{-- <p>{{ $partner->specialty }}</p> --}}
                                         @foreach ($partner->specialties as $specialty)
