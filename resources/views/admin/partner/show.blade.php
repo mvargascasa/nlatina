@@ -485,20 +485,35 @@
           {{-- modal para mostrar los comentarios de no aplica --}}
           @if(count($comments_status)>0 && ($partner->status == "NO APLICA" || $partner->status == "NO PUBLICADO"))
           <div class="modal fade" id="modalCommentsStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Comentario de Estado "No Aplica"</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle">Comentarios</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <ul>
-                      @foreach ($comments_status as $comment)
-                          <li>{{$comment->comment}} - <label class="text-muted">{{date_format(date_create($comment->created_at), "Y/m/d")}}</label></li>
-                      @endforeach
-                  </ul>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Tipo de Cambio</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Comentario</th>
+                            <th scope="col">Fecha</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($comments_status as $commstat)
+                                <tr class="my-2" style="border-left: 3px solid @if($commstat->type_value == 'NO APLICA') red @elseif($commstat->type_value === "NO PUBLICADO") gray @endif">
+                                <th scope="row">{{$commstat->type}}</th>
+                                <td>{{$commstat->type_value}}</td>
+                                <td>{{$commstat->comment}}</td>
+                                <td>{{substr($commstat->created_at, 0, 10)}}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                      </table>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
