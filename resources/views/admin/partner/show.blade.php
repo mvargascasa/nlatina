@@ -45,7 +45,7 @@
                     </a>
                 </div>
             @endif
-            @if(count($comments_status)>0 && $partner->status == "NO APLICA")
+            @if(count($comments_status)>0 && ($partner->status == "NO APLICA" || $partner->status == "NO PUBLICADO"))
                 <div class="float-right">
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalCommentsStatus">
                         Comentarios
