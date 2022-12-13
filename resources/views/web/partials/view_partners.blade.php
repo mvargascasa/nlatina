@@ -6,7 +6,7 @@
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
                     <a href="{{ route('web.showpartner', $partner->slug) }}" style="text-decoration: none">
                         <div class="testimotionals">
-                            <div class="card mb-3" style="width: 100%; height: 100%">
+                            <div class="card" style="width: 100%; height: 100%">
                             <div class="layer"></div>
                             <div class="content">
                                 <div class="row">
