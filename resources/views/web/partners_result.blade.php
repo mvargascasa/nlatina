@@ -24,7 +24,7 @@
         #divwpp{display:none}
         #etiquetaPhone{display: none;}
         #divpreguntas{display: none !important}
-        .testimotionals {width:100%;display:inline-block;}
+        .testimotionals {width:100%;height: 100% !important}
         .testimotionals .card {
             position:relative;
             overflow:hidden;
