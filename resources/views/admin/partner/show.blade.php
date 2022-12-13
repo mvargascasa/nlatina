@@ -483,7 +483,7 @@
           </div>
 
           {{-- modal para mostrar los comentarios de no aplica --}}
-          @if(count($comments_status)>0 && $partner->status == "NO APLICA")
+          @if(count($comments_status)>0 && ($partner->status == "NO APLICA" || $partner->status == "NO PUBLICADO"))
           <div class="modal fade" id="modalCommentsStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
