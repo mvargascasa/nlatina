@@ -115,7 +115,7 @@ class PartnerController extends Controller
      */
     public function show(Partner $partner)
     {
-        $comments_status = DB::table('comments_status')->select('comment', 'created_at')->where('partner_id', $partner->id)->get();
+        $comments_status = DB::table('comments_status')->select('type', 'type_value', 'comment', 'created_at')->where('partner_id', $partner->id)->get();
         $specialties = Specialty::all();
         return view('admin.partner.show', compact('partner', 'specialties', 'comments_status'));
     }
