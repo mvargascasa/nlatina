@@ -2442,12 +2442,23 @@ class WebController extends Controller
     //FUNCION PARA ENVIAR SOLICITUD DE APOSTILLA CON ADJUNTO
     public function sendEmailApostille(Request $request){
 
+        $recipient_email = 'info@notarialatina.com';
+
+        if(isset($request->url_current)){
+            switch ($request->url_current) {
+                case 'web.oficina.newjersey': $recipient_email .= ",newjersey@notarialatina.com"; break;
+                case 'web.oficina.newyork': $recipient_email .= ",newyork@notarialatina.com"; break;
+                case 'web.oficina.florida': $recipient_email .= ",florida@notarialatina.com"; break;
+                default: $recipient_email .= ",newyork@notarialatina.com"; break;
+            }
+        }
+
         $codigo_pais = $this->getCodByPais($request->cod_pais);
 
         //return $codigo_pais;
 
         $from_email		 = "apostillas@notarialatina.com"; //from mail, sender email address
-        $recipient_email = 'info@notarialatina.com'; //recipient email address info@notarialatina.com,hserrano@notarialatina.com
+        //$recipient_email = 'sebas31051999@gmail.com'; //recipient email address info@notarialatina.com,hserrano@notarialatina.com
         
         $subject = 'Servicios de Apostilla | Notaria Latina - ' . date(now()); //subject for the email
         $message = "<br><strong><h3>Información del cliente</h3></strong>

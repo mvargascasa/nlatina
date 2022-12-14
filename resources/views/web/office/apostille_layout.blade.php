@@ -56,6 +56,10 @@
 @section('phoneNumberHidden', $data['telfHidden'])
 @section('phoneNumber', $data['telfShow'])
 
+@php
+    $url_name = Route::current()->getName();     
+@endphp
+
 @section('content')
 <div id="prisection" class="d-flex justify-content-center align-items-center text-center" style="height: 35vh;background-size: cover; background-position: left top; background-repeat: no-repeat;">
     <h1 id="title" style="font-size: 40px; color: #ffffff">Apostillamos <b>{{ $data['description']}}</b> en {{ $data['office']}}</h1>
@@ -91,6 +95,7 @@
                                 @csrf
                                 <input type="hidden" name="document" value="{{ $data['description'] }}">
                                 <input type="hidden" name="from" value="{{$data['office']}}">
+                                <input type="hidden" name="url_current" value="{{$url_name}}">
                                 <div class="mb-5 d-flex">
                                     <input style="border: none; border-bottom:solid 1px; border-radius: 0px; margin-right: 5px; border-color: rgb(228, 216, 216)" type="text" class="form-control inputs" placeholder="Nombre*" name="name" autocomplete="off" value="{{ old('name')}}" required>
                                     <input style="border: none; border-bottom:solid 1px; border-radius: 0px; border-color: rgb(228, 216, 216)" type="text" class="form-control inputs" placeholder="Apellido*" name="lastname" autocomplete="off" value="{{ old('lastname')}}" required>

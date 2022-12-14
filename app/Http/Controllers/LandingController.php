@@ -128,6 +128,12 @@ class LandingController extends Controller
             if ($interest == 'Landing New York')    $sendoffices = ',newyork@notarialatina.com';
             if ($interest == 'Landing New Jersey')  $sendoffices = ',newjersey@notarialatina.com';
             if ($interest == 'Landing Florida')     $sendoffices = ',florida@notarialatina.com';
+
+            if(isset($request->url_current) && ($request->url_current == "web.oficina.newjersey" || $request->url_current == "web.oficina.newyork" || $request->url_current == "web.oficina.florida")){
+                if($request->url_current == "web.oficina.newjersey")    $sendoffices = 'sebas31051999@gmail.com'; //newjersey@notarialatina.com
+                if($request->url_current == "web.oficina.newyork")      $sendoffices = 'sebas25211@hotmail.com'; //newyork@notarialatina.com
+                if($request->url_current == "web.oficina.florida")      $sendoffices = 'sebastian.armijos.est@tecazuay.edu.ec'; //florida@notarialatina.com
+            }
     
             if(isset($request->aaa) && isset($request->bbb) && isset($request->ddd)){
 
