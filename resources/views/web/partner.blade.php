@@ -363,36 +363,44 @@
                     <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
                         @csrf
                         <div class="d-flex">
-                            <input class="form-control mr-1" type="text" id="nombre" placeholder="Nombre" name="name" autocomplete="off" required>
-                            <input class="form-control ml-1" type="text" id="apellido" placeholder="Apellido" name="lastname" autocomplete="off" required>
+                            <div>
+                                <input class="form-control mr-1" style="font-size: 12px" type="text" id="nombre" placeholder="Nombre" name="name" autocomplete="off" required>
+                            </div>
+                            <div>
+                                <input class="form-control ml-1" style="font-size: 12px" type="text" id="apellido" placeholder="Apellido" name="lastname" autocomplete="off" required>
+                            </div>
                         </div>
-                        <input type="email" name="email" id="email" placeholder="Correo electrónico" class="form-control" autocomplete="off" required>
+                        <input type="email" name="email" style="font-size:12px" id="email" placeholder="Correo electrónico" class="form-control" autocomplete="off" required>
                         <div class="d-flex mt-3">
-                            <select name="country_residence" id="country_residence" class="form-control mr-1" required>
-                                <option value="">País de residencia</option>
-                                <option value="Argentina">Argentina</option>
-                                <option value="Bolivia">Bolivia</option>
-                                <option value="Colombia">Colombia</option>
-                                <option value="Costa Rica">Costa Rica</option>
-                                <option value="Ecuador">Ecuador</option>
-                                <option value="El Salvador">El Salvador</option>
-                                <option value="Estados Unidos">Estados Unidos</option>
-                                <option value="Guatemala">Guatemala</option>
-                                <option value="Honduras">Honduras</option>
-                                <option value="México">México</option>
-                                <option value="Nicaragua">Nicaragua</option>
-                                <option value="Panamá">Panamá</option>
-                                <option value="Paraguay">Paraguay</option>
-                                <option value="Perú">Perú</option>
-                                <option value="Puerto Rico">Puerto Rico</option>
-                                <option value="República Dominicana">República Dominicana</option>
-                                <option value="Uruguay">Uruguay</option>
-                                <option value="Venezuela">Venezuela</option>
-                            </select>
-                            <input type="hidden" name="codpais" id="codTelfPais">
-                            <input class="form-control ml-1" type="number" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
+                            <div>
+                                <select name="country_residence" id="country_residence" class="form-control mr-1" style="font-size: 12px" required>
+                                    <option value="">País de residencia</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Costa Rica">Costa Rica</option>
+                                    <option value="Ecuador">Ecuador</option>
+                                    <option value="El Salvador">El Salvador</option>
+                                    <option value="Estados Unidos">Estados Unidos</option>
+                                    <option value="Guatemala">Guatemala</option>
+                                    <option value="Honduras">Honduras</option>
+                                    <option value="México">México</option>
+                                    <option value="Nicaragua">Nicaragua</option>
+                                    <option value="Panamá">Panamá</option>
+                                    <option value="Paraguay">Paraguay</option>
+                                    <option value="Perú">Perú</option>
+                                    <option value="Puerto Rico">Puerto Rico</option>
+                                    <option value="República Dominicana">República Dominicana</option>
+                                    <option value="Uruguay">Uruguay</option>
+                                    <option value="Venezuela">Venezuela</option>
+                                </select>
+                            </div>
+                            <div>
+                                <input type="hidden" name="codpais" id="codTelfPais">
+                                <input class="form-control ml-1" style="font-size: 12px" type="text" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
+                            </div>
                         </div>
-                        <textarea class="form-control" id="mensaje" rows="4" placeholder="Me encantaría poder ayudarle..." name="mensaje" autocomplete="off" required>Hola, me interesa consultar por sus servicios y deseo que me contacten</textarea>
+                        <textarea class="form-control" style="font-size: 12px" id="mensaje" rows="4" placeholder="Ej: Hola, me interesa consultar por sus servicios y deseo que me contacten" name="mensaje" autocomplete="off" required></textarea>
                         <div style="display: none">
                             <input type="hidden" name="aux">
                         </div>
@@ -627,10 +635,45 @@
         document.getElementById('formviewphone').submit();
     }
 
-    var selectPaisResidencia = document.getElementById('country_residence');
-    var inputCodPais = document.getElementById('codTelfPais');
+    const validatelengthnumber = (event) => {
+        let value_country = document.getElementById('country_residence').value;
+        let value_number = document.getElementById('telefono').value;
+    }
+
+    const getlongnumberbycountry = (country) => {
+        switch (country) {
+            case "Panamá":
+            case "República Dominicana":value=7;break;
+            case "Bolivia":
+            case "Costa Rica":
+            case "El Salvador":
+            case "Guatemala":
+            case "Honduras":
+            case "Nicaragua":
+            case "Uruguay":value=8;break;
+            case "Chile":
+            case "Paraguay":
+            case "Perú":value=9;break;
+            case "Argentina":
+            case "Colombia":
+            case "Ecuador":
+            case "Estados Unidos":
+            case "México":
+            case "Venezuela":
+            case "Puerto Rico":value=10;break;
+            default: break;
+        }
+        document.getElementById('telefono').setAttribute('minlength', value);
+        //alert(value);
+    }
+
+    let selectPaisResidencia = document.getElementById('country_residence');
+    let inputCodPais = document.getElementById('codTelfPais');
         
         selectPaisResidencia.onchange  = function(e){
+
+            getlongnumberbycountry(selectPaisResidencia.value);
+            
             switch (selectPaisResidencia.value) {
                 case "" : codigo = ""; break;
                 case "Argentina":codigo = "+54";break;
