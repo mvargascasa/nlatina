@@ -198,7 +198,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li> <a class="dropdown-item" href="{{route('web.apostillas')}}"> Apostillas</a> </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="{{route('web.apostillas')}}"> Apostillas</a> 
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="{{route('web.apostillar.naturalizacion')}}">Carta de Naturalización</a></li>
+                                </ul>
+                            </li>
                             <li class="dropdown-submenu"> 
                                 <a class="dropdown-item" href="{{route('web.poderes')}}"> Poderes </a> 
                                 <ul class="dropdown-menu">
