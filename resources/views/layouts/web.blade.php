@@ -195,17 +195,17 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                   <li class="nav-item"> <a class="nav-link" href="{{route('web.index')}}">Inicio</a> </li>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                    id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+                        id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="dropdown-submenu">
-                                <a class="dropdown-item" href="{{route('web.apostillas')}}"> Apostillas</a> 
+                                <a class="dropdown-item dropdown-toggle" href="#"> Apostillas</a> 
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-item"><a href="{{route('web.apostillar.naturalizacion')}}">Carta de Naturalización</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown-submenu"> 
-                                <a class="dropdown-item" href="{{route('web.poderes')}}"> Poderes </a> 
+                                <a class="dropdown-item" href="#"> Poderes </a> 
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-item"><a href="{{route('web.poderesg')}}">Poderes Generales</a></li>
                                     <li class="dropdown-item"><a href="{{route('web.poderesp')}}">Poderes Especiales</a></li>
@@ -460,6 +460,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 <script defer id="scriptbootstrap" ></script> --}}
 
 @yield('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script type="text/javascript">
 
@@ -649,6 +650,20 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         })
         };
 
+        });
+
+        $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+        if (!$(this).next().hasClass('show')) {
+            $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+        }
+        var $subMenu = $(this).next(".dropdown-menu");
+        $subMenu.toggleClass('show');
+
+
+        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+            $('.dropdown-submenu .show').removeClass("show");
+        });
+        return false;
         });
 </script>
 </body>
