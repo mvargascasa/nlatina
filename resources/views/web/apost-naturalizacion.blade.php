@@ -153,6 +153,9 @@
         <li>C&oacute;modo y conveniente: Brindamos citas a medida y hacemos todo lo posible para que su proceso sea c&oacute;modo y conveniente. Nuestras oficinas notariales est&aacute;n convenientemente ubicadas y contamos con todas las herramientas necesarias para llevar a cabo el proceso de forma r&aacute;pida y sencilla.</li>
         <li>Precios competitivos: Nos esforzamos por ofrecer precios justos y competitivos por nuestros servicios sin comprometer su calidad. Entendemos que el proceso de naturalizaci&oacute;n puede ser costoso, pero nos gustar&iacute;a trabajar con usted para encontrar la mejor soluci&oacute;n y hacer que el proceso sea lo m&aacute;s conveniente posible.</li>
     </ol>
+    <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+      <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+      <a class="btn btn-lg btn-warning" href="https://notarialatina.com/contactenos">Solicite su Trámite</a>
 </div>
 
 <!-- Modal -->
