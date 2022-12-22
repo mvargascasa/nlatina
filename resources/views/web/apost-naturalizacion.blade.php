@@ -1,14 +1,14 @@
 @extends('layouts.web')
 @section('header')
 <title>Apostillar Carta de Naturalización</title> 
-<meta name="description"        content="Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte.">       
-<meta name="keywords"           content="Testamentos Notarizados y Apostillados en Queens New York, Testamentos Notarizados y Apostillados near me, notaria latina, notario publico, notary public near me, notario cerca de mi, notario publico near me, notaría nueva york, notary public queens, que es un testamento, para que sirve un testamento, requisitos para testamento, realizar un testamento en new york, notarizar testamento en new york" />
+<meta name="description"        content="¿Quieres entender todo el proceso para tramitar una carta de naturalización?, aquí encontrarás toda la información que necesitas.">       
+<meta name="keywords"           content="carta de naturalizacion, apostillar carta de naturalizacion, como apostillar carta de naturalizacion, donde apostillar carta de naturalizacion, apostillar carta de naturalizacion estados unidos" />
 
-<meta property="og:url"         content="{{route('web.testamentos')}}" />
+<meta property="og:url"         content="{{route('web.apostillar.naturalizacion')}}" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Testamentos Notarizados y Apostillados en Queens New York - Notaria Latina" />
-<meta property="og:description" content="Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte." />
-<meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
+<meta property="og:title"       content="Apostillar Carta de Naturalización - Notaria Latina" />
+<meta property="og:description" content="¿Quieres entender todo el proceso para tramitar una carta de naturalización?, aquí encontrarás toda la información que necesitas." />
+<meta property="og:image"       content="{{asset('img/apostillar-carta-de-naturalizacion.jpg')}}" />
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
