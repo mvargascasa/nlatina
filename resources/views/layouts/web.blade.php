@@ -202,6 +202,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <a class="dropdown-item dropdown-toggle" href="#"> Apostillas</a> 
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-item"><a href="{{route('web.apostillar.naturalizacion')}}">Carta de Naturalización</a></li>
+                                    <li class="dropdown-item"><a href="{{route('web.apostillar.nacimiento')}}">Certificado de Nacimiento</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown-submenu"> 

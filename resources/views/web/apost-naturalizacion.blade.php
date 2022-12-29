@@ -182,7 +182,7 @@ aria-hidden="true">
 @section('script')
 <script>
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('img/apostillar-carta-de-naturalizacion.jpg')";
+        document.getElementById('prisection').style.backgroundImage = "url('{{asset('img/apostillar-carta-de-naturalizacion.jpg')}}')";
     });
   </script>
 @endsection

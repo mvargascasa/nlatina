@@ -137,7 +137,10 @@ Route::get('poder-notarial-financiero', function(){return view('web.podernf');})
 Route::get('/revocatorias', function () {    return view('web.revocatorias');    })->name('web.revocatorias');
 Route::get('/testamentos', function () {    return view('web.testamentos');    })->name('web.testamentos');
 Route::get('/cambio-de-nombre', function() { return view('web.cambionombre');})->name('web.cambionombre');
-Route::get('/apostillar-carta-de-naturalizacion', function(){ return view('web.apost-naturalizacion');})->name('web.apostillar.naturalizacion');
+
+//RUTAS PARA EL SUBMENU APOSTILLAS
+Route::get('/apostillas/apostillar-carta-de-naturalizacion', function(){ return view('web.apost-naturalizacion');})->name('web.apostillar.naturalizacion');
+Route::get('/apostillas/apostillar-certificado-de-nacimiento', function(){ return view('web.apost-certificado-nacimiento');})->name('web.apostillar.nacimiento');
 
 //PARTNERS
 Route::get('/registro', function(){return view('web.partners_registro');})->name('partners.registro');
