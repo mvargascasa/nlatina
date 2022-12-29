@@ -141,6 +141,7 @@ Route::get('/cambio-de-nombre', function() { return view('web.cambionombre');})-
 //RUTAS PARA EL SUBMENU APOSTILLAS
 Route::get('/apostillas/apostillar-carta-de-naturalizacion', function(){ return view('web.apost-naturalizacion');})->name('web.apostillar.naturalizacion');
 Route::get('/apostillas/apostillar-certificado-de-nacimiento', function(){ return view('web.apost-certificado-nacimiento');})->name('web.apostillar.nacimiento');
+Route::get('/apostillas/apostillar-acta-constitutiva', function(){return view('web.apost-acta-constitutiva');})->name('web.apostillar.acta.constitutiva');
 
 //PARTNERS
 Route::get('/registro', function(){return view('web.partners_registro');})->name('partners.registro');
