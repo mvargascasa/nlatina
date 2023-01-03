@@ -143,6 +143,7 @@ Route::get('/apostillar-carta-de-naturalizacion', function(){ return redirect()-
 Route::get('/apostillas/apostillar-carta-de-naturalizacion', function(){ return view('web.apost-naturalizacion');})->name('web.apostillar.naturalizacion');
 Route::get('/apostillas/apostillar-certificado-de-nacimiento', function(){ return view('web.apost-certificado-nacimiento');})->name('web.apostillar.nacimiento');
 Route::get('/apostillas/apostillar-acta-constitutiva', function(){return view('web.apost-acta-constitutiva');})->name('web.apostillar.acta.constitutiva');
+Route::get('/apostillas/apostillar-poder-notarial', function(){ return view('web.apost-poder');})->name('web.apostillar.poder.notarial');
 
 //PARTNERS
 Route::get('/registro', function(){return view('web.partners_registro');})->name('partners.registro');
