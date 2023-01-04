@@ -29,14 +29,14 @@ class RegisterController extends Controller
 
         // $codigoPais = $this->getCodByPais($request->country_residence);
         //CONDICION PARA QUE NO GUARDE LA INFO SI EL CODIGO DE PAIS NO EMPIEZA CON + | BOTS ESTABAN GUARDANDO ESTE CAMPO CON LETRAS ALEATORIAS (TLiCEZogI)
-        if(Str::startsWith($request->codTelfPais, '+')){
+
+        // if(Str::startsWith($request->codTelfPais, '+')){
 
             $request->validate([
                 'name' => 'required',
                 'lastname' => 'required',
                 'country_residence' => 'required',
                 'phone' => 'required',
-                'company' => 'required',
                 'email' => 'required|unique:partners,email|min:10|max:191',
                 'password' => 'required|string|min:8|max:255'
             ]);
@@ -47,7 +47,7 @@ class RegisterController extends Controller
                 'country_residence' => strip_tags($request['country_residence']),
                 'codigo_pais' => strip_tags($request['codTelfPais']),
                 'phone' => strip_tags($request['phone']),
-                'company' => strip_tags($request['company']),
+                // 'company' => strip_tags($request['company']),
                 'email'=> $request['email'],
                 'password'=> bcrypt($request['password']),
                 'slug' => Str::slug('abogado en ' . $request['country_residence'] . ' ' . $nextId, '-')
@@ -65,35 +65,35 @@ class RegisterController extends Controller
     
             return redirect()->route('socios.edit', compact('partner'))->with('success', 'Register complete!');
 
-        } else {
-            //
-            $macaddress = exec('getmac');
-            $ipaddress = $request->ip();
+            // } else {
+                
+            //     $macaddress = exec('getmac');
+            //     $ipaddress = $request->ip();
 
-            $to = "sebas31051999@gmail.com"; //partners@notarialatina.com,hserrano@notarialatina.com
-            $subject = 'Un nuevo registro | ' . date(now());
-            $message = "<br><strong><h2>Información</h2></strong>
-                    <br>Nombre: " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
-                    <br>Nacionalidad: " . strip_tags($request->country_residence) ."
-                    <br>Teléfono: ". strip_tags($request->codTelfPais) . " " .  strip_tags($request->phone) ."
-                    <br>Email: " . strip_tags($request->email)."
-                    <br>Tipo de trabajo: " . strip_tags($request->company)."
-                    <br>Mac Address: " . strip_tags($macaddress) ."
-                    <br>Ip Address: " . strip_tags($ipaddress) . " 
-        ";
+            //     $to = "sebas31051999@gmail.com"; //partners@notarialatina.com,hserrano@notarialatina.com
+            //     $subject = 'Un nuevo registro | ' . date(now());
+            //     $message = "<br><strong><h2>Información</h2></strong>
+            //             <br>Nombre: " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
+            //             <br>Nacionalidad: " . strip_tags($request->country_residence) ."
+            //             <br>Teléfono: ". strip_tags($request->codTelfPais) . " " .  strip_tags($request->phone) ."
+            //             <br>Email: " . strip_tags($request->email)."
+            //             <br>Tipo de trabajo: " . strip_tags($request->company)."
+            //             <br>Mac Address: " . strip_tags($macaddress) ."
+            //             <br>Ip Address: " . strip_tags($ipaddress) . " 
+            //     ";
 
-        $header = 'From: <partners@notarialatina.com>' . "\r\n" .
-                'MIME-Version: 1.0' . "\r\n".
-                'Content-type:text/html;charset=UTF-8' . "\r\n"
-                ;
-        
-            mail($to, $subject, $message, $header);
-
-            $request->session()->flash('success', 'Hemos enviado tu información');
-
-            return back();
+            //     $header = 'From: <partners@notarialatina.com>' . "\r\n" .
+            //         'MIME-Version: 1.0' . "\r\n".
+            //         'Content-type:text/html;charset=UTF-8' . "\r\n"
+            //         ;
             
-        }
+            //     mail($to, $subject, $message, $header);
+
+            //     $request->session()->flash('success', 'Hemos enviado tu información');
+
+            //     return back();
+                
+            // }
 
     }
 

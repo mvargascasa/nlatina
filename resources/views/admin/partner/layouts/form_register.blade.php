@@ -13,8 +13,8 @@
             </div>
         @enderror
         <div id="divpais" class="form-group mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-            <select style="font-size: 14px; width: 49%" name="country_residence" id="country_residence" class="form-control" required>
-                <option value="">País</option>
+            <select style="font-size: 14px; width: 93%" name="country_residence" id="country_residence" class="form-control" required>
+                <option value="">País de residencia</option>
                 <option value="Argentina">Argentina</option>
                 <option value="Bolivia">Bolivia</option>
                 <option value="Chile">Chile</option>
@@ -34,9 +34,21 @@
                 <option value="Uruguay">Uruguay</option>
                 <option value="Venezuela">Venezuela</option>  
             </select>
-            <div id="divcodigoandtelefono" class="d-flex" style="width: 51%">
-                <input type="text" style="margin-left: 5px; background-color: #ffffff; font-size: 14px; border-radius: 5px 0px 0px 5px; width: 45%" name="codTelfPais" id="codTelfPais" class="form-control" readonly>
+            {{-- <div id="divcodigoandtelefono" class="d-flex align-items-center" style="width: 51%">
+                <div class="bg-white ml-1 h-100 pt-1 px-2" style="border-radius: 5px 0px 0px 5px; height: 100% !important">
+                    <img id="imgcodcountry" alt="">
+                </div>
+                <input type="text" style="background-color: #ffffff; font-size: 14px; border-radius: 0px 0px 0px 0px; border-left: none; width: 35%; padding-left: 0px" name="codTelfPais" id="codTelfPais" class="form-control" readonly>
                 <input style="margin-left: 0px; font-size: 14px; border-radius: 0px 5px 5px 0px;" type="number" name="phone" class="form-control" id="telefono" placeholder="Teléfono" autocomplete="off" value="{{ old('phone') }}" required>
+            </div> --}}
+            <div class="input-group" id="divcodigoandtelefono" style="margin-left: 5px; background-color: white !important; border-radius: 5px 5px 5px 5px !important">
+                <div class="input-group-prepend" style="border-right: none !important; background-color: white !important;">
+                  <img class="input-group-text" width="100%" height="35px" style="padding-left: 3px; padding-right: 3px; background-color: white !important;" id="imgcodcountry" alt="">
+                </div>
+                <div style="width: 55px; border-right: none !important; background-color: white !important" class="text-center">
+                    <input type="text" class="form-control" name="codTelfPais" id="codTelfPais" style="font-size: 14px; padding-left: 0px; padding-right: 0px; border-left: none; background-color: white !important; border-radius: 0px" readonly>
+                </div>
+                <input type="number" name="phone" class="form-control" id="telefono" placeholder="Teléfono" style="font-size: 14px" value="{{ old('phone') }}" required>
             </div>
         </div>
         @error('country_residence')
@@ -49,15 +61,14 @@
                 <span class="text-danger">{{ $message }}</span>
             </div>
         @enderror
-        <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
-            {{-- <input type="text" class="form-control" placeholder="Empresa" name="company" autocomplete="off" value="{{ old('company') }}" required> --}}
+        {{-- <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
             <select style="font-size: 14px" name="company" id="company" class="form-control" required>
                 <option value="Empresa">Empresa</option>
                 <option value="Libre Ejercicio">Libre Ejercicio</option>
             </select>
-        </div>
+        </div> --}}
         <div class="mb-2" style="margin-left: 5%; margin-right: 5%">
-            <input style="font-size: 14px" type="email" class="form-control" placeholder="Email" name="email" autocomplete="off" value="{{ old('email') }}" required>
+            <input style="font-size: 14px" type="email" class="form-control" placeholder="Correo electrónico" name="email" autocomplete="off" value="{{ old('email') }}" required>
         </div>
         @error('email')
             <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">

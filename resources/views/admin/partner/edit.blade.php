@@ -217,11 +217,11 @@
                                                 @else
                                                     {!! Form::label('img_profile', 'Imagen de perfil *', ['id' => 'Imagen de perfil', 'style' => 'color: red; font-weight: bold']) !!}
                                                 @endif
-                                                @if($partner->img_profile != null)
+                                                {{-- @if($partner->img_profile != null) --}}
                                                 {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);']) !!}
-                                                @else
+                                                {{-- @else
                                                 {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);', 'required']) !!}
-                                                @endif
+                                                @endif --}}
                                                 <hr>
                                             </div>
                                         </div>
@@ -258,7 +258,7 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-3 col-6">
                                                     <div class="form-group">
                                                         @if ($partner->name != null)
                                                             {!! Form::label('name', 'Nombre') !!}
@@ -272,7 +272,7 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-3 col-6">
                                                     <div class="form-group">
                                                         @if ($partner->lastname != null)
                                                             {!! Form::label('lastname', 'Apellido') !!}
@@ -317,17 +317,22 @@
                                                     @endif
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 col-6">
                                                     <div class="form-group">
                                                         {!! Form::label('codigo_pais', 'Código País') !!}
                                                         @if ($partner->codigo_pais != null)
-                                                        {!! Form::text('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'readonly', 'style' => 'background-color:#ffffff']) !!}
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <img class="input-group-text" class="img-fluid" src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="">
+                                                            </div>
+                                                            {!! Form::text('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'readonly', 'style' => 'background-color:#ffffff', 'aria-describedby' => 'basic-addon1']) !!}
+                                                        </div>
                                                         @else
                                                         {!! Form::text('codigo_pais', null, ['class' => 'form-control', 'readonly', 'style' => 'background-color:#ffffff']) !!}
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 col-6">
                                                     <div class="form-group">
                                                         @if ($partner->phone != null)
                                                             {!! Form::label('phone', 'Telefono', ['id' => 'Teléfono']) !!}
@@ -448,7 +453,7 @@
                                                 @if ($partner->numlicencia != null)
                                                 {!! Form::text('numlicencia', $partner->numlicencia, ['class' => 'form-control']) !!}
                                                 @else
-                                                {!! Form::text('numlicencia', null, ['class' => 'form-control', 'required']) !!}
+                                                {!! Form::text('numlicencia', null, ['class' => 'form-control']) !!}
                                                 @endif
                                             </div>
                                         </div>
@@ -490,7 +495,7 @@
                                                 @if ($partner->address != null)
                                                 {!! Form::text('address', $partner->address, ['class' => 'form-control']) !!}
                                                 @else
-                                                {!! Form::text('address', null, ['class' => 'form-control', 'required']) !!}
+                                                {!! Form::text('address', null, ['class' => 'form-control']) !!}
                                                 @endif
                                             </div>
                                         </div>
@@ -507,7 +512,7 @@
                                                 @if ($partner->state != null)
                                                 {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
                                                 @else
-                                                {!! Form::text('state', null, ['class' => 'form-control', 'required']) !!}
+                                                {!! Form::text('state', null, ['class' => 'form-control']) !!}
                                                 @endif
                                             </div>
                                         </div>
@@ -521,7 +526,7 @@
                                                 @if ($partner->city != null)
                                                 {!! Form::text('city', $partner->city, ['class' => 'form-control']) !!}    
                                                 @else
-                                                {!! Form::text('city', null, ['class' => 'form-control', 'required']) !!}
+                                                {!! Form::text('city', null, ['class' => 'form-control']) !!}
                                                 @endif
                                             </div>
                                         </div>

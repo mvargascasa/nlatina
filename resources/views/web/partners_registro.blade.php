@@ -221,7 +221,8 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
             width: 92% !important;
             margin-top: 9px;
             margin-bottom: -17px;
-            margin-left: 3.5% !important;
+            margin-left: 4.8% !important;
+            padding-right: 8px; 
         }
     }
     .titulo{
@@ -237,9 +238,9 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         align-items: center;
     }
 
-    #telefono{
+    /* #telefono{
         margin-left: 2.5px;
-    }
+    } */
 
     #nacionalidad{
         margin-right: 2.5px;
@@ -447,6 +448,12 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
                 case "Venezuela":codigo = "+58";break;
             }
             inputCodPais.value = codigo;
+            setimgcodcountry(selectPaisResidencia.value);
+        }
+
+        function setimgcodcountry(country){
+            let country_cast = country.replace(/\s+/g, '').toLowerCase();
+            document.getElementById('imgcodcountry').src = "{{asset('img/partners')}}"+"/"+country_cast+".png";
         }
 
         function evitarSpam(){
