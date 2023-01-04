@@ -299,7 +299,7 @@
                     <div style="color: #9A7A2E">
                         @isset($partner->address)
                             <h3 style="font-weight: bold; font-size: 18px"><i class="fas fa-map-marker-alt"></i> Dirección</h3>
-                            <a style="color: #9A7A2E" target="_blank" rel="nofollow" href="https://www.google.com.ec/maps/place/{{$partner->address}}">{{ $partner->address}}</a>
+                            <p style="color: #9A7A2E">{{$partner->address}}</p>
                         @endisset
                         @if($partner->website != null && Str::startsWith($partner->website, 'https'))
                             <h3 class="mt-2" style="font-weight: bold; font-size: 18px"><i class="fas fa-globe"></i> Sitio web</h3>
