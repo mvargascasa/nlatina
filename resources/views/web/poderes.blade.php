@@ -262,7 +262,9 @@
           <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
       </ul>
       @if($isMobile)
-        <iframe class="float-right mx-5 mb-4 rounded shadow" id="iframevideo" width="300" height="200"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="d-flex justify-content-center">
+          <iframe class="float-right mx-5 mb-4 rounded shadow" id="iframevideo" width="300" height="200"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
       @endif
       <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
           <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
