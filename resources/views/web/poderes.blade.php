@@ -70,6 +70,12 @@
 
 @section('content')
 
+@php
+    $detect = new Detection\MobileDetect;
+    $isMobile = false;
+    if($detect->isMobile()) $isMobile = true;
+@endphp
+
 <section id="prisection" style="background-size: cover;background-position: left center; background-repeat: no-repeat;">
     <div>
 
@@ -85,10 +91,6 @@
       </div>
     </div>
   </section>
-
-  {{-- <section style="width:100%; text-align:center; margin-top:10px;">
-    <iframe id="iframevideo" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </section> --}}
 
 {{-- <div class="container pt-4">
             <h2 style="font-weight: 500; font-size: 28px">¿Qué es un poder notarial?</h2>
@@ -149,8 +151,11 @@
             <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
 </div> --}}
 
-<div class="container pt-4">
-  <h2 style="font-weight: 500; font-size: 28px">¿Qué es un poder notarial?</h2>
+<div class="container pt-5 text-justify">
+    @if(!$isMobile)
+        <iframe class="float-right mx-5 mb-4 rounded shadow" id="iframevideo" width="500" height="300" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    @endif
+        <h2 style="font-weight: 500; font-size: 28px">¿Qué es un poder notarial?</h2>
           <p class="text-muted">Un poder o carta poder, es un documento legal que se utiliza para otorgar control total sobre sus activos a otra persona
               si usted no pudiera estar presente. Por lo tanto le permite realizar trámites a distancia siendo una solución para gestionar sus bienes, trámites
               bancarios y otras tareas importantes.</p>
@@ -189,7 +194,7 @@
               <li>Hacer reclamos legales</li>
               <li>Procedimientos legales en su nombre.</li>
 
-              Para más información sobre apostillas <a href="https://notarialatina.com/apostillas">Servicio de Apostillas</a>
+              Para más información sobre apostillas consulte el siguiente enlace <a href="https://notarialatina.com/apostillas"><i>Servicio de Apostillas</i></a>
           </ul>
           <h2 style="font-weight: 500; font-size: 28px">¿Cómo elegir un apoderado?</h2>
           <p class="text-muted">
@@ -256,9 +261,14 @@
           <li>El documento digital estará disponible en 24 horas.</li>
           <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
       </ul>
+      @if($isMobile)
+        <iframe class="float-right mx-5 mb-4 rounded shadow" id="iframevideo" width="300" height="200"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      @endif
       <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
           <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
-          <a class="btn btn-lg btn-warning" href="https://notarialatina.com/contactenos">Solicite su Trámite</a>
+          <div class="text-center">
+              <a class="btn btn-lg btn-warning" href="https://notarialatina.com/contactenos">Solicite su Trámite</a>
+          </div>
 </div>
 
 <!-- Modal -->
@@ -287,6 +297,10 @@ aria-hidden="true">
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('img/poder.jpg')";
     });
+
+    setTimeout(() => {
+        document.getElementById('iframevideo').src = "https://www.youtube.com/embed/AHE8EC0wsNA";
+    }, 3000);
   </script>
 @endsection
 
