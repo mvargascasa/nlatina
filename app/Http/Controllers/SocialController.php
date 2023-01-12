@@ -21,7 +21,7 @@ class SocialController extends Controller
             $statement = DB::select("SHOW TABLE STATUS LIKE 'partners'");
             $nextId = $statement[0]->Auto_increment;
 
-            $userSocial = Socialite::driver('facebook')->user();
+            $userSocial = Socialite::driver('facebook')->stateless()->user();
             $partner = Partner::where(['email' => $userSocial->email])->first();
     
             if($partner) {
