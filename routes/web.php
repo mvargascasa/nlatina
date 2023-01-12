@@ -14,6 +14,10 @@ Route::get('/test', 'LandingController@test');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//ROUTE FOR LOGIN WITH FACEBOOK
+Route::get('login/facebook','SocialController@facebookRedirect');
+Route::get('login/facebook/callback', 'SocialController@loginWithFacebook');
+
 // CATEGORIES
 Route::get('/home/categories', 'CategoryController@index')->name('category.index');
 Route::get('/home/category/create', 'CategoryController@create')->name('category.create');
@@ -112,6 +116,9 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
 
     Route::get('/password/reset/{token}/{email}', 'ResetPasswordController@showResetForm')->name('socio.password.reset');
     Route::post('/password/reset', 'ResetPasswordController@reset')->name('socio.password.update');
+    
+    //change password
+    Route::post('/changepassword', 'HomeController@changepassword')->name('partner.change.password')->middleware('auth:partner');
 
     Route::get('/email/verify', 'VerificationController@show')->name('verification.notice');
     Route::get('/email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify')->middleware(['signed']);

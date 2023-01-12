@@ -13,6 +13,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Stevebauman\Purify\Facades\Purify;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -266,5 +267,14 @@ class HomeController extends Controller
         $customers = $partner->customers;
         return view('admin.partner.customersview', compact('customers', 'isMobile'));
 
+    }
+
+    public function changepassword(Request $request){
+        $partner = Partner::where('id', Auth::guard('partner')->user()->id)->first();
+
+        $partner->password = bcrypt($request->password);
+        $partner->save();
+
+        return redirect()->route('socios.edit', $partner);
     }
 }

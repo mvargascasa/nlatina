@@ -98,7 +98,19 @@
             {{-- class="g-recaptcha" data-sitekey="6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8" data-callback='onSubmit' data-action='submit'--}}
         </div>
     </form>
+    <div class="text-white">
+        <div class="text-white">
+            <hr class="bg-white mx-5">
+            <p class="font-weight-bold">O</p>
+        </div>
+        <div class="mx-5 mb-4">
+            <a class="btn" href="{{ url('login/facebook') }}" style="background: #3B5499; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                Crear Cuenta con Facebook
+            </a>
+            <hr class="bg-white">
+        </div>
+    </div>
     <div class="pb-3">
-        <p class="text-white"><b>Si ya esta registrado puede <a href="{{route('partner.showform')}}">Iniciar Sesión</a></b></p>
+        <p class="text-white" style="font-size: 20px"><b>¿Ya tiene una cuenta? <a href="{{route('partner.showform')}}">Iniciar Sesión</a></b></p>
     </div>
 </div>

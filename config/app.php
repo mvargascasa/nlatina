@@ -181,6 +181,7 @@ return [
         willvincent\Rateable\RateableServiceProvider::class,
 
         Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -237,7 +238,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
         'Purify' => Stevebauman\Purify\Facades\Purify::class,
-
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

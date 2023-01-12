@@ -635,7 +635,7 @@
         </div>
     </div>
 
-    @if ($partner->terminos_verified_at == null)
+    @if ($partner->terminos_verified_at == null && $partner->password != null)
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $("document").ready(function(){
@@ -911,7 +911,7 @@
     {!! Form::close() !!}
 
     {{-- @if ($partner->terminos_verified_at == null) --}}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             $("document").ready(function(){
                 setTimeout(() => {
@@ -921,7 +921,7 @@
                     }
                 }, 11000);
             });
-        </script>
+        </script> --}}
     {{-- @endif --}}
     
     <div class="modal fade" id="modalFollowInstagram">
@@ -951,6 +951,42 @@
           </div>
         </div>
     </div>
+
+     {{-- MODAL PARA CAMBIO DE PASSWORD --}}
+     <div class="modal fade" id="modalChangePassword" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <form action="{{route('partner.change.password')}}" method="POST" id="formchangepassword">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: #002542; color: #ffffff">
+              <h5 class="modal-title" id="staticBackdropLabel">Creación de Contraseña</h5>
+            </div>
+            <div class="modal-body">
+                <p class="font-weight-bold h5">Aviso:</p>
+                <p>Estimado Usuario, por seguridad de la cuenta cree una contraseña la cual utilizará cada vez que Inicie Sesión</p>
+                <ul>
+                    <li class="text-danger font-weight-bold">Mínimo 8 caracteres</li>
+                </ul>
+                    @csrf
+                    <div class="form-group">
+                        <input type="text" name="password" id="password" class="form-control rounded-0" placeholder="Ingrese una contraseña" minlength="8" required>
+                    </div>
+                    <div class="form-group">
+                        <p class="font-weight-normal">Ingrese nuevamente la contraseña</p>
+                        <input type="text" id="verifypassword" class="form-control rounded-0" placeholder="Confirmar contraseña" minlength="8" required>
+                    </div>
+                    <div>
+                        <p id="infoverifypassword">
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button id="btnchangepassword" onclick="confirmPassword(event)" class="btn" style="background-color: #002542; color: #ffffff">Crear Contraseña</button>
+                </div>
+            </div>
+        </form>
+        </div>
+      </div>
+      {{-- TERMINA MODAL PARA CAMBIO DE PASSWORD --}}
     
 @endsection
 
@@ -984,6 +1020,11 @@
             comprobar();
             setSrcImageWelcome();
             deshabilitarCheckBox();
+            if("{{$partner->password}}" == null || "{{$partner->password}}" == ""){
+                $("document").ready(function(){
+                    $('#modalChangePassword').modal('toggle');
+                });
+            }
         });
 
         document.addEventListener("DOMContentLoaded", function(event) {
@@ -1092,7 +1133,23 @@
              }, 2000);
         }
 
-
+        function confirmPassword(event){
+            event.preventDefault();
+            let password = document.getElementById('password').value;
+            let verifypassword = document.getElementById('verifypassword').value;
+            let infoverifypassword = document.getElementById('infoverifypassword');
+            if(password != verifypassword){
+                infoverifypassword.style.color = "red";
+                infoverifypassword.innerHTML = "Las contraseñas no coinciden ⚠";
+            } else if((password != "" && verifypassword != "") && (password == verifypassword)) {
+                infoverifypassword.style.color = "green";
+                infoverifypassword.innerHTML = "¡Éxito! Las contraseñas coinciden ✅";
+                document.getElementById('formchangepassword').submit();
+            } else if(password == "" || verifypassword == ""){
+                infoverifypassword.style.color = "red";
+                infoverifypassword.innerHTML = "Complete los campos ⚠";
+            }
+        }
     </script>
 @endsection
 
