@@ -60,6 +60,7 @@
             <div class="float-right mr-1">
                 <button class="btn btn-primary" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
                     Ver Clientes
+                    <span class="bg-white text-dark rounded px-1 font-weight-bold">{{count($partner->customers)}}</span>
                 </button>
             </div>
         </div>

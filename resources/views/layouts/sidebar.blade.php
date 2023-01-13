@@ -27,6 +27,9 @@
             <li class="nav-item @if(Request::is('home/notications*')) bg-secondary @endif">
                 <a class="nav-link text-light d-flex" href="{{ route('partner.index.notifications') }}">Notificaciones <div class="bg-danger float-right mx-3 px-2 rounded">@if($count_notifications > 0) {{$count_notifications}} @else 0 @endif</div></a>
             </li>
+            <li class="nav-item @if(Request::is('home/reports*')) bg-secondary @endif">
+                <a class="nav-link text-light d-flex" href="{{route('home.partner.report.index')}}">Reportes</a>
+            </li>
         </ul>
     </div>
 </nav>

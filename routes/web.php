@@ -57,6 +57,10 @@ Route::post('home/partners/send/email/masivo', 'PartnerController@sendEmailMasiv
 //PRUEBA RUTA PARA SETEAR UN NUEVO SLUG EN EL PARTNER
 Route::get('/home/partners/setslug/{partner}', 'PartnerController@setslug')->name('partner.set.slug');
 
+//REPORTS
+Route::get('home/reports', 'ReportController@index')->name('home.partner.report.index');
+Route::get('home/reports/leads-partner', 'ReportController@indexleads')->name('home.partner.report.index.leads');
+
 // THANK
 Route::get('/thank', 'LandingController@thank')->name('landing.thank');
 Route::post('/thank', 'LandingController@thankpost')->name('landing.thankpost');
