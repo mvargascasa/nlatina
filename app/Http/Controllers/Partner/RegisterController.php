@@ -139,6 +139,30 @@ class RegisterController extends Controller
                         No olvide <a href='https://notarialatina.com/partners/login'>Iniciar sesión</a> en su cuenta con su correo electrónico y completar toda su información para que clientes potenciales consultar por sus servicios.
                         Se verificará que sus datos estén correctamente completos para que pueda ser publicado en nuestro sitio oficial y de esta manera pueda llegar a futuros clientes.
                     </p>
+                    <div>
+                        <div style='background-color: #122944; color: #ffffff; text-align: center;'>
+                            <h3 style='padding-top: 10px; padding-bottom: 10px;'>Le contamos sobre nuestro proyecto 'Partners Notaria Latina'</h3>
+                        </div>
+                        <div style='line-height: 30px;'>
+                            <p>
+                                Nosotros somos una Notaría que estamos ubicados en Estados Unidos en tres estados New York, New Jersey y Florida. Con este gran proyecto esperamos que los abogados que se encuentran debidamente inscritos 
+                                abran su cartera de clientes a nivel internacional, por tanto el objetivo de nuestra empresa es brindarles a nuestros abogados potenciales clientes a los que puedan ayudar resolviendo sus problemas jurídicos
+                                dependiendo del área de especialización en la que cada una de nuestros abogados labore.
+                            </p>
+                            <div style='background-color: #122944; color: #ffffff; text-align: center;'>
+                                <h3 style='padding-top: 10px; padding-bottom: 10px;'>Beneficios de convertirse en nuestro Partner</h3>
+                            </div>
+                            <p>
+                                Sus beneficios son amplios, podrá contar con potenciales clientes tanto en su país natal como de Estados Unidos quienes requeriran sus servicios. Le brindamos todos los datos de sus clientes para que se pueda comunicar de una manera fácil y eficaz. Los demás beneficios podrá gozarlos después de completar su perfil.
+                            </p>
+                            <p>
+                                Es importante mencionar que no cobramos por ningún tipo de honorarios, por tanto, nuestro servicio es totalmente gratuito.
+                            </p>
+                            <p>
+                                ¡Qué espera! Complete toda su información y proseguiremos a la publicación de su perfil.
+                            </p>
+                        </div>
+                    </div>
                     <div style='background-color: #C30000; color: #ffffff;  border-radius: 5px;'>
                         <p style='padding-top: 5px; padding-bottom: 5px; margin-left: 5px; margin-right: 5px;'>⚠ No olvide completar toda su información y cargar una fotografía personal</p>
                     </div>
