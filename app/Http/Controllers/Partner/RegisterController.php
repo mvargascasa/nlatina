@@ -123,28 +123,28 @@ class RegisterController extends Controller
     public function sendEmailPartner(Partner $partner){
         $subject = 'Registro Exitoso - Notaria Latina';
         $message = "
-        <div>
+        <div style='margin-left: 5%; margin-right: 5%; padding-left: 5%; padding-right: 5%; border: 0.5px solid #9b9b9b; border-radius: 5px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; background-color: #F4F4F4; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;'>
             <div>
-                <div style='text-align:center'>
+                <div style='text-align:center; margin-bottom: 10px;'>
                     <img style='margin-top:20px; width:150px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
                 </div>
             </div>
             <div>
-                <h1 style='text-align:center'>Bienvenido " . strip_tags($partner->name) . " " . strip_tags($partner->lastname)  ."</h1>
-                <h5>Ya formas parte de Notaria Latina 👨‍⚖️</h5>
-                <h5>
-                    No olvides de <a href='https://notarialatina.com/partners/login'>Iniciar sesión</a> y completar toda tu información para que las personas puedan encontrarte y consultar por tus servicios.
-                    Se verificará que tus datos estén correctamente completos para que puedas ser publicado en nuestro sitio oficial y de esta manera puedas llegar a tus futuros clientes. 
-                </h5>
-                <h4>
-                    A continuación te mostramos los pasos necesarios para que tu perfil sea habilitado 👇
-                </h4>  
-            </div>
-            <div style='text-align:center'>
-                <img style='margin-top:20px; width:400px' src='https://notarialatina.com/img/partners/partner-bienvenida.jpg' alt='IMAGEN NOTARIA LATINA'>
-            </div>
-            <div style='margin-top:10px'>
-                <h4>Notaria Latina agradece tu suscripción y te desea lo mejor! 😉⚖</h4>
+                <div style='background-color: #122944; color: #ffffff; padding-top: 5px; padding-bottom: 5px;'>
+                    <h1 style='text-align:center'>Bienvenido Sebastian Armijos</h1>
+                </div>
+                <div style='font-size: 20px;'>
+                    <p>¡Felicidades! Ya forma parte de Notaria Latina 👨‍⚖️</p>
+                    <p style='line-height: 30px;'>
+                        No olvide <a href='https://notarialatina.com/partners/login'>Iniciar sesión</a> en su cuenta con su correo electrónico y completar toda su información para que clientes potenciales consultar por sus servicios.
+                        Se verificará que sus datos estén correctamente completos para que pueda ser publicado en nuestro sitio oficial y de esta manera pueda llegar a futuros clientes.
+                    </p>
+                    <div style='background-color: #C30000; color: #ffffff;  border-radius: 5px;'>
+                        <p style='padding-top: 5px; padding-bottom: 5px; margin-left: 5px; margin-right: 5px;'>⚠ No olvide completar toda su información y cargar una fotografía personal</p>
+                    </div>
+                    <br>
+                    <p style='color: #6a6a6a;'><i>¡Notaria Latina agradece tu suscripción y te desea lo mejor!</i> ⚖</p>
+                </div>
             </div>
         </div>
         ";
