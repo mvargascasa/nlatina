@@ -25,7 +25,7 @@
                         </thead>
                         <tbody>
                           @foreach ($partners as $partner)
-                            @if(count($partner->customers) > 0)
+                            {{-- @if(count($partner->customers) > 0) --}}
                               <tr>
                                 <th scope="row">{{$partner->id}}</th>
                                 <td>{{$partner->name . " " . $partner->lastname}}</td>
@@ -33,7 +33,7 @@
                                 <td>{{$partner->country_residence}}</td>
                                 <td>{{count($partner->customers)}}</td>
                               </tr>
-                            @endif
+                            {{-- @endif --}}
                           @endforeach
                         </tbody>
                       </table>

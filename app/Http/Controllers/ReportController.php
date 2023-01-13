@@ -17,7 +17,7 @@ class ReportController extends Controller
     }
 
     public function indexleads(){
-        $partners = Partner::with('customers')->orderBy('id', 'desc')->get();
+        $partners = Partner::with('customers')->whereHas('customers')->orderBy('id', 'desc')->get();
         // $partners = Partner::with(['customers' => function($query){
         //     $query->groupBy('partners.id');
         // }])->get();
