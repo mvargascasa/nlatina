@@ -131,7 +131,7 @@ class RegisterController extends Controller
             </div>
             <div>
                 <div style='background-color: #122944; color: #ffffff; padding-top: 5px; padding-bottom: 5px;'>
-                    <h1 style='text-align:center'>Bienvenido Sebastian Armijos</h1>
+                    <h1 style='text-align:center'>Bienvenido ". $partner->name . " " . $partner->lastname . "</h1>
                 </div>
                 <div style='font-size: 20px;'>
                     <p>¡Felicidades! Ya forma parte de Notaria Latina 👨‍⚖️</p>
