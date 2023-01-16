@@ -28,10 +28,16 @@
                             {{-- @if(count($partner->customers) > 0) --}}
                               <tr>
                                 <th scope="row">{{$partner->id}}</th>
-                                <td>{{$partner->name . " " . $partner->lastname}}</td>
+                                <td>
+                                  <a href="{{route('partner.show.id', $partner->id)}}">{{$partner->name . " " . $partner->lastname}}</a>
+                                </td>
                                 <td>{{$partner->email}}</td>
                                 <td>{{$partner->country_residence}}</td>
-                                <td>{{count($partner->customers)}}</td>
+                                <td>
+                                  <a href="{{route('home.report.show.leads.partner', $partner->id)}}">
+                                    {{count($partner->customers)}}
+                                  </a>
+                                </td>
                               </tr>
                             {{-- @endif --}}
                           @endforeach

@@ -18,10 +18,14 @@ class ReportController extends Controller
 
     public function indexleads(){
         $partners = Partner::with('customers')->whereHas('customers')->orderBy('id', 'desc')->get();
-        // $partners = Partner::with(['customers' => function($query){
-        //     $query->groupBy('partners.id');
-        // }])->get();
-        $totalCustomers = Customer::count();
-        return view('admin.report.leadspartner.index', compact('partners', 'totalCustomers'));
+        return view('admin.report.leadspartner.index', compact('partners'));
+    }
+
+    public function showleadspartner($id){
+        $partner = Partner::where('id', $id)->first();
+        $customers = Customer::with('partners')->whereHas('partners', function($query) use ($id){
+            $query->where('partner_id', $id);
+        })->get();
+        return view('admin.report.leadspartner.showleads', compact('partner', 'customers'));
     }
 }

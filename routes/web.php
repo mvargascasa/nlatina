@@ -60,6 +60,7 @@ Route::get('/home/partners/setslug/{partner}', 'PartnerController@setslug')->nam
 //REPORTS
 Route::get('home/reports', 'ReportController@index')->name('home.partner.report.index');
 Route::get('home/reports/leads-partner', 'ReportController@indexleads')->name('home.partner.report.index.leads');
+Route::get('home/reports/leads-partner/{id}', 'ReportController@showleadspartner')->name('home.report.show.leads.partner');
 
 // THANK
 Route::get('/thank', 'LandingController@thank')->name('landing.thank');
