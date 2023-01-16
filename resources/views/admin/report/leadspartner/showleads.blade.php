@@ -12,7 +12,7 @@
           </div>
           <div class="row">
             @foreach ($customers as $customer)
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-2">
               <div class="card rounded-0 w-auto h-100 shadow">
                 <div class="card-header" style="background-color: #002542; color: #ffffff">    
                   <i class="fa-solid fa-user"></i> {{$customer->nombre}}
