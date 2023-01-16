@@ -136,7 +136,7 @@ class RegisterController extends Controller
                 <div style='font-size: 20px;'>
                     <p>¡Felicidades! Ya forma parte de Notaria Latina 👨‍⚖️</p>
                     <p style='line-height: 30px;'>
-                        No olvide <a href='https://notarialatina.com/partners/login'>Iniciar sesión</a> en su cuenta con su correo electrónico y completar toda su información para que clientes potenciales consultar por sus servicios.
+                        No olvide <a href='https://notarialatina.com/partners/login'>Iniciar sesión</a> en su cuenta con su correo electrónico y completar toda su información para que clientes potenciales puedan consultar por sus servicios.
                         Se verificará que sus datos estén correctamente completos para que pueda ser publicado en nuestro sitio oficial y de esta manera pueda llegar a futuros clientes.
                     </p>
                     <div>
