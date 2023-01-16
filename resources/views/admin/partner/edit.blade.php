@@ -570,7 +570,7 @@
                                                 @endforeach
                                             </div>
                                     </div>
-                                    <div class="row">
+                                    {{-- <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <div class="d-flex">
@@ -593,7 +593,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="form-group">
                                         <div class="d-flex">
                                             @if ($partner->biography_html != null)
@@ -1015,7 +1015,7 @@
         }
 
         window.addEventListener('load', function(){
-            countChars();
+            //countChars();
             showInputNameCompany();
             comprobar();
             setSrcImageWelcome();
@@ -1069,10 +1069,10 @@
             inputCodPais.value = codigo;
         }
 
-        function countChars(){
-            obj = document.getElementById('specialty');
-            document.getElementById("charNum").innerHTML = obj.value.length+' caracteres'; 
-        }
+        // function countChars(){
+        //     obj = document.getElementById('specialty');
+        //     document.getElementById("charNum").innerHTML = obj.value.length+' caracteres'; 
+        // }
 
         function showInputNameCompany(){
             var selectCompany = document.getElementById('company').value;
