@@ -447,7 +447,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
                 case "Uruguay":codigo = "+598";break;
                 case "Venezuela":codigo = "+58";break;
             }
-            inputCodPais.value = codigo;
+            inputCodPais.innerHTML = codigo;
             setimgcodcountry(selectPaisResidencia.value);
         }
 

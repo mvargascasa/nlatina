@@ -41,7 +41,7 @@
                 <input type="text" style="background-color: #ffffff; font-size: 14px; border-radius: 0px 0px 0px 0px; border-left: none; width: 35%; padding-left: 0px" name="codTelfPais" id="codTelfPais" class="form-control" readonly>
                 <input style="margin-left: 0px; font-size: 14px; border-radius: 0px 5px 5px 0px;" type="number" name="phone" class="form-control" id="telefono" placeholder="Teléfono" autocomplete="off" value="{{ old('phone') }}" required>
             </div> --}}
-            <div class="input-group" id="divcodigoandtelefono" style="margin-left: 5px; background-color: white !important; border-radius: 5px 5px 5px 5px !important">
+            {{-- <div class="input-group" id="divcodigoandtelefono" style="margin-left: 5px; background-color: white !important; border-radius: 5px 5px 5px 5px !important">
                 <div class="input-group-prepend" style="border-right: none !important; background-color: white !important;">
                   <img class="input-group-text" width="100%" height="35px" style="padding-left: 3px; padding-right: 3px; background-color: white !important;" id="imgcodcountry" alt="">
                 </div>
@@ -49,7 +49,13 @@
                     <input type="text" class="form-control" name="codTelfPais" id="codTelfPais" style="font-size: 14px; padding-left: 0px; padding-right: 0px; border-left: none; background-color: white !important; border-radius: 0px" readonly>
                 </div>
                 <input type="number" name="phone" class="form-control" id="telefono" placeholder="Teléfono" style="font-size: 14px" value="{{ old('phone') }}" required>
-            </div>
+            </div> --}}
+            <div class="input-group">
+                <div class="input-group-prepend ml-1">
+                    <span class="input-group-text bg-white"><img style="margin-left: -5px" width="auto" height="20px" id="imgcodcountry"><span style="font-size: 14px" class="ml-1 font-weight-bold" id="codTelfPais"></span></span>
+                </div>
+                <input style="font-size: 14px" type="number" class="form-control" name="phone" placeholder="Teléfono" aria-describedby="basic-addon3">
+              </div>
         </div>
         @error('country_residence')
             <div class="mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">

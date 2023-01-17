@@ -24,6 +24,8 @@ class RegisterController extends Controller
 
     public function register(Request $request){
 
+        $codpais = $this->getCodByPais($request->country_residence);
+
         $statement = DB::select("SHOW TABLE STATUS LIKE 'partners'");
         $nextId = $statement[0]->Auto_increment;
 
@@ -45,7 +47,7 @@ class RegisterController extends Controller
                 'name' => strip_tags($request['name']), 
                 'lastname' => strip_tags($request['lastname']),
                 'country_residence' => strip_tags($request['country_residence']),
-                'codigo_pais' => strip_tags($request['codTelfPais']),
+                'codigo_pais' => strip_tags($codpais),
                 'phone' => strip_tags($request['phone']),
                 // 'company' => strip_tags($request['company']),
                 'email'=> $request['email'],
