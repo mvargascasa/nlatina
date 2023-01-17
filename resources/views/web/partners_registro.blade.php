@@ -208,22 +208,19 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         .parrafoBeneficios{
             margin: 0px !important;
         }
-        #divpais{
-            display: inline !important;
-        }
-        #country_residence{
+        /* #country_residence{
             width: 90% !important;
             margin-left: 5% !important;
             margin-right: 5% !important;
             margin-top: -25px !important;
-        }
-        #divcodigoandtelefono{
+        } */
+        /* #divcodigoandtelefono{
             width: 92% !important;
             margin-top: 9px;
             margin-bottom: -17px;
             margin-left: 4.8% !important;
             padding-right: 8px; 
-        }
+        } */
     }
     .titulo{
         font-size: 25px;
@@ -329,7 +326,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
                 <h1 id="titlepc" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> en los <b>ESTADOS UNIDOS</b></h1>
                 <h4 style="margin-left: 25%; color: #fec02f" class="font-weight-bold subtitle"><i>Regístrese ahora..!</i></h4>
             </div>
-            <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+            <div id="colRegisterForm" class="col-sm-6">
                 @include('admin.partner.layouts.form_register')
             </div>
         </div>
