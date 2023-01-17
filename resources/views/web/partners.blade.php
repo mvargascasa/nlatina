@@ -91,13 +91,6 @@
             #rowImage{
                 min-height: 250px !important;
             }
-            #divcodigoandtelefono{
-                width: 92% !important;
-                margin-top: 9px;
-                margin-bottom: -17px;
-                margin-left: 4.8% !important;
-                padding-right: 8px; 
-            }
         }
         .titulo{
             font-size: 30px;
