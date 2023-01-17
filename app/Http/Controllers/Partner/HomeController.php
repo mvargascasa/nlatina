@@ -75,7 +75,7 @@ class HomeController extends Controller
             array_push ( $camposVacios , "Tipo de trabajo");
         }
         if(count($partner->specialties) == 0){ array_push ( $camposVacios , "Áreas de especialización"); }
-        if($partner->specialty == null){ array_push ( $camposVacios , "Especialidad (Descripción)"); }
+        //if($partner->specialty == null){ array_push ( $camposVacios , "Especialidad (Descripción)"); }
         if($partner->biography_html == null){ array_push ( $camposVacios , "Biografía"); }
 
         //ADVERTENCIAS
