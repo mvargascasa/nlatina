@@ -91,7 +91,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 fbq('track', 'PageView');
             //}
             //console.log('cargando script de facebook pixel code...');
-        }, 3000);
+        }, 3500);
     </script>
     
 <!-- End Facebook Pixel Code -->
@@ -515,17 +515,18 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     scriptFacebookPlugin.id = "plugin-facebook";
     scriptFacebookPlugin.async = true;
     scriptFacebookPlugin.defer = true;
-    scriptFacebookPlugin.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1";
 
     var path = window.location.pathname;
 
     //CARGO LOS RECURSOS SI LAS URLS SON DIFERENTES AL DE LAS OFICINAS
     function downloadFacebookJSAtOnLoad(){
         if(!(path.match('/newjersey') || path.match('/newyork') || path.match('/florida') || path.match('/partners'))){
+            scriptFacebookPlugin.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1";
             document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
         } else {
             if(screen.width > 580){
-                document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
+            scriptFacebookPlugin.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1";
+            document.getElementsByTagName("script")[0].parentNode.appendChild(scriptFacebookPlugin);
             }
         }
     }
