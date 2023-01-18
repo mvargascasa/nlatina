@@ -463,7 +463,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 <script defer id="scriptbootstrap" ></script> --}}
 
 @yield('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script id="jquery363" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
 
 // setTimeout(() => {
@@ -533,9 +533,10 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     let script3 = document.createElement("script");
 
     function downloadJSAtOnload() {
+        document.getElementById('jquery363').src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js";
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
         document.body.appendChild(script3);
-        console.log('cargando script de jquery');
+        console.log('cargando script de jquery y jquery 3.6.3');
     }
 
     setTimeout(function(){
@@ -543,7 +544,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         //console.log('cargando script de facebook snippet...');
     }, 3000);
 
-    let timeToLoadJquery = 1500;
+    let timeToLoadJquery = 2000;
     if(path.match('/newjersey') || path.match('/newyork') || path.match('/consulado')) {
         timeToLoadJquery = 3000;
     }
@@ -654,19 +655,21 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
         });
 
-        $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-        if (!$(this).next().hasClass('show')) {
-            $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-        }
-        var $subMenu = $(this).next(".dropdown-menu");
-        $subMenu.toggleClass('show');
+        setTimeout(() => {
+            $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+            if (!$(this).next().hasClass('show')) {
+                $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+            }
+            var $subMenu = $(this).next(".dropdown-menu");
+            $subMenu.toggleClass('show');
 
 
-        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
-            $('.dropdown-submenu .show').removeClass("show");
-        });
-        return false;
-        });
+            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+                $('.dropdown-submenu .show').removeClass("show");
+            });
+            return false;
+            });
+        }, 3000);
 </script>
 </body>
 </html>
