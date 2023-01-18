@@ -18,11 +18,11 @@
 
     <style>
         /* ocultar etiqueta del numero que hace la llamada */
-        #etiquetaPhone{display: none;}
+        /* #etiquetaPhone{display: none;} */
         /* ocultar el icono de llamada en la parte inferior derecha */
         #iconcall{display:none}
         /* ocultar la tarjeta de wpp */
-        #divwpp{display:none}
+        /* #divwpp{display:none} */
         #divpreguntas{display:none !important}
         .form{margin-left: 20%;margin-right: 20%;margin-top: 5%;margin-bottom: 10px;}
         @media screen and (max-width: 860px){
@@ -53,6 +53,15 @@
             #txtBanner{
                 font-size: 11px !important;
                 margin-right: 10% !important;
+            }
+            #divBeneficios{
+            text-align: center !important;
+            float: none !important;
+            text-align: center !important;
+        }
+            #divImageAbogado{
+                display: flex !important;
+                justify-content: center !important;
             }
         }
         @media screen and (max-width: 580px){
@@ -90,6 +99,10 @@
             }
             #rowImage{
                 min-height: 250px !important;
+                padding-top: 15%;
+            }
+            #formulario{
+                margin-bottom: -10px !important;
             }
         }
         .titulo{
@@ -173,6 +186,9 @@
         </script>
 @endsection
 
+@section('phoneNumberHidden', '+13474283543')
+@section('phoneNumber', '347-428-3543')
+
 @section('content')
 
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
@@ -182,7 +198,7 @@
                 <h1 id="titlemovil" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> <br> en Latinoamérica <br> a su alcance!</h1>
                 <h1 id="titlepc" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> en Latinoamérica <br> a su alcance!</h1>
             </div>
-            <div class="col-sm-6">
+            <div id="formulario" class="col-sm-6 mt-4 mb-5">
                 @include('admin.partner.layouts.form_register')
             </div>
             {{-- <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-6">
@@ -196,9 +212,58 @@
     @include('web.partials.search_partner')
 </div>
 
-@section('numberWpp', '13479739888')
+<div class="container">
+    <div class="text-center mt-5">
+        <p class="h4">¿Sabía que puede ampliar su cartera de clientes?</p>
+        <p>Con <b style="color: #FEC02F">PARTNERS</b> de <b class="font-weight-bold">Notaria Latina</b> es posible. Una gran cantidad de personas ya han consultado por nuestros abogados registrados</p>
+        <p class="h5">Y usted, ¿qué espera?</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 mt-5">
+            <div id="divBeneficios" class="float-right text-right">
+                <h4 class="font-weight-bold">Puede acceder <br> a varios beneficios como:</h4>
+                <p class="parrafoBeneficios">Mayor crecimiento económico y profesional <i class="fa fa-check checkBeneficios"></i></p>
+                <p class="parrafoBeneficios">Clientes potenciales de su país de origen <i class="fa fa-check checkBeneficios"></i>
+                <p class="parrafoBeneficios"> Genere su propia base de datos <i class="fa fa-check checkBeneficios"></i></p>
+                <p class="parrafoBeneficios">Posicionamiento internacional <i class="fa fa-check checkBeneficios"></i></p>
+                <p class="parrafoBeneficios">Obtenga más prestigio en su país <i class="fa fa-check checkBeneficios"></i></p>
+            </div>
+        </div>
+        <div id="divImageAbogado" class="col-sm-6 mt-4">
+            <img width="35%" height="100%" src="{{ asset('img/partners/DISEÑO PARTNERS Y ABOGADOS -03.webp') }}" alt="Abogados en Latinoamerica - Notaria Latina">
+        </div>
+    </div>
+</div>
 
-@endsection
+<div class="row" style="background-color: #333333">
+    <div class="container mt-5">
+        <div class="row text-white">
+            <div class="col-sm-4 text-center mb-4">
+                <img width="15%" height="50%" src="{{ asset('img/partners/REGISTRO.svg') }}" alt="Abogados en Latinoamerica - Notaria Latina">
+                <h6 style="margin-top: 5px"><b>PASO 1.</b></h6>
+                <p style="margin: 0px">Llene el formulario de registro</p>
+            </div>
+            <div class="col-sm-4 text-center mb-4">
+                <img width="14%" height="50%" src="{{ asset('img/partners/BIO-01.svg') }}" alt="Abogados en Latinoamerica - Notaria Latina">
+                <h6><b>PASO 2.</b></h6>
+                <p style="margin: 0px">Complete su biografía</p>
+            </div>
+            <div class="col-sm-4 text-center mb-4">
+                <img width="16%" height="50%" src="{{ asset('img/partners/TERMINOS-01.svg') }}" alt="Abogados en Latinoamerica - Notaria Latina">
+                <h6 style="margin-top: 6px"><b>PASO 3.</b></h6>
+                <p style="margin: 0px">Acepte los términos y condiciones</p>
+            </div>
+        </div>
+        <div class="row mt-1 mb-5">
+            <div class="col-sm-12 text-center">
+                <h5 style="color: #fec02f"><i>¡Y listo su perfil será activado!</i></h5>
+                <p style="color: #ffffff">*Recuerde que si no completa los pasos no podrá acceder a clientes potenciales desde su perfil</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section('numberWpp', '13474283543') @endsection
 
 @section('script')
 <script id="script-jquery" defer></script>
