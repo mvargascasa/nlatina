@@ -22,49 +22,37 @@
             </button>
         </div>
         @endif
-        <div>
-            <h1>Perfil del Partner {{ $partner->name}} {{ $partner->lastname }}</h1>
-            {{-- @if ($partner->email_verified_at == null)
-            <div class="float-right">
-                {!! Form::open(['route' => ['verify.email.admin', $partner], 'method' => 'POST']) !!}
-                {!! Form::submit('Verificar email', ['class' => 'btn btn-success']) !!}
-                {!! Form::close() !!}
-            </div>
-            @endif --}}
-            {{-- <div class="float-right" style="margin-right: 5px">
-                {!! Form::open(['route' => ['partner.destroy', $partner->id], 'method' => 'POST', 'id' => 'formdeletepartner']) !!}
-                @csrf
-                @method('delete')
-                {!! Form::button('Eliminar Partner', ['class' => 'btn btn-danger', 'onclick' => "validateDelete()"]) !!}
-                {!! Form::close() !!}
-            </div> --}}
-            @if (Auth::user()->email == 'developer2@notarialatina.com')
+        <div class="pb-2">
+            <h4>Perfil del Partner {{ $partner->name}} {{ $partner->lastname }}</h4>
+            <div>
+                @if (Auth::user()->email == 'developer2@notarialatina.com')
+                    <div class="float-right mr-1">
+                        <a href="{{ route('partner.set.slug', $partner) }}">
+                            Set Slug
+                        </a>
+                    </div>
+                @endif
+                @if(count($comments_status)>0 && ($partner->status == "NO APLICA" || $partner->status == "NO PUBLICADO"))
+                    <div class="float-right">
+                        <button type="button" class="btn rounded-0 text-white" style="background-color: #002542" data-toggle="modal" data-target="#modalCommentsStatus">
+                            Comentarios
+                        </button>                              
+                    </div>
+                @endif
                 <div class="float-right mr-1">
-                    <a href="{{ route('partner.set.slug', $partner) }}">
-                        Set Slug
-                    </a>
+                    <button class="btn rounded-0 text-white" style="background-color: #002542" data-toggle="modal" data-target="#modalSendEmail">
+                        Enviar correo
+                    </button>
                 </div>
-            @endif
-            @if(count($comments_status)>0 && ($partner->status == "NO APLICA" || $partner->status == "NO PUBLICADO"))
-                <div class="float-right">
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalCommentsStatus">
-                        Comentarios
-                    </button>                              
+                <div class="float-right mr-1">
+                    <button class="btn rounded-0 text-white" style="background-color: #002542" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
+                        Ver Clientes
+                        <span class="bg-white text-dark rounded px-1 font-weight-bold">{{count($partner->customers)}}</span>
+                    </button>
                 </div>
-            @endif
-            <div class="float-right mr-1">
-                <button class="btn btn-success" data-toggle="modal" data-target="#modalSendEmail">
-                    Enviar correo
-                </button>
-            </div>
-            <div class="float-right mr-1">
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
-                    Ver Clientes
-                    <span class="bg-white text-dark rounded px-1 font-weight-bold">{{count($partner->customers)}}</span>
-                </button>
             </div>
         </div>
-        <div class="form-group mt-5 border p-5">
+        <div class="form-group mt-5 border shadow p-5">
             {!! Form::model($partner, ['route' => ['partner.update', $partner], 'enctype' => 'multipart/form-data', 'files' => true, 'method' => 'POST']) !!}
             @csrf
             @method('put')
@@ -88,13 +76,13 @@
                 <div class="col-sm-9">
                     <div class="d-flex">
                         <div>
-                            {!! Form::select('status',[null => 'SELECCIONE', 'NO PUBLICADO' => 'NO PUBLICADO','PUBLICADO' => 'PUBLICADO', 'NO APLICA' => 'NO APLICA'], $partner->status, ['class' => 'form-control custom-select', 'onchange' => 'showCommentInput(this);']) !!}
+                            {!! Form::select('status',[null => 'SELECCIONE', 'NO PUBLICADO' => 'NO PUBLICADO','PUBLICADO' => 'PUBLICADO', 'NO APLICA' => 'NO APLICA'], $partner->status, ['class' => 'form-control custom-select rounded-0', 'onchange' => 'showCommentInput(this);']) !!}
                         @error('status')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                         </div>
                         <div class="form-group mx-3">
-                            {!! Form::submit('Guardar',  ['class' => 'btn btn-primary']) !!}
+                            {!! Form::submit('Guardar',  ['class' => 'btn rounded-0 text-white', 'style' => 'background-color: #002542']) !!}
                         </div>
                         
                         @if ($partner->fecha_publicado != null)
@@ -115,7 +103,7 @@
                     </div>
                     <div class="mb-3 d-none" id="div_comment_status">
                         {!! Form::label('comment', "Indique la razón del cambio de Estado", ['class' => 'font-weight-bold']) !!}
-                        {!! Form::text('comment', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('comment', null, ['class' => 'form-control rounded-0']) !!}
                     </div>
 
                     {{--NOMBRE Y APELLIDO, EMAIL, NACIONALIDAD--}}
@@ -125,9 +113,9 @@
                             <div class="form-group">
                                 {!! Form::label('title', 'Titulo') !!}
                                 @if ($partner->title != null)
-                                {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], $partner->title, ['class' => 'form-control']) !!}
+                                {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], $partner->title, ['class' => 'form-control rounded-0']) !!}
                                 @else
-                                {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], null, ['class' => 'form-control']) !!}
+                                {!! Form::select('title', [null => 'Seleccione', 'Abogado' => 'Abogado', 'Licenciado' => 'Licenciado'], null, ['class' => 'form-control rounded-0']) !!}
                                 @endif
                                 @error('title')
                                     <span class="text-danger">{{ $message }}</span>
@@ -137,7 +125,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 {!! Form::label('name', 'Nombre') !!}
-                                {!! Form::text('name', $partner->name, ['class' => 'form-control']) !!}
+                                {!! Form::text('name', $partner->name, ['class' => 'form-control rounded-0']) !!}
                                 @error('name')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -146,7 +134,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 {!! Form::label('lastname', 'Apellido') !!}
-                                {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control']) !!}
+                                {!! Form::text('lastname', $partner->lastname, ['class' => 'form-control rounded-0']) !!}
                                 @error('lastname')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -155,21 +143,12 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 {!! Form::label('email', 'Email') !!}
-                                {!! Form::email('email', $partner->email, ['class' => 'form-control']) !!}
+                                {!! Form::email('email', $partner->email, ['class' => 'form-control rounded-0']) !!}
                             @error('email')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                             </div>
                         </div>
-                        {{-- <div class="col-sm-4">
-                            <div class="form-group">
-                                {!! Form::label('nationality', 'Nacionalidad') !!}
-                                {!! Form::select('nationality', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'España' => 'España', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->nationality, ['class' => 'form-control']) !!}
-                                @error('nationality')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                        </div> --}}
                     </div>
 
                     {{--PAIS DE RESIDENCIA, CODIGO, TELEFONO--}}
@@ -178,9 +157,9 @@
                             <div class="form-group">
                                 {!! Form::label('country_residence', 'Pais de residencia') !!}
                                 @if ($partner->country_residence != null)
-                                {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Chile' => 'Chile', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->country_residence, ['class' => 'form-control', 'onchange' => 'changeCodPais();']) !!}    
+                                {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Chile' => 'Chile', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], $partner->country_residence, ['class' => 'form-control rounded-0', 'onchange' => 'changeCodPais();']) !!}    
                                 @else
-                                {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Chile' => 'Chile', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], null, ['class' => 'form-control', 'onchange' => 'changeCodPais();']) !!}
+                                {!! Form::select('country_residence', [null => 'Seleccione', 'Argentina' => 'Argentina', 'Bolivia' => 'Bolivia', 'Chile' => 'Chile', 'Colombia' => 'Colombia', 'Costa Rica' => 'Costa Rica', 'Ecuador' => 'Ecuador', 'El Salvador' => 'El Salvador', 'Guatemala' => 'Guatemala', 'Honduras' => 'Honduras', 'México' => 'México', 'Nicaragua' => 'Nicaragua', 'Panamá' => 'Panamá', 'Paraguay' => 'Paraguay', 'Perú' => 'Perú', 'Puerto Rico' => 'Puerto Rico', 'República Dominicana' => 'República Dominicana', 'Uruguay' => 'Uruguay', 'Venezuela' => 'Venezuela'], null, ['class' => 'form-control rounded-0', 'onchange' => 'changeCodPais();']) !!}
                                 @endif
                                 @error('country_residence')
                                     <span class="text-danger">{{ $message }}</span>
@@ -191,9 +170,9 @@
                             <div class="form-group">
                                 {!! Form::label('codigo_pais', 'Código País') !!}
                                 @if ($partner->codigo_pais != null)
-                                {!! Form::text('codigo_pais', $partner->codigo_pais , ['class' => 'form-control', 'readonly']) !!}
+                                {!! Form::text('codigo_pais', $partner->codigo_pais , ['class' => 'form-control rounded-0', 'readonly']) !!}
                                 @else
-                                {!! Form::text('codigo_pais', null, ['class' => 'form-control', 'readonly']) !!}
+                                {!! Form::text('codigo_pais', null, ['class' => 'form-control rounded-0', 'readonly']) !!}
                                 @endif
                             @error('codigo_pais')
                                 <span class="text-danger">{{ $message }}</span>
@@ -203,7 +182,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 {!! Form::label('phone', 'Telefono') !!}
-                                {!! Form::number('phone', $partner->phone, ['class' => 'form-control']) !!}
+                                {!! Form::number('phone', $partner->phone, ['class' => 'form-control rounded-0']) !!}
                             @error('phone')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -217,9 +196,9 @@
                             <div class="form-group">
                                 {!! Form::label('state', 'Estado') !!}
                                 @if ($partner->state != null)
-                                {!! Form::text('state', $partner->state, ['class' => 'form-control']) !!}
+                                {!! Form::text('state', $partner->state, ['class' => 'form-control rounded-0']) !!}
                                 @else
-                                {!! Form::text('state', null, ['class' => 'form-control']) !!}
+                                {!! Form::text('state', null, ['class' => 'form-control rounded-0']) !!}
                                 @endif
                             @error('state')
                                 <span class="text-danger">{{ $message }}</span>
@@ -230,9 +209,9 @@
                             <div class="form-group">
                                 {!! Form::label('city', 'Ciudad') !!}
                                 @if ($partner->city != null)
-                                {!! Form::text('city', $partner->city, ['class' => 'form-control']) !!}    
+                                {!! Form::text('city', $partner->city, ['class' => 'form-control rounded-0']) !!}    
                                 @else
-                                {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                                {!! Form::text('city', null, ['class' => 'form-control rounded-0']) !!}
                                 @endif
                             @error('city')
                                 <span class="text-danger">{{ $message }}</span>
@@ -243,9 +222,9 @@
                             <div class="form-group">
                                 {!! Form::label('address', 'Dirección') !!}
                                 @if ($partner->address != null)
-                                {!! Form::text('address', $partner->address, ['class' => 'form-control']) !!}
+                                {!! Form::text('address', $partner->address, ['class' => 'form-control rounded-0']) !!}
                                 @else
-                                {!! Form::text('address', null, ['class' => 'form-control']) !!}
+                                {!! Form::text('address', null, ['class' => 'form-control rounded-0']) !!}
                                 @endif
                             @error('address')
                                 <span class="text-danger">{{ $message }}</span>
@@ -264,9 +243,9 @@
                     <div class="form-group">
                         {!! Form::label('link_facebook', 'Link de perfil de Facebook') !!} <i class="fab fa-facebook-square"></i>
                         @if ($partner->link_facebook != null)
-                        {!! Form::text('link_facebook', $partner->link_facebook, ['class' => 'form-control']) !!}
+                        {!! Form::text('link_facebook', $partner->link_facebook, ['class' => 'form-control rounded-0']) !!}
                         @else
-                        {!! Form::text('link_facebook', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('link_facebook', null, ['class' => 'form-control rounded-0']) !!}
                         @endif
                     </div>
                 </div>
@@ -274,9 +253,9 @@
                     <div class="form-group">
                         {!! Form::label('link_instagram', 'Link de perfil de Instagram') !!} <i class="fab fa-instagram"></i>
                         @if ($partner->link_instagram != null)
-                        {!! Form::text('link_instagram', $partner->link_instagram, ['class' => 'form-control']) !!}
+                        {!! Form::text('link_instagram', $partner->link_instagram, ['class' => 'form-control rounded-0']) !!}
                         @else
-                        {!! Form::text('link_instagram', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('link_instagram', null, ['class' => 'form-control rounded-0']) !!}
                         @endif
                     </div>
                 </div>
@@ -284,9 +263,9 @@
                     <div class="form-group">
                         {!! Form::label('link_linkedin', 'Link de perfil de LinkedIn') !!} <i class="fab fa-linkedin"></i>
                         @if ($partner->link_linkedin != null)
-                        {!! Form::text('link_linkedin', $partner->link_linkedin, ['class' => 'form-control']) !!}
+                        {!! Form::text('link_linkedin', $partner->link_linkedin, ['class' => 'form-control rounded-0']) !!}
                         @else
-                        {!! Form::text('link_linkedin', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('link_linkedin', null, ['class' => 'form-control rounded-0']) !!}
                         @endif
                     </div>
                 </div>
@@ -294,9 +273,9 @@
                     <div class="form-group">
                         {!! Form::label('website', 'Sitio Web') !!} <i class="fas fa-globe"></i>
                         @if ($partner->website != null)
-                        {!! Form::text('website', $partner->website, ['class' => 'form-control']) !!}
+                        {!! Form::text('website', $partner->website, ['class' => 'form-control rounded-0']) !!}
                         @else
-                        {!! Form::text('website', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('website', null, ['class' => 'form-control rounded-0']) !!}
                         @endif
                     </div> 
                 </div>
@@ -309,9 +288,9 @@
                 <div class="col-sm-6">
                     {!! Form::label('numlicencia', 'Número de Licencia') !!}
                     @if ($partner->numlicencia)
-                    {!! Form::text('numlicencia', $partner->numlicencia, ['class' => 'form-control']) !!}
+                    {!! Form::text('numlicencia', $partner->numlicencia, ['class' => 'form-control rounded-0']) !!}
                     @else
-                    {!! Form::text('numlicencia', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('numlicencia', null, ['class' => 'form-control rounded-0']) !!}
                     @endif
                 </div>
             </div>
@@ -320,9 +299,9 @@
                     <div class="form-group">
                         {!! Form::label('company', 'Empresa') !!}
                         @if ($partner->company)
-                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], $partner->company, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
+                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], $partner->company, ['class' => 'form-control rounded-0', 'onchange' => 'showInputNameCompany()']) !!}
                         @else
-                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], null, ['class' => 'form-control', 'onchange' => 'showInputNameCompany()']) !!}
+                        {!! Form::select('company', [null => 'Seleccione', 'Empresa' => 'Empresa', 'Libre Ejercicio' => 'Libre Ejercicio'], null, ['class' => 'form-control rounded-0', 'onchange' => 'showInputNameCompany()']) !!}
                         @endif
                     @error('company')
                         <span class="text-danger">{{ $message }}</span>
@@ -332,9 +311,9 @@
                 <div id="divCompanyName" class="col-sm-4" @if ($partner->company == "Empresa") style="display: block" @else style="display: none" @endif>
                     {!! Form::label('company_name', 'Nombre de la Empresa') !!}
                     @if ($partner->company_name != null)
-                        {!! Form::text('company_name', $partner->company_name, ['class' => 'form-control']) !!}
+                        {!! Form::text('company_name', $partner->company_name, ['class' => 'form-control rounded-0']) !!}
                     @else
-                        {!! Form::text('company_name', null, ['class' => 'form-control']) !!} 
+                        {!! Form::text('company_name', null, ['class' => 'form-control rounded-0']) !!} 
                     @endif
                     @error('company_name')
                         <span class="text-danger">{{ $message }}</span>
@@ -361,7 +340,7 @@
                 @enderror
                 </div>
 
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
                         {!! Form::label('specialty', 'Especialidad(es)') !!} <b>(Descripción más detallada)</b>
@@ -381,7 +360,7 @@
                         @enderror   
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             {{--BIOGRAFIA--}}
             <p style="font-weight: bold">Biografía</p>
