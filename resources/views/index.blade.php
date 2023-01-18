@@ -152,9 +152,42 @@
               <h1 class="tit-not">Notaría Pública</h1>
               <h2 class="heading-title" style="margin-bottom: 5%">Gestión Fácil y Rápida</h2>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div id="div2" class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
-                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
-                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+                <div id="div2" class="col-sm-4 @if(!$mobile) border-right @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
+                      <div class="bg-success rounded-pill text-center px-2">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
+                      <div class="bg-success rounded-pill text-center px-2">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-4 @if(!$mobile) border-left @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
+                      <div class="bg-success rounded-pill px-2 text-center">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
@@ -171,9 +204,42 @@
           <div class="carousel-caption">
               <h1 id="titleTraducciones" class="tit-not" style="margin-bottom: 6%">TRADUCCIONES</h1>
               <div id="locations" class="row" style="margin-left: 11%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
-                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
-                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+                <div class="col-sm-4 @if(!$mobile) border-right @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
+                      <div class="bg-success rounded-pill text-center px-2">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
+                      <div class="bg-success rounded-pill text-center px-2">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-4 @if(!$mobile) border-left @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
+                      <div class="bg-success rounded-pill px-2 text-center">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
@@ -186,9 +252,42 @@
           <div class="carousel-caption">
               <h1 id="titleApostillas" class="tit-not" style="margin-bottom: 6%">APOSTILLAS</h1>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
-                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
-                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+                <div class="col-sm-4 @if(!$mobile) border-right @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
+                      <div class="bg-success rounded-pill text-center px-2">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
+                      <div class="bg-success rounded-pill text-center px-2">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-4 @if(!$mobile) border-left @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
+                      <div class="bg-success rounded-pill px-2 text-center">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
@@ -202,9 +301,42 @@
               <h1 class="tit-not">PODERES GENERALES</h1>
               <h2 class="heading-title" style="margin-bottom: 5%">Y ESPECIALES</h2>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</div></a>
-                <div class="col-sm-4 border-left border-right child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a></div>
-                <div class="col-sm-4 border-left child-locations"><i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a></div>
+                <div class="col-sm-4 @if(!$mobile) border-right @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
+                      <div class="bg-success rounded-pill text-center px-2">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
+                      <div class="bg-success rounded-pill text-center px-2">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-4 @if(!$mobile) border-left @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
+                      <div class="bg-success rounded-pill px-2 text-center">
+                        Contactar <i class="fab fa-whatsapp"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
