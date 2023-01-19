@@ -363,7 +363,6 @@
             </div> --}}
 
             {{--BIOGRAFIA--}}
-            <p style="font-weight: bold">Biografía</p>
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
