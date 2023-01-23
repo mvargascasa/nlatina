@@ -25,6 +25,13 @@ class HomeController extends Controller
     public function edit(Partner $partner)
     {
 
+        $detect = new MobileDetect();
+        $isMobile = FALSE;
+
+        if($detect->isMobile()){
+            $isMobile = TRUE;
+        }
+
         /*ESCAPAR CARACTERES ESPECIALES Y CONTAR PARA VALIDAR QUE SEA MAYOR A 400*/
         $biographyDecode = html_entity_decode($partner->biography_html, ENT_QUOTES);
 
@@ -83,7 +90,7 @@ class HomeController extends Controller
 
         $specialties = Specialty::all();
 
-        return view('admin.partner.edit', compact('partner', 'specialties', 'camposVacios', 'socialLinks', 'advertencias'));
+        return view('admin.partner.edit', compact('partner', 'specialties', 'camposVacios', 'socialLinks', 'advertencias', 'isMobile'));
     }
     
     public function update(Partner $partner, Request $request)

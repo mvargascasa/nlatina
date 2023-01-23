@@ -645,17 +645,16 @@
     @endif
 
     <div class="modal fade" id="modalBienvenido" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="width: 45%">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="width: 35%">
             <div class="modal-content">
                 <div class="modal-header text-center" style="display: inline; border-bottom: none; margin-bottom: 0px;">
-                    <h5><b>¡ Felicidades !</b></h5>
-                    <p>Está a un solo paso para publicar <br> su perfil GRATIS</p>
+                    
                 </div>
                 <div class="modal-body d-flex justify-content-center" style="border-bottom: none; margin-top: -30px">
-                  <img id="imgWelcome" class="img-fluid" src="" alt="Partners de Notaria Latina">
+                  <img id="imgWelcome" class="img-fluid" src="@if($isMobile) {{asset('img/partners/pasos-registro - movil.png')}} @else {{ asset('img/partners/pasos-registro.png') }} @endif" alt="Partners de Notaria Latina">
               </div>
               <div class="modal-footer justify-content-center" style="border-top: none;">
-                <button type="button" class="btn btn-primary" style="background-color: #002542; color: #ffffff" onclick="$('#modalBienvenido').modal('hide')">Continuar</button>
+                <button type="button" class="btn btn-primary" style="background-color: #002542; color: #ffffff" onclick="$('#modalBienvenido').modal('hide')">Completar mi perfil</button>
               </div>
             </div>
         </div>
@@ -1018,7 +1017,7 @@
             //countChars();
             showInputNameCompany();
             comprobar();
-            setSrcImageWelcome();
+            //setSrcImageWelcome();
             deshabilitarCheckBox();
             if("{{$partner->password}}" == null || "{{$partner->password}}" == ""){
                 $("document").ready(function(){
