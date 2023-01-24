@@ -1,7 +1,7 @@
 <div class="text-center">
     {{-- <img style="width: 100%; height: 200px;" src="{{ asset('img/partners/FONDO-PARTNERS.jpg') }}" alt=""> --}}
     <div id="rowTxt" style="margin-left: auto; margin-right: auto; padding-top: 2%; left: 0; right: 0; text-align: center">
-        <h5 style="font-weight: bold">Encuentre un Abogado o Notario en Latinoamérica</h5>
+        <p class="h5" style="font-weight: bold">Encuentre un Abogado o Notario en Latinoamérica</p>
         <p style="font-size: 13px">BUSCAR POR:</p>
     </div>
     <div id="rowPatternFiltros" class="row" style="margin-left: auto; margin-right: auto; top: 50%; left: 0; right: 0; text-align: center">

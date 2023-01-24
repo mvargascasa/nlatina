@@ -12,22 +12,22 @@
                                 <div class="row">
                                     <div class="col-6 col-sm-12">
                                         <div class="image">
-                                            <img class="lazyload" width="125px" height="150px" data-src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
+                                            <img class="lazyload rounded" width="125px" height="150px" data-src="{{ asset('storage/'.$partner->img_profile) }}" alt="">
                                         </div>
                                     </div>
                                     <div id="rowDataPartner" class="col-6 col-sm-12">
-                                        <h5 style="font-size: 13px; text-align: left" class="txtNamePartner dismissMarginTopBottom">
+                                        <p class="namepartner" style="font-size: 13px; text-align: left" class="txtNamePartner dismissMarginTopBottom">
                                             <b>{{ Str::ucfirst($partner->name) }} {{ Str::ucfirst($partner->lastname) }}</b>
-                                        </h5>
+                                        </p>
                                         {{-- <p>{{ $partner->specialty }}</p> --}}
                                         @foreach ($partner->specialties as $specialty)
                                         <div class="d-inline txtDataPartner dismissMarginTopBottom" style="font-size: 12px">
                                             • {{ $specialty->name_specialty }}
                                         </div>
                                         @endforeach
-                                        <h6 class="mt-2 txtDataPartner dismissMarginTopBottom"><b>{{ $partner->country_residence }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png') }}"/></b></h6>
+                                        <p style="font-size: 13px" class="mt-2 txtDataPartner dismissMarginTopBottom h6"><b>{{ $partner->country_residence }} <img src="{{ asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png') }}"/></b></p>
                                         @if ($partner->state != null)
-                                            <h6 class="txtDataPartner dismissMarginTopBottom"><b>{{ Str::ucfirst($partner->state) }}</b></h6>
+                                            <p style="font-size: 13px" class="txtDataPartner dismissMarginTopBottom h6"><b>{{ Str::ucfirst($partner->state) }}</b></p>
                                         @endif
                                         <div class="row mt-3">
                                             <div class="col-sm-12">

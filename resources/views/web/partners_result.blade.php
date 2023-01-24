@@ -63,14 +63,14 @@
             top:0;
         }
 
-        .testimotionals .card .content h5{
+        .testimotionals .card .content .namepartner{
             margin-top: 10px;
             font-size:14px;
-            color:rgb(160, 85, 85);
+            color:rgb(160, 85, 85) !important;
         }
-        .testimotionals .card:hover .content h5{
+        .testimotionals .card:hover .content .namepartner{
             font-size:14px;
-            color:rgb(255, 255, 255);
+            color:rgb(255, 255, 255) !important;
         }
 
         .testimotionals .card .content p{
