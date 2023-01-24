@@ -53,9 +53,10 @@
             {{ $partners->links() }}
         </div>
         @else
-            <div class="row d-flex text-align-center justify-content-center">
-                <div class="alert alert-success">
-                    <h4>Por el momento no encontramos registros en estas zonas</h4>
+            <div class="row d-flex text-align-center justify-content-center mx-3">
+                <div class="alert alert-info rounded-0 font-weight-bold text-center">
+                    <p style="font-size: 20px">¡Lo sentimos!</p>
+                    <p>Por el momento no encontramos registros en estas zonas</p>
                 </div>        
             </div>
         @endif
