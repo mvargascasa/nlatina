@@ -37,8 +37,16 @@ Route::delete('/home/post/{post}', 'PostController@destroy')->name('post.destroy
 //PARTNERS
 Route::get('/home/partners', 'PartnerController@index')->name('partner.index');
 Route::post('/home/partners', 'PartnerController@index')->name('partner.index');
+
+//HOME EMAILS
 Route::get('home/emails', 'PartnerController@viewemailsended')->name('partner.email.sended');
+Route::get('home/emails/create', 'EmailController@create')->name('admin.create.email');
+
+//HOME NOTIFICATIONS
 Route::get('home/notifications', 'PartnerController@indexnotifications')->name('partner.index.notifications');
+
+
+//HOME PARTNERS
 Route::get('/home/partners/create', 'PartnerController@create')->name('partner.form');
 Route::post('/home/partners/store', 'PartnerController@store')->name('partner.store');
 Route::get('/home/partners/publicated', 'PartnerController@viewLastPublicated')->name('partner.show.latest.public');
@@ -166,7 +174,7 @@ Route::post('/partners', 'WebController@showAllPartners')->name('web.showallpart
 Route::post('/partners/rating/{partner}', 'WebController@postStar')->name('partner.rating'); // RUTA PARA VALORAR UN PARTNER
 
 //FETCH
-Route::get('/partners/abogados', 'WebController@fetchState')->name('partners.fetch.state');
+Route::get('/partners/abogados-en-{pais?}', 'WebController@fetchState')->name('partners.fetch.state');
 
 Route::get('/partners/{slug}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
 Route::post('/partners-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');

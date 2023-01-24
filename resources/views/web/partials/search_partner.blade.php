@@ -18,21 +18,22 @@
         <hr style="width: 85%">
     </div>
     <div class="container mt-4">
-        <form action="{{ route('partners.fetch.state') }}" method="GET" id="formSearchPartner">
+        {{-- <form action="{{ route('partners.fetch.state') }}" method="GET" id="formSearchPartner"> --}}
             <div class="row countrysearch" style="margin-left: 13%">
                 @php
                     $countries = \App\Country::select('id', 'name_country', 'name_country_lower')->orderBy('name_country')->get();
                 @endphp
                 @foreach ($countries as $country)
                     @if ($country->name_country != "Estados Unidos" && $country->name_country != "España")
-                        <div onclick="selectCountry('{{$country->name_country}}');" style="cursor: pointer" class="col-sm-4 col-6 mb-2">
+                    <div style="cursor: pointer" class="col-sm-4 col-6 mb-2">
+                        <a style="text-decoration: none; color: #000000" href="{{route('partners.fetch.state', strtolower(Str::slug($country->name_country)))}}">
                             <img width="25" height="25" src="{{ asset('img/partners/'.$country->name_country_lower.'.png') }}" alt=""> {{ $country->name_country}}
+                        </a>
                         </div>    
                     @endif
                 @endforeach
             </div>
-            <input id="countryHidden" type="hidden" name="pais">
-        </form>
-        {!! Form::close() !!}
+            <input id="countryHidden" type="hidden" name="country">
+        {{-- </form> onclick="selectCountry('{{$country->name_country}}');"--}}
     </div>
 </div>

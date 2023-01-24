@@ -68,6 +68,7 @@
         const countryId = $("#pais").val();
         const specialty = $('#specialty').val();
         const state = $('#stateSelect').val();
+        console.log("countryID: " + countryId + " | specialty: " + specialty + " | state: " + state);
         $('#contentPartner').html("<div class='loading text-center img-fluid'><img width='400px' height='400px' src='{{ asset('img/loader.gif') }}' alt='loading' /></div>");
         $.ajax({
             type: "GET",
@@ -84,9 +85,9 @@
                 //Cambiar el parametro de la url
                 var queryParams = new URLSearchParams(window.location.search);
                 // Set new or modify existing parameter value. 
-                queryParams.set("pais", countryId); 
+                //queryParams.set("pais", countryId); 
                 // Replace current querystring with the new one.
-                history.replaceState(null, null, "?"+queryParams.toString());
+                //history.replaceState(null, null, "?"+queryParams.toString());
             },
             error: function(xhr, status, error){
                 var errorMessage = xhr.status + ': ' + xhr.statusText

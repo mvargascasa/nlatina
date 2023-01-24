@@ -222,12 +222,13 @@ class WebController extends Controller
         return response()->json($states);
     }
 
-    public function fetchState(Request $request){
-        $country = Country::where('name_country', $request->pais)->first();
+    public function fetchState($pais = null){
+        $pais = Str::title(str_replace('-', ' ', $pais));
+        $country_aux = Country::where('name_country', 'LIKE', "%$pais%")->first();
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
-        $states = State::where('country_id', $country->id)->get();
+        $states = State::where('country_id', $country_aux->id)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
-                ->country($country->id)
+                ->country($country_aux->id)
                 // ->state($request->state)
                 // ->specialties($request->specialty)
                 ->where('status', 'PUBLICADO')
@@ -238,26 +239,26 @@ class WebController extends Controller
                 // ->inRandomOrder()
                 // ->get();
 
-        $partnersCount = Partner::where('status', 'PUBLICADO')
-                    ->orderBy('id', 'DESC')
-                    ->country($country->id)
-                    ->state($request->state)
-                    ->specialties($request->specialty)
-                    ->get();
+        // $partnersCount = Partner::where('status', 'PUBLICADO')
+        //             ->orderBy('id', 'DESC')
+        //             ->country($country->id)
+        //             ->state($request->state)
+        //             ->specialties($request->specialty)
+        //             ->get();
                     
-        $totalPartners = $partnersCount->count();
+        // $totalPartners = $partnersCount->count();
         
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
 
-        return view('web.partners_result', compact('countries', 'states', 'partners', 'specialties', 'totalPartners'));
+        return view('web.partners_result', compact('countries', 'states', 'partners', 'specialties', 'country_aux'));
     }
 
     public function fetchStateB(Request $request){
-        $country = Country::where('name_country', $request->pais)->first();
+        $country_aux = Country::where('name_country', 'LIKE', "%$request->pais%")->first();
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
-        $states = State::where('country_id', $country->id)->get();
+        $states = State::where('country_id', $country_aux->id)->get();
         $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
-                ->country($country->id)
+                ->country($country_aux->id)
                 ->state($request->state)
                 ->specialties($request->specialty)
                 ->where('status', 'PUBLICADO')
@@ -268,22 +269,24 @@ class WebController extends Controller
                 // ->inRandomOrder()
                 // ->get();
 
-        $partnersCount = Partner::where('status', 'PUBLICADO')
-                    ->orderBy('id', 'DESC')
-                    ->country($country->id)
-                    ->state($request->state)
-                    ->specialties($request->specialty)
-                    ->get();
+        // $partnersCount = Partner::where('status', 'PUBLICADO')
+        //             ->orderBy('id', 'DESC')
+        //             ->country($country->id)
+        //             ->state($request->state)
+        //             ->specialties($request->specialty)
+        //             ->get();
                     
-        $totalPartners = $partnersCount->count();
+        // $totalPartners = $partnersCount->count();
 
         $countryID = $request->country;
         
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
 
-            return response()->json([
-                'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties', 'totalPartners', 'countryID'))->render()
-            ]);
+        //return response()->json($partners);
+
+        return response()->json([
+            'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties', 'countryID', 'country_aux'))->render()
+        ]);
     }
 
     public function showPartner(Request $request, $slug){
