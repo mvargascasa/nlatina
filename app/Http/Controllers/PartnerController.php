@@ -177,6 +177,10 @@ class PartnerController extends Controller
             $partner->company = $request->company;
             $partner->company_name = null;
         }
+
+        if($request->status == "NO PUBLICADO" && ($partner->status == "PUBLICADO" || $partner->status == null || $partner->status == "")){
+            $this->sendEmailPartnerDesactivado($partner);
+        }
         
         $partner->status = $request->status;
         $partner->name = $request->name;
@@ -204,10 +208,6 @@ class PartnerController extends Controller
         if($request->status == "PUBLICADO" && $partner->fecha_publicado == null){
             $partner->fecha_publicado = date(now());
             $this->sendEmailPublicado($partner);
-        }
-
-        if($partner->status == "NO PUBLICADO"){
-            $this->sendEmailPartnerDesactivado($partner);
         }
 
         $partner->save();
@@ -327,7 +327,7 @@ class PartnerController extends Controller
     //ENVIA CORREO DESACTIVADO CUANDO EL STATUS CAMBIE A NO PUBLICADO Y LA FECHA_PUBLICADO SEA != NULL
     public function sendEmailPartnerDesactivado(Partner $partner){
         $to = $partner->email;
-        $subject = "Perfil Desactivado - Notaria Latina";
+        $subject = "Perfil No Publicado - Notaria Latina";
         $message = "<div style='font-size:13px; margin: 5%; border-style: ridge;'>
                     <br><strong><h3>Hola " . $partner->name . ". Reciba un cordial saludo de Notaria Latina</h3></strong>
                     <br>Queremos informarle que su perfil no ha sido publicado en nuestra plataforma debido a que algunos campos están incompletos o no cumplen con los requisitos necesarios.
