@@ -285,14 +285,14 @@
                         </div>
                     @endisset
                 </div>
-                @isset($partner->numlicencia)
+                {{-- @isset($partner->numlicencia)
                     <div class="rowinfobody">
                         <h2 style="font-weight: 600; font-size: 18px">Número de Licencia - Título</h2>
                         <div class="d-flex">
                             <p style="font-weight: 400; padding: 5px; border-radius: 5px" class="border">{{ Purify::clean($partner->numlicencia) }}</p>
                         </div>
                     </div>
-                @endisset
+                @endisset --}}
             </div>
             <div class="col-sm-3">
                 <div class="rowinfobody">
