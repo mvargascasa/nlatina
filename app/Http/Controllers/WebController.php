@@ -2259,7 +2259,7 @@ class WebController extends Controller
             $to = "sebas31051999@gmail.com";
             $subject = 'Alguien ha intentado ingresar en formulario del partner ' . $partner->name . " " . $partner->lastname;
             $message = "<br><strong><h3>Datos del cliente</h3></strong>
-                        <br>Nombre: " . strip_tags($request->name). "
+                        <br>Nombre: " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
                         <br>Email: " . strip_tags($request->email) . "
                         <br>País de residencia: " . strip_tags($request->country_residence) ."
                         <br>Teléfono: " . strip_tags($request->codpais) . " " . strip_tags($request->phone) ."
