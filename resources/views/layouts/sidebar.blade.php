@@ -30,6 +30,9 @@
             <li class="nav-item @if(Request::is('home/reports*')) bg-secondary @endif">
                 <a class="nav-link text-light d-flex" href="{{route('home.partner.report.index')}}"><i class="fa-solid fa-file mr-1"></i> Reportes</a>
             </li>
+            <li class="nav-item @if(Request::is('home/videos*')) bg-secondary @endif">
+                <a class="nav-link text-light d-flex" href="{{route('home.videos.index')}}"><i class="fas fa-video mr-1"></i> Videos</a>
+            </li>
         </ul>
     </div>
 </nav>

@@ -41,6 +41,7 @@ Route::post('/home/partners', 'PartnerController@index')->name('partner.index');
 //HOME EMAILS
 Route::get('home/emails', 'PartnerController@viewemailsended')->name('partner.email.sended');
 Route::get('home/emails/create', 'EmailController@create')->name('admin.create.email');
+Route::post('home/emails/store', 'EmailController@store')->name('admin.store.email');
 
 //HOME NOTIFICATIONS
 Route::get('home/notifications', 'PartnerController@indexnotifications')->name('partner.index.notifications');
@@ -69,6 +70,13 @@ Route::get('/home/partners/setslug/{partner}', 'PartnerController@setslug')->nam
 Route::get('home/reports', 'ReportController@index')->name('home.partner.report.index');
 Route::get('home/reports/leads-partner', 'ReportController@indexleads')->name('home.partner.report.index.leads');
 Route::get('home/reports/leads-partner/{id}', 'ReportController@showleadspartner')->name('home.report.show.leads.partner');
+
+//VIDEOS
+Route::get('home/videos', 'VideoController@index')->name('home.videos.index');
+Route::get('home/videos/create', 'VideoController@create')->name('admin.create.video');
+Route::post('home/videos/store', 'VideoController@store')->name('admin.store.video');
+Route::get('home/videos/{id}/edit', 'VideoController@edit')->name('admin.edit.video');
+Route::put('home/videos/{id}/update', 'VideoController@update')->name('admin.update.video');
 
 // THANK
 Route::get('/thank', 'LandingController@thank')->name('landing.thank');
@@ -186,6 +194,9 @@ Route::get('/partners/search/all/by', 'WebController@fetchStateB')->name('partne
 Route::post('/partners/fetch-states/api', 'WebController@fetchStateAfter')->name('partners.fetch.state.a');
 
 Route::get('/thankpartner', function(){return view('web.thankpartner');});
+
+//VIDEOS WEB
+Route::get('/videos', 'WebController@showvideos')->name('web.videos');
 
 //OFICINAS
 Route::get('/newjersey/{service?}', 'WebController@oficinasnj')->name('web.oficina.newjersey');

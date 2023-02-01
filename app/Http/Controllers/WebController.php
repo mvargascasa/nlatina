@@ -19,6 +19,7 @@ use Session;
 use Illuminate\Support\Str;
 use Intervention\Image\Image;
 use Stevebauman\Purify\Facades\Purify;
+use Illuminate\Support\Facades\DB;
 
 class WebController extends Controller
 {
@@ -2581,6 +2582,11 @@ class WebController extends Controller
     public function eliminarCachePartner(Partner $partner){
         Cache::forget('partner'.$partner->id);
         return redirect()->back();
+    }
+
+    public function showvideos(){
+        $videos = DB::table('video')->where('status', 1)->get();
+        return view('web.videos.index', compact('videos'));
     }
 
 }
