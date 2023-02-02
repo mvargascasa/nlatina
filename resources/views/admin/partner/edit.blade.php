@@ -677,7 +677,7 @@
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #25D366; color: #ffffff;">
                     <h6 class="modal-title font-weight-bold" id="staticBackdropLabel">¿Sabía que puede aumentar su visibilidad online?</h6>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button id="btndismiss" type="button" class="close" onclick="setmodals('modalpresentation', '{{$partner->id}}', this)">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -685,7 +685,7 @@
                   <img id="imgWelcome" class="img-fluid" src="{{asset('img/partners-presentacion.jpg')}}" alt="Partners de Notaria Latina">
                 </div>
                 <div class="modal-footer justify-content-center" style="border-top: none;">
-                    <button type="button" class="btn rounded-0" style="background-color: #25D366; color: #ffffff;" onclick="setmodals('modalpresentation', '{{$partner->id}}')">Enviar mi presentación <i class="fab fa-whatsapp ml-1"></i></button>
+                    <button id="btnsendpresentation" type="button" class="btn rounded-0" style="background-color: #25D366; color: #ffffff;" onclick="setmodals('modalpresentation', '{{$partner->id}}', this)">Enviar mi presentación <i class="fab fa-whatsapp ml-1"></i></button>
                 </div>
             </div>
         </div>
@@ -1023,7 +1023,7 @@
 @section('end-scripts')
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
-        function setmodals(id, partner_id){
+        function setmodals(id, partner_id, button){
             $.ajax({
                     url: "{{route('partner.set.modals')}}",
                     type: "POST",
@@ -1036,7 +1036,9 @@
                     success: function(response){
                     if(response){
                         $('#modalpresentation').modal('toggle');
-                        window.open('https://api.whatsapp.com/send?phone=13474283543', '_blank');
+                        if(button.id == "btnsendpresentation"){
+                            window.open('https://api.whatsapp.com/send?phone=13474283543', '_blank');
+                        }
                         //toggleModalSuccess();
                     } else {
                         alert('Algo salio mal guardando el modal, por favor recargue la pagina');
