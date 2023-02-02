@@ -131,6 +131,7 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
     Route::get('/edit/{partner}', 'HomeController@edit')->name('socios.edit')->middleware('auth:partner'); // 'verified'
     Route::put('/update/{partner}', 'HomeController@update')->name('socios.update')->middleware('auth:partner'); //verified
     Route::post('/logout', 'LoginController@logout')->name('socios.logout')->middleware('auth:partner'); //verified
+    Route::post('/setmodals', 'HomeController@setmodals')->name('partner.set.modals')->middleware('auth:partner');
 
     Route::get('/password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('socio.password.request');
     Route::post('/password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('socio.password.email');

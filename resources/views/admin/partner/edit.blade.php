@@ -134,6 +134,7 @@
             color: white;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endsection
 
 @section('content')
@@ -457,6 +458,11 @@
                                                 @endif
                                             </div>
                                         </div>
+                                        <div class="col-sm-6">
+                                            <div class="border p-2 rounded">
+                                                <p class="text-muted" style="font-size: 14px"><i class="fas fa-info-circle"></i> Su número de licencia o de título no será visualizado en nuestro sitio web. </p>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-4">
@@ -636,26 +642,51 @@
     </div>
 
     @if ($partner->terminos_verified_at == null && $partner->password != null)
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $("document").ready(function(){
             $('#modalBienvenido').modal('toggle')
         });
     </script>
     @endif
+    @if($partner->updated_count == 1 && !str_contains($partner->modals, 'modalpresentation'))
+        <script>
+            $("document").ready(function(){
+                $('#modalpresentation').modal('toggle')
+            });
+        </script>
+    @endif
 
-    <div class="modal fade" id="modalBienvenido" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="width: 35%">
+    <div class="modal fade" id="modalBienvenido" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="width: 35%;">
             <div class="modal-content">
                 <div class="modal-header text-center" style="display: inline; border-bottom: none; margin-bottom: 0px;">
                     
                 </div>
-                <div class="modal-body d-flex justify-content-center" style="border-bottom: none; margin-top: -30px">
+                <div class="modal-body d-flex justify-content-center h-100" style="border-bottom: none; margin-top: -30px">
                   <img id="imgWelcome" class="img-fluid" src="@if($isMobile) {{asset('img/partners/pasos-registro - movil.png')}} @else {{ asset('img/partners/pasos-registro.png') }} @endif" alt="Partners de Notaria Latina">
-              </div>
-              <div class="modal-footer justify-content-center" style="border-top: none;">
-                <button type="button" class="btn btn-primary" style="background-color: #002542; color: #ffffff" onclick="$('#modalBienvenido').modal('hide')">Completar mi perfil</button>
-              </div>
+                </div>
+                <div class="modal-footer justify-content-center" style="border-top: none;">
+                    <button type="button" class="btn btn-primary rounded-0" style="background-color: #002542; color: #ffffff;" onclick="$('#modalBienvenido').modal('hide')">Completar mi perfil</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modalpresentation" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="width: @if($isMobile) auto @else 35% @endif">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #25D366; color: #ffffff;">
+                    <h6 class="modal-title font-weight-bold" id="staticBackdropLabel">¿Sabía que puede aumentar su visibilidad online?</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex justify-content-center h-100" style="border-bottom: none;">
+                  <img id="imgWelcome" class="img-fluid" src="{{asset('img/partners-presentacion.jpg')}}" alt="Partners de Notaria Latina">
+                </div>
+                <div class="modal-footer justify-content-center" style="border-top: none;">
+                    <button type="button" class="btn rounded-0" style="background-color: #25D366; color: #ffffff;" onclick="setmodals('modalpresentation', '{{$partner->id}}')">Enviar mi presentación <i class="fab fa-whatsapp ml-1"></i></button>
+                </div>
             </div>
         </div>
       </div>
@@ -991,8 +1022,31 @@
 
 @section('end-scripts')
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        function setmodals(id, partner_id){
+            $.ajax({
+                    url: "{{route('partner.set.modals')}}",
+                    type: "POST",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        "id": id,
+                        "partner_id": partner_id
+                    },
+                    dataType: "json",
+                    success: function(response){
+                    if(response){
+                        $('#modalpresentation').modal('toggle');
+                        console.log(response);
+                        //toggleModalSuccess();
+                    } else {
+                        alert('Algo salio mal guardando el modal, por favor recargue la pagina');
+                    }
+                },
+                    error: function(error){
+                        console.log('Hubo un error con el servidor, por favor recargue la pagina');
+                    }
+            });
+        }
 
         // let btnsave = document.getElementById('btnsave');
         // let form = document.getElementById('formsavepartner');

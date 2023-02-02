@@ -229,6 +229,8 @@ class HomeController extends Controller
         //$partner->slug = Str::slug('abogado en ' . $partner->city . ' '. $partner->state . ' ' . $partner->country_residence . ' ' . $partner->id, '-');
         //$partner->slug = Str::slug($partner->name . ' '. $partner->lastname . ' ' . $partner->id, '-');
 
+        $partner->updated_count = $partner->updated_count + 1;
+
         $partner->save();
 
         return redirect()->route('socios.edit', $partner)->with(['status' => 'Se actualizó su información']);
@@ -283,5 +285,17 @@ class HomeController extends Controller
         $partner->save();
 
         return redirect()->route('socios.edit', $partner);
+    }
+
+    public function setmodals(Request $request){
+        $partner = Partner::where('id', $request->partner_id)->first();
+        if($partner->modals != null){
+            
+        } else {
+            $partner->modals = $request->id;
+        }
+        $saved = $partner->save();
+
+        return response()->json($saved);
     }
 }

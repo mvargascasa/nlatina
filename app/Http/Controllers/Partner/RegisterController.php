@@ -52,14 +52,15 @@ class RegisterController extends Controller
                 // 'company' => strip_tags($request['company']),
                 'email'=> $request['email'],
                 'password'=> bcrypt($request['password']),
-                'slug' => Str::slug('abogado en ' . $request['country_residence'] . ' ' . $nextId, '-')
+                'slug' => Str::slug('abogado en ' . $request['country_residence'] . ' ' . $nextId, '-'),
                 // 'slug' => Str::slug($request['name'] . ' ' . $request['lastname'] . ' ' . $nextId, '-')
+                'updated_count' => 0
             ]);
     
             // event(new Registered($partner));
         
             //Envia correo a los administradores de que se ha registrado un nuevo usuario
-            $this->sendEmail($partner);
+            //$this->sendEmail($partner);
     
             $this->sendEmailPartner($partner);
     

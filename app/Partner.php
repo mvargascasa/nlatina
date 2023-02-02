@@ -47,6 +47,8 @@ class Partner extends Authenticatable implements MustVerifyEmail
         'checkterminos',
         'terminos_verified_at',
         'fb_id',
+        'updated_count',
+        'modals',
         'created_at', 
         'updated_at'
     ];
