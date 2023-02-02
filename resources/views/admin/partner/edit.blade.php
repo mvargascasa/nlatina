@@ -1036,7 +1036,7 @@
                     success: function(response){
                     if(response){
                         $('#modalpresentation').modal('toggle');
-                        console.log(response);
+                        window.open('https://api.whatsapp.com/send?phone=13474283543', '_blank');
                         //toggleModalSuccess();
                     } else {
                         alert('Algo salio mal guardando el modal, por favor recargue la pagina');
