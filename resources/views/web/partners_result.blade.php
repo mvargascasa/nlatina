@@ -230,7 +230,8 @@
         <div>
             <div id="rowImage" class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
                 <div class="col-sm-12 col-12 text-white text-center">
-                    <h1 id="titlepc" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados</b> en {{$country_aux->name_country}} a su alcance!</h1>
+                    <h1 id="titlepc" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados</b> de {{$country_aux->name_country}} a su alcance!</h1>
+                    <p>Contamos con un amplio directorio de <b style="color: #fec02f">abogados en {{$country_aux->name_country}}</b> a su disposición</p>
                 </div>
                 {{-- <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-6">
                     @include('admin.partner.layouts.form_register')
