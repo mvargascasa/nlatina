@@ -27,7 +27,7 @@
 
             <div class="col-12 text-white text-center">
               <h1 class="font-weight-bold heading-title">Poder Notarial en {{ $data['office'] }}</h1>
-              <h3 class="heading-title">Generales y Especiales</h3>
+              <p class="heading-title h3">Generales y Especiales</p>
   
               <a href="javascript:void(0)" class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</a>
@@ -49,7 +49,7 @@
 
             @if (!sizeof($posts) == 0)
               <div class="mt-5">
-                <h4>Artículos que pueden interesarle</h4>
+                <p class="h4">Artículos que pueden interesarle</p>
                 <div class="row">
                     @foreach ($posts as $post)
                     <div class="col-12 col-md-4">
@@ -81,7 +81,7 @@ aria-hidden="true">
    <div class="modal-dialog" role="document">
      <div class="modal-content">
        <div class="modal-header text-white" style="background-color: #333 !important;">
-         <h5 class="modal-title" id="exampleModalLabel">Complete el siguiente formulario y en breve le contactamos.</h5>
+         <p class="modal-title h5" id="exampleModalLabel">Complete el siguiente formulario y en breve le contactamos.</p>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
            <span aria-hidden="true" style="color: #FFF !important;">&times;</span>
          </button>

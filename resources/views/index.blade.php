@@ -150,7 +150,7 @@
           style="height: 550px;object-fit: cover; object-position: left top;">
           <div class="carousel-caption">
               <h1 class="tit-not">Notaría Pública</h1>
-              <h2 class="heading-title" style="margin-bottom: 5%">Gestión Fácil y Rápida</h2>
+              <p class="heading-title h2" style="margin-bottom: 5%">Gestión Fácil y Rápida</p>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div id="div2" class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
@@ -202,7 +202,7 @@
           <img data-src="{{asset('img/2.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left bottom;">
           <div class="carousel-caption">
-              <h1 id="titleTraducciones" class="tit-not" style="margin-bottom: 6%">TRADUCCIONES</h1>
+              <p id="titleTraducciones" class="tit-not h1" style="margin-bottom: 6%">TRADUCCIONES</p>
               <div id="locations" class="row" style="margin-left: 11%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
@@ -250,7 +250,7 @@
           <img data-src="{{asset('img/3.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left top;">
           <div class="carousel-caption">
-              <h1 id="titleApostillas" class="tit-not" style="margin-bottom: 6%">APOSTILLAS</h1>
+              <p id="titleApostillas" class="tit-not h1" style="margin-bottom: 6%">APOSTILLAS</p>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
@@ -298,8 +298,7 @@
           <img data-src="{{asset('img/4.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left bottom;">
           <div class="carousel-caption">
-              <h1 class="tit-not">PODERES GENERALES</h1>
-              <h2 class="heading-title" style="margin-bottom: 5%">Y ESPECIALES</h2>
+              <p class="tit-not h1" style="margin-bottom: 5%">PODERES GENERALES Y ESPECIALES</p>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
@@ -365,7 +364,7 @@
         <div class="row text-white">
             <div class="col-12 col-sm-6 p-4 my-2">
                 <span class="text-muted font-weight-bold">¿Por qué elegirnos?</span> <br><br>
-                <h3 class="heading-title pb-4">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</h3>
+                <p class="heading-title pb-4 h3">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</p>
                 <hr class="hrwf">
                 <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
                 <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
@@ -444,7 +443,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header text-white" style="background-color: #333 !important;">
-          <h5 class="modal-title" id="exampleModalLabel">Complete el siguiente formulario y en breve le contactamos.</h5>
+          <p class="modal-title h5" id="exampleModalLabel">Complete el siguiente formulario y en breve le contactamos.</p>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" style="color: #FFF !important;">&times;</span>
           </button>
