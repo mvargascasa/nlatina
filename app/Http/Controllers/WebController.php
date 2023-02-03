@@ -2559,11 +2559,12 @@ class WebController extends Controller
         Cache::put('partner'.$partner->id, $data);
 
         $to = "partners@notarialatina.com";
-        $subject = "Consulta para ver teléfono del Partner: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . " | ". date(now());
-        $message = "<br><strong><h3>Datos del solicitante</h3></strong>
-                <br>Nombre: " . strip_tags($request->name). "
-                <br>Teléfono: " . strip_tags($request->phone) ."
-                <br>Email: " . strip_tags($request->email) . "
+        $subject = "Consulta por teléfono de partner: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname) . " | ". date(now());
+        $message = "<br><strong><h3>Datos del lead</h3></strong>
+                <br><b>Nombre:</b> " . strip_tags($request->name). " " . strip_tags($request->lastname) . "
+                <br><b>Teléfono:</b> " . strip_tags($request->phone) ."
+                <br><b>País de residencia: </b> " . strip_tags($request->country_residence_view_phone) . "
+                <br><b>Email:</b> " . strip_tags($request->email) . "
                 <br>
                 <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";
@@ -2572,7 +2573,19 @@ class WebController extends Controller
         'Content-type:text/html;charset=UTF-8' . "\r\n"
         ;
 
+        $customer = Customer::create([
+            'nombre' => Purify::clean($request->name) . " " . Purify::clean($request->lastname),
+            'email' => Purify::clean($request->email),
+            'pais' => Purify::clean($request->country_residence_view_phone),
+            'telefono' => Purify::clean($request->phone),
+            'mensaje' => Purify::clean('Consulta por número telefónico')
+        ]);
+
+        $partner->customers()->attach($customer->id);
+
         mail($to, $subject, $message, $header);
+
+        mail('sebas31051999@gmail.com', $subject, $message, $header);
 
         $request->session()->flash('solicited', 'Gracias por enviar tu valoración');
 

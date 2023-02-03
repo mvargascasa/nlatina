@@ -243,9 +243,9 @@
             </div>
             <div class="col-sm-8 mt-5 info-header">
                 <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
-                <h1 style="font-size: 30px" id="txtnamelastname"><b>Abogado en {{$partner->city}}, {{$partner->state}}</b> <img width="25" height="25" src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="IMG_BAND_{{ $partner->country_residence }}">
+                <h1 style="font-size: 30px"><b>Abogado en {{$partner->city}}, {{$partner->state}}</b> <img width="25" height="25" src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="IMG_BAND_{{ $partner->country_residence }}">
                 </h1>
-                <p style="font-size: 20px; margin-top: 15px">@if($partner->title=="Abogado")Abg.@elseif($partner->title=="Licenciado")Lic.@endif {{$partner->name . " " . $partner->lastname}}</p>
+                <p style="font-size: 20px; margin-top: 15px">@if($partner->title=="Abogado")Abg.@elseif($partner->title=="Licenciado")Lic.@endif <b style="font-weight: 100" id="txtnamelastname">{{$partner->name . " " . $partner->lastname}}</b></p>
                 @if ($partner->company == "Empresa")
                     <p style="margin-top: 10px"><i class="fas fa-building"></i> {{ $partner->company_name }}</p>
                 @else
@@ -357,23 +357,23 @@
                         </div>
                     @endif
                 </div>
-                <div class="formContact mt-4 rounded">
+                <div class="formContact mt-4 rounded shadow">
                     <h4 class="text-white text-center p-3">¿Necesita realizar una consulta?</h4>
                     <p class="text-white px-3">Complete el formulario con su información y el partner <b class="text-warning">{{$partner->name . " " . $partner->lastname}}</b> se comunicará con usted</p>
                     <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
                         @csrf
                         <div class="d-flex">
-                            <div>
-                                <input class="form-control mr-1" style="font-size: 12px" type="text" id="nombre" placeholder="Nombre" name="name" autocomplete="off" required>
+                            <div class="w-100">
+                                <input class="form-control mr-1 rounded-0" style="font-size: 12px" type="text" id="nombre" placeholder="Nombre" name="name" autocomplete="off" required>
                             </div>
-                            <div>
-                                <input class="form-control ml-1" style="font-size: 12px" type="text" id="apellido" placeholder="Apellido" name="lastname" autocomplete="off" required>
+                            <div class="w-100">
+                                <input class="form-control ml-1 rounded-0" style="font-size: 12px" type="text" id="apellido" placeholder="Apellido" name="lastname" autocomplete="off" required>
                             </div>
                         </div>
-                        <input type="email" name="email" style="font-size:12px" id="email" placeholder="Correo electrónico" class="form-control" autocomplete="off" required>
+                        <input type="email" name="email" style="font-size:12px" id="email" placeholder="Correo electrónico" class="form-control rounded-0" autocomplete="off" required>
                         <div class="d-flex mt-3">
-                            <div>
-                                <select name="country_residence" id="country_residence" class="form-control mr-1" style="font-size: 12px" required>
+                            <div class="w-100">
+                                <select name="country_residence" id="country_residence" class="form-control mr-1 rounded-0" style="font-size: 12px" required>
                                     <option value="">País de residencia</option>
                                     <option value="Argentina">Argentina</option>
                                     <option value="Bolivia">Bolivia</option>
@@ -395,16 +395,16 @@
                                     <option value="Venezuela">Venezuela</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="w-100">
                                 <input type="hidden" name="codpais" id="codTelfPais">
-                                <input class="form-control ml-1" style="font-size: 12px" type="text" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
+                                <input class="form-control ml-1 rounded-0" style="font-size: 12px" type="text" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
                             </div>
                         </div>
-                        <textarea class="form-control" style="font-size: 12px" id="mensaje" rows="4" placeholder="Ej: Hola, me interesa consultar por sus servicios y deseo que me contacten" name="mensaje" autocomplete="off" required></textarea>
+                        <textarea class="form-control rounded-0" style="font-size: 12px" id="mensaje" rows="4" placeholder="Ej: Hola, me interesa consultar por sus servicios y deseo que me contacten" name="mensaje" autocomplete="off" required></textarea>
                         <div style="display: none">
                             <input type="hidden" name="aux">
                         </div>
-                        <button class="btn mb-3" style="background-color: #FEC02F;" type="submit"><i class="fas fa-envelope"></i> Enviar</button>
+                        <button class="btn mb-3 rounded-0" style="background-color: #FEC02F;" type="submit"><i class="fas fa-envelope"></i> Enviar</button>
                     </form>
                 </div>
                 @php
@@ -414,7 +414,7 @@
                         $ip = $array['ip'];
                     }
                 @endphp
-                <div id="divshowphone" class="row d-flex mt-4 justify-content-center border" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%;"> </div>
+                <div id="divshowphone" class="row d-flex mt-4 justify-content-center border shadow" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%;"> </div>
             </div>
         </div>
         @endif
@@ -485,7 +485,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header text-white" style="background-color: #002542">
-                        <p style="font-weight: bold">Complete el formulario para ver el número telefónico del partner {{ $partner->name . " " . $partner->lastname}}</p>
+                        <p style="font-weight: bold"><b style="color: #fec02f">Complete el formulario</b> para ver el número telefónico del partner</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span style="color: #ffffff" aria-hidden="true">&times;</span>
                         </button>
@@ -493,18 +493,46 @@
                     <form id="formviewphone" action="{{ route('web.send.view.phone', $partner)}}" method="POST">
                     <div class="modal-body" >
                             @csrf
-                            <div class="mb-3">
-                                <input class="form-control" name="email" type="email" placeholder="Email" required>
+                            <div class="d-flex mb-3">
+                                <div class="mr-1">
+                                    <input class="form-control rounded-0" name="name" type="text" placeholder="Nombre" required>
+                                </div>
+                                <div class="ml-1">
+                                    <input type="text" class="form-control rounded-0" name="lastname" placeholder="Apellido" required>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <input class="form-control" name="name" type="text" placeholder="Nombre y Apellido" required>
+                                <input class="form-control rounded-0" name="email" type="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="country_residence_view_phone" id="country_residence_view_phone" class="form-control rounded-0" required>
+                                    <option value="">País de residencia</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Costa Rica">Costa Rica</option>
+                                    <option value="Ecuador">Ecuador</option>
+                                    <option value="El Salvador">El Salvador</option>
+                                    <option value="Estados Unidos">Estados Unidos</option>
+                                    <option value="Guatemala">Guatemala</option>
+                                    <option value="Honduras">Honduras</option>
+                                    <option value="México">México</option>
+                                    <option value="Nicaragua">Nicaragua</option>
+                                    <option value="Panamá">Panamá</option>
+                                    <option value="Paraguay">Paraguay</option>
+                                    <option value="Perú">Perú</option>
+                                    <option value="Puerto Rico">Puerto Rico</option>
+                                    <option value="República Dominicana">República Dominicana</option>
+                                    <option value="Uruguay">Uruguay</option>
+                                    <option value="Venezuela">Venezuela</option>
+                                </select>
                             </div>
                             <div class="mb-3">
-                                <input class="form-control" name="phone" type="number" placeholder="Teléfono" required>
+                                <input class="form-control rounded-0" name="phone" type="number" placeholder="Teléfono" required>
                             </div>
                         </div>
                         <div class="modal-footer justify-content-center" style="margin-bottom: -15px;">
-                            <button onclick="saveStorage();" class="btn" style="background-color: #fec02f">Enviar</button>
+                            <button onclick="saveStorage();" class="btn rounded-0 shadow" style="background-color: #fec02f">Enviar información</button>
                         </div>
                     </form>
                 </div>
@@ -553,7 +581,7 @@
                 echo "
                     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
                     <script>
-                        swal('Hemos enviado tu información', 'Nos pondremos en contacto lo antes posible!', 'success');
+                        swal('Hemos enviado su información', 'Nos pondremos en contacto lo antes posible', 'success');
                     </script>
                     ";    
             @endphp
@@ -565,7 +593,7 @@
                 echo "
                     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
                     <script>
-                        swal('Se han enviado los datos', 'Gracias por tu evaluación!', 'success');
+                        swal('Se han enviado los datos', 'Agradecemos su evaluación', 'success');
                     </script>
                     ";    
             @endphp
@@ -577,7 +605,7 @@
                 echo "
                     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
                     <script>
-                        swal('Se envió la información', 'Ahora puedes acceder al teléfono del partner!', 'success');
+                        swal('Se envió la información', 'Ahora puede acceder al teléfono del partner', 'success');
                     </script>
                     ";    
             @endphp
@@ -629,7 +657,7 @@
         var id = document.getElementById('txtpartnerid').textContent;
         var partner = document.getElementById('txtnamelastname').textContent;
         if(localStorage.getItem("prueba"+id) == null){
-            partner = partner.replace(/\s/g, "") + id;
+            partner = partner.replace(/\s/g, "").toLowerCase() + id;
             localStorage.setItem("prueba"+id, partner);
         }
         document.getElementById('formviewphone').submit();
