@@ -60,7 +60,7 @@ class RegisterController extends Controller
             // event(new Registered($partner));
         
             //Envia correo a los administradores de que se ha registrado un nuevo usuario
-            //$this->sendEmail($partner);
+            $this->sendEmail($partner);
     
             $this->sendEmailPartner($partner);
     
