@@ -2244,7 +2244,45 @@ class WebController extends Controller
             $data['imgurlmap'] = "img/oficinas/maps-fl-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-fl-mobile-2.webp";
             $data['metadescription'] = 'Realizamos Poderes Generales y Especiales, Apostilla y Traducción de todo tipo de documentos en Florida. ¿Desea saber más? ¡Contáctenos ahora! ✅';
-            $data['keywords'] = 'notaria latina, notaria florida, notario cerca de mi, notaria en florida, notaria fl, notaria sunrise, notaria latina sunrise, notaria en sunrise florida, notaria latina en sunrise florida, notaria cerca de mi, notario publico en florida, notarizar documentos en sunrise florida, notario publico cerca de mi, apostillar documentos en sunrise florida, donde puedo tramitar documentos en florida, donde puedo notarizar documentos en florida, tramites notariales en florida, carta poder en florida, apostillas en florida, traduccion de documentos en florida, autorizacion de viaje florida, certificar documentos florida, acuerdos en florida, carta de invitacion florida estados unidos, revocatoria de poder en florida, contratos en florida, testamentos en florida, matrimonios en florida, apostillar documentos en florida, documentos que requieren una apostilla florida, carta poder notariada, carta poder notariada florida, carta poder notarial, carta poder notarial florida, poder notarial, poder notarial florida, traduccion certificada, traduccion certificada florida, traducciones certificadas near me, traduccion de documentos, traduccion de documentos florida, apostille fl, florida apostille, tradcuccion de un documento, traduccion de un documento florida, traduccion de documentos de ingles a español, traduccion de documentos cerca de mi, traductor certificado, fl apostille, documentos a apostillar';
+            $data['keywords'] = 'notaria florida,
+                notario cerca de mi,
+                notaria cerca de mi, 
+                notario publico cerca de mi, 
+                notaria en florida,  
+                notaria sunrise, 
+                notaria en sunrise fl, 
+                notaria en sunrise florida, 
+                notaria latina en sunrise florida, 
+                notario publico en florida, 
+                notaria publico florida,
+                notaria publico en sunrise florida,
+                notarizar documentos near me,
+                notarizar en linea florida,
+                notarizar en linea en florida,
+                notarizar documentos en florida,
+                notarizar documentos en sunrise florida, 
+                tramitar documentos florida,
+                tramitar documentos en florida,
+                donde puedo tramitar documentos en florida,
+                donde puedo tramitar un documento en florida,
+                tramitar documentos sunrise florida,
+                tramitar documentos en sunrise florida,
+                notarizar documentos florida,
+                notarizar documentos en florida,
+                realizar tramite notarial florida,
+                realizar tramite notarial en florida,
+                realizar un tramite notarial en florida,
+                donde puedo notarizar documentos en florida, 
+                donde puedo notarizar un documento en florida,
+                donde puedo realizar un tramite notarial florida,
+                donde puedo realizar un tramite notarial en florida,
+                donde puedo notarizar un documento cerca de mi,
+                tramites notariales en florida,
+                tramites notariales florida,
+                tramites notariales sunrise florida,
+                tramites notariales en sunrise florida,
+                servicios notariales florida,
+                servicios notariales en florida';
             $data['reviews'] = $this->reviewsfl;
             $data['more_reviews'] = $this->more_reviewsfl;
 
