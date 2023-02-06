@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('scripts')
-    
+  
 @endsection
 
 @section('content')
@@ -46,9 +46,27 @@
                 </div>
             </div>
         </div>
+        {{-- chartjs --}}
+        <div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card_header">
+                  Dashboard
+                </div>
+                <div class="card-body">
+                  <h1>{{$chart->options['chart_title']}}</h1>
+                  {!! $chart->renderHtml()  !!}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{-- end chartjs --}}
     </div>
 @endsection
 
 @section('end-scripts')
-    
+  {!! $chart->renderChartJsLibrary() !!}
+  {!! $chart->renderJs() !!}
 @endsection
