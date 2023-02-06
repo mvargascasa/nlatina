@@ -8,6 +8,23 @@
     <div class="container col-md-10 mt-3">
         <div>
             <h1>Leads asignados a los Partners</h1>
+            {{-- chartjs --}}
+            <div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card_header">
+                      Dashboard
+                    </div>
+                    <div class="card-body">
+                      <h1>{{$chart->options['chart_title']}}</h1>
+                      {!! $chart->renderHtml()  !!}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{-- end chartjs --}}
             <div>
                 <div>
                 </div>
@@ -46,23 +63,6 @@
                 </div>
             </div>
         </div>
-        {{-- chartjs --}}
-        <div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card_header">
-                  Dashboard
-                </div>
-                <div class="card-body">
-                  <h1>{{$chart->options['chart_title']}}</h1>
-                  {!! $chart->renderHtml()  !!}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {{-- end chartjs --}}
     </div>
 @endsection
 
