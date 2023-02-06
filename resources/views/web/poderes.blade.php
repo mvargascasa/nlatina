@@ -152,9 +152,9 @@
 </div> --}}
 
 <div class="container pt-5 text-justify">
-    @if(!$isMobile)
+    {{-- @if(!$isMobile)
         <iframe class="float-right mx-5 mb-4 rounded shadow" id="iframevideo" width="500" height="300" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    @endif
+    @endif --}}
         <h2 style="font-weight: 500; font-size: 28px">¿Qué es un poder notarial?</h2>
           <p class="text-muted">Un poder o carta poder, es un documento legal que se utiliza para otorgar control total sobre sus activos a otra persona
               si usted no pudiera estar presente. Por lo tanto le permite realizar trámites a distancia siendo una solución para gestionar sus bienes, trámites
@@ -261,11 +261,11 @@
           <li>El documento digital estará disponible en 24 horas.</li>
           <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
       </ul>
-      @if($isMobile)
+      {{-- @if($isMobile)
       <div class="d-flex justify-content-center">
           <iframe class="float-right mx-5 mb-4 rounded shadow" id="iframevideo" width="300" height="200"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      @endif
+      @endif --}}
       <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
           <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
           <div class="text-center">
