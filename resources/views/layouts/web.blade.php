@@ -425,12 +425,11 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div>        
       </div> --}}
 
-    <a id="divwpp" onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">
-        <div class="d-flex justify-content-center align-items-center px-3 py-1 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
-        {{-- Consultar en linea <i class="fab fa-whatsapp ml-1"></i> --}}
-        Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
-        </div>
-    </a>
+        {{-- <a id="divwpp" onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">
+            <div class="d-flex justify-content-center align-items-center px-3 py-1 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
+            Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
+            </div>
+        </a> --}}
 
       {{-- <div id="svgwpp" style="width: 60px; position: fixed; bottom: 10px; right: 0px; height: 50px;">
         <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});"
@@ -441,7 +440,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div> --}}
         {{--+13479739888--}}            
         <div style="position: relative">
-            <div id="divpreguntas" style="position: fixed; bottom: 48px; right: 60px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none">
+            <div id="divpreguntas" style="position: fixed; bottom: 25px; right: 65px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none">
                 {{-- <div style="position: absolute"> --}}
                     <div style="position: absolute; right: -10px; top: -16px; background-color: #122944; color: #ffffff; padding: 0px 6px 3px 6px; border-radius: 25px; border: 2px solid #ffffff; font-size: 10px; font-weight: 500; cursor: pointer" onclick="document.getElementById('divpreguntas').style.display = 'none'">
                         x
@@ -452,7 +451,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                 </div>
             </div>
         </div>
-        <div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 40px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
+        <div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 20px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
             <a href="tel:@yield('phoneNumberHidden')">
                 <img width="20" height="20" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina">
                 {{-- <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i> --}}

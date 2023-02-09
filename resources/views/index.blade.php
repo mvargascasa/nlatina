@@ -137,7 +137,7 @@
 
 
 
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -158,8 +158,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill text-center py-1 px-2">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -170,8 +170,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill text-center py-1 px-2">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -182,8 +182,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="bg-success rounded-pill px-2 text-center">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill py-1 px-2 text-center">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -210,8 +210,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill text-center px-2 py-1">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -222,8 +222,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill text-center px-2 py-1">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -234,8 +234,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="bg-success rounded-pill px-2 text-center">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill px-2 py-1 text-center">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -258,8 +258,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill text-center px-2 py-1">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -270,8 +270,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill text-center px-2 py-1">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -282,8 +282,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="bg-success rounded-pill px-2 text-center">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill px-2 py-1 text-center">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -306,8 +306,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill text-center px-2 py-1">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -318,8 +318,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill text-center px-2 py-1">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
@@ -330,8 +330,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="bg-success rounded-pill px-2 text-center">
-                        Contactar <i class="fab fa-whatsapp"></i>
+                      <div class="bg-success rounded-pill px-2 text-center py-1">
+                        <i class="fab fa-whatsapp fa-2x"></i>
                       </div>
                     </a>
                   </div>
