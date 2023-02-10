@@ -443,7 +443,7 @@
         <h2 class="tit-not">Visite Nuestras Oficinas</h2>
         <hr class="hrb">
       </div>
-    <div class="col-12 col-sm-12 col-md-4">
+    <div class="col-12 col-sm-12 col-md-4 mb-3">
           {{-- <a style="text-decoration: none" href="{{ route('web.oficina.newjersey') }}"> --}}
         <div class="serviceBox h-100">
             <h3 class="title">New Jersey</h3>
@@ -465,7 +465,7 @@
           {{-- </a> --}}
     </div>
 
-    <div class="col-12 col-sm-12 col-md-4">
+    <div class="col-12 col-sm-12 col-md-4 mb-3">
       <a style="text-decoration: none" href="{{ route('web.oficina.newyork') }}">
         <div class="serviceBox h-100">
             <h3 class="title">New York</h3>
@@ -487,7 +487,7 @@
         </a>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-4">
+    <div class="col-12 col-sm-12 col-md-4 mb-3">
       <a style="text-decoration: none" href="{{ route('web.oficina.florida') }}">
         <div class="serviceBox h-100">
             <h3 class="title">Florida</h3>
