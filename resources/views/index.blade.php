@@ -151,7 +151,7 @@
           <div class="carousel-caption">
             <div>
               <h1 class="tit-not">Notaría Pública</h1>
-              <p class="heading-title h2" style="margin-bottom: 5%">Gestión Fácil y Rápida</p>
+              <p class="heading-title h2" style="margin-bottom: @if(!$mobile) 6% @else 2% @endif">Gestión Fácil y Rápida</p>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div id="div2" class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
@@ -190,12 +190,12 @@
                   </div>
                 </div>
               </div>
+            </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
               <button class="btn btn-warning btn-lg button" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</button>
-            </div>
           </div>
         </div>
 
@@ -205,7 +205,7 @@
           style="height: 550px;object-fit: cover; object-position: left bottom;">
           <div class="carousel-caption">
             <div>
-              <p id="titleTraducciones" class="tit-not h1" style="margin-bottom: 6%">TRADUCCIONES</p>
+              <p id="titleTraducciones" class="tit-not h1" style="margin-bottom: 7%">TRADUCCIONES</p>
               <div id="locations" class="row" style="margin-left: 11%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
@@ -255,7 +255,7 @@
           <img data-src="{{asset('img/3.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left top;">
           <div class="carousel-caption">
-              <p id="titleApostillas" class="tit-not h1" style="margin-bottom: 6%">APOSTILLAS</p>
+              <p id="titleApostillas" class="tit-not h1" style="margin-bottom: 7%">APOSTILLAS</p>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
@@ -303,7 +303,7 @@
           <img data-src="{{asset('img/4.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left bottom;">
           <div class="carousel-caption">
-              <p class="tit-not h1" style="margin-bottom: 5%">PODERES GENERALES Y ESPECIALES</p>
+              <p class="tit-not h1" style="margin-bottom: @if(!$mobile) 7% @else 2% @endif">PODERES GENERALES Y ESPECIALES</p>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
