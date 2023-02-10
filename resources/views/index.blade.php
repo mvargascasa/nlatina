@@ -388,7 +388,7 @@
 
 
 <div class="container">
-  <div class="row py-4">
+  {{-- <div class="row py-4">
       <div class="col-12 text-center py-4">
           <h2 class="tit-not">Nuestros Servicios</h2>
           <hr class="hrb">
@@ -435,7 +435,80 @@
           </a>
       </div>
 
-  </div>
+  </div> --}}
+
+  {{-- div de oficinas --}}
+  <div class="row py-4">
+    <div class="col-12 text-center py-4">
+        <h2 class="tit-not">Visite Nuestras Oficinas</h2>
+        <hr class="hrb">
+      </div>
+    <div class="col-12 col-sm-12 col-md-4">
+          {{-- <a style="text-decoration: none" href="{{ route('web.oficina.newjersey') }}"> --}}
+        <div class="serviceBox h-100">
+            <h3 class="title">New Jersey</h3>
+            <div>
+              <a href="{{route('web.oficina.newjersey')}}">
+                <img class="lazy img-fluid rounded" data-src="{{asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg')}}"  alt="Apostillas - Notaria Latina">
+              </a>
+            </div>
+            <div>
+              {{-- <p class="description mt-4">
+                Gestione sus trámites notariales en New York. 
+              </p> --}}
+              <a href="https://g.page/r/CVNRV-zNuJiZEAE">
+                <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 1146 East Jersey St Elizabeth, NJ 07201</p>
+              </a>
+              <a class="btn btn-danger btn-block" href="tel:+19088009046"><i class="fas fa-phone"></i> Llamar ahora</a>
+            </div>
+          </div>
+          {{-- </a> --}}
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-4">
+      <a style="text-decoration: none" href="{{ route('web.oficina.newyork') }}">
+        <div class="serviceBox h-100">
+            <h3 class="title">New York</h3>
+            <div>
+              <a href="{{route('web.oficina.newyork')}}">
+                <img class="lazy img-fluid rounded" data-src="{{asset('img/oficinas/oficina-new-york-notaria-latina.jpg')}}" alt="Poderes - Notaria Latina">
+              </a>
+            </div>
+            <div>
+              {{-- <p class="description mt-4">
+                Gestione sus trámites notariales en New Jersey
+              </p> --}}
+              <a href="https://g.page/notariapublicalatina">
+                <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 67-03 Roosevelt Avenue, Woodside, NY 11377</p>
+              </a>
+              <a class="btn btn-danger btn-block" href="tel:+13479739888"><i class="fas fa-phone"></i> Llamar ahora</a> 
+            </div>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-4">
+      <a style="text-decoration: none" href="{{ route('web.oficina.florida') }}">
+        <div class="serviceBox h-100">
+            <h3 class="title">Florida</h3>
+            <div>
+                <img class="lazy img-fluid rounded" data-src="{{asset('img/oficinas/oficina-florida-notaria-latina.jpg')}}" alt="Traducciones - Notaria Latina">
+            </div>
+            <div>
+              {{-- <p class="description mt-4">
+                Gestione sus trámites notariales en Florida
+              </p> --}}
+              <a href="https://g.page/r/CeRrwPx_W2-xEAE">
+                <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 2104 N University Dr, Sunrise, FL 33322</p>
+              </a>
+              <a class="btn btn-danger btn-block" href="tel:+13056003290"><i class="fas fa-phone"></i> Llamar ahora</a>
+            </div>
+          </div>
+        </a>
+    </div>
+
+</div>
+{{-- termina div oficinas --}}
 
 </div>
 
