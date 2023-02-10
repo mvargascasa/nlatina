@@ -609,14 +609,14 @@
     </div>
   </div>
 
-  <div id="fb-root"></div>
+  {{-- <div id="fb-root"></div> --}}
 @endsection
 
 
 
 @section('script')
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0&appId=671843794640246&autoLogAppEvents=1" nonce="W0bUXQ4L"></script>
+{{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0&appId=671843794640246&autoLogAppEvents=1" nonce="W0bUXQ4L"></script> --}}
 <script>
     window.addEventListener('load', (event) => {
         //document.getElementById('prisection').style.backgroundImage = "url('img/inicio.jpg')";
