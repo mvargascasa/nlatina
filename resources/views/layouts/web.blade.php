@@ -260,7 +260,39 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div>
       </header>
 
-@yield('content')   
+@yield('content')  
+
+{{-- @isset($indexPosts)
+<div class="container">
+    <div class="row py-4">
+        <div class="col-12 text-center py-4"><hr>
+            <h2 class="tit-not">Publicaciones de Interes</h2>
+            <hr class="hrb">
+          </div>
+          @foreach ($indexPosts as $post)
+                <div class="col-12 col-md-6">
+                    <a href="{{route('post.slug',$post->slug)}}" style="text-decoration: none">
+                        <div class="card my-2">
+                            <div class="card-body p-2" style="position:relative;">
+                            <span class="d-block font-weight-bold text-truncate " style="font-size:1rem;color:#122944">{{$post->name}}</span>
+                            <span class="d-block text-muted text-truncate">
+                               <php //echo strip_tags(substr($post->body,0,100)) php> 
+                            </span>
+                            <div class="small text-muted float-left">
+                            <a href="{{route('post.slug',$post->slug)}}">{{$post->created_at->format('M d')}}</a>
+                            </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+            <div class="col-12">
+            <a href="{{route('post.blog')}}" style="color:#122944">Ver más Publicaciones</a>
+            </div>
+    </div>
+
+</div>
+@endisset --}}
 
 <section class="row m-0 justify-content-md-center py-4">
 
@@ -292,35 +324,6 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     </div>
 
   </section>
-@isset($indexPosts)
-<div class="container">
-    <div class="row py-4">
-        <div class="col-12 text-center py-4"><hr>
-            <h2 class="tit-not">Publicaciones de Interes</h2>
-            <hr class="hrb">
-          </div>
-          @foreach ($indexPosts as $post)
-                <div class="col-12 col-md-6">
-                    <a href="{{route('post.slug',$post->slug)}}" style="text-decoration: none">
-                        <div class="card my-2">
-                            <div class="card-body p-2" style="position:relative;">
-                            <span class="d-block font-weight-bold text-truncate " style="font-size:1rem;color:#122944">{{$post->name}}</span>
-                            <span class="d-block text-muted text-truncate"><?php echo strip_tags(substr($post->body,0,100))  ?></span>
-                            <div class="small text-muted float-left">
-                            <a href="{{route('post.slug',$post->slug)}}">{{$post->created_at->format('M d')}}</a>
-                            </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
-            <div class="col-12">
-            <a href="{{route('post.blog')}}" style="color:#122944">Ver más Publicaciones</a>
-            </div>
-    </div>
-
-</div>
-@endisset
 
 <footer class="text-white" style="background-color: #122944;">
     <div class="container">
