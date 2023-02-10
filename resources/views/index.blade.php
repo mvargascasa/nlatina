@@ -149,6 +149,7 @@
           <img data-src="{{asset('img/5.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left top;">
           <div class="carousel-caption">
+            <div>
               <h1 class="tit-not">Notaría Pública</h1>
               <p class="heading-title h2" style="margin-bottom: 5%">Gestión Fácil y Rápida</p>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
@@ -158,8 +159,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="bg-success rounded-pill text-center py-1 px-2">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="text-center py-1 px-2">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -170,8 +171,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="bg-success rounded-pill text-center py-1 px-2">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="text-center py-1 px-2">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -182,8 +183,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="bg-success rounded-pill py-1 px-2 text-center">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="py-1 px-2 text-center">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -194,6 +195,7 @@
               {{-- href="javascript:void(0)" --}}
               <button class="btn btn-warning btn-lg button" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</button>
+            </div>
           </div>
         </div>
 
@@ -202,6 +204,7 @@
           <img data-src="{{asset('img/2.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: left bottom;">
           <div class="carousel-caption">
+            <div>
               <p id="titleTraducciones" class="tit-not h1" style="margin-bottom: 6%">TRADUCCIONES</p>
               <div id="locations" class="row" style="margin-left: 11%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif">
@@ -210,8 +213,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2 py-1">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="text-center px-2 py-1">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -222,8 +225,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2 py-1">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="text-center px-2 py-1">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -234,8 +237,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="bg-success rounded-pill px-2 py-1 text-center">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="px-2 py-1 text-center">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -244,6 +247,8 @@
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
               <a href="javascript:void(0)" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</a>
+
+            </div>
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
@@ -258,8 +263,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2 py-1">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="text-center px-2 py-1">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -270,8 +275,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2 py-1">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="text-center px-2 py-1">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -282,8 +287,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="bg-success rounded-pill px-2 py-1 text-center">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="px-2 py-1 text-center">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -306,8 +311,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2 py-1">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="text-center px-2 py-1">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -318,8 +323,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="bg-success rounded-pill text-center px-2 py-1">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="text-center px-2 py-1">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
@@ -330,8 +335,8 @@
                   </div>
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="bg-success rounded-pill px-2 text-center py-1">
-                        <i class="fab fa-whatsapp @if(!$mobile) fa-2x @endif"></i>
+                      <div class="px-2 text-center py-1">
+                        <i class="fab fa-whatsapp bg-success rounded-pill m-2" style="font-size: 30px"></i>
                       </div>
                     </a>
                   </div>
