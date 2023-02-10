@@ -23,6 +23,8 @@
     
     <meta name="google-site-verification" content="dJnD6aMr-q5ldI-YRk2UM1KC0A8GEBUok__9ZpS0CiQ" />
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <script type="text/javascript">
       function callbackThen(response){
           // read HTTP status
@@ -444,13 +446,13 @@
         <hr class="hrb">
       </div>
     <div class="col-12 col-sm-12 col-md-4 mb-3">
-          {{-- <a style="text-decoration: none" href="{{ route('web.oficina.newjersey') }}"> --}}
+        <a style="text-decoration: none" href="{{ route('web.oficina.newjersey') }}">
         <div class="serviceBox h-100">
             <h3 class="title">New Jersey</h3>
             <div>
-              <a href="{{route('web.oficina.newjersey')}}">
+              {{-- <a href="{{route('web.oficina.newjersey')}}"> --}}
                 <img class="lazy img-fluid rounded" data-src="{{asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg')}}"  alt="Apostillas - Notaria Latina">
-              </a>
+              {{-- </a> --}}
             </div>
             <div>
               {{-- <p class="description mt-4">
@@ -462,7 +464,7 @@
               <a class="btn btn-danger btn-block" href="tel:+19088009046"><i class="fas fa-phone"></i> Llamar ahora</a>
             </div>
           </div>
-          {{-- </a> --}}
+          </a>
     </div>
 
     <div class="col-12 col-sm-12 col-md-4 mb-3">
@@ -470,9 +472,9 @@
         <div class="serviceBox h-100">
             <h3 class="title">New York</h3>
             <div>
-              <a href="{{route('web.oficina.newyork')}}">
+              {{-- <a href="{{route('web.oficina.newyork')}}"> --}}
                 <img class="lazy img-fluid rounded" data-src="{{asset('img/oficinas/oficina-new-york-notaria-latina.jpg')}}" alt="Poderes - Notaria Latina">
-              </a>
+              {{-- </a> --}}
             </div>
             <div>
               {{-- <p class="description mt-4">
@@ -509,6 +511,80 @@
 
 </div>
 {{-- termina div oficinas --}}
+<hr>
+<div class="row rounded py-5">
+  <div class="text-center w-100">
+    <h3 class="tit-not">¿Qué nos hace diferentes?</h3>
+  </div>
+  <div class="row mt-4 mx-1">
+    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3 @if(!$mobile) border-right @endif">
+      <div>
+        <i class="fas fa-calendar-alt fa-2x text-danger"></i>
+        <p class="tit-not mt-2">Tenemos una gran trayectoria dentro del campo notarial</p>
+      </div>
+    </div>
+    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3 @if(!$mobile) border-left border-right @endif">
+      <div>
+        <i class="fas fa-university fa-2x text-danger"></i>
+        <p class="tit-not mt-2">Contamos con personal capacitado para atender el trámite que necesite</p>
+      </div>
+    </div>
+    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3 @if(!$mobile) border-left @endif">
+      <div>
+        <i class="fas fa-users fa-2x text-danger"></i>
+        <p class="tit-not mt-2">Hemos ayudado a una gran cantidad de clientes</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+<div data-aos="flip-right" style="background-color: rgb(235, 235, 235)" class="row text-center py-5 mt-5">
+  <div class="w-100">
+    <h3 class="tit-not">¿Tiene alguna pregunta?</h3>
+    <p>No dude en contactarnos y uno de nuestros asesores lo ayudará</p>
+    <a class="btn btn-dark rounded-0" href="{{route('web.contactenos')}}">Contactarme</a>
+  </div>
+</div>
+
+@isset($indexPosts)
+
+<div class="container">
+    <div class="row py-4">
+        <div class="col-12 text-center py-4"><hr>
+            <h2 class="tit-not mt-5">Publicaciones de Interes</h2>
+            <hr class="hrb">
+          </div>
+          @foreach ($indexPosts as $post)
+                <div class="col-12 col-md-6">
+                    <a href="{{route('post.slug',$post->slug)}}" style="text-decoration: none">
+                      <div class="card my-2 shadow-sm">
+                            <div class="card-body p-2" style="position:relative;">
+                              <span class="d-block font-weight-bold text-truncate " style="font-size:1rem;color:#122944">{{$post->name}}</span>
+                              <span class="d-block text-muted text-truncate"><?php echo strip_tags(substr($post->body,0,100))  ?></span>
+                              <div class="small text-muted float-left">
+                                <a href="{{route('post.slug',$post->slug)}}">{{$post->created_at->format('M d')}}</a>
+                              </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+            <div class="col-12">
+            <a href="{{route('post.blog')}}" style="color:#122944">Ver más Publicaciones</a>
+            </div>
+    </div>
+
+</div>
+@endisset
+
+{{-- <hr class="hrb mb-4 mt-5">
+<div class="row mt-5 d-inline">
+  <div class="d-flex justify-content-center mb-4">
+    <h3 class="tit-not">También puede buscarnos en nuestras redes sociales</h3>
+  </div>
+  <div class="fb-page mt-3 w-auto" data-href="https://www.facebook.com/notariapublicalatina" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-lazy="true"><blockquote cite="https://www.facebook.com/notariapublicalatina" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/notariapublicalatina">Notaría Pública Latina</a></blockquote></div>
+</div> --}}
 
 </div>
 
@@ -532,16 +608,21 @@
       </div>
     </div>
   </div>
+
+  <div id="fb-root"></div>
 @endsection
 
 
 
 @section('script')
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0&appId=671843794640246&autoLogAppEvents=1" nonce="W0bUXQ4L"></script>
 <script>
     window.addEventListener('load', (event) => {
         //document.getElementById('prisection').style.backgroundImage = "url('img/inicio.jpg')";
         document.getElementById('imgdoc').src = "img/docverify-approved-enotary-small.webp";
         document.getElementById('imgnna').src = "img/national-notary-association.webp";
+        AOS.init();
     });
     document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
     setTimeout(() => {
