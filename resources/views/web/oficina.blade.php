@@ -39,6 +39,7 @@
             #pais{
                 width: 100% !important;
             }
+            .col-sm-8{margin-left: 40px !important; margin-right: 40px !important}
         }
         .titulo{color: white;font-weight: bold;}
         i{color:#9A7A2E;}
@@ -161,6 +162,16 @@
         <div class="col-sm-6">
             <img class="lazy" style="width: 100%; height: 100%" data-src="{{ asset('img/oficinas/IMAGENES-NEW-JERSEY2.webp') }}" alt="">
         </div>
+    </div>
+
+    <div class="row py-5">
+        <div class="col-sm-2"></div>
+        <div data-aos="flip-up" class="col-sm-8 border px-4 pt-5 pb-5 rounded text-center shadow">
+            <p><i class="fas fa-map-marked-alt" style="color: #9C7D32"></i> Nuestra oficina se encuentra ubicada en <b style="color: #9C7D32">{{$data['address']}}, Estados Unidos</b>, donde le brindaremos la mejor asesoría notarial en sus trámites</p>
+            <p class="font-weight-bold">¿Necesita ayuda para llegar?</p>
+            <a class="btn btn-warning" target="_blank" href="{{$data['urlindications']}}">Ver indicaciones <i class="fas fa-share text-dark"></i></a>
+        </div>
+        <div class="col-sm-2"></div>
     </div>
     
     <div class="row" id="sectionthree" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
@@ -434,9 +445,10 @@
   </section>
 
     <div class="row">
-        <a href="{{ $data['urlmap']}}" target="_blank">
+        {{-- <a href="{{ $data['urlmap']}}" target="_blank">
             <img id="imgurlmap" style="width: 100%; height: 100%" class="lazy img-fluid" data-src="@if($isMobile) {{ asset($data['imgurlmapmobile']) }} @else {{ asset($data['imgurlmap']) }} @endif" alt="Apostillar Documentos en {{ $data['office'] }}">
-        </a>
+        </a> --}}
+        <iframe id="dirurlmap" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
   <div class="mt-5 checks">
@@ -634,6 +646,10 @@
             document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/BANNER-NEGRO.webp')}}')";
             //setImageUrlByViewport();
         });
+
+        setTimeout(() => {
+            document.getElementById('dirurlmap').src = "{{$data['urlmap']}}";
+        }, 3000);
 
         //window.addEventListener('resize', setImageUrlByViewport);
 

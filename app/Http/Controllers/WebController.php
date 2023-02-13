@@ -1001,7 +1001,7 @@ class WebController extends Controller
             $data['widthimgdown'] = '90%';
             $data['heightimgdown'] = '100%';
             $data['paddingtop'] = '0px';
-            $data['urlmap'] = 'https://goo.gl/maps/ovKfQSvTmA5SBqqF6';
+            $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7118317711106!2d-73.897921!3d40.746365999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f030415024b%3A0x3b391bcaf4cd7c10!2sNotar%C3%ADa%20Latina%20en%20New%20York!5e0!3m2!1ses-419!2sec!4v1676310563039!5m2!1ses-419!2sec';
             $data['imgurlmap'] = "img/oficinas/maps-ny.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-ny-mobile.webp";
             $data['keywords'] = 'notaria new york
@@ -1045,6 +1045,7 @@ class WebController extends Controller
             servicios notariales en new york';
             $data['reviews'] = $this->reviewsny;
             $data['more_reviews'] = $this->more_reviewsny;
+            $data['urlindications'] = "https://www.google.com/maps/dir//Notar%C3%ADa+Latina+en+New+York+67-03+Roosevelt+Ave+Queens,+NY+11377+Estados+Unidos/@40.746366,-73.897921,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x89c25f030415024b:0x3b391bcaf4cd7c10";
 
             return view('web.oficina', compact('data'));
         }
@@ -1752,7 +1753,7 @@ class WebController extends Controller
             $data['widthimgdown'] = '85%';
             $data['heightimgdown'] = '27rem';
             $data['paddingtop'] = '0px';
-            $data['urlmap'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
+            $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.4152609855228!2d-74.2132981!3d40.6648184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24dde7100d355%3A0x9998b8cdec575153!2sNotar%C3%ADa%20Latina%20en%20New%20Jersey!5e0!3m2!1ses-419!2sec!4v1676308468772!5m2!1ses-419!2sec'; 
             $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
             $data['keywords'] = 'notaria new jersey,
@@ -1796,6 +1797,7 @@ class WebController extends Controller
                 servicios notariales en new jersey';
             $data['reviews'] = $this->reviewsnj;
             $data['more_reviews'] = $this->more_reviewsnj;
+            $data['urlindications'] = "https://www.google.com/maps/dir//Notar%C3%ADa+Latina+en+New+Jersey+1146+E+Jersey+St+Elizabeth,+NJ+07201+Estados+Unidos/@40.6648184,-74.2132981,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c24dde7100d355:0x9998b8cdec575153!2m2!1d-74.2132981!2d40.6648184";
 
             return view('web.oficina', compact('data'));
         }
@@ -2316,7 +2318,7 @@ class WebController extends Controller
             $data['widthimgdown'] = '100%';
             $data['heightimgdown'] = '100%';
             $data['paddingtop'] = '0px';
-            $data['urlmap'] = "https://g.page/r/CeRrwPx_W2-xEAE";
+            $data['urlmap'] = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4033731651734!2d-80.256546!3d26.1509895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9072fab0cb6ff%3A0xb16f5b7ffcc06be4!2sNotar%C3%ADa%20Latina%20en%20Florida!5e0!3m2!1ses-419!2sec!4v1676310634077!5m2!1ses-419!2sec";
             $data['imgurlmap'] = "img/oficinas/maps-fl-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-fl-mobile-2.webp";
             $data['metadescription'] = 'Realizamos Poderes Generales y Especiales, Apostilla y Traducción de todo tipo de documentos en Florida. ¿Desea saber más? ¡Contáctenos ahora! ✅';
@@ -2361,6 +2363,7 @@ class WebController extends Controller
                 servicios notariales en florida';
             $data['reviews'] = $this->reviewsfl;
             $data['more_reviews'] = $this->more_reviewsfl;
+            $data['urlindications'] = "https://www.google.com/maps/dir//Notar%C3%ADa+Latina+en+Florida+2104+N+University+Dr+Sunrise,+FL+33322+Estados+Unidos/@26.1509895,-80.256546,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x88d9072fab0cb6ff:0xb16f5b7ffcc06be4";
 
             return view('web.oficina', compact('data'));
         }
