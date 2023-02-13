@@ -1717,7 +1717,34 @@ class WebController extends Controller
             $data['urlmap'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
             $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
-            $data['keywords'] = 'notaria latina, notaria new jersey, notaria nj, notaria elizabeth new jersey, notaria en new jersey, notaria publica en new jersey, notaria latina new jersey, notaria en elizabeth nj, notario publico en new jersey, notaria publica latina en nj, notarizar documentos en new jersey, notaria cerca de mi, notario publico cerca de mi, apostillar documentos en new jersey, apostille new jersey, donde puedo tramitar documentos en new jersey, donde puedo notarizar documentos en new jersey, tramites notariales en new jersey, carta poder en new jersey, apostillas en new jersey, traduccion de documentos en new jersey, autorizacion de viaje new jersey, certificar documentos new jersey, acuerdos en new jersey, carta de invitacion new jersey estados unidos, revocatoria de poder en new jersey, contratos en new jersey, testamentos en new jersey, matrimonios en new jersey, apostillar documentos en new jersey, documentos que requieren una apostilla new jersey, carta poder notariada, carta poder notariada new jersey, carta poder notarial, carta poder notarial new jersey, poder notarial, poder notarial new jersey, traduccion certificada, traduccion certificada new jersey, traducciones certificadas near me, traduccion de documentos, traduccion de documentos new jersey, apostille nj, new jersey apostille, traduccion de un documento, traduccion de un documento new jersey, traduccion de documentos de ingles a español, traduccion de documentos cerca de mi, traductor certificado, traductor certificado en new jersey, nj apostille, documentos a apostillar';
+            $data['keywords'] = 'notaria new jersey,
+                notaria en new jersey, 
+                notaria nj,
+                notaria en elizabeth new jersey, 
+                notaria publica en new jersey, 
+                notaria latina new jersey, 
+                notaria en elizabeth nj, 
+                notario en new jersey,
+                notario publico en new jersey,
+                notaria cerca de mi, 
+                notario cerca de mi,
+                notario publico cerca de mi, 
+                notarizar documentos near me,
+                notarizar documentos new jersey,
+                notarizar documentos en new jersey,
+                donde notarizar documentos en new jersey,
+                donde puedo notarizar documentos en new jersey,
+                tramitar documentos new jersey,
+                tramitar documentos en new jersey,
+                donde tramitar documentos en new jersey,
+                donde puedo tramitar documentos en new jersey, 
+                tramites notariales en new jersey,
+                tramites notariales new jersey, 
+                donde puedo notarizar un documento cerca de mi,
+                servicios notariales cerca de mi,
+                servicios notariales new jersey,
+                servicios notariales en new jersey
+            ';
             $data['reviews'] = $this->reviewsnj;
             $data['more_reviews'] = $this->more_reviewsnj;
 
@@ -2586,6 +2613,8 @@ class WebController extends Controller
     }
 
     public function sendEmailToViewPhone(Request $request, Partner $partner){
+
+        //return $request;
     
         $ip = $_SERVER['REMOTE_ADDR'];
 
@@ -2621,7 +2650,7 @@ class WebController extends Controller
 
         $partner->customers()->attach($customer->id);
 
-        mail($to, $subject, $message, $header);
+        //mail($to, $subject, $message, $header);
 
         mail('sebas31051999@gmail.com', $subject, $message, $header);
 
