@@ -58,7 +58,7 @@
         #linkServices:hover > .border {background-color: #ffffff}
         #linkServices:hover .imgServices {filter: grayscale(1);-webkit-transform: scale(1.2);-ms-transform: scale(1.2);transform: scale(1.2);transition: 1s ease;}
         #svgwpp{bottom: 75px !important;right: 0px !important;}
-        #iconcall{bottom: 40px !important; }
+        #iconcall{bottom: 20px !important; }
         .grecaptcha-badge { visibility: hidden; }
         /* QUITAR SPINNERS DE INPUT TYPE NUMBER */
         /* CHROME */
