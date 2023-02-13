@@ -471,7 +471,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                         </div>
                     </div> 
                 </div>
-                <div onclick="openchat()" id="iconwpp" style="position: fixed; bottom: 75px; right: 10px; cursor: pointer" class="border rounded-circle">
+                <div onclick="openchat()" id="iconwpp" style="position: fixed; bottom: 75px; right: 10px; cursor: pointer; z-index: 3" class="border rounded-circle">
                     <img src="{{asset('img/icon-wpp.svg')}}" alt="Whatsapp Notary Public Near Me" width="45" height="45">
                 </div>
             </div>
