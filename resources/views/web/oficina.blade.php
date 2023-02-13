@@ -150,7 +150,7 @@
 
     <div class="row" style="background-color: #122944;">
         <div class="col-sm-6 first-row" style="color: #ffffff; padding-left:15%; padding-top: 4%; margin-right: 0px;">
-            <h2 style="font-weight: bold">¿Por qué elegirnos?</h2>
+            <p style="font-weight: bold" class="h2">¿Por qué elegirnos?</p>
             <p style="font-size: 15px;">Brindamos el mejor servicio y asesoría en trámites de notaría para Latinos en Estados Unidos.</p>
             <div>
                 <img class="lazy" width="50px" height="60px" data-src="{{ asset('img/docverify-approved-enotary-small.webp') }}" alt="Notaria Latina en {{ $data['office'] }}">
@@ -169,7 +169,7 @@
         </div>
         <div class="col-sm-6">
             <div>
-                <h3 id="txtNuestrosServicios" class="text-center text-white mb-3" style="padding-top: 10%; margin-right: 12%; font-family: sans-serif">Nuestros Servicios</h3>
+                <h2 id="txtNuestrosServicios" class="text-center text-white mb-3" style="padding-top: 10%; margin-right: 12%; font-family: sans-serif">Nuestros Servicios</h2>
                 <hr id="hrNuestrosServicios" style="width: 10%; margin-right: 51%; border: 1px solid #ffffff">
             </div>
             <div class="row" id="colServices" style="margin-right: 10%;">
@@ -179,7 +179,7 @@
                             <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
                                 <img class="lazy imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
                             </div>
-                            <h4 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Poderes</h4>
+                            <h3 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Poderes</h3>
                         </div>
                     </a>
                 </div>
@@ -189,7 +189,7 @@
                             <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
                                 <img class="lazy imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-19.webp')}}" alt="">
                             </div>
-                            <h4 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Apostillas</h4>
+                            <h3 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Apostillas</h3>
                         </div>
                     </a>
                 </div>
@@ -199,7 +199,7 @@
                             <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
                                 <img class="lazy imgServices" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-18.webp')}}" alt="">
                             </div>
-                            <h4 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Traducciones</h4>
+                            <h3 class="linkServices mt-1" style="margin-left: 5px; font-weight: bold;">Traducciones</h3>
                         </div>
                     </a>
                 </div>
@@ -246,7 +246,7 @@
     <div data-aos="flip-down">
         <div class="row justify-content-center align-items-center" style="padding-top: 50px">
             <div class="text-center">
-                <i><h2 style="font-weight: bold; font-size: 20px">¿Necesita realizar un trámite de Notaría <br> en {{ $data['office'] }}?</h2></i>
+                <i><p class="h2" style="font-weight: bold; font-size: 20px">¿Necesita realizar un trámite de Notaría <br> en {{ $data['office'] }}?</p></i>
                 <p style="font-size: 15px"><b>¡Contáctenos!</b> Estamos seguros que podemos ayudarle</p>
             </div>
         </div>
@@ -257,14 +257,14 @@
         </div>
     </div>
     <div style="background-color: rgb(245, 244, 244); padding-bottom:50px">
-        <p class="text-center mt-5" style="padding-top: 30px; font-size: 25px; font-weight: bold">Servicios adicionales de Notaría Pública</p>
+        <h2 class="text-center mt-5" style="padding-top: 30px; font-size: 25px; font-weight: bold">Servicios adicionales de Notaría Pública</h2>
         <div class="container">
             <div class="row justify-content-center">
                 <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90%">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'travel-authorization-en-'.Str::slug($data['office'])) }}">
                         <div class="grow border add-services" style="padding:25px; border-radius: 10px; height: 100%">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-08.webp') }}" alt="">
-                            <p>Travel Authorization</p>
+                            <h3 style="font-size: 15px" class="mt-2">Travel Authorization</h3>
                         </div>
                     </a>  
                 </div>
@@ -272,7 +272,7 @@
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'certificaciones-en-'.Str::slug($data['office'])) }}">
                         <div class="grow border add-services" style="padding:25px; border-radius: 10px; height: 100%">
                             <img style="width: 40px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
-                            <p>Certificaciones</p>
+                            <h3 style="font-size: 15px" class="mt-2">Certificaciones</h3>
                         </div>
                     </a>
                 </div>    
@@ -280,7 +280,7 @@
                     <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'acuerdos-en-'.Str::slug($data['office'])) }}">
                         <div class="grow border add-services" style="padding: 25px; border-radius: 10px; height: 100%">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-10.webp') }}" alt="">
-                            <p>Acuerdos</p>
+                            <h3 style="font-size: 15px" class="mt-2">Acuerdos</h3>
                         </div>
                     </a>
                 </div>
@@ -288,7 +288,7 @@
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'cartas-de-invitacion-en-'.Str::slug($data['office'])) }}">
                         <div class="grow border add-services" style="padding: 25px; border-radius: 10px; height: 100%">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-11.webp') }}" alt="">
-                            <p>Cartas de Invitación</p>
+                            <h3 style="font-size: 15px" class="mt-2">Cartas de Invitación</h3>
                         </div>
                     </a>
                 </div>
@@ -298,7 +298,7 @@
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'revocatorias-en-'.Str::slug($data['office'])) }}">
                         <div class="grow border add-services" style="padding: 25px; border-radius: 10px">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-12.webp') }}" alt="">
-                            <p>Revocatorias</p>
+                            <h3 style="font-size: 15px" class="mt-2">Revocatorias</h3>
                         </div>
                     </a>
                 </div>
@@ -306,7 +306,7 @@
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'contratos-en-'.Str::slug($data['office'])) }}">
                         <div class="grow border add-services" style="padding: 25px; border-radius: 10px">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-13.webp') }}" alt="">
-                            <p>Contratos</p>
+                            <h3 style="font-size: 15px" class="mt-2">Contratos</h3>
                         </div>
                     </a>
                 </div>
@@ -314,7 +314,7 @@
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'testamentos-en-'.Str::slug($data['office'])) }}">
                         <div class="grow border add-services" style="padding: 25px; border-radius: 10px">
                             <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-14.webp') }}" alt="">
-                            <p>Testamentos</p>
+                            <h3 style="font-size: 15px" class="mt-2">Testamentos</h3>
                         </div>
                     </a>
                 </div>
@@ -322,7 +322,7 @@
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), Str::lower(Str::slug($data['txtgrid'])).'-en-'.Str::slug($data['office'])) }}"">
                         <div class="grow border add-services" style="padding: 25px; border-radius: 10px">
                             <img style="width: 50px; height: 50px; filter: brightness(0.85) saturate(85%);" class="img-fluid lazy" data-src="{{ asset($data['imggrid']) }}" alt="">
-                            <p>{{ $data['txtgrid'] }}</p>
+                            <h3 style="font-size: 15px" class="mt-2">{{ $data['txtgrid'] }}</h3>
                         </div>
                     </a>
                 </div>
@@ -333,7 +333,7 @@
 
     <div class="row">
         <div class="col-sm-6 fifth-row text-center" style="padding-top: 3%; padding-bottom: 4%">
-            <h2 style="font-weight: bold"><i>{{ Str::upper($data['title']) }}</i></h2>
+            <p class="h2" style="font-weight: bold"><i>{{ Str::upper($data['title']) }}</i></p>
             <p>{{ $data['subtitle'] }}!</p>
             <p class="text-muted" style="margin-left: 10%; margin-right: 10%">Apostille actas de nacimiento, actas de matrimonio, certificados, poderes, traducciones, diplomas, contratos, testamentos</p>
         </div>
@@ -345,7 +345,7 @@
     <section data-aos="zoom-in" id="iniciarTramite" class="row quienes-somos text-white m-0">  
         <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 pb-5 px-3 mx-auto">
             <div class="card-body text-center">  
-              <h2 class="font-italic font-weight-bold">Solicitar Tramite</h2>      
+              <p class="font-italic font-weight-bold h2">Solicitar Tramite</p>      
               <small> Envíe el formulario y un asesor le contactará breve. </small>     
               <form method="POST" action="{{route('send.email.oficinas')}}">
                   @csrf
@@ -440,9 +440,9 @@
     </div>
 
   <div class="mt-5 checks">
-      <h3 class="text-center">Servicios Adicionales</h3>
+      <h2 class="text-center">Servicios Adicionales</h2>
       <hr style="width: 10%; border: 1px solid #000000">
-      <h2 class="text-center" style="font-size:25px">Documentos que requieren una apostilla en {{ $data['office'] }}</h2>
+      <h3 class="text-center" style="font-size:25px">Documentos que requieren una apostilla en {{ $data['office'] }}</h3>
       <p style="padding-left: 15%; font-size: 18px; margin-top: 15px">Documentos Personales</p>
       <div class="row" style="padding-left:15%; padding-right:15%;">
         <div class="col-12 col-sm-3">
@@ -578,18 +578,18 @@
 
   <section style="background-color: #F5F4F4" class="pt-2 mt-5">
     <div class="container text-center mt-3 mb-4">
-      <h2 class="mt-5 mb-5">Lo que opinan nuestros clientes</h2>
+      <p class="mt-5 mb-5 h2">Lo que opinan nuestros clientes</p>
       <div class="row justify-content-center">
         @foreach ($data['reviews'] as $review)
           <div class="col-sm-4 d-flex justify-content-center mb-3">
             <div data-aos="fade-up" class="card card-reviews" style="width: 18rem; height: 100%; background-color: #F5F4F4">
               <div class="card-body text-center">
-                <h5 class="card-title">{{ $review['name'] }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-center">
+                <p class="card-title h5">{{ $review['name'] }}</p>
+                <p class="card-subtitle mb-2 text-muted d-flex justify-content-center h6">
                   @for ($i = 0; $i < $review['stars']; $i++)
                     <img width="15" height="15" data-src="{{ asset('img/estrella.webp') }}" class="lazy img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="⭐">
                   @endfor
-                </h6>
+                </p>
                 <p class="card-text">
                   <i style="color: #000000">
                     "{{ $review['message']}}"
