@@ -1004,7 +1004,45 @@ class WebController extends Controller
             $data['urlmap'] = 'https://goo.gl/maps/ovKfQSvTmA5SBqqF6';
             $data['imgurlmap'] = "img/oficinas/maps-ny.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-ny-mobile.webp";
-            $data['keywords'] = 'notaria latina, notaria new york, notario cerca de mi, notaria en new york, notaria ny, notaria queens, notaria latina queens, notaria en queens new york, notaria latina en queens new york, notaria cerca de mi, notario publico en new york, notarizar documentos en queens new york, notario publico cerca de mi, donde puedo tramitar documentos en new york, donde puedo notarizar documentos en new york, tramites notariales en new york, carta poder en new york, apostillas en new york, traduccion de documentos en new york, autorizacion de viaje new york, certificar documentos new york, acuerdos en new york, carta de invitacion new york estados unidos, revocatoria de poder en new york, contratos en new york, testamentos en new york, matrimonios en new york, apostillar documentos en new york, documentos que requieren una apostilla new york, carta poder notariada, carta poder notariada new york, carta poder notarial, carta poder notarial new york, poder notarial, poder notarial new york, traduccion certificada, traduccion certificada new york, traducciones certificadas near me, traduccion de documentos, traduccion de documentos new york, apostille ny, new york apostille, traduccion de un documento, traduccion de un documento new york, traduccion de documentos de ingles a español, traduccion de documentos cerca de mi, traductor certificado, traductor certificado en new york, ny apostille, documentos a apostillar';
+            $data['keywords'] = 'notaria new york
+            notario cerca de mi,
+            notaria cerca de mi, 
+            notario publico cerca de mi, 
+            notaria en new york,
+            notaria queens,
+            notaria en queens ny, 
+            notaria en queens new york,
+            notaria latina en queens new york,
+            notario publico en new york,
+            notaria publico new york,
+            notaria publico en queens new york,
+            notarizar documentos near me,
+            notarizar en linea new york,
+            notarizar en linea en new york,
+            notarizar documentos en new york,
+            notarizar documentos en queens new york,
+            tramitar documentos new york,
+            tramitar documentos en new york,
+            donde puedo tramitar documentos en new york,
+            donde puedo tramitar un documento en new york,
+            tramitar documentos queens new york,
+            tramitar documentos en queens new york,
+            notarizar documentos new york,
+            notarizar documentos en new york,
+            realizar tramite notarial new york,
+            realizar tramite notarial en new york,
+            realizar un tramite notarial en new york,
+            donde puedo notarizar documentos en new york,
+            donde puedo notarizar un documento en new york,
+            donde puedo realizar un tramite notarial new york,
+            donde puedo realizar un tramite notarial en new york,
+            donde puedo notarizar un documento cerca de mi,
+            tramites notariales en new york,
+            tramites notariales new york,
+            tramites notariales queens new york,
+            tramites notariales en queens new york,
+            servicios notariales new york,
+            servicios notariales en new york';
             $data['reviews'] = $this->reviewsny;
             $data['more_reviews'] = $this->more_reviewsny;
 
