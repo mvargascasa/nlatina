@@ -78,6 +78,7 @@
   </script>
 
     <style>
+      #iconwpp{display: none}
       @media screen and (max-width: 580px){
         #titleTraducciones{
           margin-bottom: 15% !important;
