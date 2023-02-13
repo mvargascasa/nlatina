@@ -437,11 +437,46 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
       {{-- <div id="svgwpp" style="width: 60px; position: fixed; bottom: 10px; right: 0px; height: 50px;">
         <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});"
         href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">
-            <img src="{{asset('img/notary-public-near-me-whatsapp.svg')}}" 
-            alt="Whatsapp Notary Public Near Me" width="40" height="40">
+            <img src="{{asset('img/icon-wpp.svg')}}" 
+            alt="Whatsapp Notary Public Near Me" width="45" height="45">
         </a> 
-        </div> --}}
-        {{--+13479739888--}}            
+    </div> --}}
+        {{--+13479739888--}}   
+        @php $segment = Request()->segment(1); @endphp  
+        @if($segment == "newjersey" || $segment == "newyork" || $segment == "florida")       
+            <div id="iconwpp" style="position: relative">
+                <div style="position: fixed; bottom: 75px; right: 10px;" class="border rounded-circle">
+                    <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});"
+                    href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">
+                        <img src="{{asset('img/icon-wpp.svg')}}" 
+                        alt="Whatsapp Notary Public Near Me" width="45" height="45">
+                    </a> 
+                </div>
+            </div>
+        @else
+            <div style="position: relative">
+                <div id="chat" style="position: fixed; bottom: 130px; right: 10px; width: 140px; z-index: 3; display: none" class="border rounded">
+                    <div>
+                        <div style="background-color: #4eda5f; color: #ffffff" class="pl-1">
+                            Activo
+                            <div class="float-right mr-1" onclick="document.getElementById('chat').style.display = 'none'" style="cursor: pointer"><i class="fas fa-times-circle"></i></div>
+                        </div>
+                        <div style="position: relative;">
+                            <img class="img-fluid" src="{{asset('img/whatsapp-wallpaper.jpg')}}" alt="whatsapp de notaria latina">
+                            <div style="position: absolute; top: 0px; left: 0px; color: #000000" class="w-100 h-100 pl-2 mt-2">
+                                <div><a href="https://api.whatsapp.com/send?phone=13479739888" class="bg-white px-2 rounded-pill">New York <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
+                                <div class="mt-1"><a href="https://api.whatsapp.com/send?phone=19088009046" class="bg-white px-2 rounded-pill">New Jersey  <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
+                                <div class="mt-1"><a href="https://api.whatsapp.com/send?phone=13056003290" class="bg-white px-2 rounded-pill">Florida  <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div onclick="openchat()" id="iconwpp" style="position: fixed; bottom: 75px; right: 10px; cursor: pointer" class="border rounded-circle">
+                    <img src="{{asset('img/icon-wpp.svg')}}" alt="Whatsapp Notary Public Near Me" width="45" height="45">
+                </div>
+            </div>
+        @endif
+
         <div style="position: relative">
             <div id="divpreguntas" style="position: fixed; bottom: 25px; right: 65px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none">
                 {{-- <div style="position: absolute"> --}}
@@ -624,6 +659,17 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         localStorage.setItem("statusCardWhatsapp", "Off");
         document.getElementById('card_whatsapp').classList.toggle("hide-card-whatsapp");
     }
+
+    function openchat(){
+        let divchat = document.getElementById('chat');
+        if(divchat.style.display == "block"){
+            divchat.style.display = "none";
+        } else {
+            divchat.style.display = "block";
+        }
+
+    }
+
     document.addEventListener("DOMContentLoaded",function(){
         var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)};
         // make it as accordion for smaller screens
