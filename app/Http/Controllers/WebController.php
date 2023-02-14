@@ -2450,7 +2450,7 @@ class WebController extends Controller
 
             //GUARDANDO EN LA BASE DE DATOS
             $customer = Customer::create([
-                'nombre' => Purify::clean($request['name']),
+                'nombre' => Purify::clean($request['name']) . " " . Purify::clean($request['lastname']),
                 'email' => Purify::clean($request['email']),
                 'pais' => Purify::clean($request['country_residence']),
                 'telefono' => Purify::clean($request['phone']),
@@ -2665,8 +2665,6 @@ class WebController extends Controller
     }
 
     public function sendEmailToViewPhone(Request $request, Partner $partner){
-
-        //return $request;
     
         $ip = $_SERVER['REMOTE_ADDR'];
 
@@ -2702,7 +2700,7 @@ class WebController extends Controller
 
         $partner->customers()->attach($customer->id);
 
-        //mail($to, $subject, $message, $header);
+        mail($to, $subject, $message, $header);
 
         mail('sebas31051999@gmail.com', $subject, $message, $header);
 
