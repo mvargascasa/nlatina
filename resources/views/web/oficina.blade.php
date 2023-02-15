@@ -13,7 +13,7 @@
         @media screen and (max-width: 580px){
             .titulo{margin-top: 15%;}
             .first-row{padding-bottom: 15px;}
-            #sectionthree{min-width: 110vw;min-height: 130vh;}
+            /* #sectionthree{min-width: 110vw;min-height: 130vh;} */
             #imgApostille{padding-top: 5%;}
             #imgApostille img{width: 400px !important;height: 250px !important;}
             #imgrowapostille{width: 100%!important;height: 100%!important;}
@@ -45,7 +45,7 @@
         i{color:#9A7A2E;}
         .checks > p{color: #143b6b;}
         .checks > .row > .col > p{color: #143b6b;}
-        #sectionthree{width: 100vw;height: 55vh;}
+        /* #sectionthree{width: 100vw;height: auto;} */
         .fifth-row{margin-top: 5%;justify-content: center;align-items: center;}
         /*HOVER IMAGENES DE SERVICIOS*/
         .grow:hover{background-color: #ece8e3;-webkit-transition: 600ms;-webkit-transform: initial;}
@@ -164,17 +164,11 @@
         </div>
     </div>
     
-    <div class="row" id="sectionthree" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
-        <div class="col-sm-6 d-flex justify-content-center align-items-center" id="imgApostille">
-            <img class="lazy" style="width: 500px; height: 350px;" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
-        </div>
-        <div class="col-sm-6">
-            <div>
-                <h2 id="txtNuestrosServicios" class="text-center text-white mb-3" style="padding-top: 10%; margin-right: 12%; font-family: sans-serif">Nuestros Servicios</h2>
-                <hr id="hrNuestrosServicios" style="width: 10%; margin-right: 51%; border: 1px solid #ffffff">
-            </div>
-            <div class="row" id="colServices" style="margin-right: 10%;">
-                <div data-aos="fade-right" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center">
+    <section class="pt-5 pb-5" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
+        <h2 class="text-center w-100 pb-4" style="color: #122944">Nuestros Servicios</h2>
+        <div style="margin-left: 20%; margin-right: 20%">
+            <div class="row">
+                <div data-aos="fade-right" class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">
                         <div id="linkServices" class="text-center border pt-4 pb-4 pl-3 pr-3 mb-3" style="border-radius: 10px; border: 2px solid #e4b63e !important;">
                             <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
@@ -184,7 +178,7 @@
                         </div>
                     </a>
                 </div>
-                <div data-aos="fade-up" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center">
+                <div data-aos="fade-up" class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-documentos-'.Str::slug($data['office'])) }}">
                         <div id="linkServices" class="text-center border pt-4 pb-4 pl-3 pr-3 mb-3" style="border-radius: 10px; border: 2px solid #e4b63e !important">
                             <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
@@ -194,7 +188,7 @@
                         </div>
                     </a>
                 </div>
-                <div data-aos="fade-left" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center" style="">
+                <div data-aos="fade-left" class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center" style="">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'traducir-documentos-'.Str::slug($data['office'])) }}">
                         <div id="linkServices" class="text-center border pt-4 pb-4 pl-3 pr-3 mb-3" style="border-radius: 10px; border: 2px solid #e4b63e !important">
                             <div class="border" style="border-radius: 50%; margin-left: 50px; margin-right: 50px; padding: 12px; border: 2px solid #e4b63e !important">
@@ -205,6 +199,92 @@
                     </a>
                 </div>
             </div>
+        </div>
+
+        <div @if(!$isMobile) style="margin-left: 15%; margin-right: 15%" @else class="mx-4" @endif>
+            <div class="row">
+                <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90%">
+                    <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'travel-authorization-en-'.Str::slug($data['office'])) }}">
+                        <div id="linkServices" class="grow" style="padding:25px; border-radius: 10px; height: 100%; border-radius: 10px; border: 2px solid #e4b63e !important">
+                            <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-08.webp') }}" alt="">
+                            <h3 style="font-size: 15px" class="mt-2 linkServices">Travel Authorization</h3>
+                        </div>
+                    </a>  
+                </div>
+                <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90%;">
+                    <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'certificaciones-en-'.Str::slug($data['office'])) }}">
+                        <div id="linkServices" class="grow" style="padding:25px; border-radius: 10px; height: 100%; border-radius: 10px; border: 2px solid #e4b63e !important">
+                            <img style="width: 40px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+                            <h3 style="font-size: 15px" class="mt-2 linkServices">Certificaciones</h3>
+                        </div>
+                    </a>
+                </div>    
+                <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90%">
+                    <a style="text-decoration: none; color: #000000"  href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'acuerdos-en-'.Str::slug($data['office'])) }}">
+                        <div id="linkServices" class="grow" style="padding: 25px; border-radius: 10px; height: 100%; border-radius: 10px; border: 2px solid #e4b63e !important">
+                            <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-10.webp') }}" alt="">
+                            <h3 style="font-size: 15px" class="mt-2 linkServices">Acuerdos</h3>
+                        </div>
+                    </a>
+                </div>
+                <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90%">
+                    <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'cartas-de-invitacion-en-'.Str::slug($data['office'])) }}">
+                        <div id="linkServices" class="grow" style="padding: 25px; border-radius: 10px; height: 100%; border-radius: 10px; border: 2px solid #e4b63e !important">
+                            <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-11.webp') }}" alt="">
+                            <h3 style="font-size: 15px" class="mt-2 linkServices">Cartas de Invitación</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90px">
+                    <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'revocatorias-en-'.Str::slug($data['office'])) }}">
+                        <div id="linkServices" class="grow" style="padding: 25px; border-radius: 10px; border-radius: 10px; border: 2px solid #e4b63e !important">
+                            <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-12.webp') }}" alt="">
+                            <h3 style="font-size: 15px" class="mt-2 linkServices">Revocatorias</h3>
+                        </div>
+                    </a>
+                </div>
+                <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90px">
+                    <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'contratos-en-'.Str::slug($data['office'])) }}">
+                        <div id="linkServices" class="grow" style="padding: 25px; border-radius: 10px; border-radius: 10px; border: 2px solid #e4b63e !important">
+                            <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-13.webp') }}" alt="">
+                            <h3 style="font-size: 15px" class="mt-2 linkServices">Contratos</h3>
+                        </div>
+                    </a>
+                </div>
+                <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90px">
+                    <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'testamentos-en-'.Str::slug($data['office'])) }}">
+                        <div id="linkServices" class="grow" style="padding: 25px; border-radius: 10px; border-radius: 10px; border: 2px solid #e4b63e !important">
+                            <img style="width: 50px; height: 50px" class="img-fluid lazy" data-src="{{ asset('img/oficinas/ICONOS-14.webp') }}" alt="">
+                            <h3 style="font-size: 15px" class="mt-2 linkServices">Testamentos</h3>
+                        </div>
+                    </a>
+                </div>
+                <div data-aos="flip-left" class="col-6 col-sm-3 text-center mt-4" style="width: 90px">
+                    <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), Str::lower(Str::slug($data['txtgrid'])).'-en-'.Str::slug($data['office'])) }}"">
+                        <div id="linkServices" class="grow" style="padding: 25px; border-radius: 10px; border-radius: 10px; border: 2px solid #e4b63e !important">
+                            <img style="width: 50px; height: 50px; filter: brightness(0.85) saturate(85%);" class="img-fluid lazy" data-src="{{ asset($data['imggrid']) }}" alt="">
+                            <h3 style="font-size: 15px" class="mt-2 linkServices">{{ $data['txtgrid'] }}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+        {{-- <div class="col-sm-6 d-flex justify-content-center align-items-center" id="imgApostille">
+            <img class="lazy" style="width: 500px; height: 350px;" class="img-fluid" data-src="{{ asset($data['imgapostilla']) }}" alt="">
+        </div> --}}
+        {{-- <div class="col-sm-6"> --}}
+            {{-- <div>
+                <h2 id="txtNuestrosServicios" class="text-center text-white mb-3" style="padding-top: 10%; margin-right: 12%; font-family: sans-serif">Nuestros Servicios</h2>
+                <hr id="hrNuestrosServicios" style="width: 10%; margin-right: 51%; border: 1px solid #ffffff">
+            </div>
+            <div class="row" id="colServices" style="margin-right: 10%;">
+                
+            </div> --}}
             {{-- <div id="colServices" class="row" style="padding-top: 13%;">
                 <div class="col-sm-6 d-flex justify-content-center mb-4">
                     <div id="linkServices" class="d-flex text-center">
@@ -241,10 +321,10 @@
                     </div>
                 </div>
             </div> --}}
-        </div>
-    </div>
+        {{-- </div> --}}
+        </section>
 
-    <div data-aos="flip-down">
+    <div data-aos="flip-down" class="pb-5" style="background-color: #ece8e3">
         <div class="row justify-content-center align-items-center" style="padding-top: 50px">
             <div class="text-center">
                 <i><p class="h2" style="font-weight: bold; font-size: 20px">¿Necesita realizar un trámite de Notaría <br> en {{ $data['office'] }}?</p></i>
@@ -257,7 +337,8 @@
             <hr>
         </div>
     </div>
-    <div style="background-color: rgb(245, 244, 244); padding-bottom:50px">
+
+    {{-- <div style="background-color: rgb(245, 244, 244); padding-bottom:50px">
         <h2 class="text-center mt-5" style="padding-top: 30px; font-size: 25px; font-weight: bold">Servicios adicionales de Notaría Pública</h2>
         <div class="container">
             <div class="row justify-content-center">
@@ -330,7 +411,7 @@
             </div>
         </div>
     
-    </div>
+    </div> --}}
 
     <div class="row">
         <div class="col-sm-6 fifth-row text-center" style="padding-top: 3%; padding-bottom: 4%">
@@ -643,7 +724,7 @@
     <script>
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgup'])}})";
-            document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/BANNER-NEGRO.webp')}}')";
+            //document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/BANNER-NEGRO.webp')}}')";
             //setImageUrlByViewport();
         });
 
