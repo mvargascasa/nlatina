@@ -163,16 +163,6 @@
             <img class="lazy" style="width: 100%; height: 100%" data-src="{{ asset('img/oficinas/IMAGENES-NEW-JERSEY2.webp') }}" alt="">
         </div>
     </div>
-
-    <div class="row py-5">
-        <div class="col-sm-2"></div>
-        <div data-aos="flip-up" class="col-sm-8 border px-4 pt-5 pb-5 rounded text-center shadow">
-            <p><i class="fas fa-map-marked-alt" style="color: #9C7D32"></i> Nuestra oficina se encuentra ubicada en <b style="color: #9C7D32">{{$data['address']}}, Estados Unidos</b>, donde le brindaremos la mejor asesoría notarial en sus trámites</p>
-            <p class="font-weight-bold">¿Necesita ayuda para llegar?</p>
-            <a class="btn btn-warning" target="_blank" href="{{$data['urlindications']}}">Ver indicaciones <i class="fas fa-share text-dark"></i></a>
-        </div>
-        <div class="col-sm-2"></div>
-    </div>
     
     <div class="row" id="sectionthree" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <div class="col-sm-6 d-flex justify-content-center align-items-center" id="imgApostille">
@@ -444,6 +434,16 @@
         </div>
   </section>
 
+    <div class="row py-5">
+        <div class="col-sm-2"></div>
+        <div data-aos="flip-up" class="col-sm-8 border px-4 pt-5 pb-5 rounded text-center shadow">
+            <p><i class="fas fa-map-marked-alt" style="color: #9C7D32"></i> Nuestra oficina se encuentra ubicada en <b style="color: #9C7D32">{{$data['address']}}, Estados Unidos</b>, donde le brindaremos la mejor asesoría notarial en sus trámites</p>
+            {{-- <p class="font-weight-bold">¿Necesita ayuda para llegar?</p> --}}
+            {{-- <a class="btn btn-warning" target="_blank" href="{{$data['urlindications']}}">Ver indicaciones <i class="fas fa-share text-dark"></i></a> --}}
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
     <div class="row">
         {{-- <a href="{{ $data['urlmap']}}" target="_blank">
             <img id="imgurlmap" style="width: 100%; height: 100%" class="lazy img-fluid" data-src="@if($isMobile) {{ asset($data['imgurlmapmobile']) }} @else {{ asset($data['imgurlmap']) }} @endif" alt="Apostillar Documentos en {{ $data['office'] }}">
@@ -458,58 +458,58 @@
       <p style="padding-left: 15%; font-size: 18px; margin-top: 15px">Documentos Personales</p>
       <div class="row" style="padding-left:15%; padding-right:15%;">
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-nacimiento-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-nacimiento-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificados de nacimiento</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-reporte-consular-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-reporte-consular-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Reporte Consular CRBA nacidos en el extranjero</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-matrimonio-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-matrimonio-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificados de matrimonio</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-defuncion-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-defuncion-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificados de defunción</p>
             </a>
         </div>
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-divorcio-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-divorcio-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificados de divorcio</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-naturalizacion-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-naturalizacion-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificado de naturalización</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-expediente-de-adopcion-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-expediente-de-adopcion-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Expediente de adopción</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-copia-de-pasaporte-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-copia-de-pasaporte-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Copia de un pasaporte</p>
             </a>
         </div>
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-copia-de-licencia-de-conducir-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-copia-de-licencia-de-conducir-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Copia de licencia de conducir</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-escrituras-testamentos-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-escrituras-testamentos-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Escrituras y testamentos</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-declaraciones-juradas-de-estado-unico-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-declaraciones-juradas-de-estado-unico-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Declaraciones juradas de estado único</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-titulo-de-automovil-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-titulo-de-automovil-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Título de coche/automóvil</p> 
             </a>
         </div>
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-autorizacion-de-viaje-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-autorizacion-de-viaje-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Autorizaciones de viaje</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-poder-notarial-personal-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-poder-notarial-personal-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Poder notarial personal</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-registro-de-policia-estatal-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-registro-de-policia-estatal-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Registros de la policía estatal</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-registro-de-antecedentes-fbi-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-registro-de-antecedentes-fbi-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Registros de antecedentes del FBI</p> 
             </a>
         </div>
@@ -518,22 +518,22 @@
       <p style="padding-left: 15%; font-size: 18px; margin-top: 10px">Documentos Académicos</p>
       <div class="row" style="padding-left:15%; padding-right:15%;">
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-diploma-universitario-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-diploma-universitario-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Diplomas Universitarios</p>
             </a>
         </div>
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-transcripcion-universitaria-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-transcripcion-universitaria-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Transcripciones universitarias</p>
             </a>
         </div>
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-diploma-de-escuela-secundaria-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-diploma-de-escuela-secundaria-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Diplomas de escuela secundaria</p>
             </a>
         </div>
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-transcripcion-de-escuela-secundaria-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-transcripcion-de-escuela-secundaria-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Transcripciones de escuela secundaria</p>
             </a>
         </div>
@@ -542,46 +542,46 @@
       <p style="padding-left: 15%; font-size: 18px; margin-top: 10px">Documentos Corporativos</p>
       <div class="row" style="padding-left:15%; padding-right:15%;">
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-incorporacion-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-incorporacion-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificados de incorporación</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-buena-reputacion-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-buena-reputacion-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificados de buena reputación</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-origen-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-origen-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificados de origen</p>
             </a>
         </div>
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-marca-patente-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-marca-patente-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Marcas / Patentes</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-poder-comercial-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-poder-comercial-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Poder comercial</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-declaracion-jurada-comercial-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-declaracion-jurada-comercial-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Declaración jurada comercial</p>
             </a>
         </div>
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-fda-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-fda-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificados FDA</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-facturas-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-facturas-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Facturas</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-departamento-de-hacienda-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-departamento-de-hacienda-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Departamento de hacienda [Formulario 6166]</p>
             </a>
         </div>
         <div class="col-12 col-sm-3">
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-gobierno-extranjero-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-gobierno-extranjero-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificado de gobierno extranjero</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-venta-gratis-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-certificado-de-venta-gratis-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Certificados de venta gratis</p>
             </a>
-            <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-ordenes-de-compra-'.Str::slug($data['office'])) }}">
+            <a href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'apostillar-ordenes-de-compra-'.Str::slug($data['office'])) }}">
                 <p style="font-size: 13px"><i class="fas fa-check"></i> Órdenes de compra</p>
             </a>
         </div>

@@ -455,7 +455,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             </div>
         @else
             <div style="position: relative">
-                <div id="chat" style="position: fixed; bottom: 130px; right: 10px; width: 140px; z-index: 4; display: none" class="border rounded">
+                <div id="chat" style="position: fixed; bottom: 130px; right: 10px; width: 140px; z-index: 10; display: none" class="border rounded">
                     <div>
                         <div style="background-color: #4eda5f; color: #ffffff" class="pl-1">
                             Activo

@@ -78,7 +78,6 @@
   </script>
 
     <style>
-      #iconwpp{display: none}
       @media screen and (max-width: 580px){
         #titleTraducciones{
           margin-bottom: 15% !important;
@@ -160,6 +159,7 @@
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
                       <div class="text-center">
@@ -167,11 +167,13 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
                       <div class="text-center">
@@ -179,11 +181,13 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
                       <div class="text-center">
@@ -191,6 +195,7 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
               </div>
             </div>
@@ -214,6 +219,7 @@
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
                       <div class="text-center">
@@ -221,11 +227,13 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
                       <div class="text-center">
@@ -233,11 +241,13 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
                       <div class="text-center">
@@ -245,6 +255,7 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
@@ -264,6 +275,7 @@
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
                       <div class="text-center">
@@ -271,11 +283,13 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
                       <div class="text-center">
@@ -283,11 +297,13 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
                       <div class="text-center">
@@ -295,6 +311,7 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
@@ -312,6 +329,7 @@
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
                       <div class="text-center">
@@ -319,11 +337,13 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
                       <div class="text-center">
@@ -331,11 +351,13 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
                   </div>
+                  @if(!$mobile)
                   <div class="d-flex justify-content-center">
                     <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
                       <div class="text-center">
@@ -343,6 +365,7 @@
                       </div>
                     </a>
                   </div>
+                  @endif
                 </div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
@@ -366,29 +389,6 @@
         <i class="fa fa-phone-square-alt"></i> 800-742-8602
     </a>
 </div>
-
-<div style="background-color: #333">
-    <div class="container" >
-        <div class="row text-white">
-            <div class="col-12 col-sm-6 p-4 my-2">
-                <span class="text-muted font-weight-bold">¿Por qué elegirnos?</span> <br><br>
-                <p class="heading-title pb-4 h3">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</p>
-                <hr class="hrwf">
-                <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
-                <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
-            </div>
-            <div class="col-12 col-sm-6 p-4 my-4  d-flex align-items-center">
-
-
-                <span style="font-size:18px; text-indent: 40px;">
-                  Somos una notaría autorizada, para autenticar documentos en Estados Unidos, por medio de una Apostilla. Nuestro servicio es realizado bajo normas y reglas estrictamente legales, para que su trabajo sea entregado con la mayor prontitud y satisfacción.
-                  <br><br>
-                  Brindamos servicios notariales para toda Latinoamérica desde los Estados Unidos.</span>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div class="container">
   {{-- <div class="row py-4">
@@ -462,7 +462,7 @@
               <a href="https://g.page/r/CVNRV-zNuJiZEAE">
                 <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 1146 East Jersey St Elizabeth, NJ 07201</p>
               </a>
-              <a class="btn btn-danger btn-block" href="tel:+19088009046"><i class="fas fa-phone"></i> Llamar ahora</a>
+              <a class="btn btn-warning btn-block" href="tel:+19088009046"><i class="fas fa-phone"></i> Llamar ahora</a>
             </div>
           </div>
           </a>
@@ -484,7 +484,7 @@
               <a href="https://g.page/notariapublicalatina">
                 <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 67-03 Roosevelt Avenue, Woodside, NY 11377</p>
               </a>
-              <a class="btn btn-danger btn-block" href="tel:+13479739888"><i class="fas fa-phone"></i> Llamar ahora</a> 
+              <a class="btn btn-warning btn-block" href="tel:+13479739888"><i class="fas fa-phone"></i> Llamar ahora</a> 
             </div>
           </div>
         </a>
@@ -504,7 +504,7 @@
               <a href="https://g.page/r/CeRrwPx_W2-xEAE">
                 <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 2104 N University Dr, Sunrise, FL 33322</p>
               </a>
-              <a class="btn btn-danger btn-block" href="tel:+13056003290"><i class="fas fa-phone"></i> Llamar ahora</a>
+              <a class="btn btn-warning btn-block" href="tel:+13056003290"><i class="fas fa-phone"></i> Llamar ahora</a>
             </div>
           </div>
         </a>
@@ -520,19 +520,19 @@
   <div class="row mt-4 mx-1">
     <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3 @if(!$mobile) border-right @endif">
       <div>
-        <i class="fas fa-calendar-alt fa-2x text-danger"></i>
+        <i class="fas fa-calendar-alt fa-2x" style="color: #122944"></i>
         <p class="tit-not mt-2">Tenemos una gran trayectoria dentro del campo notarial</p>
       </div>
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3 @if(!$mobile) border-left border-right @endif">
       <div>
-        <i class="fas fa-university fa-2x text-danger"></i>
+        <i class="fas fa-university fa-2x" style="color: #122944"></i>
         <p class="tit-not mt-2">Contamos con personal capacitado para atender el trámite que necesite</p>
       </div>
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3 @if(!$mobile) border-left @endif">
       <div>
-        <i class="fas fa-users fa-2x text-danger"></i>
+        <i class="fas fa-users fa-2x" style="color: #122944"></i>
         <p class="tit-not mt-2">Hemos ayudado a una gran cantidad de clientes</p>
       </div>
     </div>
@@ -545,6 +545,41 @@
     <h3 class="tit-not">¿Tiene alguna pregunta?</h3>
     <p>No dude en contactarnos y uno de nuestros asesores lo ayudará</p>
     <a class="btn btn-dark rounded-0" href="{{route('web.contactenos')}}">Contactarme</a>
+  </div>
+</div>
+<hr class="mt-5">
+
+{{-- <hr class="hrb mb-4 mt-5">
+<div class="row mt-5 d-inline">
+  <div class="d-flex justify-content-center mb-4">
+    <h3 class="tit-not">También puede buscarnos en nuestras redes sociales</h3>
+  </div>
+  <div class="fb-page mt-3 w-auto" data-href="https://www.facebook.com/notariapublicalatina" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-lazy="true"><blockquote cite="https://www.facebook.com/notariapublicalatina" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/notariapublicalatina">Notaría Pública Latina</a></blockquote></div>
+</div> --}}
+
+</div>
+
+</div>
+
+<div style="background-color: #333" class="mt-5">
+  <div class="container" >
+      <div class="row text-white">
+          <div class="col-12 col-sm-6 p-4 my-2">
+              <span class="text-muted font-weight-bold">¿Por qué elegirnos?</span> <br><br>
+              <p class="heading-title pb-4 h3">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</p>
+              <hr class="hrwf">
+              <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
+              <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
+          </div>
+          <div class="col-12 col-sm-6 p-4 my-4  d-flex align-items-center">
+
+
+              <span style="font-size:18px; text-indent: 40px;">
+                Somos una notaría autorizada, para autenticar documentos en Estados Unidos, por medio de una Apostilla. Nuestro servicio es realizado bajo normas y reglas estrictamente legales, para que su trabajo sea entregado con la mayor prontitud y satisfacción.
+                <br><br>
+                Brindamos servicios notariales para toda Latinoamérica desde los Estados Unidos.</span>
+          </div>
+      </div>
   </div>
 </div>
 
@@ -578,18 +613,6 @@
 
 </div>
 @endisset
-
-{{-- <hr class="hrb mb-4 mt-5">
-<div class="row mt-5 d-inline">
-  <div class="d-flex justify-content-center mb-4">
-    <h3 class="tit-not">También puede buscarnos en nuestras redes sociales</h3>
-  </div>
-  <div class="fb-page mt-3 w-auto" data-href="https://www.facebook.com/notariapublicalatina" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-lazy="true"><blockquote cite="https://www.facebook.com/notariapublicalatina" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/notariapublicalatina">Notaría Pública Latina</a></blockquote></div>
-</div> --}}
-
-</div>
-
-</div>
 
 @section('numberWpp', '13479739888')
 
@@ -631,6 +654,7 @@
         interval: 1000 * 4
       });
     }, 3000);
+    if('{{!$mobile}}')document.getElementById('iconwpp').style.display = "none";
   </script>
 @endsection
 
