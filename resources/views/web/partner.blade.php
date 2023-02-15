@@ -495,14 +495,14 @@
                             @csrf
                             <div class="d-flex mb-3">
                                 <div class="mr-1">
-                                    <input class="form-control rounded-0" name="name" type="text" placeholder="Nombre" required>
+                                    <input class="form-control rounded-0" name="name" id="name_formphone" type="text" placeholder="Nombre" required>
                                 </div>
                                 <div class="ml-1">
-                                    <input type="text" class="form-control rounded-0" name="lastname" placeholder="Apellido" required>
+                                    <input type="text" class="form-control rounded-0" name="lastname" id="lastname_formphone" placeholder="Apellido" required>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <input class="form-control rounded-0" name="email" type="email" placeholder="Email" required>
+                                <input class="form-control rounded-0" name="email" type="email" id="email_formphone" placeholder="Email" required>
                             </div>
                             <div class="form-group">
                                 <select name="country_residence_view_phone" id="country_residence_view_phone" class="form-control rounded-0" required>
@@ -528,11 +528,11 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <input class="form-control rounded-0" name="phone" type="text" placeholder="Teléfono" required>
+                                <input class="form-control rounded-0" name="phone" id="phoneformphone" type="text" placeholder="Teléfono" required>
                             </div>
                         </div>
                         <div class="modal-footer justify-content-center" style="margin-bottom: -15px;">
-                            <button onclick="saveStorage();" class="btn rounded-0 shadow" style="background-color: #fec02f">Enviar información</button>
+                            <button id="btnsubmitformphone" class="btn rounded-0 shadow" style="background-color: #fec02f">Enviar información</button>
                         </div>
                     </form>
                 </div>
@@ -653,15 +653,26 @@
         $('.bd-example-modal-sm').modal('show');
     }
 
-    function saveStorage(){
-        var id = document.getElementById('txtpartnerid').textContent;
-        var partner = document.getElementById('txtnamelastname').textContent;
-        if(localStorage.getItem("prueba"+id) == null){
-            partner = partner.replace(/\s/g, "").toLowerCase() + id;
-            localStorage.setItem("prueba"+id, partner);
+    document.getElementById('btnsubmitformphone').addEventListener('click', (event) => {
+        event.preventDefault();
+        let name_formphone = document.getElementById('name_formphone').value;
+        let lastname_formphone = document.getElementById('lastname_formphone').value;
+        let email_formphone = document.getElementById('email_formphone').value;
+        let country_residence_view_phone = document.getElementById('country_residence_view_phone').value;
+        let phoneformphone = document.getElementById('phoneformphone').value;
+
+        if((name_formphone != null && lastname_formphone != null && email_formphone != null && country_residence_view_phone != null && phoneformphone != null) && (name_formphone != "" && lastname_formphone != "" && email_formphone != "" && country_residence_view_phone != "" && phoneformphone != "")){
+            let id = document.getElementById('txtpartnerid').textContent;
+            let partner = document.getElementById('txtnamelastname').textContent;
+            if(localStorage.getItem("prueba"+id) == null){
+                partner = partner.replace(/\s/g, "").toLowerCase() + id;
+                localStorage.setItem("prueba"+id, partner);
+            }
+            document.getElementById('formviewphone').submit();
+        } else {
+            alert('Complete los campos');
         }
-        document.getElementById('formviewphone').submit();
-    }
+    });
 
     const validatelengthnumber = (event) => {
         let value_country = document.getElementById('country_residence').value;
