@@ -94,7 +94,7 @@
 
 <div class="form-group">
     @if (str_contains(url()->current(), '/post'))
-        {!! Form::submit('Agendar una cita',  ['class' => 'btn btn-lg btn-warning btn-block']) !!}
+        {!! Form::submit('Solicitar Trámite',  ['class' => 'btn btn-lg btn-warning btn-block']) !!}
     @else
         {!! Form::submit('Enviar',  ['class' => 'btn btn-lg btn-warning btn-block']) !!}
     @endif

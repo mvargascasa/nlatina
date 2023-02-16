@@ -108,7 +108,7 @@
                                     <input type="email" name="email" id="email" style="border: none; border-bottom:solid 1px; border-radius: 0px; border-color: rgb(228, 216, 216)" class="form-control inputs" placeholder="Correo electrónico*" required/>
                                 </div>
                                 <div class="mb-5 d-flex">
-                                    <textarea name="mensaje" id="mensaje" rows="4" style=" border-radius: 0px; border-color: rgb(228, 216, 216)" class="form-control inputs" placeholder="Mensaje"></textarea>
+                                    <textarea name="mensaje" id="mensaje" rows="4" style=" border-radius: 0px; border-color: rgb(228, 216, 216)" class="form-control inputs" placeholder="Mensaje" required></textarea>
                                 </div>
                                 <label class="mb-2 inputs" for="adjunto">Adjuntar un archivo</label>
                                 <div class="mb-5 d-flex">

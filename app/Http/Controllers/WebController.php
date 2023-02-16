@@ -2569,14 +2569,14 @@ class WebController extends Controller
     //FUNCION PARA ENVIAR SOLICITUD DE APOSTILLA CON ADJUNTO
     public function sendEmailApostille(Request $request){
 
-        $recipient_email = 'info@notarialatina.com';
+        $recipient_email = 'notariapublicalatina@gmail.com'; //info@notarialatina.com
 
         if(isset($request->url_current)){
             switch ($request->url_current) {
-                case 'web.oficina.newjersey': $recipient_email .= ",newjersey@notarialatina.com"; break;
-                case 'web.oficina.newyork': $recipient_email .= ",newyork@notarialatina.com"; break;
-                case 'web.oficina.florida': $recipient_email .= ",florida@notarialatina.com"; break;
-                default: $recipient_email .= ",newyork@notarialatina.com"; break;
+                case 'web.oficina.newjersey': $recipient_email = ",newjersey@notarialatina.com"; break; //newjersey@notarialatina.com
+                case 'web.oficina.newyork': $recipient_email = ",newyork@notarialatina.com"; break; //newyork@notarialatina.com
+                case 'web.oficina.florida': $recipient_email = ",florida@notarialatina.com"; break; //florida@notarialatina.com
+                default: $recipient_email = ",newyork@notarialatina.com"; break;
             }
         }
 
