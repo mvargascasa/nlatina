@@ -130,6 +130,7 @@
           width: 100%;
         }
       }
+      .card:hover{box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;}
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -401,6 +402,34 @@
 
 </div>
 {{-- termina div oficinas --}}
+</div>
+</div>
+
+<div style="background-color: #333" class="mt-5">
+  <div class="container" >
+      <div class="row text-white">
+          <div class="col-12 col-sm-6 p-4 my-2">
+              <span class="text-muted font-weight-bold">¿Por qué elegirnos?</span> <br><br>
+              <p class="heading-title pb-4 h3">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</p>
+              <hr class="hrwf">
+              <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
+              <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
+          </div>
+          <div class="col-12 col-sm-6 p-4 my-4  d-flex align-items-center">
+
+
+              <span style="font-size:18px; text-indent: 40px;">
+                Somos una notaría autorizada, para autenticar documentos en Estados Unidos, por medio de una Apostilla. Nuestro servicio es realizado bajo normas y reglas estrictamente legales, para que su trabajo sea entregado con la mayor prontitud y satisfacción.
+                <br><br>
+                Brindamos servicios notariales para toda Latinoamérica desde los Estados Unidos.</span>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="row">
 <hr>
 <div class="row rounded py-5">
   <div class="text-center w-100">
@@ -428,7 +457,10 @@
   </div>
 </div>
 
-<hr>
+</div>
+
+</div>
+
 <div data-aos="flip-right" style="background-color: rgb(235, 235, 235)" class="row text-center py-5 mt-5">
   <div class="w-100">
     <h3 class="tit-not">¿Tiene alguna pregunta?</h3>
@@ -436,7 +468,9 @@
     <a class="btn btn-dark rounded-0" href="{{route('web.contactenos')}}">Contactarme</a>
   </div>
 </div>
-<hr class="mt-5">
+<div class="container">
+
+<div class="row">
 
 {{-- <hr class="hrb mb-4 mt-5">
 <div class="row mt-5 d-inline">
@@ -450,33 +484,12 @@
 
 </div>
 
-<div style="background-color: #333" class="mt-5">
-  <div class="container" >
-      <div class="row text-white">
-          <div class="col-12 col-sm-6 p-4 my-2">
-              <span class="text-muted font-weight-bold">¿Por qué elegirnos?</span> <br><br>
-              <p class="heading-title pb-4 h3">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</p>
-              <hr class="hrwf">
-              <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
-              <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
-          </div>
-          <div class="col-12 col-sm-6 p-4 my-4  d-flex align-items-center">
-
-
-              <span style="font-size:18px; text-indent: 40px;">
-                Somos una notaría autorizada, para autenticar documentos en Estados Unidos, por medio de una Apostilla. Nuestro servicio es realizado bajo normas y reglas estrictamente legales, para que su trabajo sea entregado con la mayor prontitud y satisfacción.
-                <br><br>
-                Brindamos servicios notariales para toda Latinoamérica desde los Estados Unidos.</span>
-          </div>
-      </div>
-  </div>
-</div>
 
 @isset($indexPosts)
 
 <div class="container">
     <div class="row py-4">
-        <div class="col-12 text-center py-4"><hr>
+        <div class="col-12 text-center py-4">
             <h2 class="tit-not mt-5">Publicaciones de Interes</h2>
             <hr class="hrb">
           </div>
