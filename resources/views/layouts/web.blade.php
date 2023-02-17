@@ -459,8 +459,8 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             <div style="position: relative">
                 <div id="chat" style="position: fixed; bottom: 130px; right: 10px; width: 140px; z-index: 10; display: none" class="border rounded">
                     <div>
-                        <div style="background-color: #4eda5f; color: #ffffff" class="pl-1">
-                            Activo
+                        <div style="background-color: #4eda5f; color: #ffffff" class="pl-2">
+                            En línea
                             <div class="float-right mr-1" onclick="openchat()" style="cursor: pointer"><i class="fas fa-times-circle"></i></div>
                         </div>
                         <div style="position: relative;">
