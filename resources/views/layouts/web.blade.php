@@ -164,6 +164,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
 }
+@keyframes slidein {from {margin-right: -200px;} to {margin-right: 0px;}}
+@keyframes slideout {from {margin-right: 0px;} to {margin-right: -200px}}
 </style>
 
   @yield('header')
@@ -459,7 +461,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                     <div>
                         <div style="background-color: #4eda5f; color: #ffffff" class="pl-1">
                             Activo
-                            <div class="float-right mr-1" onclick="document.getElementById('chat').style.display = 'none'" style="cursor: pointer"><i class="fas fa-times-circle"></i></div>
+                            <div class="float-right mr-1" onclick="openchat()" style="cursor: pointer"><i class="fas fa-times-circle"></i></div>
                         </div>
                         <div style="position: relative;">
                             <img class="img-fluid" src="{{asset('img/whatsapp-wallpaper.jpg')}}" alt="whatsapp de notaria latina">
@@ -663,9 +665,13 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     function openchat(){
         let divchat = document.getElementById('chat');
         if(divchat.style.display == "block"){
-            divchat.style.display = "none";
+            divchat.style.animation = "slideout 1s 1";
+            setTimeout(() => {
+                divchat.style.display = "none";
+            }, 1000);
         } else {
             divchat.style.display = "block";
+            divchat.style.animation = "slidein 1s 1";
         }
 
     }

@@ -79,20 +79,10 @@
 
     <style>
       @media screen and (max-width: 580px){
-        #titleTraducciones{
-          margin-bottom: 15% !important;
-        }
-        #titleApostillas{
-          margin-bottom: 15% !important;
-        }
-        #locations{
-          margin-left: 0% !important;
-          margin-right: 0% !important;
-        }
-        .child-locations{
-          margin-top: 5% !important;
-          border: none !important;
-        }
+        #titleTraducciones{margin-bottom: 15% !important;}
+        #titleApostillas{margin-bottom: 15% !important;}
+        #locations{margin-left: 0% !important;margin-right: 0% !important;}
+        .child-locations{margin-top: 5% !important;border: none !important;}
       }
 
       .child-locations{
