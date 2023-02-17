@@ -159,43 +159,16 @@
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
               </div>
             </div>
@@ -219,43 +192,16 @@
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
@@ -275,43 +221,16 @@
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
@@ -329,43 +248,16 @@
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=19088009046" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
                   </div>
-                  @if(!$mobile)
-                  <div class="d-flex justify-content-center">
-                    <a href="https://api.whatsapp.com/send?phone=13056003290" class="text-white">
-                      <div class="text-center">
-                        <i class="fab fa-whatsapp bg-success rounded-circle" style="font-size: 30px"></i>
-                      </div>
-                    </a>
-                  </div>
-                  @endif
                 </div>
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
@@ -459,10 +351,9 @@
               {{-- <p class="description mt-4">
                 Gestione sus trámites notariales en New York. 
               </p> --}}
-              <a href="https://g.page/r/CVNRV-zNuJiZEAE">
-                <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 1146 East Jersey St Elizabeth, NJ 07201</p>
-              </a>
+              <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 1146 East Jersey St Elizabeth, NJ 07201</p>
               <a class="btn btn-warning btn-block" href="tel:+19088009046"><i class="fas fa-phone"></i> Llamar ahora</a>
+              <a class="btn btn-success btn-block" href="https://api.whatsapp.com/send?phone=19088009046"><i class="fab fa-whatsapp"></i> Whatsapp</a>
             </div>
           </div>
           </a>
@@ -481,10 +372,9 @@
               {{-- <p class="description mt-4">
                 Gestione sus trámites notariales en New Jersey
               </p> --}}
-              <a href="https://g.page/notariapublicalatina">
-                <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 67-03 Roosevelt Avenue, Woodside, NY 11377</p>
-              </a>
-              <a class="btn btn-warning btn-block" href="tel:+13479739888"><i class="fas fa-phone"></i> Llamar ahora</a> 
+              <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 67-03 Roosevelt Avenue, Woodside, NY 11377</p>
+              <a class="btn btn-warning btn-block" href="tel:+13479739888"><i class="fas fa-phone"></i> Llamar ahora</a>
+              <a class="btn btn-success btn-block" href="https://api.whatsapp.com/send?phone=13479739888"><i class="fab fa-whatsapp"></i> Whatsapp</a>
             </div>
           </div>
         </a>
@@ -501,10 +391,9 @@
               {{-- <p class="description mt-4">
                 Gestione sus trámites notariales en Florida
               </p> --}}
-              <a href="https://g.page/r/CeRrwPx_W2-xEAE">
-                <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 2104 N University Dr, Sunrise, FL 33322</p>
-              </a>
+              <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 2104 N University Dr, Sunrise, FL 33322</p>
               <a class="btn btn-warning btn-block" href="tel:+13056003290"><i class="fas fa-phone"></i> Llamar ahora</a>
+              <a class="btn btn-success btn-block" href="https://api.whatsapp.com/send?phone=13056003290"><i class="fab fa-whatsapp"></i> Whatsapp</a>
             </div>
           </div>
         </a>
@@ -654,7 +543,6 @@
         interval: 1000 * 4
       });
     }, 3000);
-    if('{{!$mobile}}')document.getElementById('iconwpp').style.display = "none";
   </script>
 @endsection
 

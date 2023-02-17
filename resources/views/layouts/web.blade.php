@@ -294,7 +294,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 </div>
 @endisset --}}
 
-<section class="row m-0 justify-content-md-center py-4">
+{{-- <section class="row m-0 justify-content-md-center py-4">
 
     <div class="col-12 text-center py-4"><hr>
       <h2 class="tit-not">Más Servicios</h2>
@@ -323,7 +323,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         <a href="{{route('web.testamentos')}}" class="btn btn-dark btn-block">Testamento</a>
     </div>
 
-  </section>
+  </section> --}}
 
 <footer class="text-white" style="background-color: #122944;">
     <div class="container">
