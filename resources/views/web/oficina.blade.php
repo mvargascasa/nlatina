@@ -163,6 +163,35 @@
             <img class="lazy" style="width: 100%; height: 100%" data-src="{{ asset('img/oficinas/IMAGENES-NEW-JERSEY2.webp') }}" alt="">
         </div>
     </div>
+
+    <div>
+        <div class="text-center font-weight-bold p-5">
+            <p class="h5"><i>Como Notaría autorizada en {{$data['office']}}, estamos aquí para ayudarlo en todas sus necesidades de notarización de documentos</i></p>
+        </div>
+        <div class="text-center pt-5" style="background-color: #F5F4F4">
+            <h2>¿Por qué es importante notarizar un documento?</h2>
+            <div class="row mx-4 py-5">
+                <div class="col-sm-4 my-1" data-aos="zoom-in">
+                    <div class="border shadow-sm p-5 h-100">
+                        <img width="100px" height="100px" src="{{asset('img/oficinas/convenio.png')}}" alt="notarizar documentos">
+                        <p class="mt-4">Un documento notarizado puede ser requerido por una variedad de situaciones legales, financieras o personales.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 my-1" data-aos="zoom-in">
+                    <div class="border shadow-sm p-5 h-100">
+                        <img width="100px" height="100px" src="{{asset('img/oficinas/tutor.png')}}" alt="notarizar un documento">
+                        <p class="mt-4">Mediante la notarización de documentos se verifica la identidad del firmante del documento por medio de un Notario</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 my-1" data-aos="zoom-in">
+                    <div class="border shadow-sm p-5 h-100">
+                        <img width="100px" height="100px" src="{{asset('img/oficinas/document.png')}}" alt="notarizar documento {{$data['office']}}">
+                        <p class="mt-4">Es una constancia que el firmante ha firmado el documento de manera voluntaria y bajo su propio libre albedrío</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <section class="pt-5 pb-5" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <h2 class="text-center w-100 pb-4" style="color: #122944">Nuestros Servicios</h2>
@@ -324,7 +353,7 @@
         {{-- </div> --}}
         </section>
 
-    <div data-aos="flip-down" class="pb-5" style="background-color: #ece8e3">
+    <div data-aos="flip-down" class="pb-5" style="background-color: #F5F4F4">
         <div class="row justify-content-center align-items-center" style="padding-top: 50px">
             <div class="text-center">
                 <i><p class="h2" style="font-weight: bold; font-size: 20px">¿Necesita realizar un trámite de Notaría <br> en {{ $data['office'] }}?</p></i>
