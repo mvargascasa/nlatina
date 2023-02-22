@@ -203,11 +203,14 @@ class LandingController extends Controller
                 if(isset($request->url_current) && $request->url_current == "web.oficina.florida") $from = "oficina Florida";
                 if(isset($request->url_current) && $request->url_current == "web.oficina.newjersey") $from = "oficina New Jersey";
                 if(isset($request->url_current) && $request->url_current == "web.oficina.newyork") $from = "oficina New York";
-                $fromheader = strtolower(str_replace(' ', '', $from));
-                $header .= 'From: <lead_'.$fromheader.'@notarialatina.com>' . "\r\n";
+
+                if(isset($request->servicecarousel)) $from_header = strtolower($request->servicecarousel)."_home";    
+                else $fromheader = "lead_" . strtolower(str_replace(' ', '', $from));
+
+                $header .= 'From: <'.$fromheader.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);      
             }
 

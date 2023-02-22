@@ -167,7 +167,7 @@
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
               <button class="btn btn-warning btn-lg button" data-toggle="modal" 
-              data-target="#exampleModal">INICIAR TRAMITE</button>
+              data-target="#exampleModal" onclick="setservice('General')">INICIAR TRAMITE</button>
           </div>
         </div>
 
@@ -197,7 +197,7 @@
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
-              <a href="javascript:void(0)" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</a>
+              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" onclick="setservice('Traducciones')">INICIAR TRAMITE</button>
 
             </div>
           </div>
@@ -226,7 +226,7 @@
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
-              <a href="javascript:void(0)" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</a>
+              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" onclick="setservice('Apostillas')">INICIAR TRAMITE</button>
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
@@ -253,7 +253,7 @@
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
-              <a href="javascript:void(0)" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</a>
+              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" onclick="setservice('Poderes')">INICIAR TRAMITE</button>
           </div>
         </div>
 {{-- @endif --}}
@@ -540,6 +540,16 @@
         document.getElementById('imgnna').src = "img/national-notary-association.webp";
         AOS.init();
     });
+
+    function setservice(service){
+      let form = document.getElementById('formlead');
+      let inputservice = document.createElement('input');
+      inputservice.type = "hidden";
+      inputservice.name = "servicecarousel";
+      inputservice.value = service;
+      form.appendChild(inputservice);
+    }
+
     document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
     setTimeout(() => {
       $('.carousel').carousel({
