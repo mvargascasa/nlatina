@@ -128,15 +128,15 @@ class LandingController extends Controller
             //return $servicename;
             $sendoffices = '';
 
-            // if ($interest == 'General')                                             $sendoffices = 'newyork@notarialatina.com'; //
-            // if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = 'newyork@notarialatina.com'; //
-            // if ($interest == 'Landing New Jersey'   || $interest == 'New Jersey')   $sendoffices = 'newjersey@notarialatina.com'; //
-            // if ($interest == 'Landing Florida'      || $interest == 'Florida')      $sendoffices = 'florida@notarialatina.com'; //
+            if ($interest == 'General')                                             $sendoffices = 'newyork@notarialatina.com'; //
+            if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = 'newyork@notarialatina.com'; //
+            if ($interest == 'Landing New Jersey'   || $interest == 'New Jersey')   $sendoffices = 'newjersey@notarialatina.com'; //
+            if ($interest == 'Landing Florida'      || $interest == 'Florida')      $sendoffices = 'florida@notarialatina.com'; //
 
-            if ($interest == 'General')                                             $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
-            if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
-            if ($interest == 'Landing New Jersey'   || $interest == 'New Jersey')   $sendoffices = 'sebas25211@hotmail.com'; //newjersey@notarialatina.com
-            if ($interest == 'Landing Florida'      || $interest == 'Florida')      $sendoffices = 'sebastian.armijos.est@tecazuay.edu.ec'; //florida@notarialatina.com
+            // if ($interest == 'General')                                             $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
+            // if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
+            // if ($interest == 'Landing New Jersey'   || $interest == 'New Jersey')   $sendoffices = 'sebas25211@hotmail.com'; //newjersey@notarialatina.com
+            // if ($interest == 'Landing Florida'      || $interest == 'Florida')      $sendoffices = 'sebastian.armijos.est@tecazuay.edu.ec'; //florida@notarialatina.com
 
             // if(isset($request->url_current) && ($request->url_current == "web.oficina.newjersey" || $request->url_current == "web.oficina.newyork" || $request->url_current == "web.oficina.florida")){
             //     if($request->url_current == "web.oficina.newjersey")    $sendoffices = ',newjersey@notarialatina.com';
@@ -155,7 +155,7 @@ class LandingController extends Controller
                 <br><b> País: </b> " . strip_tags($country) . "
                 <br><b> Telef: </b> ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
                 <br><b> Email: </b> " . strip_tags($request->ccc) ."
-                <br><b> Interes: </b> ".strip_tags($interest)."
+                <br><b> Interes: </b> ".strip_tags($request->service)."
                 <br><b> Mensaje: </b> ".strip_tags($request->ddd)."
                 <br><b> Fuente: </b> GoogleAds 
                 <br><b> Página: </b> " . url()->previous() . " ";
@@ -171,9 +171,9 @@ class LandingController extends Controller
                 $header .= 'From: <'.$from.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
-                //mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
-                mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
+                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
+                mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
+                //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
             }
     
             if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
@@ -182,12 +182,14 @@ class LandingController extends Controller
                 <br> Nombre: ". strip_tags($request->fname)." ". strip_tags($request->lname) . " 
                 <br> País: " . strip_tags($country) . "
                 <br> Telef: ". strip_tags($request->cod) . " " . strip_tags($request->tlf)."
-                <br> Interes: ".strip_tags($interest)."
+                <br> Email: " . strip_tags($request->email) . "
                 <br> Servicio: " . strip_tags($servicename) . "
                 <br> Mensaje: ".strip_tags($request->message)."
                 <br> Fuente: GoogleAds 
                 <br> Página: " . url()->previous() . "
                 ";
+
+                // <br> Interes: ".strip_tags($interest)." se quito de debajo de email
 
                 if(isset($request->email)){
                     $this->setEmailToLead($request->fname, $request->email);
