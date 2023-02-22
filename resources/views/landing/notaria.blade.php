@@ -80,6 +80,33 @@
                 <input id="ccc" name="ccc" type="email" class="form-control" placeholder="Email" maxlength="50" minlength="8" autocomplete="off" required>
               </div>
               <div class="form-group">
+                <select name="service" class="form-control" id="service" required>
+                  <option value="">Servicio que necesita tramitar</option>
+                  <option value="Poderes">Poderes</option>
+                  <option value="Apostillas">Apostillas</option>
+                  <option value="Traducciones">Traducciones</option>
+                  <option value="Affidavit">Affidavit</option>
+                  <option value="Acuerdos">Acuerdos</option>
+                  <option value="Autorizaciones de viaje">Autorizaciones de viaje</option>
+                  <option value="Cartas de invitacion">Cartas de invitación</option>
+                  <option value="Certificaciones">Certificaciones</option>
+                  <option value="Contratos">Contratos</option>
+                  <option value="Poderes Generales">Poderes Generales</option>
+                  <option value="Poderes Especiales">Poderes Especiales</option>
+                  <option value="Revocatorias">Revocatorias</option>
+                  <option value="Testamentos">Testamentos</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="office" id="office" class="form-control" required>
+                  <option value="">¿En qué oficina necesita realizar el trámite?</option>
+                  <option value="New York">New York</option>
+                  <option value="New Jersey"> New Jersey</option>
+                  <option value="Florida">Florida</option>
+                </select>
+              </div>
+              <div class="form-group">
                 {{-- <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje" maxlength="100" autocomplete="off" required> --}}
                 <textarea name="ddd" id="ddd" class="form-control" rows="3" placeholder="Mensaje" maxlength="100" autocomplete="off" required></textarea>
               </div>
