@@ -88,7 +88,7 @@
         <div class="col-12 text-center">
             <h2 class="tit-not">Temas Relacionados</h2>
         </div>
-            <div class="row">
+            <div class="row mb-4">
                 @foreach ($posts as $lpost)
                     <div class="col-12 col-md-4">
                         <div class="card my-2">
@@ -109,39 +109,12 @@
                 @endforeach
             </div>
 
-            <div class="mt-4">
+            {{-- <div class="mt-4">
                 <h2 class="text-center">¿Necesita realizar un trámite notarial?</h2>
                 <p style="font-weight: 300; font-size: 20px" class="text-center mb-4">Gestionamos el proceso de una manera correcta y diligente.</p>
                 <div class="row justify-content-center">
                     <div class="col-sm-6 border p-3" style="border-radius: 5px">
                         @include('z-form')
-                        {{-- {!! Form::open(['route' => ['send.comment.post', $post->slug], 'method' => 'POST']) !!}
-                        @csrf
-                        <div class="d-flex">
-                            <div class="form-group w-100">
-                                {!! Form::label('name', 'Nombre') !!}
-                                {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
-                            </div>
-        
-                            <div class="form-group w-100 ml-1">
-                                {!! Form::label('lastname', 'Apellido') !!}
-                                {!! Form::text('lastname', null, ['class' => 'form-control', 'required']) !!}
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('email', 'Correo electrónico') !!}
-                            {!! Form::email('email', null, ['class' => 'form-control', 'required']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('message', 'Comentario') !!}
-                            {!! Form::textarea('message', null, ['class' => 'form-control', 'rows' => 3, 'required']) !!}
-                        </div>
-
-                        {!! Form::submit('Enviar', ['class' => 'btn btn-warning']) !!}
-    
-                        {!! Form::close() !!} --}}
                     </div>
                     <div class="col-sm-6 w-100 justify-content-center" style="margin-top: auto !important; margin-bottom: auto !important">
                         <div id="benefits" class="text-center">
@@ -152,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
     </div>
 
     @if (session('sendcomment'))
