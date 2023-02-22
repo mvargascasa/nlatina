@@ -204,7 +204,7 @@ class LandingController extends Controller
                 if(isset($request->url_current) && $request->url_current == "web.oficina.newjersey") $from = "oficina New Jersey";
                 if(isset($request->url_current) && $request->url_current == "web.oficina.newyork") $from = "oficina New York";
 
-                if(isset($request->servicecarousel)) $from_header = strtolower($request->servicecarousel)."_home";    
+                if(isset($request->servicecarousel)) $fromheader = strtolower($request->servicecarousel)."_home";    
                 else $fromheader = "lead_" . strtolower(str_replace(' ', '', $from));
 
                 $header .= 'From: <'.$fromheader.'@notarialatina.com>' . "\r\n";
