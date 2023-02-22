@@ -146,14 +146,14 @@
               <h1 class="tit-not">Notaría Pública</h1>
               <p class="heading-title h2" style="margin-bottom: @if(!$mobile) 6% @else 2% @endif">Gestión Fácil y Rápida</p>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div id="div2" class="col-sm-4 @if(!$mobile) border-right @endif">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
-                  </div>
-                </div>
-                <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
+                <div class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                  </div>
+                </div>
+                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif">
+                  <div class="child-locations mb-2 rounded-pill">
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
@@ -167,7 +167,7 @@
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
               <button class="btn btn-warning btn-lg button" data-toggle="modal" 
-              data-target="#exampleModal" onclick="setservice('General')">INICIAR TRAMITE</button>
+              data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
 
@@ -181,12 +181,12 @@
               <div id="locations" class="row" style="margin-left: 11%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
@@ -197,7 +197,7 @@
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
-              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" onclick="setservice('Traducciones')">INICIAR TRAMITE</button>
+              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
 
             </div>
           </div>
@@ -210,12 +210,12 @@
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
                 </div>
-                <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
+                <div class="col-sm-4 @if(!$mobile) border-right border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
@@ -226,7 +226,7 @@
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
-              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" onclick="setservice('Apostillas')">INICIAR TRAMITE</button>
+              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
@@ -237,12 +237,12 @@
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
                   </div>
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
                   </div>
                 </div>
                 <div class="col-sm-4 @if(!$mobile) border-left @endif">
@@ -253,7 +253,7 @@
               </div>
               {{-- <hr width="200" style="border-color: #fff"> --}}
   
-              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" onclick="setservice('Poderes')">INICIAR TRAMITE</button>
+              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
 {{-- @endif --}}
@@ -329,6 +329,28 @@
         <h2 class="tit-not">Visite Nuestras Oficinas</h2>
         <hr class="hrb">
       </div>
+
+      <div class="col-12 col-sm-12 col-md-4 mb-3">
+        <a style="text-decoration: none" href="{{ route('web.oficina.newyork') }}">
+          <div class="serviceBox h-100">
+              <h3 class="title">New York</h3>
+              <div>
+                {{-- <a href="{{route('web.oficina.newyork')}}"> --}}
+                  <img class="lazy img-fluid rounded" data-src="{{asset('img/oficinas/oficina-new-york-notaria-latina.jpg')}}" alt="Poderes - Notaria Latina">
+                {{-- </a> --}}
+              </div>
+              <div>
+                {{-- <p class="description mt-4">
+                  Gestione sus trámites notariales en New Jersey
+                </p> --}}
+                <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 67-03 Roosevelt Avenue, Woodside, NY 11377</p>
+                <a class="btn btn-warning btn-block" href="tel:+13479739888"><i class="fas fa-phone"></i> Llamar ahora</a>
+                <a class="btn btn-success btn-block" href="https://api.whatsapp.com/send?phone=13479739888"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+              </div>
+            </div>
+          </a>
+      </div>
+
     <div class="col-12 col-sm-12 col-md-4 mb-3">
         <a style="text-decoration: none" href="{{ route('web.oficina.newjersey') }}">
         <div class="serviceBox h-100">
@@ -348,27 +370,6 @@
             </div>
           </div>
           </a>
-    </div>
-
-    <div class="col-12 col-sm-12 col-md-4 mb-3">
-      <a style="text-decoration: none" href="{{ route('web.oficina.newyork') }}">
-        <div class="serviceBox h-100">
-            <h3 class="title">New York</h3>
-            <div>
-              {{-- <a href="{{route('web.oficina.newyork')}}"> --}}
-                <img class="lazy img-fluid rounded" data-src="{{asset('img/oficinas/oficina-new-york-notaria-latina.jpg')}}" alt="Poderes - Notaria Latina">
-              {{-- </a> --}}
-            </div>
-            <div>
-              {{-- <p class="description mt-4">
-                Gestione sus trámites notariales en New Jersey
-              </p> --}}
-              <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 67-03 Roosevelt Avenue, Woodside, NY 11377</p>
-              <a class="btn btn-warning btn-block" href="tel:+13479739888"><i class="fas fa-phone"></i> Llamar ahora</a>
-              <a class="btn btn-success btn-block" href="https://api.whatsapp.com/send?phone=13479739888"><i class="fab fa-whatsapp"></i> Whatsapp</a>
-            </div>
-          </div>
-        </a>
     </div>
 
     <div class="col-12 col-sm-12 col-md-4 mb-3">
@@ -540,15 +541,6 @@
         document.getElementById('imgnna').src = "img/national-notary-association.webp";
         AOS.init();
     });
-
-    function setservice(service){
-      let form = document.getElementById('formlead');
-      let inputservice = document.createElement('input');
-      inputservice.type = "hidden";
-      inputservice.name = "servicecarousel";
-      inputservice.value = service;
-      form.appendChild(inputservice);
-    }
 
     document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
     setTimeout(() => {
