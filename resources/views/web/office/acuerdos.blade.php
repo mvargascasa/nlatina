@@ -37,7 +37,7 @@
 
 <div class="container pt-4">
       <h2 style="font-size: 25px">¿Qué es un acuerdo?</h2>
-      <p class="text-muted">Un acuerdo en un convenio firmado entre dos o más personas frente a un tema en el cual se tienen opiniones diferentes por ambas partes.</p>
+      <p class="text-muted">Un acuerdo es un convenio firmado entre dos o más personas frente a un tema en el cual se tienen opiniones diferentes por ambas partes.</p>
               <h2 style="font-size: 25px">¿Para que me sirve realizar un acuerdo?</h2>
               <p class="text-muted">El objetivo de un acuerdo es el de buscar una posición común entre ambas partes y de esta manera llegar a un acuerdo. Una vez realizado el mismo, este sirve para comprometer a las dos personas a cumplir con obligaciones y derechos establecidos por ley.</p>
   
