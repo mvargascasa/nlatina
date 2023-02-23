@@ -187,7 +187,7 @@ class LandingController extends Controller
                     case 'web.apostillar.acta.constitutiva': $page = 'apos_acta_const_general'; break;
                     case 'web.poderesg': $page = 'poder_general'; break;
                     case 'web.poderesp': $page = 'poder_especial'; break;
-                    case 'web.poderesnf': $page = 'poder_financ'; break;
+                    case 'web.poderesnf': $page = 'poder_financ_general'; break;
                     case 'web.traducciones': $page = 'traduc_general'; break;
                     case 'web.affidavit': $page = 'affidavit_general'; break;
                     case 'web.acuerdos': $page = 'acuerdos_general'; break;
@@ -197,6 +197,7 @@ class LandingController extends Controller
                     case 'web.contratos': $page = 'contratos_general'; break;
                     case 'web.revocatorias': $page = 'revocatoria_general'; break;
                     case 'web.testamentos': $page = 'testamentos_general'; break; 
+                    case 'web.contactenos': $page = strtolower(str_replace(' ', '_', $request->service)) . '_contact'; break;
                     default: $page = 'lead_'.$from; break;
                 }
     
