@@ -128,10 +128,10 @@ class LandingController extends Controller
             //return $servicename;
             $sendoffices = '';
 
-            if ($interest == 'General')                                             $sendoffices = 'newyork@notarialatina.com'; //
-            if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = 'newyork@notarialatina.com'; //
-            if ($interest == 'Landing New Jersey'   || $interest == 'New Jersey')   $sendoffices = 'newjersey@notarialatina.com'; //
-            if ($interest == 'Landing Florida'      || $interest == 'Florida')      $sendoffices = 'florida@notarialatina.com'; //
+            if ($interest == 'General')                                             $sendoffices = ',newyork@notarialatina.com'; //
+            if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = ',newyork@notarialatina.com'; //
+            if ($interest == 'Landing New Jersey'   || $interest == 'New Jersey')   $sendoffices = ',newjersey@notarialatina.com'; //
+            if ($interest == 'Landing Florida'      || $interest == 'Florida')      $sendoffices = ',florida@notarialatina.com'; //
 
             // if ($interest == 'General')                                             $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
             // if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
