@@ -2516,7 +2516,7 @@ class WebController extends Controller
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
             mail('sebas31051999@gmail.com','Bot Lead Landing: '.strip_tags($request->aaa), $message, $header);
-            
+
         } else {
 
             switch ($request->interest) {
@@ -2550,7 +2550,7 @@ class WebController extends Controller
                     <br><b>País de residencia:</b> " . strip_tags($request->pais) ."
                     <br><b>Teléfono:</b> " .strip_tags($request->codpais) . " " . strip_tags($request->bbb) ."
                     <br><b>Mensaje:</b> " . strip_tags($request->ddd) . "
-                    <br><b>Interes:</b> General
+                    <br><b>Interes:</b> " . strip_tags($request->service) ."
                     <br><b>Proveniente:</b> Página de " . strip_tags($request->interest) . "
                     <br><b>Página: </b> " . url()->previous() . "
                     <br>
