@@ -256,7 +256,7 @@ class LandingController extends Controller
                                 case 'revocatorias-en-florida': $page = 'revocatorias_fl';break;
                                 case 'contratos-en-florida': $page = 'contratos_fl';break;
                                 case 'testamentos-en-florida': $page = 'testamentos_fl';break;
-                                case 'affidavit-support-en-florida': $page = 'affidavit_fl';break;
+                                case 'matrimonios-en-florida': $page = 'matrimonios_fl';break;
                                 default: break;
                             }
                             break;
