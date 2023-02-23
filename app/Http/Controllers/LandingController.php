@@ -185,6 +185,7 @@ class LandingController extends Controller
                         case 'web.apostillar.naturalizacion': $page = 'apos_naturali_general'; break;
                         case 'web.apostillar.nacimiento': $page = 'apos_cert_naci_general'; break;
                         case 'web.apostillar.acta.constitutiva': $page = 'apos_acta_const_general'; break;
+                        case 'web.apostillar.poder.notarial': $page = 'apos_podern_general'; break;
                         case 'web.poderesg': $page = 'poder_general'; break;
                         case 'web.poderesp': $page = 'poder_especial'; break;
                         case 'web.poderesnf': $page = 'poder_financ_general'; break;

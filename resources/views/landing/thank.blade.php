@@ -14,6 +14,14 @@
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 if(strpos($actual_link, 'localhost') === false){
 ?>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NXP3WCV');</script>
+    <!-- End Google Tag Manager -->
   <!-- Global site tag (gtag.js) - Google Ads: 806267889 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-806267889"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -55,6 +63,10 @@ if(strpos($actual_link, 'localhost') === false){
   </style>
 </head>
 <body style="background-color: #F5F4F4">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXP3WCV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
         <nav class="navbar navfoot navbar-dark navbar-expand-lg navbar-light bg-light">
           <div class="d-flex flex-grow-1">
