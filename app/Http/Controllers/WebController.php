@@ -2529,15 +2529,15 @@ class WebController extends Controller
             switch ($request->service) {
                 case 'Apostilla': $page = 'apostilla_' . $abrev; break; 
                 case 'Poder Notariado': $page = 'poder_notari_' . $abrev; break;
-                case 'Traduccion': $page = 'traduccion_' . $abrev; break;
+                case 'Traduccion': $page = 'traducciones_' . $abrev; break;
                 case 'Affidavit': $page = 'affidavit_' . $abrev; break;
-                case 'Acuerdos': $page = 'acuerdo_' . $abrev; break;
+                case 'Acuerdos': $page = 'acuerdos_' . $abrev; break;
                 case 'Autorizaciones de Viaje': $page = 'autori_viaje_' . $abrev; break;
                 case 'Cartas de Invitación': $page = 'carta_inv_' . $abrev; break;
-                case 'Certificaciones': $page = 'certificacion_' . $abrev; break;
-                case 'Contratos': $page = 'contrato_' . $abrev; break;
-                case 'Revocatorias': $page = 'revocatoria_' . $abrev; break;
-                case 'Testamentos': $page = 'testamento_' . $abrev; break;
+                case 'Certificaciones': $page = 'certificaciones_' . $abrev; break;
+                case 'Contratos': $page = 'contratos_' . $abrev; break;
+                case 'Revocatorias': $page = 'revocatorias_' . $abrev; break;
+                case 'Testamentos': $page = 'testamentos_' . $abrev; break;
                 case 'Otro': $page = 'tramite_' . $abrev; break;
                 default: break;
             }
