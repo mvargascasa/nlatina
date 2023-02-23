@@ -506,7 +506,7 @@
                   </div>
                 </div> --}}
                 <div class="form-group">
-                    <select name="service" id="service" class="form-control">
+                    <select name="service" id="service" class="form-control" required>
                         <option value="">Seleccione el trámite a realizar</option>
                         <option value="Apostilla">Apostilla</option>
                         <option value="Poder Notariado">Poder Notariado</option>

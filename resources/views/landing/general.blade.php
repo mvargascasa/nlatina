@@ -397,6 +397,27 @@
                   </div>
                 </div>
               </div> --}}
+              @if($service_aux == "General")
+              <div class="form-group">
+                <select name="service" id="service" class="form-control" required>
+                  <option value="">Seleccione el trámite a realizar</option>
+                  <option value="Apostilla">Apostilla</option>
+                  <option value="Poder Notariado">Poder Notariado</option>
+                  <option value="Traduccion">Traduccion</option>
+                  <option value="Affidavit">Affidavit</option>
+                  <option value="Acuerdos">Acuerdos</option>
+                  <option value="Autorización de Viaje">Autorización de Viaje</option>
+                  <option value="Cartas de Invitación">Cartas de Invitación</option>
+                  <option value="Certificaciones">Certificaciones</option>
+                  <option value="Contratos">Contratos</option>
+                  <option value="Revocatorias">Revocatorias</option>
+                  <option value="Testamentos">Testamentos</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+              @else
+                <input type="hidden" name="service" value="{{$service_aux}}">
+              @endif
               <div class="form-group">
                 <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
               </div>

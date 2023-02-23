@@ -328,9 +328,26 @@ class LandingController extends Controller
             $abrev = "";
             $sendoffices = ',newyork@notarialatina.com';
             if ($interest == 'General'){             $sendoffices = ',newyork@notarialatina.com';}
-            if ($interest == 'Landing New York'){    $sendoffices = ',newyork@notarialatina.com';$abrev='ny';}
-            if ($interest == 'Landing New Jersey'){  $sendoffices = ',newjersey@notarialatina.com';$abrev='nj';}
-            if ($interest == 'Landing Florida'){     $sendoffices = ',florida@notarialatina.com';$abrev='fl';}
+            if ($interest == 'Landing New York'){    $sendoffices = ',newyork@notarialatina.com';$abrev='_ny';}
+            if ($interest == 'Landing New Jersey'){  $sendoffices = ',newjersey@notarialatina.com';$abrev='_nj';}
+            if ($interest == 'Landing Florida'){     $sendoffices = ',florida@notarialatina.com';$abrev='_fl';}
+
+            switch ($request->service) {
+                case 'Apostilla': $page = 'apostilla_landing' . $abrev; break;
+                case 'Poderes':
+                case 'Poder Notariado': $page = 'poderes_landing' . $abrev; break;
+                case 'Traduccion': $page = 'traduccion_landing' . $abrev; break;
+                case 'Affidavit': $page = 'affidavit_landing' . $abrev; break;
+                case 'Acuerdos': $page = 'acuerdos_landing' . $abrev; break;
+                case 'Autorización de Viaje': $page = 'autorizacion_landing' . $abrev; break;
+                case 'Cartas de Invitación': $page = 'carta_inv_landing' . $abrev; break;
+                case 'Certificaciones': $page = 'certificacion_landing' . $abrev; break;
+                case 'Contratos': $page = 'contratos_landing' . $abrev; break;
+                case 'Revocatorias': $page = 'revocatoria_landing' . $abrev; break;
+                case 'Testamentos': $page = 'testamentos_landing' . $abrev; break;
+                case 'Otro': $page = 'tramite_landing' . $abrev; break;
+                default: $page = 'lead_landing' . $abrev; break;
+            }
     
                 $message = "<br><strong>Nuevo Lead Landing</strong>
                             <br> Nombre: ". strip_tags($request->aaa)."
@@ -344,10 +361,10 @@ class LandingController extends Controller
                             ";
                         
                 $header='';
-                $header .= 'From: <lead_landing_'.$abrev.'@notarialatina.com>' . "\r\n";
+                $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
                 mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
                 //'notariapublicalatina@gmail.com'.$sendoffices
         }
