@@ -19,10 +19,10 @@
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
 
             <div class="col-12 text-white text-center">
-              <h1 class="font-weight-bold heading-title" >Cambio de Nombre</h1>
+              <h1 class="font-weight-bold heading-title" >¿Cómo realizar el cambio de nombre en Estados Unidos</h1>
   
-              <a href="javascript:void(0)" class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
-              data-target="#exampleModal">INICIAR TRAMITE</a>
+              {{-- <a href="javascript:void(0)" class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
+              data-target="#exampleModal">INICIAR TRAMITE</a> --}}
           </div>
 
       </div>

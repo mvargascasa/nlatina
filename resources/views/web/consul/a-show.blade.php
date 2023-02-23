@@ -101,7 +101,7 @@
 
                 <p><b>Horario de atención:</b> de 8 AM a  6 PM De lunes a sábado</p>
                 <p style="font-weight: 500"><i>Apostillamos sus documentos de una manera rápida con personal calificado</i></p>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-12 col-sm-6 mb-3 text-center border-right">
                         <p style="font-weight: 500">¡Llámenos ahora!</p>
                         <a class="btn btn-outline-danger" style="border-radius: 0px !important;" href="tel:+17187665041">+1 718 766 5041 <i id="phone" class="fas fa-phone"></i></a>
@@ -110,7 +110,7 @@
                         <p style="font-weight: 500">Solicitar trámite</p>
                         <button class="btn btn-outline-danger mb-3" style="border-radius: 0px !important;" data-toggle="modal" data-target="#exampleModal">Iniciar Proceso <i id="emailicon" class="fas fa-envelope"></i></button>
                     </div>
-                </div>
+                </div> --}}
                 {{-- <p><b>Contáctenos:</b> <a class="btn" style="background-color: #122944; color: #ffffff" href="tel:+17187665041">+1 718 766 5041 📞</a></p> --}}
                 {{-- <p><b>Correo electrónico:</b> <a  href="mailto:info@notarialatina.com ">info@notarialatina.com </a></p> --}}
                 {{-- <p><b>Contáctenos</b> y lo ayudamos en el proceso de una manera segura.</p> --}}

@@ -171,12 +171,34 @@ class LandingController extends Controller
                 $header .= 'From: <'.$from.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
                 //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
             }
     
             if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
+
+                $from = 'general';
+
+                switch ($request->url_current) {
+                    case 'web.index': $page = strtolower(str_replace(' ', '_', $request->service)) . '_home'; break;
+                    case 'web.apostillar.naturalizacion': $page = 'apos_naturali_general'; break;
+                    case 'web.apostillar.nacimiento': $page = 'apos_cert_naci_general'; break;
+                    case 'web.apostillar.acta.constitutiva': $page = 'apos_acta_const_general'; break;
+                    case 'web.poderesg': $page = 'poder_general'; break;
+                    case 'web.poderesp': $page = 'poder_especial'; break;
+                    case 'web.poderesnf': $page = 'poder_financ'; break;
+                    case 'web.traducciones': $page = 'traduc_general'; break;
+                    case 'web.affidavit': $page = 'affidavit_general'; break;
+                    case 'web.acuerdos': $page = 'acuerdos_general'; break;
+                    case 'web.autorizaciones': $page = 'autorizacion_general'; break;
+                    case 'web.invitacion': $page  = 'carta_invit_general'; break;
+                    case 'web.certificaciones': $page = 'certifi_general'; break;
+                    case 'web.contratos': $page = 'contratos_general'; break;
+                    case 'web.revocatorias': $page = 'revocatoria_general'; break;
+                    case 'web.testamentos': $page = 'testamentos_general'; break; 
+                    default: $page = 'lead_'.$from; break;
+                }
     
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br> Nombre: ". strip_tags($request->fname)." ". strip_tags($request->lname) . " 
@@ -198,19 +220,18 @@ class LandingController extends Controller
                 // <br> País: ". strip_tags($pais)."
             
                 $header='';
-                $from = 'general';
                 if(isset($request->url_current) && $request->url_current == "web.index") $from = "home";
                 if(isset($request->url_current) && $request->url_current == "web.oficina.florida") $from = "oficina Florida";
                 if(isset($request->url_current) && $request->url_current == "web.oficina.newjersey") $from = "oficina New Jersey";
                 if(isset($request->url_current) && $request->url_current == "web.oficina.newyork") $from = "oficina New York";
 
-                if(isset($request->servicecarousel)) $fromheader = strtolower($request->servicecarousel)."_home";    
-                else $fromheader = "lead_" . strtolower(str_replace(' ', '', $from));
+                // if(isset($request->service)) $fromheader = strtolower($request->service)."_home";    
+                // else $fromheader = "lead_" . strtolower(str_replace(' ', '', $from));
 
-                $header .= 'From: <'.$fromheader.'@notarialatina.com>' . "\r\n";
+                $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);      
             }
 

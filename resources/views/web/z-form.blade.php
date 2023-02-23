@@ -1,7 +1,12 @@
 {!! Form::open(['route' => 'landing.thankpost', 'id' => 'formlead']) !!}
 
+@php
+    $url_name = Route::current()->getName();     
+@endphp
+
 
 <div class="form-group">
+    {!! Form::hidden('url_current', $url_name) !!}
     {!! Form::label('fname', 'Nombres') !!}<b style="color: red">*</b>
     {!! Form::text('fname', null, ['class' => 'form-control', 'required']) !!}
 </div>
