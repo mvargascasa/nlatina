@@ -2613,18 +2613,54 @@ class WebController extends Controller
 
         if(isset($request->url_current)){
             switch ($request->url_current) {
-                case 'web.oficina.newjersey': $recipient_email = ",newjersey@notarialatina.com"; break; //newjersey@notarialatina.com
-                case 'web.oficina.newyork': $recipient_email = ",newyork@notarialatina.com"; break; //newyork@notarialatina.com
-                case 'web.oficina.florida': $recipient_email = ",florida@notarialatina.com"; break; //florida@notarialatina.com
-                default: $recipient_email = ",newyork@notarialatina.com"; break;
+                case 'web.oficina.newjersey': $recipient_email .= ",newjersey@notarialatina.com"; $abrev = '_nj'; break; //newjersey@notarialatina.com
+                case 'web.oficina.newyork': $recipient_email .= ",newyork@notarialatina.com"; $abrev = '_ny'; break; //newyork@notarialatina.com
+                case 'web.oficina.florida': $recipient_email .= ",florida@notarialatina.com"; $abrev = '_fl'; break; //florida@notarialatina.com
+                default: $recipient_email .= ",newyork@notarialatina.com"; break;
             }
+        }
+
+        switch ($request->document) {
+            case 'Certificados de Nacimiento': $page = 'apostillas_cnac' . $abrev; break;
+            case 'Reporte Consular (CRBA)': $page = 'apostillas_rc' . $abrev; break;
+            case 'Certificados de Matrimonio': $page = 'apostillas_cm' . $abrev; break;
+            case 'Certificados de Defunción': $page = 'apostillas_cdiv' . $abrev; break;
+            case 'Certificados de Divorcio': $page = 'apostillas_cdef' . $abrev; break;
+            case 'Certificados de Naturalización': $page = 'apostillas_cnat' . $abrev; break;
+            case 'Expediente de Adopción': $page = 'apostillas_ea' . $abrev; break;
+            case 'Copia de Pasaporte': $page = 'apostillas_cp' . $abrev; break;
+            case 'Copia de Licencia de Conducir': $page = 'apostillas_lc' . $abrev; break;
+            case 'Escrituras y Testamentos': $page = 'apostillas_et' . $abrev; break;
+            case 'Declaraciones Juradas': $page = 'apostillas_dj' . $abrev; break;
+            case 'Título de Coche/Automóvil': $page = 'apostillas_tc' . $abrev; break;
+            case 'Autorización de Viaje': $page = 'apostillas_av' . $abrev; break;
+            case 'Poder Notarial Personal': $page = 'apostillas_pn' . $abrev; break;
+            case 'Registro de la Policía Estatal': $page = 'apostillas_rpe' . $abrev; break;
+            case 'Registros de Antecedentes del FBI': $page = 'apostillas_rafbi' . $abrev; break;
+            case 'Diploma Universitario': $page = 'apostillas_du' . $abrev; break;
+            case 'Transcripción Universitaria': $page = 'apostillas_tu' . $abrev; break;
+            case 'Diploma de Escuela Secundaria': $page = 'apostillas_des' . $abrev; break;
+            case 'Transcripción de Escuela Secundaria': $page = 'apostillas_tes' . $abrev; break;
+            case 'Certificado de Incorporación': $page = 'apostillas_ci' . $abrev; break;
+            case 'Certificado de Buena Reputación': $page = 'apostillas_cbr' . $abrev; break;
+            case 'Certificado de Origen': $page = 'apostillas_co' . $abrev; break;
+            case 'Marcas o Patentes': $page = 'apostillas_mp' . $abrev; break;
+            case 'Poder Comercial': $page = 'apostillas_pc' . $abrev; break;
+            case 'Declaración Jurada Comercial': $page = 'apostillas_djc' . $abrev; break;
+            case 'Certificado FDA': $page = 'apostillas_cfda' . $abrev; break;
+            case 'Facturas': $page = 'apostillas_fact' . $abrev; break;
+            case 'Departamento de Hacienda': $page = 'apostillas_dh' . $abrev; break;
+            case 'Certificado de Gobierno Extranjero': $page = 'apostillas_cge' . $abrev; break;
+            case 'Certificado de Venta gratis': $page = 'apostillas_cvg' . $abrev; break;
+            case 'Órdenes de Compra': $page = 'apostillas_oc' . $abrev; break;
+            default: $page = "apostillas" . $abrev; break;
         }
 
         $codigo_pais = $this->getCodByPais($request->cod_pais);
 
         //return $codigo_pais;
 
-        $from_email		 = "apostillas@notarialatina.com"; //from mail, sender email address
+        $from_email		 = $page . "@notarialatina.com"; //from mail, sender email address
         //$recipient_email = 'sebas31051999@gmail.com'; //recipient email address info@notarialatina.com,hserrano@notarialatina.com
         
         $subject = 'Servicios de Apostilla | Notaria Latina - ' . date(now()); //subject for the email
@@ -2692,10 +2728,10 @@ class WebController extends Controller
         }
         
         if($request->file('adjunto') != null){
-            mail($recipient_email, $subject, $body, $headers);
+            //mail($recipient_email, $subject, $body, $headers);
             mail('sebas31051999@gmail.com', $subject, $body, $headers);
         } else {
-            mail($recipient_email, $subject, $message, $headers);
+            //mail($recipient_email, $subject, $message, $headers);
             mail('sebas31051999@gmail.com', $subject, $message, $headers);
         }
 
