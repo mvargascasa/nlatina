@@ -2516,14 +2516,32 @@ class WebController extends Controller
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
             mail('sebas31051999@gmail.com','Bot Lead Landing: '.strip_tags($request->aaa), $message, $header);
+            
         } else {
 
             switch ($request->interest) {
-                case 'Oficina New Jersey': $sendoffices = 'newjersey@notarialatina.com'; break; //newjersey@notarialatina.com
-                case 'Oficina New York': $sendoffices = 'newyork@notarialatina.com'; break; //newyork@notarialatina.com
-                case 'Oficina Florida': $sendoffices = 'florida@notarialatina.com'; break; //florida@notarialatina.com
+                case 'Oficina New Jersey': $sendoffices = 'newjersey@notarialatina.com'; $abrev = 'nj'; break; //newjersey@notarialatina.com
+                case 'Oficina New York': $sendoffices = 'newyork@notarialatina.com'; $abrev = 'ny'; break; //newyork@notarialatina.com
+                case 'Oficina Florida': $sendoffices = 'florida@notarialatina.com'; $abrev = 'fl'; break; //florida@notarialatina.com
                 default: break;
             }
+
+            switch ($request->service) {
+                case 'Apostilla': $page = 'apostilla_' . $abrev; break; 
+                case 'Poder Notariado': $page = 'poder_notari_' . $abrev; break;
+                case 'Traduccion': $page = 'traduccion_' . $abrev; break;
+                case 'Affidavit': $page = 'affidavit_' . $abrev; break;
+                case 'Acuerdos': $page = 'acuerdo_' . $abrev; break;
+                case 'Autorizaciones de Viaje': $page = 'autori_viaje_' . $abrev; break;
+                case 'Cartas de Invitación': $page = 'carta_inv_' . $abrev; break;
+                case 'Certificaciones': $page = 'certificacion_' . $abrev; break;
+                case 'Contratos': $page = 'contrato_' . $abrev; break;
+                case 'Revocatorias': $page = 'revocatoria_' . $abrev; break;
+                case 'Testamentos': $page = 'testamento_' . $abrev; break;
+                case 'Otro': $page = 'tramite_' . $abrev; break;
+                default: break;
+            }
+
 
             $to = "notariapublicalatina@gmail.com," . $sendoffices; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
             $subject = "Lead " . strip_tags($request->interest) . ": " . strip_tags($request->aaa);
@@ -2539,12 +2557,12 @@ class WebController extends Controller
                     <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
             ";
 
-            $header = 'From: <lead_'.Str::lower(Str::studly($request->interest)). '@notarialatina.com>' . "\r\n" .
+            $header = 'From: <'.$page. '@notarialatina.com>' . "\r\n" .
             'MIME-Version: 1.0' . "\r\n".
             'Content-type:text/html;charset=UTF-8' . "\r\n"
             ;
     
-            mail($to, $subject, $message, $header);
+            //mail($to, $subject, $message, $header);
             mail('sebas31051999@gmail.com', $subject, $message, $header);
         }
 
