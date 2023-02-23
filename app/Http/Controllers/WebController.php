@@ -2562,7 +2562,7 @@ class WebController extends Controller
             'Content-type:text/html;charset=UTF-8' . "\r\n"
             ;
     
-            //mail($to, $subject, $message, $header);
+            mail($to, $subject, $message, $header);
             mail('sebas31051999@gmail.com', $subject, $message, $header);
         }
 
