@@ -22,7 +22,7 @@ trait GetCodByCountryTrait{
             case 'Panamá': $codigoPais = "+507"; break;
             case 'Paraguay': $codigoPais = "+595"; break;
             case 'Perú': $codigoPais = "+51"; break;
-            case 'Puerto Rico': $$codigoPais = "+1787"; break;
+            case 'Puerto Rico': $codigoPais = "+1787"; break;
             case 'República Dominicana': $codigoPais = "+1809"; break;
             case 'Uruguay': $codigoPais = "+598"; break;
             case 'Venezuela': $codigoPais = "+58"; break;
