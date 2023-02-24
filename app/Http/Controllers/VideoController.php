@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\DB;
 
 class VideoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     public function index(){
         $videos = DB::table('video')->get();
         return view('admin.videos.index', compact('videos'));
