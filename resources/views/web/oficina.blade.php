@@ -432,8 +432,16 @@
               <form method="POST" action="{{route('send.email.oficinas')}}">
                   @csrf
                 <input type="hidden" id="interest" name="interest" value="Oficina {{$data['office']}}">
-                <div class="form-group pt-4">
-                  <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombre y Apellido"  maxlength="40" minlength="2" autocomplete="off" required>
+                <div class="d-flex pt-4">
+                    <div class="form-group w-100 mr-1">
+                      <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombre"  maxlength="40" minlength="2" autocomplete="off" required>
+                    </div>
+                    <div class="form-group w-100 ml-1">
+                        <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Apellido" minlength="2" maxlength="40" autocomplete="off" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" required>
                 </div>
                 <div id="divpais" class="form-group d-flex">
                     <select id="pais" name="pais" class="form-control mr-2" style="width: 50%" required>

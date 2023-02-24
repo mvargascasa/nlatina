@@ -2502,8 +2502,9 @@ class WebController extends Controller
         if($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+')){
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
-                        <br> Nombre: ". strip_tags($request->aaa)."
+                        <br> Nombre: ". strip_tags($request->aaa)." " . strip_tags($request->lastname) ."
                         <br> Telef: ".strip_tags($request->codpais) ." ".  strip_tags($request->bbb)."
+                        <br> Email: " . strip_tags($request->email) ."
                         <br> País: " .strip_tags($request->pais)."
                         <br> Mensaje: ".strip_tags($request->ddd)." 
                         <br> Fuente: GoogleAds 
@@ -2546,9 +2547,10 @@ class WebController extends Controller
             $to = "notariapublicalatina@gmail.com," . $sendoffices; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
             $subject = "Lead " . strip_tags($request->interest) . ": " . strip_tags($request->aaa);
             $message = "<br><strong><h3>Información del Lead</h3></strong>
-                    <br><b>Nombre:</b> " . strip_tags($request->aaa). "
+                    <br><b>Nombre:</b> " . strip_tags($request->aaa). " " . strip_tags($request->lastname) ."
                     <br><b>País de residencia:</b> " . strip_tags($request->pais) ."
                     <br><b>Teléfono:</b> " .strip_tags($request->codpais) . " " . strip_tags($request->bbb) ."
+                    <br><b>Email: </b> " . strip_tags($request->email) ."
                     <br><b>Mensaje:</b> " . strip_tags($request->ddd) . "
                     <br><b>Interes:</b> " . strip_tags($request->service) ."
                     <br><b>Proveniente:</b> Página de " . strip_tags($request->interest) . "
