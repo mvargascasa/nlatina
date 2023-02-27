@@ -112,6 +112,8 @@ class LandingController extends Controller
 
     public function thankpost(Request $request)
     {
+
+        
         if(isset($request->country)){
             $country = $this->getPaisByCodigo($request->country);
         }
@@ -120,18 +122,24 @@ class LandingController extends Controller
         //$pais = $this->getCodPais($request->get('cod_pais'));
         if(!Str::contains($request->message, 'https')){
 
-            if(isset($request->office)) $interest = $request->office;
-            else $interest = $request->interest ?? 'General';
+            // if(isset($request->office)) $interest = $request->office;
+            // else $interest = $request->interest ?? 'General';
+
+            if(isset($request->office)){
+                $interest = $request->office;
+            } else {
+                $interest = $request->url_current;
+            }
 
             $servicename = $request->service ?? $request->servicename;
             $servicename = Str::ucfirst(str_replace('-', ' ', $servicename));
             //return $servicename;
+            
             $sendoffices = '';
 
-            if ($interest == 'General')                                             $sendoffices = ',newyork@notarialatina.com'; //
-            if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = ',newyork@notarialatina.com'; //
-            if ($interest == 'Landing New Jersey'   || $interest == 'New Jersey')   $sendoffices = ',newjersey@notarialatina.com'; //
-            if ($interest == 'Landing Florida'      || $interest == 'Florida')      $sendoffices = ',florida@notarialatina.com'; //
+            if ($interest == 'web.oficina.newyork'      || $interest == 'New York')     $sendoffices = ',newyork@notarialatina.com'; //
+            if ($interest == 'web.oficina.newjersey'    || $interest == 'New Jersey')   $sendoffices = ',newjersey@notarialatina.com'; //
+            if ($interest == 'web.oficina.florida'      || $interest == 'Florida')      $sendoffices = ',florida@notarialatina.com'; //
 
             // if ($interest == 'General')                                             $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
             // if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
@@ -293,7 +301,8 @@ class LandingController extends Controller
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
-                mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);      
+                mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
+                //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
             }
 
         }
