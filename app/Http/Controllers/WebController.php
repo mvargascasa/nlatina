@@ -92,7 +92,7 @@ class WebController extends Controller
     ];
 
     public function index() {
-        $indexPosts = Post::select('name', 'body', 'slug', 'created_at')
+        $indexPosts = Post::select('name', 'body', 'slug', 'imgdir', 'created_at')
             ->where('status','PUBLICADO')
             ->latest()
             ->limit(6)
