@@ -351,7 +351,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         <div class="row ">
             <div class="col-12 col-sm-6 col-md-3 pt-4">
                 <img width="150px" height="35px" src="{{asset('img/marca-notaria-latina.webp')}}" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes, Traducciones">
-                    <p class="text-muted py-2" style="font-size: 19px">
+                    <p class="text-white py-2" style="font-size: 19px">
                         Por más de 10 años contamos con su ayuda en el crecimiento y progreso de nuestra empresa. Es por eso que nuestro mayor afán es ofrecerle todas las soluciones con un servicio totalmente integral de notaria.
                     </p>
 
@@ -360,34 +360,33 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                 <h2 class="tit-not">Contacto</h2> <hr class="hrwf">
                 <p class="text-muted">
 
-                    <span class="font-weight-bold text-white" > New York </span><br>
-                    
-                    <a href="https://g.page/notariapublicalatina" target="_blank" class="text-muted">
+                    <span class="font-weight-bold" style="color: #FFBE32"> New York </span><br>
+                    <a href="https://g.page/notariapublicalatina" target="_blank" class="text-white">
                         67-03 Roosevelt Avenue, Woodside, NY 11377 </a><br>
-                    <a href="tel:+17187665041" class="text-muted pr-2"><i class="fa fa-phone-square-alt"></i> 718 766 5041</a> 
-                    <a href="tel:+13479739888" class="text-muted pr-2"><i class="fa fa-phone-square-alt"></i> 347 973 9888</a> <br>
+                    <a href="tel:+17187665041" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 718 766 5041</a> 
+                    <a href="tel:+13479739888" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 347 973 9888</a> <br>
                     <br>
 
-                    <span class="font-weight-bold text-white"> New Jersey </span> <br>
-                    <a href="https://g.page/r/CVNRV-zNuJiZEAE" target="_blank" class="text-muted"> 
+                    <span class="font-weight-bold" style="color: #FFBE32"> New Jersey </span> <br>
+                    <a href="https://g.page/r/CVNRV-zNuJiZEAE" target="_blank" class="text-white"> 
                         1146 East Jersey St Elizabeth, NJ 07201 </a><br>
-                        <a href="tel:+19088009046" class="text-muted pr-2"><i class="fa fa-phone-square-alt"></i> 908 800 9046</a><br>
+                        <a href="tel:+19088009046" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 908 800 9046</a><br>
                         {{-- 908 800 9046 --}}
                     <br> 
 
-                    <span class="font-weight-bold text-white"> Florida </span><br>
-                    <a href="https://g.page/r/CeRrwPx_W2-xEAE" target="_blank" class="text-muted">
+                    <span class="font-weight-bold" style="color: #FFBE32"> Florida </span><br>
+                    <a href="https://g.page/r/CeRrwPx_W2-xEAE" target="_blank" class="text-white">
                         2104 N University Dr, Sunrise, FL 33322 </a><br>
-                        <a href="tel:+13056003290" class="text-muted pr-2"><i class="fa fa-phone-square-alt"></i> 305 600 3290</a> 
+                        <a href="tel:+13056003290" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 305 600 3290</a> 
                         <!-- <a href="tel:+13053948840" class="text-muted pr-2"><i class="fa fa-phone-square-alt"></i> 305 394 8840</a><br> -->
                     <br>
 
-                    <a href="mailto:info@notarialatina.com" class="text-muted"><i class="fas fa-envelope"></i> info@notarialatina.com</a>
+                    <a href="mailto:info@notarialatina.com" class="text-white"><i class="fas fa-envelope"></i> info@notarialatina.com</a>
                 </p>
             </div>
             <div class="col-12 col-sm-6 col-md-3 p-4">
                 <h2 class="tit-not">Horarios</h2><hr class="hrwf">
-                <p class="text-muted">
+                <p class="text-white">
                     <span class="d-block"> <span class="font-weight-bold">Lunes</span> 9:00 – 6:00 pm</span>
                     <span class="d-block"> <span class="font-weight-bold">Martes</span> 9:00 – 6:00 pm </span>
                     <span class="d-block"> <span class="font-weight-bold">Miércoles</span> 9:00 – 6:00 pm </span>

@@ -134,6 +134,8 @@
       .rate:not(:checked) > label {width:1em;overflow:hidden;white-space:nowrap;font-size:30px;color:#ffc700;}
       .rate:not(:checked) > label:before {content: '★ ';}
       .rate > input:checked ~ label {color: #ffc700;}
+      .letter-color{color: #2B384D !important}
+      *{font-family: 'Montserrat'}
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -196,7 +198,7 @@
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">PODERES</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -231,7 +233,7 @@
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">APOSTILLAS</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -266,7 +268,7 @@
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -363,8 +365,8 @@
   {{-- div de oficinas --}}
   <div class="row py-4">
     <div class="col-12 text-center py-4">
-        <h2 class="tit-not">Visite Nuestras Oficinas</h2>
-        <hr class="hrb">
+        <h2 class="tit-not letter-color">Visite Nuestras Oficinas</h2>
+        <hr class="hrb letter-color">
       </div>
 
       <div class="col-12 col-sm-12 col-md-4 mb-3">
@@ -443,7 +445,7 @@
               <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
               <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
           </div>
-          <div class="col-12 col-sm-6 p-4 my-4 d-flex align-items-center px-5" style="padding-right: 5% !important">
+          <div class="col-12 col-sm-6 p-4 my-2 d-flex align-items-center px-5" style="padding-right: 5% !important; background-color: #12294409;">
 
             <i>
               <span style="font-size:18px; text-indent: 40px; text-align: justify">
@@ -461,25 +463,25 @@
 <hr>
 <div class="row rounded @if(!$mobile) py-5 @endif">
   <div class="text-center w-100">
-    <h3 class="tit-not">¿Qué nos hace diferentes?</h3>
+    <h3 class="tit-not letter-color">¿Qué nos hace diferentes?</h3>
   </div>
   <div class="row mt-4 mx-5">
     <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
-      <div class="border rounded h-100 pt-4 px-5" style="background-color: #2B384D">
+      <div class="border h-100 pt-4 px-5" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-calendar-alt fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white">Tenemos una trayectoria dentro del campo notarial por más de <b>10 años</b></p></i>
       </div>
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
-      <div class="border rounded h-100 pt-4 px-5" style="background-color: #2B384D">
+      <div class="border h-100 pt-4 px-5" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-university fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white">Contamos con un <b>personal joven y capacitado</b> para la realización de trámites</p></i>
       </div>
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
-      <div class="border rounded h-100 pt-4 px-5" style="background-color: #2B384D">
+      <div class="border h-100 pt-4 px-5" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-users fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white">Nos hemos comprometido con nuestros clientes brindándole un <b>servicio integral, rápido y eficaz</b></p></i>
@@ -492,11 +494,11 @@
 
 </div>
 
-<div data-aos="flip-right" style="background-color: rgb(245, 245, 245)" class="row text-center py-5 mt-5">
+<div data-aos="flip-right" style="background-color: #12294409" class="row text-center py-5 mt-5">
   <div class="w-100">
-    <h3 class="tit-not" style="font-weight: 100 !important">¿Tiene alguna pregunta?</h3>
-    <i><p class="font-weight-bold">No dude en contactarnos y uno de nuestros asesores lo ayudará</p></i>
-    <a class="btn btn-warning py-3" style="border-radius: 10px" href="{{route('web.contactenos')}}"><i class="font-weight-bold">CONTACTARME</i></a>
+    <h3 class="tit-not letter-color" style="font-weight: 100 !important">¿Tiene alguna pregunta?</h3>
+    <i><p class="font-weight-bold letter-color">No dude en contactarnos y uno de nuestros asesores lo ayudará</p></i>
+    <a class="btn btn-warning py-3" style="border-radius: 10px" href="{{route('web.contactenos')}}"><i class="font-weight-bold letter-color">CONTACTARME</i></a>
   </div>
 </div>
 <div class="container">
@@ -521,8 +523,8 @@
 <div class="container">
     <div class="row py-4">
         <div class="col-12 text-center py-4">
-            <h2 class="tit-not @if(!$mobile) mt-5 @endif">Publicaciones de Interes</h2>
-            <hr class="hrb">
+            <h2 class="tit-not letter-color @if(!$mobile) mt-5 @endif">Publicaciones de Interes</h2>
+            <hr class="hrb letter-color">
           </div>
           @foreach ($indexPosts as $post)
               <div class="col-12 col-md-4 mb-4">
@@ -532,20 +534,20 @@
                         {{-- {{url('uploads/i900_'.$post->imgdir)}} --}}
                     </a>
                     <div class="card-body p-2" style="position:relative;">
-                    <span class="d-block text-muted font-weight-bold"
+                    <span class="d-block text-muted font-weight-bold letter-color"
                             style="font-size:1rem">{{$post->name}}</span>
-                    <span class="d-block text-muted text-truncate">
+                    <span class="d-block text-muted text-truncate letter-color">
                         <?php echo strip_tags(substr($post->body,0,300))  ?>
                     </span>
                 </div>
                 <div class="card-footer bg-white" style="border: none">
-                    <div class="small text-muted float-left">
+                    <div class="small text-muted float-left letter-color">
                         {{-- <img class="lazy" width="20" height="20" data-src="{{ asset('img/calendar.webp') }}" alt="{{$post->name}}">  --}}
                         <i class="far fa-calendar-alt" style="font-size: 17px"></i>
                         {{$post->created_at->format('M d, Y')}}
                     </div>
                     <div class="small text-muted float-right">
-                        <p class="d-flex align-items-center">
+                        <p class="d-flex align-items-center letter-color">
                             {{-- <img class="lazy mr-1" width="20" height="20" data-src="{{ asset('img/reloj.webp') }}" alt="{{ $post->name}}">  --}}
                             <i class="far fa-clock mr-1" style="font-size: 17px"></i>
                             {{ $post->reading_time}} min.
@@ -556,7 +558,7 @@
             </div>
             @endforeach
             <div class="col-12 text-center">
-            <a class="btn btn-warning py-3 mt-3" style="border-radius: 10px" href="{{route('post.blog')}}"><i class="font-weight-bold">VER MÁS PUBLICACIONES</i></a>
+            <a class="btn btn-warning py-3 mt-3 letter-color" style="border-radius: 10px" href="{{route('post.blog')}}"><i class="font-weight-bold">VER MÁS PUBLICACIONES</i></a>
             </div>
     </div>
 
