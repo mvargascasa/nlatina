@@ -161,7 +161,7 @@
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -191,14 +191,14 @@
 
 {{-- @if(!$mobile) --}}
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
-          <img data-src="{{asset('img/2.webp')}}" class="lazy d-block w-100" alt="..." 
+          <img data-src="{{asset('img/4.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">PODERES</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">PODERES</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -233,7 +233,7 @@
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">APOSTILLAS</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">APOSTILLAS</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -261,14 +261,14 @@
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
-          <img data-src="{{asset('img/4.webp')}}" class="lazy d-block w-100" alt="..." 
+          <img data-src="{{asset('img/2.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
