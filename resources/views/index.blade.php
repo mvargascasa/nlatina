@@ -161,7 +161,7 @@
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
