@@ -194,7 +194,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
     </noscript>
     <header>
-        <nav class="navbar navfoot navbar-expand-lg fixed-top" style="background-color: #2B384D !important;">
+        <nav class="navbar navfoot navbar-expand-lg fixed-top" style="background-color: #2B384D !important; color: #ffffff !important">
           <div class="d-flex flex-grow-1">
               <span class="w-100 d-lg-none d-block">
                   <a class="navbar-brand" href="{{route('web.index')}}">
@@ -205,9 +205,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
               <a class="navbar-brand d-none d-lg-inline-block " href="{{route('web.index')}}">
                   <img src="{{asset('img/marca-notaria-latina.webp')}}" width="140px" height="30px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
                 </a>
-              <div class="w-100 text-right">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
-                      <span class="navbar-toggler-icon"></span>
+              <div class="w-100 text-right mt-1">
+                  <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#myNavbar">
+                    <i class="fas fa-bars" style="color: #122944"></i>
+                      {{-- <span class="navbar-toggler-icon" style="background-color: #000000 !important; color: #ffffff !important"></span> --}}
                   </button>
               </div>
           </div>
