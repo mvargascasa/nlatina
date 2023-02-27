@@ -528,7 +528,7 @@
               <div class="col-12 col-md-4 mb-4">
                 <div class="card my-2 h-100">
                     <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
-                        <img data-src="{{url('uploads/i600_'.$post->imgdir)}}" class="card-img-top lazy" alt="Imagen {{ $post->name }}" style="object-fit: cover;height: 150px !important;">
+                        <img data-src="{{asset('img/uploads/i600_'.$post->imgdir)}}" class="card-img-top lazy" alt="Imagen {{ $post->name }}" style="object-fit: cover;height: 150px !important;">
                         {{-- {{url('uploads/i900_'.$post->imgdir)}} --}}
                     </a>
                     <div class="card-body p-2" style="position:relative;">
