@@ -194,7 +194,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
     </noscript>
     <header>
-        <nav class="navbar navfoot navbar-dark navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navfoot navbar-expand-lg fixed-top" style="background-color: #2B384D !important;">
           <div class="d-flex flex-grow-1">
               <span class="w-100 d-lg-none d-block">
                   <a class="navbar-brand" href="{{route('web.index')}}">
@@ -212,10 +212,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
               </div>
           </div>
           <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
-              <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative; background-color: #333;">
-                  <li class="nav-item"> <a class="nav-link" href="{{route('web.index')}}">Inicio</a> </li>
+              <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative; background-color: #2B384D;">
+                  <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.index')}}">Inicio</a> </li>
                   <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                      <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
                         id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -253,7 +253,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 @endphp
 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+    <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
         id="DropConsul" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulados en NY</a>
 
         <ul class="dropdown-menu" aria-labelledby="DropConsul">
@@ -263,11 +263,11 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
         </ul>
 </li> 
-                <li class="nav-item"> <a class="nav-link" href="{{route('post.blog')}}">Blog</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="{{route('web.videos')}}">Videos</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('web.showallpartners') }}">Partners</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{route('web.nosotros')}}">Sobre Nosotros</a> </li>
-                  <li class="nav-item"> <a class="nav-link" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
+                <li class="nav-item"> <a class="nav-link text-white" href="{{route('post.blog')}}">Blog</a> </li>
+                <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.videos')}}">Videos</a> </li>
+                <li class="nav-item"> <a class="nav-link text-white" href="{{ route('web.showallpartners') }}">Partners</a></li>
+                <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.nosotros')}}">Sobre Nosotros</a> </li>
+                  <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
                   {{-- <li class="nav-item"><a class="nav-link" href="{{ route('partners.registro') }}">Registrarse</a></li> --}}
               </ul>
           </div>
@@ -499,7 +499,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         @endif
 
         <div style="position: relative">
-            <div id="divpreguntas" style="position: fixed; bottom: 25px; right: 65px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none">
+            <div id="divpreguntas" style="position: fixed; bottom: 25px; right: 65px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none; z-index: 300">
                 {{-- <div style="position: absolute"> --}}
                     <div style="position: absolute; right: -10px; top: -16px; background-color: #122944; color: #ffffff; padding: 0px 6px 3px 6px; border-radius: 25px; border: 2px solid #ffffff; font-size: 10px; font-weight: 500; cursor: pointer" onclick="document.getElementById('divpreguntas').style.display = 'none'">
                         x

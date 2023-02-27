@@ -25,6 +25,9 @@
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    {{-- FONT FAMILY MONTSERRAT --}}
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
     <script type="text/javascript">
       function callbackThen(response){
           // read HTTP status
@@ -85,6 +88,11 @@
         .child-locations{margin-top: 5% !important;border: none !important;}
       }
 
+      @media screen and (max-width: 1200px){.links-offices{font-size: 30px !important}}
+      @media screen and (max-width: 1000px){}
+      @media screen and (max-width: 800px){.links-offices{font-size: 25px !important;} .txt-gestion-facil{font-size: 15px !important;letter-spacing: 3px !important} .img-logo{width: 300px !important}}
+      @media screen and (max-width: 400px){.img-logo{width: 230px !important}}
+
       .child-locations{
         background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #122944, #122944);
         background-position: right bottom;
@@ -121,6 +129,11 @@
         }
       }
       .card:hover{box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;}
+      .rate {height: 46px;padding: 0 10px;}
+      .rate:not(:checked) > input {position:absolute;top:-9999px;}
+      .rate:not(:checked) > label {width:1em;overflow:hidden;white-space:nowrap;font-size:30px;color:#ffc700;}
+      .rate:not(:checked) > label:before {content: '★ ';}
+      .rate > input:checked ~ label {color: #ffc700;}
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -132,33 +145,36 @@
 
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="1000">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+      <li style="width: 10px; height: 10px" data-target="#carouselExampleCaptions" data-slide-to="0" class="active rounded-circle"></li>
+      <li style="width: 10px; height: 10px" data-target="#carouselExampleCaptions" data-slide-to="1" class="rounded-circle"></li>
+      <li style="width: 10px; height: 10px" data-target="#carouselExampleCaptions" data-slide-to="2" class="rounded-circle"></li>
+      <li style="width: 10px; height: 10px" data-target="#carouselExampleCaptions" data-slide-to="3" class="rounded-circle"></li>
     </ol>
     <div class="carousel-inner">
-        <div class="carousel-item active"  style="background:rgba(2, 2, 2, 0.5);">
-          <img data-src="{{asset('img/5.webp')}}" class="lazy d-block w-100" alt="..." 
-          style="height: 550px;object-fit: cover; object-position: left top;">
+        <div class="carousel-item active">
+          <img data-src="{{asset('img/notaria-en-estados-unidos.jpg')}}" class="lazy d-block w-100" alt="..." 
+          style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div>
-              <h1 class="tit-not">Notaría Pública</h1>
-              <p class="heading-title h2" style="margin-bottom: @if(!$mobile) 6% @else 2% @endif">Gestión Fácil y Rápida</p>
+              <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
+              <div style="display:flex ;justify-content: center">
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+              </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 @if(!$mobile) border-right @endif">
+                <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
                   </div>
                 </div>
-                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif">
+                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newjersey') }}"></i> New Jersey</a>
                   </div>
                 </div>
-                <div class="col-sm-4 @if(!$mobile) border-left @endif">
+                <div class="col-sm-4 @if(!$mobile) border-left @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
               </div>
@@ -166,7 +182,7 @@
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
-              <button class="btn btn-warning btn-lg button" data-toggle="modal" 
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-2" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
@@ -174,86 +190,107 @@
 {{-- @if(!$mobile) --}}
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
           <img data-src="{{asset('img/2.webp')}}" class="lazy d-block w-100" alt="..." 
-          style="height: 550px;object-fit: cover; object-position: left bottom;">
+          style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div>
-              <p id="titleTraducciones" class="tit-not h1" style="margin-bottom: 7%">TRADUCCIONES</p>
-              <div id="locations" class="row" style="margin-left: 11%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 @if(!$mobile) border-right @endif">
+              <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
+              <div style="display:flex ;justify-content: center">
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+              </div>
+              <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
+                <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
                   </div>
                 </div>
-                <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
+                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newjersey') }}"></i> New Jersey</a>
                   </div>
                 </div>
-                <div class="col-sm-4 @if(!$mobile) border-left @endif">
+                <div class="col-sm-4 @if(!$mobile) border-left @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
               </div>
-              {{-- <hr width="200" style="border-color: #fff"> --}}
-  
-              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
-
             </div>
+              {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
+              {{-- <hr width="200" style="border-color: #fff"> --}}
+              {{-- href="javascript:void(0)" --}}
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-2" data-toggle="modal" 
+              data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
           <img data-src="{{asset('img/3.webp')}}" class="lazy d-block w-100" alt="..." 
-          style="height: 550px;object-fit: cover; object-position: left top;">
+          style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
-              <p id="titleApostillas" class="tit-not h1" style="margin-bottom: 7%">APOSTILLAS</p>
+            <div>
+              <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
+              <div style="display:flex ;justify-content: center">
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+              </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 @if(!$mobile) border-right @endif">
+                <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
                   </div>
                 </div>
-                <div class="col-sm-4 @if(!$mobile) border-right border-right @endif">
+                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newjersey') }}"></i> New Jersey</a>
                   </div>
                 </div>
-                <div class="col-sm-4 @if(!$mobile) border-left @endif">
+                <div class="col-sm-4 @if(!$mobile) border-left @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
               </div>
+            </div>
+              {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
-  
-              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
+              {{-- href="javascript:void(0)" --}}
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-2" data-toggle="modal" 
+              data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
           <img data-src="{{asset('img/4.webp')}}" class="lazy d-block w-100" alt="..." 
-          style="height: 550px;object-fit: cover; object-position: left bottom;">
+          style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
-              <p class="tit-not h1" style="margin-bottom: @if(!$mobile) 7% @else 2% @endif">PODERES GENERALES Y ESPECIALES</p>
+            <div>
+              <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
+              <div style="display:flex ;justify-content: center">
+                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+              </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 @if(!$mobile) border-right @endif">
+                <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newyork') }}"></i> Oficinas New York</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
                   </div>
                 </div>
-                <div class="col-sm-4 @if(!$mobile) border-left border-right @endif">
+                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.newjersey') }}"></i> Oficinas New Jersey</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newjersey') }}"></i> New Jersey</a>
                   </div>
                 </div>
-                <div class="col-sm-4 @if(!$mobile) border-left @endif">
+                <div class="col-sm-4 @if(!$mobile) border-left @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt"><a class="underline" style="color: #ffffff; text-decoration: none; font-size: 20px" href="{{ route('web.oficina.florida') }}"></i> Oficinas Florida</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
               </div>
+            </div>
+              {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
-  
-              <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
+              {{-- href="javascript:void(0)" --}}
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-2" data-toggle="modal" 
+              data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
 {{-- @endif --}}
@@ -396,23 +433,23 @@
 </div>
 </div>
 
-<div style="background-color: #333" class="mt-5">
-  <div class="container" >
-      <div class="row text-white">
-          <div class="col-12 col-sm-6 p-4 my-2">
-              <span class="text-muted font-weight-bold">¿Por qué elegirnos?</span> <br><br>
+<div class="mt-5">
+  <div>
+      <div class="row">
+          <div class="col-12 col-sm-6 p-4 my-2 text-white pt-5 pb-5" style="background-color: #2B384D; padding-left: 10% !important">
+              {{-- <span class="text-muted font-weight-bold">¿Por qué elegirnos?</span> <br><br> --}}
               <p class="heading-title pb-4 h3">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</p>
               <hr class="hrwf">
               <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
               <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
           </div>
-          <div class="col-12 col-sm-6 p-4 my-4  d-flex align-items-center">
+          <div class="col-12 col-sm-6 p-4 my-4 d-flex align-items-center px-5" style="padding-right: 5% !important">
 
-
-              <span style="font-size:18px; text-indent: 40px;">
-                Somos una notaría autorizada, para autenticar documentos en Estados Unidos, por medio de una Apostilla. Nuestro servicio es realizado bajo normas y reglas estrictamente legales, para que su trabajo sea entregado con la mayor prontitud y satisfacción.
+            <i>
+              <span style="font-size:18px; text-indent: 40px; text-align: justify">
+                <b>Somos una notaría autorizada</b>, para autenticar documentos en Estados Unidos, por medio de una Apostilla. Nuestro servicio es realizado bajo normas y reglas estrictamente legales, para que su trabajo sea entregado con la mayor prontitud y satisfacción.
                 <br><br>
-                Brindamos servicios notariales para toda Latinoamérica desde los Estados Unidos.</span>
+                Brindamos servicios notariales para toda <b>Latinoamérica desde los Estados Unidos</b>.</span></i>
           </div>
       </div>
   </div>
@@ -422,27 +459,30 @@
 
 <div class="row">
 <hr>
-<div class="row rounded py-5">
+<div class="row rounded @if(!$mobile) py-5 @endif">
   <div class="text-center w-100">
     <h3 class="tit-not">¿Qué nos hace diferentes?</h3>
   </div>
-  <div class="row mt-4 mx-1">
-    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3 @if(!$mobile) border-right @endif">
-      <div>
-        <i class="fas fa-calendar-alt fa-2x" style="color: #122944"></i>
-        <p class="tit-not mt-2">Tenemos una gran trayectoria dentro del campo notarial</p>
+  <div class="row mt-4 mx-5">
+    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
+      <div class="border rounded h-100 pt-4 px-5" style="background-color: #2B384D">
+        <i class="fas fa-calendar-alt fa-3x" style="color: #FFBE32"></i>
+        <hr class="w-50" style="background-color: #FFBE32">
+        <i><p class="mt-2 text-white">Tenemos una trayectoria dentro del campo notarial por más de <b>10 años</b></p></i>
       </div>
     </div>
-    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3 @if(!$mobile) border-left border-right @endif">
-      <div>
-        <i class="fas fa-university fa-2x" style="color: #122944"></i>
-        <p class="tit-not mt-2">Contamos con personal capacitado para atender el trámite que necesite</p>
+    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
+      <div class="border rounded h-100 pt-4 px-5" style="background-color: #2B384D">
+        <i class="fas fa-university fa-3x" style="color: #FFBE32"></i>
+        <hr class="w-50" style="background-color: #FFBE32">
+        <i><p class="mt-2 text-white">Contamos con un <b>personal joven y capacitado</b> para la realización de trámites</p></i>
       </div>
     </div>
-    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3 @if(!$mobile) border-left @endif">
-      <div>
-        <i class="fas fa-users fa-2x" style="color: #122944"></i>
-        <p class="tit-not mt-2">Hemos ayudado a una gran cantidad de clientes</p>
+    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
+      <div class="border rounded h-100 pt-4 px-5" style="background-color: #2B384D">
+        <i class="fas fa-users fa-3x" style="color: #FFBE32"></i>
+        <hr class="w-50" style="background-color: #FFBE32">
+        <i><p class="mt-2 text-white">Nos hemos comprometido con nuestros clientes brindándole un <b>servicio integral, rápido y eficaz</b></p></i>
       </div>
     </div>
   </div>
@@ -452,11 +492,11 @@
 
 </div>
 
-<div data-aos="flip-right" style="background-color: rgb(235, 235, 235)" class="row text-center py-5 mt-5">
+<div data-aos="flip-right" style="background-color: rgb(245, 245, 245)" class="row text-center py-5 mt-5">
   <div class="w-100">
-    <h3 class="tit-not">¿Tiene alguna pregunta?</h3>
-    <p>No dude en contactarnos y uno de nuestros asesores lo ayudará</p>
-    <a class="btn btn-dark rounded-0" href="{{route('web.contactenos')}}">Contactarme</a>
+    <h3 class="tit-not" style="font-weight: 100 !important">¿Tiene alguna pregunta?</h3>
+    <i><p class="font-weight-bold">No dude en contactarnos y uno de nuestros asesores lo ayudará</p></i>
+    <a class="btn btn-warning py-3" style="border-radius: 10px" href="{{route('web.contactenos')}}"><i class="font-weight-bold">CONTACTARME</i></a>
   </div>
 </div>
 <div class="container">
@@ -481,30 +521,92 @@
 <div class="container">
     <div class="row py-4">
         <div class="col-12 text-center py-4">
-            <h2 class="tit-not mt-5">Publicaciones de Interes</h2>
+            <h2 class="tit-not @if(!$mobile) mt-5 @endif">Publicaciones de Interes</h2>
             <hr class="hrb">
           </div>
           @foreach ($indexPosts as $post)
-                <div class="col-12 col-md-6">
-                    <a href="{{route('post.slug',$post->slug)}}" style="text-decoration: none">
-                      <div class="card my-2 shadow-sm">
-                            <div class="card-body p-2" style="position:relative;">
-                              <span class="d-block font-weight-bold text-truncate " style="font-size:1rem;color:#122944">{{$post->name}}</span>
-                              <span class="d-block text-muted text-truncate"><?php echo strip_tags(substr($post->body,0,100))  ?></span>
-                              <div class="small text-muted float-left">
-                                <a href="{{route('post.slug',$post->slug)}}">{{$post->created_at->format('M d')}}</a>
-                              </div>
-                            </div>
-                        </div>
+              <div class="col-12 col-md-4 mb-4">
+                <div class="card my-2 h-100">
+                    <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
+                        <img data-src="{{url('uploads/i600_'.$post->imgdir)}}" class="card-img-top lazy" alt="Imagen {{ $post->name }}" style="object-fit: cover;height: 150px !important;">
+                        {{-- {{url('uploads/i900_'.$post->imgdir)}} --}}
                     </a>
+                    <div class="card-body p-2" style="position:relative;">
+                    <span class="d-block text-muted font-weight-bold"
+                            style="font-size:1rem">{{$post->name}}</span>
+                    <span class="d-block text-muted text-truncate">
+                        <?php echo strip_tags(substr($post->body,0,300))  ?>
+                    </span>
                 </div>
+                <div class="card-footer bg-white" style="border: none">
+                    <div class="small text-muted float-left">
+                        {{-- <img class="lazy" width="20" height="20" data-src="{{ asset('img/calendar.webp') }}" alt="{{$post->name}}">  --}}
+                        <i class="far fa-calendar-alt" style="font-size: 17px"></i>
+                        {{$post->created_at->format('M d, Y')}}
+                    </div>
+                    <div class="small text-muted float-right">
+                        <p class="d-flex align-items-center">
+                            {{-- <img class="lazy mr-1" width="20" height="20" data-src="{{ asset('img/reloj.webp') }}" alt="{{ $post->name}}">  --}}
+                            <i class="far fa-clock mr-1" style="font-size: 17px"></i>
+                            {{ $post->reading_time}} min.
+                        </p>
+                    </div>    
+                </div>
+                </div>
+            </div>
             @endforeach
-            <div class="col-12">
-            <a href="{{route('post.blog')}}" style="color:#122944">Ver más Publicaciones</a>
+            <div class="col-12 text-center">
+            <a class="btn btn-warning py-3 mt-3" style="border-radius: 10px" href="{{route('post.blog')}}"><i class="font-weight-bold">VER MÁS PUBLICACIONES</i></a>
             </div>
     </div>
 
 </div>
+
+<section id="divtestimonials" class="mt-2" style="min-height: 550px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
+  <div>
+    <div class="pt-5">
+      <p class="h2 text-center text-white font-weight-bold" style="letter-spacing: 10px">TESTIMONIOS</p>
+      <div class="row text-white @if(!$mobile) mx-5 @else mx-1 @endif mt-5">
+        <div class="col-sm-6 mb-2">
+          <div class="border border-white p-5">
+            <div class="rate">
+              <input type="radio" id="star5" name="rate" value="5" disabled />
+              <label for="star5" title="text">5 stars</label>
+              <input type="radio" id="star4" name="rate" value="4" disabled/>
+              <label for="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="rate" value="3" disabled/>
+              <label for="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="rate" value="2" disabled/>
+              <label for="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="rate" value="1" disabled/>
+              <label for="star1" title="text">1 star</label>
+            </div>
+            <p class="h3 heading-title">Hernando Urguiled</p>
+            <p>Excelente el servicio. Muy bonito el servicio de todas las señoritas en la oficina, especialmente de Mayra. Recomiendo completamente el lugar</p>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-2">
+          <div class="border border-white p-5">
+            <div class="rate">
+              <input type="radio" id="star5" name="rate" value="5" disabled />
+              <label for="star5" title="text">5 stars</label>
+              <input type="radio" id="star4" name="rate" value="4" disabled/>
+              <label for="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="rate" value="3" disabled/>
+              <label for="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="rate" value="2" disabled/>
+              <label for="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="rate" value="1" disabled/>
+              <label for="star1" title="text">1 star</label>
+            </div>
+            <p class="h3 heading-title">Jenny Flores</p>
+            <p>Excelente servicio 100% recomendado a la señorita Stefany muchas gracias por su excelente servicio al cliente!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 @endisset
 
 @section('numberWpp', '13479739888')
@@ -539,6 +641,7 @@
         //document.getElementById('prisection').style.backgroundImage = "url('img/inicio.jpg')";
         document.getElementById('imgdoc').src = "img/docverify-approved-enotary-small.webp";
         document.getElementById('imgnna').src = "img/national-notary-association.webp";
+        document.getElementById('divtestimonials').style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
         AOS.init();
     });
 
