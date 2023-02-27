@@ -91,7 +91,7 @@
       @media screen and (max-width: 1200px){.links-offices{font-size: 30px !important}}
       @media screen and (max-width: 1000px){}
       @media screen and (max-width: 800px){.links-offices{font-size: 25px !important;} .txt-gestion-facil{font-size: 15px !important;letter-spacing: 3px !important} .img-logo{width: 300px !important}}
-      @media screen and (max-width: 400px){.img-logo{width: 230px !important}}
+      @media screen and (max-width: 400px){.img-logo{width: 250px !important}}
 
       .child-locations{
         background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #122944, #122944);
@@ -155,7 +155,7 @@
           <img data-src="{{asset('img/notaria-en-estados-unidos.jpg')}}" class="lazy d-block w-100" alt="..." 
           style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
-            <div>
+            <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
@@ -192,7 +192,7 @@
           <img data-src="{{asset('img/2.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
-            <div>
+            <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
@@ -227,7 +227,7 @@
           <img data-src="{{asset('img/3.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
-            <div>
+            <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
@@ -262,7 +262,7 @@
           <img data-src="{{asset('img/4.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
-            <div>
+            <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
