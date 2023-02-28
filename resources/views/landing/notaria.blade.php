@@ -24,7 +24,7 @@
         <h1 class="font-italic font-weight-bold mb-0" >Servicios de</h1>
         <h2 class="font-italic font-weight-bold" style="font-size: 60px;">Notaría</h2>
         <h3 class="font-italic font-weight-bold">Gestion Facíl en Línea</h3>
-        <h3 class="font-italic font-weight-bold">Entregas en 24 Horas</h3>
+        <h3 class="font-italic font-weight-bold">Entregas en el menor tiempo</h3>
         <h3 class="font-italic font-weight-bold">En Estados Unidos</h3>
         <p class="font-weight-bold">Trabajamos con envíos a todo el país.</p>
       </div>
