@@ -125,6 +125,8 @@ class LandingController extends Controller
             // if(isset($request->office)) $interest = $request->office;
             // else $interest = $request->interest ?? 'General';
 
+            $interest = 'General';
+
             if(isset($request->office)){
                 $interest = $request->office;
             } else {
@@ -137,9 +139,10 @@ class LandingController extends Controller
             
             $sendoffices = '';
 
-            if ($interest == 'web.oficina.newyork'      || $interest == 'New York')     $sendoffices = ',newyork@notarialatina.com'; //
-            if ($interest == 'web.oficina.newjersey'    || $interest == 'New Jersey')   $sendoffices = ',newjersey@notarialatina.com'; //
-            if ($interest == 'web.oficina.florida'      || $interest == 'Florida')      $sendoffices = ',florida@notarialatina.com'; //
+            if ($interest == 'web.oficina.newyork'              || $interest == 'New York')     $sendoffices = ',newyork@notarialatina.com'; //
+            else if ($interest == 'web.oficina.newjersey'       || $interest == 'New Jersey')   $sendoffices = ',newjersey@notarialatina.com'; //
+            else if ($interest == 'web.oficina.florida'         || $interest == 'Florida')      $sendoffices = ',florida@notarialatina.com'; //
+            else $sendoffices = ",newyork@notarialatina.com";
 
             // if ($interest == 'General')                                             $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
             // if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
