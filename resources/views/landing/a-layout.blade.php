@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
   @yield('header')
 
-
+<?php
+  $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+  if(strpos($actual_link, 'localhost') === false){
+?>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124437679-3"></script>
 <script>
@@ -35,8 +38,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
       return false;
     }
 </script>
-
-
+<?php };// fin de if url localhost ?>
 
   <style>
     html, body {
