@@ -18,7 +18,7 @@
         /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap'); */
         @font-face{font-family: 'Roboto',sans-serif !important} */
         h2{font-size: 25px !important}
-        #publish{display: none !important}
+        #publish{display: none !important} */
         @media screen and (max-width: 580px){
             #imgBlog{float: none !important;justify-content: center !important;padding: 0px !important;border-radius: 5px !important}
             #rowImageBanner{min-height: 350px !important;}
@@ -133,7 +133,7 @@
     @if(isset($post) && $post->id == 95)
         <div id="publish">
             <div class="fixed-bottom bg-danger text-white pt-3 text-center d-flex justify-content-center">
-                <i class="fas fa-times-circle mt-1 mr-1" onclick="document.getElementById('publish').style.display='none'" style="cursor: pointer"></i>
+                <i class="fas fa-times-circle mt-1 mr-1" onclick="document.getElementById('publish').style.display='none !important'" style="cursor: pointer"></i>
                 <p>¿Necesita tramitar una Carta Poder? <a class="text-white" href="{{route('landing.notaria')}}"><b>Click aquí <i class="fas fa-arrow-circle-right"></i></b></a></p>
             </div>
         </div>
