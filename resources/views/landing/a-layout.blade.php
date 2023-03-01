@@ -71,9 +71,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 <body>
   <header>
   <nav class="navbar navbar-dark navfoot">
-  <a class="navbar-brand pl-3" href="{{route('web.index')}}">
+  {{-- <a class="navbar-brand pl-3" href="{{route('web.index')}}"> --}}
       <img src="img/marca-notaria-latina.png" width="140" height="30" alt="">
-    </a>
+    {{-- </a> --}}
 
       <div class="d-flex justify-content-end pr-3">
         <ul class="navbar-nav mr-auto">

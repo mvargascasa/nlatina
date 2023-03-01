@@ -172,9 +172,9 @@
 
 <header>
   <nav class="navbar navbar-dark navfoot">
-    <a class="navbar-brand pl-3" href="{{ route('web.index') }}">
+    {{-- <a class="navbar-brand pl-3" href="{{ route('web.index') }}"> --}}
       <img src="{{asset('img/marca-notaria-latina.png')}}" width="140" height="30" alt="@isset($title){{$title}} @else Notaria Latina en {{ $oficina }} - Apostillas, Poderes y Traducciones @endisset">
-    </a>
+    {{-- </a> --}}
       <div class="d-flex justify-content-end pr-3">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active ">
