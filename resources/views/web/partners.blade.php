@@ -91,12 +91,6 @@
             #colRegisterForm{
                 margin-bottom: -10px !important;
             }
-            #titlemovil{
-                display: block !important;
-            }
-            #titlepc{
-                display: none !important;
-            }
             #rowImage{
                 min-height: 250px !important;
                 padding-top: 15%;
@@ -104,6 +98,7 @@
             #formulario{
                 margin-bottom: -10px !important;
             }
+            #titlemovil{padding-top: 50px !important;margin-right: 0px !important}
         }
         .titulo{
             font-size: 30px;
@@ -128,12 +123,10 @@
         select {
             box-shadow: 2px 2px 3px #bfbfbf;
         }
-        #titlemovil{
-            display: none;
-        }
-        #titlepc{
+        #titlemovil{margin-right: -100px;}
+        /* #titlepc{
             display: block;
-        }
+        } */
         input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
     /* FIREFOX */
     input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
@@ -193,12 +186,12 @@
 
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
-        <div id="rowImage" class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
-            <div class="col-sm-6 col-12 text-white text-center">
-                <h1 id="titlemovil" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> <br> en Latinoamérica <br> a su alcance!</h1>
-                <h1 id="titlepc" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> en Latinoamérica <br> a su alcance!</h1>
+        <div id="rowImage" class="row align-items-center justify-content-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
+            <div class="col-sm-12 col-md-12 col-xl-6 col-lg-6 col-12 text-white text-center">
+                <h1 id="titlemovil" class="font-weight-bold heading-title titulo text-center"><b style="color: #fec02f">¡Abogados y Notarías</b> en Latinoamérica a su alcance!</h1>
+                {{-- <h1 id="titlepc" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> en Latinoamérica <br> a su alcance!</h1> --}}
             </div>
-            <div id="formulario" class="col-sm-6 mt-4 mb-5">
+            <div id="formulario" class="col-sm-12 col-md-12 col-xl-6 col-lg-6 mt-5 mb-3">
                 @include('admin.partner.layouts.form_register')
             </div>
             {{-- <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-6">
