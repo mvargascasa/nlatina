@@ -31,9 +31,7 @@
         .bg-header{
             /* background-color: #002542; */
             width: 100%;
-            height: 300px;
-            position: absolute;
-            filter: brightness(60%);
+            min-height: 400px;
         }
         .container{
             position: relative;
@@ -50,12 +48,14 @@
             color: white;
         }
         #info_biografia{margin-top:4% !important}
+        h1{font-size: 30px !important;}
 
         @media screen and (max-width: 580px){
             .info-header{
                 color: #000000 !important;
-                margin-top: 10% !important; 
+                margin-top: 15% !important; 
             }
+            h1{font-size: 20px !important;}
             #divImgPartner{
                 display: flex;
                 justify-content: center;
@@ -233,19 +233,19 @@
 @endsection
 
 @section('content')
-    <div id="prisection" class="bg-header" style="background-size: cover; background-position: left top; background-repeat: no-repeat;"></div>
+    <section id="prisection" class="bg-header pt-5" style="background-size: cover; background-position: left top; background-repeat: no-repeat;"></div>
     {{-- <div class="container"> --}}
         @if ($partner != null)
-        <div id="rowinfoheader" class="row mt-3">
+        <div id="rowinfoheader" class="row mt-5">
             <div class="col-sm-2"></div>
             <div id="divImgPartner" class="col-sm-2">
                 <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Abogado en {{ $partner->city }}, {{ $partner->state }}, {{ $partner->country_residence }}" width="200" height="260">
             </div>
             <div class="col-sm-8 mt-5 info-header">
                 <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
-                <h1 style="font-size: 30px"><b>Abogado en {{$partner->city}}, {{$partner->state}}</b> <img width="25" height="25" src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="IMG_BAND_{{ $partner->country_residence }}">
+                <h1><b>Abogado en {{$partner->city}}, {{$partner->state}}</b> <img width="25" height="25" src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="IMG_BAND_{{ $partner->country_residence }}">
                 </h1>
-                <p style="font-size: 20px; margin-top: 15px">@if($partner->title=="Abogado")Abg.@elseif($partner->title=="Licenciado")Lic.@endif <b style="font-weight: 100" id="txtnamelastname">{{$partner->name . " " . $partner->lastname}}</b></p>
+                <p style="font-size: 20px; margin-top: 15px"><b style="font-weight: 100" id="txtnamelastname">{{$partner->name . " " . $partner->lastname}}</b></p>
                 @if ($partner->company == "Empresa")
                     <p style="margin-top: 10px"><i class="fas fa-building"></i> {{ $partner->company_name }}</p>
                 @else
@@ -260,7 +260,7 @@
                     <a id="txtemail" style="text-decoration: none; color: #ffffff" href="mailto:{{$partner->email}}"><p class="ml-3"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p></a>
                 </div> --}}
             </div>
-        </div>
+        </section>
 
         <div id="info_biografia" class="row">
             <div class="col-sm-2">
@@ -426,7 +426,7 @@
                 @csrf
               <div class="modal-content">
                 <div class="modal-header" style="background-color: #002542; color: #ffffff">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Valoración de Partner {{ $partner->name}} {{ $partner->lastname}}</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle">Valoración de Partner</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
