@@ -73,6 +73,7 @@
                 color: #000000 !important;
             }
             #info_biografia{margin-top: 0px !important;}
+            .bg-header{min-height: 300px;}
         }
 
         #nombre, #telefono, #mensaje{
