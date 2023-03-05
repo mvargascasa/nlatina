@@ -111,7 +111,7 @@
                 @endforeach
             </div>
 
-            {{-- <div class="mt-4">
+            <div class="mt-4">
                 <h2 class="text-center">¿Necesita realizar un trámite notarial?</h2>
                 <p style="font-weight: 300; font-size: 20px" class="text-center mb-4">Gestionamos el proceso de una manera correcta y diligente.</p>
                 <div class="row justify-content-center">
@@ -127,10 +127,10 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
     </div>
 
-    @if(isset($post) && $post->id == 95)
+    {{-- @if(isset($post) && $post->id == 95)
         <div id="publishpoder">
             <div class="fixed-bottom bg-danger text-white pt-3 text-center d-flex justify-content-center">
                 <i class="fas fa-times-circle mt-1 mr-1" onclick="document.getElementById('publishpoder').style.display='none'" style="cursor: pointer"></i>
@@ -146,7 +146,7 @@
                 <p>¿Necesita tramitar una Carta de Invitación? <a class="text-white" href="{{route('landing.notaria')}}"><b><br> Click aquí <i class="fas fa-arrow-circle-right"></i></b></a></p>
             </div>
         </div>
-    @endif
+    @endif --}}
 
     @if (session('sendcomment'))
         @php

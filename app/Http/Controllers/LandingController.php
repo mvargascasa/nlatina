@@ -144,10 +144,10 @@ class LandingController extends Controller
             else if ($interest == 'web.oficina.florida'         || $interest == 'Florida')      $sendoffices = ',florida@notarialatina.com'; //
             else $sendoffices = ",newyork@notarialatina.com";
 
-            // if ($interest == 'General')                                             $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
-            // if ($interest == 'Landing New York'     || $interest == 'New York')     $sendoffices = 'sebas31051999@gmail.com'; //newyork@notarialatina.com
-            // if ($interest == 'Landing New Jersey'   || $interest == 'New Jersey')   $sendoffices = 'sebas25211@hotmail.com'; //newjersey@notarialatina.com
-            // if ($interest == 'Landing Florida'      || $interest == 'Florida')      $sendoffices = 'sebastian.armijos.est@tecazuay.edu.ec'; //florida@notarialatina.com
+            // if ($interest == 'web.oficina.newyork'              || $interest == 'New York')     $sendoffices = 'sebas31051999@gmail.com'; //
+            // else if ($interest == 'web.oficina.newjersey'       || $interest == 'New Jersey')   $sendoffices = 'sebas25211@hotmail.com'; //
+            // else if ($interest == 'web.oficina.florida'         || $interest == 'Florida')      $sendoffices = 'sebastian.armijos.est@tecazuay.edu.ec'; //
+            // else $sendoffices = "sebas31051999@gmail.com";
 
             // if(isset($request->url_current) && ($request->url_current == "web.oficina.newjersey" || $request->url_current == "web.oficina.newyork" || $request->url_current == "web.oficina.florida")){
             //     if($request->url_current == "web.oficina.newjersey")    $sendoffices = ',newjersey@notarialatina.com';

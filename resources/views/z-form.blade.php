@@ -87,6 +87,13 @@
         ,    null,    ['class' => 'form-control custom-select', 'required']) !!}
     </div>
 @endif
+@if(Request::is('post/*'))
+    <div class="form-group">
+        {!! Form::label('office', '¿Oficina en la que desea hacer el trámite?') !!}
+        {!! Form::select('office', ['' => 'Seleccione', 'New York' => 'New York', 'New Jersey' => 'New Jersey', 'Florida' => 'Florida'], null, ['class' => 'form-control', 'required']) !!}
+    </div>
+@endif
+
 <div class="form-group">
     {!! Form::label('message', 'Comentario:') !!}
     {!! Form::textarea('message', null, ['class' => 'form-control', 'maxlength'=>"100", 'rows' => '2', 'id' => 'message', 'required']) !!}
