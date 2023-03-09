@@ -135,7 +135,7 @@
       .rate:not(:checked) > label:before {content: '★ ';}
       .rate > input:checked ~ label {color: #ffc700;}
       .letter-color{color: #2B384D !important}
-      *{font-family: 'Montserrat'}
+      .font-family-montserrat{font-family: 'Montserrat'}
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -160,8 +160,8 @@
             <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
-              <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+              <div style="display:flex ;justify-content: center;">
+                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat text-center" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -184,7 +184,7 @@
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
-              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-2" data-toggle="modal" 
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
@@ -197,8 +197,8 @@
             <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
-              <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">PODERES</p>
+              <div style="display:flex; justify-content: center; text-align: center !important">
+                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">PODERES</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -221,7 +221,7 @@
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
-              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-2" data-toggle="modal" 
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
@@ -233,7 +233,7 @@
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">APOSTILLAS</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">APOSTILLAS</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -256,7 +256,7 @@
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
-              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-2" data-toggle="modal" 
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
@@ -268,7 +268,7 @@
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill px-3 py-1" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -291,7 +291,7 @@
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
-              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-2" data-toggle="modal" 
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" 
               data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
@@ -448,7 +448,7 @@
           <div class="col-12 col-sm-6 p-4 my-2 d-flex align-items-center px-5" style="padding-right: 5% !important; background-color: #12294409;">
 
             <i>
-              <span style="font-size:18px; text-indent: 40px; text-align: justify">
+              <span class="font-family-montserrat" style="font-size:18px; text-indent: 40px; text-align: justify">
                 <b>Somos una notaría autorizada</b>, para autenticar documentos en Estados Unidos, por medio de una Apostilla. Nuestro servicio es realizado bajo normas y reglas estrictamente legales, para que su trabajo sea entregado con la mayor prontitud y satisfacción.
                 <br><br>
                 Brindamos servicios notariales para toda <b>Latinoamérica desde los Estados Unidos</b>.</span></i>
@@ -470,21 +470,21 @@
       <div class="border h-100 pt-4 px-5" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-calendar-alt fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
-        <i><p class="mt-2 text-white">Tenemos una trayectoria dentro del campo notarial por más de <b>10 años</b></p></i>
+        <i><p class="mt-2 text-white font-family-montserrat">Tenemos una trayectoria dentro del campo notarial por más de <b>10 años</b></p></i>
       </div>
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
       <div class="border h-100 pt-4 px-5" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-university fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
-        <i><p class="mt-2 text-white">Contamos con un <b>personal joven y capacitado</b> para la realización de trámites</p></i>
+        <i><p class="mt-2 text-white font-family-montserrat">Contamos con un <b>personal joven y capacitado</b> para la realización de trámites</p></i>
       </div>
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
       <div class="border h-100 pt-4 px-5" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-users fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
-        <i><p class="mt-2 text-white">Nos hemos comprometido con nuestros clientes brindándole un <b>servicio integral, rápido y eficaz</b></p></i>
+        <i><p class="mt-2 text-white font-family-montserrat">Nos hemos comprometido con nuestros clientes brindándole un <b>servicio integral, rápido y eficaz</b></p></i>
       </div>
     </div>
   </div>
@@ -497,7 +497,7 @@
 <div data-aos="flip-right" style="background-color: #12294409" class="row text-center py-5 mt-5">
   <div class="w-100">
     <h3 class="tit-not letter-color" style="font-weight: 100 !important">¿Tiene alguna pregunta?</h3>
-    <i><p class="font-weight-bold letter-color">No dude en contactarnos y uno de nuestros asesores lo ayudará</p></i>
+    <i><p class="font-weight-bold letter-color font-family-montserrat">No dude en contactarnos y uno de nuestros asesores lo ayudará</p></i>
     <a class="btn btn-warning py-3" style="border-radius: 10px" href="{{route('web.contactenos')}}"><i class="font-weight-bold letter-color">CONTACTARME</i></a>
   </div>
 </div>
@@ -564,7 +564,7 @@
 
 </div>
 
-<section id="divtestimonials" class="mt-2" style="min-height: 550px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
+<section onscroll="setimagebg()" id="divtestimonials" class="mt-2" style="min-height: 550px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
   <div>
     <div class="pt-5">
       <p class="h2 text-center text-white font-weight-bold" style="letter-spacing: 10px">TESTIMONIOS</p>
@@ -584,7 +584,7 @@
               <label for="star1" title="text">1 star</label>
             </div>
             <p class="h3 heading-title">Hernando Urguiled</p>
-            <p>Excelente el servicio. Muy bonito el servicio de todas las señoritas en la oficina, especialmente de Mayra. Recomiendo completamente el lugar</p>
+            <p class="font-family-montserrat">Excelente el servicio. Muy bonito el servicio de todas las señoritas en la oficina, especialmente de Mayra. Recomiendo completamente el lugar</p>
           </div>
         </div>
         <div class="col-sm-6 mb-2">
@@ -602,7 +602,7 @@
               <label for="star1" title="text">1 star</label>
             </div>
             <p class="h3 heading-title">Jenny Flores</p>
-            <p>Excelente servicio 100% recomendado a la señorita Stefany muchas gracias por su excelente servicio al cliente!</p>
+            <p class="font-family-montserrat">Excelente servicio 100% recomendado a la señorita Stefany muchas gracias por su excelente servicio al cliente!</p>
           </div>
         </div>
       </div>
@@ -643,7 +643,7 @@
         //document.getElementById('prisection').style.backgroundImage = "url('img/inicio.jpg')";
         document.getElementById('imgdoc').src = "img/docverify-approved-enotary-small.webp";
         document.getElementById('imgnna').src = "img/national-notary-association.webp";
-        document.getElementById('divtestimonials').style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
+        //document.getElementById('divtestimonials').style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
         AOS.init();
     });
 
@@ -653,6 +653,24 @@
         interval: 1000 * 4
       });
     }, 3000);
+
+    const elem_testimonials = document.querySelector('#divtestimonials');
+
+    // Creamos un objeto IntersectionObserver
+    const observerTestimonial = new IntersectionObserver((entries) => {
+          // Comprobamos todas las intesecciones. En el ejemplo solo existe una: cuadrado
+          entries.forEach((entry) => {
+              // Si es observable, entra
+              if (entry.isIntersecting) {
+                // Añadimos la clase '.cuadrado--rota'
+                elem_testimonials.style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
+              }
+          });
+      });
+
+    // Añado a mi Observable que quiero observar. En este caso el cuadrado
+    observerTestimonial.observe(elem_testimonials);
+
   </script>
 @endsection
 
