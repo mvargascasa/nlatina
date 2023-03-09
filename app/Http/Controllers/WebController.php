@@ -97,7 +97,10 @@ class WebController extends Controller
             ->latest()
             ->limit(6)
             ->get();
-        return view('index',compact('indexPosts'));  
+
+        $consulates = DB::table('consulates')->select('slug')->get();
+
+        return view('index',compact('indexPosts', 'consulates'));  
     }
     public function apostillas()
     {
