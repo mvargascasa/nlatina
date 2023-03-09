@@ -145,7 +145,7 @@
 
 
 
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="1000">
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="3000">
     <ol class="carousel-indicators">
       <li style="width: 10px; height: 10px" data-target="#carouselExampleCaptions" data-slide-to="0" class="active rounded-circle"></li>
       <li style="width: 10px; height: 10px" data-target="#carouselExampleCaptions" data-slide-to="1" class="rounded-circle"></li>
@@ -179,6 +179,15 @@
                     <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
+              <div class="d-flex">
+                  @foreach ($consulates as $consulate)
+                      @if ($consulate->slug != "espana")
+                          <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
+                      @endif
+                  @endforeach
               </div>
             </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
@@ -218,6 +227,15 @@
                 </div>
               </div>
             </div>
+            <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
+              <div class="d-flex">
+                  @foreach ($consulates as $consulate)
+                      @if ($consulate->slug != "espana")
+                          <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
+                      @endif
+                  @endforeach
+              </div>
+            </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
@@ -253,6 +271,15 @@
                 </div>
               </div>
             </div>
+            <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
+              <div class="d-flex">
+                  @foreach ($consulates as $consulate)
+                      @if ($consulate->slug != "espana")
+                          <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
+                      @endif
+                  @endforeach
+              </div>
+            </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
@@ -286,6 +313,15 @@
                     <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
+              <div class="d-flex">
+                  @foreach ($consulates as $consulate)
+                      @if ($consulate->slug != "espana")
+                          <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
+                      @endif
+                  @endforeach
               </div>
             </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
