@@ -9,9 +9,13 @@
     <meta name="robots" content="index, follow, snippet">
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    {{-- link para la tipografia montserrat --}}
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <style>
         @media screen and (max-width: 580px){
-            .titulo{margin-top: 15%;}
+            .titulo{margin-top: 15%; font-size: 25px !important}
+            .txtgestion{font-size: 15px; letter-spacing: 0px !important;}
             .first-row{padding-bottom: 15px;}
             /* #sectionthree{min-width: 110vw;min-height: 130vh;} */
             #imgApostille{padding-top: 5%;}
@@ -70,6 +74,7 @@
         input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
         .add-services{box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px !important;}
         .add-services:hover{box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;}
+        .font-family-montserrat{font-family: 'Montserrat'};
     </style>
     <script type="text/javascript">
 
@@ -140,18 +145,107 @@
 
 @section('content')
     <section id="prisection" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
-        <div class="row justify-content-center align-items-center" style="min-height: @if($isMobile) 465px @else 550px @endif;background:rgba(2, 2, 2, 0.5)">
-            <div class="col text-center">
-                <h1 class="font-weight-bold heading-title titulo">Notaría Pública Latina <br> en {{ $data['office'] }}</h1>
-                <p class="text-white heading-title" style="font-size: 25px">Gestión rápida y segura!</p>
-                <a id="btnFirstIniciarTramite" href="#iniciarTramite" class="btn" style="background-color: #ffc107">Iniciar Trámite</a>
+        <div class="row justify-content-center align-items-center position-relative" style="min-height: @if($isMobile) 465px @else 550px @endif;background:rgba(2, 2, 2, 0.5)">
+            <div class="col text-center justify-content-center">
+                <img class="mt-5" width="100px" src="{{asset('img/iso2.png')}}" alt="">
+                <h1 class="font-weight-bold heading-title titulo mt-4" style="font-size: 50px"><i class="fas fa-map-marker-alt" style="color: #FFBE32"></i> Notaría Latina en {{ $data['office'] }}</h1>
+                <div class="d-flex justify-content-center mt-3">
+                    <div class="w-auto">
+                        <p class="text-white heading-title rounded-pill font-family-montserrat px-2 font-weight-bold txtgestion" style="background-color: #FFBE32; color: #2B384D !important; letter-spacing: 10px">GESTIÓN RÁPIDA Y FÁCIL</p>
+                    </div>
+                </div>
+                <button id="btnFirstIniciarTramite" href="#iniciarTramite" class="btn btn-outline-warning rounded-pill mt-4 font-family-montserrat" style="color: #ffffff">INICIAR TRÁMITE</button>
+                <div class="d-flex justify-content-center mt-5">
+                    <div class="d-flex">
+                        @foreach ($consulates as $consulate)
+                            @if ($consulate->slug != "espana")
+                                <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <div class="position-absolute" style="top: 65px; right: 25px;">
+                <a class="text-warning h5" href="tel:{{$data['telfHidden']}}" style="font-weight: bols;" onclick="gtag_report_conversion('tel:{{$data['telfHidden']}}');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
+                    <i class="fa fa-phone-square-alt"></i> {{$data['telfShow']}}
+                </a>
             </div>
         </div>
     </section>
+    <div style="background-color: #FFBE32; height: 10px">
+
+    </div>
 
     <section class="pt-5 pb-5" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <h2 class="text-center w-100 pb-4" style="color: #122944">Nuestros Servicios</h2>
         <div style="margin-left: 20%; margin-right: 20%">
+
+            {{-- nuevo div de servicios --}}
+
+            {{-- <div class="row">
+                <div class="col-sm-4">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-1" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                            </div>
+                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">PODERES</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices ">Es un documento legal con el objetivo de otorgar control</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-1" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                            </div>
+                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">APOSTILLAS</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices ">Constatar la veracidad de documentos públicos expedidos en otro país</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-1" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                            </div>
+                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">TRADUCCIONES</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices ">Textos de un idioma a otro diferente, sirven para gestionar trámites fuera del país de origen</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-1" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                            </div>
+                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">CERTIFICACIONES</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices">Mediante este se manifiesta que la copia realizada es verídica copia del documento original</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> --}}
+            {{-- termina nuevo div de servicios --}}
+
             <div class="row">
                 <div data-aos="fade-right" class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center">
                     <a style="text-decoration: none; color: #000000" href="{{ route('web.oficina.'.Str::lower(Str::studly($data['office'])), 'poder-notarial-'.Str::slug($data['office'])) }}">

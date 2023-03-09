@@ -1057,7 +1057,9 @@ class WebController extends Controller
             $data['more_reviews'] = $this->more_reviewsny;
             $data['urlindications'] = "https://www.google.com/maps/dir//Notar%C3%ADa+Latina+en+New+York+67-03+Roosevelt+Ave+Queens,+NY+11377+Estados+Unidos/@40.746366,-73.897921,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x89c25f030415024b:0x3b391bcaf4cd7c10";
 
-            return view('web.oficina', compact('data'));
+            $consulates = DB::table('consulates')->select('slug')->get();
+
+            return view('web.oficina', compact('data', 'consulates'));
         }
     }
 
@@ -1821,7 +1823,9 @@ class WebController extends Controller
             $data['more_reviews'] = $this->more_reviewsnj;
             $data['urlindications'] = "https://www.google.com/maps/dir//Notar%C3%ADa+Latina+en+New+Jersey+1146+E+Jersey+St+Elizabeth,+NJ+07201+Estados+Unidos/@40.6648184,-74.2132981,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c24dde7100d355:0x9998b8cdec575153!2m2!1d-74.2132981!2d40.6648184";
 
-            return view('web.oficina', compact('data'));
+            $consulates = DB::table('consulates')->select('slug')->get();
+
+            return view('web.oficina', compact('data', 'consulates'));
         }
     }
 
@@ -2393,7 +2397,9 @@ class WebController extends Controller
             $data['more_reviews'] = $this->more_reviewsfl;
             $data['urlindications'] = "https://www.google.com/maps/dir//Notar%C3%ADa+Latina+en+Florida+2104+N+University+Dr+Sunrise,+FL+33322+Estados+Unidos/@26.1509895,-80.256546,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x88d9072fab0cb6ff:0xb16f5b7ffcc06be4";
 
-            return view('web.oficina', compact('data'));
+            $consulates = DB::table('consulates')->select('slug')->get();
+
+            return view('web.oficina', compact('data', 'consulates'));
         }
     } 
 
