@@ -12,7 +12,7 @@
         }, 3000);
     </script>
 
-    <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon" />
+    <link rel="icon" href="{{asset('faviconotarialatina-22.png')}}" type="image/x-icon" />
     {{-- <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet"> --}}
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="preload" href="{{asset('css/styles.min.css')}}" as="style" onload="this.rel='stylesheet'">
