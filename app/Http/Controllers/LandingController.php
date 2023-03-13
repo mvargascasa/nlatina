@@ -182,7 +182,7 @@ class LandingController extends Controller
                 $header .= 'From: <'.$from.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
                 //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
             }
@@ -210,7 +210,7 @@ class LandingController extends Controller
                         case 'web.revocatorias': $page = 'revocatoria_general'; break;
                         case 'web.testamentos': $page = 'testamentos_general'; break; 
                         case 'web.contactenos': $page = strtolower(str_replace(' ', '_', $request->service)) . '_contact'; break;
-                        case 'post.slug': $page = 'lead_post';break;
+                        case 'post.slug': $page = 'lead_post'; break;
                         default: $page = 'lead_'.$from; break;
                     }
                 } else {
