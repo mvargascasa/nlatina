@@ -210,7 +210,7 @@ class LandingController extends Controller
                         case 'web.revocatorias': $page = 'revocatoria_general'; break;
                         case 'web.testamentos': $page = 'testamentos_general'; break; 
                         case 'web.contactenos': $page = strtolower(str_replace(' ', '_', $request->service)) . '_contact'; break;
-                        case 'post_slug': $page = 'lead_post';break;
+                        case 'post.slug': $page = 'lead_post';break;
                         default: $page = 'lead_'.$from; break;
                     }
                 } else {
