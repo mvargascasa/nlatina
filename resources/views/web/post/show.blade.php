@@ -47,15 +47,15 @@
     <div class="container pt-4" style="font-family: 'Roboto' !important">
         <div class="row mt-2 mb-2 ml-1">
             <div class="col-sm-6 border-left">
-                <p class="d-flex align-items-center"><img class="lazy" width="20" height="20" data-src="{{ asset('img/calendar.webp') }}" alt="..."><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
+                <p class="d-flex align-items-center"><i class="fas fa-calendar"></i><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
             </div>
             @isset($post->reading_time)
             <div class="col-sm-6 border-left">
-                <p class="d-flex align-items-center"><img class="lazy" width="20" height="20" data-src="{{ asset('img/reloj.webp') }}" alt="..."><b style="font-weight: 500" class="ml-1 mr-1">Tiempo de Lectura:</b> {{ $post->reading_time}} min.</p>
+                <p class="d-flex align-items-center"><i class="fas fa-clock"></i><b style="font-weight: 500" class="ml-1 mr-1">Tiempo de Lectura:</b> {{ $post->reading_time}} min.</p>
             </div>
             @endisset
         </div>
-        <h1 id="title" class="font-weight-bold heading-title">{{$post->name}}</h1>
+        <h1 id="title" class="font-weight-bold heading-title text-center mt-4 mb-4">{{$post->name}}</h1>
         <div class="row">
             <div class="col-12" style="text-align: justify">
                 <img id="imgBlog" class="p-4 float-right img-fluid lazy" width="500" height="100%" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
