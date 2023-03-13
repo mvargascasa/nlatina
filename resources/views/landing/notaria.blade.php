@@ -98,14 +98,14 @@
                   <option value="Otro">Otro</option>
                 </select>
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <select name="office" id="office" class="form-control" required>
                   <option value="">¿En qué oficina necesita realizar el trámite?</option>
                   <option value="New York">New York</option>
                   <option value="New Jersey"> New Jersey</option>
                   <option value="Florida">Florida</option>
                 </select>
-              </div>
+              </div> --}}
               <div class="form-group">
                 {{-- <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje" maxlength="100" autocomplete="off" required> --}}
                 <textarea name="ddd" id="ddd" class="form-control" rows="3" placeholder="Mensaje" maxlength="100" autocomplete="off" required></textarea>
