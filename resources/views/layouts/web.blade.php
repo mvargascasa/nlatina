@@ -194,7 +194,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
     </noscript>
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #2B384D !important; color: #ffffff !important">
+        <nav class="navbar navbar-expand-lg" style="background-color: #2B384D;">
           <div class="d-flex flex-grow-1">
               <span class="w-100 d-lg-none d-block">
                   <a class="navbar-brand" href="{{route('web.index')}}">
@@ -207,8 +207,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </a>
               <div class="w-100 text-right mt-1">
                   <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#myNavbar">
-                    <i class="fas fa-bars" style="color: #122944"></i>
-                      {{-- <span class="navbar-toggler-icon" style="background-color: #000000 !important; color: #ffffff !important"></span> --}}
+                    <i class="fas fa-bars" style="color: #122944;"></i>
+                      {{-- <span class="navbar-toggler-icon"></span> --}}
                   </button>
               </div>
           </div>
