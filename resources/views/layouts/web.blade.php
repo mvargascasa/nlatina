@@ -33,7 +33,7 @@ if(strpos($actual_link, 'localhost') === false){
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-NXP3WCV');    
-    }, 3000);
+    }, 3500);
     </script>
     <!-- End Google Tag Manager -->
 
@@ -54,7 +54,7 @@ if(strpos($actual_link, 'localhost') === false){
 
         gtag('config', 'UA-124437679-3');
         gtag('config', 'AW-702844945');
-    }, 3000);
+    }, 3500);
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -483,7 +483,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                             <div class="float-right mr-1" onclick="openchat()" style="cursor: pointer"><i class="fas fa-times-circle"></i></div>
                         </div>
                         <div style="position: relative;">
-                            <img class="img-fluid" src="{{asset('img/whatsapp-wallpaper.jpg')}}" alt="whatsapp de notaria latina">
+                            <img class="img-fluid lazy" data-src="{{asset('img/whatsapp-wallpaper.jpg')}}" alt="whatsapp de notaria latina">
                             <div style="position: absolute; top: 0px; left: 0px; color: #000000" class="w-100 h-100 pl-2 mt-2">
                                 <div><a href="https://api.whatsapp.com/send?phone=13479739888" class="bg-white px-2 rounded-pill">New York <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
                                 <div class="mt-1"><a href="https://api.whatsapp.com/send?phone=19088009046" class="bg-white px-2 rounded-pill">New Jersey  <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
@@ -512,8 +512,8 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div>
         <div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 20px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
             <a href="tel:@yield('phoneNumberHidden')">
-                <img width="20" height="20" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina">
-                {{-- <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i> --}}
+                {{-- <img width="20" height="20" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina"> --}}
+                <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i>
             </a>
         </div>
 </footer>
