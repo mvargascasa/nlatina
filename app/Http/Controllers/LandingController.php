@@ -210,6 +210,7 @@ class LandingController extends Controller
                         case 'web.revocatorias': $page = 'revocatoria_general'; break;
                         case 'web.testamentos': $page = 'testamentos_general'; break; 
                         case 'web.contactenos': $page = strtolower(str_replace(' ', '_', $request->service)) . '_contact'; break;
+                        case 'post_slug': $page = 'lead_post';break;
                         default: $page = 'lead_'.$from; break;
                     }
                 } else {
@@ -303,7 +304,7 @@ class LandingController extends Controller
                 $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
             }
