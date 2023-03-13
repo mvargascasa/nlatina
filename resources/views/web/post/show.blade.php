@@ -12,11 +12,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" as="style" onload="this.rel='stylesheet'">
+    {{-- <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" as="style" onload="this.rel='stylesheet'"> --}}
 
     <style>
         /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap'); */
-        @font-face{font-family: 'Roboto',sans-serif !important} */
+        body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
         h2{font-size: 25px !important}
         #publishpoder{display: none} #publishcarta{display: none}
         @media screen and (max-width: 580px){
@@ -44,7 +44,7 @@
         </div>
     </section>
 
-    <div class="container pt-4" style="font-family: 'Roboto' !important">
+    <div class="container pt-4">
         <div class="row mt-2 mb-2 ml-1">
             <div class="col-sm-6 border-left">
                 <p class="d-flex align-items-center"><i class="fas fa-calendar"></i><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-12" style="text-align: justify">
                 <img id="imgBlog" class="p-4 float-right img-fluid lazy" width="500" height="100%" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
-                <div class="mt-3" style="font-family: 'Roboto', Times, serif">
+                <div class="mt-3">
                     <?php echo htmlspecialchars_decode($post->body)?>
                 </div>
             </div>
