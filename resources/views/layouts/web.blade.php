@@ -207,8 +207,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </a>
               <div class="w-100 text-right mt-1">
                   <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#myNavbar">
-                    {{-- <i class="fas fa-bars" style="color: #122944;"></i> --}}
-                      <span class="navbar-toggler-icon"></span>
+                    <i class="fas fa-bars" style="color: #122944;"></i>
+                      {{-- <span class="navbar-toggler-icon"></span> --}}
                   </button>
               </div>
           </div>
@@ -512,8 +512,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div>
         <div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 20px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
             <a href="tel:@yield('phoneNumberHidden')">
-                {{-- <img width="20" height="20" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina"> --}}
-                <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i>
+                <img width="20px" height="20px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞">
             </a>
         </div>
 </footer>
