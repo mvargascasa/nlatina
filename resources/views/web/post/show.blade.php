@@ -55,7 +55,7 @@
             </div>
             @endisset
         </div>
-        <h1 id="title" class="font-weight-bold heading-title text-center mt-4 mb-4">{{$post->name}}</h1>
+        <h1 id="title" class="text-center mt-4 mb-4">{{$post->name}}</h1>
         <div class="row">
             <div class="col-12" style="text-align: justify">
                 <img id="imgBlog" class="p-4 float-right img-fluid lazy" width="500" height="100%" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
