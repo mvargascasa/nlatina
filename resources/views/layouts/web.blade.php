@@ -207,12 +207,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </a>
               <div class="w-100 text-right mt-1">
                   <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#myNavbar">
-                    <i class="fas fa-bars" style="color: #122944;"></i>
-                      {{-- <span class="navbar-toggler-icon"></span> --}}
+                    {{-- <i class="fas fa-bars" style="color: #122944;"></i> --}}
+                      <span class="navbar-toggler-icon"></span>
                   </button>
               </div>
           </div>
-          <div class="collapse navbar-collapse flex-grow-1" id="myNavbar">
+          <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
               <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative; background-color: #2B384D;">
                   <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.index')}}">Inicio</a> </li>
                   <li class="nav-item dropdown">
