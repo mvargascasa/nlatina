@@ -30,7 +30,7 @@
         }
         .card:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;}
         .sticky {position: -webkit-sticky; position: sticky; top: 10px;}
-        @media screen and (max-width: 580px){.personalized-container{padding-left: 5px !important; padding-right: 5px !important}}
+        @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
         @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
         .personalized-container{padding-left: 150px; padding-right: 150px};
     </style>
