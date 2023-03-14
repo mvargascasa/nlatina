@@ -47,11 +47,11 @@
     <div class="container pt-4">
         <div class="row mt-2 mb-2 ml-1">
             <div class="col-sm-6 border-left">
-                <p class="d-flex align-items-center"><i class="fas fa-calendar"></i><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
+                <p class="d-flex align-items-center"><img class="lazy" data-src="{{asset('img/calendar.png')}}" width="20px" height="20px" alt=""><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
             </div>
             @isset($post->reading_time)
             <div class="col-sm-6 border-left">
-                <p class="d-flex align-items-center"><i class="fas fa-clock"></i><b style="font-weight: 500" class="ml-1 mr-1">Tiempo de Lectura:</b> {{ $post->reading_time}} min.</p>
+                <p class="d-flex align-items-center"><img class="lazy" data-src="{{asset('img/reloj.png')}}" width="20px" height="20px" alt=""><b style="font-weight: 500" class="ml-1 mr-1">Tiempo de Lectura:</b> {{ $post->reading_time}} min.</p>
             </div>
             @endisset
         </div>
