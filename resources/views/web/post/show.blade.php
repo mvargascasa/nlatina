@@ -76,7 +76,7 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
                 <div class="px-3 py-3 text-white rounded shadow sticky mt-3" style="background-color: #2B384D; font-size: 13px;">
-                    <p class="h6 text-center">Agende una cita en línea</p>
+                    <p class="h6 text-center">¿Necesita realizar un trámite notarial?</p>
                     <p>Complete la información y un asesor se contactará con usted</p>
                     @include('z-form')
                 </div>
