@@ -8,11 +8,11 @@
     <div class="form-group w-100">
         {!! Form::hidden('url_current', $url_name) !!}
         {!! Form::label('fname', 'Nombres:') !!}
-        {!! Form::text('fname', null, ['class' => 'form-control', 'required']) !!}
+        {!! Form::text('fname', null, ['class' => 'form-control rounded-0', 'required']) !!}
     </div>
     <div class="form-group w-100 ml-1">
         {!! Form::label('lname', 'Apellidos:') !!}
-        {!! Form::text('lname', null, ['class' => 'form-control', 'required']) !!}
+        {!! Form::text('lname', null, ['class' => 'form-control rounded-0', 'required']) !!}
     </div>
 </div>
 
@@ -40,18 +40,18 @@
         '+1 809' => 'República Dominicana',
         '+598' => 'Uruguay',
         '+58' => 'Venezuela'
-    ], null, ['class' => 'form-control custom-select', 'id' => 'sel_country', 'required']) !!}
+    ], null, ['class' => 'form-control custom-select rounded-0', 'id' => 'sel_country', 'required']) !!}
 </div>
 
 {!! Form::label('tlf', 'Teléfonos:') !!}
 <div class="form-group d-flex">
-    {!! Form::text('cod', null, ['class' => 'form-control', 'style' => 'border-radius: 5px 0px 0px 5px; width: 25%; background-color: #ffffff', 'id' => 'cod_country', 'readonly']) !!}
-    {!! Form::number('tlf', null, ['class' => 'form-control','rows' => '2', 'style' => 'border-radius: 0px 5px 5px 0px; width: 100%', 'required']) !!}
+    {!! Form::text('cod', null, ['class' => 'form-control rounded-0', 'style' => 'border-radius: 5px 0px 0px 5px; width: 25%; background-color: #ffffff', 'id' => 'cod_country', 'readonly']) !!}
+    {!! Form::number('tlf', null, ['class' => 'form-control rounded-0','rows' => '2', 'style' => 'border-radius: 0px 5px 5px 0px; width: 100%', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('email', 'Email:') !!}
-    {!! Form::email('email', null, ['class' => 'form-control','rows' => '2', 'required']) !!}
+    {!! Form::email('email', null, ['class' => 'form-control rounded-0','rows' => '2', 'required']) !!}
 </div>
 
 @php
@@ -84,7 +84,7 @@
                                     'Revocatorias'=>'Revocatorias',
                                     'Testamentos'=>'Testamentos',
                                     'Otro'=>'Otro']
-        ,    null,    ['class' => 'form-control custom-select', 'required']) !!}
+        ,    null,    ['class' => 'form-control custom-select rounded-0', 'required']) !!}
     </div>
 @endif
 {{-- @if(Request::is('post/*'))
@@ -96,7 +96,7 @@
 
 <div class="form-group">
     {!! Form::label('message', 'Comentario:') !!}
-    {!! Form::textarea('message', null, ['class' => 'form-control', 'maxlength'=>"100", 'rows' => '2', 'id' => 'message', 'required']) !!}
+    {!! Form::textarea('message', null, ['class' => 'form-control rounded-0', 'maxlength'=>"100", 'rows' => '2', 'id' => 'message', 'required']) !!}
 </div>
 
 <div class="form-group">

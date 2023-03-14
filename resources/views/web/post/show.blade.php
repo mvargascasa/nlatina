@@ -29,6 +29,10 @@
             #publishpoder{display: block} #publishcarta{display: block}
         }
         .card:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;}
+        .sticky {position: -webkit-sticky; position: sticky; top: 10px;}
+        @media screen and (max-width: 580px){.personalized-container{padding-left: 10px !important; padding-right: 10px !important}}
+        @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
+        .personalized-container{padding-left: 150px; padding-right: 150px};
     </style>
 @endsection
 
@@ -44,7 +48,7 @@
         </div>
     </section>
 
-    <div class="container pt-4">
+    <div class="pt-4 personalized-container">
         <div class="row mt-2 mb-2 ml-1">
             <div class="col-sm-6 border-left">
                 <p class="d-flex align-items-center"><img class="lazy" data-src="{{asset('img/calendar.png')}}" width="20px" height="20px" alt=""><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
@@ -55,23 +59,30 @@
             </div>
             @endisset
         </div>
-        <h1 id="title" class="text-center mt-4 mb-4">{{$post->name}}</h1>
+        <h1 id="title" class="text-center mt-4 mb-5">{{$post->name}}</h1>
         <div class="row">
-            <div class="col-12" style="text-align: justify">
+            <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9" style="text-align: justify">
                 <img id="imgBlog" class="p-4 float-right img-fluid lazy" width="500" height="100%" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
                 <div class="mt-3">
                     <?php echo htmlspecialchars_decode($post->body)?>
                 </div>
+                @isset($post->srcvideo)
+                    <div class="row mt-5 mb-5">
+                        <div class="col-12 d-flex justify-content-center">
+                            <iframe id="iframevideo" width="560" height="315" title="{{ $post->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                @endisset
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
+                <div class="px-3 py-3 text-white rounded shadow sticky mt-3" style="background-color: #2B384D; font-size: 13px;">
+                    <p class="h6 text-center">Agende una cita en línea</p>
+                    <p>Complete la información y un asesor se contactará con usted</p>
+                    @include('z-form')
+                </div>
             </div>
         </div>
         {{-- video row --}}
-        @isset($post->srcvideo)
-            <div class="row mt-5 mb-5">
-                <div class="col-12 d-flex justify-content-center">
-                    <iframe id="iframevideo" width="560" height="315" title="{{ $post->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-        @endisset
 
         {{-- share row --}}
         <hr style="width: 40%">
@@ -111,7 +122,7 @@
                 @endforeach
             </div>
 
-            <div class="mt-4">
+            {{-- <div class="mt-4">
                 <h2 class="text-center">¿Necesita realizar un trámite notarial?</h2>
                 <p style="font-weight: 300; font-size: 20px" class="text-center mb-4">Gestionamos el proceso de una manera correcta y diligente.</p>
                 <div class="row justify-content-center">
@@ -127,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
     </div>
 
     {{-- @if(isset($post) && $post->id == 95)
