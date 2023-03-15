@@ -193,9 +193,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <noscript>
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
     </noscript>
-
     <header>
-        <nav class="navbar navfoot navbar-dark navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg" style="background-color: #2B384D;">
           <div class="d-flex flex-grow-1">
               <span class="w-100 d-lg-none d-block">
                   <a class="navbar-brand" href="{{route('web.index')}}">
@@ -207,17 +206,17 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                   <img src="{{asset('img/marca-notaria-latina.webp')}}" width="140px" height="30px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
                 </a>
               <div class="w-100 text-right mt-1">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
-                    {{-- <i class="fas fa-bars" style="color: #122944;"></i> --}}
-                      <span class="navbar-toggler-icon"></span>
+                  <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#myNavbar">
+                    <i class="fas fa-bars" style="color: #122944;"></i>
+                      {{-- <span class="navbar-toggler-icon"></span> --}}
                   </button>
               </div>
           </div>
           <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
-              <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative; background-color: #333;">
-                  <li class="nav-item"> <a class="nav-link" href="{{route('web.index')}}">Inicio</a> </li>
+              <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative; background-color: #2B384D;">
+                  <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.index')}}">Inicio</a> </li>
                   <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                      <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
                         id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -255,7 +254,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 @endphp
 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+    <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
         id="DropConsul" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulados en NY</a>
 
         <ul class="dropdown-menu" aria-labelledby="DropConsul">
@@ -265,11 +264,11 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
         </ul>
 </li> 
-                <li class="nav-item"> <a class="nav-link" href="{{route('post.blog')}}">Blog</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="{{route('web.videos')}}">Videos</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('web.showallpartners') }}">Partners</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{route('web.nosotros')}}">Sobre Nosotros</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
+                <li class="nav-item"> <a class="nav-link text-white" href="{{route('post.blog')}}">Blog</a> </li>
+                <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.videos')}}">Videos</a> </li>
+                <li class="nav-item"> <a class="nav-link text-white" href="{{ route('web.showallpartners') }}">Partners</a></li>
+                <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.nosotros')}}">Sobre Nosotros</a> </li>
+                <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
                   {{-- <li class="nav-item"><a class="nav-link" href="{{ route('partners.registro') }}">Registrarse</a></li> --}}
               </ul>
           </div>
