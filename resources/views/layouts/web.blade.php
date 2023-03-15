@@ -207,9 +207,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                   <img src="{{asset('img/marca-notaria-latina.webp')}}" width="140px" height="30px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
                 </a>
               <div class="w-100 text-right mt-1">
-                  <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#myNavbar">
-                    <i class="fas fa-bars" style="color: #122944;"></i>
-                      {{-- <span class="navbar-toggler-icon"></span> --}}
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                    {{-- <i class="fas fa-bars" style="color: #122944;"></i> --}}
+                      <span class="navbar-toggler-icon"></span>
                   </button>
               </div>
           </div>
