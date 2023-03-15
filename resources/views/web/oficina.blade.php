@@ -148,15 +148,15 @@
 @section('content')
     <section id="prisection" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <div class="row justify-content-center align-items-center position-relative" style="min-height: @if($isMobile) 490px @else 550px @endif;background:rgba(2, 2, 2, 0.5)">
-            <div class="col-12 text-center">
+            <div class="col text-center justify-content-center">
                 <img class="mt-5" width="100px" height="90px" src="{{asset('img/iso2.png')}}" alt="">
                 <h1 class="titulo mt-4" style="font-size: 50px"><i class="fas fa-map-marker-alt" style="color: #FFB832"></i> Notaría Latina en {{ $data['office'] }}</h1>
                 <div class="d-flex justify-content-center mt-3">
                     <div class="w-auto">
-                        <p class="text-white rounded-pill px-2 font-family-montserrat font-weight-bold txtgestion" style="background-color: #FFB832; color: #2B384D !important; letter-spacing: 10px">GESTIÓN RÁPIDA Y FÁCIL</p>
+                        <p class="text-white rounded-pill px-2 font-weight-bold txtgestion" style="background-color: #FFB832; color: #2B384D !important; letter-spacing: 10px">GESTIÓN RÁPIDA Y FÁCIL</p>
                     </div>
                 </div>
-                <button id="btnFirstIniciarTramite" href="#iniciarTramite" class="btn btn-outline-warning rounded-pill mt-4 font-family-montserrat" style="color: #ffffff">INICIAR TRÁMITE</button>
+                <button id="btnFirstIniciarTramite" href="#iniciarTramite" class="btn btn-outline-warning rounded-pill mt-4" style="color: #ffffff">INICIAR TRÁMITE</button>
                 <div class="d-flex justify-content-center mt-5">
                     <div class="d-flex">
                         @foreach ($consulates as $consulate)
