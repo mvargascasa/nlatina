@@ -46,7 +46,7 @@
             .col-sm-8{margin-left: 40px !important; margin-right: 40px !important}
         }
         .titulo{color: white;font-weight: bold;}
-        i{color:#9A7A2E;}
+        i{color:#2B384D;}
         .checks > p{color: #143b6b;}
         .checks > .row > .col > p{color: #143b6b;}
         /* #sectionthree{width: 100vw;height: auto;} */
@@ -57,11 +57,13 @@
         .grow:hover > img{-webkit-transform: scale(1.2);-ms-transform: scale(1.2);transform: scale(1.2);transition: 1s ease;}
         .card-footer:hover{background-color: #ece8e3 !important;-webkit-transition: 600ms !important;-webkit-transform: initial !important;}
         #colService:hover{background-color: #ece8e3;-webkit-transition: 600ms;-webkit-transform: initial;}
+        /* .linkServices{color: #2B384D;} */
         .linkServices{color: #d4aa41;}
         #linkServices:hover .linkServices{color: #ffffff;}
         #linkServices:hover{background-color: #122944}
         #linkServices:hover > .border {background-color: #ffffff}
         #linkServices:hover .imgServices {filter: grayscale(1);-webkit-transform: scale(1.2);-ms-transform: scale(1.2);transform: scale(1.2);transition: 1s ease;}
+        /* #linkServices:hover .imgServices {filter: brightness(0) invert(1);}  */
         #svgwpp{bottom: 75px !important;right: 0px !important;}
         #iconcall{bottom: 20px !important; }
         .grecaptcha-badge { visibility: hidden; }
@@ -145,13 +147,13 @@
 
 @section('content')
     <section id="prisection" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
-        <div class="row justify-content-center align-items-center position-relative" style="min-height: @if($isMobile) 465px @else 550px @endif;background:rgba(2, 2, 2, 0.5)">
+        <div class="row justify-content-center align-items-center position-relative" style="min-height: @if($isMobile) 490px @else 550px @endif;background:rgba(2, 2, 2, 0.5)">
             <div class="col text-center justify-content-center">
-                <img class="mt-5" width="100px" src="{{asset('img/iso2.png')}}" alt="">
-                <h1 class="font-weight-bold heading-title titulo mt-4" style="font-size: 50px"><i class="fas fa-map-marker-alt" style="color: #FFBE32"></i> Notaría Latina en {{ $data['office'] }}</h1>
+                <img class="mt-5" width="100px" height="90px" src="{{asset('img/iso2.png')}}" alt="">
+                <h1 class="font-weight-bold heading-title titulo mt-4" style="font-size: 50px"><i class="fas fa-map-marker-alt" style="color: #FFB832"></i> Notaría Latina en {{ $data['office'] }}</h1>
                 <div class="d-flex justify-content-center mt-3">
                     <div class="w-auto">
-                        <p class="text-white heading-title rounded-pill font-family-montserrat px-2 font-weight-bold txtgestion" style="background-color: #FFBE32; color: #2B384D !important; letter-spacing: 10px">GESTIÓN RÁPIDA Y FÁCIL</p>
+                        <p class="text-white heading-title rounded-pill font-family-montserrat px-2 font-weight-bold txtgestion" style="background-color: #FFB832; color: #2B384D !important; letter-spacing: 10px">GESTIÓN RÁPIDA Y FÁCIL</p>
                     </div>
                 </div>
                 <button id="btnFirstIniciarTramite" href="#iniciarTramite" class="btn btn-outline-warning rounded-pill mt-4 font-family-montserrat" style="color: #ffffff">INICIAR TRÁMITE</button>
@@ -165,16 +167,14 @@
                     </div>
                 </div>
             </div>
-            <div class="position-absolute" style="top: 65px; right: 25px;">
+            <div class="position-absolute" style="top: 8px; right: 43px !important;">
                 <a class="text-warning h5" href="tel:{{$data['telfHidden']}}" style="font-weight: bols;" onclick="gtag_report_conversion('tel:{{$data['telfHidden']}}');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
-                    <i class="fa fa-phone-square-alt"></i> {{$data['telfShow']}}
+                    <i class="fa fa-phone-square-alt" style="color: #FFB832"></i> {{$data['telfShow']}}
                 </a>
             </div>
         </div>
     </section>
-    <div style="background-color: #FFBE32; height: 10px">
-
-    </div>
+    <div style="background-color: #FFB832; height: 10px"></div>
 
     <section class="pt-5 pb-5" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <h2 class="text-center w-100 pb-4" style="color: #122944">Nuestros Servicios</h2>
@@ -182,12 +182,12 @@
 
             {{-- nuevo div de servicios --}}
 
-            {{-- <div class="row">
-                <div class="col-sm-4">
+            {{-- <div class="row justify-content-center">
+                <div class="col-sm-4 col-12 mt-3">
                     <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
                         <div class="d-flex align-items-center h-100">
                             <div class="d-flex justify-content-center align-items-center">
-                                <img class="lazy imgServices ml-1" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/poderes.png')}}" alt="">
                             </div>
                             <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
                             <div class="pt-1 pr-3">
@@ -198,13 +198,13 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4">
-                    <div class="card" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
-                        <div class="d-flex align-items-center">
+                <div class="col-sm-4 mt-3">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
                             <div class="d-flex justify-content-center align-items-center">
-                                <img class="lazy imgServices ml-1" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/apostilla.png')}}" alt="">
                             </div>
-                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="mx-3" style="width: 4px; height: 60px; background-color: #FFBE32"></div>
                             <div class="pt-1 pr-3">
                                 <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">APOSTILLAS</h3>
                                 <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices ">Constatar la veracidad de documentos públicos expedidos en otro país</i></p>
@@ -213,31 +213,136 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4">
-                    <div class="card" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
-                        <div class="d-flex align-items-center">
+                <div class="col-sm-4 mt-3">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
                             <div class="d-flex justify-content-center align-items-center">
-                                <img class="lazy imgServices ml-1" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/traducciones.png')}}" alt="">
                             </div>
-                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="mx-3" style="width: 4px; height: 60px; background-color: #FFBE32"></div>
                             <div class="pt-1 pr-3">
                                 <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">TRADUCCIONES</h3>
-                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices ">Textos de un idioma a otro diferente, sirven para gestionar trámites fuera del país de origen</i></p>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices">Textos de un idioma a otro diferente, sirven para gestionar trámites fuera del país de origen</i></p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-4">
-                    <div class="card" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
-                        <div class="d-flex align-items-center">
+                <div class="col-sm-4 mt-3">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
                             <div class="d-flex justify-content-center align-items-center">
-                                <img class="lazy imgServices ml-1" style="width: 50px; height: 50px" data-src="{{asset('img/oficinas/ICONOS-20.webp')}}" alt="">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px; margin-right: -2px;" data-src="{{asset('img/oficinas/iconos web/certificaciones.png')}}" alt="">
                             </div>
-                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="mx-3" style="width: 10px; height: 60px; background-color: #FFBE32"></div>
                             <div class="pt-1 pr-3">
                                 <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">CERTIFICACIONES</h3>
                                 <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices">Mediante este se manifiesta que la copia realizada es verídica copia del documento original</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset($data['imggrid'])}}" alt="">
+                            </div>
+                            <div class="mx-2" style="width: 4px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">{{ strtoupper($data['txtgrid']) }}</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices">Mediante un juramento ante una autoridad judicial o administrativa asegura la veracidad de algo</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/revocatorias.png')}}" alt="Como hacer una Revocatoria en Estados Unidos">
+                            </div>
+                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">REVOCATORIA</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices">Deja sin efecto un poder otorgado sin antelación</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/acuerdos.png')}}" alt="Como hacer un acuerdo en Estados Unidos">
+                            </div>
+                            <div class="mx-2" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">ACUERDOS</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices">Es un convenio firmado entre dos o más personas</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/cartas.png')}}" alt="Como tramitar una carta de invitacion en Estados Unidos">
+                            </div>
+                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">CARTAS DE INVITACIÓN</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices">Requisito válido que se presenta ante el consulado que lo requiera para la gestión de la visa de turista</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/travel.png')}}" alt="Como hacer una autorizacion de viaje a Estados Unidos">
+                            </div>
+                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">TRAVEL AUTHORIZATION</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices">Nombra a un titular quien será el encargado de viajar con el menor</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/contratos.png')}}" alt="Como hacer una autorizacion de viaje a Estados Unidos">
+                            </div>
+                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">CONTRATOS</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices">Son documentos legales, firmados por dos personas que reflejan los derechos y obligaciones</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                    <div class="card h-100" style="border-color: #FFBE32; border-radius: 25px" id="linkServices">
+                        <div class="d-flex align-items-center h-100">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/testamento.png')}}" alt="Como tramitar un testamento en Estados Unidos">
+                            </div>
+                            <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                            <div class="pt-1 pr-3">
+                                <h3 class="linkServices mt-2 font-family-montserrat" style="font-weight: bold; font-size: 22px">TESTAMENTO</h3>
+                                <p class="font-family-montserrat" style="font-size: 14px"><i class="linkServices">Son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes</i></p>
                             </div>
                         </div>
                     </div>
@@ -421,13 +526,13 @@
     <div data-aos="flip-down" class="pb-5" style="background-color: #F5F4F4">
         <div class="row justify-content-center align-items-center" style="padding-top: 50px">
             <div class="text-center">
-                <i><p class="h2" style="font-weight: bold; font-size: 20px">¿Necesita realizar un trámite de Notaría <br> en {{ $data['office'] }}?</p></i>
-                <p style="font-size: 15px"><b>¡Contáctenos!</b> Estamos seguros que podemos ayudarle</p>
+                <p class="h2 heading-title">¿Necesita realizar un trámite de Notaría <br> en {{ $data['office'] }}?</p>
+                <i><p class="font-family-montserrat" style="font-size: 15px"><b>¡Contáctenos!</b> Estamos seguros que podemos ayudarle</p></i>
             </div>
         </div>
         <div class="row">
             <hr>
-            <a class="btn btn-warning rounded-pill" style="font-weight: bold" href="tel:{{$data['telfHidden']}}"><i style="color: #000000" class="fas fa-phone"></i> LLAMAR {{$data['telfShow']}}</a>
+            <a class="btn btn-warning rounded-pill" style="font-weight: bold" href="tel:{{$data['telfHidden']}}"><i style="color: #000000" class="fas fa-phone"></i> <i>LLAMAR <br> {{$data['telfShow']}}</i> </a>
             <hr>
         </div>
     </div>
