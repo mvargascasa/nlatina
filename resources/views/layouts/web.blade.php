@@ -193,8 +193,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <noscript>
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
     </noscript>
+
     <header>
-        <nav class="navbar navbar-expand-lg" style="background-color: #2B384D;">
+        <nav class="navbar navfoot navbar-dark navbar-expand-lg navbar-light bg-light">
           <div class="d-flex flex-grow-1">
               <span class="w-100 d-lg-none d-block">
                   <a class="navbar-brand" href="{{route('web.index')}}">
@@ -213,7 +214,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
               </div>
           </div>
           <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
-              <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative; background-color: #2B384D;">
+              <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative; background-color: #333;">
                   <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.index')}}">Inicio</a> </li>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
