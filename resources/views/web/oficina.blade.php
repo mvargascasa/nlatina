@@ -148,7 +148,7 @@
 @section('content')
     <section id="prisection" style="background-size: cover; background-position: left top; background-repeat: no-repeat;">
         <div class="row justify-content-center align-items-center position-relative" style="min-height: @if($isMobile) 490px @else 550px @endif;background:rgba(2, 2, 2, 0.5)">
-            <div class="col text-center justify-content-center">
+            <div class="col-12 text-center">
                 <img class="mt-5" width="100px" height="90px" src="{{asset('img/iso2.png')}}" alt="">
                 <h1 class="titulo mt-4" style="font-size: 50px"><i class="fas fa-map-marker-alt" style="color: #FFB832"></i> Notaría Latina en {{ $data['office'] }}</h1>
                 <div class="d-flex justify-content-center mt-3">
