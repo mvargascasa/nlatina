@@ -215,9 +215,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           </div>
           <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
               <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative; background-color: #333;">
-                  <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.index')}}">Inicio</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('web.index')}}">Inicio</a> </li>
                   <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
+                      <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                         id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -255,7 +255,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 @endphp
 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
+    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
         id="DropConsul" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulados en NY</a>
 
         <ul class="dropdown-menu" aria-labelledby="DropConsul">
@@ -265,11 +265,11 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
         </ul>
 </li> 
-                <li class="nav-item"> <a class="nav-link text-white" href="{{route('post.blog')}}">Blog</a> </li>
-                <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.videos')}}">Videos</a> </li>
-                <li class="nav-item"> <a class="nav-link text-white" href="{{ route('web.showallpartners') }}">Partners</a></li>
-                <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.nosotros')}}">Sobre Nosotros</a> </li>
-                <li class="nav-item"> <a class="nav-link text-white" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('post.blog')}}">Blog</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('web.videos')}}">Videos</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('web.showallpartners') }}">Partners</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('web.nosotros')}}">Sobre Nosotros</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
                   {{-- <li class="nav-item"><a class="nav-link" href="{{ route('partners.registro') }}">Registrarse</a></li> --}}
               </ul>
           </div>
