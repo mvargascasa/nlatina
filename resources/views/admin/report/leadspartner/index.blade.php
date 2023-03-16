@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('scripts')
-  
+
 @endsection
 
 @section('content')
@@ -13,12 +13,9 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="card">
-                    <div class="card_header">
-                      Dashboard
-                    </div>
-                    <div class="card-body">
-                      <h1>{{$chart->options['chart_title']}}</h1>
-                      {!! $chart->renderHtml()  !!}
+                    <div class="card_header"></div>
+                    <div class="card-body p-6 m-20 bg-white rounded shadow">
+                      <canvas id="myChart" height="100px"></canvas>
                     </div>
                   </div>
                 </div>
@@ -67,6 +64,42 @@
 @endsection
 
 @section('end-scripts')
-  {!! $chart->renderChartJsLibrary() !!}
-  {!! $chart->renderJs() !!}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script type="text/javascript">
+
+  let labels = {!! $labels !!};
+  let data = {{  $data }};
+
+  let barChartData = {
+        labels: labels,
+        datasets: [{
+            label: 'Customer',
+            backgroundColor: "#002542",
+            data: data
+        }]
+    };
+
+    window.onload = function() {
+        var ctx = document.getElementById("myChart").getContext("2d");
+        window.myBar = new Chart(ctx, {
+            type: 'bar',
+            data: barChartData,
+            options: {
+                elements: {
+                    rectangle: {
+                        borderWidth: 2,
+                        borderColor: '#c1c1c1',
+                        borderSkipped: 'bottom'
+                    }
+                },
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Leads para Abogados'
+                }
+            }
+        });
+    };
+
+</script>
 @endsection

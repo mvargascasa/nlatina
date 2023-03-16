@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Customer;
 use App\Partner;
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
+use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
@@ -19,20 +20,17 @@ class ReportController extends Controller
 
     public function indexleads(){
 
-        $chart_options = [
-            'chart_title' => 'Users by months',
-            'report_type' => 'group_by_date',
-            'model' => 'App\Partner',
-            'group_by_field' => 'created_at',
-            'group_by_period' => 'month',
-            'chart_type' => 'bar',
-        ];
+        $customers = Customer::select(DB::raw("COUNT(*) as count"), DB::raw("MONTHNAME(created_at) as month_name"))
+                    ->whereYear('created_at', date('Y'))
+                    ->groupBy(DB::raw("Month(created_at)"))
+                    ->pluck('count', 'month_name');
 
-        $chart = new LaravelChart($chart_options);
+        $labels = $customers->keys();
+        $data = $customers->values();
 
         $partners = Partner::with('customers')->whereHas('customers')->orderBy('id', 'desc')->get();
 
-        return view('admin.report.leadspartner.index', compact('chart', 'partners'));
+        return view('admin.report.leadspartner.index', compact('partners', 'labels', 'data'));
     }
 
     public function showleadspartner($id){
