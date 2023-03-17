@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 //use App\Conversion;
 use App\Http\Traits\GetCountryByCodTrait;
 use App\Post;
+// use App\Models\Lead;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
+// use Stevebauman\Purify\Facades\Purify;
 
 
 class LandingController extends Controller
@@ -113,7 +115,7 @@ class LandingController extends Controller
     public function thankpost(Request $request)
     {
 
-        
+
         if(isset($request->country)){
             $country = $this->getPaisByCodigo($request->country);
         }
@@ -142,7 +144,7 @@ class LandingController extends Controller
             if ($interest == 'web.oficina.newyork'              || $interest == 'New York')     $sendoffices = ',newyork@notarialatina.com'; //
             else if ($interest == 'web.oficina.newjersey'       || $interest == 'New Jersey')   $sendoffices = ',newjersey@notarialatina.com'; //
             else if ($interest == 'web.oficina.florida'         || $interest == 'Florida')      $sendoffices = ',florida@notarialatina.com'; //
-            else $sendoffices = ",newyork@notarialatina.com";
+            else $sendoffices = ",servicios@notarialatina.com";
 
             // if ($interest == 'web.oficina.newyork'              || $interest == 'New York')     $sendoffices = 'sebas31051999@gmail.com'; //
             // else if ($interest == 'web.oficina.newjersey'       || $interest == 'New Jersey')   $sendoffices = 'sebas25211@hotmail.com'; //
@@ -182,7 +184,7 @@ class LandingController extends Controller
                 $header .= 'From: <'.$from.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
+                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
                 //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
             }
@@ -340,7 +342,7 @@ class LandingController extends Controller
             $interest = $request->interest ?? 'General';
     
             $abrev = "";
-            $sendoffices = ',newyork@notarialatina.com';
+            $sendoffices = ',servicios@notarialatina.com';
             if ($interest == 'General'){             $sendoffices = ',newyork@notarialatina.com';}
             if ($interest == 'Landing New York'){    $sendoffices = ',newyork@notarialatina.com';$abrev='_ny';}
             if ($interest == 'Landing New Jersey'){  $sendoffices = ',newjersey@notarialatina.com';$abrev='_nj';}
@@ -807,4 +809,11 @@ class LandingController extends Controller
         }
         return $pais;
     }
+
+    // public function storelead(Request $request){
+        
+    //     $lead = Lead::create([
+    //         'name' => Purify::clean($request->name),
+    //     ]);
+    // }
 }
