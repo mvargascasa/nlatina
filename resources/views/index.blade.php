@@ -25,8 +25,17 @@
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    {{-- <script>
+      let stylesheet = document.createElement('link');
+      stylesheet.href = "https://fonts.googleapis.com/css?family=Montserrat";
+      stylesheet.rel = 'stylesheet';
+      setTimeout(function () {
+        document.getElementsByTagName('head')[0].appendChild(stylesheet);
+      }, 3000);
+    </script> --}}
+
     {{-- FONT FAMILY MONTSERRAT --}}
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    {{-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> --}}
 
     <script type="text/javascript">
       function callbackThen(response){
@@ -295,22 +304,22 @@
               <img class="img-logo mb-5" width="500" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFB832; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
               </div>
               <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
+                <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFB832 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFB832"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
                   </div>
                 </div>
-                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif" style="border-color: #FFBE32 !important">
+                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif" style="border-color: #FFB832 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newjersey') }}"></i> New Jersey</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFB832"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newjersey') }}"></i> New Jersey</a>
                   </div>
                 </div>
-                <div class="col-sm-4 @if(!$mobile) border-left @endif" style="border-color: #FFBE32 !important">
+                <div class="col-sm-4 @if(!$mobile) border-left @endif" style="border-color: #FFB832 !important">
                   <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
+                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFB832"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
               </div>
