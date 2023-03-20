@@ -64,6 +64,12 @@
           //console.log('ejecutando codigo del recaptcha...');
   }, 3500);
 </script>
+<style>
+  .sticky {position: sticky; top: 10px;}
+  @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
+  @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
+  .personalized-container{padding-left: 150px; padding-right: 150px};
+</style>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -87,38 +93,51 @@
     </div>
   </section>
 
-<div class="container pt-4">
-            <h2 style="font-weight: 500; font-size: 28px">Realizamos Declaraciones Juradas (Affidávit).</h2>
-            <p class="text-muted">Una declaración jurada o Affidávit es una manifestación escrita o verbal cuya veracidad es asegurada mediante un juramento
-                ante una autoridad judicial o administrativa.</p>
-            <p class="text-muted">Esto hace que el contenido de la declaración sea tomado como cierto hasta que se demuestre lo contrario.</p>
-
-            <h2 style="font-weight: 500; font-size: 28px">¿Para que sirve un Affidávit?</h2>
-            <p class="text-muted">Este documento es necesario para algunos trámites de inmigración cuando quieres solicitar que un familiar obtenga la visa o
-                residencia en Estados Unidos.</p>
-            <p class="text-muted">Este documento del affidavit también se conoce entre los migrantes como declaración jurada de sostenimiento, mantenimiento o
-                solvencia económica.</p>
-
-            <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para realizar los acuerdos?</h2>
-            <ul class="text-muted">
-                <li>Identificación válida de la persona que va a realizar la declaración jurada.</li>
-                <li>Información de lo que se quiere dejar estipulado en el documento.</li>
-            </ul>
-
-            <h2 style="font-weight: 500; font-size: 28px">¿Donde puedo realizar un acuerdo?</h2>
-            <p class="text-muted">Acérquese a nuestra oficina y un asesor lo guiará en la gestión del documento para que realice el trámite de manera correcta y segura.</p>
-
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan un Affidávit?</h2>
-        <ul class="text-muted">
-            <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
-            <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
-            <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
-        </ul>
-        <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+<div class="personalized-container pt-4">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9">
+      <h2 style="font-weight: 500; font-size: 28px">Realizamos Declaraciones Juradas (Affidávit).</h2>
+      <p class="text-muted">Una declaración jurada o Affidávit es una manifestación escrita o verbal cuya veracidad es asegurada mediante un juramento
+          ante una autoridad judicial o administrativa.</p>
+      <p class="text-muted">Esto hace que el contenido de la declaración sea tomado como cierto hasta que se demuestre lo contrario.</p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Para que sirve un Affidávit?</h2>
+      <p class="text-muted">Este documento es necesario para algunos trámites de inmigración cuando quieres solicitar que un familiar obtenga la visa o
+          residencia en Estados Unidos.</p>
+      <p class="text-muted">Este documento del affidavit también se conoce entre los migrantes como declaración jurada de sostenimiento, mantenimiento o
+          solvencia económica.</p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para realizar los acuerdos?</h2>
+      <ul class="text-muted">
+          <li>Identificación válida de la persona que va a realizar la declaración jurada.</li>
+          <li>Información de lo que se quiere dejar estipulado en el documento.</li>
+      </ul>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Donde puedo realizar un acuerdo?</h2>
+      <p class="text-muted">Acérquese a nuestra oficina y un asesor lo guiará en la gestión del documento para que realice el trámite de manera correcta y segura.</p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan un Affidávit?</h2>
+      <ul class="text-muted">
+          <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+          <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+          <li>El documento digital estará disponible en 24 horas.</li>
+          <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+      </ul>
+      <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+          <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+          <div class="text-center mb-5">
             <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+          </div>
+    
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
+      <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
+        <p class="text-center h6">¿Necesita realizar una declaración juramentada?</p>
+        <p class="text-center" style="font-size: 14px"><i class="fas fa-check-circle text-warning"></i> Contáctenos y un asesor se comunicará con usted</p>
+        @include('z-form')
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Modal -->
