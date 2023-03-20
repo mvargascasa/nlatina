@@ -63,6 +63,12 @@
           //console.log('ejecutando codigo del recaptcha...');
   }, 3500);
 </script>
+<style>
+  .sticky {position: sticky; top: 10px;}
+  @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
+  @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
+  .personalized-container{padding-left: 150px; padding-right: 150px};
+</style>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -86,44 +92,54 @@
     </div>
   </section>
 
-<div class="container pt-4">
-            <p class="text-muted">Los contratos son un documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada.</p>
-            <p class="text-muted">Este documento le va ayudar a evitar inconvenientes con promesas de «palabra» y así poder hacer cumplir lo que ya se estipuló en el mismo, teniendo así un respaldo legal para hacer valer lo acordado en el contrato.</p>
-
-
-            <h2 style="font-weight: 500; font-size: 28px">¿Qué tipos de contratos puedo realizar?</h2>
-            <ul class="text-muted">
-                <li>Arriendo.</li>
-                <li>Compra-venta.</li>
-                <li>Préstamo de dinero.</li>
-                <li>Prenupcial.</li>
-                <li>Servicios.</li>
-                <li>Transporte.</li>
-            </ul>
-            <p class="text-muted">Todo tipo de contrato está regulado por leyes que obligan a cumplir las cláusulas establecidas en el mismo.</p>
-
-            <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para realizar un contrato?</h2>
-            <ul class="text-muted">
-                <li>Identificación valida de las personas que van a realizar el contrato.</li>
-                <li>Información de lo que se quiere dejar estipulado en el contrato.</li>
-            </ul>
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo realizar un contrato?</h2>
-        <p class="text-muted">Acérquese a nuestra oficina y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
-
-
-
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan los contratos?</h2>
-        <ul class="text-muted">
-            <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
-            <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
-            <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
-        </ul>
-        <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+<div class="personalized-container pt-4">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9">
+      <p class="text-muted">Los contratos son un documentos legales, firmados por dos personas que reflejan los derechos y obligaciones que ambas partes tienen respecto a un negocio o actividad realizada.</p>
+      <p class="text-muted">Este documento le va ayudar a evitar inconvenientes con promesas de «palabra» y así poder hacer cumplir lo que ya se estipuló en el mismo, teniendo así un respaldo legal para hacer valer lo acordado en el contrato.</p>
+  
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Qué tipos de contratos puedo realizar?</h2>
+      <ul class="text-muted">
+          <li>Arriendo.</li>
+          <li>Compra-venta.</li>
+          <li>Préstamo de dinero.</li>
+          <li>Prenupcial.</li>
+          <li>Servicios.</li>
+          <li>Transporte.</li>
+      </ul>
+      <p class="text-muted">Todo tipo de contrato está regulado por leyes que obligan a cumplir las cláusulas establecidas en el mismo.</p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para realizar un contrato?</h2>
+      <ul class="text-muted">
+          <li>Identificación valida de las personas que van a realizar el contrato.</li>
+          <li>Información de lo que se quiere dejar estipulado en el contrato.</li>
+      </ul>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo realizar un contrato?</h2>
+      <p class="text-muted">Acérquese a nuestra oficina y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
+      
+      <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan los contratos?</h2>
+      <ul class="text-muted">
+          <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+          <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+          <li>El documento digital estará disponible en 24 horas.</li>
+          <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+      </ul>
+      <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+          <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+          <div class="text-center mb-5">
             <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+          </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
+      <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
+        <p class="text-center h6">¿Necesita realizar un contrato?</p>
+        <p class="text-center" style="font-size: 14px"><i class="fas fa-file-contract text-warning"></i> Lo ayudamos con este trámite de una manera segura</p>
+        @include('z-form')
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Modal -->
