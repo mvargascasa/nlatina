@@ -9,7 +9,7 @@
         stylesheet.rel = 'stylesheet';
         setTimeout(function () {
             document.getElementsByTagName('head')[0].appendChild(stylesheet);
-        }, 3000);
+        }, 3500);
     </script>
 
     <link rel="icon" href="{{asset('faviconotarialatina-22.png')}}" type="image/x-icon" />
