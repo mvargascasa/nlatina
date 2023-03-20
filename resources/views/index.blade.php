@@ -25,18 +25,6 @@
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    {{-- <script>
-      let stylesheet = document.createElement('link');
-      stylesheet.href = "https://fonts.googleapis.com/css?family=Montserrat";
-      stylesheet.rel = 'stylesheet';
-      setTimeout(function () {
-        document.getElementsByTagName('head')[0].appendChild(stylesheet);
-      }, 3000);
-    </script> --}}
-
-    {{-- FONT FAMILY MONTSERRAT --}}
-    {{-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> --}}
-
     <script type="text/javascript">
       function callbackThen(response){
           // read HTTP status

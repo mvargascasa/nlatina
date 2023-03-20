@@ -593,7 +593,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     let script3 = document.createElement("script");
 
     function downloadJSAtOnload() {
-        document.getElementById('jquery363').src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js";
+        //document.getElementById('jquery363').src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js";
         script3.src = "{{asset('js/jquery-3.4.1.min.js')}}";
         document.body.appendChild(script3);
         console.log('cargando script de jquery y jquery 3.6.3');
