@@ -429,7 +429,7 @@
             <h3 class="title">New Jersey</h3>
             <div>
               {{-- <a href="{{route('web.oficina.newjersey')}}"> --}}
-                <img class="lazy img-fluid rounded" data-src="{{asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg')}}"  alt="Apostillas - Notaria Latina">
+                <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg')}}"  alt="Apostillas - Notaria Latina">
               {{-- </a> --}}
             </div>
             <div>
@@ -449,7 +449,7 @@
         <div class="serviceBox h-100">
             <h3 class="title">Florida</h3>
             <div>
-                <img class="lazy img-fluid rounded" data-src="{{asset('img/oficinas/oficina-florida-notaria-latina.jpg')}}" alt="Traducciones - Notaria Latina">
+                <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-florida-notaria-latina.jpg')}}" alt="Traducciones - Notaria Latina">
             </div>
             <div>
               {{-- <p class="description mt-4">
