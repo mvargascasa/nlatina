@@ -52,7 +52,7 @@
       setTimeout(() => {
          document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
           //console.log('cargando script recaptcha...');
-      }, 3000);
+      }, 3200);
   
       setTimeout(() => {
           var csrfToken = document.head.querySelector('meta[name="csrf-token"]');
