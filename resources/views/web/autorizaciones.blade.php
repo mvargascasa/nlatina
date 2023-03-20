@@ -63,6 +63,12 @@
           //console.log('ejecutando codigo del recaptcha...');
   }, 3500);
 </script>
+<style>
+  .sticky {position: sticky; top: 10px;}
+  @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
+  @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
+  .personalized-container{padding-left: 150px; padding-right: 150px};
+</style>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -86,40 +92,53 @@
     </div>
   </section>
 
-<div class="container pt-4">
-        <h2 style="font-weight: 500; font-size: 28px">Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres.</h2>
-        <p class="text-muted">La autorización de viaje designa quién va a ser la persona que acompañe al menor;  esta persona puede ser un familiar,
-            amigo o alguna auxiliar de viaje como ser una aeromoza de la propia aerolinea.</p>
-        <p class="text-muted">Es decir que este documento deben dar fe ambos padres o tutores sobre la autorización del menor a realizar el viaje con la persona mencionada.
-            La autorización puede realizarse tambien para que el menor viaje con solo uno de sus padres.</p>
-
-
-        <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos se necesita para realizar autorizaciones de viaje?</h2>
-        <ul class="text-muted">
-            <li>Identificación válida del padre o madre que va a dar la autorización.</li>
-            <li>Nombres y apellidos del menor que va a viajar.</li>
-            <li>Fecha de nacimiento del menor.</li>
-            <li>Nombres y apellidos de la persona que va a acompañar al menor.</li>
-            <li>Información del vuelo.</li>
-        </ul>
-
-        <h2 style="font-weight: 500; font-size: 28px">¿Que tiempo de validez tienen las autorizaciones de viaje?</h2>
-        <p class="text-muted">La autorización de viaje solo es válida por el tiempo que el menor vaya a estar fuera del país, entonces, terminado este periodo el documento
-            pierde su validez automaticamente.  </p>
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo realizar una autorización de viaje?</h2>
-        <p class="text-muted">Acérquese a nuestra oficina con los requisitos necesarios y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
-
-
-
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan la autorización de viaje?</h2>
-        <ul class="text-muted">
-            <li>El tiempo de entrega es inmediato siempre que las personas que realiza el trámite se acerque con los requisitos correspondientes.</li>
-        </ul>
-        <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+<div class="personalized-container pt-4">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9">
+      <h2 style="font-weight: 500; font-size: 28px">Las autorizaciones de viaje o travel authorization va a permitir que su hijo(a), menor de edad, viaje fuera del país sin necesidad de que lo acompañe los padres.</h2>
+      <p class="text-muted">La autorización de viaje designa quién va a ser la persona que acompañe al menor;  esta persona puede ser un familiar,
+          amigo o alguna auxiliar de viaje como ser una aeromoza de la propia aerolinea.</p>
+      <p class="text-muted">Es decir que este documento deben dar fe ambos padres o tutores sobre la autorización del menor a realizar el viaje con la persona mencionada.
+          La autorización puede realizarse tambien para que el menor viaje con solo uno de sus padres.</p>
+  
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos se necesita para realizar autorizaciones de viaje?</h2>
+      <ul class="text-muted">
+          <li>Identificación válida del padre o madre que va a dar la autorización.</li>
+          <li>Nombres y apellidos del menor que va a viajar.</li>
+          <li>Fecha de nacimiento del menor.</li>
+          <li>Nombres y apellidos de la persona que va a acompañar al menor.</li>
+          <li>Información del vuelo.</li>
+      </ul>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Que tiempo de validez tienen las autorizaciones de viaje?</h2>
+      <p class="text-muted">La autorización de viaje solo es válida por el tiempo que el menor vaya a estar fuera del país, entonces, terminado este periodo el documento
+          pierde su validez automaticamente.  </p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo realizar una autorización de viaje?</h2>
+      <p class="text-muted">Acérquese a nuestra oficina con los requisitos necesarios y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
+  
+  
+  
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan la autorización de viaje?</h2>
+      <ul class="text-muted">
+          <li>El tiempo de entrega es inmediato siempre que las personas que realiza el trámite se acerque con los requisitos correspondientes.</li>
+      </ul>
+      <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+          <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+          <div class="text-center mb-5">
             <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+          </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
+      <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
+        <p class="text-center h6">¿Requiere llevar a cabo una autorización de viaje?</p>
+        <p class="text-center" style="font-size: 14px"><i class="fas fa-plane-departure text-warning"></i> Realice su solicitud de trámite ahora mismo</p>
+        @include('z-form')
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Modal -->
