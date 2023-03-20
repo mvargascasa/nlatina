@@ -63,6 +63,12 @@
           //console.log('ejecutando codigo del recaptcha...');
   }, 3500);
 </script>
+<style>
+  .sticky {position: sticky; top: 10px;}
+  @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
+  @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
+  .personalized-container{padding-left: 150px; padding-right: 150px};
+</style>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -86,38 +92,51 @@
     </div>
   </section>
 
-<div class="container pt-4">
-            <h2 style="font-weight: 500; font-size: 28px">Realizamos cartas de invitación de forma segura y efectiva.</h2>
-            <p class="text-muted">Las cartas de invitación son un requisito válido que se presenta ante el consulado que lo requiera para la
-                gestión de la visa de turista; la carta tiene que ser genuina y contener datos reales de la persona que va a realizarla.</p>
-
-            <h2 style="font-weight: 500; font-size: 28px">¿Para que me sirven las cartas de invitación?</h2>
-            <p class="text-muted">Puede ser utilizada para acompañar una solicitud de visa como turista para visitar a un familiar o amigo
-                que reside en otro país. Es así que esta carta es un documento de presentación voluntaria que puede ayudar a obtener la visa.</p>
-            <p class="text-muted">Por lo tanto, la persona que realiza la invitación tiene que ser un ciudadano que goce de todos los
-                privilegios de su país y que además pueda soportar los gastos del viaje y estadía de la persona a la que invita.</p>
-
-            <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para hacer una carta de invitación?</h2>
-            <ul class="text-muted">
-                <li>Identificación válida de la persona que realiza la invitación.</li>
-                <li>Nombres y apellidos de la persona a la que se quiere invitar.</li>
-                <li>Presentar soporte de ingresos.</li>
-            </ul>
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo realizar una carta de invitación?</h2>
-        <p class="text-muted">Acérquese a nuestra oficina con los requisitos necesarios y nuestros asesores le guiarán en la redacción de su carta y en la certificación de la misma.</p>
-
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan mi carta de invitación?</h2>
-        <ul class="text-muted">
-            <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
-            <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
-            <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
-        </ul>
-        <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+<div class="personalized-container pt-4">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9">
+      <h2 style="font-weight: 500; font-size: 28px">Realizamos cartas de invitación de forma segura y efectiva.</h2>
+      <p class="text-muted">Las cartas de invitación son un requisito válido que se presenta ante el consulado que lo requiera para la
+          gestión de la visa de turista; la carta tiene que ser genuina y contener datos reales de la persona que va a realizarla.</p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Para que me sirven las cartas de invitación?</h2>
+      <p class="text-muted">Puede ser utilizada para acompañar una solicitud de visa como turista para visitar a un familiar o amigo
+          que reside en otro país. Es así que esta carta es un documento de presentación voluntaria que puede ayudar a obtener la visa.</p>
+      <p class="text-muted">Por lo tanto, la persona que realiza la invitación tiene que ser un ciudadano que goce de todos los
+          privilegios de su país y que además pueda soportar los gastos del viaje y estadía de la persona a la que invita.</p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para hacer una carta de invitación?</h2>
+      <ul class="text-muted">
+          <li>Identificación válida de la persona que realiza la invitación.</li>
+          <li>Nombres y apellidos de la persona a la que se quiere invitar.</li>
+          <li>Presentar soporte de ingresos.</li>
+      </ul>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo realizar una carta de invitación?</h2>
+      <p class="text-muted">Acérquese a nuestra oficina con los requisitos necesarios y nuestros asesores le guiarán en la redacción de su carta y en la certificación de la misma.</p>
+      
+      
+      <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan mi carta de invitación?</h2>
+      <ul class="text-muted">
+          <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+          <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+          <li>El documento digital estará disponible en 24 horas.</li>
+          <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+      </ul>
+      <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+          <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+          <div class="text-center mb-5">
             <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+          </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
+      <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
+        <p class="text-center h6">¿Requiere elaborar una carta de invitación?</p>
+        <p class="text-center" style="font-size: 14px"><i class="fas fa-check-circle text-warning"></i> Elabore su carta de inmediato</p>
+        @include('z-form')
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Modal -->
