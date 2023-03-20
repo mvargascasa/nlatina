@@ -63,6 +63,12 @@
           //console.log('ejecutando codigo del recaptcha...');
   }, 3500);
 </script>
+<style>
+  .sticky {position: sticky; top: 10px;}
+  @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
+  @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
+  .personalized-container{padding-left: 150px; padding-right: 150px};
+</style>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -86,8 +92,10 @@
     </div>
   </section>
 
-<div class="container pt-4">
-            <h2 style="font-weight: 500; font-size: 28px">Realizamos Certificaciones de documentos.</h2>
+<div class="personalized-container pt-4">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9">
+      <h2 style="font-weight: 500; font-size: 28px">Realizamos Certificaciones de documentos.</h2>
             <p class="text-muted">Las certificaciones son documentos firmados y sellados por un notario.</p>
             <p class="text-muted">Este trámite consta en una firma y sello en la que se declara que la copia emitida es fiel copia del documento original.</p>
             <p class="text-muted">Es decir, es un documento que el mismo notario expide o en base a un documento preexistente, así como la afirmación de que
@@ -132,7 +140,19 @@
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
-            <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+            <div class="text-center mb-5">
+              <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+            </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
+      <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
+        <p class="text-center h6">¿Requiere certificar algún documento?</p>
+        <p class="text-center" style="font-size: 14px"><i class="fas fa-file text-warning"></i> Lo ayudamos con la certificación de su documento</p>
+        @include('z-form')
+      </div>
+    </div>
+  </div>
+            
 </div>
 
 <!-- Modal -->
