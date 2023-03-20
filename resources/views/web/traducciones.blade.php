@@ -145,7 +145,7 @@
     <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
       <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
         <p class="text-center h6">¿Necesita realizar la traducción de un documento?</p>
-        <p style="font-size: 14px">Complete el formulario y un asesor se contactará con usted</p>
+        <p style="font-size: 14px">Solicite su trámite en línea</p>
         @include('z-form')
       </div>
     </div>
