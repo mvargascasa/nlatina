@@ -151,7 +151,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-          <img data-src="{{asset('img/notaria-en-estados-unidos.jpg')}}" class="lazy d-block w-100" alt="..." 
+          <img data-src="{{asset('img/notaria-en-estados-unidos.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
