@@ -63,6 +63,12 @@
           //console.log('ejecutando codigo del recaptcha...');
   }, 3500);
 </script>
+<style>
+  .sticky {position: sticky; top: 10px;}
+  @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
+  @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
+  .personalized-container{padding-left: 150px; padding-right: 150px};
+</style>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -86,51 +92,64 @@
     </div>
   </section>
   
-<div class="container pt-4">
-            <h2 style="font-weight: 500; font-size: 28px">Realizamos traducciones de documentos para sus trámites más importantes.</h2>
-            <p class="text-muted">Las traducciones son una transcripción de textos de un idioma a otro diferente, es así que pueden ser presentados
-                frente a las entidades que soliciten los mismos.</p>
-            <p class="text-muted">Estos documentos y traducciones se solicitan generalmente para gestionar trámites fuera del país de origen del
-                documento y con un idioma diferente.</p>
-            <p class="text-muted">Ademas deben estar certificados por un notario para demostrar su validez, por lo tanto nuestro personal calificado
-                realizará la traducción de sus documentos testificando que lo transcrito es fiel copia del documento original y así tendra valor legal.</p>
-
-            <h2 style="font-weight: 500; font-size: 28px">¿Para que sirven las traducciones de documentos?</h2>
-            <p class="text-muted">Al obtener un documento con sus correctas traducciones nos permiten validar su información es así que este se pueda
-                utilizar fuera del país de origen y usted pueda gestionar de manera correcta sus trámites más importantes.</p>
-
-            <h2 style="font-weight: 500; font-size: 28px">¿Que tipo de documentos se pueden traducir?</h2>
-            <ul class="text-muted">
-                <li>Certificados de nacimiento.</li>
-                <li>Diplomas.</li>
-                <li>Certificados de matrimonio.</li> 
-                <li>Documentos de divorcio.</li>
-                <li>Certificados de defunción.</li>
-                <li>Documentos medicos.</li>
-                <li>Documentos legales.</li>
-                <li>Certificados estudiantiles.</li>
-                <li>Estados financieros.</li>
-            </ul>
-
-            <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para la traduccion de documentos?</h2>
-            <p class="text-muted">Para las traducciones de documentos el único requisito es presentar el documento original que desea traducir,
-                es por esto que el trámite es tan simple y rápido.</p>
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo traducir un documento?</h2>
-        <p class="text-muted">Para que un documento traducido tenga validez debe ser certificado por un notario debidamente acreditado.</p>
-        <p class="text-muted">Por lo tanto es importante que se acerque a nuestra oficina con el documento que desea traducir y uno de
-            nuestros asesores lo guiará con su trámite de manera correcta y segura.</p>
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan mi documento traducido?</h2>
-        <ul class="text-muted">
-            <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
-            <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
-            <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
-        </ul>
-        <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+<div class="personalized-container pt-4">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9">
+      <h2 style="font-weight: 500; font-size: 28px">Realizamos traducciones de documentos para sus trámites más importantes.</h2>
+      <p class="text-muted">Las traducciones son una transcripción de textos de un idioma a otro diferente, es así que pueden ser presentados
+          frente a las entidades que soliciten los mismos.</p>
+      <p class="text-muted">Estos documentos y traducciones se solicitan generalmente para gestionar trámites fuera del país de origen del
+          documento y con un idioma diferente.</p>
+      <p class="text-muted">Ademas deben estar certificados por un notario para demostrar su validez, por lo tanto nuestro personal calificado
+          realizará la traducción de sus documentos testificando que lo transcrito es fiel copia del documento original y así tendra valor legal.</p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Para que sirven las traducciones de documentos?</h2>
+      <p class="text-muted">Al obtener un documento con sus correctas traducciones nos permiten validar su información es así que este se pueda
+          utilizar fuera del país de origen y usted pueda gestionar de manera correcta sus trámites más importantes.</p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Que tipo de documentos se pueden traducir?</h2>
+      <ul class="text-muted">
+          <li>Certificados de nacimiento.</li>
+          <li>Diplomas.</li>
+          <li>Certificados de matrimonio.</li> 
+          <li>Documentos de divorcio.</li>
+          <li>Certificados de defunción.</li>
+          <li>Documentos medicos.</li>
+          <li>Documentos legales.</li>
+          <li>Certificados estudiantiles.</li>
+          <li>Estados financieros.</li>
+      </ul>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para la traduccion de documentos?</h2>
+      <p class="text-muted">Para las traducciones de documentos el único requisito es presentar el documento original que desea traducir,
+          es por esto que el trámite es tan simple y rápido.</p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo traducir un documento?</h2>
+      <p class="text-muted">Para que un documento traducido tenga validez debe ser certificado por un notario debidamente acreditado.</p>
+      <p class="text-muted">Por lo tanto es importante que se acerque a nuestra oficina con el documento que desea traducir y uno de
+          nuestros asesores lo guiará con su trámite de manera correcta y segura.</p>
+      
+      <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan mi documento traducido?</h2>
+      <ul class="text-muted">
+          <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+          <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+          <li>El documento digital estará disponible en 24 horas.</li>
+          <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+      </ul>
+      <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+          <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+          <div class="text-center mb-5">
             <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+          </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
+      <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
+        <p class="text-center h6">¿Necesita realizar la traducción de un documento?</p>
+        <p style="font-size: 14px">Complete el formulario y un asesor se contactará con usted</p>
+        @include('z-form')
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Modal -->
