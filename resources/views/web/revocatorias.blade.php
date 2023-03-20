@@ -63,6 +63,12 @@
           //console.log('ejecutando codigo del recaptcha...');
   }, 3500);
 </script>
+<style>
+  .sticky {position: sticky; top: 10px;}
+  @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
+  @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
+  .personalized-container{padding-left: 150px; padding-right: 150px};
+</style>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -86,41 +92,54 @@
     </div>
   </section>
 
-<div class="container pt-4">
-        <h2 style="font-weight: 500; font-size: 28px">Gestione su Revocatoria de forma rápida y segura.</h2>
-        <p class="text-muted">Una Revocatoria es una escritura pública expedida por un notario a través de la cual se deja sin efecto un poder otorgado con antelación.</p>
-        <p class="text-muted">Este trámite es muy importante realizarlo si ya no desea que la persona apoderada continúe con la gestiónes por la cual se realizó el poder inicial.</p>
-
-        <h2 style="font-weight: 500; font-size: 28px">¿Que tipo de poderes se pueden revocar?</h2>
-        <ul class="text-muted">
-            <li>Poderes generales.</li>
-            <li>Poderes especiales.</li>
-        </ul>
-
-
-        <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para realizar una revocatoria de poder?</h2>
-        <ul class="text-muted">
-            <li>Identificación válida de la persona que otorgó el poder.</li>
-            <li>Nombres y apellidos del nuevo apoderado.</li>
-            <li>Número de cédula del nuevo apoderado.</li>
-            <li>Copia del poder anterior.</li>
-            <li>Es aconsejable asignar una persona de absoluta confianza para que realice el trámite necesario para realizar la revocación de un poder.</li>
-        </ul>
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo solicitar la revocatoria de un poder?</h2>
-        <p class="text-muted">Acérquese a nuestra oficina y solicite la revocatoria del poder, un asesor lo guiará para que usted realice el trámite de manera correcta y segura.</p>
-
-
-        <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan los documentos necesarios?</h2>
-        <ul class="text-muted">
-            <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
-            <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
-            <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
-        </ul>
-        <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+<div class="personalized-container pt-4">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9">
+      <h2 style="font-weight: 500; font-size: 28px">Gestione su Revocatoria de forma rápida y segura.</h2>
+      <p class="text-muted">Una Revocatoria es una escritura pública expedida por un notario a través de la cual se deja sin efecto un poder otorgado con antelación.</p>
+      <p class="text-muted">Este trámite es muy importante realizarlo si ya no desea que la persona apoderada continúe con la gestiónes por la cual se realizó el poder inicial.</p>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Que tipo de poderes se pueden revocar?</h2>
+      <ul class="text-muted">
+          <li>Poderes generales.</li>
+          <li>Poderes especiales.</li>
+      </ul>
+  
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos necesito para realizar una revocatoria de poder?</h2>
+      <ul class="text-muted">
+          <li>Identificación válida de la persona que otorgó el poder.</li>
+          <li>Nombres y apellidos del nuevo apoderado.</li>
+          <li>Número de cédula del nuevo apoderado.</li>
+          <li>Copia del poder anterior.</li>
+          <li>Es aconsejable asignar una persona de absoluta confianza para que realice el trámite necesario para realizar la revocación de un poder.</li>
+      </ul>
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo solicitar la revocatoria de un poder?</h2>
+      <p class="text-muted">Acérquese a nuestra oficina y solicite la revocatoria del poder, un asesor lo guiará para que usted realice el trámite de manera correcta y segura.</p>
+  
+  
+      <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan los documentos necesarios?</h2>
+      <ul class="text-muted">
+          <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+          <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+          <li>El documento digital estará disponible en 24 horas.</li>
+          <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+      </ul>
+      <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+          <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+          <div class="text-center mb-5">
             <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
+          </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
+      <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
+        <p class="text-center h6">¿Busca una solución sencilla para revocar su documento?</p>
+        <p class="text-center" style="font-size: 14px"><i class="fas fa-check-square text-warning"></i> Permítanos ayudarlo</p>
+        @include('z-form')
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Modal -->
