@@ -65,7 +65,7 @@
 </script>
 <style>
   .sticky {position: sticky; top: 10px;}
-  @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
+  @media screen and (max-width: 580px){.personalized-container{padding-left: 0px !important; padding-right: 0px !important}}
   @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
   .personalized-container{padding-left: 150px; padding-right: 150px};
 </style>
