@@ -216,8 +216,8 @@
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
       <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
-        <p class="text-center h6">¿Requiere llevar a cabo una autorización de viaje?</p>
-        <p class="text-center" style="font-size: 14px"><i class="fas fa-plane-departure text-warning"></i> Realice su solicitud de trámite ahora mismo</p>
+        <p class="text-center h6">¿Está buscando donde apostillar un poder notarial?</p>
+        <p class="text-center" style="font-size: 14px"><i class="fas fa-stamp text-warning"></i> Realice la apostilla de su poder aquí</p>
         @include('z-form')
       </div>
     </div>
