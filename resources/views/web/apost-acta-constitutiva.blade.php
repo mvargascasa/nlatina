@@ -95,7 +95,7 @@
 <div class="personalized-container pt-4 text-justify">
   <div class="row">
     <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9">
-      <p>Muy buenas mi estimado/a en esta p&aacute;gina le explicaremos c&oacute;mo obtener una apostilla para su acta constitutiva y qu&eacute; debe tener en cuenta al hacerlo. Adem&aacute;s, compartiremos algunos consejos &uacute;tiles para que el proceso sea lo m&aacute;s sencillo posible.&nbsp;</p>
+      <p>¿Está buscando cómo apostillar un acta constitutiva? En esta p&aacute;gina le explicaremos c&oacute;mo obtener una apostilla para este documento y qu&eacute; debe tener en cuenta al hacerlo. Adem&aacute;s, compartiremos algunos consejos &uacute;tiles para que el proceso sea lo m&aacute;s sencillo posible.&nbsp;</p>
   
       <p>&nbsp;</p>
       <hr>
@@ -165,7 +165,7 @@
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
       <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
-        <p class="text-center h6">¿Necesita apostillar una acta constitutiva?</p>
+        <p class="text-center h6">¿Necesita apostillar un acta constitutiva?</p>
         <p class="text-center" style="font-size: 14px"><i class="far fa-file-check text-warning"></i> Apostille su documento ahora</p>
         @include('z-form')
       </div>
