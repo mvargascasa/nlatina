@@ -118,9 +118,6 @@
       <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo realizar una autorización de viaje?</h2>
       <p class="text-muted">Acérquese a nuestra oficina con los requisitos necesarios y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
   
-  
-  
-  
       <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan la autorización de viaje?</h2>
       <ul class="text-muted">
           <li>El tiempo de entrega es inmediato siempre que las personas que realiza el trámite se acerque con los requisitos correspondientes.</li>
