@@ -168,28 +168,41 @@
       </ol>
       
       <p>&nbsp;</p>
+      <a href="{{route('web.oficina.newyork')}}">
+        <div class="bg-light p-3 shadow-sm">
+          <h4><strong>New York</strong></h4>
+          
+          <p><a href="https://g.page/notariapublicalatina">67-03 Roosevelt Avenue, Woodside, NY 11377</a></p>
+          
+          <p><i class="fas fa-headset text-primary"></i> &nbsp;<a class="btn btn-primary btn-sm rounded-pill" href="tel:+17187665041">718-766-5041</a>&nbsp; <a class="btn btn-primary btn-sm rounded-pill" href="tel:+13479739888">347-973-9888</a></p>
+        </div>
+      </a>
       
-      <h4><strong>New York</strong></h4>
-      
-      <p><a href="https://g.page/notariapublicalatina">67-03 Roosevelt Avenue, Woodside, NY 11377</a></p>
-      
-      <p>&nbsp;718 766 5041&nbsp; 347 973 9888</p>
-      
-      <p>&nbsp;</p>
-      
-      <h4><strong>New Jersey</strong></h4>
-      
-      <p><a href="https://g.page/r/CVNRV-zNuJiZEAE">1146 East Jersey St Elizabeth, NJ 07201</a></p>
-      
-      <p>&nbsp;908 800 9046</p>
       
       <p>&nbsp;</p>
       
-      <h4><strong>Florida</strong></h4>
+      <a href="{{route('web.oficina.newjersey')}}">
+        <div class="bg-light p-3 shadow-sm">
+          <h4><strong>New Jersey</strong></h4>
+          
+          <p><a href="https://g.page/r/CVNRV-zNuJiZEAE">1146 East Jersey St Elizabeth, NJ 07201</a></p>
+          
+          <p><i class="fas fa-headset text-primary"></i>&nbsp;<a class="btn btn-primary btn-sm rounded-pill" href="tel:+19088009046">908-800-9046</a></p>
+        </div>
+      </a>
       
-      <p><a href="https://g.page/r/CeRrwPx_W2-xEAE">2104 N University Dr, Sunrise, FL 33322</a></p>
+      <p>&nbsp;</p>
       
-      <p>&nbsp;305 600 3290</p>
+      <a href="{{route('web.oficina.florida')}}">
+        <div class="bg-light p-3 shadow-sm">
+          <h4><strong>Florida</strong></h4>
+          
+          <p><a href="https://g.page/r/CeRrwPx_W2-xEAE">2104 N University Dr, Sunrise, FL 33322</a></p>
+          
+          <p><i class="fas fa-headset text-primary"></i>&nbsp;<a class="btn btn-primary btn-sm rounded-pill" href="tel:+13056003290">305-600-3290</a></p>
+        </div>
+      </a>
+
       
       <p>&nbsp;</p>
       
