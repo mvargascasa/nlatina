@@ -98,9 +98,9 @@
       <p>Muy buenas mi estimado/a en esta p&aacute;gina le explicaremos c&oacute;mo obtener una apostilla para su acta constitutiva y qu&eacute; debe tener en cuenta al hacerlo. Adem&aacute;s, compartiremos algunos consejos &uacute;tiles para que el proceso sea lo m&aacute;s sencillo posible.&nbsp;</p>
   
       <p>&nbsp;</p>
-      
-      <p><strong><span style="color:#e74c3c">Si necesita ayuda con el apostillado de su acta constitutiva o tiene alguna otra pregunta sobre tr&aacute;mites legales, no dude en ponerse en contacto con nosotros al 800-742-8602 Estamos aqu&iacute; para ayudarle.</span></strong></p>
-      
+      <hr>
+      <p class="text-center"><strong><span style="color:#e74c3c">Si necesita ayuda con el apostillado de su acta constitutiva o tiene alguna otra pregunta sobre tr&aacute;mites legales, no dude en ponerse en contacto con nosotros<br> <a class="btn btn-danger btn-sm rounded-pill font-weight-bold" href="tel:+18007428602"><i class="fas fa-phone"></i> 800-742-8602</a> </span></strong></p>
+      <hr>
       <p>&nbsp;</p>
       <h2>&iquest;Qu&eacute; es un acta constituiva?</h2>
   
@@ -153,8 +153,10 @@
       
       <p>Es importante tener en cuenta que cada estado tiene sus propias leyes y regulaciones sobre c&oacute;mo obtener una apostilla, por lo que es recomendable consultar con el Departamento de Estado de su estado de residencia para obtener m&aacute;s informaci&oacute;n. Tambi&eacute;n es posible que se requiera una traducci&oacute;n oficial del documento al idioma del pa&iacute;s en el que planeas utilizar el acta constitutiva.</p>
       
-      <p><br />
-      <strong><span style="color:#e74c3c">Si necesitas ayuda con el apostillado de su acta constitutiva o tiene alguna otra pregunta sobre tr&aacute;mites legales, no dude en ponerse en contacto con nosotros al 800-742-8602 Estamos aqu&iacute; para ayudarle.</span></strong></p>
+      <hr>
+      <p class="text-center">
+      <strong><span style="color:#e74c3c">Si necesita ayuda con el apostillado de su acta constitutiva o tiene alguna otra pregunta sobre tr&aacute;mites legales, no dude en ponerse en contacto con nosotros <br> <a class="btn btn-sm btn-danger rounded-pill font-weight-bold" href="tel:+18007428602"><i class="fas fa-phone"></i> 800-742-8602</a></span></strong></p>
+      <hr>
       <div class="text-center mb-5">
           <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
