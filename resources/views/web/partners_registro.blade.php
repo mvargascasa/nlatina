@@ -285,7 +285,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         setTimeout(() => {
         document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
             console.log('cargando script recaptcha...');
-        }, 3000);
+        }, 3200);
 
         setTimeout(() => {
             var csrfToken = document.head.querySelector('meta[name="csrf-token"]');
@@ -314,7 +314,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
     'callback_then' => 'callbackThen',
     'callback_catch' => 'callbackCatch'
     ]) !!} --}}
-<script src="{{ asset('js/lazysizes.min.js') }}"></script>
+<script defer src="{{ asset('js/lazysizes.min.js') }}"></script>
 @endsection
 
 @section('content')
