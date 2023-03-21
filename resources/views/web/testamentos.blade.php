@@ -63,6 +63,12 @@
           //console.log('ejecutando codigo del recaptcha...');
   }, 3500);
 </script>
+<style>
+  .sticky {position: sticky; top: 10px;}
+  @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
+  @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
+  .personalized-container{padding-left: 150px; padding-right: 150px};
+</style>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -86,54 +92,66 @@
     </div>
   </section>
 
-<div class="container pt-4">
-  <h2 style="font-weight: 500; font-size: 28px">Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte.</h2>
-  <p class="text-muted">El documento tiene que realizarse en una notaría para que tenga validez y pueda ejecutarse de acuerdo a la voluntad del testador.</p>
-  <p class="text-muted">Con la creación de su testamento usted puede evitar futuros inconvenientes familiares en la división de bienes ya que en éste documento usted define la división a su voluntad y este debe respetarse.</p>
+<div class="personalized-container pt-4">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9">
+      <h2 style="font-weight: 500; font-size: 28px">Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte.</h2>
+      <p class="text-muted">El documento tiene que realizarse en una notaría para que tenga validez y pueda ejecutarse de acuerdo a la voluntad del testador.</p>
+      <p class="text-muted">Con la creación de su testamento usted puede evitar futuros inconvenientes familiares en la división de bienes ya que en éste documento usted define la división a su voluntad y este debe respetarse.</p>
 
-  <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos se necesita para realizar testamentos?</h2>
-  <ul class="text-muted">
-      <li>Presentar una identificación válida del testador.</li>
-      <li>Nombres y apellidos del albacea.</li>
-      <li>Nombres y apellidos de dos testigos.</li>
-      <li>Información del patrimonio que se desea heredar.</li>
-      <li>Información de los herederos.</li>
-  </ul>
+      <h2 style="font-weight: 500; font-size: 28px">¿Que requisitos se necesita para realizar testamentos?</h2>
+      <ul class="text-muted">
+        <li>Presentar una identificación válida del testador.</li>
+        <li>Nombres y apellidos del albacea.</li>
+        <li>Nombres y apellidos de dos testigos.</li>
+        <li>Información del patrimonio que se desea heredar.</li>
+        <li>Información de los herederos.</li>
+      </ul>
 
-  <h2 style="font-weight: 500; font-size: 28px">Tipos de testamentos</h2>
+      <h2 style="font-weight: 500; font-size: 28px">Tipos de testamentos</h2>
 
-  <h3><span style="font-size:16pt; font-weight: 500;"><span style="font-family:Arial"><span style="color:#000000">Testamento ol&oacute;grafo</span></span></span></h3>
+      <h3><span style="font-size:16pt; font-weight: 500;"><span style="font-family:Arial"><span style="color:#000000">Testamento ol&oacute;grafo</span></span></span></h3>
 
-  <p><span style="font-size:11pt"><span style="font-family:Arial"><span class="text-muted">Es un testamento escrito a mano y firmado por el testador (la persona que hace el testamento). Este tipo de testamento es v&aacute;lido siempre que cumpla con todos los requisitos legales, como estar escrito en un documento separado y firmado y fechado por el testador. Es importante tener en cuenta que un testamento ol&oacute;grafo debe encontrarse despu&eacute;s de la muerte del testador para que sea v&aacute;lido.</span></span></span></p>
+      <p><span style="font-size:11pt"><span style="font-family:Arial"><span class="text-muted">Es un testamento escrito a mano y firmado por el testador (la persona que hace el testamento). Este tipo de testamento es v&aacute;lido siempre que cumpla con todos los requisitos legales, como estar escrito en un documento separado y firmado y fechado por el testador. Es importante tener en cuenta que un testamento ol&oacute;grafo debe encontrarse despu&eacute;s de la muerte del testador para que sea v&aacute;lido.</span></span></span></p>
   
-  <h3><span style="font-size:16pt; font-weight: 500;"><span style="font-family:Arial"><span style="color:#000000">Testamento Cerrado</span></span></span></h3>
+      <h3><span style="font-size:16pt; font-weight: 500;"><span style="font-family:Arial"><span style="color:#000000">Testamento Cerrado</span></span></span></h3>
   
-  <p><span style="font-size:11pt; "><span style="font-family:Arial"><span class="text-muted">Un testamento redactado por un notario y sellado en un sobre cerrado. El notario redacta el testamento de acuerdo con las instrucciones del testador y lo sella en un sobre sellado despu&eacute;s de redactarlo. Un testamento cerrado no se abre hasta que el testador muere.</span></span></span></p>
+      <p><span style="font-size:11pt; "><span style="font-family:Arial"><span class="text-muted">Un testamento redactado por un notario y sellado en un sobre cerrado. El notario redacta el testamento de acuerdo con las instrucciones del testador y lo sella en un sobre sellado despu&eacute;s de redactarlo. Un testamento cerrado no se abre hasta que el testador muere.</span></span></span></p>
   
-  <h3><span style="font-size:16pt; font-weight: 500; "><span style="font-family:Arial"><span style="color:#000000">Testamento p&uacute;blico</span></span></span></h3>
+      <h3><span style="font-size:16pt; font-weight: 500; "><span style="font-family:Arial"><span style="color:#000000">Testamento p&uacute;blico</span></span></span></h3>
   
-  <p><span style="font-size:11pt"><span style="font-family:Arial"><span class="text-muted">testamento redactado por un notario p&uacute;blico y firmado por el testador en presencia de testigos. Un testamento p&uacute;blico se lee p&uacute;blicamente despu&eacute;s de la muerte del testador y es v&aacute;lido siempre que se cumplan todos los requisitos legales.</span></span></span></p>
+      <p><span style="font-size:11pt"><span style="font-family:Arial"><span class="text-muted">testamento redactado por un notario p&uacute;blico y firmado por el testador en presencia de testigos. Un testamento p&uacute;blico se lee p&uacute;blicamente despu&eacute;s de la muerte del testador y es v&aacute;lido siempre que se cumplan todos los requisitos legales.</span></span></span></p>
   
-  <h3><span style="font-size:16pt; font-weight: 500;"><span style="font-family:Arial"><span style="color:#000000">Testamento Internacional</span></span></span></h3>
+      <h3><span style="font-size:16pt; font-weight: 500;"><span style="font-family:Arial"><span style="color:#000000">Testamento Internacional</span></span></span></h3>
   
-  <p><span style="font-size:11pt"><span style="font-family:Arial"><span class="text-muted">Un testamento redactado por un notario p&uacute;blico y reconocido en varios pa&iacute;ses. Este tipo de testamento es &uacute;til para las personas que poseen bienes en diferentes pa&iacute;ses y quieren asegurarse de que su testamento sea v&aacute;lido en todos los pa&iacute;ses.</span></span></span></p>
+      <p><span style="font-size:11pt"><span style="font-family:Arial"><span class="text-muted">Un testamento redactado por un notario p&uacute;blico y reconocido en varios pa&iacute;ses. Este tipo de testamento es &uacute;til para las personas que poseen bienes en diferentes pa&iacute;ses y quieren asegurarse de que su testamento sea v&aacute;lido en todos los pa&iacute;ses.</span></span></span></p>
   
+      <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo realizar un testamento?</h2>
+      <p class="text-muted">Acérquese a nuestra oficina y solicite empezar su proceso, nuestro personal le va asesorar de la mejor manera para que éste trámite se lleve a cabo de manera correcta y segura.</p>
 
+      <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan un testamento?</h2>
+      <ul class="text-muted">
+        <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
+        <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
+        <li>El documento digital estará disponible en 24 horas.</li>
+        <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+      </ul>
 
-  <h2 style="font-weight: 500; font-size: 28px">¿En donde puedo realizar un testamento?</h2>
-  <p class="text-muted">Acérquese a nuestra oficina y solicite empezar su proceso, nuestro personal le va asesorar de la mejor manera para que éste trámite se lleve a cabo de manera correcta y segura.</p>
-
-
-  <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan un testamento?</h2>
-  <ul class="text-muted">
-      <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
-      <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
-      <li>El documento digital estará disponible en 24 horas.</li>
-      <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
-  </ul>
-  <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
+      <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
       <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
-      <a class="btn btn-lg btn-warning" href="https://notarialatina.com/contactenos">Solicite su Trámite</a>
+      <div class="text-center mb-5">
+        <a class="btn btn-lg btn-warning" href="https://notarialatina.com/contactenos">Solicite su Trámite</a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
+      <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
+        <p class="text-center h6">¿Requiere realizar un trámite con este documento?</p>
+        <p class="text-center" style="font-size: 14px"><i class="fas fa-check-circle text-warning"></i> Lo ayudamos en el proceso</p>
+        @include('z-form')
+      </div>
+    </div>
+  </div>
+  
 </div>
 
 <!-- Modal -->
