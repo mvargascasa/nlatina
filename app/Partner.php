@@ -49,6 +49,7 @@ class Partner extends Authenticatable implements MustVerifyEmail
         'fb_id',
         'updated_count',
         'modals',
+        'views',
         'created_at', 
         'updated_at'
     ];
