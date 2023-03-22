@@ -357,6 +357,16 @@
                             <p>{{ $partner->timesRated()}} @if($partner->timesRated() > 1) comentarios @else comentario @endif</p>
                         </div>
                     @endif
+                    @if(count($partner->customers) > 0)
+                        <div style="color: #9A7A2E">
+                            <p class="font-weight-bold"><i class="fas fa-search"></i> {{count($partner->customers)}} personas han realizado una consulta</p>
+                        </div>
+                    @endif
+                    @if($partner->views > 0)
+                        <div style="color: #9A7A2E">
+                            <p class="font-weight-bold"><i class="fas fa-eye"></i> {{$partner->views+1}} visualizaciones al perfil</p>
+                        </div>
+                    @endif
                 </div>
                 <div class="formContact mt-4 rounded shadow">
                     <h4 class="text-white text-center p-3">¿Necesita realizar una consulta?</h4>
@@ -639,6 +649,7 @@
         } else {
             divshowphone.innerHTML = "<p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px' class='ml-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p><a class='ml-5' style='color: #002542; text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>Llamar</a>";
         }
+        setviewed();
     });
 
     //RETIRANDO CARGA DEL SCRIPT - NO SE OCUPA
@@ -737,6 +748,22 @@
                 case "Venezuela":codigo = "+58";break;
             }
             inputCodPais.value = codigo;
+        }
+
+        const setviewed = () => {
+            fetch("{{route('partner.setview')}}", {
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                    "X-CSRF-TOKEN": "{{csrf_token()}}"
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    "id": "{{$partner->id}}",
+                }),
+            })
+            .then(response => response.json())
+            .then(json => console.log(json))
+            .catch(err => console.log(err));
         }
 </script>
 @endsection

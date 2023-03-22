@@ -2812,4 +2812,10 @@ class WebController extends Controller
         return view('web.videos.index', compact('videos'));
     }
 
+    public function setview(Request $request){
+        $partner = Partner::where('id', $request->id)->first();
+        $partner->views = $partner->views + 1;
+        $partner->save();
+        return response()->json($partner->views);
+    }
 }
