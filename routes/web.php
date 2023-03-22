@@ -145,6 +145,11 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
     Route::get('/email/verify', 'VerificationController@show')->name('verification.notice');
     Route::get('/email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify')->middleware(['signed']);
     Route::post('/email/resend', 'VerificationController@resend')->name('verification.resend');
+
+    // Route::post('/tramites/store', 'ProcedureController@store')->name('partner.procedure.store')->middleware('auth:partner');
+    // Route::get('/tramites/{type?}', 'ProcedureController@create')->name('partner.procedure.create')->middleware('auth:partner');
+
+    // Route::get('/getcustomer/{id}', 'ProcedureController@getcustomer')->name('partner.get.customer')->middleware('auth:partner');
 });
 
 Route::get('/ruta/escondida/cacheclear', function(){
@@ -181,6 +186,7 @@ Route::get('/partners/politicas-de-privacidad', function(){ return view('web.pol
 Route::get('/partners', 'WebController@showAllPartners')->name('web.showallpartners');
 Route::post('/partners', 'WebController@showAllPartners')->name('web.showallpartners.a');
 Route::post('/partners/rating/{partner}', 'WebController@postStar')->name('partner.rating'); // RUTA PARA VALORAR UN PARTNER
+Route::post('partners/setview', 'WebController@setview')->name('partner.setview');
 
 //FETCH
 Route::get('/partners/abogados-en-{pais?}', 'WebController@fetchState')->name('partners.fetch.state');
