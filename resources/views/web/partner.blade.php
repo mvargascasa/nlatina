@@ -359,7 +359,7 @@
                     @endif
                     @if(count($partner->customers) > 0)
                         <div style="color: #9A7A2E">
-                            <p class="font-weight-bold"><i class="fas fa-search"></i> {{count($partner->customers)}} personas han realizado una consulta</p>
+                            <p class="font-weight-bold"><i class="fas fa-search"></i> {{count($partner->customers)}} @if(count($partner->customers) == 1) persona @else personas @endif han realizado una consulta</p>
                         </div>
                     @endif
                     @if($partner->views > 0)
