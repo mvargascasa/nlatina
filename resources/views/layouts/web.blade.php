@@ -113,7 +113,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 <style>
     /*iframe{ width: 250px !important;    } */
     html, body {max-width: 100% !important;overflow-x: clip}
-    #iconcall {animation: wiggle 3s linear infinite;}
+    /* #iconcall {animation: wiggle 3s linear infinite;} */
     .grecaptcha-badge { visibility: hidden; }
     /* Keyframes */
     @keyframes wiggle {
