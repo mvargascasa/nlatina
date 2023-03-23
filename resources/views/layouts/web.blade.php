@@ -13,8 +13,8 @@
     </script>
 
     <link rel="icon" href="{{asset('faviconotarialatina-22.png')}}" type="image/x-icon" />
-    {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> --}}
-    <link rel="preload" href="{{asset('css/bootstrap.min.css')}}" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    {{-- <link rel="preload" href="{{asset('css/bootstrap.min.css')}}" as="style" onload="this.rel='stylesheet'"> --}}
     <link rel="preload" href="{{asset('css/styles.min.css')}}" as="style" onload="this.rel='stylesheet'">
     {{-- <link async href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="preload" as="style" onload="this.rel='stylesheet'"/>
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="preload" as="style" onload="this.rel='stylesheet'"></noscript> --}}
