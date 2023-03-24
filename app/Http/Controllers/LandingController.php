@@ -236,7 +236,7 @@ class LandingController extends Controller
                                     case 'contratos-en-new-york': $page = 'contratos_ny';break;
                                     case 'testamentos-en-new-york': $page = 'testamentos_ny';break;
                                     case 'affidavit-support-en-new-york': $page = 'affidavit_ny';break;
-                                    default: break;
+                                    default: $page = "lead_general_u"; break;
                                 }
                             break;
                         
@@ -254,7 +254,7 @@ class LandingController extends Controller
                                 case 'contratos-en-new-jersey': $page = 'contratos_nj';break;
                                 case 'testamentos-en-new-jersey': $page = 'testamentos_nj';break;
                                 case 'affidavit-support-en-new-jersey': $page = 'affidavit_nj';break;
-                                default: break;
+                                default: $page = "lead_general_u"; break;
                             }
                             break;
 
@@ -272,7 +272,7 @@ class LandingController extends Controller
                                 case 'contratos-en-florida': $page = 'contratos_fl';break;
                                 case 'testamentos-en-florida': $page = 'testamentos_fl';break;
                                 case 'matrimonios-en-florida': $page = 'matrimonios_fl';break;
-                                default: break;
+                                default: $page = "lead_general_u"; break;
                             }
                             break;
                         
