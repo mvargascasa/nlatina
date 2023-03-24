@@ -2812,6 +2812,38 @@ class WebController extends Controller
         return view('web.videos.index', compact('videos'));
     }
 
+    public function cita(Request $request){
+
+        switch ($request->office) {
+            case 'New York': $to = "newyork@notarialatina.com"; break;
+            case 'New Jersey': $to = "newjersey@notarialatina.com"; break;
+            case 'Florida': $to = "florida@notarialatina.com"; break;
+            default: $to = "servicios@notarialatina.com"; break;
+        }
+
+        $subject = "Lead Cita Consular: " . strip_tags($request->name);
+        $message = "<br><h3>Información del Lead</h3>
+                    <br><b>Nombre:</b> " . strip_tags($request->name). " " . strip_tags($request->lastname) ."
+                    <br><b>Teléfono:</b> " .strip_tags($request->phone) . " " . strip_tags($request->bbb) ."
+                    <br><b>Email: </b> " . strip_tags($request->email) ."
+                    <br><b>Oficina:</b> " . strip_tags($request->office) ."
+                    <br><b>Mensaje:</b> " . strip_tags($request->message) . "
+                    <br><b>Página: </b> " . url()->previous() . "
+                    <br>
+                    <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+                    ";
+
+        $header = 'From: <cita_consular@notarialatina.com>' . "\r\n" .
+            'MIME-Version: 1.0' . "\r\n".
+            'Content-type:text/html;charset=UTF-8' . "\r\n"
+        ;
+    
+        mail($to, $subject, $message, $header);
+        mail('sebas31051999@gmail.com', $subject, $message, $header);
+
+        return redirect()->back()->with('status', 'Su información ha sido enviada');
+    }
+
     public function setview(Request $request){
         $partner = Partner::where('id', $request->id)->first();
         $partner->views = $partner->views + 1;

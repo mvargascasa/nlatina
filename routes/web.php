@@ -65,6 +65,7 @@ Route::post('home/partners/send-notification/{partner}', 'PartnerController@send
 Route::post('home/partners/send/email/masivo', 'PartnerController@sendEmailMasivo')->name('partner.send.email.masivo');
 //PRUEBA RUTA PARA SETEAR UN NUEVO SLUG EN EL PARTNER
 Route::get('/home/partners/setslug/{partner}', 'PartnerController@setslug')->name('partner.set.slug');
+//Route::get('/home/partners/setmessage/whatsapp', 'TestController@sendmessages');
 
 //REPORTS
 Route::get('home/reports', 'ReportController@index')->name('home.partner.report.index');
@@ -118,6 +119,7 @@ Route::post('post/send-comment/{slug}', 'WebController@commentpost')->name('send
 
 Route::get('consulados','WebController@consulados')->name('consul.index');
 Route::get('consulado/{slug}','WebController@consulado')->name('consul.slug');
+Route::post('consulado/cita', 'WebController@cita')->name('consul.send.cite');
 
 Route::get('socios/login', function(){ return redirect()->route('partner.showform');});
 Route::get('socios', function(){ return redirect()->route('web.showallpartners');});

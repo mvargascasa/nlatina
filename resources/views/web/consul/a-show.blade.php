@@ -18,8 +18,9 @@
                 min-height: 385px !important;
             }
         }
-        #phone {animation: wiggle 2s linear infinite;}
+        /* #phone {animation: wiggle 2s linear infinite;} */
         #emailicon{animation: wiggle 2s linear infinite;}
+        .inputs{font-size: 13px}
     </style>
 
 <script type="text/javascript">
@@ -171,9 +172,52 @@
             </div>
             
             <div class="col-12 col-md-3"> 
-                <h4 style="color: #122944;font-weight: bold">Información</h4>
-                <hr>
-                {!!$consul->html!!} 
+                <div>
+                    <h4 style="color: #122944;font-weight: bold">Información</h4>
+                    <hr>
+                    {!!$consul->html!!} 
+                </div>
+                <div class="bg-light mt-4 shadow-sm">
+                    <div class="p-3">
+                        <p class="h6 text-center">¿Necesita obtener una cita en el consulado?</p>
+                        <p class="inputs text-center"><i class="fas fa-check-circle"></i> Lo ayudamos con el proceso</p>
+                        {!! Form::open(['route' => 'consul.send.cite', 'method' => 'POST']) !!}
+                        @csrf
+                            <div style="font-size: 13px">
+                                <div class="form-group">
+                                    {!! Form::label('name', 'Nombres') !!}
+                                    {!! Form::text('name', null, ['class' => 'form-control rounded-0 inputs', 'required']) !!}
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::label('lastname', 'Apellidos') !!}
+                                    {!! Form::text('lastname', null, ['class' => 'form-control rounded-0 inputs', 'required']) !!}
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::label('email', 'Correo electrónico') !!}
+                                    {!! Form::email('email', null, ['class' => 'form-control rounded-0 inputs', 'required']) !!}
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::label('phone', 'Teléfono') !!}
+                                    {!! Form::number('phone', null, ['class' => 'form-control rounded-0 inputs', 'required']) !!}
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::label('office','¿En donde va a realizar la cita?') !!}
+                                    {!! Form::select('office', ["" => 'Seleccione', 'New York' => 'New York', 'New Jersey' => 'New Jersey', 'Florida' => 'Florida'], null, ['class' => 'form-control rounded-0 inputs', 'required']) !!}
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::label('message', 'Comentario') !!}
+                                    {!! Form::textarea('message', null, ['class' => 'form-control rounded-0 inputs', 'rows' => '4', 'placeholder' => 'Hola, necesito realizar una cita consular para el día...', 'required']) !!}
+                                </div>
+                                <div class="text-center">
+                                    {!! Form::submit('Enviar', ['class' => 'btn btn-block btn-warning btn-sm rounded-0 font-weight-bold shadow-sm']) !!}
+                                </div>
+                            </div>
+                        {!! Form::close() !!}
+                        <div>
+                            <p class="text-center mt-2" style="font-size: 12px">*Recuerde que solamente lo ayudamos generando la cita en el consulado. <b class="text-danger">Nuestras oficinas no son el consulado</b></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 </div>
@@ -194,6 +238,17 @@
       </div>
     </div>
   </div>
+
+    @if (session('status'))
+        @php
+            echo "
+                <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+                <script>
+                    swal('Hemos enviado su información', 'Nos pondremos en contacto lo antes posible', 'success');
+                </script>
+                ";    
+        @endphp
+    @endif
 
 
 @endsection
