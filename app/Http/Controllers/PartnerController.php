@@ -140,7 +140,6 @@ class PartnerController extends Controller
      */
     public function update(Request $request, Partner $partner)
     {
-
         //set comment into table comments_status if status = no aplica
         if(isset($request->comment) && ($request->status == "NO APLICA" || $request->status == "NO PUBLICADO")){
             DB::table('comments_status')->insert([
@@ -160,6 +159,11 @@ class PartnerController extends Controller
         } else if($request->img_profile != null && $partner->img_profile == null){
             $url = Storage::put('partners', $request->file('img_profile'));
             $partner->img_profile = $url;
+        }
+
+        if(isset($request->presentation)){
+            $url_video = Storage::put('videos', $request->file('presentation'));
+            $partner->url_video = $url_video;
         }
 
         if($request->specialties){

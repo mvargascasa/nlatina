@@ -597,7 +597,7 @@
 
 </div>
 
-<section onscroll="setimagebg()" id="divtestimonials" class="mt-2" style="min-height: 550px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
+<section id="divtestimonials" class="mt-2" style="min-height: 550px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
   <div>
     <div class="pt-5">
       <p class="h2 text-center text-white font-weight-bold" style="letter-spacing: 10px">TESTIMONIOS</p>

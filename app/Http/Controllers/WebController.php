@@ -303,9 +303,10 @@ class WebController extends Controller
             if($partner)return redirect()->route('web.showpartner', $partner->slug);
             else return redirect()->route('web.showallpartners');
         }
-        
+
         if($partner){
-            return view('web.partner', compact('partner'));
+            $testimonials = Rating::where('partner_id', $partner->id)->latest()->take(3)->get();
+            return view('web.partner', compact('partner', 'testimonials'));
         } else {
             return redirect()->route('web.showallpartners');
         }

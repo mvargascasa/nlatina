@@ -73,7 +73,9 @@
                 color: #000000 !important;
             }
             #info_biografia{margin-top: 0px !important;}
-            .bg-header{min-height: 300px;}
+            .bg-header{min-height: 130px;}
+            #img-logo{width: 190px !important; height: 60px !important;}
+            #prisection{display: none !important};
         }
 
         #nombre, #telefono, #mensaje{
@@ -180,6 +182,8 @@
         input[type="radio"]:checked ~ label {color: orange;}
         #divcallphone{display: none;}
         #divpreguntas{display: none !important}
+        .color-warning{color: #FEC02F}
+        .txt-blue{color: #2B384D}.bg-blue{background-color: #2B384D}
     </style>
     <script type="text/javascript">
         function callbackThen(response){
@@ -235,9 +239,7 @@
 
 @section('content')
     <section id="prisection" class="bg-header pt-5" style="background-size: cover; background-position: left top; background-repeat: no-repeat;"></div>
-    {{-- <div class="container"> --}}
-        @if ($partner != null)
-        <div id="rowinfoheader" class="row mt-5">
+        {{-- <div id="rowinfoheader" class="row mt-5">
             <div class="col-sm-2"></div>
             <div id="divImgPartner" class="col-sm-2">
                 <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Abogado en {{ $partner->city }}, {{ $partner->state }}, {{ $partner->country_residence }}" width="200" height="260">
@@ -253,17 +255,150 @@
                     <p style="margin-top: 10px"><i class="fas fa-user"></i> {{ $partner->company}}</p>
                 @endif
                 <br>
-                {{-- <div id="divPhoneAndEmail" class="row d-flex">
-                    <p class="ml-3"><i class="fas fa-phone-alt" style="color: rgb(241, 132, 15)"></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p>
-                    <p class="ml-5" style="cursor: pointer; background-color: #002542; padding-left: 1%; padding-right: 1%; border-radius: 5px;">Ver número</p>
-                </div> --}}
-                {{-- <div class="row d-flex">
-                    <a id="txtemail" style="text-decoration: none; color: #ffffff" href="mailto:{{$partner->email}}"><p class="ml-3"><i class="far fa-envelope" style="margin-right: 5px; color: rgb(241, 132, 15)"></i>{{ $partner->email }}</p></a>
-                </div> --}}
             </div>
-        </section>
+        </div> --}}
+        <div id="divimglogo" class="d-flex justify-content-center align-items-center">
+            <img id="img-logo" width="500px" height="150px" class="lazy" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="partners notaria latina">
+        </div>
+    </section>
+    <div style="background-color: #FEC02F; height: 10px"></div>
 
-        <div id="info_biografia" class="row">
+    <div class="row mt-4">
+        <div class="col-sm-6 d-flex justify-content-center align-items-center py-5 border-right border-warning">
+            <img width="300px" height="390px" class="lazy" data-src="{{asset('storage/' . $partner['img_profile'] )}}" alt="{{$partner->slug}}">
+        </div>
+        <div class="col-sm-6 border-left border-warning d-flex align-items-center">
+            <div class="mx-5">
+                <p class="color-warning h3 font-weight-bold" style="letter-spacing: 15px">ABOGADO</p>
+                <p class="txt-blue h2 mt-3">{{$partner->name . ' ' . $partner->lastname}}</p>
+                <p class="txt-blue mt-3" style="letter-spacing: 15px">{{strtoupper($partner->city . ', ' . $partner->country_residence)}}</p>
+                <p class="bg-blue text-white p-2 w-auto text-center font-weight-bold" style="letter-spacing: 15px; border-radius: 0px 25px 25px 0px">{{strtoupper($partner->company)}}</p>
+                <div class="row mt-4">
+                    <div class="col-sm-6">
+                        <p class="pt-2 txt-blue" style="letter-spacing: 15px">PUNTUACIÓN</p>
+                    </div>
+                    @php $rating = $partner->averageRating(); @endphp
+                    <div class="col-sm-6">
+                        <div data-toggle="modal" data-target="#exampleModalCenter" style="color: #9A7A2E; cursor: pointer">
+                            @foreach(range(1,5) as $i)
+                                <span class="fa-stack" style="width:2em" onclick="openModalRating();">
+                                    <i class="far fa-star fa-stack-2x"></i>
+                                    @if($rating > 0)
+                                        @if($rating > 0.5)
+                                            <i class="fas fa-star fa-stack-2x"></i>
+                                        @else
+                                            <i class="fas fa-star-half fa-stack-2x"></i>
+                                        @endif
+                                    @endif
+                                @php $rating--; @endphp
+                                </span>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row bg-light mt-4">
+        <div class="col-sm-8 d-flex text-center justify-content-center align-items-center mt-5 mb-5">
+            <div>
+                <div>
+                    <p style="letter-spacing: 15px" class="color-warning font-weight-bold h5">ESPECIALIDAD</p>
+                    <div class="mt-4">
+                        @foreach ($partner->specialties as $partner_specialty)
+                            <p class="txt-blue h6 font-weight-bold"><i>Derecho {{$partner_specialty->name_specialty}}</i></p>   
+                        @endforeach
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    @if (isset($partner->url_video))
+                    <div class="col-sm-6">
+                        <video width="300px" class="lazy" data-src="{{asset('storage/'.$partner->url_video)}}" controls></video>
+                    </div>   
+                    @endif
+                    <div class="@if(isset($partner->url_video)) col-sm-6 @else col-sm-12 @endif txt-blue mt-3">
+                        {!! $partner->biography_html !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="formContact rounded shadow h-100 d-flex align-items-center px-3">
+                <div>
+                    <h4 class="text-white text-center p-3">¿Necesita realizar una consulta?</h4>
+                    <p class="text-white px-3">Complete el formulario con su información y el partner <b class="text-warning">{{$partner->name . " " . $partner->lastname}}</b> se comunicará con usted</p>
+                    <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
+                        @csrf
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <input class="form-control mr-1 rounded-0" style="font-size: 12px" type="text" id="nombre" placeholder="Nombre" name="name" autocomplete="off" required>
+                            </div>
+                            <div class="w-100">
+                                <input class="form-control ml-1 rounded-0" style="font-size: 12px" type="text" id="apellido" placeholder="Apellido" name="lastname" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <input type="email" name="email" style="font-size:12px" id="email" placeholder="Correo electrónico" class="form-control rounded-0" autocomplete="off" required>
+                        <div class="d-flex mt-3">
+                            <div class="w-100">
+                                <select name="country_residence" id="country_residence" class="form-control mr-1 rounded-0" style="font-size: 12px" required>
+                                    <option value="">País de residencia</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Costa Rica">Costa Rica</option>
+                                    <option value="Ecuador">Ecuador</option>
+                                    <option value="El Salvador">El Salvador</option>
+                                    <option value="Estados Unidos">Estados Unidos</option>
+                                    <option value="Guatemala">Guatemala</option>
+                                    <option value="Honduras">Honduras</option>
+                                    <option value="México">México</option>
+                                    <option value="Nicaragua">Nicaragua</option>
+                                    <option value="Panamá">Panamá</option>
+                                    <option value="Paraguay">Paraguay</option>
+                                    <option value="Perú">Perú</option>
+                                    <option value="Puerto Rico">Puerto Rico</option>
+                                    <option value="República Dominicana">República Dominicana</option>
+                                    <option value="Uruguay">Uruguay</option>
+                                    <option value="Venezuela">Venezuela</option>
+                                </select>
+                            </div>
+                            <div class="w-100">
+                                <input type="hidden" name="codpais" id="codTelfPais">
+                                <input class="form-control ml-1 rounded-0" style="font-size: 12px" type="text" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <textarea class="form-control rounded-0" style="font-size: 12px" id="mensaje" rows="4" placeholder="Ej: Hola, me interesa consultar por sus servicios y deseo que me contacten" name="mensaje" autocomplete="off" required></textarea>
+                        <div style="display: none">
+                            <input type="hidden" name="aux">
+                        </div>
+                        <button class="btn mb-3 rounded-0" style="background-color: #FEC02F;" type="submit"><i class="fas fa-envelope"></i> Enviar</button>
+                    </form>
+                </div>
+                </div>
+        </div>
+    </div>
+    <br>
+    @if(count($testimonials) > 0)
+    <section onscroll="setimagebg()" id="divtestimonials" class="mt-2" style="min-height: 500px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
+        <div class="pt-5">
+            <p class="h3 font-weight-bold text-center text-white" style="letter-spacing: 15px">TESTIMONIOS</p>
+            <div class="row mx-3 mt-5 justify-content-center">
+                @foreach ($testimonials as $testimonial)
+                    <div class="col-sm-4 mb-3">
+                        <div class="border border-light mx-1 p-4 text-white">
+                            <p class="h5">{{$testimonial->name_customer}}</p>
+                            <p class="mt-3">{{$testimonial->country}} <img width="25px" src="{{ asset('img/partners/' . Str::lower(Str::studly($testimonial->country)) . '.png') }}" alt=""></p>
+                            <p><i>{{$testimonial->comment}}</i></p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
+
+        {{-- <div id="info_biografia" class="row">
             <div class="col-sm-2">
             </div>
             <div class="col-sm-6 border-right">
@@ -272,13 +407,6 @@
                     <div>
                         {!! Purify::clean($partner->biography_html) !!}
                     </div>
-                    {{-- RETIRANDO EL BLOQUE DIV DE AREA CON LAS ESPECIALIDADES --}}
-                    {{-- <div style="color: #9A7A2E">
-                        <h6><b>Área</b></h6>
-                        @foreach ($partner->specialties as $specialty)
-                            <p><i class="fas fa-check"></i> {{$specialty->name_specialty }}</p>
-                        @endforeach
-                    </div> --}}
                     @isset($partner->specialty)
                         <div class="mt-3">
                             <h2 style="font-weight: 600; font-size: 18px">Especialidades</h2>
@@ -286,14 +414,6 @@
                         </div>
                     @endisset
                 </div>
-                {{-- @isset($partner->numlicencia)
-                    <div class="rowinfobody">
-                        <h2 style="font-weight: 600; font-size: 18px">Número de Licencia - Título</h2>
-                        <div class="d-flex">
-                            <p style="font-weight: 400; padding: 5px; border-radius: 5px" class="border">{{ Purify::clean($partner->numlicencia) }}</p>
-                        </div>
-                    </div>
-                @endisset --}}
             </div>
             <div class="col-sm-3">
                 <div class="rowinfobody">
@@ -427,8 +547,8 @@
                 @endphp
                 <div id="divshowphone" class="row d-flex mt-4 justify-content-center border shadow" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%;"> </div>
             </div>
-        </div>
-        @endif
+        </div> --}}
+        
 
         {{--MODAL DE VALORACION DE PARTNER--}}
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -491,6 +611,8 @@
               </div>
             </div>
         </div>
+
+
         {{--DIV PARA LLENAR FORMULARIO Y MOSTRAR EL NUMERO--}}
         <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -765,5 +887,23 @@
             .then(json => console.log(json))
             .catch(err => console.log(err));
         }
+
+        const elem_testimonials = document.querySelector('#divtestimonials');
+
+        // Creamos un objeto IntersectionObserver
+        const observerTestimonial = new IntersectionObserver((entries) => {
+            // Comprobamos todas las intesecciones. En el ejemplo solo existe una: cuadrado
+            entries.forEach((entry) => {
+                // Si es observable, entra
+                if (entry.isIntersecting) {
+                    // Añadimos la clase '.cuadrado--rota'
+                    elem_testimonials.style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
+                }
+            });
+        });
+
+        // Añado a mi Observable que quiero observar. En este caso el cuadrado
+        observerTestimonial.observe(elem_testimonials);
+
 </script>
 @endsection

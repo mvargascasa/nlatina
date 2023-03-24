@@ -379,6 +379,25 @@
                     </div>
                 </div>
             </div>
+
+            <div class="position-relative">
+                <hr>
+                <div class="position-absolute">
+                    <p style="margin-top: -28px" class="bg-primary rounded-pill px-2 text-white h5">Multimedia</p>
+                </div>
+            </div>
+
+            <div class="row mt-5 ml-1">
+                @isset($partner->url_video)
+                    <div>
+                        <video width="200px" src="{{asset('storage/'.$partner->url_video)}}" controls></video>
+                    </div>
+                @endisset
+                <div class="form-group mx-5">
+                    {!! Form::label('presentation', 'Video de presentación') !!}
+                    {!! Form::file('presentation', ['class' => 'form-control-file', 'accept' => 'video/*']) !!}
+                </div>
+            </div>
             {!! Form::close() !!}  
         </div>
 

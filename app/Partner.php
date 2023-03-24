@@ -50,6 +50,7 @@ class Partner extends Authenticatable implements MustVerifyEmail
         'updated_count',
         'modals',
         'views',
+        'url_video',
         'created_at', 
         'updated_at'
     ];
