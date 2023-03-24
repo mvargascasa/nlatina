@@ -318,7 +318,7 @@
                     </div>   
                     @endif
                     <div class="@if(isset($partner->url_video)) col-sm-6 @else col-sm-12 @endif txt-blue mt-3">
-                        <div class="mx-4">
+                        <div @if(!isset($partner->url_video)) class="mx-4" @endif>
                             {!! $partner->biography_html !!}
                         </div>
                     </div>
