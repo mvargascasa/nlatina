@@ -330,6 +330,9 @@ class LandingController extends Controller
 
     public function thankpostnj (Request $request)
     {
+
+        //return $request;
+
         // $pais = $this->getCodPais($request->get('cod_pais'));
         if ($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+')) {
 
@@ -356,7 +359,7 @@ class LandingController extends Controller
     
             $abrev = "";
             $sendoffices = ',servicios@notarialatina.com';
-            if ($interest == 'General'){             $sendoffices = ',newyork@notarialatina.com';}
+            if ($interest == 'General'){             $sendoffices = ',servicios@notarialatina.com';}
             if ($interest == 'Landing New York'){    $sendoffices = ',newyork@notarialatina.com';$abrev='_ny';}
             if ($interest == 'Landing New Jersey'){  $sendoffices = ',newjersey@notarialatina.com';$abrev='_nj';}
             if ($interest == 'Landing Florida'){     $sendoffices = ',florida@notarialatina.com';$abrev='_fl';}
@@ -377,25 +380,33 @@ class LandingController extends Controller
                 case 'Otro': $page = 'tramite_landing' . $abrev; break;
                 default: $page = 'lead_landing' . $abrev; break;
             }
+
+            // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+            // $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  '', 'interest' => strip_tags($request->service), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> now()->format('Y-m-d H:i:s') ];    
+            // $postdata = json_encode($datasend);
+            // $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+            // $context = stream_context_create($opts);
+            // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
     
-                $message = "<br><strong>Nuevo Lead Landing</strong>
-                            <br> Nombre: ". strip_tags($request->aaa)."
-                            <br> Telef: ".strip_tags($request->codpais). " ".  strip_tags($request->bbb)."
-                            <br> País: " .strip_tags($request->pais)."
-                            <br> Mensaje: ".strip_tags($request->ddd)." 
-                            <br> Interes: " .strip_tags($request->service_aux) ."
-                            <br> Proveniente: ".  strip_tags($interest)."
-                            <br> Fuente: GoogleAds 
-                            <br> Página: " . url()->previous() . "
-                            ";
+            $message = "<br><strong>Nuevo Lead Landing</strong>
+                        <br> Nombre: ". strip_tags($request->aaa)."
+                        <br> Telef: ".strip_tags($request->codpais). " ".  strip_tags($request->bbb)."
+                        <br> País: " .strip_tags($request->pais)."
+                        <br> Mensaje: ".strip_tags($request->ddd)." 
+                        <br> Interes: " .strip_tags($request->service_aux) ."
+                        <br> Proveniente: ".  strip_tags($interest)."
+                        <br> Fuente: GoogleAds 
+                        <br> Hora: " . now()->format('Y-m-d H:i:s') . "
+                        <br> Página: " . url()->previous() . "
+                        ";
                         
-                $header='';
-                $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
-                $header .= "MIME-Version: 1.0\r\n";
-                $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
-                mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
-                //'notariapublicalatina@gmail.com'.$sendoffices
+            $header='';
+            $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
+            $header .= "MIME-Version: 1.0\r\n";
+            $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
+            mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
+            //'notariapublicalatina@gmail.com'.$sendoffices
         }
 
         return view('landing.thank');
