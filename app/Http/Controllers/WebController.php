@@ -20,6 +20,7 @@ use Illuminate\Support\Str;
 use Intervention\Image\Image;
 use Stevebauman\Purify\Facades\Purify;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class WebController extends Controller
 {
@@ -2552,6 +2553,13 @@ class WebController extends Controller
                 case 'Otro': $page = 'tramite_' . $abrev; break;
                 default: break;
             }
+
+            $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+            $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lastname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->service), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+            $postdata = json_encode($datasend);
+            $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+            $context = stream_context_create($opts);
+            file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
 
 
             $to = "notariapublicalatina@gmail.com," . $sendoffices; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
