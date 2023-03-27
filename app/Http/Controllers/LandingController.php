@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 // use Stevebauman\Purify\Facades\Purify;
 
 
@@ -159,7 +160,7 @@ class LandingController extends Controller
             if(isset($request->aaa) && isset($request->bbb) && isset($request->ddd)){
 
                 $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-                $datasend = [ 'name'=> strip_tags($request->aaa), 'country' => strip_tags($request->country), 'phone' => strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb), 'email' =>  strip_tags($request->ccc), 'interest' => strip_tags($request->service), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> now()->format('Y-m-d H:i:s') ];    
+                $datasend = [ 'name'=> strip_tags($request->aaa), 'country' => strip_tags($request->country), 'phone' => strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb), 'email' =>  strip_tags($request->ccc), 'interest' => strip_tags($request->service), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
                 $postdata = json_encode($datasend);
                 $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
                 $context = stream_context_create($opts);
@@ -198,7 +199,7 @@ class LandingController extends Controller
             if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
 
                 $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-                $datasend = [ 'name'=> strip_tags($request->fname)." ". strip_tags($request->lname), 'country' => strip_tags($country), 'phone' => strip_tags($request->cod) . " " . strip_tags($request->tlf), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($servicename), 'message' => strip_tags($request->message), 'from' => url()->previous(), 'created_at'=> now()->format('Y-m-d H:i:s') ];    
+                $datasend = [ 'name'=> strip_tags($request->fname)." ". strip_tags($request->lname), 'country' => strip_tags($country), 'phone' => strip_tags($request->cod) . " " . strip_tags($request->tlf), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($servicename), 'message' => strip_tags($request->message), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
                 $postdata = json_encode($datasend);
                 $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
                 $context = stream_context_create($opts);
@@ -381,12 +382,12 @@ class LandingController extends Controller
                 default: $page = 'lead_landing' . $abrev; break;
             }
 
-            // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-            // $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  '', 'interest' => strip_tags($request->service), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> now()->format('Y-m-d H:i:s') ];    
-            // $postdata = json_encode($datasend);
-            // $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
-            // $context = stream_context_create($opts);
-            // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
+            $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+            $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  '', 'interest' => strip_tags($request->service), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+            $postdata = json_encode($datasend);
+            $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+            $context = stream_context_create($opts);
+            file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
     
             $message = "<br><strong>Nuevo Lead Landing</strong>
                         <br> Nombre: ". strip_tags($request->aaa)."
@@ -404,7 +405,7 @@ class LandingController extends Controller
             $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
             $header .= "MIME-Version: 1.0\r\n";
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
+            mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
             mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
             //'notariapublicalatina@gmail.com'.$sendoffices
         }
