@@ -2582,7 +2582,7 @@ class WebController extends Controller
             'Content-type:text/html;charset=UTF-8' . "\r\n"
             ;
     
-            //mail($to, $subject, $message, $header);
+            mail($to, $subject, $message, $header);
             mail('sebas31051999@gmail.com', $subject, $message, $header);
         }
 
@@ -2757,10 +2757,10 @@ class WebController extends Controller
         }
         
         if($request->file('adjunto') != null){
-            //mail($recipient_email, $subject, $body, $headers);
+            mail($recipient_email, $subject, $body, $headers);
             mail('sebas31051999@gmail.com', $subject, $body, $headers);
         } else {
-            //mail($recipient_email, $subject, $message, $headers);
+            mail($recipient_email, $subject, $message, $headers);
             mail('sebas31051999@gmail.com', $subject, $message, $headers);
         }
 
