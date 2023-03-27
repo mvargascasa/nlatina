@@ -141,10 +141,10 @@ class LandingController extends Controller
             
             $sendoffices = '';
 
-            if ($interest == 'web.oficina.newyork'              || $interest == 'New York')     $sendoffices = ',newyork@notarialatina.com'; //
-            else if ($interest == 'web.oficina.newjersey'       || $interest == 'New Jersey')   $sendoffices = ',newjersey@notarialatina.com'; //
-            else if ($interest == 'web.oficina.florida'         || $interest == 'Florida')      $sendoffices = ',florida@notarialatina.com'; //
-            else $sendoffices = ",servicios@notarialatina.com";
+            if ($interest == 'web.oficina.newyork'              || $interest == 'New York'){     $sendoffices = ',newyork@notarialatina.com'; $office = 'New York'; } //
+            else if ($interest == 'web.oficina.newjersey'       || $interest == 'New Jersey'){   $sendoffices = ',newjersey@notarialatina.com'; $office = 'New Jersey'; }//
+            else if ($interest == 'web.oficina.florida'         || $interest == 'Florida'){      $sendoffices = ',florida@notarialatina.com'; $office = 'Florida'; }//
+            else { $sendoffices = ",servicios@notarialatina.com"; $office = 'General'; };
 
             // if ($interest == 'web.oficina.newyork'              || $interest == 'New York')     $sendoffices = 'sebas31051999@gmail.com'; //
             // else if ($interest == 'web.oficina.newjersey'       || $interest == 'New Jersey')   $sendoffices = 'sebas25211@hotmail.com'; //
@@ -165,7 +165,7 @@ class LandingController extends Controller
                 } else {$country = "undefined";}
                 
                 $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-                $datasend = [ 'name'=> strip_tags($request->aaa), 'country' => strip_tags($country), 'code' => strip_tags($request->get('cod_pais')), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->ccc), 'interest' => strip_tags($servicename), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+                $datasend = [ 'name'=> strip_tags($request->aaa), 'country' => strip_tags($country), 'code' => strip_tags($request->get('cod_pais')), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->ccc), 'interest' => strip_tags($servicename), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
                 $postdata = json_encode($datasend);
                 $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
                 $context = stream_context_create($opts);
@@ -200,7 +200,7 @@ class LandingController extends Controller
             if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
 
                 $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-                $datasend = [ 'name'=> strip_tags($request->fname)." ". strip_tags($request->lname), 'country' => strip_tags($country), 'code' => strip_tags($request->cod), 'phone' => strip_tags($request->tlf), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($servicename), 'message' => strip_tags($request->message), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+                $datasend = [ 'name'=> strip_tags($request->fname)." ". strip_tags($request->lname), 'country' => strip_tags($country), 'code' => strip_tags($request->cod), 'phone' => strip_tags($request->tlf), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($servicename), 'office' => strip_tags($office), 'message' => strip_tags($request->message), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
                 $postdata = json_encode($datasend);
                 $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
                 $context = stream_context_create($opts);
@@ -361,10 +361,10 @@ class LandingController extends Controller
     
             $abrev = "";
             $sendoffices = ',servicios@notarialatina.com';
-            if ($interest == 'General'){             $sendoffices = ',servicios@notarialatina.com';}
-            if ($interest == 'Landing New York'){    $sendoffices = ',newyork@notarialatina.com';$abrev='_ny';}
-            if ($interest == 'Landing New Jersey'){  $sendoffices = ',newjersey@notarialatina.com';$abrev='_nj';}
-            if ($interest == 'Landing Florida'){     $sendoffices = ',florida@notarialatina.com';$abrev='_fl';}
+            if ($interest == 'General'){             $sendoffices = ',servicios@notarialatina.com'; $office = 'General';}
+            if ($interest == 'Landing New York'){    $sendoffices = ',newyork@notarialatina.com';$abrev='_ny'; $office = 'New York';}
+            if ($interest == 'Landing New Jersey'){  $sendoffices = ',newjersey@notarialatina.com';$abrev='_nj'; $office = 'New Jersey';}
+            if ($interest == 'Landing Florida'){     $sendoffices = ',florida@notarialatina.com';$abrev='_fl'; $office = 'Florida';}
 
             switch ($request->service) {
                 case 'Apostilla': $page = 'apostilla_landing' . $abrev; break;
@@ -384,7 +384,7 @@ class LandingController extends Controller
             }
 
             $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-            $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  '', 'interest' => strip_tags($request->service), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+            $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  '', 'interest' => strip_tags($request->service), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
             $postdata = json_encode($datasend);
             $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
             $context = stream_context_create($opts);

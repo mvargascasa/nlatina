@@ -2532,9 +2532,9 @@ class WebController extends Controller
         } else {
 
             switch ($request->interest) {
-                case 'Oficina New Jersey': $sendoffices = 'newjersey@notarialatina.com'; $abrev = 'nj'; break; //newjersey@notarialatina.com
-                case 'Oficina New York': $sendoffices = 'newyork@notarialatina.com'; $abrev = 'ny'; break; //newyork@notarialatina.com
-                case 'Oficina Florida': $sendoffices = 'florida@notarialatina.com'; $abrev = 'fl'; break; //florida@notarialatina.com
+                case 'Oficina New Jersey': $sendoffices = 'newjersey@notarialatina.com'; $abrev = 'nj'; $office = 'New Jersey'; break; //newjersey@notarialatina.com
+                case 'Oficina New York': $sendoffices = 'newyork@notarialatina.com'; $abrev = 'ny'; $office = 'New York'; break; //newyork@notarialatina.com
+                case 'Oficina Florida': $sendoffices = 'florida@notarialatina.com'; $abrev = 'fl'; $office = 'Florida'; break; //florida@notarialatina.com
                 default: break;
             }
 
@@ -2555,7 +2555,7 @@ class WebController extends Controller
             }
 
             $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-            $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lastname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->service), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+            $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lastname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->service), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
             $postdata = json_encode($datasend);
             $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
             $context = stream_context_create($opts);
@@ -2633,9 +2633,9 @@ class WebController extends Controller
 
         if(isset($request->url_current)){
             switch ($request->url_current) {
-                case 'web.oficina.newjersey': $recipient_email .= ",newjersey@notarialatina.com"; $abrev = '_nj'; break; //newjersey@notarialatina.com
-                case 'web.oficina.newyork': $recipient_email .= ",newyork@notarialatina.com"; $abrev = '_ny'; break; //newyork@notarialatina.com
-                case 'web.oficina.florida': $recipient_email .= ",florida@notarialatina.com"; $abrev = '_fl'; break; //florida@notarialatina.com
+                case 'web.oficina.newjersey': $recipient_email .= ",newjersey@notarialatina.com"; $abrev = '_nj'; $office = 'New Jersey'; break; //newjersey@notarialatina.com
+                case 'web.oficina.newyork': $recipient_email .= ",newyork@notarialatina.com"; $abrev = '_ny'; $office = 'New York'; break; //newyork@notarialatina.com
+                case 'web.oficina.florida': $recipient_email .= ",florida@notarialatina.com"; $abrev = '_fl'; $office = 'Florida'; break; //florida@notarialatina.com
                 default: $recipient_email .= ",newyork@notarialatina.com"; break;
             }
         }
@@ -2680,7 +2680,7 @@ class WebController extends Controller
 
         //send to mongodb
         $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-        $datasend = [ 'name'=> strip_tags($request->name)." ". strip_tags($request->lastname), 'country' => strip_tags($request->cod_pais), 'code' => strip_tags($codigo_pais), 'phone' => strip_tags($request->phone), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->document) . " " . strip_tags($request->from), 'message' => strip_tags($request->mensaje), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+        $datasend = [ 'name'=> strip_tags($request->name)." ". strip_tags($request->lastname), 'country' => strip_tags($request->cod_pais), 'code' => strip_tags($codigo_pais), 'phone' => strip_tags($request->phone), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->document), 'office' => strip_tags($office), 'message' => strip_tags($request->mensaje), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
         $postdata = json_encode($datasend);
         $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
         $context = stream_context_create($opts);
