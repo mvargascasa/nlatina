@@ -2675,8 +2675,17 @@ class WebController extends Controller
             case 'Órdenes de Compra': $page = 'apostillas_oc' . $abrev; break;
             default: $page = "apostillas" . $abrev; break;
         }
-
+        
         $codigo_pais = $this->getCodByPais($request->cod_pais);
+
+        //send to mongodb
+        $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+        $datasend = [ 'name'=> strip_tags($request->name)." ". strip_tags($request->lastname), 'country' => strip_tags($request->cod_pais), 'code' => strip_tags($codigo_pais), 'phone' => strip_tags($request->phone), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->document) . " " . strip_tags($request->from), 'message' => strip_tags($request->mensaje), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+        $postdata = json_encode($datasend);
+        $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+        $context = stream_context_create($opts);
+        file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
+
 
         //return $codigo_pais;
 
