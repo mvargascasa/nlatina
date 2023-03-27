@@ -238,7 +238,7 @@
 @endsection
 
 @section('content')
-    <section id="prisection" class="bg-header pt-5" style="background-size: cover; background-position: left top; background-repeat: no-repeat;"></div>
+    <section id="prisection" class="bg-header pt-5 d-flex justify-content-center align-items-center" style="background-size: cover; background-position: left top; background-repeat: no-repeat;"></div>
         {{-- <div id="rowinfoheader" class="row mt-5">
             <div class="col-sm-2"></div>
             <div id="divImgPartner" class="col-sm-2">
@@ -257,7 +257,7 @@
                 <br>
             </div>
         </div> --}}
-        <div id="divimglogo" class="d-flex justify-content-center align-items-center">
+        <div id="divimglogo">
             <img id="img-logo" width="500px" height="150px" class="lazy" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="partners notaria latina">
         </div>
     </section>
