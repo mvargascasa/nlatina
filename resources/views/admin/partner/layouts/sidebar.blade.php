@@ -101,13 +101,29 @@
     {{-- @endif --}}
   </div>
   {{-- <a href="{{ route('web.index') }}" style="font-size: 20px"><img width="30" height="30" src="{{ asset('img/partners/marca-notaria-latina.png') }}" alt=""> Notaria Latina</a> --}}
-  <a href="{{ route('socios.index') }}" style="font-size: 20px;"><img width="25" height="25" src="{{ asset('img/partners/home_logo.png') }}" alt=""> Inicio</a>
-  <a href="{{ route('socios.edit', Auth::guard('partner')->user()) }}" style="font-size: 20px"><img width="25" height="25" src="{{ asset('img/partners/user.png') }}" alt=""> Editar Perfil</a>
-  <a href="{{ route('partner.get.customers', Auth::guard('partner')->user()) }}" style="font-size: 20px"><img style="filter: invert(1);" src="{{ asset('img/partners/notebook.png') }}" alt=""> Mis clientes</a>
+  <ul class="nav flex-column flex-nowrap overflow-hidden">
+    <li class="nav-item">
+        <a class="nav-link text-truncate" href="{{ route('socios.index') }}"><img width="25" height="25" src="{{ asset('img/partners/home_logo.png') }}" alt=""> Inicio</a>
+        <a class="nav-link text-truncate" href="{{ route('socios.edit', Auth::guard('partner')->user()) }}"><img width="25" height="25" src="{{ asset('img/partners/user.png') }}" alt=""> Editar Perfil</a>
+        <a class="nav-link text-truncate" href="{{ route('partner.get.customers', Auth::guard('partner')->user()) }}"><img style="filter: invert(1);" src="{{ asset('img/partners/notebook.png') }}" alt=""> Mis clientes</a>
+        <a class="nav-link text-truncate" href="{{route('partner.upload.form')}}"><i class="fas fa-play"></i> Multimedia</a>
+    </li>
+    {{-- <li class="nav-item">
+        <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i> <span class="d-sm-inline">Trámites</span></a>
+        <div class="collapse" id="submenu1" aria-expanded="false">
+            <ul class="flex-column pl-2 nav">
+                <li class="nav-item"><a class="nav-link py-0" href="{{route('partner.procedure.create', 'poderes')}}"><span>Poderes</span></a></li>
+                <li class="nav-item"><a class="nav-link py-0" href="{{route('partner.procedure.create', 'apostillas')}}"><span>Apostillas</span></a></li>
+                <li class="nav-item"><a class="nav-link py-0" href="{{route('partner.procedure.create', 'traducciones')}}"><span>Traducciones</span></a></li>
+            </ul>
+        </div>
+    </li> --}}
+</ul>
+
   <div>
     <a href="{{ route('socios.logout') }}"
        onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();" style="font-size: 20px">
+                     document.getElementById('logout-form').submit();">
     <img width="25" height="25" src="{{ asset('img/partners/logout.png') }}" alt="">
         {{ __('Cerrar Sesión') }}
     </a>

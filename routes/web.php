@@ -152,6 +152,9 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
     // Route::get('/tramites/{type?}', 'ProcedureController@create')->name('partner.procedure.create')->middleware('auth:partner');
 
     // Route::get('/getcustomer/{id}', 'ProcedureController@getcustomer')->name('partner.get.customer')->middleware('auth:partner');
+
+    Route::get('multimedia', 'UploadController@formupload')->name('partner.upload.form')->middleware('auth:partner');
+    Route::post('upload-video/save/{id}', 'UploadController@uploadLargeFiles')->name('partner.upload.save')->middleware('auth:partner');
 });
 
 Route::get('/ruta/escondida/cacheclear', function(){

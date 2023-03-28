@@ -547,15 +547,6 @@
                                             </div>
                                         </div>
                                         @endif
-                                        @if(Auth::user()->email == "sebas31051999@gmail.com")
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                {!! Form::label('presentation', 'Video de presentación', ['class' => 'font-semibold']) !!}
-                                                {!! Form::file('presentation', ['class' => 'form-control', 'id' => 'load-file']) !!}
-                                            </div>
-                                            <div id="output"></div>
-                                        </div>
-                                        @endif
                                     </div>
 
                                     @isset($partner->attached_file)
