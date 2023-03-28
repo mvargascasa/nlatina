@@ -160,8 +160,14 @@ class HomeController extends Controller
         }
 
         $url_cv = null;
+
         if($partner->attached_file == null && $request->attached_file != null){
             $url_cv = Storage::put('cvs', $request->file('attached_file'));
+        }
+
+        $url_video = null;
+        if($partner->url_video == null && $request->presentation != null){
+            $url_video = Storage::put('videos', $request->file('presentation'));
         }
 
         if(Str::startsWith($request->link_facebook, 'www')){

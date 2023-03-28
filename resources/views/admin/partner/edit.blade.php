@@ -538,16 +538,25 @@
                                         </div>
                                     </div>
                                     
-                                    @if(!isset($partner->attached_file))
                                     <div class="row">
+                                        @if(!isset($partner->attached_file))
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 {!! Form::label('attached_file', 'Adjuntar hoja de vida / CV', ['class' => 'text-danger', 'style' => 'font-weight:bold;font-size:15px']) !!}
                                                 {!! Form::file('attached_file', ['class' => 'form-control-file', 'accept' => '.pdf,.doc,.docx']) !!}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if(Auth::user()->email == "sebas31051999@gmail.com")
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                {!! Form::label('presentation', 'Video de presentación', ['class' => 'font-semibold']) !!}
+                                                {!! Form::file('presentation', ['class' => 'form-control', 'id' => 'load-file']) !!}
+                                            </div>
+                                            <div id="output"></div>
+                                        </div>
+                                        @endif
                                     </div>
-                                    @endif
 
                                     @isset($partner->attached_file)
                                         <div class="row">
@@ -1204,6 +1213,21 @@
                 infoverifypassword.style.color = "red";
                 infoverifypassword.innerHTML = "Complete los campos ⚠";
             }
+        }
+
+        if("{{Auth::user()->email == 'sebas31051999@gmail.com'}}"){
+            $('#load-file').on('change', function() {
+            
+            const size = (this.files[0].size / 1024 / 1024).toFixed(2);
+            
+                alert('El archivo pesa: ' + size);
+            //   if (size > 4 || size < 2) {
+            //       alert("File must be between the size of 2-4 MB");
+            //   } else {
+            //       $("#output").html('<b>' +
+            //          'This file size is: ' + size + " MB" + '</b>');
+            //   }
+            });
         }
     </script>
 @endsection
