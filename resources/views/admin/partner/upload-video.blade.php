@@ -9,7 +9,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-4">
             <div class="col-md-8">
                 <div class="card rounded-0 shadow-sm">
                     <div class="card-header text-center bg-white">
@@ -19,6 +19,15 @@
                         <div id="upload-container" class="text-center">
                             <p>Sus clientes lo conocerán de cerca y querrán optar por sus servicios. El video debe ser una presentación personal que dure 1 minuto</p>
                             <button id="browseFile" class="btn btn-primary rounded-0">Subir video</button>
+                            <p class="mt-3 font-weight-bold">También puede enviarnos mediante WhatsApp o correo electrónico</p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a target="_blank" class="btn btn-success rounded-0" href="https://wa.me/13474283543?text=Le%20envío%20mi%20video%20de%20presentación%20😊">Enviar por WhatsApp</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a class="btn btn-success rounded-0" href="mailto:partners@casacredito.com">Enviar por correo</a>
+                                </div>
+                            </div>
                         </div>
                         <div  style="display: none" class="progress mt-3" style="height: 25px">
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; height: 100%">75%</div>
@@ -30,14 +39,14 @@
                     </div>
                 </div>
             </div>
+            @if(isset(Auth::user()->url_video))
+            {{-- <div class="row text-center justify-content-center mt-5"> --}}
+                <div class="col-md-4">
+                    <video class="lazy" width="100%" data-src="{{asset('storage/'.Auth::user()->url_video)}}" controls autoplay></video>
+                </div>
+            {{-- </div> --}}
+            @endif
         </div>
-        @if(isset(Auth::user()->url_video))
-        <div class="row text-center justify-content-center mt-5">
-            <div class="col-sm-12">
-                <video class="lazy" width="400" data-src="{{asset('storage/'.Auth::user()->url_video)}}" controls autoplay></video>
-            </div>
-        </div>
-        @endif
     </div>
 @endsection
 

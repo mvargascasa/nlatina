@@ -685,7 +685,7 @@
                   <img id="imgWelcome" class="img-fluid" src="{{asset('img/partners-presentacion.jpg')}}" alt="Partners de Notaria Latina">
                 </div>
                 <div class="modal-footer justify-content-center" style="border-top: none;">
-                    <button id="btnsendpresentation" type="button" class="btn rounded-0" style="background-color: #25D366; color: #ffffff;" onclick="setmodals('modalpresentation', '{{$partner->id}}', this)">Enviar mi presentación <i class="fab fa-whatsapp ml-1"></i></button>
+                    <button id="btnsendpresentation" type="button" class="btn rounded-0" style="background-color: #25D366; color: #ffffff;" onclick="setmodals('modalpresentation', '{{$partner->id}}', this)">Enviar mi presentación</button>
                 </div>
             </div>
         </div>
@@ -1037,7 +1037,8 @@
                     if(response){
                         $('#modalpresentation').modal('toggle');
                         if(button.id == "btnsendpresentation"){
-                            window.open('https://api.whatsapp.com/send?phone=13474283543', '_blank');
+                            // window.open('https://api.whatsapp.com/send?phone=13474283543', '_blank');
+                            window.location.replace("{{route('partner.upload.form')}}");
                         }
                         //toggleModalSuccess();
                     } else {
@@ -1204,21 +1205,6 @@
                 infoverifypassword.style.color = "red";
                 infoverifypassword.innerHTML = "Complete los campos ⚠";
             }
-        }
-
-        if("{{Auth::user()->email == 'sebas31051999@gmail.com'}}"){
-            $('#load-file').on('change', function() {
-            
-            const size = (this.files[0].size / 1024 / 1024).toFixed(2);
-            
-                alert('El archivo pesa: ' + size);
-            //   if (size > 4 || size < 2) {
-            //       alert("File must be between the size of 2-4 MB");
-            //   } else {
-            //       $("#output").html('<b>' +
-            //          'This file size is: ' + size + " MB" + '</b>');
-            //   }
-            });
         }
     </script>
 @endsection
