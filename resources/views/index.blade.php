@@ -151,16 +151,16 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-          <img data-src="{{asset('img/notaria-en-estados-unidos.webp')}}" class="lazy d-block w-100" alt="..." 
-          style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
+          <img data-src="{{asset('img/notaria-en-estados-unidos.jpg')}}" class="lazy d-block w-100" alt="..." 
+          style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo mb-5 img-fluid" width="500px" height="250px" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
-              <div style="display:flex ;justify-content: center;">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat text-center" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+              <div class="pb-5" style="display:flex ;justify-content: center;">
+                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat text-center" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
               </div>
-              <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
+              {{-- <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
@@ -176,37 +176,46 @@
                     <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
+              </div> --}}
+              <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
+                <div class="d-flex">
+                    @foreach ($consulates as $consulate)
+                        @if ($consulate->slug != "espana")
+                            <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
+                        @endif
+                    @endforeach
+                </div>
               </div>
-            </div>
-            <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
-              <div class="d-flex">
-                  @foreach ($consulates as $consulate)
-                      @if ($consulate->slug != "espana")
-                          <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
-                      @endif
-                  @endforeach
-              </div>
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
             </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
-              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" 
-              data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
 
 {{-- @if(!$mobile) --}}
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
           <img data-src="{{asset('img/4.webp')}}" class="lazy d-block w-100" alt="..." 
-          style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
+          style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo mb-5 img-fluid" width="500px" height="250px" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
-              <div style="display:flex; justify-content: center; text-align: center !important">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">PODERES</p>
+              <div class="pb-5" style="display:flex; justify-content: center; text-align: center !important">
+                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">PODERES</p>
               </div>
-              <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
+              <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
+                <div class="d-flex">
+                    @foreach ($consulates as $consulate)
+                        @if ($consulate->slug != "espana")
+                            <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
+                        @endif
+                    @endforeach
+                </div>
+              </div>
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
+              {{-- <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
@@ -222,35 +231,34 @@
                     <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
-              <div class="d-flex">
-                  @foreach ($consulates as $consulate)
-                      @if ($consulate->slug != "espana")
-                          <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
-                      @endif
-                  @endforeach
-              </div>
+              </div> --}}
             </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
-              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" 
-              data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
           <img data-src="{{asset('img/3.webp')}}" class="lazy d-block w-100" alt="..." 
-          style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
+          style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo mb-5 img-fluid" width="500px" height="250px" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
-              <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">APOSTILLAS</p>
+              <div class="pb-5" style="display:flex ;justify-content: center">
+                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">APOSTILLAS</p>
               </div>
-              <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
+              <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
+                <div class="d-flex">
+                    @foreach ($consulates as $consulate)
+                        @if ($consulate->slug != "espana")
+                            <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
+                        @endif
+                    @endforeach
+                </div>
+              </div>
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
+              {{-- <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
@@ -266,35 +274,34 @@
                     <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
-              <div class="d-flex">
-                  @foreach ($consulates as $consulate)
-                      @if ($consulate->slug != "espana")
-                          <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
-                      @endif
-                  @endforeach
-              </div>
+              </div> --}}
             </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
-              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" 
-              data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
           <img data-src="{{asset('img/2.webp')}}" class="lazy d-block w-100" alt="..." 
-          style="height: 700px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
+          style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo mb-5 img-fluid" width="500px" height="250px" src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
-              <div style="display:flex ;justify-content: center">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFB832; color: #2B384D; font-family: 'Montserrat'; font-weight: bold; letter-spacing: 10px; font-size: 17px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
+              <div class="pb-5" style="display:flex ;justify-content: center">
+                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFB832; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
               </div>
-              <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
+              <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-5 @endif" style="margin-top: @if(!$mobile) -50px @else -10px @endif !important">
+                <div class="d-flex">
+                    @foreach ($consulates as $consulate)
+                        @if ($consulate->slug != "espana")
+                            <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
+                        @endif
+                    @endforeach
+                </div>
+              </div>
+              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
+              {{-- <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFB832 !important">
                   <div class="child-locations mb-2 rounded-pill">
                     <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFB832"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
@@ -310,22 +317,11 @@
                     <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFB832"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
-              <div class="d-flex">
-                  @foreach ($consulates as $consulate)
-                      @if ($consulate->slug != "espana")
-                          <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
-                      @endif
-                  @endforeach
-              </div>
+              </div> --}}
             </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
               {{-- <hr width="200" style="border-color: #fff"> --}}
               {{-- href="javascript:void(0)" --}}
-              <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" 
-              data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
         </div>
 {{-- @endif --}}
@@ -339,11 +335,11 @@
     </a>
   </div>
 
-  <div class="p-2" style=" position: absolute;right: 20px;top: 80px;z-index: 999">
+  <div class="p-2" style="position: absolute;right: 20px;top: 80px;z-index: 999">
     <a class="text-warning h5" href="tel:+18007428602" style="font-weight: bols;" onclick="gtag_report_conversion('tel:+18007428602');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
         <i class="fa fa-phone-square-alt"></i> 800-742-8602
     </a>
-</div>
+  </div>
 
 <div class="container">
   <div class="row py-4">
