@@ -148,7 +148,7 @@
       <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
         <p class="text-center h6">¿Requiere certificar algún documento?</p>
         <p class="text-center" style="font-size: 14px"><i class="fas fa-file text-warning"></i> Lo ayudamos con la certificación de su documento</p>
-        @include('z-form')
+        @include('web.serv-form')
       </div>
     </div>
   </div>

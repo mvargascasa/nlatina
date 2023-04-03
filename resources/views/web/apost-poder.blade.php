@@ -2,7 +2,7 @@
 @section('header')
 <title>Apostillar Poder Notarial</title> 
 <meta name="description"        content="¿Quiere apostillar un poder notarial? Aquí encontrará la mejor información y el equipo notarial mas calificado para hacerlo un trámite rápido y sencillo para usted">       
-<meta name="keywords"           content="Apostillar poder notarial, apostilla de poderes notariales, como apostillar un poder notarial, donde apostillar poder notarial." />
+<meta name="keywords"           content="Apostillar poder notarial, apostilla de poderes notariales, como apostillar un poder notarial, donde apostillar poder notarial, como apostillar un poder en estados unidos, donde apostillar un poder en estados unidos" />
 
 <meta property="og:url"         content="{{route('web.apostillar.poder.notarial')}}" />
 <meta property="og:type"        content="article" />
@@ -231,7 +231,7 @@
       <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
         <p class="text-center h6">¿Está buscando donde apostillar un poder notarial?</p>
         <p class="text-center" style="font-size: 14px"><i class="fas fa-stamp text-warning"></i> Realice la apostilla de su poder aquí</p>
-        @include('z-form')
+        @include('web.serv-form')
       </div>
     </div>
   </div>

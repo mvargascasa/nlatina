@@ -167,7 +167,7 @@
       <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
         <p class="text-center h6">¿Necesita apostillar un acta constitutiva?</p>
         <p class="text-center" style="font-size: 14px"><i class="far fa-file-check text-warning"></i> Apostille su documento ahora</p>
-        @include('z-form')
+        @include('web.serv-form')
       </div>
     </div>
   </div>

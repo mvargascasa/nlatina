@@ -136,7 +136,7 @@
       <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
         <p class="text-center h6">¿Necesita realizar un contrato?</p>
         <p class="text-center" style="font-size: 14px"><i class="fas fa-file-contract text-warning"></i> Lo ayudamos con este trámite de una manera segura</p>
-        @include('z-form')
+        @include('web.serv-form')
       </div>
     </div>
   </div>

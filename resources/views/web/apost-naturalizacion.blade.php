@@ -171,7 +171,7 @@
       <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
         <p class="text-center h6">¿Necesita apostillar una carta de naturalización?</p>
         <p class="text-center" style="font-size: 14px"> Lo ayudamos con la apostilla de este documento <i class="fas fa-check-square text-warning"></i></p>
-        @include('z-form')
+        @include('web.serv-form')
       </div>
     </div>
   </div>

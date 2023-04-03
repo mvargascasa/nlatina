@@ -132,7 +132,7 @@
       <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
         <p class="text-center h6">¿Requiere llevar a cabo una autorización de viaje?</p>
         <p class="text-center" style="font-size: 14px"><i class="fas fa-plane-departure text-warning"></i> Realice su solicitud de trámite ahora mismo</p>
-        @include('z-form')
+        @include('web.serv-form')
       </div>
     </div>
   </div>

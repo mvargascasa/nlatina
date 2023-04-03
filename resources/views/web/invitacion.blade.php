@@ -133,7 +133,7 @@
       <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
         <p class="text-center h6">¿Requiere elaborar una carta de invitación?</p>
         <p class="text-center" style="font-size: 14px"><i class="fas fa-check-circle text-warning"></i> Elabore su carta de inmediato</p>
-        @include('z-form')
+        @include('web.serv-form')
       </div>
     </div>
   </div>

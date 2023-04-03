@@ -175,7 +175,7 @@
     <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
       <p class="text-center h6">¿Esta buscando donde apostillar un certificado de nacimiento en Estados Unidos?</p>
       <p class="text-center" style="font-size: 14px"><i class="fas fa-check text-warning"></i> Solicite aquí su trámite</p>
-      @include('z-form')
+      @include('web.serv-form')
     </div>
   </div>
       </div>

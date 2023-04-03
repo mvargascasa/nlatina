@@ -174,7 +174,7 @@
         <div class="text-white rounded p-4 mb-4 shadow sticky" style="background-color: #2B384D">
           <p class="text-center h6">¿Esta buscando cómo tramitar un poder general en Estados Unidos?</p>
           <p class="text-center" style="font-size: 14px"><i class="fas fa-check-double text-warning"></i> Lo ayudamos con la gestión de este documento</p>
-          @include('z-form')
+          @include('web.serv-form')
         </div>
       </div>
     </div>

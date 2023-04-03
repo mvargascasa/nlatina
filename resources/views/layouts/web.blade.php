@@ -179,6 +179,29 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 }
 @keyframes slidein {from {margin-right: -200px;} to {margin-right: 0px;}}
 @keyframes slideout {from {margin-right: 0px;} to {margin-right: -200px}}
+/* #loader {
+        border: 12px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 12px solid #444444;
+        width: 70px;
+        height: 70px;
+        animation: spin 1s linear infinite;
+    }
+      
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+      
+    .center {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    } */
 </style>
 
   @yield('header')
@@ -525,6 +548,18 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 <script id="jquery363" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
 
+// document.onreadystatechange = function() {
+//         if (document.readyState !== "complete") {
+//             document.querySelector("body").style.visibility = "hidden";
+//             document.querySelector("#loader").style.visibility = "visible";
+//         } else {
+//             document.querySelector(
+//             "#loader").style.display = "none";
+//             document.querySelector(
+//             "body").style.visibility = "visible";
+//         }
+//     };
+
 // setTimeout(() => {
 //     document.getElementById('scriptjquery').src = "{{asset('js/jquery-3.4.1.min.js')}}";
 //     document.getElementById('scriptpopper').src = "{{ asset('js/popper.min.js') }}";
@@ -538,7 +573,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     //     })
     // }
 
-    var button = document.querySelector('.button');
+    let button = document.querySelector('.button');
     if(button)button.disabled = true;
 
     // setTimeout(() => {
@@ -546,20 +581,28 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     // }, 3000);
 
     //mostrando codigo de pais al cambiar el select
-    var country = document.getElementById('sel_country');
+    let country = document.getElementById('sel_country');
     if(country){
         country.addEventListener('change', () => {
             //var country     = document.getElementById('sel_country');
-            var cod_country = document.getElementById('cod_country');
+            let cod_country = document.getElementById('cod_country');
             cod_country.value = country.value;
         });
     }
 
+    let country_serv_form = document.getElementById('sel_country_serv');
+    if(country_serv_form){
+        country_serv_form.addEventListener('change', () => {
+            let cod_country_serv = document.getElementById('cod_country_serv');
+            cod_country_serv.value = country_serv_form.value;
+        });       
+    }
+
     //validacion para formularios con datos de paginas web
-    var formlead = document.getElementById('formlead');
+    let formlead = document.getElementById('formlead');
     if(formlead){
         formlead.addEventListener('submit', (e) => {
-            var message = document.getElementById('message').value;
+            let message = document.getElementById('message').value;
             if(message.includes('https')){
                 e.preventDefault();
             }
@@ -747,4 +790,5 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         }, 3000);
 </script>
 </body>
+<div id="loader" class="center"></div>
 </html>
