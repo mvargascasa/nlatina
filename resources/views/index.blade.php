@@ -346,7 +346,7 @@
 </div>
 
 <div class="container">
-  {{-- <div class="row py-4">
+  <div class="row py-4">
       <div class="col-12 text-center py-4">
           <h2 class="tit-not">Nuestros Servicios</h2>
           <hr class="hrb">
@@ -393,78 +393,7 @@
           </a>
       </div>
 
-  </div> --}}
-
-  {{-- div de oficinas --}}
-  <div class="row py-4">
-    <div class="col-12 text-center py-4">
-        <h2 class="tit-not letter-color">Visite Nuestras Oficinas</h2>
-        <hr class="hrb letter-color">
-      </div>
-
-      <div class="col-12 col-sm-12 col-md-4 mb-3">
-        <a style="text-decoration: none" href="{{ route('web.oficina.newyork') }}">
-          <div class="serviceBox h-100">
-              <h3 class="title">New York</h3>
-              <div>
-                {{-- <a href="{{route('web.oficina.newyork')}}"> --}}
-                  <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-new-york-notaria-latina.jpg')}}" alt="Poderes - Notaria Latina">
-                {{-- </a> --}}
-              </div>
-              <div>
-                {{-- <p class="description mt-4">
-                  Gestione sus trámites notariales en New Jersey
-                </p> --}}
-                <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 67-03 Roosevelt Avenue, Woodside, NY 11377</p>
-                <a class="btn btn-warning btn-block" href="tel:+13479739888"><i class="fas fa-phone"></i> Llamar ahora</a>
-                <a class="btn btn-success btn-block" href="https://api.whatsapp.com/send?phone=13479739888"><i class="fab fa-whatsapp"></i> Whatsapp</a>
-              </div>
-            </div>
-          </a>
-      </div>
-
-    <div class="col-12 col-sm-12 col-md-4 mb-3">
-        <a style="text-decoration: none" href="{{ route('web.oficina.newjersey') }}">
-        <div class="serviceBox h-100">
-            <h3 class="title">New Jersey</h3>
-            <div>
-              {{-- <a href="{{route('web.oficina.newjersey')}}"> --}}
-                <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg')}}"  alt="Apostillas - Notaria Latina">
-              {{-- </a> --}}
-            </div>
-            <div>
-              {{-- <p class="description mt-4">
-                Gestione sus trámites notariales en New York. 
-              </p> --}}
-              <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 1146 East Jersey St Elizabeth, NJ 07201</p>
-              <a class="btn btn-warning btn-block" href="tel:+19088009046"><i class="fas fa-phone"></i> Llamar ahora</a>
-              <a class="btn btn-success btn-block" href="https://api.whatsapp.com/send?phone=19088009046"><i class="fab fa-whatsapp"></i> Whatsapp</a>
-            </div>
-          </div>
-          </a>
-    </div>
-
-    <div class="col-12 col-sm-12 col-md-4 mb-3">
-      <a style="text-decoration: none" href="{{ route('web.oficina.florida') }}">
-        <div class="serviceBox h-100">
-            <h3 class="title">Florida</h3>
-            <div>
-                <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-florida-notaria-latina.jpg')}}" alt="Traducciones - Notaria Latina">
-            </div>
-            <div>
-              {{-- <p class="description mt-4">
-                Gestione sus trámites notariales en Florida
-              </p> --}}
-              <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 2104 N University Dr, Sunrise, FL 33322</p>
-              <a class="btn btn-warning btn-block" href="tel:+13056003290"><i class="fas fa-phone"></i> Llamar ahora</a>
-              <a class="btn btn-success btn-block" href="https://api.whatsapp.com/send?phone=13056003290"><i class="fab fa-whatsapp"></i> Whatsapp</a>
-            </div>
-          </div>
-        </a>
-    </div>
-
-</div>
-{{-- termina div oficinas --}}
+  </div>
 </div>
 </div>
 
@@ -536,7 +465,78 @@
 </div>
 <div class="container">
 
-<div class="row">
+  {{-- div de oficinas --}}
+  <div class="row pt-4">
+    <div class="col-12 text-center py-4">
+        <h2 class="tit-not letter-color">Visite Nuestras Oficinas</h2>
+        <hr class="hrb letter-color">
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-4 mb-3">
+        <a style="text-decoration: none" href="{{ route('web.oficina.newyork') }}">
+          <div class="serviceBox h-100">
+              <h3 class="title">New York</h3>
+              <div>
+                {{-- <a href="{{route('web.oficina.newyork')}}"> --}}
+                  <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-new-york-notaria-latina.jpg')}}" alt="Poderes - Notaria Latina">
+                {{-- </a> --}}
+              </div>
+              <div>
+                {{-- <p class="description mt-4">
+                  Gestione sus trámites notariales en New Jersey
+                </p> --}}
+                <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 67-03 Roosevelt Avenue, Woodside, NY 11377</p>
+                <a class="btn btn-block" href="tel:+13479739888"><i class="fas fa-phone"></i> Llamar ahora</a>
+                <a class="btn btn-block" href="https://api.whatsapp.com/send?phone=13479739888"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+              </div>
+            </div>
+          </a>
+      </div>
+
+    <div class="col-12 col-sm-12 col-md-4 mb-3">
+        <a style="text-decoration: none" href="{{ route('web.oficina.newjersey') }}">
+        <div class="serviceBox h-100">
+            <h3 class="title">New Jersey</h3>
+            <div>
+              {{-- <a href="{{route('web.oficina.newjersey')}}"> --}}
+                <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg')}}"  alt="Apostillas - Notaria Latina">
+              {{-- </a> --}}
+            </div>
+            <div>
+              {{-- <p class="description mt-4">
+                Gestione sus trámites notariales en New York. 
+              </p> --}}
+              <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 1146 East Jersey St Elizabeth, NJ 07201</p>
+              <a class="btn btn-block" href="tel:+19088009046"><i class="fas fa-phone"></i> Llamar ahora</a>
+              <a class="btn btn-block" href="https://api.whatsapp.com/send?phone=19088009046"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+          </a>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-4 mb-3">
+      <a style="text-decoration: none" href="{{ route('web.oficina.florida') }}">
+        <div class="serviceBox h-100">
+            <h3 class="title">Florida</h3>
+            <div>
+                <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-florida-notaria-latina.jpg')}}" alt="Traducciones - Notaria Latina">
+            </div>
+            <div>
+              {{-- <p class="description mt-4">
+                Gestione sus trámites notariales en Florida
+              </p> --}}
+              <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 2104 N University Dr, Sunrise, FL 33322</p>
+              <a class="btn btn-block" href="tel:+13056003290"><i class="fas fa-phone"></i> Llamar ahora</a>
+              <a class="btn btn-block" href="https://api.whatsapp.com/send?phone=13056003290"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </a>
+    </div>
+
+</div>
+{{-- termina div oficinas --}}
+
+{{-- <div class="row"> --}}
 
 {{-- <hr class="hrb mb-4 mt-5">
 <div class="row mt-5 d-inline">
@@ -546,7 +546,7 @@
   <div class="fb-page mt-3 w-auto" data-href="https://www.facebook.com/notariapublicalatina" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-lazy="true"><blockquote cite="https://www.facebook.com/notariapublicalatina" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/notariapublicalatina">Notaría Pública Latina</a></blockquote></div>
 </div> --}}
 
-</div>
+{{-- </div> --}}
 
 </div>
 
