@@ -653,7 +653,7 @@
 <div class="bg-light py-5">
   <h2 class="tit-not letter-color text-center">Testimonios</h2>
   <hr class="hrb letter-color">
-  <div id="carouselExampleFade" class="carousel slide carousel-fade ml-3 mr-3" data-ride="carousel">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade ml-3 mr-3" data-ride="carousel" data-interval="3000">
     <div class="carousel-inner">
       @foreach ($reviews as $review)
         <div class="carousel-item {{ $loop->first ? 'active' : ' '}}">
@@ -698,7 +698,7 @@
   <div class="bg-light pt-5">
     <h2 class="tit-not letter-color">Testimonios</h2>
     <hr class="hrb letter-color">
-    <div id="carousel-thumbs" class="carousel slide mt-5 mb-5 text-left" data-ride="carousel">
+    <div id="carousel-thumbs" class="carousel slide mt-5 mb-5 text-left" data-ride="carousel" data-interval="3000">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row justify-content-center">
@@ -848,9 +848,7 @@
 
     document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
     setTimeout(() => {
-      $('.carousel').carousel({
-        interval: 1000 * 4
-      });
+      $('.carousel').carousel({interval: 3000});
     }, 3000);
 
     // const elem_testimonials = document.querySelector('#divtestimonials');
