@@ -21,6 +21,7 @@ use Intervention\Image\Image;
 use Stevebauman\Purify\Facades\Purify;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Detection\MobileDetect;
 
 class WebController extends Controller
 {
@@ -93,6 +94,26 @@ class WebController extends Controller
     ];
 
     public function index() {
+
+        $detect = new MobileDetect();
+        $mobile = FALSE;
+
+        if($detect->isMobile()){
+            $mobile = TRUE;
+        }
+
+        $reviews = [
+            ['name' => 'Alejandra Castaño orozco', 'message' => 'Exelente servicio , muy amables,nos resolvieron las dudas y nos ayudaron con nuestros trámites , súper recomendado AAA+++', 'avatar' => 'alejandra-castano.png'],
+            ['name' => 'Hernando Urguiled', 'message' => 'Excelente el servicio. Muy bonito el servicio de todas las señoritas en la ofcina, especialmente de Mayra. Recomiendo completamente el lugar', 'avatar' => 'hernando-urguiled.png'],
+            ['name' => 'Carlos Luis Galeano', 'message' => 'Excelente servicio al cliente , todas las dudas que tiene se las aclaran de una manera rápida y los trámites . Lo recomiendo', 'avatar' => 'carlos-luis-galeano.png'],
+            ['name' => 'Carito Diaz', 'message' => 'La señorita Crystal fue muy amable y servicial conmigo haciendo mis trámites y tuvo mucha paciencia. Se los recomiendo si necesitan hacer cualquier trámite para ecuador ☺️😉', 'avatar' => 'carito-dias.png'],
+            ['name' => 'Jose Shoro', 'message' => 'Mi agradecimiento a la Srta Angi por su gentileza y ayuda para solucionar mi problema en la traducción felicitaciones y que siga los éxitos Muchas Bendiciones', 'avatar' => 'jose-shoro.jpg'],
+            ['name' => 'Heliberto Cañas', 'message' => 'Muy buena atención, excelente, me recibieron los documentos por Whatsapp y me los tenían listos el día de la cita.', 'avatar' => 'heliberto-canas.jpg'],
+            ['name' => 'Aurelia G', 'message' => 'Excelente servicio!!! Luna fue super amable, diligente, y profesional todo salio perfecto!!! La recomiendo', 'avatar' => 'aurelia-g.png'],
+            ['name' => 'Amelia Salgado', 'message' => 'Excelente servicio el que ofrecen. Están dispuestos ayudarte en cualquier trámite que necesite. Son puntuales con la entrega de los documentos. Los recomendaría 100%', 'avatar' => 'amelia-salgado.png'],
+            ['name' => 'Adriana Gioni', 'message' => 'Excelente atención, rapidez y amabilidad. Luna fue muy amable y eficiente en su trabajo. Sin duda volveré a gestionar algún trámite con ellos.', 'avatar' => 'adriana-gioni.png'],
+        ];
+
         $indexPosts = Post::select('name', 'body', 'slug', 'imgdir', 'created_at')
             ->where('status','PUBLICADO')
             ->latest()
@@ -101,7 +122,7 @@ class WebController extends Controller
 
         $consulates = DB::table('consulates')->select('slug')->get();
 
-        return view('index',compact('indexPosts', 'consulates'));  
+        return view('index',compact('indexPosts', 'consulates', 'reviews', 'mobile'));  
     }
     public function apostillas()
     {

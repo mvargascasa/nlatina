@@ -23,7 +23,7 @@
     
     <meta name="google-site-verification" content="dJnD6aMr-q5ldI-YRk2UM1KC0A8GEBUok__9ZpS0CiQ" />
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    {{-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> --}}
 
     <script type="text/javascript">
       function callbackThen(response){
@@ -128,11 +128,18 @@
       .card:hover{box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;}
       .rate {height: 46px;padding: 0 10px;}
       .rate:not(:checked) > input {position:absolute;top:-9999px;}
-      .rate:not(:checked) > label {width:1em;overflow:hidden;white-space:nowrap;font-size:30px;color:#ffc700;}
+      .rate:not(:checked) > label {width:1em;overflow:hidden;white-space:nowrap;font-size:20px;color:#ffc700;}
       .rate:not(:checked) > label:before {content: '★ ';}
       .rate > input:checked ~ label {color: #ffc700;}
       .letter-color{color: #2B384D !important}
       .font-family-montserrat{font-family: 'Montserrat'}
+      #carousel-thumbs {background: rgba(255,255,255,.3);bottom: 0;left: 0;padding: 0;right: 0;}
+      #carousel-thumbs {border: 5px solid transparent;}
+      #carousel-thumbs img:hover {border-color: rgba(255,255,255,.3);}
+      #carousel-thumbs .selected img {border-color: #fff;}
+      .carousel-control-prev-icon {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='darkorange' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;}
+      .carousel-control-next-icon {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='darkorange' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;}
+      .carousel-control-prev, .carousel-control-next {width: 100px;}
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -592,8 +599,9 @@
     </div>
 
 </div>
+@endisset
 
-<section id="divtestimonials" class="mt-2" style="min-height: 550px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
+{{-- <section id="divtestimonials" class="mt-2" style="min-height: 550px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
   <div>
     <div class="pt-5">
       <p class="h2 text-center text-white font-weight-bold" style="letter-spacing: 10px">TESTIMONIOS</p>
@@ -637,8 +645,168 @@
       </div>
     </div>
   </div>
-</section>
-@endisset
+</section> --}}
+
+@if($mobile)
+<div class="bg-light py-5">
+  <h2 class="tit-not letter-color text-center">Testimonios</h2>
+  <hr class="hrb letter-color">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade ml-3 mr-3" data-ride="carousel">
+    <div class="carousel-inner">
+      @foreach ($reviews as $review)
+        <div class="carousel-item {{ $loop->first ? 'active' : ' '}}">
+          <div class="row justify-content-center">
+            <div class="col-12 selected">
+              <div class="card rounded-0 shadow-sm mx-1 h-100">
+                <div class="card-body">
+                  <img width="25px" height="25px" class="lazy float-right" data-src="{{asset('img/icon-google.png')}}" alt="">
+                  <p class="card-title h6"><img width="25px" height="25px" class="lazy rounded-circle" data-src="{{asset('img/reviews/'.$review['avatar'])}}" alt=""> {{$review['name']}}</p>
+                  <p class="card-text">{{$review['message']}}</p>
+                  <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" disabled />
+                    <label for="star5" title="text">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" disabled/>
+                    <label for="star4" title="text">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" disabled/>
+                    <label for="star3" title="text">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" disabled/>
+                    <label for="star2" title="text">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" disabled/>
+                    <label for="star1" title="text">1 star</label>
+                  </div>
+                </div>
+              </div>
+            </div>   
+          </div>
+        </div>
+      @endforeach
+    </div>
+    <label class="carousel-control-prev" style="margin-left: -45px" data-target="#carouselExampleFade" data-slide="prev">
+      {{-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> --}}
+      <span class="visually-hidden"><i class="fas fa-chevron-circle-left text-dark"></i></span>
+    </label>
+    <label class="carousel-control-next" style="margin-right: -45px" type="button" data-target="#carouselExampleFade" data-slide="next">
+      {{-- <span class="carousel-control-next-icon" aria-hidden="true"></span> --}}
+      <span class="visually-hidden"><i class="fas fa-chevron-circle-right text-dark"></i></span>
+    </label>
+  </div>
+</div>
+@else
+<div class="row d-inline text-center">
+  <div class="bg-light pt-5">
+    <h2 class="tit-not letter-color">Testimonios</h2>
+    <hr class="hrb letter-color">
+    <div id="carousel-thumbs" class="carousel slide mt-5 mb-5 text-left" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            @for ($i = 0; $i < 3; $i++)
+              <div id="carousel-selector-{{ $i }}" class="thumb col-3 col-sm-3 px-0 selected">
+                <div class="card rounded-0 shadow-sm mx-1 h-100">
+                  <div class="card-body">
+                    <img width="25px" height="25px" class="lazy float-right" data-src="{{asset('img/icon-google.png')}}" alt="">
+                    <p class="card-title h6"><img width="25px" height="25px" class="lazy rounded-circle" data-src="{{asset('img/reviews/'.$reviews[$i]['avatar'])}}" alt=""> {{$reviews[$i]['name']}}</p>
+                    <p class="card-text">{{$reviews[$i]['message']}}</p>
+                    <div class="rate">
+                      <input type="radio" id="star5" name="rate" value="5" disabled />
+                      <label for="star5" title="text">5 stars</label>
+                      <input type="radio" id="star4" name="rate" value="4" disabled/>
+                      <label for="star4" title="text">4 stars</label>
+                      <input type="radio" id="star3" name="rate" value="3" disabled/>
+                      <label for="star3" title="text">3 stars</label>
+                      <input type="radio" id="star2" name="rate" value="2" disabled/>
+                      <label for="star2" title="text">2 stars</label>
+                      <input type="radio" id="star1" name="rate" value="1" disabled/>
+                      <label for="star1" title="text">1 star</label>
+                    </div>
+                  </div>
+                </div>
+              </div>   
+            @endfor
+          </div>
+        </div>
+    
+        @if(count($reviews)>3)
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            @for ($i = 3; $i < 6; $i++)
+              <div id="carousel-selector-{{ $i }}" class="thumb col-3 col-sm-3 px-0 selected">
+                <div class="card rounded-0 shadow-sm mx-1 h-100">
+                  <div class="card-body">
+                    <img width="25px" height="25px" class="lazy float-right" data-src="{{asset('img/icon-google.png')}}" alt="">
+                    <p class="card-title h6"><img width="25px" height="25px" class="lazy rounded-circle" data-src="{{asset('img/reviews/'.$reviews[$i]['avatar'])}}" alt=""> {{$reviews[$i]['name']}}</p>
+                    <p class="card-text">{{$reviews[$i]['message']}}</p>
+                    <div class="rate">
+                      <input type="radio" id="star5" name="rate" value="5" disabled />
+                      <label for="star5" title="text">5 stars</label>
+                      <input type="radio" id="star4" name="rate" value="4" disabled/>
+                      <label for="star4" title="text">4 stars</label>
+                      <input type="radio" id="star3" name="rate" value="3" disabled/>
+                      <label for="star3" title="text">3 stars</label>
+                      <input type="radio" id="star2" name="rate" value="2" disabled/>
+                      <label for="star2" title="text">2 stars</label>
+                      <input type="radio" id="star1" name="rate" value="1" disabled/>
+                      <label for="star1" title="text">1 star</label>
+                    </div>
+                  </div>
+                </div>
+              </div>   
+            @endfor
+          </div>
+        </div>
+        @endif
+    
+        @if(count($reviews)>6)
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            @for ($i = 6; $i < 9; $i++)
+              <div id="carousel-selector-{{ $i }}" class="thumb col-3 col-sm-3 px-0 selected">
+                <div class="card rounded-0 shadow-sm mx-1 h-100">
+                  <div class="card-body">
+                    <img width="25px" height="25px" class="lazy float-right" data-src="{{asset('img/icon-google.png')}}" alt="">
+                    <p class="card-title h6"><img width="25px" height="25px" class="lazy rounded-circle" data-src="{{asset('img/reviews/'.$reviews[$i]['avatar'])}}" alt=""> {{$reviews[$i]['name']}}</p>
+                    <p class="card-text">{{$reviews[$i]['message']}}</p>
+                    <div class="rate">
+                      <input type="radio" id="star5" name="rate" value="5" disabled />
+                      <label for="star5" title="text">5 stars</label>
+                      <input type="radio" id="star4" name="rate" value="4" disabled/>
+                      <label for="star4" title="text">4 stars</label>
+                      <input type="radio" id="star3" name="rate" value="3" disabled/>
+                      <label for="star3" title="text">3 stars</label>
+                      <input type="radio" id="star2" name="rate" value="2" disabled/>
+                      <label for="star2" title="text">2 stars</label>
+                      <input type="radio" id="star1" name="rate" value="1" disabled/>
+                      <label for="star1" title="text">1 star</label>
+                    </div>
+                  </div>
+                </div>
+              </div>   
+            @endfor
+          </div>
+        </div>
+        @endif
+    
+      </div>
+    
+      {{-- <div id="carousel-selector-1" class="thumb col-2 col-sm-2 px-0 selected" data-bs-slide-to="1" data-bs-target="#myCarousel">
+        <img style="width: 100%" src="https://kinsta.com/es/wp-content/uploads/sites/8/2020/10/tipos-de-archivos-de-imagen.png" class="img-fluid" alt="">     
+      </div>   --}}
+    
+    
+      <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    
+    </div>
+  </div>
+  </div>
+  @endif
+  
 
 @section('numberWpp', '13479739888')
 
@@ -665,7 +833,7 @@
 
 
 @section('script')
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+{{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> --}}
 {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0&appId=671843794640246&autoLogAppEvents=1" nonce="W0bUXQ4L"></script> --}}
 <script>
     window.addEventListener('load', (event) => {
@@ -673,7 +841,7 @@
         document.getElementById('imgdoc').src = "img/docverify-approved-enotary-small.webp";
         document.getElementById('imgnna').src = "img/national-notary-association.webp";
         //document.getElementById('divtestimonials').style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
-        AOS.init();
+        // AOS.init();
     });
 
     document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
@@ -683,22 +851,22 @@
       });
     }, 3000);
 
-    const elem_testimonials = document.querySelector('#divtestimonials');
+    // const elem_testimonials = document.querySelector('#divtestimonials');
 
-    // Creamos un objeto IntersectionObserver
-    const observerTestimonial = new IntersectionObserver((entries) => {
-          // Comprobamos todas las intesecciones. En el ejemplo solo existe una: cuadrado
-          entries.forEach((entry) => {
-              // Si es observable, entra
-              if (entry.isIntersecting) {
-                // Añadimos la clase '.cuadrado--rota'
-                elem_testimonials.style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
-              }
-          });
-      });
+    // // Creamos un objeto IntersectionObserver
+    // const observerTestimonial = new IntersectionObserver((entries) => {
+    //       // Comprobamos todas las intesecciones. En el ejemplo solo existe una: cuadrado
+    //       entries.forEach((entry) => {
+    //           // Si es observable, entra
+    //           if (entry.isIntersecting) {
+    //             // Añadimos la clase '.cuadrado--rota'
+    //             elem_testimonials.style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
+    //           }
+    //       });
+    //   });
 
-    // Añado a mi Observable que quiero observar. En este caso el cuadrado
-    observerTestimonial.observe(elem_testimonials);
+    // // Añado a mi Observable que quiero observar. En este caso el cuadrado
+    // observerTestimonial.observe(elem_testimonials);
 
   </script>
 @endsection
