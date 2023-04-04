@@ -396,8 +396,124 @@
             </div>
           </a>
       </div>
-
   </div>
+
+  {{-- <div class="row mt-4">
+    <div class="col-12 col-sm-12 col-md-3">
+      <a style="text-decoration: none" href="{{route('web.traducciones')}}">
+        <div class="serviceBox h-100">
+            <h3 class="title">Certficaciones</h3>
+            <div class="service-icon">
+                <img class="lazy pt-4" data-src="{{asset('img/oficinas/iconos web/certificaciones.png')}}" width="40" height="70" alt="Certificaciones - Notaria Latina">
+            </div>
+            <p class="description">
+              Mediante este se manifiesta que la copia realizada es verídica copia del documento original
+            </p>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-3">
+      <a style="text-decoration: none" href="{{route('web.traducciones')}}">
+        <div class="serviceBox h-100">
+            <h3 class="title">Affidavit</h3>
+            <div class="service-icon">
+                <img class="lazy pt-4" data-src="{{asset('img/poderes.png')}}" width="40" height="70" alt="Affidavit - Notaria Latina">
+            </div>
+            <p class="description">
+              Mediante un juramento ante una autoridad judicial o administrativa asegura la veracidad de algo
+            </p>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-3">
+      <a style="text-decoration: none" href="{{route('web.traducciones')}}">
+        <div class="serviceBox h-100">
+            <h3 class="title">Revocatoria</h3>
+            <div class="service-icon">
+                <img class="lazy pt-4" data-src="{{asset('img/oficinas/iconos web/revocatorias.png')}}" width="40" height="70" alt="Revocatoria - Notaria Latina">
+            </div>
+            <p class="description">
+              Deja sin efecto un poder otorgado sin antelación
+            </p>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-3">
+      <a style="text-decoration: none" href="{{route('web.traducciones')}}">
+        <div class="serviceBox h-100">
+            <h3 class="title">Acuerdos</h3>
+            <div class="service-icon">
+                <img class="lazy pt-4" data-src="{{asset('img/oficinas/iconos web/acuerdos.png')}}" width="40" height="70" alt="Acuerdos - Notaria Latina">
+            </div>
+            <p class="description">
+              Es un convenio firmado entre dos o más personas
+            </p>
+          </div>
+        </a>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12 col-sm-12 col-md-3">
+      <a style="text-decoration: none" href="{{route('web.traducciones')}}">
+        <div class="serviceBox h-100">
+            <h3 class="title">Cartas de Invitación</h3>
+            <div class="service-icon">
+                <img class="lazy pt-4" data-src="{{asset('img/oficinas/iconos web/cartas.png')}}" width="40" height="70" alt="Cartas de Invitación - Notaria Latina">
+            </div>
+            <p class="description">
+              Mediante este se manifiesta que la copia realizada es verídica copia del documento original
+            </p>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-3">
+      <a style="text-decoration: none" href="{{route('web.traducciones')}}">
+        <div class="serviceBox h-100">
+            <h3 class="title">Travel Authorization</h3>
+            <div class="service-icon">
+                <img class="lazy pt-4" data-src="{{asset('img/oficinas/iconos web/travel.png')}}" width="40" height="70" alt="Travel Authorization - Notaria Latina">
+            </div>
+            <p class="description">
+              Mediante un juramento ante una autoridad judicial o administrativa asegura la veracidad de algo
+            </p>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-3">
+      <a style="text-decoration: none" href="{{route('web.traducciones')}}">
+        <div class="serviceBox h-100">
+            <h3 class="title">Contratos</h3>
+            <div class="service-icon">
+                <img class="lazy pt-4" data-src="{{asset('img/oficinas/iconos web/contratos.png')}}" width="40" height="70" alt="Contratos - Notaria Latina">
+            </div>
+            <p class="description">
+              Deja sin efecto un poder otorgado sin antelación
+            </p>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-3">
+      <a style="text-decoration: none" href="{{route('web.traducciones')}}">
+        <div class="serviceBox h-100">
+            <h3 class="title">Testamentos</h3>
+            <div class="service-icon">
+                <img class="lazy pt-4" data-src="{{asset('img/oficinas/iconos web/testamento.png')}}" width="40" height="70" alt="Testamentos - Notaria Latina">
+            </div>
+            <p class="description">
+              Es un convenio firmado entre dos o más personas
+            </p>
+          </div>
+        </a>
+    </div>
+  </div> --}}
+
 </div>
 </div>
 
@@ -468,9 +584,7 @@
   </div>
 </div>
 
-<div class="container mt-5">
-
-  {{-- div de oficinas --}}
+{{-- <div class="container mt-5">
   <div class="row @if($mobile) pt-0 @else pt-4 @endif">
     <div class="col-12 text-center py-4">
         <h2 class="tit-not letter-color">Visite Nuestras Oficinas</h2>
@@ -482,14 +596,9 @@
           <div class="serviceBox h-100">
               <h3 class="title">New York</h3>
               <div>
-                {{-- <a href="{{route('web.oficina.newyork')}}"> --}}
-                  <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-new-york-notaria-latina.jpg')}}" alt="Poderes - Notaria Latina">
-                {{-- </a> --}}
+              <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-new-york-notaria-latina.jpg')}}" alt="Poderes - Notaria Latina">
               </div>
               <div>
-                {{-- <p class="description mt-4">
-                  Gestione sus trámites notariales en New Jersey
-                </p> --}}
                 <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 67-03 Roosevelt Avenue, Woodside, NY 11377</p>
                 <a class="btn btn-block" href="tel:+13479739888"><i class="fas fa-phone"></i> Llamar ahora</a>
                 <a class="btn btn-block" href="https://api.whatsapp.com/send?phone=13479739888"><i class="fab fa-whatsapp"></i> Whatsapp</a>
@@ -503,14 +612,9 @@
         <div class="serviceBox h-100">
             <h3 class="title">New Jersey</h3>
             <div>
-              {{-- <a href="{{route('web.oficina.newjersey')}}"> --}}
                 <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg')}}"  alt="Apostillas - Notaria Latina">
-              {{-- </a> --}}
             </div>
             <div>
-              {{-- <p class="description mt-4">
-                Gestione sus trámites notariales en New York. 
-              </p> --}}
               <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 1146 East Jersey St Elizabeth, NJ 07201</p>
               <a class="btn btn-block" href="tel:+19088009046"><i class="fas fa-phone"></i> Llamar ahora</a>
               <a class="btn btn-block" href="https://api.whatsapp.com/send?phone=19088009046"><i class="fab fa-whatsapp"></i> Whatsapp</a>
@@ -527,9 +631,6 @@
                 <img class="lazy img-fluid rounded" width="500px" height="500px" data-src="{{asset('img/oficinas/oficina-florida-notaria-latina.jpg')}}" alt="Traducciones - Notaria Latina">
             </div>
             <div>
-              {{-- <p class="description mt-4">
-                Gestione sus trámites notariales en Florida
-              </p> --}}
               <p class="description mt-4"><i class="fas fa-map-marker-alt"></i> 2104 N University Dr, Sunrise, FL 33322</p>
               <a class="btn btn-block" href="tel:+13056003290"><i class="fas fa-phone"></i> Llamar ahora</a>
               <a class="btn btn-block" href="https://api.whatsapp.com/send?phone=13056003290"><i class="fab fa-whatsapp"></i> Whatsapp</a>
@@ -539,21 +640,7 @@
     </div>
 
 </div>
-{{-- termina div oficinas --}}
-
-{{-- <div class="row"> --}}
-
-{{-- <hr class="hrb mb-4 mt-5">
-<div class="row mt-5 d-inline">
-  <div class="d-flex justify-content-center mb-4">
-    <h3 class="tit-not">También puede buscarnos en nuestras redes sociales</h3>
-  </div>
-  <div class="fb-page mt-3 w-auto" data-href="https://www.facebook.com/notariapublicalatina" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-lazy="true"><blockquote cite="https://www.facebook.com/notariapublicalatina" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/notariapublicalatina">Notaría Pública Latina</a></blockquote></div>
 </div> --}}
-
-{{-- </div> --}}
-
-</div>
 
 
 @isset($indexPosts)
