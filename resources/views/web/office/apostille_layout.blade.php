@@ -17,7 +17,7 @@
     <meta property="og:image:height" content="400" />
 
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" as="style" onload="this.rel='stylesheet'" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    {{-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> --}}
 
     <style>
         h2{font-size: 25px}
@@ -215,10 +215,10 @@
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+{{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
-</script>
+</script> --}}
 <script>
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/Apostilla-General.webp')}}')";

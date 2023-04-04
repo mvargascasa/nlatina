@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  {{-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Apostillas Inmediatas en Estados Unidos - Notaria Latina</title>
   <meta name="robots" content="noindex">
@@ -268,10 +268,10 @@ if(strpos($actual_link, 'localhost') === false){
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
+{{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> --}}
+    {{-- <script>
     AOS.init();
-    </script>
+    </script> --}}
 
 </body>
 </html>

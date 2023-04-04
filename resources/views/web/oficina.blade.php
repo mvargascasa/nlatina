@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="robots" content="index, follow, snippet">
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    {{-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> --}}
 
     {{-- link para la tipografia montserrat --}}
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -971,10 +971,10 @@
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    {{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
     AOS.init();
-    </script>
+    </script> --}}
     <script>
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgup'])}})";
