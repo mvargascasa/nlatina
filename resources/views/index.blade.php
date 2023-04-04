@@ -140,6 +140,7 @@
       .carousel-control-prev-icon {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='darkorange' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;}
       .carousel-control-next-icon {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='darkorange' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;}
       .carousel-control-prev, .carousel-control-next {width: 100px;}
+      .card-different:hover i{transform: scale(1.5);} 
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -400,17 +401,17 @@
 </div>
 </div>
 
-<div class="mt-5">
+<div class="@if($mobile) mt-1 @else mt-5 @endif">
   <div>
       <div class="row">
-          <div class="col-12 col-sm-6 p-4 my-2 text-white pt-5 pb-5" style="background-color: #2B384D; padding-left: 10% !important">
+          <div class="col-12 col-sm-6 p-4 my-2 text-white pt-5 pb-5 shadow" style="background-color: #2B384D; padding-left: 10% !important">
               {{-- <span class="text-muted font-weight-bold">¿Por qué elegirnos?</span> <br><br> --}}
               <p class="heading-title pb-4 h3">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</p>
               <hr class="hrwf">
               <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
               <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
           </div>
-          <div class="col-12 col-sm-6 p-4 my-2 d-flex align-items-center px-5" style="padding-right: 5% !important; background-color: #12294409;">
+          <div class="col-12 col-sm-6 p-4 my-2 d-flex align-items-center px-5 shadow" style="padding-right: 5% !important; background-color: #12294409;">
 
             <i>
               <span class="font-family-montserrat" style="font-size:18px; text-indent: 40px; text-align: justify">
@@ -430,23 +431,23 @@
   <div class="text-center w-100">
     <h3 class="tit-not letter-color">¿Qué nos hace diferentes?</h3>
   </div>
-  <div class="row mt-4 mx-5">
-    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
-      <div class="border h-100 pt-4 px-5" style="background-color: #2B384D; border-radius: 20px">
+  <div class="row @if($mobile) mt-1 mx-2 @else mt-4 mx-5 @endif">
+    <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
+      <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-calendar-alt fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white font-family-montserrat">Tenemos una trayectoria dentro del campo notarial por más de <b>10 años</b></p></i>
       </div>
     </div>
-    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
-      <div class="border h-100 pt-4 px-5" style="background-color: #2B384D; border-radius: 20px">
+    <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
+      <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-university fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white font-family-montserrat">Contamos con un <b>personal joven y capacitado</b> para la realización de trámites</p></i>
       </div>
     </div>
-    <div data-aos="fade-up" class="col-sm-4 text-center my-3 pt-3">
-      <div class="border h-100 pt-4 px-5" style="background-color: #2B384D; border-radius: 20px">
+    <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
+      <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-users fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white font-family-montserrat">Nos hemos comprometido con nuestros clientes brindándole un <b>servicio integral, rápido y eficaz</b></p></i>
@@ -459,17 +460,18 @@
 
 </div>
 
-<div data-aos="flip-right" style="background-color: #12294409" class="row text-center py-5 mt-5">
+<div data-aos="flip-right" style="background-color: #12294409" class="row text-center py-5 mt-5 shadow">
   <div class="w-100">
-    <h3 class="tit-not letter-color" style="font-weight: 100 !important">¿Tiene alguna pregunta?</h3>
-    <i><p class="font-weight-bold letter-color font-family-montserrat">No dude en contactarnos y uno de nuestros asesores lo ayudará</p></i>
-    <a class="btn btn-warning py-3" style="border-radius: 10px" href="{{route('web.contactenos')}}"><i class="font-weight-bold letter-color">CONTACTARME</i></a>
+    <h3 class="tit-not letter-color" style="font-weight: 600 !important">¿Tiene alguna pregunta?</h3>
+    <i><p class="letter-color font-family-montserrat">No dude en contactarnos y uno de nuestros asesores lo ayudará</p></i>
+    <a class="btn btn-warning py-3 shadow-sm" style="border-radius: 10px" href="{{route('web.contactenos')}}"><i class="font-weight-bold letter-color">CONTACTARME</i></a>
   </div>
 </div>
-<div class="container">
+
+<div class="container mt-5">
 
   {{-- div de oficinas --}}
-  <div class="row pt-4">
+  <div class="row @if($mobile) pt-0 @else pt-4 @endif">
     <div class="col-12 text-center py-4">
         <h2 class="tit-not letter-color">Visite Nuestras Oficinas</h2>
         <hr class="hrb letter-color">
@@ -557,7 +559,7 @@
 @isset($indexPosts)
 
 <div class="container">
-    <div class="row py-4">
+    <div class="row pb-4">
         <div class="col-12 text-center py-4">
             <h2 class="tit-not letter-color @if(!$mobile) mt-5 @endif">Publicaciones de Interes</h2>
             <hr class="hrb letter-color">
