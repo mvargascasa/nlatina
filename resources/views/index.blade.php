@@ -357,7 +357,7 @@
         </div>
       <div class="col-12 col-sm-12 col-md-4">
         <a style="text-decoration: none" href="{{route('web.apostillas')}}">
-          <div class="serviceBox">
+          <div class="serviceBox h-100">
               <h3 class="title">Apostillas</h3>
               <div class="service-icon">
                   <img class="lazy pt-3" data-src="{{asset('img/apostillas.png')}}" width="50" height="65" alt="Apostillas - Notaria Latina">
@@ -371,7 +371,7 @@
 
       <div class="col-12 col-sm-12 col-md-4">
         <a style="text-decoration: none" href="{{route('web.poderes')}}">
-          <div class="serviceBox">
+          <div class="serviceBox h-100">
               <h3 class="title">Poderes</h3>
               <div class="service-icon">
                   <img class="lazy pt-4" data-src="{{asset('img/poderes.png')}}" width="40" height="65" alt="Poderes - Notaria Latina">
@@ -385,7 +385,7 @@
 
       <div class="col-12 col-sm-12 col-md-4">
         <a style="text-decoration: none" href="{{route('web.traducciones')}}">
-          <div class="serviceBox">
+          <div class="serviceBox h-100">
               <h3 class="title">Traducciones</h3>
               <div class="service-icon">
                   <img class="lazy pt-4" data-src="{{asset('img/traducciones.png')}}" width="40" height="70" alt="Traducciones - Notaria Latina">
