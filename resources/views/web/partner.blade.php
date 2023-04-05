@@ -275,7 +275,7 @@
                 <p class="bg-blue text-white p-2 w-auto text-center font-weight-bold" style="letter-spacing: 15px; border-radius: 0px 25px 25px 0px">{{strtoupper($partner->company)}}</p>
                 <div class="row mt-4">
                     <div class="col-sm-6">
-                        <p class="pt-2 txt-blue" style="letter-spacing: 15px">PUNTUACIÓN</p>
+                        <p class="pt-2 txt-blue text-right" style="letter-spacing: 15px">REVIEWS</p>
                     </div>
                     @php $rating = $partner->averageRating(); @endphp
                     <div class="col-sm-6">
@@ -296,18 +296,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-3">
+                <div class="row mt-3 text-center">
                     @if(count($partner->customers) > 0)
-                        <div class="col-sm-12">
-                            <div style="color: #FEC02F">
-                                <p style="letter-spacing: 1px"><i class="fas fa-search"></i> {{count($partner->customers)}} @if(count($partner->customers) == 1) PERSONA HA @else PERSONAS HAN @endif REALIZADO UNA CONSULTA</p>
+                        <div class="col-sm-6">
+                            <div style="color: #FEC02F; cursor: pointer" data-toggle="modal" data-target="#modalcustomers">
+                                <p style="letter-spacing: 1px"><i class="fas fa-search"></i> {{count($partner->customers)}} @if(count($partner->customers) == 1) CONSULTA @else CONSULTAS @endif</p>
                             </div>
                         </div>
                     @endif
                     @if($partner->views > 0)
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <div style="color: #FEC02F">
-                            <p style="letter-spacing: 1px"><i class="fas fa-eye"></i> {{$partner->views+1}} VISUALIZACIONES AL PERFIL</p>
+                            <p style="letter-spacing: 1px"><i class="fas fa-eye"></i> {{$partner->views+1}} VISUALIZACIONES</p>
                         </div>
                     </div>
                     @endif
@@ -714,6 +714,32 @@
                             <hr>   
                         @endif          
                     @endforeach
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modalcustomers" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: #002542; color: #ffffff">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Consultas</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    @for ($i = 0; $i < 3; $i++)
+                    <div class="card text-left rounded-0 mb-1">
+                      <div class="card-body">
+                        <p class="card-title"><img width="25px" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt=""> User</p>
+                        <p class="card-text text-muted">{{$partner->customers[$i]->mensaje}}</p>
+                      </div>
+                    </div> 
+                    @endfor
+                    <div>
+                        <p class="float-right text-warning">Visualizando 3 de {{count($partner->customers)}} consultas</p>
+                    </div>
                 </div>
               </div>
             </div>
