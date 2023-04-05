@@ -140,7 +140,7 @@
       .carousel-control-prev-icon {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='darkorange' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;}
       .carousel-control-next-icon {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='darkorange' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;}
       .carousel-control-prev, .carousel-control-next {width: 100px;}
-      .card-different:hover i{transform: scale(1.5);} 
+      .card-different:hover i{transform: scale(1.5);} #linkServices:hover .imgServices {filter: brightness(0) invert(1);} 
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -350,11 +350,11 @@
   </div>
 
 <div class="container">
-  <div class="row py-4">
-      <div class="col-12 text-center py-4">
-          <h2 class="tit-not">Nuestros Servicios</h2>
-          <hr class="hrb">
-        </div>
+  <div class="col-12 text-center pt-4">
+      <h2 class="tit-not">Nuestros Servicios</h2>
+      <hr class="hrb">
+    </div>
+  {{-- <div class="row py-4">
       <div class="col-12 col-sm-12 col-md-4">
         <a style="text-decoration: none" href="{{route('web.apostillas')}}">
           <div class="serviceBox h-100">
@@ -396,7 +396,199 @@
             </div>
           </a>
       </div>
+  </div> --}}
+
+  <div class="row justify-content-center">
+
+    <div class="col-sm-4 col-12 mt-3">
+      <a style="text-decoration: none" href="{{route('web.poderes')}}">
+        <div class="card h-100 serviceBox" id="linkServices">
+            <div class="d-flex align-items-center h-100">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/poderes.png')}}" alt="">
+                </div>
+                <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                <div class="pr-3">
+                    <h3 class="linkServices font-family-montserrat title" style="font-weight: bold; font-size: 22px">PODERES</h3>
+                    <p class="font-family-montserrat description" style="font-size: 16px">Gestione sus trámites sin estar presente por medio de un apoderado</p>
+                    {{-- @if($mobile) <p class="font-family-montserrat description" style="font-size: 16px">¿Cómo otorgar una carta poder?</p>@endif --}}
+                </div>
+            </div>
+        </div>
+      </a>
   </div>
+
+  <div class="col-sm-4 col-12 mt-3">
+    <a style="text-decoration: none" href="{{route('web.apostillas')}}">
+      <div class="card h-100 serviceBox" id="linkServices">
+          <div class="d-flex align-items-center h-100">
+              <div class="d-flex justify-content-center align-items-center">
+                  <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/apostilla.png')}}" alt="">
+              </div>
+              <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+              <div class="pr-3">
+                  <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 22px">APOSTILLAS</h3>
+                  <p class="font-family-montserrat description" style="font-size: 16px">Autentificamos sus documentos solicitados por entidades de otro país</p>
+              </div>
+          </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-sm-4 col-12 mt-3">
+    <a style="text-decoration: none" href="{{route('web.traducciones')}}">
+      <div class="card h-100 serviceBox" id="linkServices">
+          <div class="d-flex align-items-center h-100">
+              <div class="d-flex justify-content-center align-items-center">
+                  <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/traducciones.png')}}" alt="">
+              </div>
+              <div class="ml-3 mr-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>
+              <div class="pr-3">
+                  <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 22px">TRADUCCIONES</h3>
+                  <p class="font-family-montserrat description" style="font-size: 16px">Transcripción de documentos de un idioma a otro diferente</p>
+              </div>
+          </div>
+      </div>
+    </a>
+  </div>
+
+    <div class="col-sm-4 col-12 mt-3">
+      <a style="text-decoration: none" href="{{route('web.certificaciones')}}">
+        <div class="card h-100 serviceBox" id="linkServices">
+            <div class="d-flex align-items-center h-100">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img class="lazy imgServices ml-3" style="width: 35px; height: 55px;" data-src="{{asset('img/oficinas/iconos web/certificaciones.png')}}" alt="">
+                </div>
+                <div class="mx-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>
+                <div class="pr-3">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 22px">CERTIFICACIONES</h3>
+                    <p class="font-family-montserrat description" style="font-size: 16px">Demuestre que la copia realizada es verídica copia del documento original</p>
+                </div>
+            </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-4 col-12 mt-3">
+      <a style="text-decoration: none" href="{{route('web.affidavit')}}">
+        <div class="card h-100 serviceBox" id="linkServices">
+            <div class="d-flex align-items-center h-100">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/poderes.png')}}" alt="">
+                </div>
+                <div class="ml-3 mr-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                <div class="pr-3">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 22px">AFFIDAVIT</h3>
+                    <p class="font-family-montserrat description" style="font-size: 16px">Asegure la veracidad de un documento mediante un affidavit</p>
+                </div>
+            </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-4 col-12 mt-3">
+      <a style="text-decoration: none" href="{{route('web.revocatorias')}}">
+        <div class="card h-100 serviceBox" id="linkServices">
+            <div class="d-flex align-items-center h-100">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/revocatorias.png')}}" alt="Como hacer una Revocatoria en Estados Unidos">
+                </div>
+                <div class="mx-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>
+                <div class="pr-3">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 22px">REVOCATORIA</h3>
+                    <p class="font-family-montserrat description" style="font-size: 16px">Deje sin efecto un poder otorgado sin antelación</p>
+                </div>
+            </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-4 col-12 mt-3">
+      <a style="text-decoration: none" href="{{route('web.acuerdos')}}">
+        <div class="card h-100 serviceBox" id="linkServices">
+            <div class="d-flex align-items-center h-100">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/acuerdos.png')}}" alt="Como hacer un acuerdo en Estados Unidos">
+                </div>
+                <div class="ml-3 mr-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>
+                <div class="pr-3">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 22px">ACUERDOS</h3>
+                    <p class="font-family-montserrat description" style="font-size: 16px">Percátese de firmar un convenio entre dos o más personas</p>
+                </div>
+            </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-4 col-12 mt-3">
+      <a style="text-decoration: none" href="{{route('web.invitacion')}}">
+        <div class="card h-100 serviceBox" id="linkServices">
+            <div class="d-flex align-items-center h-100">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/cartas.png')}}" alt="Como tramitar una carta de invitacion en Estados Unidos">
+                </div>
+                <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                <div class="pr-3">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 18px">CARTAS DE INVITACIÓN</h3>
+                    <p class="font-family-montserrat description" style="font-size: 16px">Documento válido para la tramitación de una visa de turista</p>
+                </div>
+            </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-4 col-12 mt-3">
+      <a style="text-decoration: none" href="{{route('web.autorizaciones')}}">
+        <div class="card h-100 serviceBox" id="linkServices">
+            <div class="d-flex align-items-center h-100">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/travel.png')}}" alt="Como hacer una autorizacion de viaje a Estados Unidos">
+                </div>
+                <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                <div class="pr-3">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 18px">TRAVEL AUTHORIZATION</h3>
+                    <p class="font-family-montserrat description" style="font-size: 16px">Nombre a un titular quien será el encargado de viajar con un menor de edad</p>
+                </div>
+            </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-4 col-12 mt-3">
+      <a style="text-decoration: none" href="{{route('web.contratos')}}">
+        <div class="card h-100 serviceBox" id="linkServices">
+            <div class="d-flex align-items-center h-100">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/contratos.png')}}" alt="Como hacer una autorizacion de viaje a Estados Unidos">
+                </div>
+                <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                <div class="pr-3">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 18px">CONTRATOS</h3>
+                    <p class="font-family-montserrat description" style="font-size: 16px">Gestione sus documentos legales que reflejan los derechos y obligaciones</p>
+                </div>
+            </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-4 col-12 mt-3">
+      <a style="text-decoration: none" href="{{route('web.testamentos')}}">
+        <div class="card h-100 serviceBox" id="linkServices">
+            <div class="d-flex align-items-center h-100">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/testamento.png')}}" alt="Como tramitar un testamento en Estados Unidos">
+                </div>
+                <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
+                <div class="pr-3">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 22px">TESTAMENTOS</h3>
+                    <p class="font-family-montserrat description" style="font-size: 16px">Documento que refleja la voluntad de una persona de distribuir sus bienes</p>
+                </div>
+            </div>
+        </div>
+      </a>
+    </div>
+
+</div>
 
   {{-- <div class="row mt-4">
     <div class="col-12 col-sm-12 col-md-4">
