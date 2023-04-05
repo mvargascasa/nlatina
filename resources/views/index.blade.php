@@ -159,11 +159,11 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-          <img data-src="{{asset('img/notaria-en-estados-unidos.jpg')}}" class="lazy d-block w-100" alt="..." 
+          <img data-src="{{asset('img/5.webp')}}" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex ;justify-content: center;">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat text-center" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
@@ -208,7 +208,7 @@
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex; justify-content: center; text-align: center !important">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">PODERES</p>
@@ -251,7 +251,7 @@
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex ;justify-content: center">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">APOSTILLAS</p>
@@ -294,7 +294,7 @@
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex ;justify-content: center">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFB832; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
@@ -399,7 +399,7 @@
   </div>
 
   {{-- <div class="row mt-4">
-    <div class="col-12 col-sm-12 col-md-3">
+    <div class="col-12 col-sm-12 col-md-4">
       <a style="text-decoration: none" href="{{route('web.traducciones')}}">
         <div class="serviceBox h-100">
             <h3 class="title">Certficaciones</h3>
@@ -413,7 +413,7 @@
         </a>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-3">
+    <div class="col-12 col-sm-12 col-md-4">
       <a style="text-decoration: none" href="{{route('web.traducciones')}}">
         <div class="serviceBox h-100">
             <h3 class="title">Affidavit</h3>
@@ -427,7 +427,7 @@
         </a>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-3">
+    <div class="col-12 col-sm-12 col-md-4">
       <a style="text-decoration: none" href="{{route('web.traducciones')}}">
         <div class="serviceBox h-100">
             <h3 class="title">Revocatoria</h3>
@@ -440,8 +440,11 @@
           </div>
         </a>
     </div>
+  </div>
 
-    <div class="col-12 col-sm-12 col-md-3">
+  <div class="row mt-4">
+
+    <div class="col-12 col-sm-12 col-md-4">
       <a style="text-decoration: none" href="{{route('web.traducciones')}}">
         <div class="serviceBox h-100">
             <h3 class="title">Acuerdos</h3>
@@ -454,10 +457,8 @@
           </div>
         </a>
     </div>
-  </div>
 
-  <div class="row mt-4">
-    <div class="col-12 col-sm-12 col-md-3">
+    <div class="col-12 col-sm-12 col-md-4">
       <a style="text-decoration: none" href="{{route('web.traducciones')}}">
         <div class="serviceBox h-100">
             <h3 class="title">Cartas de Invitación</h3>
@@ -471,7 +472,7 @@
         </a>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-3">
+    <div class="col-12 col-sm-12 col-md-4">
       <a style="text-decoration: none" href="{{route('web.traducciones')}}">
         <div class="serviceBox h-100">
             <h3 class="title">Travel Authorization</h3>
@@ -485,7 +486,11 @@
         </a>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-3">
+  </div>
+
+  <div class="row mt-4 justify-content-center">
+    
+    <div class="col-12 col-sm-12 col-md-4">
       <a style="text-decoration: none" href="{{route('web.traducciones')}}">
         <div class="serviceBox h-100">
             <h3 class="title">Contratos</h3>
@@ -499,7 +504,7 @@
         </a>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-3">
+    <div class="col-12 col-sm-12 col-md-4">
       <a style="text-decoration: none" href="{{route('web.traducciones')}}">
         <div class="serviceBox h-100">
             <h3 class="title">Testamentos</h3>
