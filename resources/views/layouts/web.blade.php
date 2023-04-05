@@ -647,7 +647,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         //console.log('cargando script de facebook snippet...');
     }, 3000);
 
-    let timeToLoadJquery = 2000;
+    let timeToLoadJquery = 3000;
     if(path.match('/newjersey') || path.match('/newyork') || path.match('/consulado')) {
         timeToLoadJquery = 3000;
     }
