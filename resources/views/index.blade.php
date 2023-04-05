@@ -163,7 +163,7 @@
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="@if($mobile) {{asset('img/logo-notaria-latina-mobile.webp')}} @else {{asset('img/logo-notaria-latina.webp')}} @endif" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex ;justify-content: center;">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat text-center" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
@@ -208,7 +208,7 @@
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="@if($mobile) {{asset('img/logo-notaria-latina-mobile.webp')}} @else {{asset('img/logo-notaria-latina.webp')}} @endif" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex; justify-content: center; text-align: center !important">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">PODERES</p>
@@ -251,7 +251,7 @@
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="@if($mobile) {{asset('img/logo-notaria-latina-mobile.webp')}} @else {{asset('img/logo-notaria-latina.webp')}} @endif" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex ;justify-content: center">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">APOSTILLAS</p>
@@ -294,7 +294,7 @@
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
-              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
+              <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="@if($mobile){{asset('img/logo-notaria-latina-mobile.webp')}} @else {{asset('img/logo-notaria-latina.webp')}} @endif" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex ;justify-content: center">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFB832; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
