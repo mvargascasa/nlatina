@@ -185,7 +185,7 @@
                   </div>
                 </div>
               </div> --}}
-              {{-- <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
+              <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
                 <div class="d-flex">
                     @foreach ($consulates as $consulate)
                         @if ($consulate->slug != "espana")
@@ -193,7 +193,7 @@
                         @endif
                     @endforeach
                 </div>
-              </div> --}}
+              </div>
               <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
             </div>
               {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
