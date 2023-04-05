@@ -159,7 +159,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-          <img data-src="{{asset('img/5.webp')}}" class="lazy d-block w-100" alt="..." 
+          <img data-src="@if($mobile) {{asset('img/5-mobile.webp')}} @else {{ asset('img/5.webp')}} @endif" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
@@ -204,7 +204,7 @@
 
 {{-- @if(!$mobile) --}}
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
-          <img data-src="{{asset('img/4.webp')}}" class="lazy d-block w-100" alt="..." 
+          <img data-src="@if($mobile) {{asset('img/4-mobile.webp')}} @else {{asset('img/4.webp')}} @endif" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
@@ -247,7 +247,7 @@
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
-          <img data-src="{{asset('img/3.webp')}}" class="lazy d-block w-100" alt="..." 
+          <img data-src="@if($mobile) {{asset('img/3-mobile.webp')}} @else {{asset('img/3.webp')}} @endif" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
@@ -290,7 +290,7 @@
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
-          <img data-src="{{asset('img/2.webp')}}" class="lazy d-block w-100" alt="..." 
+          <img data-src="@if($mobile) {{asset('img/2-mobile.webp')}} @else {{asset('img/2.webp')}} @endif" class="lazy d-block w-100" alt="..." 
           style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
