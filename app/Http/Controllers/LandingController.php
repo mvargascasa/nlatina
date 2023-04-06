@@ -141,7 +141,7 @@ class LandingController extends Controller
             
             $sendoffices = '';
 
-            if ($interest == 'web.oficina.newyork'              || $interest == 'New York'){     $sendoffices = ',newyork@notarialatina.com'; $office = 'New York'; } //
+            if ($interest == 'web.oficina.newyork'              || $interest == 'New York' || $request->state == "Nueva York"){     $sendoffices = ',newyork@notarialatina.com'; $office = 'New York'; } //
             else if ($interest == 'web.oficina.newjersey'       || $interest == 'New Jersey' || $request->state == 'Nueva Jersey'){   $sendoffices = ',newjersey@notarialatina.com'; $office = 'New Jersey'; }//
             else if ($interest == 'web.oficina.florida'         || $interest == 'Florida' || $request->state == "Florida"){      $sendoffices = ',florida@notarialatina.com'; $office = 'Florida'; }//
             else { $sendoffices = ",servicios@notarialatina.com"; $office = 'General'; };
