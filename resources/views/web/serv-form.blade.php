@@ -43,7 +43,12 @@
     ], null, ['class' => 'form-control custom-select rounded-0', 'id' => 'sel_country_serv', 'required']) !!}
 </div>
 
-{!! Form::label('tlf', 'Teléfonos:') !!}
+<div class="form-group">
+    {!! Form::label('state', 'Estado/Departamento') !!}
+    {!! Form::select('state', ['' => 'Seleccione'], null, ['class' => 'form-control custom-select rounded-0', 'id' => 'sel_state_serv', 'required']) !!}
+</div>
+
+{!! Form::label('tlf', 'Teléfono:') !!}
 <div class="form-group d-flex">
     {!! Form::text('cod', null, ['class' => 'form-control rounded-0', 'style' => 'border-radius: 5px 0px 0px 5px; width: 25%; background-color: #ffffff', 'id' => 'cod_country_serv', 'readonly']) !!}
     {!! Form::number('tlf', null, ['class' => 'form-control rounded-0','rows' => '2', 'style' => 'border-radius: 0px 5px 5px 0px; width: 100%', 'required']) !!}
