@@ -311,6 +311,9 @@
                     </div>
                     @endif
                 </div>
+                <div class="row justify-content-center">
+                    <div id="divshowphone" class="row d-flex justify-content-center w-50" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 2.5%;"> </div> 
+                </div>
             </div>
         </div>
     </div>
@@ -391,8 +394,8 @@
                         </div>
                         <button class="btn mb-3 rounded-0" style="background-color: #FEC02F;" type="submit"><i class="fas fa-envelope"></i> Enviar</button>
                     </form>
-                </div>
-                </div>
+                </div>    
+            </div>
         </div>
     </div>
     <br>
@@ -812,9 +815,9 @@
         const divshowphone = document.getElementById('divshowphone');
         let id = document.getElementById('txtpartnerid').textContent;
         if(!localStorage.getItem("prueba"+id)){
-            divshowphone.innerHTML = "<p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px' class='ml-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p><p class='ml-5' style='cursor: pointer; color: #002542; padding: 5px' data-toggle='modal' data-target='.bd-example-modal-sm'>Ver teléfono</p>";
+            divshowphone.innerHTML = "<p class='pl-3 pr-3 shadow-sm' style='cursor: pointer; color: #002542; background-color: #FEC02F; height: 35px; padding: 5px; border-radius: 25px 0px 0px 25px;' data-toggle='modal' data-target='.bd-example-modal-sm'>Ver teléfono</p><p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 0px 25px 25px 0px' class='ml-3 pr-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p>";
         } else {
-            divshowphone.innerHTML = "<p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px' class='ml-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p><a class='ml-5' style='color: #002542; text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>Llamar</a>";
+            divshowphone.innerHTML = "<a class='pl-3 pr-3 shadow-sm' style='color: #002542; background-color: #FEC02F; padding: 5px; height: 35px; border-radius: 25px 0px 0px 25px; text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>Llamar</a><p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 0px 25px 25px 0px' class='ml-1 pl-3 pr-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p>";
         }
         setTimeout(() => {setviewed();}, 3000);
     });
