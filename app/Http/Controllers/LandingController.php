@@ -400,7 +400,7 @@ class LandingController extends Controller
                         <br> Interes: " .strip_tags($request->service_aux) ."
                         <br> Proveniente: ".  strip_tags($interest)."
                         <br> Fuente: GoogleAds 
-                        <br> Hora: " . now()->format('Y-m-d H:i:s') . "
+                        <br> Hora: " . Carbon::now()->subHour(5)->format('Y-m-d H:i:s') . "
                         <br> Página: " . url()->previous() . "
                         ";
                         
