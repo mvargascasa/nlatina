@@ -239,13 +239,13 @@
 
 @section('content')
     <section id="prisection" class="bg-header pt-5 d-flex justify-content-center align-items-center" style="background-size: cover; background-position: left top; background-repeat: no-repeat;"></div>
+        <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
         {{-- <div id="rowinfoheader" class="row mt-5">
             <div class="col-sm-2"></div>
             <div id="divImgPartner" class="col-sm-2">
                 <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Abogado en {{ $partner->city }}, {{ $partner->state }}, {{ $partner->country_residence }}" width="200" height="260">
             </div>
             <div class="col-sm-8 mt-5 info-header">
-                <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
                 <h1><b>Abogado en {{$partner->city}}, {{$partner->state}}</b> <img width="25" height="25" src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="IMG_BAND_{{ $partner->country_residence }}">
                 </h1>
                 <p style="font-size: 20px; margin-top: 15px"><b style="font-weight: 100" id="txtnamelastname">{{$partner->name . " " . $partner->lastname}}</b></p>
@@ -719,6 +719,7 @@
             </div>
           </div>
 
+          @if(count($partner->customers)>0)
           <div class="modal fade" id="modalcustomers" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -744,6 +745,7 @@
               </div>
             </div>
           </div>
+          @endif
 
         {{--ESTO ES PARA MI PERFIL--}}
         @if ($partner->name . " " . $partner->lastname == "Sebastian Armijos")
@@ -809,7 +811,7 @@
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/FONDO-PARTNER-INDIVIDUAL.webp')}}')";
         const divshowphone = document.getElementById('divshowphone');
-        var id = document.getElementById('txtpartnerid').textContent;
+        let id = document.getElementById('txtpartnerid').textContent;
         if(!localStorage.getItem("prueba"+id)){
             divshowphone.innerHTML = "<p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 5px' class='ml-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p><p class='ml-5' style='cursor: pointer; color: #002542; padding: 5px' data-toggle='modal' data-target='.bd-example-modal-sm'>Ver teléfono</p>";
         } else {
