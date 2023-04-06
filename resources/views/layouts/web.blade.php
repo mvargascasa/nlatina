@@ -647,7 +647,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         //console.log('cargando script de facebook snippet...');
     }, 3000);
 
-    let timeToLoadJquery = 3000;
+    let timeToLoadJquery = 2500;
     if(path.match('/newjersey') || path.match('/newyork') || path.match('/consulado')) {
         timeToLoadJquery = 3000;
     }
@@ -736,6 +736,35 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             divchat.style.animation = "slidein 1s 1";
         }
 
+    }
+
+    const selCountry = document.getElementById('sel_country');
+    const selState = document.getElementById('sel_state');
+        
+    selCountry.addEventListener("change", async function() {
+        selState.options.length = 0;
+        let id = getidbycod(selCountry.value);
+        //let id = selCountry.options[selCountry.selectedIndex].dataset.id;
+        const response = await fetch("{{url('getstates')}}/"+id );        
+        const states = await response.json();
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode('Seleccione') );
+        opt.value = '';
+        selState.appendChild(opt);
+            states.forEach(state => {
+                let opt = document.createElement('option');
+                opt.appendChild( document.createTextNode(state.name_state) );
+                opt.value = state.name_state;
+                selState.appendChild(opt);
+            });
+    });
+    
+    const getidbycod = (cod) => {
+        let id = 0;
+        switch (cod) {
+            case '+54': id = 1; break;case '+591': id = 2; break;case '+56': id = 20; break;case '+57': id = 3; break;case '+506': id = 4; break;case '+593': id = 5; break;case '+503': id = 6; break;case '+34': id = 7; break;case '+1': id = 8; break;case '+502': id = 9; break;case '+504': id = 10; break;case '+52': id = 11; break;case '+505': id = 12; break;case '+507': id = 13; break;case '+595': id = 14; break;case '+51': id = 15; break;case '+1 787': id = 16; break;case '+1 809': id = 17; break;case '+598': id = 18; break;case '+58': id = 19; break;default: break;
+        }
+        return id;
     }
 
     document.addEventListener("DOMContentLoaded",function(){

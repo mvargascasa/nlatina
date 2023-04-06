@@ -2896,4 +2896,9 @@ class WebController extends Controller
         $partner->save();
         return response()->json($partner->views);
     }
+
+    public function getstates($id){
+        $states = DB::table('states')->where('country_id',$id)->get(); 
+        return response()->json($states);  
+    }
 }

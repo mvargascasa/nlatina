@@ -16,32 +16,40 @@
     </div>
 </div>
 
-<div class="form-group">
-    {!! Form::label('country', 'País de residencia') !!}
-    {!! Form::select('country', [
-        null => 'Seleccione',
-        '+54' => 'Argentina',
-        '+591' => 'Bolivia',
-        '+56' => 'Chile',
-        '+57' => 'Colombia',
-        '+506' => 'Costa Rica',
-        '+593' => 'Ecuador',
-        '+503' => 'El Salvador',
-        '+34' => 'España',
-        '+1' => 'Estados Unidos',
-        '+502' => 'Guatemala',
-        '+504' => 'Honduras',
-        '+52' => 'México',
-        '+505' => 'Nicaragua',
-        '+507' => 'Panamá',
-        '+595' => 'Paraguay',
-        '+51' => 'Perú',
-        '+1 787' => 'Puerto Rico',
-        '+1 809' => 'República Dominicana',
-        '+598' => 'Uruguay',
-        '+58' => 'Venezuela'
-    ], null, ['class' => 'form-control custom-select rounded-0', 'id' => 'sel_country', 'required']) !!}
+<div class="d-flex">
+    <div class="form-group w-100">
+        {!! Form::label('country', 'País de residencia') !!}
+        {!! Form::select('country', [
+            null => 'Seleccione',
+            '+54' => 'Argentina',
+            '+591' => 'Bolivia',
+            '+56' => 'Chile',
+            '+57' => 'Colombia',
+            '+506' => 'Costa Rica',
+            '+593' => 'Ecuador',
+            '+503' => 'El Salvador',
+            '+34' => 'España',
+            '+1' => 'Estados Unidos',
+            '+502' => 'Guatemala',
+            '+504' => 'Honduras',
+            '+52' => 'México',
+            '+505' => 'Nicaragua',
+            '+507' => 'Panamá',
+            '+595' => 'Paraguay',
+            '+51' => 'Perú',
+            '+1 787' => 'Puerto Rico',
+            '+1 809' => 'República Dominicana',
+            '+598' => 'Uruguay',
+            '+58' => 'Venezuela'
+        ], null, ['class' => 'form-control custom-select rounded-0', 'id' => 'sel_country', 'required']) !!}
+    </div>
+    <div class="form-group w-100 ml-1">
+        {!! Form::label('state', 'Estado/Departamento') !!}
+        {!! Form::select('state', [null => 'Seleccione'], null, ['class' => 'form-control custom-select rounded-0', 'id' => 'sel_state', 'required']) !!}
+    </div>
 </div>
+
+
 
 {!! Form::label('tlf', 'Teléfonos:') !!}
 <div class="form-group d-flex">

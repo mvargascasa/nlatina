@@ -249,6 +249,8 @@ Route::get('getleads', function () {
     return response()->json(DB::table('leads')->select('created_at','fname','tlf','email','message')->orderBy('id','desc')->limit(100)->get());
 });
 
+Route::get('/getstates/{id}', 'WebController@getstates')->name('web.getstates');
+
 
 
 Route::get('testmail', 'WebController@testmail');

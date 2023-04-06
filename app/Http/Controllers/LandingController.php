@@ -142,8 +142,8 @@ class LandingController extends Controller
             $sendoffices = '';
 
             if ($interest == 'web.oficina.newyork'              || $interest == 'New York'){     $sendoffices = ',newyork@notarialatina.com'; $office = 'New York'; } //
-            else if ($interest == 'web.oficina.newjersey'       || $interest == 'New Jersey'){   $sendoffices = ',newjersey@notarialatina.com'; $office = 'New Jersey'; }//
-            else if ($interest == 'web.oficina.florida'         || $interest == 'Florida'){      $sendoffices = ',florida@notarialatina.com'; $office = 'Florida'; }//
+            else if ($interest == 'web.oficina.newjersey'       || $interest == 'New Jersey' || $request->state == 'Nueva Jersey'){   $sendoffices = ',newjersey@notarialatina.com'; $office = 'New Jersey'; }//
+            else if ($interest == 'web.oficina.florida'         || $interest == 'Florida' || $request->state == "Florida"){      $sendoffices = ',florida@notarialatina.com'; $office = 'Florida'; }//
             else { $sendoffices = ",servicios@notarialatina.com"; $office = 'General'; };
 
             // if ($interest == 'web.oficina.newyork'              || $interest == 'New York')     $sendoffices = 'sebas31051999@gmail.com'; //
@@ -298,6 +298,7 @@ class LandingController extends Controller
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br> Nombre: ". strip_tags($request->fname)." ". strip_tags($request->lname) . " 
                 <br> País: " . strip_tags($country) . "
+                <br> Estado: " . strip_tags($request->state) . "
                 <br> Telef: ". strip_tags($request->cod) . " " . strip_tags($request->tlf)."
                 <br> Email: " . strip_tags($request->email) . "
                 <br> Servicio: " . strip_tags($servicename) . "
