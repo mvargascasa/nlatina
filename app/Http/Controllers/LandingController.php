@@ -488,7 +488,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '908 224-9594';
         $data['landing'] = 'General';
         $data['title'] = 'Notaría Latina en New Jersey | Apostillas, Poderes, Traducciones';
-        $data['tlfwpp'] = '13479739888';
+        $data['tlfwpp'] = '19088009046';
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
         return view('landing.general',$data);
@@ -510,7 +510,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '908 224-9596';
         $data['landing'] = 'General Web';
         $data['title'] = 'Apostillas, Poderes, Traducciones | Notaría Latina en New Jersey';
-        $data['tlfwpp'] = '13479739888';
+        $data['tlfwpp'] = '19088009046';
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
         return view('landing.general',$data);
@@ -532,7 +532,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '908 224-9259';
         $data['landing'] = 'Traducciones';
         $data['title'] = 'Traducir Documentos Notariales en New Jersey | Notaria Latina';
-        $data['tlfwpp'] = '13479739888';
+        $data['tlfwpp'] = '19088009046';
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
         return view('landing.general',$data);
@@ -555,7 +555,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '908 224-9258';
         $data['landing'] = "Poderes"; 
         $data['title'] = 'Realizamos todo tipo de Poderes en New Jersey | Notaria Latina';
-        $data['tlfwpp'] = '13479739888';
+        $data['tlfwpp'] = '19088009046';
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
         return view('landing.general',$data);
@@ -577,7 +577,7 @@ class LandingController extends Controller
         $data['tlfshow'] = '908 224-9552';
         $data['landing'] = 'Apostillas';
         $data['title'] = 'Apostillar Documentos en New Jersey | Notaria Latina';
-        $data['tlfwpp'] = '13479739888';
+        $data['tlfwpp'] = '19088009046';
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
         return view('landing.general',$data);
