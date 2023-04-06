@@ -158,8 +158,7 @@ class LandingController extends Controller
             // }
     
             if(isset($request->aaa) && isset($request->bbb) && isset($request->ddd)){
-
-                
+   
                 if(isset($request->cod_pais)){
                     $country = $this->getPaisByCodigo($request->cod_pais);
                 } else {$country = "undefined";}
@@ -174,6 +173,7 @@ class LandingController extends Controller
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br><b> Nombre: </b> ". strip_tags($request->aaa)."
                 <br><b> País: </b> " . strip_tags($country) . "
+                <br><b> Estado: </b> " . strip_tags($request->state) . "
                 <br><b> Telef: </b> ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
                 <br><b> Email: </b> " . strip_tags($request->ccc) ."
                 <br><b> Interes: </b> ".strip_tags($request->service)."

@@ -139,6 +139,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
 <footer class="text-center navfoot text-white py-3">  Copyright ©2020 Notaria Latina. All rights reserved.  </footer>
 
+@yield('scripts')
 <script>
   window.addEventListener('load', (event) => {
       document.getElementById('prisection').style.backgroundImage = "url('img/a-ini.webp')";

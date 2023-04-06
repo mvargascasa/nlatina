@@ -44,11 +44,11 @@
             <form method="POST" action="{{route('landing.thankpost')}}" onsubmit="gtag('event', 'enviar', { 'event_category': 'suscripcion', 'event_label': 'LandingPage', value': '0'});">
                 @csrf
               <div class="form-group pt-4">
-                <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombre y Apellido" maxlength="40" minlength="2" autocomplete="off" required>
+                <input id="aaa" name="aaa" type="text" class="form-control rounded-0" placeholder="Nombre y Apellido" maxlength="40" minlength="2" autocomplete="off" required>
               </div>
               <div class="d-flex">
-                <div class="form-group flex-fill mr-1">
-                  <select id="pais" name="cod_pais" class="form-control" required>
+                <div class="form-group flex-fill mr-1 w-100">
+                  <select id="pais" name="cod_pais" class="form-control rounded-0" required>
                     <option value="">País de residencia</option>
                     <option value="+54">Argentina</option>
                     <option value="+591">Bolivia</option>
@@ -72,15 +72,22 @@
                     <option value="+58">Venezuela</option>                    
                   </select>
                 </div>
-                <div class="form-group flex-fill">
-                  <input id="bbb" name="bbb" type="number" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" required>
+                <div class="form-group w-100">
+                  <select name="state" id="sel_state" class="form-control rounded-0" required>
+                    <option value="">Estado o Departamento</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="form-group w-100 mr-1">
+                  <input id="ccc" name="ccc" type="email" class="form-control rounded-0" placeholder="Email" maxlength="50" minlength="8" autocomplete="off" required>
+                </div>
+                <div class="form-group flex-fill w-100">
+                  <input id="bbb" name="bbb" type="number" class="form-control rounded-0" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" required>
                 </div>
               </div>
               <div class="form-group">
-                <input id="ccc" name="ccc" type="email" class="form-control" placeholder="Email" maxlength="50" minlength="8" autocomplete="off" required>
-              </div>
-              <div class="form-group">
-                <select name="service" class="form-control" id="service" required>
+                <select name="service" class="form-control rounded-0" id="service" required>
                   <option value="">Servicio que necesita tramitar</option>
                   <option value="Poderes">Poderes</option>
                   <option value="Apostillas">Apostillas</option>
@@ -108,10 +115,10 @@
               </div> --}}
               <div class="form-group">
                 {{-- <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje" maxlength="100" autocomplete="off" required> --}}
-                <textarea name="ddd" id="ddd" class="form-control" rows="3" placeholder="Mensaje" maxlength="100" autocomplete="off" required></textarea>
+                <textarea name="ddd" id="ddd" class="form-control rounded-0" rows="3" placeholder="Mensaje" maxlength="100" autocomplete="off" required></textarea>
               </div>
 
-              <button class="btn btn-lg btn-warning btn-block" type="submit">INICIAR TRAMITE</button>
+              <button class="btn btn-lg btn-warning btn-block rounded-0" type="submit">INICIAR TRAMITE</button>
             </form>
           </div>
 
@@ -168,4 +175,37 @@
   </div>
 
 </section>
+@endsection
+
+@section('scripts')
+  <script>
+    const selCountry = document.getElementById('pais');
+    const selState = document.getElementById('sel_state');
+        
+    selCountry.addEventListener("change", async function() {
+        selState.options.length = 0;
+        let id = getidbycod(selCountry.value);
+        //let id = selCountry.options[selCountry.selectedIndex].dataset.id;
+        const response = await fetch("{{url('getstates')}}/"+id );        
+        const states = await response.json();
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode('Seleccione') );
+        opt.value = '';
+        selState.appendChild(opt);
+            states.forEach(state => {
+                let opt = document.createElement('option');
+                opt.appendChild( document.createTextNode(state.name_state) );
+                opt.value = state.name_state;
+                selState.appendChild(opt);
+            });
+    });
+
+    const getidbycod = (cod) => {
+        let id = 0;
+        switch (cod) {
+            case '+54': id = 1; break;case '+591': id = 2; break;case '+56': id = 20; break;case '+57': id = 3; break;case '+506': id = 4; break;case '+593': id = 5; break;case '+503': id = 6; break;case '+34': id = 7; break;case '+1': id = 8; break;case '+502': id = 9; break;case '+504': id = 10; break;case '+52': id = 11; break;case '+505': id = 12; break;case '+507': id = 13; break;case '+595': id = 14; break;case '+51': id = 15; break;case '+1 787': id = 16; break;case '+1 809': id = 17; break;case '+598': id = 18; break;case '+58': id = 19; break;default: break;
+        }
+        return id;
+    }
+  </script>
 @endsection
