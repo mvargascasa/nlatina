@@ -395,6 +395,7 @@ class LandingController extends Controller
                         <br> Nombre: ". strip_tags($request->aaa)."
                         <br> Telef: ".strip_tags($request->codpais). " ".  strip_tags($request->bbb)."
                         <br> País: " .strip_tags($request->pais)."
+                        <br> Estado: " . strip_tags($request->state) . "
                         <br> Mensaje: ".strip_tags($request->ddd)." 
                         <br> Interes: " .strip_tags($request->service_aux) ."
                         <br> Proveniente: ".  strip_tags($interest)."
