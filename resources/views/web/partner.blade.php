@@ -948,7 +948,7 @@
         });
 
         // Añado a mi Observable que quiero observar. En este caso el cuadrado
-        observerTestimonial.observe(elem_testimonials);
+        if(elem_testimonials) observerTestimonial.observe(elem_testimonials);
 
 </script>
 @endsection
