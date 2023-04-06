@@ -754,9 +754,15 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         return id;
     }
 
+    const setimgsrc = (selectCountry) => {
+        let imgcountry = document.getElementById('img-country');
+        if(imgcountry) imgcountry.src = "{{asset('img/partners')}}"+"/"+selectCountry.options[selectCountry.selectedIndex].text.replace(/\s+/g, '').toLowerCase()+".png";
+    }
+
     const  getstates = async (selState, selCountry) => {
         selState.options.length = 0;
         let id = getidbycod(selCountry.value);
+        if(selCountry.id == "sel_country") setimgsrc(selCountry);
         //let id = selCountry.options[selCountry.selectedIndex].dataset.id;
         const response = await fetch("{{url('getstates')}}/"+id );        
         const states = await response.json();
