@@ -140,7 +140,7 @@
     input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
     @media screen and (max-width: 1000px){h1{font-size: 50px !important}}
     @media screen and (max-width: 800px){h1{font-size: 40px !important}}
-    @media screen and (max-width: 580px){#divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}}
+    @media screen and (max-width: 580px){#divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}#sel_state{margin-top: 16px}}
     #iconcall{bottom: 40px !important; right: 10px !important;}
     .grecaptcha-badge { visibility: hidden; }
     .card-reviews{box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;}
@@ -318,9 +318,9 @@
               <input type="hidden" id="service_aux" name="service_aux" value="{{$service_aux}} - {{$oficina}}">
               <div class="form-group pt-4">
                 <input id="aaa" name="aaa" type="text" class="form-control rounded-0" placeholder="Nombre y Apellido"  maxlength="40" minlength="2" autocomplete="off" required>
-              </div>
+              </div>            
               <div id="divpais" class="form-group d-flex">
-                <select id="pais" name="pais" class="form-control mr-2 rounded-0" style="width: 50%" required>
+                <select id="pais" name="pais" class="form-control mr-1 rounded-0 w-100" required>
                   <option value="">País de residencia</option>
                   <option value="Argentina">Argentina</option>
                   <option value="Bolivia">Bolivia</option>
@@ -330,7 +330,7 @@
                   <option value="Ecuador">Ecuador</option>
                   <option value="El Salvador">El Salvador</option>
                   <option value="España">España</option>
-                  <option value="Estados Unidos">Estados Unidos</option>
+                  <option value="Estados Unidos" selected>Estados Unidos</option>
                   <option value="Guatemala">Guatemala</option>
                   <option value="Honduras">Honduras</option>
                   <option value="México">México</option>
@@ -343,7 +343,10 @@
                   <option value="Uruguay">Uruguay</option>
                   <option value="Venezuela">Venezuela</option>                    
                 </select> 
-                <div id="divcodigoandtelefono" class="d-flex" style="width: 50%">
+                <select name="state" id="sel_state" class="form-control rounded-0 w-100 mr-1">
+                  <option value="">Estado/Departamento</option>
+                </select>
+                <div id="divcodigoandtelefono" class="d-flex w-100">
                   <input type="text" id="telf" name="codpais" class="form-control rounded-0" style="border-radius: 5px 0px 0px 5px; width: 75px" readonly/>
                   <input id="bbb" name="bbb" type="number" class="form-control rounded-0" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required> 
                 </div>
@@ -410,7 +413,7 @@
                 <input type="hidden" name="service" value="{{$service_aux}}">
               @endif
               <div class="form-group">
-                <input id="ddd" name="ddd" type="text" class="form-control rounded-0" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
+                <input id="ddd" name="ddd" type="text" class="form-control rounded-0" placeholder="Mensaje - Ej: Necesito tramitar una carta poder..." autocomplete="off" required>
               </div>
               <input type="hidden" name="aux" style="font-size: 10px" placeholder="Si puede ver este campo, por favor ignórelo" class="form-control" readonly>  
               <button class="btn btn-lg btn-warning btn-block rounded-0 shadow" type="submit">INICIAR TRAMITE</button>
@@ -487,6 +490,7 @@
       document.getElementById('prisection').src = "{{asset($imgup)}}";
       document.getElementById('dirmap').src = "{{asset($dirmap)}}";
       console.log('ok');
+      getstates();setcodcountry();
   });
 
   //mostrando div que va al lado del icono de llamar
@@ -506,7 +510,11 @@
   let selectPaisResidencia = document.getElementById('pais');
   let inputCodPais = document.getElementById('telf');
 
-  selectPaisResidencia.onchange  = function(e){
+  selectPaisResidencia.onchange = function(){
+    setcodcountry();
+  }
+
+  const setcodcountry = () => {
     switch (selectPaisResidencia.value) {
       case "":codigo = ""; break;
       case "Argentina":codigo = "+54";break;
@@ -532,6 +540,38 @@
     }
       inputCodPais.value = codigo;
   }
+
+  let selCountry = document.getElementById('pais');
+  let selState = document.getElementById('sel_state');
+
+  selCountry.addEventListener('change', function(){
+    getstates();
+  });
+
+    const getidbycod = (country_name) => {
+      let id = 0;
+        switch (country_name) {case 'Argentina': id = 1; break;case 'Bolivia': id = 2; break;case 'Chile': id = 20; break;case 'Colombia': id = 3; break;case 'Costa Rica': id = 4; break;case 'Ecuador': id = 5; break;case 'El Salvador': id = 6; break;case 'España': id = 7; break;case 'Estados Unidos': id = 8; break;case 'Guatemala': id = 9; break;case 'Honduras': id = 10; break;case 'México': id = 11; break;case 'Nicaragua': id = 12; break;case 'Panamá': id = 13; break;case 'Paraguay': id = 14; break;case 'Perú': id = 15; break;case 'Puerto Rico': id = 16; break;case 'República Dominicana': id = 17; break;case 'Uruguay': id = 18; break;case 'Venezuela': id = 19; break;default: break;}
+      return id;
+    }
+
+    const getstates = async () => {
+      selState.options.length = 0;
+        let id = getidbycod(selCountry.value);
+        //let id = selCountry.options[selCountry.selectedIndex].dataset.id;
+        const response = await fetch("{{url('getstates')}}/"+id );        
+        const states = await response.json();
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode('Estado/Departamento') );
+        opt.value = '';
+        selState.appendChild(opt);
+            states.forEach(state => {
+                let opt = document.createElement('option');
+                opt.appendChild( document.createTextNode(state.name_state) );
+                opt.value = state.name_state;
+                if(state.name_state == "Nueva York" && "{{$oficina}}" == "New York") opt.selected = true; if(state.name_state == "Nueva Jersey" && "{{$oficina}}" == "New Jersey") opt.selected = true; if(state.name_state == "Florida" && "{{$oficina}}" == "Florida") opt.selected = true;
+                selState.appendChild(opt);
+        });
+    }
 
   document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
 
