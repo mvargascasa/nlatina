@@ -50,7 +50,7 @@
         #info_biografia{margin-top:4% !important}
         h1{font-size: 30px !important;}
 
-        @media screen and (max-width: 580px){
+        @media screen and (max-width: 480px){
             .info-header{
                 color: #000000 !important;
                 margin-top: 15% !important; 
@@ -77,7 +77,6 @@
             #img-logo{width: 190px !important; height: 60px !important;}
             #prisection{display: none !important};
         }
-
         #nombre, #telefono, #mensaje{
             margin-bottom: 15px;
         }
@@ -208,7 +207,7 @@
             }, 3000);
 
             setTimeout(() => {
-                var csrfToken = document.head.querySelector('meta[name="csrf-token"]');
+                let csrfToken = document.head.querySelector('meta[name="csrf-token"]');
                 grecaptcha.ready(function() {
                     grecaptcha.execute('6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8', {action: 'homepage'}).then(function(token) {
                             
@@ -275,10 +274,10 @@
                 <p class="bg-blue text-white p-2 w-auto text-center font-weight-bold" style="letter-spacing: 15px; border-radius: 0px 25px 25px 0px">{{strtoupper($partner->company)}}</p>
                 <div class="row mt-4">
                     <div class="col-sm-6">
-                        <p class="pt-2 txt-blue text-right" style="letter-spacing: 15px">REVIEWS</p>
+                        <p class="pt-2 txt-blue @if($mobile) text-center @else text-right @endif" style="letter-spacing: 15px">REVIEWS</p>
                     </div>
                     @php $rating = $partner->averageRating(); @endphp
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 @if($mobile) text-center @else text-left @endif">
                         <div data-toggle="modal" data-target="#exampleModalCenter" style="color: #FEC02F; cursor: pointer">
                             @foreach(range(1,5) as $i)
                                 <span class="fa-stack" style="width:2em" onclick="openModalRating();">

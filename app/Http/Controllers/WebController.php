@@ -317,6 +317,13 @@ class WebController extends Controller
 
     public function showPartner(Request $request, $slug){
 
+        $detect = new MobileDetect();
+        $mobile = FALSE;
+
+        if($detect->isMobile()){
+            $mobile = TRUE;
+        }
+
         if(Str::startsWith($slug, 'abogado')) {
             $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first();
         } 
@@ -328,7 +335,7 @@ class WebController extends Controller
 
         if($partner){
             $testimonials = Rating::where('partner_id', $partner->id)->latest()->take(3)->get();
-            return view('web.partner', compact('partner', 'testimonials'));
+            return view('web.partner', compact('partner', 'testimonials', 'mobile'));
         } else {
             return redirect()->route('web.showallpartners');
         }
