@@ -114,7 +114,7 @@
   setTimeout(() => {
     document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
     //console.log('cargando script de analytics despues de 3seg...');
-  }, 2000);
+  }, 3000);
 </script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -141,20 +141,7 @@
     @media screen and (max-width: 1000px){h1{font-size: 50px !important}}
     @media screen and (max-width: 800px){h1{font-size: 40px !important}}
     @media screen and (max-width: 580px){#divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}}
-    #iconcall{bottom: 40px !important; right: 10px !important; animation: wiggle 3s linear infinite}
-    @keyframes wiggle {
-        0%, 7% {transform: rotateZ(0);}
-        15% {transform: rotateZ(-15deg);}
-        20% {transform: rotateZ(10deg);}
-        25% {transform: rotateZ(-10deg);}
-        30% {transform: rotateZ(6deg);}
-        35% {transform: rotateZ(-4deg);}
-        40%, 100% {transform: rotateZ(0);}
-    }
-    @keyframes jump {
-        from {bottom: 0px;opacity:0;}
-        to {opacity:1;}
-    }
+    #iconcall{bottom: 40px !important; right: 10px !important;}
     .grecaptcha-badge { visibility: hidden; }
     .card-reviews{box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;}
     .card-reviews:hover{
@@ -475,7 +462,7 @@
   </div>
 </a>
 
-<div id="divpreguntas" style="position: fixed; bottom: 48px; right: 60px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none">
+{{-- <div id="divpreguntas" style="position: fixed; bottom: 48px; right: 60px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none">
   <div style="position: relative">
       <div style="position: absolute; right: -10px; top: -16px; background-color: #122944; color: #ffffff; padding: 0px 6px 3px 6px; border-radius: 25px; border: 2px solid #ffffff; font-size: 10px; font-weight: 500; cursor: pointer" onclick="document.getElementById('divpreguntas').style.display = 'none'">
           x
@@ -484,7 +471,7 @@
   <div style="font-size: 14px">
       <b style="font-weight: 500">¿Tiene preguntas?</b> Llámenos ahora
   </div>
-</div>
+</div> --}}
 
 <div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px; position: fixed; bottom: 50px; right: 10px; background-color: #122944; border: 2px solid #ffffff;" class="d-flex">
   <a href="tel:+{{$tlfhidden}}">
@@ -503,7 +490,7 @@
   });
 
   //mostrando div que va al lado del icono de llamar
-  setTimeout(() => {document.getElementById('divpreguntas').style.display='block';document.getElementById("divpreguntas").style.animation = "jump 1s ease";}, 5000);
+  // setTimeout(() => {document.getElementById('divpreguntas').style.display='block';document.getElementById("divpreguntas").style.animation = "jump 1s ease";}, 5000);
 
   // var pais = document.getElementById('pais');
   // var telf = document.getElementById('telf');
