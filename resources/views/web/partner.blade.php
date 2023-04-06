@@ -311,7 +311,7 @@
                     </div>
                     @endif
                 </div>
-                <div id="divshowphone" class="row d-flex justify-content-center w-50" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 2.5%;"> </div> 
+                <div id="divshowphone" class="row d-flex justify-content-center" style="border-radius: 5px; padding-top: 2.5%;"> </div> 
             </div>
         </div>
     </div>
