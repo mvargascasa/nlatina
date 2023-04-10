@@ -8,12 +8,12 @@
 <div class="form-group">
     {!! Form::hidden('url_current', $url_name) !!}
     {!! Form::label('fname', 'Nombres') !!}<b style="color: red">*</b>
-    {!! Form::text('fname', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::text('fname', null, ['class' => 'form-control rounded-0', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('lname', 'Apellidos') !!}<b style="color: red">*</b>
-    {!! Form::text('lname', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::text('lname', null, ['class' => 'form-control rounded-0', 'required']) !!}
 </div>
 
 {{-- <div class="form-group">
@@ -45,18 +45,23 @@
         '+1 809' => 'República Dominicana',
         '+598' => 'Uruguay',
         '+58' => 'Venezuela'
-    ], null, ['class' => 'form-control custom-select', 'id' => 'sel_country', 'required']) !!}
+    ], null, ['class' => 'form-control custom-select rounded-0', 'id' => 'sel_country', 'required']) !!}
+</div>
+
+<div class="form-group w-100">
+    {!! Form::label('state', 'Estado/Departamento') !!}
+    {!! Form::select('state', [null => 'Seleccione'], null, ['class' => 'form-control custom-select rounded-0', 'id' => 'sel_state', 'required']) !!}
 </div>
 
 {!! Form::label('tlf', 'Teléfono') !!}<b style="color: red">*</b>
 <div class="form-group d-flex">
-    {!! Form::text('cod', null, ['class' => 'form-control', 'style' => 'border-radius: 5px 0px 0px 5px; width: 25%; background-color: #ffffff', 'id' => 'cod_country', 'readonly']) !!}
-    {!! Form::number('tlf', null, ['class' => 'form-control','rows' => '2', 'style' => 'border-radius: 0px 5px 5px 0px; width: 100%', 'required']) !!}
+    {!! Form::text('cod', null, ['class' => 'form-control rounded-0', 'style' => 'border-radius: 5px 0px 0px 5px; width: 25%; background-color: #ffffff', 'id' => 'cod_country', 'readonly']) !!}
+    {!! Form::number('tlf', null, ['class' => 'form-control rounded-0','rows' => '2', 'style' => 'border-radius: 0px 5px 5px 0px; width: 100%', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('email', 'Email') !!}
-    {!! Form::text('email', null, ['class' => 'form-control','rows' => '2', 'required']) !!}
+    {!! Form::text('email', null, ['class' => 'form-control rounded-0','rows' => '2', 'required']) !!}
 </div>
 
 <div class="form-group">
@@ -75,16 +80,16 @@
                                 'Poderes Especiales'=>'Poderes Especiales',
                                 'Revocatorias'=>'Revocatorias',
                                 'Testamentos'=>'Testamentos',]
-    ,    null,    ['class' => 'form-control custom-select', 'required']) !!}
+    ,    null,    ['class' => 'form-control custom-select rounded-0', 'required']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('message', 'Mensaje') !!}<b style="color: red">*</b>
-    {!! Form::textarea('message', null, ['class' => 'form-control',  'maxlength'=>"100",'rows' => '2', 'id' => 'message', 'required', 'placeholder' => 'Hola, necesito ayuda con...']) !!}
+    {!! Form::textarea('message', null, ['class' => 'form-control rounded-0',  'maxlength'=>"100",'rows' => '2', 'id' => 'message', 'required', 'placeholder' => 'Hola, necesito ayuda con...']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::submit('Enviar',  ['class' => 'btn btn-lg btn-warning btn-block']) !!}
+    {!! Form::submit('Enviar',  ['class' => 'btn btn-lg btn-warning btn-block rounded-0']) !!}
 </div>
 
 
