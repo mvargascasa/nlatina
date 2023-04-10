@@ -743,7 +743,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     const selCountryServ = document.getElementById('sel_country_serv');
     const selStateServ = document.getElementById('sel_state_serv');
 
-    selCountry.addEventListener("change", function() {getstates(selState, this);});
+    if(selCountry) selCountry.addEventListener("change", function() {getstates(selState, this);});
     if(selCountryServ) selCountryServ.addEventListener('change', function(){getstates(selStateServ, this);})
     
     const getidbycod = (cod) => {
