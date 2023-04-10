@@ -748,23 +748,21 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     
     const getidbycod = (cod) => {
         let id = 0;
-        switch (cod) {
-            case '+54': id = 1; break;case '+591': id = 2; break;case '+56': id = 20; break;case '+57': id = 3; break;case '+506': id = 4; break;case '+593': id = 5; break;case '+503': id = 6; break;case '+34': id = 7; break;case '+1': id = 8; break;case '+502': id = 9; break;case '+504': id = 10; break;case '+52': id = 11; break;case '+505': id = 12; break;case '+507': id = 13; break;case '+595': id = 14; break;case '+51': id = 15; break;case '+1 787': id = 16; break;case '+1 809': id = 17; break;case '+598': id = 18; break;case '+58': id = 19; break;default: break;
-        }
+        switch (cod) {case '+54': id = 1; break;case '+591': id = 2; break;case '+56': id = 20; break;case '+57': id = 3; break;case '+506': id = 4; break;case '+593': id = 5; break;case '+503': id = 6; break;case '+34': id = 7; break;case '+1': id = 8; break;case '+502': id = 9; break;case '+504': id = 10; break;case '+52': id = 11; break;case '+505': id = 12; break;case '+507': id = 13; break;case '+595': id = 14; break;case '+51': id = 15; break;case '+1 787': id = 16; break;case '+1 809': id = 17; break;case '+598': id = 18; break;case '+58': id = 19; break;default: break;}
         return id;
     }
 
     const setimgsrc = (selectCountry) => {
         let imgcountry = "";
-        if(selectCountry.id == "sel_country") imgcountry = document.getElementById('img-country');
         if(selectCountry.id == "sel_country_serv") imgcountry = document.getElementById('img-country-serv');
+        else imgcountry = document.getElementById('img-country');
         if(imgcountry) imgcountry.src = "{{asset('img/partners')}}"+"/"+selectCountry.options[selectCountry.selectedIndex].text.replace(/\s+/g, '').toLowerCase()+".png";
     }
 
     const  getstates = async (selState, selCountry) => {
         selState.options.length = 0;
         let id = getidbycod(selCountry.value);
-        if(selCountry.id == "sel_country") setimgsrc(selCountry);
+        setimgsrc(selCountry);
         //let id = selCountry.options[selCountry.selectedIndex].dataset.id;
         const response = await fetch("{{url('getstates')}}/"+id );        
         const states = await response.json();

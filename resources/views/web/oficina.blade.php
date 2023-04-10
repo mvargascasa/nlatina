@@ -633,17 +633,17 @@
                 <input type="hidden" id="interest" name="interest" value="Oficina {{$data['office']}}">
                 <div class="d-flex pt-4">
                     <div class="form-group w-100 mr-1">
-                      <input id="aaa" name="aaa" type="text" class="form-control" placeholder="Nombre"  maxlength="40" minlength="2" autocomplete="off" required>
+                      <input id="aaa" name="aaa" type="text" class="form-control rounded-0" placeholder="Nombre"  maxlength="40" minlength="2" autocomplete="off" required>
                     </div>
                     <div class="form-group w-100 ml-1">
-                        <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Apellido" minlength="2" maxlength="40" autocomplete="off" required>
+                        <input id="lastname" name="lastname" type="text" class="form-control rounded-0" placeholder="Apellido" minlength="2" maxlength="40" autocomplete="off" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" required>
+                    <input type="email" name="email" id="email" class="form-control rounded-0" placeholder="Correo electrónico" required>
                 </div>
                 <div id="divpais" class="form-group d-flex">
-                    <select id="pais" name="pais" class="form-control mr-2" style="width: 50%" required>
+                    <select id="pais" name="pais" class="form-control mr-1 rounded-0 w-100" required>
                         <option value="">País de residencia</option>
                         <option value="Argentina">Argentina</option>
                         <option value="Bolivia">Bolivia</option>
@@ -666,9 +666,10 @@
                         <option value="Uruguay">Uruguay</option>
                         <option value="Venezuela">Venezuela</option>                    
                       </select>
-                      <div id="divcodigoandtelefono" class="d-flex" style="width: 50%">
-                          <input type="text" id="telf" name="codpais" class="form-control" style="border-radius: 5px 0px 0px 5px; width: 75px; background-color: #ffffff" readonly/>
-                          <input id="bbb" name="bbb" type="number" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required>
+                      <div id="divcodigoandtelefono" class="d-flex w-100">
+                            <label class="border-top border-left border-bottom pt-1 bg-white border-right-0"><img width="30px" class="pl-1" id="img-country" src="" alt=""></label>
+                            <input type="text" id="telf" name="codpais" class="form-control rounded-0 border-left-0" style="border-radius: 5px 0px 0px 5px; width: 75px; background-color: #ffffff" readonly/>
+                            <input id="bbb" name="bbb" type="number" class="form-control rounded-0" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required>
                       </div>
                 </div>
 
@@ -713,7 +714,7 @@
                   </div>
                 </div> --}}
                 <div class="form-group">
-                    <select name="service" id="service" class="form-control" required>
+                    <select name="service" id="service" class="form-control rounded-0" required>
                         <option value="">Seleccione el trámite a realizar</option>
                         <option value="Apostilla">Apostilla</option>
                         <option value="Poder Notariado">Poder Notariado</option>
@@ -731,10 +732,10 @@
                 </div>
 
                 <div class="form-group">
-                  <input id="ddd" name="ddd" type="text" class="form-control" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
+                  <input id="ddd" name="ddd" type="text" class="form-control rounded-0" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
                 </div>
                 <input type="hidden" style="font-size: 10px" placeholder="Si puede ver este campo, por favor ignórelo" name="aux" class="form-control" readonly>  
-                <button class="btn btn-lg btn-warning btn-block" type="submit">INICIAR TRAMITE</button>
+                <button class="btn btn-lg btn-warning rounded-0" type="submit">INICIAR TRAMITE</button>
               </form>
             </div> 
         </div>
@@ -1002,8 +1003,8 @@
         //     }
         // }
 
-        var selectPaisResidencia = document.getElementById('pais');
-        var inputCodPais = document.getElementById('telf');
+        let selectPaisResidencia = document.getElementById('pais');
+        let inputCodPais = document.getElementById('telf');
 
         selectPaisResidencia.onchange  = function(e){
             switch (selectPaisResidencia.value) {
@@ -1030,10 +1031,11 @@
             case "Venezuela":codigo = "+58";break;
             }
             inputCodPais.value = codigo;
+            setimgsrc(selectPaisResidencia);
         }
 
         //DESPLAZAMIENTO AL HACER CLICK EN EL BOTON INICIAR TRAMITE DEL BANNER
-        var btnTramite = document.getElementById('btnFirstIniciarTramite');
+        let btnTramite = document.getElementById('btnFirstIniciarTramite');
         btnTramite.addEventListener('click', clickHandler);
 
         function clickHandler(e) {
