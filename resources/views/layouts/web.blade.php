@@ -755,7 +755,9 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     }
 
     const setimgsrc = (selectCountry) => {
-        let imgcountry = document.getElementById('img-country');
+        let imgcountry = "";
+        if(selectCountry.id == "sel_country") imgcountry = document.getElementById('img-country');
+        if(selectCountry.id == "sel_country_serv") imgcountry = document.getElementById('img-country-serv');
         if(imgcountry) imgcountry.src = "{{asset('img/partners')}}"+"/"+selectCountry.options[selectCountry.selectedIndex].text.replace(/\s+/g, '').toLowerCase()+".png";
     }
 

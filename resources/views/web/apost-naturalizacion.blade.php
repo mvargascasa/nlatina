@@ -67,7 +67,7 @@
   .sticky {position: sticky; top: 10px;}
   @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
   @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
-  .personalized-container{padding-left: 150px; padding-right: 150px};
+  .personalized-container{padding-left: 100px; padding-right: 100px};
 </style>
 @endsection
 
@@ -203,6 +203,11 @@ aria-hidden="true">
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{asset('img/apostillar-carta-de-naturalizacion.jpg')}}')";
     });
+
+    let sel_country = document.getElementById('sel_country_serv');
+    sel_country.addEventListener('change', function(){
+      setimgsrc(sel_country);
+    })
   </script>
 @endsection
 

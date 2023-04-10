@@ -50,8 +50,9 @@
 
 {!! Form::label('tlf', 'Teléfono:') !!}
 <div class="form-group d-flex">
-    {!! Form::text('cod', null, ['class' => 'form-control rounded-0', 'style' => 'border-radius: 5px 0px 0px 5px; width: 25%; background-color: #ffffff', 'id' => 'cod_country_serv', 'readonly']) !!}
-    {!! Form::number('tlf', null, ['class' => 'form-control rounded-0','rows' => '2', 'style' => 'border-radius: 0px 5px 5px 0px; width: 100%', 'required']) !!}
+    <label class="border-top border-left border-bottom pt-1 bg-white border-right-0" style="height: 35px"><img width="30px" class="pl-2" id="img-country-serv" src="" alt=""></label>
+    {!! Form::text('cod', null, ['class' => 'form-control rounded-0 border-left-0', 'style' => 'border-radius: 5px 0px 0px 5px; width: 40%; background-color: #ffffff;font-size:14px', 'id' => 'cod_country_serv', 'readonly']) !!}
+    {!! Form::number('tlf', null, ['class' => 'form-control rounded-0','rows' => '2', 'style' => 'border-radius: 0px 5px 5px 0px; width: 100%;font-size:14px', 'required']) !!}
 </div>
 
 <div class="form-group">
