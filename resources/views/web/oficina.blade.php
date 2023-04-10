@@ -653,7 +653,7 @@
                         <option value="Ecuador">Ecuador</option>
                         <option value="El Salvador">El Salvador</option>
                         <option value="España">España</option>
-                        <option value="Estados Unidos">Estados Unidos</option>
+                        <option value="Estados Unidos" selected>Estados Unidos</option>
                         <option value="Guatemala">Guatemala</option>
                         <option value="Honduras">Honduras</option>
                         <option value="México">México</option>
@@ -981,6 +981,8 @@
             document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgup'])}})";
             //document.getElementById('sectionthree').style.backgroundImage = "url('{{url('img/oficinas/BANNER-NEGRO.webp')}}')";
             //setImageUrlByViewport();
+            setimgsrc(selectPaisResidencia);
+            getidbycountry(selectPaisResidencia);
         });
 
         setTimeout(() => {
@@ -1007,6 +1009,10 @@
         let inputCodPais = document.getElementById('telf');
 
         selectPaisResidencia.onchange  = function(e){
+            getidbycountry();
+        }
+
+        const getidbycountry = () => {
             switch (selectPaisResidencia.value) {
             case "":codigo = ""; break;
             case "Argentina":codigo = "+54";break;
