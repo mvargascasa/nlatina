@@ -385,7 +385,7 @@ class LandingController extends Controller
             }
 
             $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-            $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  '', 'interest' => strip_tags($request->service), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+            $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lname), 'country' => strip_tags($request->pais), 'state' => strip_tags($request->state), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  '', 'interest' => strip_tags($request->service), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
             $postdata = json_encode($datasend);
             $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
             $context = stream_context_create($opts);
