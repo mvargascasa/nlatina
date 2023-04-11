@@ -163,12 +163,12 @@ class LandingController extends Controller
                     $country = $this->getPaisByCodigo($request->cod_pais);
                 } else {$country = "undefined";}
                 
-                $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-                $datasend = [ 'name'=> strip_tags($request->aaa), 'country' => strip_tags($country), 'state' => strip_tags($request->state), 'code' => strip_tags($request->get('cod_pais')), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->ccc), 'interest' => strip_tags($servicename), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
-                $postdata = json_encode($datasend);
-                $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
-                $context = stream_context_create($opts);
-                file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
+                // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+                // $datasend = [ 'name'=> strip_tags($request->aaa), 'country' => strip_tags($country), 'state' => strip_tags($request->state), 'code' => strip_tags($request->get('cod_pais')), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->ccc), 'interest' => strip_tags($servicename), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+                // $postdata = json_encode($datasend);
+                // $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+                // $context = stream_context_create($opts);
+                // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
 
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br><b> Nombre: </b> ". strip_tags($request->aaa)."
@@ -192,19 +192,19 @@ class LandingController extends Controller
                 $header .= 'From: <'.$from.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
                 //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
             }
     
             if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
 
-                $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-                $datasend = [ 'name'=> strip_tags($request->fname)." ". strip_tags($request->lname), 'country' => strip_tags($country), 'state' => strip_tags($request->state), 'code' => strip_tags($request->cod), 'phone' => strip_tags($request->tlf), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($servicename), 'office' => strip_tags($office), 'message' => strip_tags($request->message), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
-                $postdata = json_encode($datasend);
-                $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
-                $context = stream_context_create($opts);
-                file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
+                // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+                // $datasend = [ 'name'=> strip_tags($request->fname)." ". strip_tags($request->lname), 'country' => strip_tags($country), 'state' => strip_tags($request->state), 'code' => strip_tags($request->cod), 'phone' => strip_tags($request->tlf), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($servicename), 'office' => strip_tags($office), 'message' => strip_tags($request->message), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+                // $postdata = json_encode($datasend);
+                // $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+                // $context = stream_context_create($opts);
+                // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
 
                 $from = 'general';
                 if($request->url_current != 'web.oficina.florida' && $request->url_current != 'web.oficina.newjersey' && $request->url_current != 'web.oficina.newyork'){
@@ -322,7 +322,7 @@ class LandingController extends Controller
                 $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
             }
