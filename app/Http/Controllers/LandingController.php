@@ -314,9 +314,9 @@ class LandingController extends Controller
 
                 // <br> Interes: ".strip_tags($interest)." se quito de debajo de email
 
-                if(isset($request->email)){
-                    $this->setEmailToLead($request->fname, $request->email);
-                }
+                // if(isset($request->email)){
+                //     $this->setEmailToLead($request->fname, $request->email); no esta enviando el correo debido a la url de notarialatina.com
+                // }
     
                 // <br> País: ". strip_tags($pais)."
             
@@ -327,7 +327,7 @@ class LandingController extends Controller
                 $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 // if($sended) return "se envio";
