@@ -2590,7 +2590,7 @@ class WebController extends Controller
             file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
 
 
-            // $to = "notariapublicalatina@gmail.com," . $sendoffices; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
+            $to = "notariapublicalatina@gmail.com," . $sendoffices; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
             $subject = "Lead " . strip_tags($request->interest) . ": " . strip_tags($request->aaa);
             $message = "<br><strong><h3>Información del Lead</h3></strong>
                     <br><b>Nombre:</b> " . strip_tags($request->aaa). " " . strip_tags($request->lastname) . "
