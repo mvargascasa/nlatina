@@ -339,7 +339,7 @@ class LandingController extends Controller
                 <br><b> Servicio: </b> ".strip_tags($servicename)."
                 <br><b> Mensaje: </b> ".strip_tags($request->message)."
                 <br><b> Fuente: </b> GoogleAds
-                <br><b> Página: " . strip_tags($request->url_from);
+                <br><b> Página: " . $request->url_from;
 
                 // <br><b> Estado: </b> " . strip_tags($request->state) . "
                 // <br><b> Telef: </b> ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
@@ -364,7 +364,7 @@ class LandingController extends Controller
                 $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 // if($sended) return "se envio";
