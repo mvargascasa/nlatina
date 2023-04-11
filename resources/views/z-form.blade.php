@@ -2,14 +2,11 @@
 
 @php
     $url_name = Route::current()->getName();  
-    $currenturl = url()->full();
 @endphp
 
 <div class="d-flex">
     <div class="form-group w-100">
         {!! Form::hidden('url_current', $url_name) !!}
-        {!! Form::hidden('url_from', $currenturl) !!}
-
         {!! Form::label('fname', 'Nombres:') !!}
         {!! Form::text('fname', null, ['class' => 'form-control rounded-0', 'required']) !!}
     </div>
@@ -56,7 +53,7 @@
 
 {!! Form::label('tlf', 'Teléfonos:') !!}
 <div class="form-group d-flex">
-    <label class="border-top border-left border-bottom pt-1"><img width="30px" class="pl-2" id="img-country" src="" alt=""></label>
+    <label class="border-top border-left border-bottom pt-1 bg-white"><img width="30px" class="pl-2" id="img-country" src="" alt=""></label>
     {!! Form::text('cod', null, ['class' => 'form-control rounded-0 border-left-0', 'style' => 'border-radius: 5px 0px 0px 5px; width: 25%; background-color: #ffffff', 'id' => 'cod_country', 'readonly']) !!}
     {!! Form::number('tlf', null, ['class' => 'form-control rounded-0','rows' => '2', 'style' => 'border-radius: 0px 5px 5px 0px; width: 100%', 'required']) !!}
 </div>
