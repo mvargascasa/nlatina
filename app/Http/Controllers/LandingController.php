@@ -116,6 +116,8 @@ class LandingController extends Controller
     public function thankpost(Request $request)
     {
 
+        return $request;
+
         if(isset($request->country)){
             $country = $this->getPaisByCodigo($request->country);
         }
@@ -211,17 +213,17 @@ class LandingController extends Controller
     
             if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
 
-                $header='';
-                $header .= 'From: <prueba@notarialatina.com>' . "\r\n";
-                $header .= "MIME-Version: 1.0\r\n";
-                $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                // $header='';
+                // $header .= 'From: <prueba@notarialatina.com>' . "\r\n";
+                // $header .= "MIME-Version: 1.0\r\n";
+                // $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-                $message = "<strong>Prueba de envio</strong>";
+                // $message = "<strong>Prueba de envio</strong>";
 
-                $sended = mail('sebas31051999@gmail.com,notariapublicalatina@gmail.com', 'Prueba de envio', $message, $header);
+                // $sended = mail('sebas31051999@gmail.com,notariapublicalatina@gmail.com', 'Prueba de envio', $message, $header);
 
-                if($sended) return "se envio el correo";
-                else return "error al enviar";
+                // if($sended) return "se envio el correo";
+                // else return "error al enviar";
 
                 // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
                 // $datasend = [ 'name'=> strip_tags($request->fname)." ". strip_tags($request->lname), 'country' => strip_tags($country), 'state' => strip_tags($request->state), 'code' => strip_tags($request->cod), 'phone' => strip_tags($request->tlf), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($servicename), 'office' => strip_tags($office), 'message' => strip_tags($request->message), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
@@ -322,7 +324,6 @@ class LandingController extends Controller
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br> Nombre: ". strip_tags($request->fname)." ". strip_tags($request->lname) . " 
                 <br> País: " . strip_tags($country) . "
-                <br> Estado: " . strip_tags($request->state) . "
                 <br> Telef: ". strip_tags($request->cod) . " " . strip_tags($request->tlf)."
                 <br> Email: " . strip_tags($request->email) . "
                 <br> Servicio: " . strip_tags($servicename) . "
