@@ -2901,4 +2901,20 @@ class WebController extends Controller
         $states = DB::table('states')->where('country_id',$id)->orderBy('name_state', 'asc')->get(); 
         return response()->json($states);  
     }
+
+    public function testmail(){
+        
+        $header='';
+        $header .= 'From: <prueba@notarialatina.com>' . "\r\n";
+        $header .= "MIME-Version: 1.0\r\n";
+        $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+        $message = "<strong>Prueba de envio</strong>";
+
+        $sended = mail('sebas31051999@gmail.com,notariapublicalatina@gmail.com', 'Prueba de envio', $message, $header);
+
+        if($sended) return "se envio el correo";
+        else return "error al enviar";
+
+    }
 }
