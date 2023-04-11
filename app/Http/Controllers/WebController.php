@@ -2594,7 +2594,7 @@ class WebController extends Controller
             $subject = "Lead " . strip_tags($request->interest) . ": " . strip_tags($request->aaa);
             $message = "<br><strong><h3>Información del Lead</h3></strong>
                     <br><b>Nombre:</b> " . strip_tags($request->aaa). " " . strip_tags($request->lastname) ."
-                    <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+                    
             ";
 
             // <br><b>País de residencia:</b> " . strip_tags($request->pais) ."
