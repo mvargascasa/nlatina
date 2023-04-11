@@ -339,7 +339,6 @@ class LandingController extends Controller
                 <br> Servicio: prueba
                 <br> Mensaje: ".strip_tags($request->message)."
                 <br> Fuente: GoogleAds 
-                <br> Página: " . url()->previous() . "
                 ";
 
                 // <br> Interes: ".strip_tags($interest)." se quito de debajo de email
