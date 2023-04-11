@@ -2582,12 +2582,12 @@ class WebController extends Controller
                 default: break;
             }
 
-            // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-            // $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lastname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->service), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
-            // $postdata = json_encode($datasend);
-            // $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
-            // $context = stream_context_create($opts);
-            // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
+            $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+            $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lastname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->service), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+            $postdata = json_encode($datasend);
+            $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+            $context = stream_context_create($opts);
+            file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
 
 
             // $to = "notariapublicalatina@gmail.com," . $sendoffices; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
@@ -2600,7 +2600,6 @@ class WebController extends Controller
                     <br><b>Mensaje:</b> " . strip_tags($request->ddd) . "
                     <br><b>Interes:</b> " . strip_tags($request->service) ."
                     <br><b>Proveniente:</b> Página de " . strip_tags($request->interest) . "
-                    <br><b>Pagina: </b> apostilleint.com/es/ 
                     ";
 
 
@@ -2628,7 +2627,7 @@ class WebController extends Controller
 
             // $subject = "Asunto de envio";
     
-            //mail($to, $subject, $message, $header);
+            mail($to, $subject, $message, $header);
             mail('sebas31051999@gmail.com', $subject, $message, $header);
         }
 
