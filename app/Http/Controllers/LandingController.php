@@ -332,9 +332,9 @@ class LandingController extends Controller
 
                 // <br> Interes: ".strip_tags($interest)." se quito de debajo de email
 
-                if(isset($request->email)){
-                    $this->setEmailToLead($request->fname, $request->email);
-                }
+                // if(isset($request->email)){
+                //     $this->setEmailToLead($request->fname, $request->email);
+                // }
     
                 // <br> País: ". strip_tags($pais)."
             
