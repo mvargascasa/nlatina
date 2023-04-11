@@ -2656,8 +2656,6 @@ class WebController extends Controller
                 <br>Teléfono: " . strip_tags($request->phoneRating) ."
                 <br>Mensaje: " . strip_tags($request->mensajeRating) . "
                 <br>Valoración: " . strip_tags($request->star) . " estrellas 
-                <br>
-                <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
         'MIME-Version: 1.0' . "\r\n".
@@ -2681,7 +2679,7 @@ class WebController extends Controller
                 case 'web.oficina.newjersey': $recipient_email .= ",newjersey@notarialatina.com"; $abrev = '_nj'; $office = 'New Jersey'; break; //newjersey@notarialatina.com
                 case 'web.oficina.newyork': $recipient_email .= ",newyork@notarialatina.com"; $abrev = '_ny'; $office = 'New York'; break; //newyork@notarialatina.com
                 case 'web.oficina.florida': $recipient_email .= ",florida@notarialatina.com"; $abrev = '_fl'; $office = 'Florida'; break; //florida@notarialatina.com
-                default: $recipient_email .= ",newyork@notarialatina.com"; break;
+                default: $recipient_email .= ",servicios@notarialatina.com"; $abrev = ""; break;
             }
         }
 
@@ -2724,12 +2722,12 @@ class WebController extends Controller
         $codigo_pais = $this->getCodByPais($request->cod_pais);
 
         //send to mongodb
-        // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-        // $datasend = [ 'name'=> strip_tags($request->name)." ". strip_tags($request->lastname), 'country' => strip_tags($request->cod_pais), 'code' => strip_tags($codigo_pais), 'phone' => strip_tags($request->phone), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->document), 'office' => strip_tags($office), 'message' => strip_tags($request->mensaje), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
-        // $postdata = json_encode($datasend);
-        // $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
-        // $context = stream_context_create($opts);
-        // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
+        $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+        $datasend = [ 'name'=> strip_tags($request->name)." ". strip_tags($request->lastname), 'country' => strip_tags($request->cod_pais), 'code' => strip_tags($codigo_pais), 'phone' => strip_tags($request->phone), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->document), 'office' => strip_tags($office), 'message' => strip_tags($request->mensaje), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+        $postdata = json_encode($datasend);
+        $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+        $context = stream_context_create($opts);
+        file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
 
 
         //return $codigo_pais;
@@ -2803,10 +2801,10 @@ class WebController extends Controller
         }
         
         if($request->file('adjunto') != null){
-            //mail($recipient_email, $subject, $body, $headers);
+            mail($recipient_email, $subject, $body, $headers);
             mail('sebas31051999@gmail.com', $subject, $body, $headers);
         } else {
-            //mail($recipient_email, $subject, $message, $headers);
+            mail($recipient_email, $subject, $message, $headers);
             mail('sebas31051999@gmail.com', $subject, $message, $headers);
         }
 
@@ -2839,8 +2837,6 @@ class WebController extends Controller
                 <br><b>Teléfono:</b> " . strip_tags($request->phone) ."
                 <br><b>País de residencia: </b> " . strip_tags($request->country_residence_view_phone) . "
                 <br><b>Email:</b> " . strip_tags($request->email) . "
-                <br>
-                <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
         'MIME-Version: 1.0' . "\r\n".
@@ -2892,8 +2888,6 @@ class WebController extends Controller
                     <br><b>Email: </b> " . strip_tags($request->email) ."
                     <br><b>Oficina:</b> " . strip_tags($request->office) ."
                     <br><b>Mensaje:</b> " . strip_tags($request->message) . "
-                    <br>
-                    <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
                     ";
 
                     //<br><b>Página: </b> " . url()->previous() . "
