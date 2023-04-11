@@ -332,7 +332,7 @@ class LandingController extends Controller
                 // else return "error al enviar";
     
                 $message = "<br><strong>Nuevo Lead</strong>
-                <br><b> Nombre: </b> ". strip_tags($request->fname);
+                <br><b> Nombre: </b> ". strip_tags($request->fname) . " " . strip_tags($request->lname);
 
                 // <br> Interes: ".strip_tags($interest)." se quito de debajo de email
 
