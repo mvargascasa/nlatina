@@ -2591,7 +2591,7 @@ class WebController extends Controller
 
 
             // $to = "notariapublicalatina@gmail.com," . $sendoffices; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
-            // $subject = "Lead " . strip_tags($request->interest) . ": " . strip_tags($request->aaa);
+            $subject = "Lead " . strip_tags($request->interest) . ": " . strip_tags($request->aaa);
             // $message = "<br><strong><h3>Información del Lead</h3></strong>
             //         <br><b>Nombre:</b> " . strip_tags($request->aaa). " " . strip_tags($request->lastname) ."
             //         <br><b>País de residencia:</b> " . strip_tags($request->pais) ."
@@ -2605,19 +2605,21 @@ class WebController extends Controller
             // ";
             //<br><b>Página: </b> " . url()->previous() . "
 
-            // $header = 'From: <'.$page. '@notarialatina.com>' . "\r\n" .
-            // 'MIME-Version: 1.0' . "\r\n".
-            // 'Content-type:text/html;charset=UTF-8' . "\r\n"
-            // ;
-
-            $header = 'From: <prueba@notarialatina.com>' . "\r\n" .
-                'MIME-Version: 1.0' . "\r\n".
-                'Content-type:text/html;charset=UTF-8' . "\r\n"
+            $header = 'From: <'.$page. '@notarialatina.com>' . "\r\n" .
+            'MIME-Version: 1.0' . "\r\n".
+            'Content-type:text/html;charset=UTF-8' . "\r\n"
             ;
 
-            $message = "Prueba de mensaje";
+            $message = "prueba";
 
-            $subject = "Asunto de envio";
+            // $header = 'From: <prueba@notarialatina.com>' . "\r\n" .
+            //     'MIME-Version: 1.0' . "\r\n".
+            //     'Content-type:text/html;charset=UTF-8' . "\r\n"
+            // ;
+
+            // $message = "Prueba de mensaje";
+
+            // $subject = "Asunto de envio";
     
             //mail($to, $subject, $message, $header);
             mail('sebas31051999@gmail.com', $subject, $message, $header);
