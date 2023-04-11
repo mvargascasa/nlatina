@@ -332,7 +332,8 @@ class LandingController extends Controller
                 // else return "error al enviar";
     
                 $message = "<br><strong>Nuevo Lead</strong>
-                <br><b> Nombre: </b> ". strip_tags($request->fname) . " " . strip_tags($request->lname);
+                <br><b> Nombre: </b> ". strip_tags($request->fname) . " " . strip_tags($request->lname) . "
+                <br><b> País: </b> " . strip_tags($country);
 
                 // <br> Interes: ".strip_tags($interest)." se quito de debajo de email
 
@@ -349,7 +350,7 @@ class LandingController extends Controller
                 $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                 $sended = mail('sebas31051999@gmail.com','Lead prueba', $message, $header);   
                 //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 if($sended) return "se envio";
