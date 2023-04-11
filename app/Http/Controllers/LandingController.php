@@ -318,6 +318,18 @@ class LandingController extends Controller
                         default: break;
                     }
                 }
+
+                $header='';
+                $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
+                $header .= "MIME-Version: 1.0\r\n";
+                $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                $message = "<strong>Prueba de envio</strong>";
+
+                $sended = mail('sebas31051999@gmail.com', 'Prueba de envio', $message, $header);
+
+                if($sended) return "se envio el correo";
+                else return "error al enviar";
     
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br> Nombre: ". strip_tags($request->fname)." ". strip_tags($request->lname) . " 
