@@ -6,11 +6,10 @@
 @endphp
 
 <div class="d-flex">
-    <p>{{$currenturl}}</p>
     <div class="form-group w-100">
         {!! Form::hidden('url_current', $url_name) !!}
         {!! Form::hidden('url_from', $currenturl) !!}
-        
+
         {!! Form::label('fname', 'Nombres:') !!}
         {!! Form::text('fname', null, ['class' => 'form-control rounded-0', 'required']) !!}
     </div>
