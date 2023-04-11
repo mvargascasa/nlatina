@@ -116,8 +116,6 @@ class LandingController extends Controller
     public function thankpost(Request $request)
     {
 
-        return $request;
-
         if(isset($request->country)){
             $country = $this->getPaisByCodigo($request->country);
         }
