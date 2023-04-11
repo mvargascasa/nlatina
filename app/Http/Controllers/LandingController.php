@@ -333,10 +333,10 @@ class LandingController extends Controller
     
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br> Nombre: ". strip_tags($request->fname)." ". strip_tags($request->lname) . " 
-                <br> País: " . strip_tags($country) . "
+                <br> País: prueba
                 <br> Telef: ". strip_tags($request->cod) . " " . strip_tags($request->tlf)."
                 <br> Email: " . strip_tags($request->email) . "
-                <br> Servicio: " . strip_tags($servicename) . "
+                <br> Servicio: prueba
                 <br> Mensaje: ".strip_tags($request->message)."
                 <br> Fuente: GoogleAds 
                 <br> Página: " . url()->previous() . "
