@@ -281,13 +281,12 @@ class PartnerController extends Controller
 
         $to = $partner->email;
         $subject = "Perfil Publicado - Notaria Latina";
-        $message = "<br><strong><h3>¡Felicidades " . $partner->name . "! Tu perfil ha sido publicado en Notaria Latina 😉</h3></strong>
-                <br>En este momento tu perfil se está visualizando en nuestro sitio web para que tus clientes potenciales puedan encontrarte.
-                <br>Puedes ver tu perfil dando click en este <a href='https://notarialatina.com/partners/$partner->slug'>enlace</a> que te redireccionará a tu información publicada
+        $message = "<br><strong><h3>¡Felicidades " . $partner->name . "! Su perfil ha sido publicado en Notaria Latina 😉</h3></strong>
+                <br>En este momento Su perfil se está visualizando en nuestro sitio web para que sus clientes potenciales puedan encontrarlo/a.
+                <br>¿Por qué no incrementar su visibilidad online? Si aún no lo hace, suba un video de presentación a su perfil o envielo a nuestro <a href='https://api.whatsapp.com/send?phone=13474283543'>WhatsApp</a> donde será publicado en nuestras plataformas para un mayor alcance.
                 <br><b>Fecha de publicación: </b> " . strip_tags(Str::limit(date(now()), 10, '')) . "
-                <br>
-                <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
         ";
+        
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
         'MIME-Version: 1.0' . "\r\n".
         'Content-type:text/html;charset=UTF-8' . "\r\n"
@@ -302,10 +301,10 @@ class PartnerController extends Controller
         $to = $partner->email;
         $subject = $request->asunto;
         $message = $request->mensaje;
-        $message .= "
-                <br>
-                <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
-        ";
+        // $message .= "
+        //         <br>
+        //         <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+        // ";
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
         'MIME-Version: 1.0' . "\r\n".
         'Content-type:text/html;charset=UTF-8' . "\r\n"
@@ -336,11 +335,9 @@ class PartnerController extends Controller
                     <br><strong><h3>Hola " . $partner->name . ". Reciba un cordial saludo de Notaria Latina</h3></strong>
                     <br>Queremos informarle que su perfil no ha sido publicado en nuestra plataforma debido a que algunos campos están incompletos o no cumplen con los requisitos necesarios.
                     <br>Una vez que complete su información restante su perfil será publicado en nuestro sitio web.
-                    <br>Puede Iniciar Sesión y editar su perfil haciendo click <a href='https://notarialatina.com/partners/login'>aqui</a> o si tiene alguna inquietud no dude en contactarnos por este medio o por <a href='https://api.whatsapp.com/send?phone=13474283543'>Whatsapp</a>
+                    <br>Puede Iniciar Sesión y editar su perfil o si tiene alguna inquietud no dude en contactarnos por este medio o por <a href='https://api.whatsapp.com/send?phone=13474283543'>Whatsapp</a>
                     <br>
                     <br><b><i>¡Notaria Latina, formando parte de su crecimiento!</i></b>
-                    <br>
-                    <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
                 </div>
         ";
         $header = 'From: <partners@notarialatina.com>' . "\r\n" .
