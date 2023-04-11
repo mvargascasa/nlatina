@@ -2600,7 +2600,7 @@ class WebController extends Controller
                     <br><b>Mensaje:</b> " . strip_tags($request->ddd) . "
                     <br><b>Interes:</b> " . strip_tags($request->service) ."
                     <br><b>Proveniente:</b> Página de " . strip_tags($request->interest) . "
-                    <br><b>Pagina: </b> https://notarialatina.com 
+                    <br><b>Pagina: </b> https://apostilleint.com/es/ 
                     ";
 
 
