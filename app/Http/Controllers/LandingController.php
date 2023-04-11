@@ -331,15 +331,7 @@ class LandingController extends Controller
                 // if($sended) return "se envio el correo";
                 // else return "error al enviar";
     
-                $message = "<br><strong>Nuevo Lead</strong>
-                <br> Nombre: ". strip_tags($request->fname)." ". strip_tags($request->lname) . " 
-                <br> País: prueba
-                <br> Telef: ". strip_tags($request->cod) . " " . strip_tags($request->tlf)."
-                <br> Email: " . strip_tags($request->email) . "
-                <br> Servicio: prueba
-                <br> Mensaje: ".strip_tags($request->message)."
-                <br> Fuente: GoogleAds 
-                ";
+                $message = "hola";
 
                 // <br> Interes: ".strip_tags($interest)." se quito de debajo de email
 
