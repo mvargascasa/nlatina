@@ -2597,6 +2597,7 @@ class WebController extends Controller
                     <br><b>País de residencia:</b> " . strip_tags($request->pais) . "
                     <br><b>Teléfono:</b> " .strip_tags($request->codpais) . " " . strip_tags($request->bbb) . "
                     <br><b>Email: </b> " . strip_tags($request->email) ."
+                    <br><b>Mensaje:</b> " . strip_tags($request->ddd) . "
                     ";
 
 
