@@ -438,11 +438,6 @@ class LandingController extends Controller
         $message = "
         <div style='border: 0.5px solid #AA9389; padding: 30px; border-radius: 10px'>
             <div>
-                <div style='text-align:center'>
-                    <a href='https://notarialatina.com'><img style='margin-top:20px; width:150px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'></a>
-                </div>
-            </div>
-            <div>
                 <h1 style='text-align:center'>¡Gracias " . strip_tags($name) ." por confiar en nosotros!</h1>
                 <h4>Su solicitud está siendo procesada, en breve un asesor se pondrá en contacto con usted para ayudarlo con el trámite</h4>
                 <p>
