@@ -2582,12 +2582,12 @@ class WebController extends Controller
                 default: break;
             }
 
-            $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-            $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lastname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->service), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
-            $postdata = json_encode($datasend);
-            $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
-            $context = stream_context_create($opts);
-            file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
+            // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+            // $datasend = [ 'name'=> strip_tags($request->aaa)." ". strip_tags($request->lastname), 'country' => strip_tags($request->pais), 'code' => strip_tags($request->codpais), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->service), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+            // $postdata = json_encode($datasend);
+            // $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+            // $context = stream_context_create($opts);
+            // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
 
 
             $to = "notariapublicalatina@gmail.com," . $sendoffices; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
@@ -2600,10 +2600,10 @@ class WebController extends Controller
                     <br><b>Mensaje:</b> " . strip_tags($request->ddd) . "
                     <br><b>Interes:</b> " . strip_tags($request->service) ."
                     <br><b>Proveniente:</b> Página de " . strip_tags($request->interest) . "
-                    <br><b>Página: </b> " . url()->previous() . "
                     <br>
                     <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
             ";
+            //<br><b>Página: </b> " . url()->previous() . "
 
             $header = 'From: <'.$page. '@notarialatina.com>' . "\r\n" .
             'MIME-Version: 1.0' . "\r\n".
@@ -2707,12 +2707,12 @@ class WebController extends Controller
         $codigo_pais = $this->getCodByPais($request->cod_pais);
 
         //send to mongodb
-        $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-        $datasend = [ 'name'=> strip_tags($request->name)." ". strip_tags($request->lastname), 'country' => strip_tags($request->cod_pais), 'code' => strip_tags($codigo_pais), 'phone' => strip_tags($request->phone), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->document), 'office' => strip_tags($office), 'message' => strip_tags($request->mensaje), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
-        $postdata = json_encode($datasend);
-        $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
-        $context = stream_context_create($opts);
-        file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
+        // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+        // $datasend = [ 'name'=> strip_tags($request->name)." ". strip_tags($request->lastname), 'country' => strip_tags($request->cod_pais), 'code' => strip_tags($codigo_pais), 'phone' => strip_tags($request->phone), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($request->document), 'office' => strip_tags($office), 'message' => strip_tags($request->mensaje), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+        // $postdata = json_encode($datasend);
+        // $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+        // $context = stream_context_create($opts);
+        // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
 
 
         //return $codigo_pais;
@@ -2726,10 +2726,11 @@ class WebController extends Controller
         <br><b>País de residencia:</b> " . strip_tags($request->cod_pais) . "
         <br><b>Teléfono:</b> " . $codigo_pais ." " . strip_tags($request->phone) . "
         <br><b>Email:</b> " . strip_tags($request->email) . "
-        <br><b>Página proveniente: </b> " . url()->previous() . "
         <br><b>Documento a Apostillar:</b> " . strip_tags($request->document) . "
         <br><b>Mensaje:</b> " . strip_tags($request->mensaje) . "
         "; //body of the email
+
+        //<br><b>Página proveniente: </b> " . url()->previous() . "
 
         if ($request->file('adjunto') != null) {
             $tmp_name = $_FILES['adjunto']['tmp_name']; // get the temporary file name of the file on the server
@@ -2874,10 +2875,11 @@ class WebController extends Controller
                     <br><b>Email: </b> " . strip_tags($request->email) ."
                     <br><b>Oficina:</b> " . strip_tags($request->office) ."
                     <br><b>Mensaje:</b> " . strip_tags($request->message) . "
-                    <br><b>Página: </b> " . url()->previous() . "
                     <br>
                     <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
                     ";
+
+                    //<br><b>Página: </b> " . url()->previous() . "
 
         $header = 'From: <cita_consular@notarialatina.com>' . "\r\n" .
             'MIME-Version: 1.0' . "\r\n".
@@ -2904,17 +2906,19 @@ class WebController extends Controller
 
     public function testmail(){
         
-        $header='';
-        $header .= 'From: <prueba@notarialatina.com>' . "\r\n";
-        $header .= "MIME-Version: 1.0\r\n";
-        $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        // $header='';
+        // $header .= 'From: <prueba@notarialatina.com>' . "\r\n";
+        // $header .= "MIME-Version: 1.0\r\n";
+        // $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-        $message = "<strong>Prueba de envio</strong>";
+        // $message = "<strong>Prueba de envio</strong>";
 
-        $sended = mail('sebas31051999@gmail.com,notariapublicalatina@gmail.com', 'Prueba de envio', $message, $header);
+        // $sended = mail('sebas31051999@gmail.com,notariapublicalatina@gmail.com', 'Prueba de envio', $message, $header);
 
-        if($sended) return "se envio el correo";
-        else return "error al enviar";
+        // if($sended) return "se envio el correo";
+        // else return "error al enviar";
+
+        echo url()->previous();
 
     }
 }
