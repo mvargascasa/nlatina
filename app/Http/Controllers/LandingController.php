@@ -123,6 +123,18 @@ class LandingController extends Controller
 
         //$pais = $this->getCodPais($request->get('cod_pais'));
         if(!Str::contains($request->message, 'https')){
+            
+            $header='';
+            $header .= 'From: <prueba@notarialatina.com>' . "\r\n";
+            $header .= "MIME-Version: 1.0\r\n";
+            $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+            $message = "<strong>Prueba de envio</strong>";
+
+            $sended = mail('sebas31051999@gmail.com,notariapublicalatina@gmail.com', 'Prueba de envio', $message, $header);
+
+            if($sended) return "se envio el correo";
+            else return "error al enviar";
 
             // if(isset($request->office)) $interest = $request->office;
             // else $interest = $request->interest ?? 'General';
@@ -192,7 +204,7 @@ class LandingController extends Controller
                 $header .= 'From: <'.$from.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
+                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
                 //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
             }
