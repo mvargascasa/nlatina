@@ -2563,7 +2563,7 @@ class WebController extends Controller
                 case 'Oficina New Jersey': $sendoffices = 'newjersey@notarialatina.com'; $abrev = 'nj'; $office = 'New Jersey'; break; //newjersey@notarialatina.com
                 case 'Oficina New York': $sendoffices = 'newyork@notarialatina.com'; $abrev = 'ny'; $office = 'New York'; break; //newyork@notarialatina.com
                 case 'Oficina Florida': $sendoffices = 'florida@notarialatina.com'; $abrev = 'fl'; $office = 'Florida'; break; //florida@notarialatina.com
-                default: break;
+                default: $abrev = ""; break;
             }
 
             switch ($request->service) {
