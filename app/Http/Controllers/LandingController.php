@@ -345,7 +345,7 @@ class LandingController extends Controller
                 // if(isset($request->service)) $fromheader = strtolower($request->service)."_home";    
                 // else $fromheader = "lead_" . strtolower(str_replace(' ', '', $from));
 
-                $header .= 'From: prueba@notarialatina.com>' . "\r\n";
+                $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
