@@ -333,7 +333,16 @@ class LandingController extends Controller
     
                 $message = "<br><strong>Nuevo Lead</strong>
                 <br><b> Nombre: </b> ". strip_tags($request->fname) . " " . strip_tags($request->lname) . "
-                <br><b> País: </b> " . strip_tags($country);
+                <br><b> País: </b> " . strip_tags($country). "
+                <br><b> Estado: </b> " . strip_tags($request->state);
+
+                // <br><b> Estado: </b> " . strip_tags($request->state) . "
+                // <br><b> Telef: </b> ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
+                // <br><b> Email: </b> " . strip_tags($request->ccc) ."
+                // <br><b> Interes: </b> ".strip_tags($request->service)."
+                // <br><b> Mensaje: </b> ".strip_tags($request->ddd)."
+                // <br><b> Fuente: </b> GoogleAds 
+                // <br><b> Página: </b> " . url()->previous() . " 
 
                 // <br> Interes: ".strip_tags($interest)." se quito de debajo de email
 
