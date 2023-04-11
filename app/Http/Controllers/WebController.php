@@ -2592,17 +2592,17 @@ class WebController extends Controller
 
             // $to = "notariapublicalatina@gmail.com," . $sendoffices; //notariapublicalatina@gmail.com,hserrano@notarialatina.com
             $subject = "Lead " . strip_tags($request->interest) . ": " . strip_tags($request->aaa);
-            // $message = "<br><strong><h3>Información del Lead</h3></strong>
-            //         <br><b>Nombre:</b> " . strip_tags($request->aaa). " " . strip_tags($request->lastname) ."
-            //         <br><b>País de residencia:</b> " . strip_tags($request->pais) ."
+            $message = "<br><strong><h3>Información del Lead</h3></strong>
+                    <br><b>Nombre:</b> " . strip_tags($request->aaa). " " . strip_tags($request->lastname) ."
+                    <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
+            ";
+
+            // <br><b>País de residencia:</b> " . strip_tags($request->pais) ."
             //         <br><b>Teléfono:</b> " .strip_tags($request->codpais) . " " . strip_tags($request->bbb) ."
             //         <br><b>Email: </b> " . strip_tags($request->email) ."
             //         <br><b>Mensaje:</b> " . strip_tags($request->ddd) . "
             //         <br><b>Interes:</b> " . strip_tags($request->service) ."
             //         <br><b>Proveniente:</b> Página de " . strip_tags($request->interest) . "
-            //         <br>
-            //         <img style='width: 150px; margin-top:20px' src='https://notarialatina.com/img/partners/WEB-HEREDADO.png' alt='IMAGEN NOTARIA LATINA'>
-            // ";
             //<br><b>Página: </b> " . url()->previous() . "
 
             $header = 'From: <'.$page. '@notarialatina.com>' . "\r\n" .
@@ -2610,7 +2610,7 @@ class WebController extends Controller
             'Content-type:text/html;charset=UTF-8' . "\r\n"
             ;
 
-            $message = "prueba";
+            // $message = "prueba";
 
             // $header = 'From: <prueba@notarialatina.com>' . "\r\n" .
             //     'MIME-Version: 1.0' . "\r\n".
