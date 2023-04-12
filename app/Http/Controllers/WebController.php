@@ -316,32 +316,28 @@ class WebController extends Controller
     }
 
     public function showPartner(Request $request, $slug){
+        
+        $detect = new MobileDetect();
+        $mobile = FALSE;
 
-        try {
-            $detect = new MobileDetect();
-            $mobile = FALSE;
-    
-            if($detect->isMobile()){
-                $mobile = TRUE;
-            }
-    
-            if(Str::startsWith($slug, 'abogado')) {
-                $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first();
-            } 
-            else {
-                $partner = Partner::where('old_slug', $slug)->where('status', 'PUBLICADO')->first();
-                if($partner)return redirect()->route('web.showpartner', $partner->slug);
-                else return redirect()->route('web.showallpartners');
-            }
-    
-            if($partner){
-                $testimonials = Rating::where('partner_id', $partner->id)->latest()->take(3)->get();
-                return view('web.partner', compact('partner', 'testimonials', 'mobile'));
-            } else {
-                return redirect()->route('web.showallpartners');
-            }
-        } catch (\Exception $e) {
-            echo $e;
+        if($detect->isMobile()){
+            $mobile = TRUE;
+        }
+
+        if(Str::startsWith($slug, 'abogado')) {
+            $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first();
+        } 
+        else {
+            $partner = Partner::where('old_slug', $slug)->where('status', 'PUBLICADO')->first();
+            if($partner)return redirect()->route('web.showpartner', $partner->slug);
+            else return redirect()->route('web.showallpartners');
+        }
+
+        if($partner){
+            $testimonials = Rating::where('partner_id', $partner->id)->latest()->take(3)->get();
+            return view('web.partner', compact('partner', 'testimonials', 'mobile'));
+        } else {
+            return redirect()->route('web.showallpartners');
         }
     }
 
