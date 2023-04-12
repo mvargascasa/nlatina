@@ -179,8 +179,8 @@
     {{-- <div class="d-sm-block d-md-none text-center" style="margin-top: 20%;">
         <div class="font-italic"><h1 style="font-size: 22px; font-weight: 600">{!!$header!!}</h1></div>
     </div>     --}}
-    <div class="text-center d-md-block" style="margin-top: 12%;">
-      <div class="font-italic"><h1 style="font-size: 60px; font-weight: 600">{!!$header!!}</h1></div>
+    <div class="text-center d-md-block" style="margin-top: 13%;">
+      <div class="font-italic"><h1 style="font-size: 60px; font-weight: 600">{!!$header !!}</h1></div>
     </div>
   </div>
 </section>
