@@ -458,136 +458,136 @@
     </a>
   </div>
 
-    <div class="col-sm-4 col-12 mt-3">
+    <div class="col-sm-4 col-6 mt-3">
       <a style="text-decoration: none" href="{{route('web.certificaciones')}}">
-        <div class="card h-100 serviceBox sb4" id="linkServices">
-            <div class="d-flex align-items-center h-100">
+        <div class="card @if(!$mobile) h-100 @endif serviceBox sb4" id="linkServices">
+            <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
                 <div class="d-flex justify-content-center align-items-center">
                     <img class="lazy imgServices ml-3" style="width: 35px; height: 55px;" data-src="{{asset('img/oficinas/iconos web/certificaciones.png')}}" alt="">
                 </div>
-                <div class="mx-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>
-                <div class="pr-3">
-                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 25px">CERTIFICACIONES</h3>
-                    <p class="font-family-montserrat description" style="font-size: 20px">Demuestre que la copia realizada es verídica copia del documento original</p>
+                @if(!$mobile)<div class="mx-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>@endif
+                <div class="@if(!$mobile) pr-3 @endif text-center">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: @if(!$mobile) 25px @else 15px @endif">CERTIFICACIONES</h3>
+                    @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Demuestre que la copia realizada es verídica copia del documento original</p>@endif
                 </div>
             </div>
         </div>
       </a>
     </div>
 
-    <div class="col-sm-4 col-12 mt-3">
+    <div class="col-sm-4 col-6 mt-3">
       <a style="text-decoration: none" href="{{route('web.affidavit')}}">
-        <div class="card h-100 serviceBox sb5" id="linkServices">
-            <div class="d-flex align-items-center h-100">
+        <div class="card @if(!$mobile) h-100 @endif serviceBox sb5" id="linkServices">
+            <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
                 <div class="d-flex justify-content-center align-items-center">
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/poderes.png')}}" alt="">
                 </div>
-                <div class="ml-3 mr-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
-                <div class="pr-3">
-                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 25px">AFFIDAVIT</h3>
-                    <p class="font-family-montserrat description" style="font-size: 20px">Asegure la veracidad de un documento mediante una declaración juramentada</p>
+                @if(!$mobile)<div class="ml-3 mr-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>@endif
+                <div class="@if(!$mobile) pr-3 @endif text-center">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: @if(!$mobile) 25px @else 15px @endif">AFFIDAVIT</h3>
+                    @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Asegure la veracidad de un documento mediante una declaración juramentada</p>@endif
                 </div>
             </div>
         </div>
       </a>
     </div>
 
-    <div class="col-sm-4 col-12 mt-3">
+    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.revocatorias')}}">
-        <div class="card h-100 serviceBox sb6" id="linkServices">
-            <div class="d-flex align-items-center h-100">
+        <div class="card @if(!$mobile) h-100 @endif serviceBox sb6" id="linkServices">
+            <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
                 <div class="d-flex justify-content-center align-items-center">
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/revocatorias.png')}}" alt="Como hacer una Revocatoria en Estados Unidos">
                 </div>
-                <div class="mx-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>
-                <div class="pr-3">
-                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 25px">REVOCATORIA</h3>
-                    <p class="font-family-montserrat description" style="font-size: 20px">Deje sin efecto un poder otorgado sin antelación</p>
+                @if(!$mobile)<div class="mx-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>@endif
+                <div class="@if(!$mobile) pr-3 @endif text-center">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: @if(!$mobile) 25px @else 15px @endif">REVOCATORIA</h3>
+                    @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Deje sin efecto un poder otorgado sin antelación</p>@endif
                 </div>
             </div>
         </div>
       </a>
     </div>
 
-    <div class="col-sm-4 col-12 mt-3">
+    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.acuerdos')}}">
-        <div class="card h-100 serviceBox sb7" id="linkServices">
-            <div class="d-flex align-items-center h-100">
+        <div class="card @if(!$mobile) h-100 @endif serviceBox sb7" id="linkServices">
+            <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
                 <div class="d-flex justify-content-center align-items-center">
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/acuerdos.png')}}" alt="Como hacer un acuerdo en Estados Unidos">
                 </div>
-                <div class="ml-3 mr-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>
-                <div class="pr-3">
-                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 25px">ACUERDOS</h3>
-                    <p class="font-family-montserrat description" style="font-size: 20px">Percátese de firmar un convenio entre dos o más personas</p>
+                @if(!$mobile)<div class="ml-3 mr-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>@endif
+                <div class="@if(!$mobile) pr-3 @endif text-center">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size:@if(!$mobile) 25px @else 15px @endif">ACUERDOS</h3>
+                    @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Percátese de firmar un convenio entre dos o más personas</p>@endif
                 </div>
             </div>
         </div>
       </a>
     </div>
 
-    <div class="col-sm-4 col-12 mt-3">
+    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.invitacion')}}">
-        <div class="card h-100 serviceBox sb8" id="linkServices">
-            <div class="d-flex align-items-center h-100">
+        <div class="card @if(!$mobile) h-100 @endif serviceBox sb8" id="linkServices">
+            <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
                 <div class="d-flex justify-content-center align-items-center">
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/cartas.png')}}" alt="Como tramitar una carta de invitacion en Estados Unidos">
                 </div>
-                <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
-                <div class="pr-3">
-                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 25px">CARTAS DE INVITACIÓN</h3>
-                    <p class="font-family-montserrat description" style="font-size: 20px">Documento válido para la tramitación de una visa de turista</p>
+                @if(!$mobile)<div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>@endif
+                <div class="@if(!$mobile) pr-3 @endif text-center">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size:@if(!$mobile) 25px @else 15px @endif">CARTAS DE INVITACIÓN</h3>
+                    @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Documento válido para la tramitación de una visa de turista</p>@endif
                 </div>
             </div>
         </div>
       </a>
     </div>
 
-    <div class="col-sm-4 col-12 mt-3">
+    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.autorizaciones')}}">
-        <div class="card h-100 serviceBox sb9" id="linkServices">
-            <div class="d-flex align-items-center h-100">
+        <div class="card @if(!$mobile) h-100 @endif serviceBox sb9" id="linkServices">
+            <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
                 <div class="d-flex justify-content-center align-items-center">
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/travel.png')}}" alt="Como hacer una autorizacion de viaje a Estados Unidos">
                 </div>
-                <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
-                <div class="pr-3">
-                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 25px">TRAVEL AUTHORIZATION</h3>
-                    <p class="font-family-montserrat description" style="font-size: 20px">Nombre a un titular quien será el encargado de viajar con un menor de edad</p>
+                @if(!$mobile)<div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>@endif
+                <div class="@if(!$mobile) pr-3 @endif text-center">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: @if(!$mobile) 25px @else 15px @endif">TRAVEL AUTHORIZATION</h3>
+                    @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Nombre a un titular quien será el encargado de viajar con un menor de edad</p>@endif
                 </div>
             </div>
         </div>
       </a>
     </div>
 
-    <div class="col-sm-4 col-12 mt-3">
+    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.contratos')}}">
-        <div class="card h-100 serviceBox sb10" id="linkServices">
-            <div class="d-flex align-items-center h-100">
+        <div class="card @if(!$mobile) h-100 @endif serviceBox sb10" id="linkServices">
+            <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
                 <div class="d-flex justify-content-center align-items-center">
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/contratos.png')}}" alt="Como hacer una autorizacion de viaje a Estados Unidos">
                 </div>
-                <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
-                <div class="pr-3">
-                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 25px">CONTRATOS</h3>
-                    <p class="font-family-montserrat description" style="font-size: 20px">Gestione sus documentos legales que reflejan los derechos y obligaciones</p>
+                @if(!$mobile)<div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>@endif
+                <div class="@if(!$mobile) pr-3 @endif text-center">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: @if(!$mobile) 25px @else 15px @endif">CONTRATOS</h3>
+                    @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Gestione sus documentos legales que reflejan los derechos y obligaciones</p>@endif
                 </div>
             </div>
         </div>
       </a>
     </div>
 
-    <div class="col-sm-4 col-12 mt-3">
+    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.testamentos')}}">
-        <div class="card h-100 serviceBox sb11" id="linkServices">
-            <div class="d-flex align-items-center h-100">
+        <div class="card @if(!$mobile) h-100 @endif serviceBox sb11" id="linkServices">
+            <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
                 <div class="d-flex justify-content-center align-items-center">
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/testamento.png')}}" alt="Como tramitar un testamento en Estados Unidos">
                 </div>
-                <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
-                <div class="pr-3">
-                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 25px">TESTAMENTOS</h3>
-                    <p class="font-family-montserrat description" style="font-size: 20px">Documento que refleja la voluntad de una persona de distribuir sus bienes</p>
+                @if(!$mobile)<div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>@endif
+                <div class="@if(!$mobile) pr-3 @endif text-center">
+                    <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size:@if(!$mobile) 25px @else 15px @endif">TESTAMENTOS</h3>
+                    @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Documento que refleja la voluntad de una persona de distribuir sus bienes</p>@endif
                 </div>
             </div>
         </div>
@@ -1163,19 +1163,21 @@
         // Loop over the entries
         entries.forEach(entry => {
           let children = entry.target.childNodes;
+          // console.log(children);
           let children_to_children = children[1].childNodes;
-          let children_x3 = children_to_children[5].childNodes;
+          let children_x3 = "";
+          if(children_to_children[5]) children_x3 = children_to_children[5].childNodes;
           // If the element is visible
           if (entry.isIntersecting) {
             // Add the animation class
             entry.target.classList.add('changebgcolor');
-            children_x3[1].classList.add('changetxtcolor');
-            children_x3[3].classList.add('changetxtcolor');
+            if(children_x3 != ""){children_x3[1].classList.add('changetxtcolor');} else {children[1].childNodes[3].childNodes[1].classList.add('changetxtcolor')}
+            if(children_x3 != "") children_x3[3].classList.add('changetxtcolor');
             children_to_children[1].childNodes[1].classList.add('changeimgcolor');
           } else {
             entry.target.classList.remove('changebgcolor');
-            children_x3[1].classList.remove('changetxtcolor');
-            children_x3[3].classList.remove('changetxtcolor');
+            if(children_x3 != "") {children_x3[1].classList.remove('changetxtcolor');} else {children[1].childNodes[3].childNodes[1].classList.add('changetxtcolor')}
+            if(children_x3 != "") children_x3[3].classList.remove('changetxtcolor');
             children_to_children[1].childNodes[1].classList.remove('changeimgcolor');
           }
         });
