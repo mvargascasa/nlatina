@@ -331,7 +331,7 @@ class PartnerController extends Controller
     public function sendEmailPartnerDesactivado(Partner $partner){
         $to = $partner->email;
         $subject = "Perfil No Publicado - Notaria Latina";
-        $message = "<div style='font-size:13px; margin: 5%; border-style: ridge;'>
+        $message = "<div style='font-size:13px; margin-top: 5%; margin-left: 5%; margin-right: 5%; margin-bottom: 5%; border-style: ridge;'>
                     <br><strong><h3>Hola " . $partner->name . ". Reciba un cordial saludo de Notaria Latina</h3></strong>
                     <br>Queremos informarle que su perfil no ha sido publicado en nuestra plataforma debido a que algunos campos están incompletos o no cumplen con los requisitos necesarios.
                     <br>Una vez que complete su información restante su perfil será publicado en nuestro sitio web.
