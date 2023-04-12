@@ -747,7 +747,7 @@
                     </div> 
                     @endfor
                     <div>
-                        <p class="float-right text-warning">Visualizando 3 de {{count($partner->customers)}} consultas</p>
+                        <p class="float-right text-warning">Visualizando {{$length_customers}} de {{count($partner->customers)}} consultas</p>
                     </div>
                 </div>
               </div>
