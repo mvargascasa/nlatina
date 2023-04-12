@@ -330,18 +330,7 @@
                         {!! $partner->biography_html !!}
                     </div>
                 </div>
-                {{-- <div class="row mt-5">
-                    @if (isset($partner->url_video))
-                    <div class="col-sm-6">
-                        <video width="300px" class="lazy" data-src="{{asset('storage/'.$partner->url_video)}}" controls></video>
-                    </div>   
-                    @endif
-                    <div class="@if(isset($partner->url_video)) col-sm-6 @else col-sm-12 @endif txt-blue mt-3">
-                        <div @if(!isset($partner->url_video)) class="mx-4" @endif>
-                            {!! $partner->biography_html !!}
-                        </div>
-                    </div>
-                </div> --}}
+                
             </div>
         </div>
         <div class="col-sm-4">
