@@ -296,13 +296,13 @@
                     </div>
                 </div>
                 <div class="row mt-3 text-center">
-                    @if(count($partner->customers) > 0)
+                    {{-- @if(count($partner->customers) > 0)
                         <div class="col-sm-6">
                             <div style="color: #FEC02F; cursor: pointer" data-toggle="modal" data-target="#modalcustomers">
                                 <p style="letter-spacing: 1px"><i class="fas fa-search"></i> {{count($partner->customers)}} @if(count($partner->customers) == 1) CONSULTA @else CONSULTAS @endif</p>
                             </div>
                         </div>
-                    @endif
+                    @endif --}}
                     @if($partner->views > 0)
                     <div class="col-sm-6">
                         <div style="color: #FEC02F">
@@ -330,14 +330,25 @@
                         {!! $partner->biography_html !!}
                     </div>
                 </div>
-                
+                <div class="row mt-5">
+                    @if (isset($partner->url_video))
+                    <div class="col-sm-6">
+                        <video width="300px" class="lazy" data-src="{{asset('storage/'.$partner->url_video)}}" controls></video>
+                    </div>   
+                    @endif
+                    <div class="@if(isset($partner->url_video)) col-sm-6 @else col-sm-12 @endif txt-blue mt-3">
+                        <div @if(!isset($partner->url_video)) class="mx-4" @endif>
+                            {!! $partner->biography_html !!}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="formContact rounded shadow h-100 d-flex align-items-center px-3">
                 <div>
                     <h4 class="text-white text-center p-3">¿Necesita realizar una consulta?</h4>
-                    <p class="text-white px-3">Complete el formulario con su información y el partner <b class="text-warning">{{$partner->name . " " . $partner->lastname}}</b> se comunicará con usted</p>
+                    <p class="text-white px-3">Complete el formulario con su información y el abogado <b class="text-warning">{{$partner->name . " " . $partner->lastname}}</b> se comunicará con usted</p>
                     <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
                         @csrf
                         <div class="d-flex">
@@ -567,13 +578,13 @@
                 @csrf
               <div class="modal-content">
                 <div class="modal-header" style="background-color: #002542; color: #ffffff">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Valoración de Partner</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle">Valoración de Abogado</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Para valorar un partner necesitas completar los siguientes campos con tu información y enviar la calificación</p>
+                  <p>Para valorar un abogado necesita completar los siguientes campos con su información y enviar la calificación</p>
                         <input class="form-control" type="text" id="nombre" placeholder="Nombre y Apellido" name="nameRating" autocomplete="off" required>
                         <div class="d-flex">
                             <select name="country_residenceRating" id="country_residence" class="form-control" required>
@@ -711,7 +722,7 @@
             </div>
           </div>
 
-          @if(count($partner->customers)>0)
+          {{-- @if(count($partner->customers)>0)
           <div class="modal fade" id="modalcustomers" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -737,7 +748,7 @@
               </div>
             </div>
           </div>
-          @endif
+          @endif --}}
 
         {{--ESTO ES PARA MI PERFIL--}}
         @if ($partner->name . " " . $partner->lastname == "Sebastian Armijos")
