@@ -326,8 +326,11 @@
                             <p class="txt-blue h6 font-weight-bold"><i>Derecho {{$partner_specialty->name_specialty}}</i></p>   
                         @endforeach
                     </div>
+                    <div class="mt-4">
+                        {!! $partner->biography_html !!}
+                    </div>
                 </div>
-                <div class="row mt-5">
+                {{-- <div class="row mt-5">
                     @if (isset($partner->url_video))
                     <div class="col-sm-6">
                         <video width="300px" class="lazy" data-src="{{asset('storage/'.$partner->url_video)}}" controls></video>
@@ -338,7 +341,7 @@
                             {!! $partner->biography_html !!}
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="col-sm-4">
