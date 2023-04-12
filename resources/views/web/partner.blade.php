@@ -296,13 +296,13 @@
                     </div>
                 </div>
                 <div class="row mt-3 text-center">
-                    {{-- @if(count($partner->customers) > 0)
+                    @if(count($partner->customers) > 0)
                         <div class="col-sm-6">
                             <div style="color: #FEC02F; cursor: pointer" data-toggle="modal" data-target="#modalcustomers">
                                 <p style="letter-spacing: 1px"><i class="fas fa-search"></i> {{count($partner->customers)}} @if(count($partner->customers) == 1) CONSULTA @else CONSULTAS @endif</p>
                             </div>
                         </div>
-                    @endif --}}
+                    @endif
                     @if($partner->views > 0)
                     <div class="col-sm-6">
                         <div style="color: #FEC02F">
