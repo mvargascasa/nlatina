@@ -846,7 +846,7 @@
 </div> --}}
 
 
-@isset($indexPosts)
+{{-- @isset($indexPosts)
 
 <div class="container">
     <div class="row pb-4">
@@ -859,7 +859,6 @@
                 <div class="card my-2 h-100">
                     <a href="{{route('post.slug',$post->slug)}}" class="stretched-link">
                         <img data-src="{{url('uploads/i600_'.$post->imgdir)}}" class="card-img-top lazy" alt="Imagen {{ $post->name }}" style="object-fit: cover;height: 150px !important;">
-                        {{-- {{url('uploads/i900_'.$post->imgdir)}} --}}
                     </a>
                     <div class="card-body p-2" style="position:relative;">
                     <span class="d-block text-muted font-weight-bold letter-color"
@@ -870,13 +869,11 @@
                 </div>
                 <div class="card-footer bg-white" style="border: none">
                     <div class="small text-muted float-left letter-color">
-                        {{-- <img class="lazy" width="20" height="20" data-src="{{ asset('img/calendar.webp') }}" alt="{{$post->name}}">  --}}
                         <i class="far fa-calendar-alt" style="font-size: 17px"></i>
                         {{$post->created_at->format('M d, Y')}}
                     </div>
                     <div class="small text-muted float-right">
                         <p class="d-flex align-items-center letter-color">
-                            {{-- <img class="lazy mr-1" width="20" height="20" data-src="{{ asset('img/reloj.webp') }}" alt="{{ $post->name}}">  --}}
                             <i class="far fa-clock mr-1" style="font-size: 17px"></i>
                             {{ $post->reading_time}} min.
                         </p>
@@ -891,7 +888,7 @@
     </div>
 
 </div>
-@endisset
+@endisset --}}
 
 {{-- <section id="divtestimonials" class="mt-2" style="min-height: 550px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
   <div>
