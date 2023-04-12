@@ -722,7 +722,12 @@
             </div>
           </div>
 
-          {{-- @if(count($partner->customers)>0)
+          @if(count($partner->customers)>0)
+
+          @php
+              if(count($partner->customers)<3) $length_customers = count($partner->customers); else $length_customers = 3;
+          @endphp
+
           <div class="modal fade" id="modalcustomers" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -733,7 +738,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    @for ($i = 0; $i < 3; $i++)
+                    @for ($i = 0; $i < $length_customers; $i++)
                     <div class="card text-left rounded-0 mb-1">
                       <div class="card-body">
                         <p class="card-title"><img width="25px" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt=""> User</p>
@@ -748,7 +753,7 @@
               </div>
             </div>
           </div>
-          @endif --}}
+          @endif
 
         {{--ESTO ES PARA MI PERFIL--}}
         @if ($partner->name . " " . $partner->lastname == "Sebastian Armijos")
