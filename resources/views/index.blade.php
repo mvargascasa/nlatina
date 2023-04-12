@@ -864,7 +864,7 @@
                     <span class="d-block text-muted font-weight-bold letter-color"
                             style="font-size:1rem">{{$post->name}}</span>
                     <span class="d-block text-muted text-truncate letter-color">
-                        <?php echo strip_tags(substr($post->body,0,300))  ?>
+                        {{substr($post->body, 0, 300)}}
                     </span>
                 </div>
                 <div class="card-footer bg-white" style="border: none">
