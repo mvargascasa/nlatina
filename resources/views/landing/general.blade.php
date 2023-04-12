@@ -175,11 +175,11 @@
 
 <section class="card text-white" style="border-radius:0;border:0" >
   <img id="prisection" src="" class="card-img" alt="@isset($title) {{ $title }} @else Notaria Latina en {{ $oficina }} - Apostillas, Poderes, Traducciones @endisset" style="max-height: 90vh;min-height: 40vh;  object-fit: cover; width: 100%; height: 100%">
-  <div class="card-img-overlay my-auto" style="background:rgba(2, 2, 2, 0.5)">
+  <div class="card-img-overlay my-auto d-flex align-items-center justify-content-center" style="background:rgba(2, 2, 2, 0.5)">
     {{-- <div class="d-sm-block d-md-none text-center" style="margin-top: 20%;">
         <div class="font-italic"><h1 style="font-size: 22px; font-weight: 600">{!!$header!!}</h1></div>
     </div>     --}}
-    <div class="text-center d-md-block" style="margin-top: 13%;">
+    <div class="text-center d-md-block">
       <div class="font-italic"><h1 style="font-size: 60px; font-weight: 600">{!!$header !!}</h1></div>
     </div>
   </div>
