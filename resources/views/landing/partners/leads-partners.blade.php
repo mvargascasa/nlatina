@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <title>Abogados en Mexico - Notaria Latina</title>
+    <meta name="title" content="Abogados en Mexico - Notaria Latina">
+    <meta name="description" content="¿Necesita la ayuda de un abogado en México? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://notarialatina.com/landing/abogados-en-mexico">
+    <meta property="og:title" content="Abogados en Mexico - Notaria Latina">
+    <meta property="og:description" content="¿Necesita la ayuda de un abogado en México? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
+    <meta property="og:image" content="{{asset('img/logo-notaria-latina.webp')}}">
+
     <meta name="robots" content="noindex" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
