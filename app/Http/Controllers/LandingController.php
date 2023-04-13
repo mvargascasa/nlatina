@@ -853,4 +853,8 @@ class LandingController extends Controller
     //         'name' => Purify::clean($request->name),
     //     ]);
     // }
+
+    public function partnersleads(){
+        return view('landing.partners.leads-partners');
+    }
 }

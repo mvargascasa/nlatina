@@ -108,6 +108,9 @@ Route::get('/landing/florida-traducciones', 'LandingController@fltrad')->name('o
 Route::get('/landing/florida-apostillas', 'LandingController@flapos')->name('office.flapos');
 Route::get('/landing/florida-poderes', 'LandingController@flpod')->name('office.flpod');
 
+//landings abogados
+Route::get('/landing/abogados-en-mexico', 'LandingController@partnersleads')->name('partners.leads');
+
 //Route::get('/landing/servicios-notariales', function(){return view('landing.service');});
 
 //WEBSITE
