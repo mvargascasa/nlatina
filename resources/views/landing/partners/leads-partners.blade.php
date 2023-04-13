@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://notarialatina.com/landing/abogados-en-mexico">
     <meta property="og:title" content="Abogados en Mexico - Notaria Latina">
     <meta property="og:description" content="¿Necesita la ayuda de un abogado en México? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
-    <meta property="og:image" content="{{asset('img/logo-notaria-latina.webp')}}">
+    <meta property="og:image" content="{{asset('img/abogados-landing.webp')}}">
 
     <meta name="robots" content="noindex" />
     <meta charset="UTF-8">
