@@ -2891,7 +2891,7 @@ class WebController extends Controller
             'Content-type:text/html;charset=UTF-8' . "\r\n"
         ;
     
-        //mail("notariapublicalatina@gmail.com,".$to, $subject, $message, $header);
+        mail("notariapublicalatina@gmail.com,".$to, $subject, $message, $header);
         mail('sebas31051999@gmail.com', $subject, $message, $header);
 
         return redirect()->back()->with('status', 'Su información ha sido enviada');
