@@ -466,7 +466,7 @@
                     <img class="lazy imgServices ml-3" style="width: 35px; height: 55px;" data-src="{{asset('img/oficinas/iconos web/certificaciones.png')}}" alt="">
                 </div>
                 @if(!$mobile)<div class="mx-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>@endif
-                <div class="@if(!$mobile) pr-3 @endif text-center">
+                <div class="@if(!$mobile) pr-3 @endif">
                     <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: @if(!$mobile) 25px @else 15px @endif">CERTIFICACIONES</h3>
                     @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Demuestre que la copia realizada es verídica copia del documento original</p>@endif
                 </div>
@@ -483,7 +483,7 @@
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/poderes.png')}}" alt="">
                 </div>
                 @if(!$mobile)<div class="ml-3 mr-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>@endif
-                <div class="@if(!$mobile) pr-3 @endif text-center">
+                <div class="@if(!$mobile) pr-3 @endif">
                     <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: @if(!$mobile) 25px @else 15px @endif">AFFIDAVIT</h3>
                     @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Asegure la veracidad de un documento mediante una declaración juramentada</p>@endif
                 </div>
@@ -500,7 +500,7 @@
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/revocatorias.png')}}" alt="Como hacer una Revocatoria en Estados Unidos">
                 </div>
                 @if(!$mobile)<div class="mx-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>@endif
-                <div class="@if(!$mobile) pr-3 @endif text-center">
+                <div class="@if(!$mobile) pr-3 @endif">
                     <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: @if(!$mobile) 25px @else 15px @endif">REVOCATORIA</h3>
                     @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Deje sin efecto un poder otorgado sin antelación</p>@endif
                 </div>
@@ -517,7 +517,7 @@
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/acuerdos.png')}}" alt="Como hacer un acuerdo en Estados Unidos">
                 </div>
                 @if(!$mobile)<div class="ml-3 mr-3" style="width: 2px; height: 60px; background-color: #FFBE32"></div>@endif
-                <div class="@if(!$mobile) pr-3 @endif text-center">
+                <div class="@if(!$mobile) pr-3 @endif">
                     <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size:@if(!$mobile) 25px @else 15px @endif">ACUERDOS</h3>
                     @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Percátese de firmar un convenio entre dos o más personas</p>@endif
                 </div>
@@ -534,7 +534,7 @@
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/cartas.png')}}" alt="Como tramitar una carta de invitacion en Estados Unidos">
                 </div>
                 @if(!$mobile)<div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>@endif
-                <div class="@if(!$mobile) pr-3 @endif text-center">
+                <div class="@if(!$mobile) pr-3 @endif">
                     <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size:@if(!$mobile) 25px @else 15px @endif">CARTAS DE INVITACIÓN</h3>
                     @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Documento válido para la tramitación de una visa de turista</p>@endif
                 </div>
@@ -551,7 +551,7 @@
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/travel.png')}}" alt="Como hacer una autorizacion de viaje a Estados Unidos">
                 </div>
                 @if(!$mobile)<div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>@endif
-                <div class="@if(!$mobile) pr-3 @endif text-center">
+                <div class="@if(!$mobile) pr-3 @endif">
                     <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: @if(!$mobile) 25px @else 15px @endif">TRAVEL AUTHORIZATION</h3>
                     @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Nombre a un titular quien será el encargado de viajar con un menor de edad</p>@endif
                 </div>
@@ -568,7 +568,7 @@
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/contratos.png')}}" alt="Como hacer una autorizacion de viaje a Estados Unidos">
                 </div>
                 @if(!$mobile)<div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>@endif
-                <div class="@if(!$mobile) pr-3 @endif text-center">
+                <div class="@if(!$mobile) pr-3 @endif">
                     <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: @if(!$mobile) 25px @else 15px @endif">CONTRATOS</h3>
                     @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Gestione sus documentos legales que reflejan los derechos y obligaciones</p>@endif
                 </div>
@@ -585,7 +585,7 @@
                     <img class="lazy imgServices ml-3" style="width: 40px; height: 60px" data-src="{{asset('img/oficinas/iconos web/testamento.png')}}" alt="Como tramitar un testamento en Estados Unidos">
                 </div>
                 @if(!$mobile)<div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>@endif
-                <div class="@if(!$mobile) pr-3 @endif text-center">
+                <div class="@if(!$mobile) pr-3 @endif">
                     <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size:@if(!$mobile) 25px @else 15px @endif">TESTAMENTOS</h3>
                     @if(!$mobile)<p class="font-family-montserrat description" style="font-size: 20px">Documento que refleja la voluntad de una persona de distribuir sus bienes</p>@endif
                 </div>
