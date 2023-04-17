@@ -49,7 +49,7 @@
             </p>
         </div>
         <div>
-            <img class="lazy" width="1500px" data-src="@if(isset($data['image'])){{asset('img/'.$data['image'])}} @else {{asset('img/ciudadanos-mexico.jpg')}} @endif" alt="abogados en {{$data['country']}}">
+            <img class="lazy" width="1300px" height="800px" data-src="@if(isset($data['image'])){{asset('img/'.$data['image'])}} @else {{asset('img/ciudadanos-mexico.jpg')}} @endif" alt="abogados en {{$data['country']}}">
         </div>
     </div>
 
