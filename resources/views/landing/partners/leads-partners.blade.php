@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 
-    <title>Abogados en {{$country}} - Notaria Latina</title>
-    <meta name="title" content="Abogados en {{$country}} - Notaria Latina">
-    <meta name="description" content="¿Necesita la ayuda de un abogado en {{$country}}? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
+    <title>Abogados en {{$data['country']}} - Notaria Latina</title>
+    <meta name="title" content="Abogados en {{$data['country']}} - Notaria Latina">
+    <meta name="description" content="¿Necesita la ayuda de un abogado en {{$data['country']}}? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://notarialatina.com/landing/abogados-en-mexico">
-    <meta property="og:title" content="Abogados en {{$country}} - Notaria Latina">
-    <meta property="og:description" content="¿Necesita la ayuda de un abogado en {{$country}}? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
+    <meta property="og:title" content="Abogados en {{$data['country']}} - Notaria Latina">
+    <meta property="og:description" content="¿Necesita la ayuda de un abogado en {{$data['country']}}? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
     <meta property="og:image" content="{{asset('img/abogados-landing.webp')}}">
 
     <meta name="robots" content="noindex" />
@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Abogados en {{$country}} - Notaria Latina</title>
+    <title>Abogados en {{$data['country']}} - Notaria Latina</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -28,12 +28,12 @@
 </head>
 <body>
 
-    <section id="prisection" style="min-height: 700px;background-size: cover;background-position: center top; background-repeat: no-repeat;">
+    <section id="prisection" style="min-height: 700px;background-size: cover;background-position: right top; background-repeat: no-repeat;">
         <div class="md:ml-28 text-center md:text-left pt-32 md:pt-20">
             <div class="flex justify-center md:inline-block md:justify-start">
                 <img width="350px" src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
             </div>
-            <p class="text-white text-3xl md:text-6xl leading-tight mt-10">¿NECESITA UN ABOGADO <br> <b class="text-4xl @if($country == "República Dominicana") md:text-7xl @else md:text-8xl @endif">EN {{mb_strtoupper($country)}}?</b></p>
+            <p class="text-white text-3xl md:text-6xl leading-tight mt-10">¿NECESITA UN ABOGADO <br> <b class="text-4xl @if($data['country'] == "República Dominicana") md:text-7xl @else md:text-8xl @endif">EN {{mb_strtoupper($data['country'])}}?</b></p>
             <p class="text-amber-400 text-xl mt-10"><i>¡Encuentre al <b>mejor abogado</b> para su caso!</i></p>
         </div>
     </section>
@@ -42,14 +42,14 @@
     <div class="bg-cyan-950 text-white sm:inline-block md:flex items-center justify-items-center text-justify mt-5">   
         <div class="px-10 py-10 md:px-28">
             <p>
-                En {{$country}} el sistema legal puede ser complicado y confuso. Si se encuentra enfrentando un
+                En {{$data['country']}} el sistema legal puede ser complicado y confuso. Si se encuentra enfrentando un
                 problema o asunto legal viviendo en los Estados Unidos y necesita un abogado que se encuentre
-                en {{$country}}, es importante contar con un abogado confiable y experimentado que pueda representarle
+                en {{$data['country']}}, es importante contar con un abogado confiable y experimentado que pueda representarle
                 y proteger sus derechos. En nuestra plataforma, podrá encontrar al mejor abogado para su caso.
             </p>
         </div>
         <div>
-            <img width="1500px" src="{{asset('img/ciudadanos-mexico.jpg')}}" alt="abogados en {{$country}}">
+            <img width="1500px" src="{{asset('img/ciudadanos-mexico.jpg')}}" alt="abogados en {{$data['country']}}">
         </div>
     </div>
 
@@ -110,14 +110,24 @@
                                 <input type="number" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" placeholder="Teléfono">
                             </div>
                             <div class="md:ml-2 ml-4 mr-4 md:mt-2 mb-4">
-                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500">
-                                    <option value="">Estado</option>
-                                </select>
+                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" placeholder="Correo electrónico">
                             </div>
                         </div>
 
-                        <div class="grid mx-4">
-                            <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" placeholder="Correo electrónico">
+                        <div class="grid md: grid-cols-2 grid-cols-1">
+                            <div class="ml-4 mr-4 md:mr-2 mt-2 mb-4">
+                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" id="selcountry">
+                                    <option value="">País de residencia</option>
+                                    @foreach ($countries as $country)
+                                        <option value="{{$country->name_country}}" data-id="{{$country->id}}">{{$country->name_country}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="md:ml-2 ml-4 mr-4 md:mt-2 mb-4">
+                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" id="selstate">
+                                    <option value="">Estado/Departamento</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="grid mx-4 mt-4">
@@ -135,8 +145,35 @@
 
 <script>
     window.addEventListener('load',  () => {
-        document.getElementById('prisection').style.backgroundImage = "url('{{asset('img/abogados-landing.webp')}}')";
+        document.getElementById('prisection').style.backgroundImage = "url('{{asset('img/abogados-landing-1.webp')}}')";
     });
+
+    let selCountry = document.getElementById('selcountry');
+    let selState = document.getElementById('selstate');
+
+    selCountry.addEventListener("change", async () => {
+        selState.options.length = 0;
+        let id = selCountry.options[selCountry.selectedIndex].dataset.id;
+        const response = await fetch("{{url('getstates')}}/"+id);
+        const states = await response.json();
+
+        let opt = document.createElement('option');
+            opt.appendChild(document.createTextNode('Estado/Departamento'));
+            opt.value = '';
+            selState.appendChild(opt);
+        states.forEach(state => {
+            var opt = document.createElement('option');
+            opt.appendChild(document.createTextNode(state.name_state));
+            opt.value = state.name_state;
+            opt.setAttribute('data-id', state.id);
+            selState.appendChild(opt);
+        });
+        //para poner el select de city sin options -> cada vez que cambie el select de country
+        // selCity.options.length = 0;
+        // var optaux = document.createElement('option'); optaux.appendChild(document.createTextNode('Ciudad')); optaux.value = '';
+        // selCity.appendChild(optaux);
+    });
+    
 </script>
 </body>
 </html>

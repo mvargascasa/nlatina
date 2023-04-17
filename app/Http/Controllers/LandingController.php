@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Detection\MobileDetect;
+use Illuminate\Support\Facades\DB;
 
 // use Stevebauman\Purify\Facades\Purify;
 
@@ -857,30 +858,31 @@ class LandingController extends Controller
     public function partnersleads($country){
 
         $exists = false;
+        $countries = DB::table('countries')->get();
 
         switch ($country) {
-            case 'argentina': $data['country'] = "Argentina"; $exists = true; break;
-            case 'bolivia': $data['country'] = "Bolivia"; $exists = true; break;
-            case 'chile': $data['country'] = "Chile"; $exists = true; break;
-            case 'colombia': $data['country'] = "Colombia"; $exists = true; break;
-            case 'costa-rica': $data['country'] = "Costa Rica"; $exists = true; break;
-            case 'ecuador': $data['country'] = "Ecuador"; $exists = true; break;
-            case 'el-salvador': $data['country'] = "El Salvador"; $exists = true; break;
-            case 'guatemala': $data['country'] = "Guatemala"; $exists = true; break;
-            case 'honduras': $data['country'] = "Honduras"; $exists = true; break;
-            case 'mexico': $data['country'] = "México"; $exists = true; break;
-            case 'nicaragua': $data['country'] = "Nicaragua"; $exists = true; break;
-            case 'panama': $data['country'] = "Panamá"; $exists = true; break;
-            case 'paraguay': $data['country'] = "Paraguay"; $exists = true; break;
-            case 'peru': $data['country'] = "Perú"; $exists = true; break;
-            case 'puerto-rico': $data['country'] = "Puerto Rico"; $exists = true; break;
-            case 'republica-dominicana': $data['country'] = "República Dominicana";$exists = true; break;
-            case 'uruguay': $data['country'] = "Uruguay";$exists = true; break;
-            case 'venezuela': $data['country'] = "Venezuela";$exists = true; break;
+            case 'argentina': $data = ['country' => 'Argentina']; $exists = true; break;
+            case 'bolivia': $data = ['country' => "Bolivia"]; $exists = true; break;
+            case 'chile': $data = ['country' => "Chile"]; $exists = true; break;
+            case 'colombia': $data = ['country' => "Colombia"]; $exists = true; break;
+            case 'costa-rica': $data = ['country' => "Costa Rica"]; $exists = true; break;
+            case 'ecuador': $data = ['country' => "Ecuador"]; $exists = true; break;
+            case 'el-salvador': $data = ['country' => "El Salvador"]; $exists = true; break;
+            case 'guatemala': $data = ['country' => "Guatemala"]; $exists = true; break;
+            case 'honduras': $data = ['country' => "Honduras"]; $exists = true; break;
+            case 'mexico': $data = ['country' => "México"]; $exists = true; break;
+            case 'nicaragua': $data = ['country' => "Nicaragua"]; $exists = true; break;
+            case 'panama': $data = ['country' => "Panamá"]; $exists = true; break;
+            case 'paraguay': $data = ['country' => "Paraguay"]; $exists = true; break;
+            case 'peru': $data = ['country' => "Perú"]; $exists = true; break;
+            case 'puerto-rico': $data = ['country' => "Puerto Rico"]; $exists = true; break;
+            case 'republica-dominicana': $data = ['country' => "República Dominicana"];$exists = true; break;
+            case 'uruguay': $data = ['country' => "Uruguay"];$exists = true; break;
+            case 'venezuela': $data = ['country' => "Venezuela"];$exists = true; break;
             default: break;
         }
 
-        if($exists) return view('landing.partners.leads-partners', $data);
+        if($exists) return view('landing.partners.leads-partners', compact('data', 'countries'));
         else return view('errors.404');
     }
 }

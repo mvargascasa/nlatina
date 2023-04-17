@@ -2905,8 +2905,10 @@ class WebController extends Controller
     }
 
     public function getstates($id){
-        $states = DB::table('states')->where('country_id',$id)->orderBy('name_state', 'asc')->get(); 
-        return response()->json($states);  
+        if(is_numeric($id)){
+            $states = DB::table('states')->where('country_id',$id)->orderBy('name_state', 'asc')->get(); 
+            return response()->json($states);  
+        }
     }
 
     public function testmail(){
