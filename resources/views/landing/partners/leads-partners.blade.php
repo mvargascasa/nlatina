@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
 
-    <title>Abogados en Mexico - Notaria Latina</title>
-    <meta name="title" content="Abogados en Mexico - Notaria Latina">
-    <meta name="description" content="¿Necesita la ayuda de un abogado en México? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
+    <title>Abogados en {{$country}} - Notaria Latina</title>
+    <meta name="title" content="Abogados en {{$country}} - Notaria Latina">
+    <meta name="description" content="¿Necesita la ayuda de un abogado en {{$country}}? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://notarialatina.com/landing/abogados-en-mexico">
-    <meta property="og:title" content="Abogados en Mexico - Notaria Latina">
-    <meta property="og:description" content="¿Necesita la ayuda de un abogado en México? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
+    <meta property="og:title" content="Abogados en {{$country}} - Notaria Latina">
+    <meta property="og:description" content="¿Necesita la ayuda de un abogado en {{$country}}? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
     <meta property="og:image" content="{{asset('img/abogados-landing.webp')}}">
 
     <meta name="robots" content="noindex" />
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Abogados en Mexico - Notaria Latina</title>
+    <title>Abogados en {{$country}} - Notaria Latina</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -32,7 +33,7 @@
             <div class="flex justify-center md:inline-block md:justify-start">
                 <img width="350px" src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
             </div>
-            <p class="text-white text-3xl md:text-6xl leading-tight mt-10">¿NECESITA UN ABOGADO <br> <b class="text-4xl md:text-8xl">EN MÉXICO?</b></p>
+            <p class="text-white text-3xl md:text-6xl leading-tight mt-10">¿NECESITA UN ABOGADO <br> <b class="text-4xl @if($country == "República Dominicana") md:text-7xl @else md:text-8xl @endif">EN {{mb_strtoupper($country)}}?</b></p>
             <p class="text-amber-400 text-xl mt-10"><i>¡Encuentre al <b>mejor abogado</b> para su caso!</i></p>
         </div>
     </section>
@@ -41,14 +42,14 @@
     <div class="bg-cyan-950 text-white sm:inline-block md:flex items-center justify-items-center text-justify mt-5">   
         <div class="px-10 py-10 md:px-28">
             <p>
-                En México el sistema legal puede ser complicado y confuso. Si se encuentra enfrentando un
+                En {{$country}} el sistema legal puede ser complicado y confuso. Si se encuentra enfrentando un
                 problema o asunto legal viviendo en los Estados Unidos y necesita un abogado que se encuentre
-                en México, es importante contar con un abogado confiable y experimentado que pueda representarle
+                en {{$country}}, es importante contar con un abogado confiable y experimentado que pueda representarle
                 y proteger sus derechos. En nuestra plataforma, podrá encontrar al mejor abogado para su caso.
             </p>
         </div>
         <div>
-            <img width="1500px" src="{{asset('img/ciudadanos-mexico.jpg')}}" alt="abogados en mexico">
+            <img width="1500px" src="{{asset('img/ciudadanos-mexico.jpg')}}" alt="abogados en {{$country}}">
         </div>
     </div>
 
