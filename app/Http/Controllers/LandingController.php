@@ -861,24 +861,24 @@ class LandingController extends Controller
         $countries = DB::table('countries')->get();
 
         switch ($country) {
-            case 'argentina': $data = ['country' => 'Argentina']; $exists = true; break;
-            case 'bolivia': $data = ['country' => "Bolivia"]; $exists = true; break;
-            case 'chile': $data = ['country' => "Chile"]; $exists = true; break;
-            case 'colombia': $data = ['country' => "Colombia"]; $exists = true; break;
-            case 'costa-rica': $data = ['country' => "Costa Rica"]; $exists = true; break;
-            case 'ecuador': $data = ['country' => "Ecuador"]; $exists = true; break;
-            case 'el-salvador': $data = ['country' => "El Salvador"]; $exists = true; break;
-            case 'guatemala': $data = ['country' => "Guatemala"]; $exists = true; break;
-            case 'honduras': $data = ['country' => "Honduras"]; $exists = true; break;
-            case 'mexico': $data = ['country' => "México"]; $exists = true; break;
-            case 'nicaragua': $data = ['country' => "Nicaragua"]; $exists = true; break;
-            case 'panama': $data = ['country' => "Panamá"]; $exists = true; break;
-            case 'paraguay': $data = ['country' => "Paraguay"]; $exists = true; break;
-            case 'peru': $data = ['country' => "Perú"]; $exists = true; break;
-            case 'puerto-rico': $data = ['country' => "Puerto Rico"]; $exists = true; break;
-            case 'republica-dominicana': $data = ['country' => "República Dominicana"];$exists = true; break;
-            case 'uruguay': $data = ['country' => "Uruguay"];$exists = true; break;
-            case 'venezuela': $data = ['country' => "Venezuela"];$exists = true; break;
+            case 'argentina': $data = ['country' => 'Argentina', 'image' => 'ciudadanos-argentinos.webp']; $exists = true; break;
+            case 'bolivia': $data = ['country' => "Bolivia", 'image' => 'ciudadanos-bolivianos.webp']; $exists = true; break;
+            case 'chile': $data = ['country' => "Chile", 'image' => 'abogados-chile.webp']; $exists = true; break;
+            case 'colombia': $data = ['country' => "Colombia", 'image' => 'abogados-colombia.webp']; $exists = true; break;
+            case 'costa-rica': $data = ['country' => "Costa Rica", 'image' => 'abogados-costa-rica.webp']; $exists = true; break;
+            case 'ecuador': $data = ['country' => "Ecuador", 'image' => 'abogados-ecuador.webp']; $exists = true; break;
+            case 'el-salvador': $data = ['country' => "El Salvador", 'image' => 'abogados-el-salvador.webp']; $exists = true; break;
+            case 'guatemala': $data = ['country' => "Guatemala", 'image' => 'abogados-guatemala.webp']; $exists = true; break;
+            case 'honduras': $data = ['country' => "Honduras", 'image' => 'abogados-honduras.webp']; $exists = true; break;
+            case 'mexico': $data = ['country' => "México", 'image' => 'ciudadanos-mexico.webp']; $exists = true; break;
+            case 'nicaragua': $data = ['country' => "Nicaragua", 'image' => 'abogados-nicaragua.webp']; $exists = true; break;
+            case 'panama': $data = ['country' => "Panamá", 'image' => 'abogados-panama.webp']; $exists = true; break;
+            case 'paraguay': $data = ['country' => "Paraguay", 'image' => 'abogados-paraguay.webp']; $exists = true; break;
+            case 'peru': $data = ['country' => "Perú", 'image' => 'abogados-peru.webp']; $exists = true; break;
+            case 'puerto-rico': $data = ['country' => "Puerto Rico", 'image' => 'abogados-puerto-rico.webp']; $exists = true; break;
+            case 'republica-dominicana': $data = ['country' => "República Dominicana", 'image' => 'abogados-republica-dominicana.webp']; $exists = true; break;
+            case 'uruguay': $data = ['country' => "Uruguay", 'image' => 'abogados-uruguay.webp'];$exists = true; break;
+            case 'venezuela': $data = ['country' => "Venezuela", 'image' => 'abogados-venezuela.webp'];$exists = true; break;
             default: break;
         }
 

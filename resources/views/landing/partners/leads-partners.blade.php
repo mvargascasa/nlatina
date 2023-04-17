@@ -49,7 +49,7 @@
             </p>
         </div>
         <div>
-            <img width="1500px" src="{{asset('img/ciudadanos-mexico.jpg')}}" alt="abogados en {{$data['country']}}">
+            <img class="lazy" width="1500px" data-src="@if(isset($data['image'])){{asset('img/'.$data['image'])}} @else {{asset('img/ciudadanos-mexico.jpg')}} @endif" alt="abogados en {{$data['country']}}">
         </div>
     </div>
 
@@ -173,6 +173,8 @@
         // var optaux = document.createElement('option'); optaux.appendChild(document.createTextNode('Ciudad')); optaux.value = '';
         // selCity.appendChild(optaux);
     });
+
+    document.addEventListener("DOMContentLoaded",function(){let e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
     
 </script>
 </body>
