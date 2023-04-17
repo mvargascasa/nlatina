@@ -109,7 +109,7 @@ Route::get('/landing/florida-apostillas', 'LandingController@flapos')->name('off
 Route::get('/landing/florida-poderes', 'LandingController@flpod')->name('office.flpod');
 
 //landings abogados
-Route::get('/landing/abogados-en-mexico', 'LandingController@partnersleads')->name('partners.leads');
+Route::get('/landing/abogados-en-{country}', 'LandingController@partnersleads')->name('partners.leads');
 
 //Route::get('/landing/servicios-notariales', function(){return view('landing.service');});
 
