@@ -20,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Abogados en {{$data['country']}} - Notaria Latina</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 
     <style>
         html, body {max-width: 100% !important;overflow-x: clip}
@@ -57,7 +57,9 @@
         <div class="grid grid-rows-3 md:w-3/6 inline-block justify-center">
             <div class="bg-slate-50 rounded-md py-5 text-center px-5 mx-16 mb-4 shadow-lg flex items-center">
                 <div>
-                    <i class="fa-solid fa-user-gear fa-2xl mt-5"></i>
+                    <div class="w-100 flex justify-center">
+                        <img class="lazy" data-src="{{asset('img/especialista.png')}}" alt="">
+                    </div>
                     <p class="text-amber-400 text-xl mt-3 font-extrabold md:px-24">Especialistas en todas las áreas del derecho</p>
                     <p class="mt-3 text-xs">
                         Nuestra plataforma le conecta con abogados especializados en diferentes áreas del derecho. Ya sea que necesite un abogado
@@ -67,7 +69,9 @@
             </div>
             <div class="bg-slate-50 rounded-md py-5 text-center px-5 mx-16 mb-4 shadow-lg flex items-center">
                 <div>
-                    <i class="fa-solid fa-ranking-star fa-2xl mt-5"></i>
+                    <div class="w-100 flex justify-center">
+                        <img class="lazy" data-src="{{asset('img/experiencia.png')}}" alt="">
+                    </div>
                     <p class="text-amber-400 text-xl mt-3 font-extrabold md:px-24">Experiencia y Confianza</p>
                     <p class="mt-3 text-sm">
                         Todos los abogados en nuestra plataforma cuentan con la experiencia necesaria para brindarle un servicio legal de calidad. Además,
@@ -77,7 +81,9 @@
             </div>
             <div class="bg-slate-50 rounded-md py-5 text-center px-5 mx-16 mb-4 shadow-lg flex items-center">
                 <div>
-                    <i class="fa-solid fa-users fa-2xl mt-5"></i>
+                    <div class="w-100 flex justify-center">
+                        <img class="lazy" data-src="{{asset('img/eleccion.png')}}" alt="">
+                    </div>
                     <p class="text-amber-400 text-xl mt-3 font-extrabold md:px-24">Facilidad y Variedad</p>
                     <p class="mt-3 text-sm">
                         Se contactaran con usted una lista de abogados a través de su WhatsApp o correo electrónico, para que pueda elegir el que más
