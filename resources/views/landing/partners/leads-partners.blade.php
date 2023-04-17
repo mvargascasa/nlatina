@@ -31,7 +31,7 @@
     <section id="prisection" style="min-height: 700px;background-size: cover;background-position: right top; background-repeat: no-repeat;">
         <div class="md:ml-28 text-center md:text-left pt-32 md:pt-20">
             <div class="flex justify-center md:inline-block md:justify-start">
-                <img width="350px" src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
+                <img width="350px" height="300px" src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
             </div>
             <p class="text-white text-3xl md:text-6xl leading-tight mt-10">¿NECESITA UN ABOGADO <br> <b class="text-4xl @if($data['country'] == "República Dominicana") md:text-7xl @else md:text-8xl @endif">EN {{mb_strtoupper($data['country'])}}?</b></p>
             <p class="text-amber-400 text-xl mt-10"><i>¡Encuentre al <b>mejor abogado</b> para su caso!</i></p>
