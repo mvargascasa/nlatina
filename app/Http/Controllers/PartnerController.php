@@ -401,6 +401,19 @@ class PartnerController extends Controller
         }
         return "no se encontro";
     }
+
+    public function formassignlead(Request $request, $id){
+
+        $customer = Customer::where('id', $id)->first();
+
+        $partners = Partner::select('id', 'name', 'lastname')->where('country_residence', 'LIKE', "%$customer->pais%")->where('state', 'LIKE', "%$customer->estado%")->get();
+
+        return view('admin.assign-lead', compact('customer', 'partners'));
+    }
+
+    public function assignlead(Customer $customer, $partner_id){
+        
+    }
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
     // public function sendEmailMasivo(Request $request){
     //     $to = $request->emails;

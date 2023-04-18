@@ -916,6 +916,7 @@ class LandingController extends Controller
                 'nombre' => Purify::clean($request->name) . " " . Purify::clean($request->lastname),
                 'email' => Purify::clean($request->email),
                 'pais' => Purify::clean($request->country),
+                'estado' => Purify::clean($request->state),
                 'telefono' => Purify::clean($request->phone),
                 'mensaje' => Purify::clean($request->comment),
                 'proviene' => 'Landing ' . Purify::clean($request->from)

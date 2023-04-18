@@ -34,11 +34,15 @@
                                     <td>{{ $customer->telefono }}</td>
                                     <td>{{ $customer->mensaje }}</td>
                                     <td>
-                                        @foreach ($customer->partners as $c)
-                                            <a href="{{route('partner.show.id', $c->pivot->partner_id)}}">
-                                                <b>{{$c->name }} {{ $c->lastname}}</b><br>
-                                            </a>
-                                        @endforeach
+                                        @if($customer->proviene != null)
+                                            <a href="{{route('partner.form.assign.lead', $customer->id)}}" class="btn btn-info btn-sm">Asignar Lead</a>
+                                        @else
+                                            @foreach ($customer->partners as $c)
+                                                <a href="{{route('partner.show.id', $c->pivot->partner_id)}}">
+                                                    <b>{{$c->name }} {{ $c->lastname}}</b><br>
+                                                </a>
+                                            @endforeach
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
