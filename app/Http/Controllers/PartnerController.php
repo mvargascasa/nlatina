@@ -429,7 +429,7 @@ class PartnerController extends Controller
                     <br>Puede ingresar a su perfil en nuestro sitio web y visualizar más información.";
                             
         $header='';
-        $header .= 'From: <lead_partners@notarialatina.com>' . "\r\n";
+        $header .= 'From: <partners@notarialatina.com>' . "\r\n";
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         mail($partner->email,'Cliente Asignado: '. strip_tags($customer->nombre), $message, $header);
