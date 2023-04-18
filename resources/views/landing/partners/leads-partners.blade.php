@@ -25,6 +25,28 @@
     <style>
         html, body {max-width: 100% !important;overflow-x: clip}
     </style>
+
+    <script id="recaptcha"></script>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('recaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8";    
+            document.addEventListener('submit', (event) => {
+                event.preventDefault();
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8', {action: 'submit'}).then(function(token) { 
+                        let form = event.target;
+                        let input = document.createElement('input');
+                        input.type = "hidden"; input.name = "g-recaptcha-response"; input.value = token;
+                        form.appendChild(input);
+                        form.submit();
+                    });
+                });
+            });
+        }, 3000);
+        //subir los cambios
+    </script>
+
 </head>
 <body>
     <section id="prisection" style="min-height: 700px;background-size: cover;background-position: right top; background-repeat: no-repeat;">

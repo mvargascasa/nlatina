@@ -15,6 +15,7 @@ use Detection\MobileDetect;
 use Illuminate\Support\Facades\DB;
 use Stevebauman\Purify\Facades\Purify;
 use App\Customer;
+use Illuminate\Support\Facades\Http;
 
 // use Stevebauman\Purify\Facades\Purify;
 
@@ -890,29 +891,37 @@ class LandingController extends Controller
 
     public function lead_partner(Request $request){
 
-        $message = "<br><strong>Nuevo Lead para Abogados</strong>
-                    <br><b> Nombre:</b> ". strip_tags($request->name). " " . strip_tags($request->lastname) ."
-                    <br><b> Telef: </b> ".strip_tags($request->phone)."
-                    <br><b> Email: </b>" . strip_tags($request->email) ."
-                    <br><b> País: </b>" .strip_tags($request->country)."
-                    <br><b> Estado: </b>" . strip_tags($request->state) . "
-                    <br><b> Caso: </b>". strip_tags($request->comment)." 
-                    ";
-                        
-        $header='';
-        $header .= 'From: <lead_partners@notarialatina.com>' . "\r\n";
-        $header .= "MIME-Version: 1.0\r\n";
-        $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        mail('sebas31051999@gmail.com','Lead Partner: '. strip_tags($request->name), $message, $header);
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => '6LdI9cMeAAAAAHiNd7Lxt6uN476-a8YVCMxGL8xS',
+            'response' => $request->input('g-recaptcha-response')
+        ])->object();
 
-        $customer = Customer::create([
-            'nombre' => Purify::clean($request->name) . " " . Purify::clean($request->lastname),
-            'email' => Purify::clean($request->email),
-            'pais' => Purify::clean($request->country),
-            'telefono' => Purify::clean($request->phone),
-            'mensaje' => Purify::clean($request->comment),
-            'proviene' => 'Landing ' . Purify::clean($request->from)
-        ]);
+        if($response->success && $response->score >= 0.7){
+            $message = "<br><strong>Nuevo Lead para Abogados</strong>
+                        <br><b> Nombre:</b> ". strip_tags($request->name). " " . strip_tags($request->lastname) ."
+                        <br><b> Telef: </b> ".strip_tags($request->phone)."
+                        <br><b> Email: </b>" . strip_tags($request->email) ."
+                        <br><b> País: </b>" .strip_tags($request->country)."
+                        <br><b> Estado: </b>" . strip_tags($request->state) . "
+                        <br><b> Caso: </b>". strip_tags($request->comment)." 
+                        ";
+                            
+            $header='';
+            $header .= 'From: <lead_partners@notarialatina.com>' . "\r\n";
+            $header .= "MIME-Version: 1.0\r\n";
+            $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            mail('sebas31051999@gmail.com','Lead Partner: '. strip_tags($request->name), $message, $header);
+    
+            $customer = Customer::create([
+                'nombre' => Purify::clean($request->name) . " " . Purify::clean($request->lastname),
+                'email' => Purify::clean($request->email),
+                'pais' => Purify::clean($request->country),
+                'telefono' => Purify::clean($request->phone),
+                'mensaje' => Purify::clean($request->comment),
+                'proviene' => 'Landing ' . Purify::clean($request->from)
+            ]);
+        }
+
 
         return redirect()->route('lead.partner.thank');
     }
