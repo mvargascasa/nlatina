@@ -27,7 +27,6 @@
     </style>
 </head>
 <body>
-
     <section id="prisection" style="min-height: 700px;background-size: cover;background-position: right top; background-repeat: no-repeat;">
         <div class="md:ml-28 text-center md:text-left pt-32 md:pt-20">
             <div class="flex justify-center md:inline-block md:justify-start">
@@ -100,29 +99,29 @@
             <div class="mt-10 md:mt-5">
                 <div class="bg-sky-950 pb-10 md:mx-5 md:px-8">
                     <p class="text-center text-white font-bold text-lg pt-5">¿Cuál es <b class="text-amber-400 font-bold">su problema legal</b>?</p>
-                    <form action="">
-
+                    <form action="{{route('set.lead.partner')}}" method="POST">
+                        @csrf
                         <div class="grid md:grid-cols-2 grid-cols-1">
                             <div class="ml-4 mr-4 md:mr-2 mb-2 mt-4">
-                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" placeholder="Nombre">
+                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="name" placeholder="Nombre">
                             </div>
                             <div class="md:ml-2 ml-4 mr-4 mb-2 mt-2 md:mt-4">
-                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" placeholder="Apellido">
+                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="lastname" placeholder="Apellido">
                             </div>
                         </div>
 
                         <div class="grid md:grid-cols-2 grid-cols-1">
                             <div class="ml-4 mr-4 md:mr-2 mt-2 mb-4">
-                                <input type="number" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" placeholder="Teléfono">
+                                <input type="number" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="phone" placeholder="Teléfono">
                             </div>
                             <div class="md:ml-2 ml-4 mr-4 md:mt-2 mb-4">
-                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" placeholder="Correo electrónico">
+                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="email" placeholder="Correo electrónico">
                             </div>
                         </div>
 
                         <div class="grid md: grid-cols-2 grid-cols-1">
                             <div class="ml-4 mr-4 md:mr-2 mt-2 mb-4">
-                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" id="selcountry">
+                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="country" id="selcountry">
                                     <option value="">País de residencia</option>
                                     @foreach ($countries as $country)
                                         <option value="{{$country->name_country}}" data-id="{{$country->id}}">{{$country->name_country}}</option>
@@ -130,14 +129,14 @@
                                 </select>
                             </div>
                             <div class="md:ml-2 ml-4 mr-4 md:mt-2 mb-4">
-                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" id="selstate">
+                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="state" id="selstate">
                                     <option value="">Estado/Departamento</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="grid mx-4 mt-4">
-                            <textarea name="" id="" rows="6" class="pl-3 pt-3 text-sm w-full rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" placeholder="Describa su problema legal..."></textarea>
+                            <textarea name="" id="" rows="6" class="pl-3 pt-3 text-sm w-full rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="comment" placeholder="Describa su problema legal..."></textarea>
                         </div>
                         <div class="grid mt-2 mx-4 mt-4">
                             <button class="w-full bg-amber-400 font-bold rounded-lg h-10">ENVIAR FORMULARIO</button>
@@ -147,7 +146,6 @@
             </div>
         </div>
     </div>
-    
 
 <script>
     window.addEventListener('load',  () => {
@@ -181,7 +179,6 @@
     });
 
     document.addEventListener("DOMContentLoaded",function(){let e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
-    
 </script>
 </body>
 </html>

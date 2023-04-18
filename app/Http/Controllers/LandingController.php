@@ -885,4 +885,24 @@ class LandingController extends Controller
         if($exists) return view('landing.partners.leads-partners', compact('data', 'countries'));
         else return view('errors.404');
     }
+
+    public function lead_partner(Request $request){
+
+        $message = "<br><strong>Nuevo Lead para Abogados</strong>
+                    <br><b> Nombre:</b> ". strip_tags($request->name). " " . strip_tags($request->lastname) ."
+                    <br><b> Telef: </b> ".strip_tags($request->phone)."
+                    <br><b> Email: </b>" . strip_tags($request->email) ."
+                    <br><b> País: </b>" .strip_tags($request->country)."
+                    <br><b> Estado: </b>" . strip_tags($request->state) . "
+                    <br><b> Caso: </b>".strip_tags($request->comment)." 
+                    ";
+                        
+        $header='';
+        $header .= 'From: <lead_partners@notarialatina.com>' . "\r\n";
+        $header .= "MIME-Version: 1.0\r\n";
+        $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        mail('sebas31051999@gmail.com','Lead Partner: '. strip_tags($request->name), $message, $header);
+
+        return redirect()->route('lead.partner.thank');
+    }
 }
