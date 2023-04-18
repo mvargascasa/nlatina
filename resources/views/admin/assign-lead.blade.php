@@ -25,7 +25,7 @@
                 <select name="partner_id" class="form-select form-control w-50" required>
                     <option value="">Seleccione</option>
                     @foreach ($partners as $partner)
-                        <option value="{{$partner->id}}">{{$partner->name . " " . $partner->lastname}}</option>
+                        <option value="{{$partner->id}}">{{$partner->name . " " . $partner->lastname}} - {{count($partner->customers)}}</option>
                     @endforeach
                 </select>
                 <button class="btn btn-success mt-4" type="submit">Asignar Lead</button>

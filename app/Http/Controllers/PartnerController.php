@@ -406,7 +406,7 @@ class PartnerController extends Controller
 
         $customer = Customer::where('id', $id)->first();
 
-        $partners = Partner::select('id', 'name', 'lastname')->where('country_residence', 'LIKE', "%$customer->pais%")->where('state', 'LIKE', "%$customer->estado%")->where('status', 'PUBLICADO')->get();
+        $partners = Partner::select('id', 'name', 'lastname')->where('country_residence', 'LIKE', "%$customer->pais%")->where('state', 'LIKE', "%$customer->estado%")->get();
 
         return view('admin.assign-lead', compact('customer', 'partners'));
     }
