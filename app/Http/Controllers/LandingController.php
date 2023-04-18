@@ -13,6 +13,8 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Detection\MobileDetect;
 use Illuminate\Support\Facades\DB;
+use Stevebauman\Purify\Facades\Purify;
+use App\Customer;
 
 // use Stevebauman\Purify\Facades\Purify;
 
@@ -894,7 +896,7 @@ class LandingController extends Controller
                     <br><b> Email: </b>" . strip_tags($request->email) ."
                     <br><b> País: </b>" .strip_tags($request->country)."
                     <br><b> Estado: </b>" . strip_tags($request->state) . "
-                    <br><b> Caso: </b>".strip_tags($request->comment)." 
+                    <br><b> Caso: </b>". strip_tags($request->comment)." 
                     ";
                         
         $header='';
@@ -902,6 +904,15 @@ class LandingController extends Controller
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         mail('sebas31051999@gmail.com','Lead Partner: '. strip_tags($request->name), $message, $header);
+
+        $customer = Customer::create([
+            'nombre' => Purify::clean($request->name) . " " . Purify::clean($request->lastname),
+            'email' => Purify::clean($request->email),
+            'pais' => Purify::clean($request->country),
+            'telefono' => Purify::clean($request->phone),
+            'mensaje' => Purify::clean($request->comment),
+            'proviene' => 'Landing ' . Purify::clean($request->from)
+        ]);
 
         return redirect()->route('lead.partner.thank');
     }

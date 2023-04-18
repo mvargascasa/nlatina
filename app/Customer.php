@@ -10,7 +10,7 @@ class Customer extends Model
     protected $table = "customer";
 
     protected $fillable = [
-        'id', 'nombre', 'email', 'pais', 'telefono', 'mensaje', 'created_at', 'updated_at'
+        'id', 'nombre', 'email', 'pais', 'telefono', 'mensaje', 'proviene', 'created_at', 'updated_at'
     ];
 
     public $timestamps = false;

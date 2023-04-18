@@ -101,6 +101,7 @@
                     <p class="text-center text-white font-bold text-lg pt-5">¿Cuál es <b class="text-amber-400 font-bold">su problema legal</b>?</p>
                     <form action="{{route('set.lead.partner')}}" method="POST">
                         @csrf
+                        <input type="hidden" name="from" value="{{$data['country']}}">
                         <div class="grid md:grid-cols-2 grid-cols-1">
                             <div class="ml-4 mr-4 md:mr-2 mb-2 mt-4">
                                 <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="name" placeholder="Nombre">
