@@ -406,7 +406,7 @@ class PartnerController extends Controller
 
         $customer = Customer::where('id', $id)->first();
 
-        $partners = Partner::select('id', 'name', 'lastname')->where('country_residence', 'LIKE', "%$customer->pais%")->where('state', 'LIKE', "%$customer->estado%")->get();
+        $partners = Partner::select('id', 'name', 'lastname')->where('country_residence', 'LIKE', "%$customer->pais%")->where('state', 'LIKE', "%$customer->estado%")->where('status', 'PUBLICADO')->get();
 
         return view('admin.assign-lead', compact('customer', 'partners'));
     }
@@ -425,7 +425,7 @@ class PartnerController extends Controller
                     <br><b> Email: </b>" . strip_tags($customer->email) ."
                     <br><b> País: </b>" .strip_tags($customer->pais)."
                     <br><b> Estado: </b>" . strip_tags($customer->estado) . "
-                    <br><b> Caso: </b>". strip_tags($customer->comment)." 
+                    <br><b> Caso: </b>". strip_tags($customer->mensaje)." 
                     <br>Puede ingresar a su perfil en nuestro sitio web y visualizar más información.";
                             
         $header='';
