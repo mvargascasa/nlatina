@@ -411,8 +411,30 @@ class PartnerController extends Controller
         return view('admin.assign-lead', compact('customer', 'partners'));
     }
 
-    public function assignlead(Customer $customer, $partner_id){
-        
+    public function assignlead(Request $request){
+
+        $customer = Customer::where('id', $request->customer_id)->first();
+        $partner = Partner::where('id', $request->partner_id)->first();
+        $partner->customers()->attach($customer->id);
+        $customer->tipo = "ASIGNADO";
+        $customer->save();
+
+        $message = "<br><strong>Notaria Latina le ha referido un Cliente</strong>
+                    <br><b> Nombre:</b> ". strip_tags($customer->nombre). "
+                    <br><b> Telef: </b> ".strip_tags($customer->telefono)."
+                    <br><b> Email: </b>" . strip_tags($customer->email) ."
+                    <br><b> País: </b>" .strip_tags($customer->pais)."
+                    <br><b> Estado: </b>" . strip_tags($customer->estado) . "
+                    <br><b> Caso: </b>". strip_tags($customer->comment)." 
+                    <br>Puede ingresar a su perfil en nuestro sitio web y visualizar más información.";
+                            
+        $header='';
+        $header .= 'From: <lead_partners@notarialatina.com>' . "\r\n";
+        $header .= "MIME-Version: 1.0\r\n";
+        $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        mail($partner->email,'Cliente Asignado: '. strip_tags($customer->nombre), $message, $header);
+
+        return redirect()->route('partner.form.assign.lead', $customer->id)->with('status', 'Se asigno el lead: ' . $customer->nombre . ' al Abogado: ' . $partner->name . " " . $partner->lastname);
     }
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
     // public function sendEmailMasivo(Request $request){

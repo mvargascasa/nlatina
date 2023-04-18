@@ -19,18 +19,30 @@
         <hr>
         <div>
             <h2>Asignar a Abogado:</h2>
-            <form action="">
-                <select name="partner_id" class="form-select form-control w-50">
+            <form action="{{route('partner.assign.lead')}}" method="POST">
+                @csrf
+                <input type="hidden" name="customer_id" value="{{$customer->id}}">
+                <select name="partner_id" class="form-select form-control w-50" required>
                     <option value="">Seleccione</option>
                     @foreach ($partners as $partner)
                         <option value="{{$partner->id}}">{{$partner->name . " " . $partner->lastname}}</option>
                     @endforeach
                 </select>
+                <button class="btn btn-success mt-4" type="submit">Asignar Lead</button>
             </form>
         </div>
+        @if (session('status'))
+            <div class="mt-4">
+                <div class="alert alert-success">
+                    {{session('status')}}
+                </div>
+            </div>
+        @endif
     </div>
 @endsection
 
 @section('end-scripts')
-    
+    <script>
+
+    </script>
 @endsection

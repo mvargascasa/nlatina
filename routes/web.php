@@ -54,6 +54,7 @@ Route::get('/home/partners/publicated', 'PartnerController@viewLastPublicated')-
 Route::get('/home/partners/not-publicated', 'PartnerController@getAllNotPublicated')->name('partner.show.not.publicated');
 Route::get('/home/partners/all-customers', 'PartnerController@showallcustomers')->name('partner.show.all.customers');
 Route::get('/home/partners/all-customers/assign/{id}', 'PartnerController@formassignlead')->name('partner.form.assign.lead');
+Route::post('/home/partners/all-customers/assign-lead', 'PartnerController@assignlead')->name('partner.assign.lead');
 Route::post('/home/partners/verify/{partner}', 'PartnerController@verifiEmailAdmin')->name('verify.email.admin');
 Route::get('/home/partners/{partner}/show', 'PartnerController@show')->name('partner.show');
 Route::get('/home/partners/{id}/showById', 'PartnerController@redirectIfPartnerId')->name('partner.show.id');

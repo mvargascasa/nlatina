@@ -19,6 +19,7 @@
                             <th scope="col">Teléfono</th>
                             <th scope="col">Mensaje</th>
                             <th scope="col">Partner</th>
+                            <th scope="col">Tipo</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -26,15 +27,13 @@
                                 <tr>
                                     <th>
                                         {{ $customer->nombre }} <br>
-                                        @foreach ($customer->partners as $c)
-                                            <b class="text-muted" style="font-size: 12px">{{ Str::limit($c->pivot->created_at, 10, '') }}</b>
-                                        @endforeach
+                                        <b class="text-muted" style="font-size: 12px">{{ Str::limit($customer->created_at, 10, '') }}</b>
                                     </th>
                                     <td>{{ $customer->pais }}</td>
                                     <td>{{ $customer->telefono }}</td>
                                     <td>{{ $customer->mensaje }}</td>
                                     <td>
-                                        @if($customer->proviene != null)
+                                        @if(count($customer->partners)==0)
                                             <a href="{{route('partner.form.assign.lead', $customer->id)}}" class="btn btn-info btn-sm">Asignar Lead</a>
                                         @else
                                             @foreach ($customer->partners as $c)
@@ -43,6 +42,9 @@
                                                 </a>
                                             @endforeach
                                         @endif
+                                    </td>
+                                    <td>
+                                        <p class="@if($customer->tipo == "ASIGNADO") text-success @else text-info @endif">{{$customer->tipo}}</p>
                                     </td>
                                 </tr>
                             @endforeach

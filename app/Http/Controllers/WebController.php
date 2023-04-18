@@ -2516,6 +2516,7 @@ class WebController extends Controller
                 'pais' => Purify::clean($request['country_residence']),
                 'telefono' => Purify::clean($request['phone']),
                 'mensaje' => Purify::clean($request['mensaje']),
+                'tipo'=> 'DIRECTO'
             ]);
     
             $partner->customers()->attach($customer->id);

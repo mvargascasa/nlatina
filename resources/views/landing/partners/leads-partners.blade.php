@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Abogados en {{$data['country']}} - Notaria Latina</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.tailwindcss.com"></script>
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 
     <style>
@@ -126,25 +126,25 @@
                         <input type="hidden" name="from" value="{{$data['country']}}">
                         <div class="grid md:grid-cols-2 grid-cols-1">
                             <div class="ml-4 mr-4 md:mr-2 mb-2 mt-4">
-                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="name" placeholder="Nombre">
+                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="name" placeholder="Nombre" required>
                             </div>
                             <div class="md:ml-2 ml-4 mr-4 mb-2 mt-2 md:mt-4">
-                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="lastname" placeholder="Apellido">
+                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="lastname" placeholder="Apellido" required>
                             </div>
                         </div>
 
                         <div class="grid md:grid-cols-2 grid-cols-1">
                             <div class="ml-4 mr-4 md:mr-2 mt-2 mb-4 md:mb-2">
-                                <input type="number" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="phone" placeholder="Teléfono">
+                                <input type="number" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="phone" placeholder="Teléfono" required>
                             </div>
                             <div class="md:ml-2 ml-4 mr-4 md:mt-2 mb-2">
-                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="email" placeholder="Correo electrónico">
+                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="email" placeholder="Correo electrónico" required>
                             </div>
                         </div>
 
                         <div class="grid md: grid-cols-2 grid-cols-1">
                             <div class="ml-4 mr-4 md:mr-2 mt-2 mb-2">
-                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="country" id="selcountry">
+                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="country" id="selcountry" required>
                                     <option value="">País de residencia</option>
                                     @foreach ($countries as $country)
                                         <option value="{{$country->name_country}}" data-id="{{$country->id}}">{{$country->name_country}}</option>
@@ -152,14 +152,14 @@
                                 </select>
                             </div>
                             <div class="md:ml-2 ml-4 mr-4 mt-2 mb-2">
-                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="state" id="selstate">
+                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="state" id="selstate" required>
                                     <option value="">Estado/Departamento</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="grid mx-4 mt-2">
-                            <textarea rows="6" class="pl-3 pt-3 text-sm w-full rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="comment" placeholder="Describa su problema legal..."></textarea>
+                            <textarea rows="6" class="pl-3 pt-3 text-sm w-full rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="comment" placeholder="Describa su problema legal..." required></textarea>
                         </div>
                         <div class="grid mt-2 mx-4 mt-4">
                             <button class="w-full bg-amber-400 font-bold rounded-lg h-10">ENVIAR FORMULARIO</button>
