@@ -111,16 +111,16 @@
                         </div>
 
                         <div class="grid md:grid-cols-2 grid-cols-1">
-                            <div class="ml-4 mr-4 md:mr-2 mt-2 mb-4">
+                            <div class="ml-4 mr-4 md:mr-2 mt-2 mb-4 md:mb-2">
                                 <input type="number" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="phone" placeholder="Teléfono">
                             </div>
-                            <div class="md:ml-2 ml-4 mr-4 md:mt-2 mb-4">
+                            <div class="md:ml-2 ml-4 mr-4 md:mt-2 mb-2">
                                 <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="email" placeholder="Correo electrónico">
                             </div>
                         </div>
 
                         <div class="grid md: grid-cols-2 grid-cols-1">
-                            <div class="ml-4 mr-4 md:mr-2 mt-2 mb-4">
+                            <div class="ml-4 mr-4 md:mr-2 mt-2 mb-2">
                                 <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="country" id="selcountry">
                                     <option value="">País de residencia</option>
                                     @foreach ($countries as $country)
@@ -128,14 +128,14 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="md:ml-2 ml-4 mr-4 md:mt-2 mb-4">
+                            <div class="md:ml-2 ml-4 mr-4 mt-2 mb-2">
                                 <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="state" id="selstate">
                                     <option value="">Estado/Departamento</option>
                                 </select>
                             </div>
                         </div>
 
-                        <div class="grid mx-4 mt-4">
+                        <div class="grid mx-4 mt-2">
                             <textarea name="" id="" rows="6" class="pl-3 pt-3 text-sm w-full rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="comment" placeholder="Describa su problema legal..."></textarea>
                         </div>
                         <div class="grid mt-2 mx-4 mt-4">
@@ -146,6 +146,12 @@
             </div>
         </div>
     </div>
+
+    <footer class="mt-5">
+        <div class="bg-sky-950 text-white text-center py-3">
+            © Copyright 2023 - Notaria Latina
+        </div>
+    </footer>
 
 <script>
     window.addEventListener('load',  () => {

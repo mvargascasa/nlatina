@@ -14,7 +14,7 @@
     <div class="flex items-center justify-center h-screen">
       <div>
         <div class="mb-5 flex items-center justify-center">
-          <img width="400px" height="100px" src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
+          <img width="300px" height="100px" src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
         </div>
         <div class="flex flex-col items-center space-y-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="text-green-600 w-28 h-28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
