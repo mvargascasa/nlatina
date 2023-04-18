@@ -136,7 +136,7 @@
                         </div>
 
                         <div class="grid mx-4 mt-2">
-                            <textarea name="" id="" rows="6" class="pl-3 pt-3 text-sm w-full rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="comment" placeholder="Describa su problema legal..."></textarea>
+                            <textarea rows="6" class="pl-3 pt-3 text-sm w-full rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="comment" placeholder="Describa su problema legal..."></textarea>
                         </div>
                         <div class="grid mt-2 mx-4 mt-4">
                             <button class="w-full bg-amber-400 font-bold rounded-lg h-10">ENVIAR FORMULARIO</button>
