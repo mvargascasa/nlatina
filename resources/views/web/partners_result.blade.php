@@ -253,13 +253,14 @@
     <script>
     function selectCountry(id, page = 1){
         let state = document.querySelector("select[name='state']").value;
+        let specialty = document.querySelector("select[name='specialty']").value;
         $.ajax({
             type: "GET",
             url: "{{ route('partners.fetch.state.b') }}",
             data:{
                 "pais" : id,
                 "state" : state,
-                "specialty": null,
+                "specialty": specialty,
                 "page": page,
             },
             dataType: "json",
@@ -294,8 +295,10 @@
     });
 
     function changeurllocation(option){
+        // debugger;
         pais = option.value.toLowerCase();
         pais = pais.replace(/\s/g, "-");
+        // console.log(pais);
         let url = "{{route('partners.fetch.state', ':pais')}}";
         url = url.replace(":pais", pais);
         window.location.href = url;
