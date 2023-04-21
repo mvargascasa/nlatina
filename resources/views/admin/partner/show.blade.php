@@ -50,6 +50,11 @@
                         <span class="bg-white text-dark rounded px-1 font-weight-bold">{{count($partner->customers)}}</span>
                     </button>
                 </div>
+                @if(isset($partner) && $partner->status == "PUBLICADO")
+                <div class="float-right mr-1">
+                    <a target="_blank" href="{{route('web.showpartner', $partner->slug)}}" class="btn rounded-0 text-white" style="background-color: #002542">Ver perfil</a>
+                </div>
+                @endif
             </div>
         </div>
         <div class="form-group mt-5 border shadow p-5">
