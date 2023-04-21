@@ -762,14 +762,14 @@
       <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-university fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
-        <i><p class="mt-2 text-white font-family-montserrat">Contamos con un <b>personal joven y capacitado</b> para la realización de trámites</p></i>
+        <i><p class="mt-2 text-white font-family-montserrat">Contamos con un <b>personal profesional y capacitado</b> para la realización de trámites</p></i>
       </div>
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
       <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
         <i class="fas fa-users fa-3x" style="color: #FFBE32"></i>
         <hr class="w-50" style="background-color: #FFBE32">
-        <i><p class="mt-2 text-white font-family-montserrat">Nos hemos comprometido con nuestros clientes brindándole un <b>servicio integral, rápido y eficaz</b></p></i>
+        <i><p class="mt-2 text-white font-family-montserrat">Estamos comprometido con nuestros clientes brindándole un <b>servicio integral, rápido y eficaz</b></p></i>
       </div>
     </div>
   </div>
