@@ -12,8 +12,8 @@
             <p><b>Email:</b> {{$customer->email}}</p>
             <p><b>País: </b> {{$customer->pais}}</p>
             <p><b>Estado:</b> {{$customer->estado}}</p>
-            <p><b>Telefono: </b> {{$customer->phone}}</p>
-            <p><b>Mensaje: </b> {{$customer->comment}}</p>
+            <p><b>Telefono: </b> {{$customer->telefono}}</p>
+            <p><b>Mensaje: </b> {{$customer->mensaje}}</p>
             <p><b>Proveniente: </b> {{$customer->proviene}}</p>
         </div>
         <hr>
