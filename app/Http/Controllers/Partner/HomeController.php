@@ -234,6 +234,7 @@ class HomeController extends Controller
         // else if(isset($partner->))
         //$partner->slug = Str::slug('abogado en ' . $partner->city . ' '. $partner->state . ' ' . $partner->country_residence . ' ' . $partner->id, '-');
         //$partner->slug = Str::slug($partner->name . ' '. $partner->lastname . ' ' . $partner->id, '-');
+        if(!Str::startsWith($partner->slug, 'abogado-en') && $partner->country_residence != null) $partner->slug = Str::slug('abogado en ' . $partner->country_residence . ' ' . $partner->id);
 
         $partner->updated_count = $partner->updated_count + 1;
 

@@ -326,8 +326,7 @@ class WebController extends Controller
 
         if(Str::startsWith($slug, 'abogado')) {
             $partner = Partner::where('slug', $slug)->where('status', 'PUBLICADO')->first();
-        } 
-        else {
+        } else {
             $partner = Partner::where('old_slug', $slug)->where('status', 'PUBLICADO')->first();
             if($partner)return redirect()->route('web.showpartner', $partner->slug);
             else return redirect()->route('web.showallpartners');
