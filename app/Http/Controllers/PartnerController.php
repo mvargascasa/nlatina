@@ -359,7 +359,13 @@ class PartnerController extends Controller
     //funcion de prueba para setear un nuevo slug en el partner
     public function setslug(Partner $partner){
         $partner->old_slug = $partner->slug;
-        $newslug =  Str::slug('abogado en ' . $partner->city . ' ' . $partner->state . ' ' . $partner->country_residence . ' ' . $partner->id);
+        if ($partner->country_residence == $partner->state && $partner->state == $partner->city) {
+            $newslug = Str::slug('abogado en ' . $partner->country_residence . ' ' . $partner->id);
+        } else if($partner->state == $partner->city){
+            $newslug = Str::slug('abogado en ' . $partner->state . ' ' . $partner->country_residence . ' ' . $partner->id);
+        } else {
+            $newslug =  Str::slug('abogado en ' . $partner->city . ' ' . $partner->state . ' ' . $partner->country_residence . ' ' . $partner->id);
+        }
         $partner->slug = $newslug;
         $partner->save();
         return redirect()->route('partner.show', $partner);
@@ -405,6 +411,8 @@ class PartnerController extends Controller
     public function formassignlead(Request $request, $id){
 
         $customer = Customer::where('id', $id)->first();
+
+        //$countries = DB::table('countries')->get();
 
         $partners = Partner::select('id', 'name', 'lastname')->where('country_residence', 'LIKE', "%$customer->pais%")->where('state', 'LIKE', "%$customer->estado%")->where('status', 'PUBLICADO')->get();
 
