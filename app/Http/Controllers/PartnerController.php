@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Partner;
 use App\Specialty;
+use App\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -414,9 +415,11 @@ class PartnerController extends Controller
 
         $countries = DB::table('countries')->get();
 
+        $specialties = DB::table('specialties')->get();
+
         $partners = Partner::select('id', 'name', 'lastname')->where('country_residence', 'LIKE', "%$customer->pais%")->where('state', 'LIKE', "%$customer->estado%")->where('status', 'PUBLICADO')->get();
 
-        return view('admin.assign-lead', compact('customer', 'partners', 'countries'));
+        return view('admin.assign-lead', compact('customer', 'partners', 'countries', 'specialties'));
     }
 
     public function assignlead(Request $request){
@@ -443,6 +446,13 @@ class PartnerController extends Controller
         mail($partner->email,'Cliente Asignado: '. strip_tags($customer->nombre), $message, $header);
 
         return redirect()->route('partner.form.assign.lead', $customer->id)->with('status', 'Se asigno el lead: ' . $customer->nombre . ' al Abogado: ' . $partner->name . " " . $partner->lastname);
+    }
+
+    public function searchpartnertoassign(Request $request){
+
+        $country = Country::select('name_country')->where('id', $request->country)->first();
+        $partners = Partner::where('country_residence', 'LIKE', "%$country->name_country%")->where('state', 'LIKE', "%$request->state%")->specialties($request->specialty)->get();
+        return response()->json($partners);
     }
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
     // public function sendEmailMasivo(Request $request){
