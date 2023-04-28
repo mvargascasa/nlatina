@@ -22,7 +22,7 @@
               </div>
             </div>
             {{-- end chartjs --}}
-            <div class="overflow-auto mt-4" style="height: 200px">
+            <div class="overflow-auto mt-4" style="height: 300px">
               <h3>Listado de partners con el conteo de clientes que han consultado por ellos</h3>
                 <div>
                 </div>
