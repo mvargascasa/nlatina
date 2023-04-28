@@ -60,7 +60,7 @@
                         </select>
                     </div>
                 </div>
-                <button onclick="searchtoassign()">Buscar</button>
+                <button class="btn btn-info rounded-0 btn-sm" onclick="searchtoassign()">Buscar</button>
             
         </div>
         @if (session('status'))
