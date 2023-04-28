@@ -129,7 +129,7 @@
         selpartners.appendChild(opt);
         partners.forEach(partner => {
             let opt = document.createElement('option');
-            opt.appendChild(document.createTextNode(partner.name + " " + partner.lastname));
+            opt.appendChild(document.createTextNode(partner.name + " " + partner.lastname + " - " + partner.customers.length));
             opt.value = partner.id;
             selpartners.appendChild(opt);
             //this.selpartners.appendChild(opt);
