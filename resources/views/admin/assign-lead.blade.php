@@ -122,7 +122,6 @@
         const selpartners = document.getElementById("selpartner");
         //console.log(response.json());
         const partners = await response.json();
-        console.log(partners);
         selpartners.options.length = 0;
         let opt = document.createElement('option');
         opt.appendChild(document.createTextNode('Seleccione'));
@@ -132,7 +131,6 @@
             let opt = document.createElement('option');
             opt.appendChild(document.createTextNode(partner.name + " " + partner.lastname));
             opt.value = partner.id;
-            console.log(opt);
             selpartners.appendChild(opt);
             //this.selpartners.appendChild(opt);
         });
