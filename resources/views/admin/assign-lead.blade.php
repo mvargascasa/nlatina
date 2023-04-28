@@ -6,19 +6,22 @@
 
 @section('content')
     <div class="container col-md-10 mt-3">
-        <div>
+        <div class="border p-4 shadow-sm">
             <h1>Información de Lead</h1>
-            <p> <b>Nombre:</b> {{$customer->nombre}}</p>
-            <p><b>Email:</b> {{$customer->email}}</p>
-            <p><b>País: </b> {{$customer->pais}}</p>
-            <p><b>Estado:</b> {{$customer->estado}}</p>
-            <p><b>Telefono: </b> {{$customer->telefono}}</p>
-            <p><b>Mensaje: </b> {{$customer->mensaje}}</p>
-            <p><b>Proveniente: </b> {{$customer->proviene}}</p>
+            <div class="row">
+                <div class="col-sm-4"><p> <b><i class="fa-solid fa-user"></i> Nombre:</b> {{$customer->nombre}}</p></div>
+                <div class="col-sm-4"><p><b><i class="fa-solid fa-envelope"></i> Email:</b> {{$customer->email}}</p></div>
+                <div class="col-sm-4"><p><b><i class="fa-solid fa-earth-americas"></i> País: </b> {{$customer->pais}}</p></div>
+                <div class="col-sm-4"><p><b><i class="fa-solid fa-location-dot"></i> Estado:</b> {{$customer->estado}}</p></div>
+                <div class="col-sm-4"><p><b><i class="fa-solid fa-phone"></i> Telefono: </b> {{$customer->telefono}}</p></div>
+                <div class="col-sm-4"><p><b><i class="fa-solid fa-pager"></i> Proveniente: </b> {{$customer->proviene}}</p></div>
+                <div class="col-sm-4"><p><b><i class="fa-solid fa-message"></i> Mensaje: </b> {{$customer->mensaje}}</p></div>
+            </div>
         </div>
         <hr>
-        <div>
+        <div class="border p-4 shadow-sm">
             <h2>Asignar a Abogado:</h2>
+            <p><i class="fa-solid fa-circle-info"></i> Seleccione un abogado de la lista para asignar el lead</p>
             <form action="{{route('partner.assign.lead')}}" method="POST">
                 @csrf
                 <input type="hidden" name="customer_id" value="{{$customer->id}}">
@@ -28,12 +31,13 @@
                         <option value="{{$partner->id}}">{{$partner->name . " " . $partner->lastname}} - {{count($partner->customers)}}</option>
                     @endforeach
                 </select>
-                <button class="btn btn-success mt-4" type="submit">Asignar Lead</button>
+                <button class="btn btn-success rounded-0 mt-4" type="submit">Asignar Lead</button>
             </form>
         </div>
-        <div class="mt-5">
+        <hr>
+        <div class="border p-4 shadow-sm">
             <h2>Buscar:</h2>
-            
+                <p><i class="fa-solid fa-circle-info"></i> Seleccione el país, estado y especialidad que busca el lead para encontrar varios abogados</p>
                 <div class="form-group d-flex">
                     <div class="w-100">
                         <label for="country">Estado</label>
@@ -60,7 +64,7 @@
                         </select>
                     </div>
                 </div>
-                <button class="btn btn-info rounded-0 btn-sm" onclick="searchtoassign()">Buscar</button>
+                <button class="btn btn-info rounded-0" onclick="searchtoassign()">Buscar</button>
             
         </div>
         @if (session('status'))
@@ -131,7 +135,8 @@
             console.log(opt);
             selpartners.appendChild(opt);
             //this.selpartners.appendChild(opt);
-        })
+        });
+        partners.length <= 0 ? alert('No se encontraron abogados con estos parámetros') : alert('Se cargo una nueva lista de abogados');
         
     }
 
