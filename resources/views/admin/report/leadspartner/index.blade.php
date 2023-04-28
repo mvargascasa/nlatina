@@ -22,7 +22,8 @@
               </div>
             </div>
             {{-- end chartjs --}}
-            <div class="overflow-auto">
+            <div class="overflow-auto mt-4" style="height: 100px">
+              <h3>Listado de partners con el conteo de clientes que han consultado por ellos</h3>
                 <div>
                 </div>
                 <div class="table-responsive">
