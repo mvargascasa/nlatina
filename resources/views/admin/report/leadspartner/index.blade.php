@@ -22,7 +22,7 @@
               </div>
             </div>
             {{-- end chartjs --}}
-            <div>
+            <div class="overflow-auto">
                 <div>
                 </div>
                 <div class="table-responsive">
