@@ -451,7 +451,7 @@ class PartnerController extends Controller
     public function searchpartnertoassign(Request $request){
 
         $country = Country::select('name_country')->where('id', $request->country)->first();
-        $partners = Partner::where('country_residence', 'LIKE', "%$country->name_country%")->where('state', 'LIKE', "%$request->state%")->specialties($request->specialty)->get();
+        $partners = Partner::where('country_residence', 'LIKE', "%$country->name_country%")->where('state', 'LIKE', "%$request->state%")->specialties($request->specialty)->where('status', 'PUBLICADO')->get();
         return response()->json($partners);
     }
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
