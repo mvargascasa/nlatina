@@ -28,7 +28,7 @@ class ReportController extends Controller
         $labels = $customers->keys();
         $data = $customers->values();
 
-        $partners = Partner::with('customers')->whereHas('customers')->orderBy('id', 'desc')->get();
+        $partners = Partner::with('customers')->whereHas('customers')->withCount('customers')->orderBy('customers_count', 'desc')->get();
 
         return view('admin.report.leadspartner.index', compact('partners', 'labels', 'data'));
     }
