@@ -454,6 +454,15 @@ class PartnerController extends Controller
         $partners = Partner::where('country_residence', 'LIKE', "%$country->name_country%")->where('state', 'LIKE', "%$request->state%")->specialties($request->specialty)->where('status', 'PUBLICADO')->with('customers')->get();
         return response()->json($partners);
     }
+
+    public function deleteFileVideo(Partner $partner){
+        if(Storage::exists($partner->url_video) || $partner->url_video != null){
+            Storage::delete($partner->url_video);
+            $partner->url_video = null;
+            $partner->save();
+        }
+        return redirect()->route('partner.show', $partner)->with('delete-file', 'Se elimino el video del abogado/a: ' . $partner->name);
+    }
     //ENVIAR CORREO A LOS PARTNERS QUE NO TIENEN NUMERO DE LICENCIA
     // public function sendEmailMasivo(Request $request){
     //     $to = $request->emails;

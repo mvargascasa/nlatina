@@ -9,6 +9,7 @@ use Pion\Laravel\ChunkUpload\Handler\HandlerFactory;
 use Pion\Laravel\ChunkUpload\Receiver\FileReceiver;
 use Illuminate\Support\Facades\Storage;
 use App\Partner;
+use Illuminate\Support\Facades\Auth;
 
 
 class UploadController extends Controller
@@ -58,5 +59,15 @@ class UploadController extends Controller
             'done' => $handler->getPercentageDone(),
             'status' => true
         ];
+    }
+
+    public function deleteFileVideo(){
+        $partner = Partner::where('id', Auth::user()->id)->first();
+        if(Storage::exists($partner->url_video) || $partner->url_video != null){
+            Storage::delete($partner->url_video);
+            $partner->url_video = null;
+            $partner->save();
+        }
+        return redirect()->route('partner.upload.form')->with('delete-file', 'Se elimino el video');
     }
 }

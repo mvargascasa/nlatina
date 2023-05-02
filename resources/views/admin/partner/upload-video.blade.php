@@ -9,8 +9,16 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center mt-4">
+        <div class="row justify-content-center mt-4 mb-4">
             <div class="col-md-8">
+                @if (session('delete-file'))
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <strong>{{session('delete-file')}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
                 <div class="card rounded-0 shadow-sm">
                     <div class="card-header text-center bg-white">
                         <h5>Envienos su presentación</h5>
@@ -43,6 +51,10 @@
             {{-- <div class="row text-center justify-content-center mt-5"> --}}
                 <div class="col-md-4">
                     <video class="lazy" width="100%" data-src="{{asset('storage/'.Auth::user()->url_video)}}" controls autoplay></video>
+                    <form action="{{route('partner.delete.video')}}" method="POST" class="text-center mt-1 form-delete-video">
+                        @csrf
+                        <button class="btn btn-danger rounded-0 btn-delete-file">Eliminar Video</button>
+                    </form>
                 </div>
             {{-- </div> --}}
             @endif
@@ -86,7 +98,6 @@
     });
 
     resumable.on('fileError', function (file, response) { // trigger when there is any error
-        console.log(response);
         alert('file uploading error.');
     });
 
@@ -109,5 +120,15 @@
     }
 
     var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)};
+
+    let btn_delete_file = document.querySelector('.btn-delete-file');
+    if(btn_delete_file){
+        btn_delete_file.addEventListener('click', (event) => {
+            event.preventDefault();
+            if(confirm("¿Está seguro de eliminar el video?")){
+                document.querySelector('.form-delete-video').submit();
+            }
+        });
+    }
 </script>
 @endsection

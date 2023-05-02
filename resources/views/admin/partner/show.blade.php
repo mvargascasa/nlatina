@@ -14,6 +14,14 @@
             </button>
         </div>
         @endif
+        @if (session('delete-file'))
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            {{ session('delete-file') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
         @if (session('emailsent'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('emailsent') }}
@@ -403,7 +411,15 @@
                     {!! Form::file('presentation', ['class' => 'form-control-file', 'accept' => 'video/*']) !!}
                 </div>
             </div>
-            {!! Form::close() !!}  
+            {!! Form::close() !!}
+            @if(isset($partner->url_video))
+            <div class="row mt-2 ml-1">
+                <form class="form-delete-video" action="{{route('home.partner.delete.video', $partner)}}" method="POST">
+                    @csrf
+                    <button class="btn btn-danger rounded-0 btn-delete-video">Eliminar video</button>
+                </form>
+            </div>
+            @endif
         </div>
 
         {{-- MODAL PARA ENVIAR MENSAJE AL CORREO DEL PARTNER --}}
@@ -610,6 +626,16 @@
                 divCompanyName.style.display = "none";
             }
         }
+
+        // let btn_delete_video = document.querySelector('.btn-delete-video');
+        // if(btn_delete_video){
+        //     btn_delete_video.addEventListener('click', function(event){
+        //         event.preventDefault();
+        //         if(confirm('¿Está seguro de eliminar el video?')){
+        //             document.querySelector('.form-delete-video').submit();
+        //         }
+        //     });
+        // }
 
         // function validateDelete(){
         //     let partner = prompt("Ingrese el nombre del partner a eliminar");

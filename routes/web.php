@@ -82,6 +82,9 @@ Route::post('home/videos/store', 'VideoController@store')->name('admin.store.vid
 Route::get('home/videos/{id}/edit', 'VideoController@edit')->name('admin.edit.video');
 Route::put('home/videos/{id}/update', 'VideoController@update')->name('admin.update.video');
 
+//ROUTE TO DELETE FILE VIDEO PARTNER
+Route::post('home/videos/partners/delete/{partner}', 'PartnerController@deleteFileVideo')->name('home.partner.delete.video');
+
 // THANK
 Route::get('/thank', 'LandingController@thank')->name('landing.thank');
 Route::post('/thank', 'LandingController@thankpost')->name('landing.thankpost');
@@ -164,6 +167,7 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
 
     Route::get('multimedia', 'UploadController@formupload')->name('partner.upload.form')->middleware('auth:partner');
     Route::post('upload-video/save/{id}', 'UploadController@uploadLargeFiles')->name('partner.upload.save')->middleware('auth:partner');
+    Route::post('delete-video', 'UploadController@deleteFileVideo')->name('partner.delete.video')->middleware('auth:partner');
 });
 
 Route::get('/ruta/escondida/cacheclear', function(){
