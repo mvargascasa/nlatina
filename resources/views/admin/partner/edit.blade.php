@@ -1038,7 +1038,6 @@
                         $('#modalpresentation').modal('toggle');
                         if(button.id == "btnsendpresentation"){
                             window.open('https://api.whatsapp.com/send?phone=13474283543&text=Deseo enviar mi video de presentación', '_blank');
-                            //window.location.replace("{{route('partner.upload.form')}}");
                         }
                         //toggleModalSuccess();
                     } else {
