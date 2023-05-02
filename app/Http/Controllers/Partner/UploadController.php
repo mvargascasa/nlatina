@@ -31,6 +31,9 @@ class UploadController extends Controller
         $fileReceived = $receiver->receive(); // receive file
 
         if ($fileReceived->isFinished()) { // file uploading is complete / all chunks are uploaded
+
+            if(Storage::exists($partner->url_video)) Storage::delete($partner->url_video);
+
             $file = $fileReceived->getFile(); // get file
             $extension = $file->getClientOriginalExtension();
             $fileName = str_replace('.'.$extension, '', $file->getClientOriginalName()); //file name without extenstion

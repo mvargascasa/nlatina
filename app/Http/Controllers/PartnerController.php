@@ -163,6 +163,7 @@ class PartnerController extends Controller
         }
 
         if(isset($request->presentation)){
+            if(Storage::exists($partner->url_video)) Storage::delete($partner->url_video);
             $url_video = Storage::put('videos', $request->file('presentation'));
             $partner->url_video = $url_video;
         }
