@@ -252,16 +252,18 @@ class WebController extends Controller
         $pais = Str::title(str_replace('-', ' ', $pais));
         $country_aux = Country::where('name_country', 'LIKE', "%$pais%")->first();
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
-        $states = State::where('country_id', $country_aux->id)->get();
-        $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
-                ->country($country_aux->id)
-                // ->state($request->state)
-                // ->specialties($request->specialty)
-                ->where('status', 'PUBLICADO')
-                //->inRandomOrder('name')
-                ->orderBy('name', 'DESC')
-                // ->limit($dataToLoad)
-                ->paginate(16);
+        if($country_aux){
+            $states = State::where('country_id', $country_aux->id)->get();
+            $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
+                    ->country($country_aux->id)
+                    // ->state($request->state)
+                    // ->specialties($request->specialty)
+                    ->where('status', 'PUBLICADO')
+                    //->inRandomOrder('name')
+                    ->orderBy('name', 'DESC')
+                    // ->limit($dataToLoad)
+                    ->paginate(16);
+        }
                 // ->inRandomOrder()
                 // ->get();
 
@@ -276,7 +278,8 @@ class WebController extends Controller
         
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
 
-        return view('web.partners_result', compact('countries', 'states', 'partners', 'specialties', 'country_aux'));
+        if($country_aux) return view('web.partners_result', compact('countries', 'states', 'partners', 'specialties', 'country_aux'));
+        else return view('errors.404');
     }
 
     public function fetchStateB(Request $request){
