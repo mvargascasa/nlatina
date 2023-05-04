@@ -147,11 +147,11 @@
 
 </div>
 
-@if(Route::current()->getName() != "socios.edit")
+{{-- @if(Route::current()->getName() != "socios.edit") --}}
 <script defer src="{{asset('js/jquery-3.4.1.min.js')}}" ></script>
 <script defer src="{{asset('js/popper.min.js')}}"></script>
 <script defer src="{{asset('js/bootstrap.min.js')}}"></script>
-@endif
+{{-- @endif --}}
 
 @yield('end-scripts')
 
