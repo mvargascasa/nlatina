@@ -318,7 +318,7 @@ class HomeController extends Controller
         //$partner->img_profile = $url;
         $partner = Partner::where('id', $request->id)->first();
 
-        $folderPath = public_path('/storage/partners/');
+        $folderPath = public_path('storage\\partners\\');
  
         $image_parts = explode(";base64,", $request->image);
         $image_type_aux = explode("image/", $image_parts[0]);
@@ -335,8 +335,8 @@ class HomeController extends Controller
         if($partner->img_profile != null){
             Storage::delete($partner->img_profile);
         }
-        //file_put_contents($imageFullPath, $image_base64);
-        Storage::put('partners', $image_base64);
+        file_put_contents($imageFullPath, $image_base64);
+        //Storage::put('partners', $image_base64);
 
         $partner->img_profile = "partners/".$imageName;
         $partner->save();
