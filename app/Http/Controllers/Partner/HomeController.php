@@ -305,4 +305,50 @@ class HomeController extends Controller
 
         return response()->json($saved);
     }
+
+    public function saveimagecropper(Request $request){
+
+        // $url = Storage::put('partners', $request->file('image'));
+        // $image = Image::make(Storage::get($url));
+        // $image->resize(844, 1035, function($constraint){
+        //     $constraint->aspectRatio();
+        //     $constraint->upsize();
+        // });
+        //Storage::put($url, (string) $image->encode('jpg', 72));
+        //$partner->img_profile = $url;
+        $partner = Partner::where('id', $request->id)->first();
+
+        $folderPath = public_path('/storage/partners/');
+ 
+        $image_parts = explode(";base64,", $request->image);
+        $image_type_aux = explode("image/", $image_parts[0]);
+        $image_type = $image_type_aux[1];
+        $image_base64 = base64_decode($image_parts[1]);
+ 
+        $imageName = uniqid() . '.jpg';
+        //$imageName = (string) $image_base64->encode('jpg', 72);
+ 
+        $imageFullPath = $folderPath.$imageName;
+
+        //$url = Storage::put('partners', $image_base64);
+
+        if($partner->img_profile != null){
+            Storage::delete($partner->img_profile);
+        }
+        file_put_contents($imageFullPath, $image_base64);
+
+        $partner->img_profile = "partners/".$imageName;
+        $partner->save();
+ 
+        //  $saveFile = new CropImage;
+        //  $saveFile->name = $imageName;
+        //  $saveFile->save();
+    
+        //return response()->json(['success'=>'Crop Image Uploaded Successfully']);
+        // if($request->hasFile('image')){
+            return response()->json(['file' => $imageName]);
+        // } else {
+        //     return response()->json(['message' => 'Error al subir la imagen']);
+        // }
+    }
 }

@@ -160,6 +160,8 @@ Route::group(['namespace' => 'Partner', 'prefix' => 'partners'], function(){
     Route::get('/email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify')->middleware(['signed']);
     Route::post('/email/resend', 'VerificationController@resend')->name('verification.resend');
 
+    Route::post('save-image', 'HomeController@saveimagecropper')->name('save.image.cropper');
+
     // Route::post('/tramites/store', 'ProcedureController@store')->name('partner.procedure.store')->middleware('auth:partner');
     // Route::get('/tramites/{type?}', 'ProcedureController@create')->name('partner.procedure.create')->middleware('auth:partner');
 
