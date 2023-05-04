@@ -5,13 +5,14 @@
 @section('scripts')
     <style>
         .image-wrapper{
-            /* position: relative; */
+            position: relative;
+            padding-bottom: 10%;
         }
         .image-wrapper img{
             /* position: absolute; */
-            /* object-fit: contain;
+            object-fit: contain;
             width: 60%;
-            height: 120%; */
+            height: 120%;
             box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         }
         input, label{
@@ -133,10 +134,6 @@
             color: white;
         }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    <link href="{{asset('css/cropper.css')}}" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endsection
 
@@ -150,21 +147,21 @@
                 <div id="cardParent" class="card" style="background-color: #f4f4fc">
                     <div class="card-header font-weight-bold" style="background-color: #01385f; color: #ffffff">ACTUALIZAR DATOS</div>
                     <h4 style="color: #002542; margin-top: 20px; text-align: center">Inscripción para formar parte de nuestro directorio de partners.</h4>
-                    <p style="text-align: center">Ingrese sus datos y forme parte de nuestro directorio de partners. Acceda a beneficios de anunciarse <b>gratis</b> en Estados Unidos</p>
+                    <p style="text-align: center">Ingresa tus datos y forma parte de nuestro directorio de partners. Accede a beneficios de anunciarte <b>gratis</b> en Estados Unidos</p>
                     <p id="txtTercero" style="text-align: center; color: #002542; font-weight: bold">{{ Str::upper('¡No olvides completar tu información para que tus datos puedan publicarse en nuestro sitio web!') }}</p>
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 {{ session('status') }}
-                                <button type="button" onclick="this.parentElement.classList.add('d-none')" class="close" data-dismiss="alert" aria-label="Close">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                         @endif
                         @if (count($camposVacios) < 1 && Str::limit($partner->terminos_verified_at, 10, '') == Str::limit(date(now()), 10, '') && count($advertencias) < 1)
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <b>¡Felicidades!</b> Toda su información se ha completado con éxito. En breves minutos su perfil será publicado gratis en nuestro sitio web
-                                <button type="button" onclick="this.parentElement.classList.add('d-none')" class="close" data-dismiss="alert" aria-label="Close">
+                                <b>¡Felicidades!</b> Toda tu información se ha completado con éxito. En breves minutos tu perfil será publicado gratis en nuestro sitio web
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -208,34 +205,26 @@
                                     <div class="row border pt-3 mb-3 justify-content-center align-items-center">
                                         <div class="col-sm-1"></div>
                                         <div class="col-sm-3">
-                                            {{-- <div class="image-wrapper d-flex justify-content-center">
+                                            <div class="image-wrapper d-flex justify-content-center">
                                                 @if ($partner->img_profile != null)
                                                     <img id="picture" class="img-fluid" src="{{ asset('storage/'.$partner->img_profile) }}" alt="No se pudo cargar la imagen">
                                                 @else
                                                    <img id="picture" class="img-fluid" src="{{ asset('img/partners/foto-perfil.jpg') }}" alt="No se pudo cargar la imagen">
                                                 @endif                    
-                                            </div> --}}
-                                            <!-- en este img se mostrará el archivo despues de haberlo subido-->
-                                            <div class="image-wrapper d-flex justify-content-center">
-                                                <img id="img-uploaded" width="200" @if($partner->img_profile != null) src="{{asset('storage/'.$partner->img_profile)}}" @else src="{{asset('img/partners/foto-perfil.jpg')}}" @endif class="img-fluid" />
                                             </div>
-                                            <!-- en este span se visualizará la url del archivo-->
-                                            {{-- <span id="span-uploaded"></span> --}}
-                                            {{-- <form class="form"> --}}
-                                                <div class="mb-3 mt-3">
-                                                    {{-- <label for="file-upload" class="form-label">Cargar Imagen</label><br/> --}}
-                                                    <input type="file" id="file-upload" class="image">
-                                                </div>
-                                            {{-- </form> --}}
-                                            {{-- <div class="form-group col-md-12">
+                                            <div class="form-group col-md-12">
                                                 @if ($partner->img_profile != null)
                                                     {!! Form::label('img_profile', 'Imagen de perfil', ['id' => 'Imagen de perfil']) !!}
                                                 @else
                                                     {!! Form::label('img_profile', 'Imagen de perfil *', ['id' => 'Imagen de perfil', 'style' => 'color: red; font-weight: bold']) !!}
                                                 @endif
+                                                {{-- @if($partner->img_profile != null) --}}
                                                 {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);']) !!}
+                                                {{-- @else
+                                                {!! Form::file('img_profile', ['class' => 'form-control-file', 'accept' => 'image/*', 'onchange' => 'showPreview(event);', 'required']) !!}
+                                                @endif --}}
                                                 <hr>
-                                            </div> --}}
+                                            </div>
                                         </div>
                                         <div class="col-sm-7">
                                             <h6>Al momento de subir su foto de perfil, <b>tenga en cuenta los siguientes puntos:</b></h6>
@@ -637,7 +626,7 @@
                                         @if ($partner->terminos_verified_at != null)
                                         {!! Form::submit('Guardar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b', 'id' => 'btnsave']) !!}
                                         @else
-                                        {!! Form::button('Guardar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b', 'data-bs-toggle' => 'modal', 'data-bs-target' => '#exampleModalCenter']) !!}
+                                        {!! Form::button('Guardar',  ['class' => 'btn text-white', 'style' => 'background-color: #00223b', 'data-toggle' => 'modal', 'data-target' => '#exampleModalCenter']) !!}
                                         @endif
                                     </div>
                                 </div>
@@ -707,7 +696,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle">Términos y condiciones</h5>
-              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -1027,176 +1016,11 @@
         </form>
         </div>
       </div>
-
       {{-- TERMINA MODAL PARA CAMBIO DE PASSWORD --}}
-
-      <div class="modal fade" id="div-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Recortar imagen</h5>
-                    <button type="button" class="btn-close" onclick="document.getElementById('file-upload').value='';" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div id="modal-body-cropper" class="modal-body">
-                    <div class="img-container">
-                        <div class="row">
-                            <div class="col-md-8 col-sm-12">
-                                <!-- en este img se visualizará todo el archivo seleccionado-->
-                                <img id="img-original" class="img-fluid">
-                            </div>
-                            <div class="col-md-4 col-sm-12">
-                                <!-- en este div se mostrará la zona seleccionada, lo que quedará despues de hacer click en el boton crop-->
-                                <div id="div-preview" class="preview img-fluid"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer d-flex">
-                    <div id="btn-scroll-top"><i class="fas fa-arrow-circle-up fa-lg"></i></div>
-                    <div id="btn-scroll-bottom"><i class="fas fa-arrow-circle-down fa-lg"></i></div>
-                    <button type="button" onclick="document.getElementById('file-upload').value='';" class="btn btn-danger rounded-0" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary rounded-0" id="btn-crop">Recortar y Guardar <img width="20" class="loading img-fluid d-none" src="{{asset('img/loading.gif')}}" alt=""></button>
-                </div>
-            </div>
-        </div>
-    </div>
     
 @endsection
 
 @section('end-scripts')
-
-    <style type="text/css">
-        img {
-            /* display: block;
-            max-width: 100%; */
-        }
-        .preview {
-            overflow: hidden;
-            width: 160px;
-            height: 160px;
-            margin: 10px;
-            border: 1px solid #0B5ED7;
-        }
-    </style>
-    <script src="{{asset('js/cropper.js')}}"></script>
-    <script type="module">
-        //$ es una convención de js que indica que esa variable es un elemento html, se puede declarar sin $
-    //file es input de selección
-    const $file = document.getElementById("file-upload")
-    //es elemento img dentro del modal donde se montará la imagen seleccionada
-    const $image = document.getElementById("img-original")
-    const $modal = document.getElementById("div-modal")
-    //si deseamos interactuar con el modal usando los metodos nativos de bootstrap5
-    //debemos construirlo pasando el elemento. En nuestro caso .show() y .hide()
-    const objmodal = new bootstrap.Modal($modal, {
-        //que el modal no interactue con el teclado
-        keyboard: false
-    })
-    //escuchamos el change del input-file
-    $file.addEventListener("change", function (e) {
-        const load_image = function (url){
-            $image.src = url
-            objmodal.show()
-        }
-        const files = e.target.files
-        if(files && files.length>0) {
-            const objfile = files[0]
-            //el objeto file tiene las propiedades: name, size, type, lastmodified, lastmodifiedate
-            
-            //para poder visualizar el archivo de imagen lo debemos pasar a una url 
-            //el objeto URL está en fase experimental así que si no existe usaria FileReader
-            if (URL){
-                //crea una url del estilo: blob:http://localhost:1024/129e832d-2545-471f-8e70-20355d8e33eb
-                const url = URL.createObjectURL(objfile)
-                load_image(url)
-            }
-            else if (FileReader) {
-                const reader = new FileReader()
-                reader.onload = function (e) {
-                    load_image(reader.result)
-                }
-                reader.readAsDataURL(objfile)
-            }
-        }
-    })//file.on-change
-    const $btncrop = document.getElementById("btn-crop")
-    //configuramos el click del boton crop
-    $btncrop.addEventListener("click", function (){
-        const $img_loading = document.querySelector('.loading');
-        $img_loading.classList.remove('d-none');
-        //obtenemos la zona seleccionada
-        const canvas = cropper.getCroppedCanvas()
-        canvas.toBlob(function (blob){
-            //el objeto blob (binary larege object) tiene las propiedades: size y type
-            const reader = new FileReader()
-            //se pasa el binario base64
-            reader.readAsDataURL(blob)
-            reader.onloadend = function (){
-                const base64data = reader.result
-                //base64data es un string del tipo: data:image/png;base64,iVBORw0KGgoAAAA....
-                //console.log("base64data", base64data)
-                //en mi caso estoy trabajando con php en el back pero puede ser cualquier url
-                //const url = ""
-                fetch("{{route('save.image.cropper')}}", {
-                    method: "POST",
-                    headers: {
-                        //si la respuesta del servidor no es un json saltará una excepción en js
-                        "Accept": "application/json",
-                        //le indica al servidor que se le enviará un json
-                        "Content-Type": "application/json",
-                        "X-CSRF-TOKEN": "{{csrf_token()}}"
-                    },
-                    body: JSON.stringify({
-                        image: base64data,
-                        id: "{{Auth::user()->id}}"
-                    })
-                })
-                .then(response => {  
-                    const result = Promise.resolve(response.json());
-                    result.then(value => {
-                        console.log(value.file);
-                        $img_loading.classList.add('d-none');
-                        $file.value = ""    //resetea el elemento input-file (file-upload)
-                        objmodal.hide()     //escondo el modal
-                        //result es algo como: {message:"image uploaded successfully.", file:"upload/uuid.png"}
-                        console.log(result);
-                        //este es el img que está debajo del elemnto input-file
-                        const $img = document.getElementById("img-uploaded")
-                        $img.src = `{{asset('/storage/partners/${value.file}')}}`;
-                        $img.style.visibility = "visible"
-                        //const $span = document.getElementById("span-uploaded")
-                        //$span.innerText=$img.src
-                    });
-    
-                })
-                .then(function (result){
-    
-                })
-            }//reader.on-loaded
-        })//canvas.toblob
-    })//btncrop.on-click
-    //el objeto cropper que habrá que crearlo y destruirlo. 
-    //Crearlo al mostrar el modal y destruirlo al cerrarlo
-    let cropper = null
-    $modal.addEventListener("shown.bs.modal", function (){
-        console.log("modal.on-show")
-        //crea el marco de selección sobre el objeto $image
-        cropper = new Cropper($image, {
-            //donde se mostrará la parte seleccionada
-            preview: document.getElementById("div-preview"),
-            //3: indica que no se podrá seleccionar fuera de los límites
-            viewMode: 2,
-            //NaN libre elección, 1 cuadrado, proporción del lado horizontal con respecto al vertical
-            aspectRatio: 2/3,
-        })
-    })//modal.on-shown
-    $modal.addEventListener("hidden.bs.modal", function (){
-        console.log("modal.on-hide")
-        cropper.destroy()
-        cropper = null
-    })//modal.on-hidden  
-    </script>
-
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
         function setmodals(id, partner_id, button){
@@ -1357,7 +1181,7 @@
         $(".checkSpecialties").click(() => deshabilitarCheckBox());
 
         function marcarCampo(event){
-            let label = document.getElementById(event.textContent);
+            var label = document.getElementById(event.textContent);
             label.classList.add('marcarLabel');
             setTimeout(function(){ 
                 label.classList.remove('marcarLabel');
@@ -1380,22 +1204,6 @@
                 infoverifypassword.style.color = "red";
                 infoverifypassword.innerHTML = "Complete los campos ⚠";
             }
-        }
-
-        const btn_scroll_top = document.getElementById('btn-scroll-top');
-        const btn_scroll_bottom = document.getElementById('btn-scroll-bottom');
-        const modal_body = document.querySelector('#modal-body-cropper');
-
-        if(btn_scroll_top){
-            btn_scroll_top.addEventListener('click', () => {
-                modal_body.scrollTop -= 20;
-            });
-        }
-
-        if(btn_scroll_bottom){
-            btn_scroll_bottom.addEventListener('click', () => {
-                modal_body.scrollTop += 20;
-            })
         }
     </script>
 @endsection
