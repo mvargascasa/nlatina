@@ -341,7 +341,7 @@ class HomeController extends Controller
 
         
 
-        $partner->img_profile = $url;
+        $partner->img_profile = "partners/".$imageName;
         $partner->save();
  
         //  $saveFile = new CropImage;
