@@ -318,7 +318,7 @@ class HomeController extends Controller
         //$partner->img_profile = $url;
         $partner = Partner::where('id', $request->id)->first();
 
-        $folderPath = storage_path('/app/public/partners');
+        $folderPath = storage_path('/app/public/partners/');
  
         $image_parts = explode(";base64,", $request->image);
         $image_type_aux = explode("image/", $image_parts[0]);
