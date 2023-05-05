@@ -910,6 +910,7 @@ class LandingController extends Controller
             $header .= 'From: <lead_partners@notarialatina.com>' . "\r\n";
             $header .= "MIME-Version: 1.0\r\n";
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            mail('partners@notarialatina.com', 'Lead Partner: '. strip_tags($request->name), $message, $header);
             mail('sebas31051999@gmail.com','Lead Partner: '. strip_tags($request->name), $message, $header);
     
             $customer = Customer::create([
