@@ -1039,7 +1039,7 @@
                 </div>
                 <div id="modal-body-cropper" class="modal-body">
                     <div class="img-container">
-                        <div class="row">
+                        <div class="row position-relative">
                             <div class="col-md-8 col-sm-12">
                                 <!-- en este img se visualizará todo el archivo seleccionado-->
                                 <img id="img-original" class="img-fluid">
@@ -1048,6 +1048,11 @@
                                 <!-- en este div se mostrará la zona seleccionada, lo que quedará despues de hacer click en el boton crop-->
                                 <div id="div-preview" class="preview img-fluid"></div>
                             </div>
+                            <div id="div-loading-cropper" class="position-absolute top-50 start-50 translate-middle bg-white rounded text-center p-3 border shadow d-none">
+                                <img width="100" class="loading img-fluid" src="{{asset('img/loading.gif')}}" alt="">
+                                <p>Recortando y guardando</p>
+                                <p class="font-weight-bold">Estoy podría tomar unos minutos...</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1055,7 +1060,7 @@
                     <div id="btn-scroll-top"><i class="fas fa-arrow-circle-up fa-lg"></i></div>
                     <div id="btn-scroll-bottom"><i class="fas fa-arrow-circle-down fa-lg"></i></div>
                     <button type="button" onclick="document.getElementById('file-upload').value='';" class="btn btn-danger rounded-0" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary rounded-0" id="btn-crop">Recortar y Guardar <img width="20" class="loading img-fluid d-none" src="{{asset('img/loading.gif')}}" alt=""></button>
+                    <button type="button" class="btn btn-primary rounded-0" id="btn-crop">Recortar y Guardar</button>
                 </div>
             </div>
         </div>
@@ -1122,7 +1127,7 @@
     const $btncrop = document.getElementById("btn-crop")
     //configuramos el click del boton crop
     $btncrop.addEventListener("click", function (){
-        const $img_loading = document.querySelector('.loading');
+        const $img_loading = document.querySelector('#div-loading-cropper');
         $img_loading.classList.remove('d-none');
         //obtenemos la zona seleccionada
         const canvas = cropper.getCroppedCanvas()
