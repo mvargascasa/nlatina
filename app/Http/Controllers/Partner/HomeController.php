@@ -318,12 +318,13 @@ class HomeController extends Controller
         //$partner->img_profile = $url;
         $partner = Partner::where('id', $request->id)->first();
 
-        $folderPath = public_path('storage\\app\\public\\partners\\');
+        $folderPath = storage_path('\\app\\public\\partners\\');
  
         $image_parts = explode(";base64,", $request->image);
         $image_type_aux = explode("image/", $image_parts[0]);
         $image_type = $image_type_aux[1];
         $image_base64 = base64_decode($image_parts[1]);
+        //$image = base64_encode($image_base64);
  
         $imageName = uniqid() . '.jpg';
         //$imageName = (string) $image_base64->encode('jpg', 72);
