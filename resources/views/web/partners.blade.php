@@ -8,7 +8,8 @@
     <title>Abogados y Notarias en Latinoamérica a su alcance | Notaria Latina</title>
     <meta name="description" content="👨‍⚖️ Contamos con un amplio directorio de abogados y notarios en Latinoamérica para ayudarlo a gestionar sus trámites | Notaria Latina">
     <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil, @foreach($countriesmeta as $country)abogado en {{Str::lower($country->country_residence)}},@endforeach abogados latinos, notarias cerca de mi abiertas">
-    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta property="og:site_name" content="https://notarialatina.com"/>
     <meta property="og:url" content="{{ Request::url() }}"/>
     <meta property="og:description" content="Abogados y Notarias en Latinoamérica a su alcance | Notaria Latina"/>
@@ -20,6 +21,9 @@
         /* ocultar etiqueta del numero que hace la llamada */
         /* #etiquetaPhone{display: none;} */
         /* ocultar el icono de llamada en la parte inferior derecha */
+        html{
+            scroll-behavior: smooth;
+        }
         #iconcall{display:none}
         /* ocultar la tarjeta de wpp */
         /* #divwpp{display:none} */
@@ -45,10 +49,6 @@
             }
             #imgBanner{
                 height: 100px !important;
-            }
-            #imgPareja{
-                margin-left: 12% !important;
-                width: 210px !important;
             }
             #txtBanner{
                 font-size: 11px !important;
@@ -93,15 +93,13 @@
             }
             #rowImage{
                 min-height: 250px !important;
-                padding-top: 15%;
             }
             #formulario{
                 margin-bottom: -10px !important;
             }
-            #titlemovil{padding-top: 50px !important;margin-right: 0px !important}
         }
         .titulo{
-            font-size: 30px;
+            font-size: 40px;
         }
         .emptyRegister{
             text-align: center;
@@ -123,15 +121,16 @@
         select {
             box-shadow: 2px 2px 3px #bfbfbf;
         }
-        #titlemovil{margin-right: -100px;}
-        /* #titlepc{
-            display: block;
-        } */
+        .text-color-blue{color: #2B384D}
         input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
     /* FIREFOX */
     input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
     /* OTHER */
     input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+    .countries:hover a div{background-color: #2B384D;}
+    .countries:hover a{color: #ffffff}
+    .border-right-pill{border-radius: 0px 25px 25px 0px;}
+    .text-sm{font-size: 12px}
     </style>
     <script type="text/javascript">
         function callbackThen(response){
@@ -187,13 +186,15 @@
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
         <div id="rowImage" class="row align-items-center justify-content-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
-            <div class="col-sm-12 col-md-12 col-xl-6 col-lg-6 col-12 text-white text-center">
-                <h1 id="titlemovil" class="font-weight-bold heading-title titulo text-center"><b style="color: #fec02f">¡Abogados y Notarías</b> en Latinoamérica a su alcance!</h1>
+            <div class="col-sm-12 col-md-12 col-xl-12 col-lg-12 col-12 text-white text-center">
+                <img width="60px" height="60px" class="mb-3" src="{{asset('faviconotarialatina-22.png')}}" alt="">
+                <h1 id="titlemovil" class="font-weight-bold heading-title titulo text-center mb-3"><b style="color: #fec02f">¡Abogados y Notarías</b> <br> en Latinoamérica a su alcance!</h1>
                 {{-- <h1 id="titlepc" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> en Latinoamérica <br> a su alcance!</h1> --}}
+                <a href="#search-partner" class="btn btn-outline-warning rounded-pill text-white">ENCUENTRE SU ABOGADO</a>
             </div>
-            <div id="formulario" class="col-sm-12 col-md-12 col-xl-6 col-lg-6 mt-5 mb-3">
+            {{-- <div id="formulario" class="col-sm-12 col-md-12 col-xl-6 col-lg-6 mt-5 mb-3">
                 @include('admin.partner.layouts.form_register')
-            </div>
+            </div> --}}
             {{-- <div id="colRegisterForm" class="col-12 col-sm-12 col-md-12 col-lg-6">
                 @include('admin.partner.layouts.form_register')
             </div> --}}
@@ -201,8 +202,42 @@
     </div>
 </section>
 
-<div class="pb-3" id="contentPartner" style="background-color: #f5f6f8">
+<section class="bg-warning" style="height: 10px"></section>
+
+<div id="contentPartner">
     @include('web.partials.search_partner')
+</div>
+
+<div style="background-color: #f8f8f8">
+    <div class="container py-5">
+        <h3 class="text-center font-weight-normal"><span class="font-weight-bold">NOTARIA LATINA</span> EN CIFRAS</h3>
+        <div class="row pt-5" style="color: #2B384D">
+            <div class="col-sm-3 text-center">
+                <div>
+                    <i class="fas fa-users fa-2x"></i>
+                    <p class="border-bottom font-weight-bold py-2">+1000 abogados</p>
+                    <p>Día a día <span class="font-weight-bold">decenas de abogados</span> se registran en nuestra plataforma</p>
+                </div>
+            </div>
+            <div class="col-sm-3 text-center">
+                <div>
+                    <i class="fas fa-map-marked-alt fa-2x"></i>
+                    <p class="border-bottom font-weight-bold py-2">18 paises</p>
+                    <p>Contamos con abogados en toda <span class="font-weight-bolder">LATINOAMERICA</span></p>
+                </div>
+            </div>
+            <div class="col-sm-3 text-center">
+                <i class="fas fa-chart-line fa-2x"></i>
+                <p class="border-bottom font-weight-bold py-2">+1 año</p>
+                    <p>Llevamos más de un año <span class="font-weight-bold">innovando y mejorando</span> nuestra plataforma</p>
+            </div>
+            <div class="col-sm-3 text-center">
+                <i class="fas fa-desktop fa-2x"></i>
+                <p class="border-bottom font-weight-bold py-2">Online</p>
+                    <p>Puede encontrar abogados en línea, <span class="font-weight-bold">cotizar gratis y sin compromiso</span></p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container">
@@ -316,31 +351,33 @@
 
     let selectPaisResidencia = document.getElementById('country_residence');
     let inputCodPais = document.getElementById('codTelfPais');
-        
-    selectPaisResidencia.onchange  = function(e){
-        switch (selectPaisResidencia.value) {
-            case "Argentina":codigo = "+54";break;
-            case "Bolivia":codigo = "+591";break;
-            case "Chile":codigo = "+56"; break;
-            case "Colombia":codigo = "+57";break;
-            case "Costa Rica":codigo = "+506";break;
-            case "Ecuador":codigo = "+593";break;
-            case "El Salvador":codigo = "+503";break;
-            case "Guatemala":codigo = "+502";break;
-            case "Honduras":codigo = "+504";break;
-            case "México":codigo = "+52";break;
-            case "Nicaragua":codigo = "+505";break;
-            case "Panamá":codigo = "+507";break;
-            case "Paraguay":codigo = "+595";break;
-            case "Perú":codigo = "+51";break;
-            case "Puerto Rico":codigo = "+1787";break;
-            case "República Dominicana":codigo = "+1809";break;
-            case "Uruguay":codigo = "+598";break;
-            case "Venezuela":codigo = "+58";break;
+
+    if(selectPaisResidencia){
+        selectPaisResidencia.onchange  = function(e){
+            switch (selectPaisResidencia.value) {
+                case "Argentina":codigo = "+54";break;
+                case "Bolivia":codigo = "+591";break;
+                case "Chile":codigo = "+56"; break;
+                case "Colombia":codigo = "+57";break;
+                case "Costa Rica":codigo = "+506";break;
+                case "Ecuador":codigo = "+593";break;
+                case "El Salvador":codigo = "+503";break;
+                case "Guatemala":codigo = "+502";break;
+                case "Honduras":codigo = "+504";break;
+                case "México":codigo = "+52";break;
+                case "Nicaragua":codigo = "+505";break;
+                case "Panamá":codigo = "+507";break;
+                case "Paraguay":codigo = "+595";break;
+                case "Perú":codigo = "+51";break;
+                case "Puerto Rico":codigo = "+1787";break;
+                case "República Dominicana":codigo = "+1809";break;
+                case "Uruguay":codigo = "+598";break;
+                case "Venezuela":codigo = "+58";break;
+            }
+            inputCodPais.innerHTML = codigo;
+            setimgcodcountry(selectPaisResidencia.value);
         }
-        inputCodPais.innerHTML = codigo;
-        setimgcodcountry(selectPaisResidencia.value);
-    }
+    }    
 
     function setimgcodcountry(country){
         let country_cast = country.replace(/\s+/g, '').toLowerCase();
