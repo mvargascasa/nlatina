@@ -55,7 +55,8 @@
                 <img width="350px" height="300px" src="{{asset('img/logo-notaria-latina.webp')}}" alt="">
             </div>
             <p class="text-white text-3xl md:text-6xl leading-tight mt-10">¿NECESITA UN ABOGADO <br> <b class="text-4xl @if($data['country'] == "República Dominicana") md:text-7xl @else md:text-8xl @endif">EN {{mb_strtoupper($data['country'])}}?</b></p>
-            <p class="text-amber-400 text-xl mt-10"><i>¡Encuentre al <b>mejor abogado</b> para su caso!</i></p>
+            <p class="text-amber-400 text-xl mt-10"><i>¡Encuentre al <b>mejor abogado</b> para su caso!</i></p>            
+            <p class="mt-4"><a href="tel:+13474283543" class="bg-amber-400 font-bold rounded px-4 py-2 mt-4">LLAMAR: <b>(347) 428-3543</b> </a></p>
         </div>
     </section>
     <div class="h-2.5 bg-amber-500"></div>
