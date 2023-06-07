@@ -426,7 +426,7 @@ class PartnerController extends Controller
     public function assignlead(Request $request){
 
         $customer = Customer::where('id', $request->customer_id)->first();
-        $country = Country::where('name_country ',$customer->pais)->first();
+        $country = Country::where('name_country',$customer->pais)->first();
         $phonecode = $country->phonecode??'';
         $partner = Partner::where('id', $request->partner_id)->first();
         $partner->customers()->attach($customer->id);
