@@ -426,6 +426,8 @@ class PartnerController extends Controller
     public function assignlead(Request $request){
 
         $customer = Customer::where('id', $request->customer_id)->first();
+        $country = Country::where('name_country',$customer->pais)->first();
+        $phonecode = $country->phonecode??'';
         $partner = Partner::where('id', $request->partner_id)->first();
         $partner->customers()->attach($customer->id);
         $customer->tipo = "ASIGNADO";
@@ -433,7 +435,7 @@ class PartnerController extends Controller
 
         $message = "<br><strong>Notaria Latina le ha referido un Cliente</strong>
                     <br><b> Nombre:</b> ". strip_tags($customer->nombre). "
-                    <br><b> Telef: </b> ".strip_tags($customer->telefono)."
+                    <br><b> Telef: </b> +".$phonecode.' '.strip_tags($customer->telefono)."
                     <br><b> Email: </b>" . strip_tags($customer->email) ."
                     <br><b> País: </b>" .strip_tags($customer->pais)."
                     <br><b> Estado: </b>" . strip_tags($customer->estado) . "
