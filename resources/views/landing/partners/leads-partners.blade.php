@@ -8,7 +8,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://notarialatina.com/landing/abogados-en-mexico">
+    <meta property="og:url" content="https://notarialatina.com/landing/abogados-en-{{$data['country']}}">
     <meta property="og:title" content="Abogados en {{$data['country']}} - Notaria Latina">
     <meta property="og:description" content="¿Necesita la ayuda de un abogado en {{$data['country']}}? Contamos con un amplio directorio de profesionales que lo ayudarán. Contáctelos aquí ✔">
     <meta property="og:image" content="{{asset('img/abogados-landing.webp')}}">
@@ -49,6 +49,16 @@
 
 </head>
 <body>
+
+    <section class="w-full h-[60px] bg-gray-800 fixed top-0 left-0 right-0 flex justify-between items-center px-4">
+        <div>
+            <img class="w-[45px]" src="{{ asset('img/iso2.png') }}" alt="">
+        </div>
+        <div>
+            <a class="text-amber-400 font-medium shadow-lg border-b border-amber-400" href="tel:+593964085651">096-408-5651</a>
+        </div>
+    </section>
+
     <section id="prisection" style="min-height: 700px;background-size: cover;background-position: right top; background-repeat: no-repeat;">
         <div class="md:ml-28 text-center md:text-left pt-32 md:pt-20">
             <div class="flex justify-center md:inline-block md:justify-start">
@@ -60,7 +70,7 @@
     </section>
     <div class="h-2.5 bg-amber-500"></div>
 
-    <div class="bg-cyan-950 text-white sm:inline-block md:flex items-center justify-items-center text-justify mt-5">   
+    <div class="bg-cyan-950 text-white sm:inline-block md:flex items-center justify-items-center text-justify">   
         <div class="px-10 py-10 md:px-28">
             <p>
                 En {{$data['country']}} el sistema legal puede ser complicado y confuso. Si se encuentra enfrentando un
@@ -175,6 +185,14 @@
             © Copyright 2023 - Notaria Latina
         </div>
     </footer>
+
+    <div class="fixed bottom-5 right-5 z-10">
+        <div>
+            <a target="_blank" href="https://api.whatsapp.com/send?phone=13474283543">
+                <img class="w-[60px]" src="{{ asset('img/whatsapp.png') }}" alt="whatsapp_image">
+            </a>
+        </div>
+    </div>  
 
 <script>
     window.addEventListener('load',  () => {
