@@ -55,7 +55,7 @@
             <img class="w-[45px]" src="{{ asset('img/iso2.png') }}" alt="">
         </div>
         <div>
-            <a class="text-amber-400 font-medium shadow-lg border-b border-amber-400" href="tel:+593964085651">096-408-5651</a>
+            <a class="text-amber-400 font-medium shadow-lg border-b border-amber-400" href="tel:+13474283543">347-428-3543</a>
         </div>
     </section>
 
