@@ -66,10 +66,15 @@
             </div>
             <p class="text-white text-3xl md:text-6xl leading-tight mt-10">¿NECESITA UN ABOGADO <br> <b class="text-4xl @if($data['country'] == "República Dominicana") md:text-7xl @else md:text-8xl @endif">EN {{mb_strtoupper($data['country'])}}?</b></p>
             <p class="text-amber-400 text-xl mt-10"><i>¡Encuentre al <b>mejor abogado</b> para su caso!</i></p>            
-            <div class="flex justify-center md:justify-start">
-                <a href="tel:+13474283543" class="bg-amber-400 font-medium px-4 py-2 mt-4 flex shadow-lg"> <img width="25px" src="{{ asset('img/ring-phone.png') }}" alt=""> LLAMAR: <b class="font-semibold">(347) 428-3543</b> </a>
+            <div>
+                <div class="flex justify-center md:justify-start">
+                    <a href="tel:+13474283543" class="bg-amber-400 font-medium px-4 py-2 mt-4 flex shadow-lg"> <img width="25px" src="{{ asset('img/ring-phone.png') }}" alt=""> Contáctenos </a>
+                </div>
+                <div class="mt-3 flex justify-center md:justify-start">
+                    <a href="https://api.whatsapp.com/send?phone=13474283543" class="bg-green-500 px-6 py-2 text-white flex"><img width="25px" class="mr-1" src="{{ asset('img/whatsapp.png') }}" alt=""> WhatsApp</a>
+                </div>
             </div>
-            <p class="mt-3 flex justify-center md:justify-start"><a href="https://api.whatsapp.com/send?phone=13474283543" class="bg-green-500 px-4 py-2 text-white flex"><img width="25px" class="mr-1" src="{{ asset('img/whatsapp.png') }}" alt=""> Contactar por WhatsApp</a></p>
+            {{-- <p class="mt-4"><a target="_blank" href="https://api.whatsapp.com/send?phone=13474283543" class="bg-amber-400 font-bold rounded px-4 py-2 mt-4"> Contáctanos </a></p> --}}
         </div>
     </section>
     <div class="h-2.5 bg-amber-500"></div>
