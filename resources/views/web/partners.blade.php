@@ -291,6 +291,10 @@
     </div>
 </div>
 
+<section>
+    <x-blog.list-post />
+</section>
+
 @section('numberWpp', '13474283543') @endsection
 
 @section('script')
