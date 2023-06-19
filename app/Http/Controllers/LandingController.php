@@ -861,10 +861,10 @@ class LandingController extends Controller
     public function partnersleads($country){
 
         $exists = false;
-        $countries = DB::table('countries')->get();
+        $countries = DB::table('countries')->orderBy('name_country', 'asc')->get();
 
         switch ($country) {
-            case 'argentina': $data = ['country' => 'Argentina', 'image' => 'ciudadanos-argentinos.webp']; $exists = true; break;
+            case 'argentina': $data = ['country' => "Argentina", 'image' => 'ciudadanos-argentinos.webp']; $exists = true; break;
             case 'bolivia': $data = ['country' => "Bolivia", 'image' => 'ciudadanos-bolivianos.webp']; $exists = true; break;
             case 'chile': $data = ['country' => "Chile", 'image' => 'abogados-chile.webp']; $exists = true; break;
             case 'colombia': $data = ['country' => "Colombia", 'image' => 'abogados-colombia.webp']; $exists = true; break;
@@ -899,7 +899,7 @@ class LandingController extends Controller
         if($response->success && $response->score >= 0.7){
             $message = "<br><strong>Nuevo Lead para Abogados</strong>
                         <br><b> Nombre:</b> ". strip_tags($request->name). " " . strip_tags($request->lastname) ."
-                        <br><b> Telef: </b> ".strip_tags($request->phone)."
+                        <br><b> Telef: </b> " . strip_tags($request->code) . " " .strip_tags($request->phone)."
                         <br><b> Email: </b>" . strip_tags($request->email) ."
                         <br><b> País: </b>" .strip_tags($request->country)."
                         <br><b> Estado: </b>" . strip_tags($request->state) . "
@@ -918,7 +918,7 @@ class LandingController extends Controller
                 'email' => Purify::clean($request->email),
                 'pais' => Purify::clean($request->country),
                 'estado' => Purify::clean($request->state),
-                'telefono' => Purify::clean($request->phone),
+                'telefono' => Purify::clean($request->code) . Purify::clean($request->phone),
                 'mensaje' => Purify::clean($request->comment),
                 'proviene' => 'Landing ' . Purify::clean($request->from)
             ]);

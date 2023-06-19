@@ -140,45 +140,47 @@
             <div class="mt-10 md:mt-5">
                 <div class="bg-sky-950 pb-10 md:mx-5 md:px-8">
                     <p class="text-center text-white font-bold text-lg pt-5">¿Cuál es <b class="text-amber-400 font-bold">su problema legal</b>?</p>
-                    <form action="{{route('set.lead.partner')}}" method="POST">
+                    <form action="{{route('set.lead.partner')}}" method="POST" class="px-3 md:px-0">
                         @csrf
                         <input type="hidden" name="from" value="{{$data['country']}}">
-                        <div class="grid md:grid-cols-2 grid-cols-1">
-                            <div class="ml-4 mr-4 md:mr-2 mb-2 mt-4">
-                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="name" placeholder="Nombre" required>
+                        <div class="flex gap-x-4 py-2">
+                            <div class="w-full">
+                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 outline-none" name="name" placeholder="Nombre" required>
                             </div>
-                            <div class="md:ml-2 ml-4 mr-4 mb-2 mt-2 md:mt-4">
-                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="lastname" placeholder="Apellido" required>
-                            </div>
-                        </div>
-
-                        <div class="grid md:grid-cols-2 grid-cols-1">
-                            <div class="ml-4 mr-4 md:mr-2 mt-2 mb-4 md:mb-2">
-                                <input type="number" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="phone" placeholder="Teléfono" required>
-                            </div>
-                            <div class="md:ml-2 ml-4 mr-4 md:mt-2 mb-2">
-                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="email" placeholder="Correo electrónico" required>
+                            <div class="w-full">
+                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 outline-none" name="lastname" placeholder="Apellido" required>
                             </div>
                         </div>
-
-                        <div class="grid md: grid-cols-2 grid-cols-1">
-                            <div class="ml-4 mr-4 md:mr-2 mt-2 mb-2">
-                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="country" id="selcountry" required>
+                        
+                        <div class="flex flex-col md:flex-row justify-between w-full gap-x-4 py-2">
+                            <div class="w-full">
+                                <select class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 outline-none" name="country" id="selcountry" required>
                                     <option value="">País de residencia</option>
                                     @foreach ($countries as $country)
                                         <option value="{{$country->name_country}}" data-id="{{$country->id}}">{{$country->name_country}}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="md:ml-2 ml-4 mr-4 mt-2 mb-2">
-                                <select class="text-gray-400 pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="state" id="selstate" required>
+                            <div class="flex w-full mt-4 md:mt-0">
+                                <input id="code" name="code" type="text" class="w-1/4 rounded-l-lg outline-none text-center text-sm text-gray-500" readonly>
+                                <input type="number" class="pl-3 text-sm w-3/4 h-10 rounded-r-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 outline-none" name="phone" placeholder="Teléfono" required>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between gap-x-4 py-2">
+                            <div class="w-full">
+                                <select class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 outline-none" name="state" id="selstate" required>
                                     <option value="">Estado/Departamento</option>
                                 </select>
                             </div>
+                            <div class="w-full">
+                                <input type="text" class="pl-3 text-sm w-full h-10 rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 outline-none" name="email" placeholder="Correo electrónico" required>
+                            </div>
                         </div>
 
-                        <div class="grid mx-4 mt-2">
-                            <textarea rows="6" class="pl-3 pt-3 text-sm w-full rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" name="comment" placeholder="Describa su problema legal..." required></textarea>
+
+                        <div class="flex mt-2">
+                            <textarea rows="6" class="pl-3 pt-3 text-sm w-full rounded-lg border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 outline-none" name="comment" placeholder="Describa su problema legal..." required></textarea>
                         </div>
                         <div class="grid mt-2 mx-4 mt-4">
                             <button class="w-full bg-amber-400 font-bold rounded-lg h-10">ENVIAR FORMULARIO</button>
@@ -214,6 +216,7 @@
     selCountry.addEventListener("change", async () => {
         selState.options.length = 0;
         let id = selCountry.options[selCountry.selectedIndex].dataset.id;
+        setCode(id);
         const response = await fetch("{{url('getstates')}}/"+id);
         const states = await response.json();
 
@@ -233,6 +236,33 @@
         // var optaux = document.createElement('option'); optaux.appendChild(document.createTextNode('Ciudad')); optaux.value = '';
         // selCity.appendChild(optaux);
     });
+
+    const setCode = (CountryID) => {
+        let inpCode = document.getElementById('code');
+        switch (CountryID) {
+            case "1": inpCode.value = "+54"; break;
+            case "2": inpCode.value = "+591"; break;
+            case "3": inpCode.value = "+57"; break;
+            case "4": inpCode.value = "+506"; break;
+            case "5": inpCode.value = "+593"; break;
+            case "6": inpCode.value = "+503"; break;
+            case "7": inpCode.value = "+34"; break;
+            case "8": inpCode.value = "+1"; break;
+            case "9": inpCode.value = "+502"; break;
+            case "10": inpCode.value = "+504"; break;
+            case "11": inpCode.value = "+52"; break;
+            case "12": inpCode.value = "+505"; break;
+            case "13": inpCode.value = "+507"; break;
+            case "14": inpCode.value = "+595"; break;
+            case "15": inpCode.value = "+51"; break;
+            case "16": inpCode.value = "+1"; break;
+            case "17": inpCode.value = "+809"; break;
+            case "18": inpCode.value = "+598"; break;
+            case "19": inpCode.value = "+58"; break;
+            case "20": inpCode.value = "+56"; break;
+            default: break;
+        }
+    }
 
     document.addEventListener("DOMContentLoaded",function(){let e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
 </script>
