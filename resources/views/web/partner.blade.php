@@ -269,7 +269,7 @@
         <div class="col-sm-6 border-left border-warning d-flex align-items-center">
             <div class="mx-5">
                 <p class="color-warning h3 font-weight-bold" style="letter-spacing: 15px">ABOGADO</p>
-                <p class="txt-blue h2 mt-3">{{$partner->name . ' ' . $partner->lastname}}</p>
+                <p id="txtnamelastname" class="txt-blue h2 mt-3">{{$partner->name . ' ' . $partner->lastname}}</p>
                 <p class="txt-blue mt-3" style="letter-spacing: 15px">{{strtoupper($partner->city . ', ' . $partner->country_residence)}}</p>
                 <p class="bg-blue text-white p-2 w-auto text-center font-weight-bold" style="letter-spacing: 15px; border-radius: 0px 25px 25px 0px">{{strtoupper($partner->company)}}</p>
                 <div class="row mt-4">
