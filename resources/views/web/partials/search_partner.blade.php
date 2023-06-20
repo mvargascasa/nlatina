@@ -1,8 +1,8 @@
 <section style="background-image: url('img/partners/FONDO-PARTNERS.webp'); background-size: cover;" class="row justify-content-center">
     {{-- <img id="imgBanner" style="width: 100%; min-height: 300px;"  src="{{ asset('img/partners/FONDO-PARTNERS.webp') }}" alt=""> --}}
     <div id="imgPareja" class="row justify-content-center align-items-center pt-3">
-        <div class="col-12 col-sm-6">
-            <img style="width: 60%; height: auto; bottom: 0" class="img-fluid float-rigth" src="{{ asset('img/partners/PAREJA NUEV-04.webp') }}" alt="">
+        <div class="col-12 col-sm-6 d-flex justify-content-center">
+            <img style="width: 60%; height: auto; bottom: 0" class="img-fluid" src="{{ asset('img/partners/PAREJA NUEV-04.webp') }}" alt="">
         </div>
         {{-- <div class="row"> --}}
             {{-- <div class="col-4 col-sm-4">
@@ -55,12 +55,12 @@
     <div class="container my-5">
         <h4 class="text-color-blue text-center font-weight-bold">¿CÓMO FUNCIONA?</h4>
         <div class="row justify-content-center align-items-center mt-4">
-            <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center">
+            <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center pl-5 pr-5">
                 <div class="mr-3">
                     <i class="fas fa-map-marker-alt fa-3x"></i>
                 </div>
                 <div>
-                    <div class="w-50">
+                    <div>
                         <div class="bg-warning text-color-blue border-right-pill">
                             <p class="font-weight-bold px-3">PASO 1</p>
                         </div>
@@ -68,12 +68,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center">
+            <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center pr-5 pl-5">
                 <div class="mr-3">
-                    <i class="fas fa-user-graduate fa-3x text-color-blue"></i>
+                    <i class="fas fa-user-graduate fa-3x"></i>
                 </div>
                 <div>
-                    <div class="w-50">
+                    <div class="">
                         <div class="bg-warning text-color-blue border-right-pill">
                             <p class="font-weight-bold px-3">PASO 2</p>
                         </div>
@@ -81,12 +81,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center">
+            <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center pl-5 pr-5">
                 <div class="mr-3">
                     <i class="fas fa-clipboard-list fa-3x"></i>
                 </div>
                 <div>
-                    <div class="w-50">
+                    <div class="">
                         <div class="bg-warning text-color-blue border-right-pill">
                             <p class="font-weight-bold px-3">PASO 3</p>
                         </div>
@@ -102,7 +102,7 @@
     <section class="row">
         <div class="col-sm-6" style="max-height: 500px; height: 400px; background-size: cover; background-position: center center; background-repeat: no-repeat ; background-image: url('{{ asset('img/partners/partners-img.jpg') }}');"></div>
         <div class="col-sm-6 d-flex align-items-center justify-content-center" style="background-color: #2B384D; color: #ffffff">
-            <div class="px-5">
+            <div class="px-5 py-5">
                 <p class="font-weight-bold font-italic">Encontrar un buen abogado es esencial para garantizar que sus derechos e intereses estén protegidos en cuestiones legales</p>
                 <p>Investigue su experiencia, reputación y antecedentes antes de contratarlo. Asegúrese de que su área de especialización se adapte a sus necesidades y que se sienta cómodo trabajando con él o ella. Pregunte sobre sus honorarios y cómo manejará su caso</p>
                 <p>La elección del abogado adecuado puede marcar la diferencia en el resultado de su caso, por lo que es importante tomarse el tiempo para hacer una elección informada</p>
