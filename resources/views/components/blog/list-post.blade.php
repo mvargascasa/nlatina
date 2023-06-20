@@ -7,7 +7,7 @@
             <a href="{{ route('post.slug', $post->slug) }}" style="text-decoration: none">
                 <article class="card-post border shadow-sm my-2 text-dark">
                     <div class="w-25">
-                        <img class="img-fluid" src="{{asset('uploads/'.$post->imgdir)}}" alt="{{ $post->name }}">
+                        <img class="img-fluid" src="{{asset('uploads/i300_'.$post->imgdir)}}" alt="{{ $post->name }}">
                     </div>
                     <div class="w-75 content-post">
                         <div class="p-3">
