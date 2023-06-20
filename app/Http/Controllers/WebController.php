@@ -2845,7 +2845,8 @@ class WebController extends Controller
             'email' => Purify::clean($request->email),
             'pais' => Purify::clean($request->country_residence_view_phone),
             'telefono' => Purify::clean($request->phone),
-            'mensaje' => Purify::clean('Consulta por número telefónico')
+            'mensaje' => Purify::clean('Consulta por número telefónico'),
+            'tipo' => "DIRECTO"
         ]);
 
         $partner->customers()->attach($customer->id);
