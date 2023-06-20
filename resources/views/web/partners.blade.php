@@ -25,6 +25,7 @@
             scroll-behavior: smooth;
         }
         #iconcall{display:none}
+        #iconwpp{display: none}
         /* ocultar la tarjeta de wpp */
         /* #divwpp{display:none} */
         #divpreguntas{display:none !important}
@@ -298,6 +299,12 @@
 <section>
     <x-blog.list-post />
 </section>
+
+<div class="position-fixed" style="bottom: 15px; right: 15px">
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=13474283543">
+        <img width="50px" src="{{ asset('img/whatsapp.png') }}" alt="">
+    </a>
+</div>
 
 @section('numberWpp', '13474283543') @endsection
 
