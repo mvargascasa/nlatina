@@ -97,8 +97,8 @@
             #formulario{
                 margin-bottom: -10px !important;
             }
-            .card-post{flex-direction: column; padding: 10px}
-            .card-post div{ width: 100% !important}
+            .card-post{flex-direction: column;}
+            .card-post > div{ width: 100% !important}
         }
         .titulo{
             font-size: 40px;
