@@ -97,6 +97,8 @@
             #formulario{
                 margin-bottom: -10px !important;
             }
+            .card-post{flex-direction: column; padding: 10px}
+            .card-post div{ width: 100% !important}
         }
         .titulo{
             font-size: 40px;
@@ -131,6 +133,8 @@
     .countries:hover a{color: #ffffff}
     .border-right-pill{border-radius: 0px 25px 25px 0px;}
     .text-sm{font-size: 12px}
+    .card-post{display: flex}
+    .content-post:hover{color: #fec02f}
     </style>
     <script type="text/javascript">
         function callbackThen(response){
