@@ -27,7 +27,7 @@ class PostController extends Controller
     {
         $consulates = Consulate::all()->pluck('country','id')->toArray();
         $categories = Category::all()->pluck('name','id')->toArray();
-        return view('admin/post/edit',compact('categories','consulates'));
+        return view('admin.post.edit',compact('categories','consulates'));
     }
 
     public function store(Request $request)
@@ -44,25 +44,33 @@ class PostController extends Controller
                     $img = Image::make($request->file('imgpostup'));
 
                     $mime = $img->mime();
+
                     if ($mime == 'image/jpeg') $ext = '.jpg';
                     elseif ($mime == 'image/png') $ext = '.png';
                     else $ext = '';
+
                     if(strlen($ext)>0){
                         $folder = 'uploads/';
-                        $nameFile = "IMG_$post->id-".uniqid().$ext;
+                        $nameFile = "IMG_$post->id-".uniqid();
                         $img->fit(1200, 800, function($constraint){ $constraint->upsize(); $constraint->aspectRatio(); });
-                        $img->save($folder.$nameFile, 72);
+                        $img->save($folder.$nameFile.$ext, 72);
+
+                        $imgwebp = Image::make($img)->encode('webp');
+                        $imgwebp->save($folder."webp/". $nameFile .".webp", 72);
 
                         $img->fit(900, 600 , function($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
-                        $img->save($folder."i900_".$nameFile, 40);
+                        $img->save($folder."i900_".$nameFile.$ext, 40);
 
-                        $img->fit(600,320 , function ($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
-                        $img->save($folder."i600_".$nameFile, 40);
+                        $img->fit(600,400 , function ($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
+                        $img->save($folder."i600_".$nameFile.$ext, 40);
+
+                        $imgwebp = Image::make($img)->encode('webp');
+                        $imgwebp->save($folder."webp/i600_". $nameFile .".webp", 72);
 
                         $img->fit(300,200 , function ($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
-                        $img->save($folder."i300_".$nameFile, 40);
+                        $img->save($folder."i300_".$nameFile.$ext, 40);
 
-                        $post->update(['imgdir'  => $nameFile]);
+                        $post->update(['imgdir'  => $nameFile.$ext]);
                     }
                 }
             }
@@ -125,20 +133,29 @@ class PostController extends Controller
                     else $ext = '';
                     if(strlen($ext)>0){
                         $folder = 'uploads/';
-                        $nameFile = "IMG_$post->id-".uniqid().$ext;
+                        $nameFile = "IMG_$post->id-".uniqid();
+
+                        
                         $img->fit(1200, 800, function($constraint){ $constraint->upsize(); $constraint->aspectRatio(); });
-                        $img->save($folder.$nameFile, 72);
+                        $img->save($folder.$nameFile.$ext, 72);
+
+                        $imgwebp = Image::make($img)->encode('webp');
+                        $imgwebp->save($folder."webp/". $nameFile .".webp");
 
                         $img->fit(900, 600 , function ($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
-                        $img->save($folder."i900_".$nameFile, 40);
+                        $img->save($folder."i900_".$nameFile.$ext, 40);
 
-                        $img->fit(600,320 , function ($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
-                        $img->save($folder."i600_".$nameFile, 40);
+                        $img->fit(600,400 , function ($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
+                        $img->save($folder."i600_".$nameFile.$ext, 40);
+
+                        $imgwebp = Image::make($img)->encode('webp');
+                        $imgwebp->save($folder."webp/i600_". $nameFile .".webp");
 
                         $img->fit(300,200 , function ($constraint) { $constraint->upsize(); $constraint->aspectRatio(); });
-                        $img->save($folder."i300_".$nameFile, 40);
+                        $img->save($folder."i300_".$nameFile.$ext, 40);
 
-                        $post->update(['imgdir'  => $nameFile]);
+
+                        $post->update(['imgdir'  => $nameFile.$ext]);
                     }
                 }
             }
