@@ -55,39 +55,39 @@
     <div class="container my-5">
         <h4 class="text-color-blue text-center font-weight-bold">¿CÓMO FUNCIONA?</h4>
         <div class="row justify-content-center align-items-center mt-4">
-            <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center pl-5 pr-5">
-                <div class="mr-3">
+            <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center align-items-center pl-5 pr-5">
+                <div class="text-right pr-4">
                     <i class="fas fa-map-marker-alt fa-3x"></i>
                 </div>
-                <div>
-                    <div>
-                        <div class="bg-warning text-color-blue border-right-pill">
+                <div class="d-flex align-items-center pt-3">
+                    <div class="w-100">
+                        <div class="bg-warning text-color-blue border-right-pill w-100">
                             <p class="font-weight-bold px-3">PASO 1</p>
                         </div>
-                        <p class="text-sm">Seleccionar el pais donde necesita su abogado</p>
+                        <p class="text-sm">Seleccione el pais donde necesita en donde está buscando su abogado</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center pr-5 pl-5">
-                <div class="mr-3">
+            <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center align-items-center pl-5 pr-5">
+                <div class="text-right pr-3">
                     <i class="fas fa-user-graduate fa-3x"></i>
                 </div>
-                <div>
-                    <div class="">
-                        <div class="bg-warning text-color-blue border-right-pill">
+                <div class="d-flex align-items-center pt-3">
+                    <div class="w-100">
+                        <div class="bg-warning text-color-blue border-right-pill w-100">
                             <p class="font-weight-bold px-3">PASO 2</p>
                         </div>
-                        <p class="text-sm">Seleccionar el estado del país y la especialidad que necesita</p>
+                        <p class="text-sm">Seleccione el estado o departamento del país y la especialidad que necesita</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center pl-5 pr-5">
-                <div class="mr-3">
+            <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center align-items-center pl-5 pr-5">
+                <div class="text-right pr-4">
                     <i class="fas fa-clipboard-list fa-3x"></i>
                 </div>
-                <div>
-                    <div class="">
-                        <div class="bg-warning text-color-blue border-right-pill">
+                <div class="d-flex align-items-center pt-3">
+                    <div class="w-100">
+                        <div class="bg-warning text-color-blue border-right-pill w-100">
                             <p class="font-weight-bold px-3">PASO 3</p>
                         </div>
                         <p class="text-sm">Para realizar una consulta con el abogado deberá llenar el formulario</p>

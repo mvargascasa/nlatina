@@ -216,7 +216,7 @@
 <div style="background-color: #f8f8f8">
     <div class="container py-5">
         <h3 class="text-center font-weight-normal"><span class="font-weight-bold">NOTARIA LATINA</span> EN CIFRAS</h3>
-        <div class="row pt-5" style="color: #2B384D">
+        <div class="row pt-5 px-5" style="color: #2B384D">
             <div class="col-sm-3 text-center">
                 <div>
                     <i class="fas fa-users fa-2x"></i>
