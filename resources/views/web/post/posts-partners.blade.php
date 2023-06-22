@@ -3,7 +3,7 @@
 @section('header')
     
 
-    <link rel="stylesheet" href="{{ asset('css/posts-partners.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/posts-partners.min.css') }}">
 @endsection
 
 @section('phoneNumberHidden', '+13474283543')
