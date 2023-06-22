@@ -33,4 +33,7 @@
         </div>
         @endforeach
     </div>
+    <div class="text-center mt-4">
+        <a href="{{ route('posts.partners') }}" class="btn text-white" style="background-color: #2B384D">Ver más publicaciones</a>
+    </div>
 </section>

@@ -2932,4 +2932,16 @@ class WebController extends Controller
         echo url()->previous();
 
     }
+
+    public function postspartners(){
+
+        $detect = new MobileDetect();
+        $mobile = FALSE;
+
+        if($detect->isMobile()){
+            $mobile = TRUE;
+        }
+
+        return view('web.post.posts-partners', compact('mobile'));
+    }
 }

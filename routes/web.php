@@ -127,6 +127,7 @@ Route::get('/', 'WebController@index')->name('web.index');
 
 Route::get('post/{slug}','WebController@showpost')->name('post.slug');
 Route::get('blog','WebController@showblog')->name('post.blog');
+Route::get('blog/abogados', 'WebController@postspartners')->name('posts.partners');
 Route::post('post/send-comment/{slug}', 'WebController@commentpost')->name('send.comment.post');
 
 Route::get('consulados','WebController@consulados')->name('consul.index');
