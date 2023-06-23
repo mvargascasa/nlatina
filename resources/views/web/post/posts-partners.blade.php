@@ -3,8 +3,8 @@
 @section('header')
 
 
-    @livewireStyles
     <link rel="stylesheet" href="{{ asset('css/posts-partners.min.css') }}">
+    <livewire:styles />
 @endsection
 
 @section('phoneNumberHidden', '+13474283543')
@@ -71,7 +71,7 @@
 @endsection
 
 @section('script')
-@livewireScripts
+<livewire:scripts />
 <script>
     window.addEventListener('load', () => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/posts-partners.jpg')}}')";
