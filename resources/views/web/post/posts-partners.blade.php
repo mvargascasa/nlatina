@@ -71,7 +71,7 @@
 @endsection
 
 @section('script')
-<livewire:scripts />
+@livewireScripts()
 <script>
     window.addEventListener('load', () => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/posts-partners.jpg')}}')";
