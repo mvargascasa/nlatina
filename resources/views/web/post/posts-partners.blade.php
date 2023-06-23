@@ -1,8 +1,9 @@
 @extends('layouts.web')
 
 @section('header')
-    
 
+
+    @livewireStyles
     <link rel="stylesheet" href="{{ asset('css/posts-partners.min.css') }}">
 @endsection
 
@@ -70,6 +71,7 @@
 @endsection
 
 @section('script')
+@livewireScripts
 <script>
     window.addEventListener('load', () => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/posts-partners.jpg')}}')";

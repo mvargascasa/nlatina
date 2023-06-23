@@ -2,7 +2,7 @@
     {{-- Stop trying to control. --}}
     @foreach ($posts as $post)
         <article class="d-flex justify-content-center my-4">
-            <div class="card-post border w-75 shadow-lg">
+            <div class="card-post border w-100 shadow-lg">
                 <a class="text-muted text-decoration-none" href="{{ route('post.slug', $post->slug) }}">
                     <img class="img-fluid" src="{{ asset('uploads/i900_'.$post->imgdir) }}" alt="">
                     <div class="p-3">
@@ -20,4 +20,15 @@
             </div>
         </article>
     @endforeach
+
+    <div class="w-75">
+        <p><span class="font-weight-bold">{{$limitposts}}</span> artículos cargados de <span class="font-weight-bold">{{ $totalposts }}</span></p>
+    </div>
+
+    @if($limitposts < $totalposts)
+        <div class="d-flex justify-content-center mb-5 mt-4">
+            <button class="btn text-white rounded-0" style="background-color: #122944" wire:click="loadMore">Cargar más artículos</button>
+        </div>
+    @endif
+
 </div>
