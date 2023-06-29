@@ -423,7 +423,11 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         var selectPaisResidencia = document.getElementById('country_residence');
         var inputCodPais = document.getElementById('codTelfPais');
         
-        selectPaisResidencia.onchange  = function(e){
+        selectPaisResidencia.onchange  = function(){
+            setcountrycode(selectPaisResidencia.value);
+        }
+
+        const setcountrycode = () => {
             switch (selectPaisResidencia.value) {
                 case "Argentina":codigo = "+54";break;
                 case "Bolivia":codigo = "+591";break;
@@ -463,6 +467,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/BANNER-PARTNERS.webp')}}')";
+        selectPaisResidencia.value ? setcountrycode() : null;
     });
   </script>
 @endsection

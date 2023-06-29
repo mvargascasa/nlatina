@@ -13,26 +13,11 @@
             </div>
         @enderror
         <div id="divpais" class="form-group mb-2 d-flex" style="margin-left: 5%; margin-right: 5%">
-            <select style="font-size: 14px; width: 93%" name="country_residence" id="country_residence" class="form-control" required>
+            <select style="font-size: 14px; width: 93%" name="country_residence" id="country_residence" class="form-control" selected required>
                 <option value="">País de residencia</option>
-                <option value="Argentina">Argentina</option>
-                <option value="Bolivia">Bolivia</option>
-                <option value="Chile">Chile</option>
-                <option value="Colombia">Colombia</option>
-                <option value="Costa Rica">Costa Rica</option>
-                <option value="Ecuador">Ecuador</option>
-                <option value="El Salvador">El Salvador</option>
-                <option value="Guatemala">Guatemala</option>
-                <option value="Honduras">Honduras</option>
-                <option value="México">México</option>
-                <option value="Nicaragua">Nicaragua</option>
-                <option value="Panamá">Panamá</option>
-                <option value="Paraguay">Paraguay</option>
-                <option value="Perú">Perú</option>
-                <option value="Puerto Rico">Puerto Rico</option>
-                <option value="República Dominicana">República Dominicana</option>
-                <option value="Uruguay">Uruguay</option>
-                <option value="Venezuela">Venezuela</option>  
+                @foreach (\App\Country::all() as $country)
+                    <option @if(old('country_residence') && old('country_residence') == $country->name_country) selected @endif value="{{ $country->name_country}}">{{ $country->name_country}}</option>
+                @endforeach
             </select>
             {{-- <div id="divcodigoandtelefono" class="d-flex align-items-center" style="width: 51%">
                 <div class="bg-white ml-1 h-100 pt-1 px-2" style="border-radius: 5px 0px 0px 5px; height: 100% !important">
@@ -54,7 +39,7 @@
                 <div class="input-group-prepend ml-1">
                     <span class="input-group-text bg-white"><img style="margin-left: -5px" width="auto" height="20px" id="imgcodcountry"><span style="font-size: 14px" class="ml-1 font-weight-bold" id="codTelfPais"></span></span>
                 </div>
-                <input style="font-size: 14px" type="number" class="form-control" name="phone" placeholder="Teléfono" aria-describedby="basic-addon3">
+                <input style="font-size: 14px" type="number" class="form-control" name="phone" placeholder="Teléfono" aria-describedby="basic-addon3" value="{{ old('phone') }}" required>
               </div>
         </div>
         @error('country_residence')
