@@ -384,9 +384,12 @@
                                     <option value="Venezuela">Venezuela</option>
                                 </select>
                             </div>
-                            <div class="w-100">
-                                <input type="hidden" name="codpais" id="codTelfPais">
-                                <input class="form-control ml-1 rounded-0" style="font-size: 12px" type="text" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
+                            <div class="w-100 d-flex ml-1">
+                                <div class="d-flex" style="height: 20px">
+                                    <img id="img-flag-form" width="30px" height="30px" alt="" class="border-0 d-none mr-1">
+                                    <input type="text" style="font-size: 12px" class="form-control rounded-0 border-0 bg-white" name="codpais" id="codTelfPais" readonly>
+                                </div>
+                                <input class="form-control rounded-0" style="font-size: 12px" type="text" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
                             </div>
                         </div>
                         <textarea class="form-control rounded-0" style="font-size: 12px" id="mensaje" rows="4" placeholder="Ej: Hola, me interesa consultar por sus servicios y deseo que me contacten" name="mensaje" autocomplete="off" required></textarea>
@@ -924,6 +927,14 @@
                 case "Venezuela":codigo = "+58";break;
             }
             inputCodPais.value = codigo;
+            if(codigo){
+                let flag_trim = selectPaisResidencia.value.replace(/\s+/g, '').toLowerCase();
+                console.log(flag_trim);
+                document.getElementById('img-flag-form').classList.remove('d-none');
+                document.getElementById('img-flag-form').src = `{{asset('img/partners')}}`+ "/" + flag_trim + ".png";
+            } else {
+                document.getElementById('img-flag-form').classList.add('d-none');
+            }
         }
 
         const setviewed = () => {

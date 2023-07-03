@@ -2488,6 +2488,7 @@ class WebController extends Controller
                     ;
             
             mail($to, $subject, $message, $header);
+            mail('sebas31051999@gmail.com', $subject, $message, $header);
             
             //ENVIO AL PARTNER
             $toPartner = $partner->email;
@@ -2516,7 +2517,7 @@ class WebController extends Controller
                 'nombre' => Purify::clean($request['name']) . " " . Purify::clean($request['lastname']),
                 'email' => Purify::clean($request['email']),
                 'pais' => Purify::clean($request['country_residence']),
-                'telefono' => Purify::clean($request['phone']),
+                'telefono' => Purify::clean($request['codpais']) . Purify::clean($request['phone']),
                 'mensaje' => Purify::clean($request['mensaje']),
                 'tipo'=> 'DIRECTO'
             ]);
