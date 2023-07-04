@@ -256,17 +256,15 @@ class WebController extends Controller
             $states = State::where('country_id', $country_aux->id)->get();
             $partners = Partner::select(['id', 'img_profile', 'name', 'lastname', 'title', 'state', 'codigo_pais', 'specialty', 'country_residence', 'phone', 'email', 'slug'])
                     ->country($country_aux->id)
-                    // ->state($request->state)
-                    // ->specialties($request->specialty)
                     ->where('status', 'PUBLICADO')
-                    //->inRandomOrder('name')
                     ->orderBy('name', 'DESC')
-                    // ->limit($dataToLoad)
                     ->paginate(16);
+
+            $count_partners = Partner::country($country_aux->id)->where('status', 'PUBLICADO')->count();
         }
                 // ->inRandomOrder()
                 // ->get();
-
+        $demonym = Consulate::select('demonym')->where('country', 'LIKE', "%$pais%")->get();
         // $partnersCount = Partner::where('status', 'PUBLICADO')
         //             ->orderBy('id', 'DESC')
         //             ->country($country->id)
@@ -278,7 +276,7 @@ class WebController extends Controller
         
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
 
-        if($country_aux) return view('web.partners_result', compact('countries', 'states', 'partners', 'specialties', 'country_aux'));
+        if($country_aux) return view('web.partners_result', compact('countries', 'states', 'partners', 'specialties', 'country_aux', 'count_partners', 'demonym'));
         else return view('errors.404');
     }
 

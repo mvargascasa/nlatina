@@ -1,13 +1,13 @@
 <div class="text-center">
     {{-- <img style="width: 100%; height: 200px;" src="{{ asset('img/partners/FONDO-PARTNERS.jpg') }}" alt=""> --}}
-    <div id="rowTxt" style="margin-left: auto; margin-right: auto; padding-top: 2%; left: 0; right: 0; text-align: center">
-        <p class="h5" style="font-weight: bold">Encuentre un Abogado o Notario en Latinoamérica</p>
-        <p style="font-size: 13px">BUSCAR POR:</p>
+    <div id="rowTxt" class="pt-5 mb-5">
+        <p class="h5" style="font-weight: semibold">Filtrar búsqueda más detallada para <span style="color: #fec200">"Abogados en {{ $country_aux->name_country }}"</span></p>
+        <p style="font-size: 14px" class="mt-4">Seleccione un estado y una especialidad para una búsqueda más detallada  :</p>
     </div>
-    <div id="rowPatternFiltros" class="row" style="margin-left: auto; margin-right: auto; top: 50%; left: 0; right: 0; text-align: center">
+    <div id="rowPatternFiltros" class="row" style="margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             {!! Form::open(['route' => 'web.showallpartners', 'method' => 'POST', 'id' => 'formSearchPartnersAfter']) !!}
-                <div id="rowFiltros" class="row d-flex justify-content-center" style="margin-left: 25%; margin-right: 23%">
+                <div id="rowFiltros" class="row d-flex justify-content-center">
                     <div class="col-4 col-lg-3" style="margin-left: -22px">    
                         <div id="filterCountry" class="form-group">
                             <select class="form-control" name="pais" id="pais" onchange="changeurllocation(this);" style="border: none; border-radius: 0px; z-index: 1; height: 31px; font-size: 14px;">

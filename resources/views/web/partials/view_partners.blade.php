@@ -1,12 +1,15 @@
 @include('web.partials.filters_partners')
-<div class="mt-5 contenido" style="margin-left:10%; margin-right: 10%;">
+<div class="mt-5 contenido">
     @if (count($partners) > 0)
+        <section class="mt-5 pl-3 shadow-sm" style="border-left: 5px solid #fec200;">
+            <p class="py-2">Encontramos <span style="font-weight: 500">{{ $count_partners }}</span> abogados que residen en <span style="font-weight: 500">{{ $country_aux->name_country }}</span></p>
+        </section>
         <div class="row">
             @foreach ($partners as $partner)
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
                     <a href="{{ route('web.showpartner', $partner->slug) }}" style="text-decoration: none">
-                        <div class="testimotionals">
-                            <div class="card" style="width: 100%; height: 100%">
+                        <article class="testimotionals">
+                            <div class="card rounded-0 shadow-sm" style="width: 100%; height: 100%">
                             <div class="layer"></div>
                             <div class="content">
                                 <div class="row">
@@ -44,7 +47,7 @@
                                 </div>
                             </div>
                             </div>
-                        </div>
+                        </article>
                     </a>
                 </div>
             @endforeach

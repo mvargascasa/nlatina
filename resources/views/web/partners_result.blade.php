@@ -31,7 +31,7 @@
             width:100%;
             margin:0 auto;
             /* background:rgb(255, 255, 255); */
-            background: #f5f6f8;
+            background: #ffffff;
             padding:20px;
             box-sizing:border-box;
             text-align:justify;
@@ -128,9 +128,6 @@
 
             .titulo{
                 font-size: 25px !important;
-            }
-            #rowTxt{
-                padding-top: 15px !important;  
             }
             #rowTxt h5{
                 font-size: 16px;  
@@ -240,9 +237,59 @@
         </div>
     </section>
     
-    <div class="pb-3" id="contentPartner" style="background-color: #f5f6f8">
+    <section class="pb-3 bg-white container" id="contentPartner" style="background-color: #f5f6f8">
         @include('web.partials.view_partners')
-    </div>    
+    </section>
+
+    <section class="container accordion mb-5" id="accordionExample">
+        <h3 style="font-weight: 400" class="mt-1 mb-3">Preguntas Frecuentes</h3>
+        <article class="card rounded-0">
+            <div class="card-header bg-light" id="headingOne" style="cursor: pointer">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <span style="font-weight: 500"><i class="fas fa-check-circle"></i> ¿Por qué es importante contratar un abogado en {{ $country_aux->name_country }}?</span>
+                </div>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body text-muted">
+                    <p>Contratar un abogado {{ $demonym[0]->demonym}} es crucial porque brinda conocimientos especializados en leyes y regulaciones, protege nuestros derechos legales y ofrece asesoramiento experto en situaciones legales complejas. Su experiencia y habilidades nos permiten tomar decisiones informadas y asegurar que nuestras acciones estén respaldadas por un enfoque legal sólido.</p>
+                </div>
+            </div>
+        </article>
+        <article class="card rounded-0">
+            <div class="card-header bg-light" id="headingTwo" style="cursor: pointer">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <span style="font-weight: 500"><i class="fas fa-check-circle"></i> ¿Qué servicios legales ofrecen los abogados de {{ $country_aux->name_country }}?</span>
+                </div>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body text-muted">
+                  <p>Algunos de los servicios más comunes que ofrecen los abogados que ejercen en {{ $country_aux->name_country }} incluyen:</p>
+                  <ol>
+                      <li>Derecho Civil</li>
+                      <li>Derecho Penal</li>
+                      <li>Derecho Laboral</li>
+                      <li>Derecho Comercial</li>
+                      <li>Derecho de Familia</li>
+                      <li>Derecho Administrativo</li>
+                      <li>Derecho Tributario</li>
+                      <li>Derecho Constitucional</li>
+                  </ol>
+                </div>
+              </div>
+        </article>
+        <article class="card rounded-0">
+            <div class="card-header bg-light" id="headingThree" style="cursor: pointer">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <span style="font-weight: 500"><i class="fas fa-check-circle"></i> ¿Cómo puedo verificar la idoneidad y experiencia de Abogados {{ ucfirst($demonym[0]->demonym) }}s?</span>
+                </div>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body text-muted">
+                    <p>Para verificar la idoneidad y experiencia de abogados, investiga su licencia y registro en organismos legales, busca reseñas en línea y solicita referencias de clientes anteriores. Programa una reunión para evaluar su conocimiento y capacidad de comunicación. Decisión informada para tus necesidades legales.</p>
+                </div>
+              </div>
+        </article>
+    </section>
 
 @section('numberWpp', '13479739888')
 
