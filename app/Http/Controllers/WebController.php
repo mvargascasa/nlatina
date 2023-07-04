@@ -281,6 +281,9 @@ class WebController extends Controller
     }
 
     public function fetchStateB(Request $request){
+
+        //return $request;
+
         $country_aux = Country::where('name_country', 'LIKE', "%$request->pais%")->first();
         $countries = Country::select(['id', 'name_country'])->orderBy('name_country', 'asc')->get();
         $states = State::where('country_id', $country_aux->id)->get();
@@ -295,6 +298,12 @@ class WebController extends Controller
                 ->paginate(16);
                 // ->inRandomOrder()
                 // ->get();
+
+                $count_partners = Partner::country($country_aux->id)
+                ->state($request->state)
+                ->specialties($request->specialty)
+                ->where('status', 'PUBLICADO')
+                ->count();
 
         // $partnersCount = Partner::where('status', 'PUBLICADO')
         //             ->orderBy('id', 'DESC')
@@ -312,7 +321,7 @@ class WebController extends Controller
         //return response()->json($partners);
 
         return response()->json([
-            'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties', 'countryID', 'country_aux'))->render()
+            'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties', 'countryID', 'country_aux', 'count_partners'))->render()
         ]);
     }
 
