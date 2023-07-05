@@ -15,7 +15,7 @@
     <link rel="icon" href="{{asset('faviconotarialatina-22.png')}}" type="image/x-icon" />
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     {{-- <link rel="preload" href="{{asset('css/bootstrap.min.css')}}" as="style" onload="this.rel='stylesheet'"> --}}
-    <link rel="preload" href="{{asset('css/styles.min.css')}}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{{asset('css/styles.min.css?v=2')}}" as="style" onload="this.rel='stylesheet'">
     {{-- <link async href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="preload" as="style" onload="this.rel='stylesheet'"/>
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="preload" as="style" onload="this.rel='stylesheet'"></noscript> --}}
     <meta name="facebook-domain-verification" content="lz9luqstj366xp6jboc5k6mt4m4ssm" />
@@ -370,6 +370,15 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     </div>
 
   </section> --}}
+  {{-- <div id="chatbot" class="d-none" style="z-index: 2000; position: fixed; bottom: 15px; right: 15px;">
+    <div class="w-full bg-primary text-white py-2 px-2">
+      <span>Chat Notaria Latina</span>
+      <span class="float-right mr-2" onclick="this.parentElement.parentElement.classList.add('d-none')">X</span>
+    </div>
+    <div>
+      <livewire:chatbot>
+    </div>
+  </div> --}}
 
 <footer class="text-white" style="background-color: #122944;">
     <div class="container">
@@ -539,6 +548,9 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                 <img width="20px" height="20px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞">
             </a>
         </div>
+        {{-- <div style="padding: 8px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 130px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
+            <p onclick="document.getElementById('chatbot').classList.remove('d-none')">abrir chat</p>
+        </div> --}}
 </footer>
 {{-- <script defer id="scriptjquery"></script>
 <script defer id="scriptpopper" ></script>
