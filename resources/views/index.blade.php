@@ -172,7 +172,7 @@
               <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="@if($mobile) {{asset('img/logo-notaria-latina-mobile.webp')}} @else {{asset('img/logo-notaria-latina.webp')}} @endif" alt="">
               {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex ;justify-content: center;">
-                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat text-center" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
+                <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat text-center" style="background-color: #FFBE32; color: #2B384D; font-weight: semibold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
               </div>
               {{-- <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
@@ -415,7 +415,7 @@
                 </div>
                 <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
                 <div class="pr-3">
-                    <h3 class="linkServices font-family-montserrat title" style="font-weight: bold; font-size: 25px">PODERES</h3>
+                    <h3 class="title" style="font-weight: 600; font-size: 25px">PODERES</h3>
                     <p class="font-family-montserrat description" style="font-size: 20px">Gestione sus trámites sin estar presente por medio de un apoderado</p>
                     {{-- @if($mobile) <p class="font-family-montserrat description" style="font-size: 16px">¿Cómo otorgar una carta poder?</p>@endif --}}
                 </div>
@@ -433,7 +433,7 @@
               </div>
               <div class="mx-3" style="width: 3px; height: 60px; background-color: #FFBE32"></div>
               <div class="pr-3">
-                  <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: bold; font-size: 25px">APOSTILLAS</h3>
+                  <h3 class="linkServices mt-2 font-family-montserrat title" style="font-weight: 600; font-size: 25px">APOSTILLAS</h3>
                   <p class="font-family-montserrat description" style="font-size: 20px">Autentificamos sus documentos solicitados por entidades de otro país</p>
               </div>
           </div>
