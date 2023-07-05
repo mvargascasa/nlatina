@@ -140,7 +140,7 @@
       .carousel-control-prev-icon {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='darkorange' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;}
       .carousel-control-next-icon {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='darkorange' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;}
       .carousel-control-prev, .carousel-control-next {width: 100px;}
-      .card-different:hover i{transform: scale(1.5);} #linkServices:hover .imgServices {filter: brightness(0) invert(1);} 
+      .card-different:hover img{transform: scale(1.3); transition: transform 0.5s ease-in-out} #linkServices:hover .imgServices {filter: brightness(0) invert(1);} 
       /* @keyframes play {
         .serviceBox { background: red;}
       } */
@@ -148,6 +148,7 @@
       .changetxtcolor{color: #ffffff !important}
       .changeimgcolor{filter: brightness(0) invert(1);}
     </style>
+    <livewire:styles />
 @endsection
 @section('phoneNumberHidden', '+18007428602')
 @section('phoneNumber', '800-742-8602')
@@ -753,7 +754,8 @@
   <div class="row @if($mobile) mt-1 mx-2 @else mt-4 mx-5 @endif">
     <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
       <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
-        <i class="fas fa-calendar-alt fa-3x" style="color: #FFBE32"></i>
+        {{-- <i class="fas fa-calendar-alt fa-3x" style="color: #FFBE32"></i> --}}
+        <img width="50px" src="{{ asset('img/calendar-home.png') }}" alt="">
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white font-family-montserrat">Tenemos una trayectoria dentro del campo notarial por más de <b>10 años</b></p></i>
       </div>
@@ -1122,6 +1124,7 @@
 
 
 @section('script')
+@livewireScripts()
 {{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> --}}
 {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0&appId=671843794640246&autoLogAppEvents=1" nonce="W0bUXQ4L"></script> --}}
 <script>
