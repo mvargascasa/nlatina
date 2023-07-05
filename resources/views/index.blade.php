@@ -148,7 +148,6 @@
       .changetxtcolor{color: #ffffff !important}
       .changeimgcolor{filter: brightness(0) invert(1);}
     </style>
-    <livewire:styles />
 @endsection
 @section('phoneNumberHidden', '+18007428602')
 @section('phoneNumber', '800-742-8602')
@@ -755,21 +754,23 @@
     <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
       <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
         {{-- <i class="fas fa-calendar-alt fa-3x" style="color: #FFBE32"></i> --}}
-        <img width="50px" src="{{ asset('img/calendar-home.png') }}" alt="">
+        <img width="50px" height="50px" src="{{ asset('img/calendar-home.png') }}" alt="image calendar">
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white font-family-montserrat">Tenemos una trayectoria dentro del campo notarial por más de <b>10 años</b></p></i>
       </div>
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
       <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
-        <i class="fas fa-university fa-3x" style="color: #FFBE32"></i>
+        {{-- <i class="fas fa-university fa-3x" style="color: #FFBE32"></i> --}}
+        <img width="50px" height="50px" src="{{ asset('img/museo-home.png') }}" alt="image museum">
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white font-family-montserrat">Contamos con un <b>personal profesional y capacitado</b> para la realización de trámites</p></i>
       </div>
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
       <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
-        <i class="fas fa-users fa-3x" style="color: #FFBE32"></i>
+        {{-- <i class="fas fa-users fa-3x" style="color: #FFBE32"></i> --}}
+        <img width="50px" height="50px" src="{{ asset('img/users-home.png') }}" alt="image users">
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white font-family-montserrat">Estamos comprometido con nuestros clientes brindándole un <b>servicio integral, rápido y eficaz</b></p></i>
       </div>
@@ -1124,7 +1125,6 @@
 
 
 @section('script')
-@livewireScripts()
 {{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> --}}
 {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0&appId=671843794640246&autoLogAppEvents=1" nonce="W0bUXQ4L"></script> --}}
 <script>
