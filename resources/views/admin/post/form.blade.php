@@ -35,7 +35,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('keywords', 'Keywords') !!}
-            {!! Form::text('keywords', null, ['class' => 'form-control']) !!}
+            {!! Form::textarea('keywords', null, ['class' => 'form-control', 'rows' => 4]) !!}
         </div>
 
     </div>
