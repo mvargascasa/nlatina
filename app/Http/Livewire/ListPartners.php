@@ -23,7 +23,8 @@ class ListPartners extends Component
     public function render()
     {
         return view('livewire.list-partners', [
-            'partners' => Partner::where('name', 'LIKE', '%'.$this->name.'%')->where('lastname', 'LIKE', '%'.$this->lastname.'%')->whereBetween('created_at', [$this->from_date_created ? $this->from_date_created : "2023-01-05", $this->to_date_created ? $this->to_date_created : "2023-05-01"])->paginate(10),
+            'partners' => Partner::where('name', 'LIKE', '%'.$this->name.'%')->where('lastname', 'LIKE', '%'.$this->lastname.'%')->whereBetween('created_at', [$this->from_date_created ? $this->from_date_created : "2021-11-01", $this->to_date_created ? $this->to_date_created : date(now())])->whereBetween('fecha_publicado', [$this->from_date_publicated ? $this->from_date_publicated : "2021-11-01", $this->to_date_publicated ? $this->to_date_publicated : date(now())])->paginate(10),
+            'total_partners' => Partner::where('name', 'LIKE', '%'.$this->name.'%')->where('lastname', 'LIKE', '%'.$this->lastname.'%')->whereBetween('created_at', [$this->from_date_created ? $this->from_date_created : "2021-11-01", $this->to_date_created ? $this->to_date_created : date(now())])->whereBetween('fecha_publicado', [$this->from_date_publicated ? $this->from_date_publicated : "2021-11-01", $this->to_date_publicated ? $this->to_date_publicated : date(now())])->count(),
         ]);
     }
 }

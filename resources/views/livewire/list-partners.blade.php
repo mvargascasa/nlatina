@@ -27,13 +27,9 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="mt-4">
-                        <p><span class="font-weight-bold">Búsqueda:</p>
-                        <div class="d-flex">
-                            @if($name || $lastname)<p><span class="font-weight-bold">Nombres:</span> {{ $name }} {{ $lastname}}</p> @endif
-                            @if($from_date_created || $to_date_created)<p><span class="font-weight-bold">Fecha creación:</span> {{ $from_date_created }} {{ $to_date_created }}</p>@endif
-                        </div>
-                    </div> --}}
+                    <div class="mt-4">
+                        <p><span class="font-weight-bold">Se encontraron {{ $total_partners }} abogados</p>
+                    </div>
                 </div>
                 <div class="card-body">
                     @if (session('status'))
