@@ -18,6 +18,9 @@
             <li class="nav-item @if(Request::is('home/partners*')) bg-secondary @endif">
                 <a class="nav-link text-light" href="{{ url('home/partners') }}"><i class="fa-solid fa-handshake"></i> Partners</a>
             </li>
+            <li class="nav-item @if(Request::is('home/leads*')) bg-secondary @endif">
+                <a class="nav-link text-light" href="{{ route('partner.show.all.customers') }}"><i class="fa-solid fa-envelope"></i> Leads</a>
+            </li>
             <li class="nav-item @if(Request::is('home/user*')) bg-secondary @endif">
                 <a class="nav-link text-light" href="{{ url('home/user') }}"> <i class="fa-solid fa-user"></i> Usuario</a>
             </li>
