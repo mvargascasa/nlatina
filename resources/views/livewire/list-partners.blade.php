@@ -22,10 +22,11 @@
                         <div class="mr-1">
                             <span style="font-size: 12px" class="text-muted">Publicado</span>
                             <div class="d-flex">
-                                <input type="date" class="form-control mr-1">
-                                <input type="date" class="form-control">
+                                <input type="date" class="form-control mr-1" wire:model="from_date_publicated">
+                                <input type="date" class="form-control" wire:model="to_date_publicated">
                             </div>
                         </div>
+                        <button class="ml-1 btn btn-danger mt-4" wire:click="clean">Limpiar</button>
                     </div>
                     <div class="mt-4">
                         <p><span class="font-weight-bold">Se encontraron {{ $total_partners }} abogados</p>
