@@ -1,7 +1,7 @@
 @php
     $count_notifications = DB::table('updated_partner')->where('viewed', 0)->count();
 @endphp
-<nav id="sidebarMenu" class="col-md-2 p-0 d-md-block bg-dark sidebar collapse" style="min-height: 100vh; background-color: #002542 !important; color: #ffffff">
+<nav id="sidebarMenu" class="p-0 d-md-block bg-dark sidebar collapse" style="min-height: 100%; background-color: #002542 !important; color: #ffffff">
     <div class="position-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item @if(Request::is('home')) bg-secondary @endif">

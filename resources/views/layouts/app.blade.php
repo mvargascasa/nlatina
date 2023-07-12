@@ -61,13 +61,17 @@
             </div>
         </nav>
 
-        <main class="row m-0">
+        <main class="row m-0" style="height: 100vh">
 
-            @auth
+        @auth
+            <div class="col-sm-2 px-0">
                 @include('layouts.sidebar')
-            @endauth
-
-            @yield('content')
+            </div>
+        @endauth
+            
+        <div class="col-sm-10">
+                @yield('content')
+            </div>
 
         </main>
     </div>
