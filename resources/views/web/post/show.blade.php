@@ -31,7 +31,7 @@
         .card:hover{box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;}
         .sticky {position: -webkit-sticky; position: sticky; top: 10px;}
         @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
-        @media screen and (max-width: 1300px){.personalized-container{padding-left: 30px !important; padding-right: 30px !important}}
+        @media screen and (max-width: 1300px){.personalized-container{padding-left: 20px !important; padding-right: 20px !important}}
         .personalized-container{padding-left: 150px; padding-right: 150px};
     </style>
 @endsection
@@ -43,26 +43,32 @@
 
     <section id="prisection" style="background-size: cover; background-repeat: no-repeat; width: 100%; height: 550px">
         <div>
-            <div id="rowImageBanner" class="row align-items-center" style="min-height: 550px; background:rgba(2, 2, 2, 0.5);">
+            <div id="rowImageBanner" class="row align-items-center justify-content-center text-white" style="min-height: 550px; background:rgba(2, 2, 2, 0.5);">
+                <h1 id="title" class="text-center mt-4 mb-5 px-2">{{$post->name}}</h1>
             </div>
         </div>
     </section>
 
     <div class="pt-4 personalized-container">
-        <div class="row mt-2 mb-2 ml-1">
-            <div class="col-sm-6 border-left">
-                <p class="d-flex align-items-center"><img class="lazy" data-src="{{asset('img/calendar.png')}}" width="20px" height="20px" alt=""><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
+        <div class="row mt-2 mb-2 ml-1 justify-content-center">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-6 border-left">
+                        <p class=""><img class="lazy" data-src="{{asset('img/calendar.png')}}" width="20px" height="20px" alt=""><b style="font-weight: 500;" class="ml-1 mr-1">Fecha de Publicación:</b> {{ $post->created_at->format('M d, Y')}}</p>
+                    </div>
+                    @isset($post->reading_time)
+                    <div class="col-sm-6 border-left">
+                        <p class="d-flex align-items-center"><img class="lazy" data-src="{{asset('img/reloj.png')}}" width="20px" height="20px" alt=""><b style="font-weight: 500" class="ml-1 mr-1">Tiempo de Lectura:</b> {{ $post->reading_time}} min.</p>
+                    </div>
+                    @endisset
+                </div>
             </div>
-            @isset($post->reading_time)
-            <div class="col-sm-6 border-left">
-                <p class="d-flex align-items-center"><img class="lazy" data-src="{{asset('img/reloj.png')}}" width="20px" height="20px" alt=""><b style="font-weight: 500" class="ml-1 mr-1">Tiempo de Lectura:</b> {{ $post->reading_time}} min.</p>
-            </div>
-            @endisset
         </div>
-        <h1 id="title" class="text-center mt-4 mb-5">{{$post->name}}</h1>
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-xl-9 col-lg-9" style="text-align: justify">
-                <img id="imgBlog" class="p-4 float-right img-fluid lazy" width="500" height="100%" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-12 col-md-12 col-xl-8 col-lg-8" style="text-align: justify">
+                <div class="d-flex justify-content-center float-right mb-2">
+                    <img id="imgBlog" class="p-4 img-fluid lazy" width="500px" height="400px" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
+                </div>
                 <div class="mt-3">
                     <?php echo htmlspecialchars_decode($post->body)?>
                 </div>
@@ -74,53 +80,17 @@
                     </div>
                 @endisset
             </div>
-            <div class="col-12 col-sm-12 col-md-12 col-xl-3 col-lg-3">
-                <div class="px-3 py-3 text-white rounded shadow sticky mt-3" style="background-color: #2B384D; font-size: 13px;">
-                    <p class="h6 text-center">¿Necesita realizar un trámite notarial?</p>
-                    <p>Complete la información y un asesor se contactará con usted</p>
-                    @include('z-form')
-                </div>
-            </div>
-        </div>
-        {{-- video row --}}
-
-        {{-- share row --}}
-        <hr style="width: 40%">
-        <div class="container mt-5 mb-5">
-            <h4 class="text-center">¿Te gusto el artículo? Compartelo</h4>
-            <div class="row">
-                <div class="col-sm-12 d-flex justify-content-center">
-                    <p title="Compartir en Facebook" style="cursor: pointer" id="shareToFacebook"><i class="fab fa-facebook fa-2x" style="color: #0165E1"></i></p>
-                    <p title="Compartir en Twitter" id="shareToTwitter" style="cursor: pointer"><i class="fab fa-twitter fa-2x ml-4" style="color: #1DA1F2"></i></p>
-                    <p title="Compartir por WhatsApp" id="shareToWpp" style="cursor: pointer"><i class="fab fa-whatsapp fa-2x ml-4" style="color: #25D366"></i></p>
-                </div>
-            </div>
-        </div>
-
-        <hr class="mt-4 mb-4">
-        <div class="col-12 text-center">
-            <h2 class="tit-not">Temas Relacionados</h2>
-        </div>
-            <div class="row mb-4">
-                @foreach ($posts as $lpost)
-                    <div class="col-12 col-md-4">
-                        <div class="card my-2">
-                            <a href="{{route('post.slug',$lpost->slug)}}" class="stretched-link">
-                                <img data-src="{{url('uploads/i600_'.$lpost->imgdir)}}" class="card-img-top lazy" alt="{{ $post->name }}" style="object-fit: cover;height: 150px !important;">
-                            </a>
-                            <div class="card-body p-2" style="position:relative;">
-                                <span class="d-block text-muted font-weight-bold text-truncate "
-                                        style="font-size:1rem">{{$lpost->name}}</span>
-                                <span class="d-block text-muted text-truncate">
-                                    <?php echo strip_tags(substr($lpost->body,0,100))  ?>
-                                </span>
-                            <div class="small text-muted float-left mt-3"><i class="far fa-calendar-alt" style="font-size: 17px"></i> {{$lpost->created_at->format('M d, Y')}}</div>
-                            <div class="small text-muted float-right mt-3"><i class="far fa-clock mr-1" style="font-size: 17px"></i> {{ $lpost->reading_time}} min.</div>
-                        </div>
+            <div class="container my-3 rounded-0 py-3">
+                <h4 class="text-center">Compartir el artículo</h4>
+                <div class="row mt-3">
+                    <div class="col-sm-12 d-flex justify-content-center">
+                        <p title="Compartir en Facebook" style="cursor: pointer" id="shareToFacebook"><i class="fab fa-facebook fa-2x" style="color: #0165E1"></i></p>
+                        <p title="Compartir en Twitter" id="shareToTwitter" style="cursor: pointer"><i class="fab fa-twitter fa-2x ml-4" style="color: #1DA1F2"></i></p>
+                        <p title="Compartir por WhatsApp" id="shareToWpp" style="cursor: pointer"><i class="fab fa-whatsapp fa-2x ml-4" style="color: #25D366"></i></p>
                     </div>
                 </div>
-                @endforeach
             </div>
+        </div>
 
             {{-- <div class="mt-4">
                 <h2 class="text-center">¿Necesita realizar un trámite notarial?</h2>
@@ -140,6 +110,48 @@
                 </div>
             </div> --}}
     </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-12 col-md-12 col-xl-5 col-lg-5">
+            <div class="px-3 py-3 text-white rounded-0 shadow" style="background-color: #2B384D; font-size: 13px;">
+                <p class="h6 text-center">¿Necesita realizar un trámite notarial?</p>
+                <p>Complete la información y un asesor se contactará con usted</p>
+                @include('z-form')
+            </div>
+        </div>
+    </div>
+    {{-- video row --}}
+
+    {{-- share row --}}
+
+    <hr class="my-5">
+    <div class="col-12 text-center">
+        <h2 class="tit-not">Temas Relacionados</h2>
+    </div>
+        <div class="row mb-4 justify-content-center mx-1">
+            <div class="col-sm-8 col-12">
+                <div class="row">
+                    @foreach ($posts as $lpost)
+                        <div class="col-12 col-md-4">
+                            <div class="card my-2">
+                                <a href="{{route('post.slug',$lpost->slug)}}" class="stretched-link">
+                                    <img data-src="{{url('uploads/i600_'.$lpost->imgdir)}}" class="card-img-top lazy" alt="{{ $post->name }}" style="object-fit: cover; height: 140px">
+                                </a>
+                                <div class="card-body p-2" style="position:relative;">
+                                    <span class="d-block text-muted font-weight-bold text-truncate "
+                                            style="font-size:1rem">{{$lpost->name}}</span>
+                                    <span class="d-block text-muted text-truncate">
+                                        <?php echo strip_tags(substr($lpost->body,0,100))  ?>
+                                    </span>
+                                <div class="small text-muted float-left mt-3"><i class="far fa-calendar-alt" style="font-size: 17px"></i> {{$lpost->created_at->format('M d, Y')}}</div>
+                                <div class="small text-muted float-right mt-3"><i class="far fa-clock mr-1" style="font-size: 17px"></i> {{ $lpost->reading_time}} min.</div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
 
     {{-- @if(isset($post) && $post->id == 95)
         <div id="publishpoder">
