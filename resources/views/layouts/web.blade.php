@@ -397,7 +397,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                     <span class="font-weight-bold" style="color: #FFBE32"> New York </span><br>
                     <a href="https://g.page/notariapublicalatina" target="_blank" class="text-white">
                         67-03 Roosevelt Avenue, Woodside, NY 11377 </a><br>
-                    <a href="tel:+17187665041" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 718 766 5041</a> 
+                    {{-- <a href="tel:+17187665041" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 718 766 5041</a>  --}}
                     <a href="tel:+13479739888" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 347 973 9888</a> <br>
                     <br>
 
