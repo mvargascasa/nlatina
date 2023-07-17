@@ -127,7 +127,7 @@
                             <span class="text-muted d-block">67-03 Roosevelt Avenue</span>
                             <span class="text-muted">Woodside, NY 11377</span>
                           </a> <br> 
-                          <a href="tel:+17187665041" class="text-muted"><i class="fa fa-phone-square-alt" style="color: #EF5261;"></i> 718-766-5041</a> <br> 
+                          {{-- <a href="tel:+17187665041" class="text-muted"><i class="fa fa-phone-square-alt" style="color: #EF5261;"></i> 718-766-5041</a> <br>  --}}
                           <a href="tel:+13479739888" class="text-muted"><i class="fa fa-phone-square-alt" style="color: #EF5261"></i> 347-973-9888</a> <br>
                           <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-muted" target="_blank"><i class="fab fa-whatsapp" style="color: #4CAF50"></i> 347-973-9888</a> <br>
                         </p>
