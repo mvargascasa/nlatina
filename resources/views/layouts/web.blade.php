@@ -243,7 +243,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li class="dropdown-submenu">
+                            {{-- <li class="dropdown-submenu">
                                 <a class="dropdown-item dropdown-toggle" href="#"> Apostillas</a> 
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-item"><a href="{{route('web.apostillar.naturalizacion')}}">Carta de Naturalización</a></li>
@@ -259,7 +259,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                     <li class="dropdown-item"><a href="{{route('web.poderesp')}}">Poderes Especiales</a></li>
                                     <li class="dropdown-item"><a href="{{route('web.poderesnf')}}">Poder Notarial Financiero</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
+                            <li> <a class="dropdown-item" href="{{route('web.apostillas')}}"> Apostillas </a> </li>
+                            <li> <a class="dropdown-item" href="{{route('web.poderes')}}"> Poderes </a> </li>
                             <li> <a class="dropdown-item" href="{{route('web.traducciones')}}"> Traducciones </a> </li>
                             <li> <a class="dropdown-item" href="{{route('web.affidavit')}}"> Affidavit </a> </li>
                             <li> <a class="dropdown-item" href="{{route('web.acuerdos')}}"> Acuerdos </a> </li>
