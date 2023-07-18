@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 // use App\Http\Controllers\Partner\LoginController;
 // use App\Http\Controllers\Partner\HomeController;
 
@@ -203,16 +204,24 @@ Route::get('/apostillas/apostillar-poder-notarial', function(){ return view('web
 //PARTNERS
 Route::get('/registro', function(){return view('web.partners_registro');})->name('partners.registro');
 Route::get('/partners/registro', function(){return view('web.partners_registro');});
-Route::get('/partners/politicas-de-privacidad', function(){ return view('web.politicasocios');})->name('web.socios.politicas');
-Route::get('/partners', 'WebController@showAllPartners')->name('web.showallpartners');
+
+Route::get('/partners/politicas-de-privacidad', function(){ return redirect()->route('web.socios.politicas');});
+Route::get('/abogados/politicas-de-privacidad', function(){ return view('web.politicasocios');})->name('web.socios.politicas');
+
+Route::get('/partners', function(){ return redirect()->route('web.showallpartners'); });
+Route::get('/abogados', 'WebController@showAllPartners')->name('web.showallpartners');
+
 Route::post('/partners', 'WebController@showAllPartners')->name('web.showallpartners.a');
 Route::post('/partners/rating/{partner}', 'WebController@postStar')->name('partner.rating'); // RUTA PARA VALORAR UN PARTNER
 Route::post('partners/setview', 'WebController@setview')->name('partner.setview');
 
 //FETCH
-Route::get('/partners/abogados-en-{pais?}', 'WebController@fetchState')->name('partners.fetch.state');
+Route::get('/partners/abogados-en-{pais?}', function(Request $request){ return redirect()->route('partners.fetch.state', $request->route('pais'));});
+Route::get('/abogados-en-{pais?}', 'WebController@fetchState')->name('partners.fetch.state');
 
-Route::get('/partners/{slug}', 'WebController@showPartner')->name('web.showpartner'); // VER UN SOCIO - WEB
+Route::get('/partners/{slug}', function(){ return redirect()->route('web.showpartner'); }); // VER UN SOCIO - WEB
+Route::get('/abogados/{slug}', 'WebController@showPartner')->name('web.showpartner'); 
+
 Route::post('/partners-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');
 Route::post('/partners/send-to-view-phone/{partner}', 'WebController@sendEmailToViewPhone')->name('web.send.view.phone');//ENVIAR CORREO SOLICITANDO VER EL NUMERO DEL PARTNER
 Route::get('/partners/eliminar/cache/partner/{partner}', 'WebController@eliminarCachePartner')->name('web.eliminar.cache.partner');
