@@ -220,7 +220,7 @@ Route::get('/partners/abogados-en-{pais?}', function(Request $request){ return r
 Route::get('/abogados-en-{pais?}', 'WebController@fetchState')->name('partners.fetch.state');
 
 Route::get('/partners/{slug}', function(Request $request){ return redirect()->route('web.showpartner', $request->route('slug')); }); // VER UN SOCIO - WEB
-Route::get('/abogados/{slug}', 'WebController@showPartner')->name('web.showpartner'); 
+Route::get('/portal/{slug}', 'WebController@showPartner')->name('web.showpartner'); 
 
 Route::post('/partners-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');
 Route::post('/partners/send-to-view-phone/{partner}', 'WebController@sendEmailToViewPhone')->name('web.send.view.phone');//ENVIAR CORREO SOLICITANDO VER EL NUMERO DEL PARTNER
