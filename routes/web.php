@@ -219,7 +219,7 @@ Route::post('partners/setview', 'WebController@setview')->name('partner.setview'
 Route::get('/partners/abogados-en-{pais?}', function(Request $request){ return redirect()->route('partners.fetch.state', $request->route('pais'));});
 Route::get('/abogados-en-{pais?}', 'WebController@fetchState')->name('partners.fetch.state');
 
-Route::get('/partners/{slug}', function(){ return redirect()->route('web.showpartner'); }); // VER UN SOCIO - WEB
+Route::get('/partners/{slug}', function(Request $request){ return redirect()->route('web.showpartner', $request->route('pais')); }); // VER UN SOCIO - WEB
 Route::get('/abogados/{slug}', 'WebController@showPartner')->name('web.showpartner'); 
 
 Route::post('/partners-contacto/{partner}', 'WebController@sendEmailContact')->name('web.send.email.socio');
