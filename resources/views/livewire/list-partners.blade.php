@@ -7,6 +7,7 @@
                         <p class="mx-2 bg-info rounded text-white px-2 shadow-sm">Registrados: <span class="font-weight-bold">{{ App\Partner::all()->count() }}</span></p>
                         <p class="mx-2 bg-info rounded text-white px-2 shadow-sm">Publicados: <span class="font-weight-bold">{{ App\Partner::where('status', 'PUBLICADO')->count()}}</span></p>
                         <p class="mx-2 bg-info rounded text-white px-2 shadow-sm">No Publicados: <span class="font-weight-bold">{{ App\Partner::where('status', 'NO PUBLICADO')->count() }}</span></p>
+                        <p class="mx-2 bg-info rounded text-white px-2 shadow-sm">No Aplica: <span class="font-weight-bold">{{ App\Partner::where('status', 'NO APLICA')->count() }}</span></p>
                     </div>
                     <div class="d-flex align-items-center">
                         <div class="mr-1">
