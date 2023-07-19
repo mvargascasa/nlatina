@@ -102,8 +102,8 @@ class LandingController extends Controller
         $data['dirtext'] = ' 67-03 Roosevelt Avenue <br> Woodside, NY 11377 ';
         $data['dirlink'] = 'https://g.page/notariapublicalatina';
         $data['dirmap']  = 'img/map.jpg';
-        $data['tlfhidden'] = '17187665041';
-        $data['tlfshow'] = '718 766-5041';
+        $data['tlfhidden'] = '13479739888';
+        $data['tlfshow'] = '347 973-9888';
         $data['landing'] = "Apostillas";
         $data['tlfwpp'] = '13479739888'; 
         return view('landing.general',$data);
