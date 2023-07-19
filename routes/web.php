@@ -53,7 +53,7 @@ Route::get('/home/partners/create', 'PartnerController@create')->name('partner.f
 Route::post('/home/partners/store', 'PartnerController@store')->name('partner.store');
 Route::get('/home/partners/publicated', 'PartnerController@viewLastPublicated')->name('partner.show.latest.public');
 Route::get('/home/partners/not-publicated', 'PartnerController@getAllNotPublicated')->name('partner.show.not.publicated');
-Route::get('/home/partners/all-customers', 'PartnerController@showallcustomers')->name('partner.show.all.customers');
+Route::get('/home/leads-partners', 'PartnerController@showallcustomers')->name('partner.show.all.customers');
 Route::get('/home/partners/all-customers/assign/{id}', 'PartnerController@formassignlead')->name('partner.form.assign.lead');
 Route::post('/home/partners/all-customers/assign-lead', 'PartnerController@assignlead')->name('partner.assign.lead');
 Route::post('/home/partners/all-customers/searchtoassign', 'PartnerController@searchpartnertoassign')->name('partner.search.assign');
