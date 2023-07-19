@@ -174,7 +174,7 @@
           
           <p><a href="https://g.page/notariapublicalatina">67-03 Roosevelt Avenue, Woodside, NY 11377</a></p>
           
-          <p><i class="fas fa-headset text-primary"></i> &nbsp;<a class="btn btn-primary btn-sm rounded-pill" href="tel:+17187665041">718-766-5041</a>&nbsp; <a class="btn btn-primary btn-sm rounded-pill" href="tel:+13479739888">347-973-9888</a></p>
+          <p><i class="fas fa-headset text-primary"></i> &nbsp;<a class="btn btn-primary btn-sm rounded-pill" href="tel:+13479739888">347 973-9888</a>&nbsp; <a class="btn btn-primary btn-sm rounded-pill" href="tel:+13479739888">347-973-9888</a></p>
         </div>
       </a>
       
