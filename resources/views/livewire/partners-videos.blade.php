@@ -6,7 +6,7 @@
             dd($partners_videos);
         @endphp --}}
         @foreach ($partners_videos as $pv)
-            <article class="col-sm-4">
+            <article class="col-sm-4 mb-3">
                 <div class="card">
                     <div class="card-header bg-white d-flex border-0">
                         <img src="{{asset('storage/' . $pv->img_profile )}}" width="30px" height="30px" class="rounded-pill" alt="">
