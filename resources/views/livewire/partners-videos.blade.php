@@ -8,10 +8,12 @@
         @foreach ($partners_videos as $pv)
             <article class="col-sm-4 mb-3">
                 <div class="card">
-                    <div class="card-header bg-white d-flex border-0">
-                        <img src="{{asset('storage/' . $pv->img_profile )}}" width="30px" height="30px" class="rounded-pill" alt="">
-                        <p class="text-muted ml-3">{{ $pv->name }} {{ $pv->lastname}}</p>
-                    </div>
+                    <a href="{{ route('web.showpartner', $pv->slug) }}">
+                        <div class="card-header bg-white d-flex border-0">
+                            <img src="{{asset('storage/' . $pv->img_profile )}}" width="30px" height="30px" class="rounded-pill" alt="">
+                            <p class="text-muted ml-3">{{ $pv->name }} {{ $pv->lastname}}</p>
+                        </div>
+                    </a>
                     <div class="card-body">
                         <video width="300px" src="{{asset('storage/'.$pv->url_video)}}" muted loop controls></video>
                     </div>
