@@ -16,23 +16,48 @@ if(strpos($actual_link, 'localhost') === false){
 ?>
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+{{-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NXP3WCV');</script>
+    })(window,document,'script','dataLayer','GTM-NXP3WCV');</script> --}}
     <!-- End Google Tag Manager -->
+
   <!-- Global site tag (gtag.js) - Google Ads: 806267889 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-806267889"></script>
+{{-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-806267889"></script> --}}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124437679-3"></script>
-<script>
+{{-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124437679-3"></script> --}}
+{{-- <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-124437679-3');
-</script>
+</script> --}}
+
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-702844945"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-702844945'); </script>
+
+@isset($segment)
+    @if ($segment == 'newyork')
+        {{-- IDG_NEWYORK_GENERAL_LEAD_GRACIAS --}}
+        <script> gtag('event', 'conversion', {'send_to': 'AW-702844945/YcVuCObk9cUYEJGgks8C'}); </script>  
+    @endif
+    
+    @if($segment == 'newyork-apostillas')
+        {{-- IDG_NEWYORK_APOSTILLA_LEAD_GRACIAS --}}
+        <script> gtag('event', 'conversion', {'send_to': 'AW-702844945/XIqwCMvl98UYEJGgks8C'}); </script>
+    @endif
+
+    @if($segment == 'newyork-poderes')
+        {{-- IDG_NEWYORK_PODERES_LEAD_GRACIAS --}}
+        <script> gtag('event', 'conversion', {'send_to': 'AW-702844945/Qg8CCOvS98UYEJGgks8C'}); </script>
+    @endif
+
+    @if($segment == 'newyork-traducciones')
+        {{-- IDG_NEWYORK_TRADUCCION_LEAD_GRACIAS --}}
+        <script> gtag('event', 'conversion', {'send_to': 'AW-702844945/BZYnCJ6T68UYEJGgks8C'}); </script>
+    @endif
+@endisset
 
 <?php };// fin de if url localhost ?>
 
@@ -138,38 +163,8 @@ if(strpos($actual_link, 'localhost') === false){
 
       </header>
 
-
-{{-- <section class="container" style="min-height: 85vh;">
-    <div class="row p-4 p-md-5">
-
-        <div class="col-md-12 text-center">
-            <h1 class="font-italic font-weight-bold" style="font-size: 60px;">¡Gracias!</h1>
-        </div>
-        <div class="col-12 col-md-5 text-right">
-            <img id="imghelp" width="100%" height="100%" class="img-fluid p-4" src="{{asset('img/helpline.jpg')}}" alt="">
-        </div>
-        <div class="col-md-7 text-center">
-
-            <h3 class="font-italic font-weight-bold p-2">Por confiar en nosotros.</h3>
-            <p class="lead">En breve te contactaremos.</p>
-            <a class="btn btn-warning" href="/">Ir a NotariaLatina.com</a>
-
-            <h3 class="font-italic font-weight-bold pt-4">Mas Servicios</h3>
-
-
-
-                  <ul class="nav flex-column">
-                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > PODERES</li>
-                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > APOSTILLAS</li>
-                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > TRADUCCIONES</li>
-                  </ul>
-        </div>
-    </div>
-</section> --}}
-
 <section class="container" style="min-height: 85vh;">
     <div class="row p-4 p-md-5">
-
         <div class="col-md-12 text-center">
             <h1 class="font-weight-bold" style="font-size: 60px;">¡Gracias!</h1>
         </div>
@@ -182,11 +177,6 @@ if(strpos($actual_link, 'localhost') === false){
                 <p class="lead">En breve te contactaremos.</p>
                 <a class="btn btn-warning" href="/">Ir a NotariaLatina.com</a>
             </div>
-                  {{-- <ul class="nav flex-column">
-                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > PODERES</li>
-                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > APOSTILLAS</li>
-                    <li class="nav-item p-3"><img width="30" height="30" src="{{asset('img/pencil.svg')}}" width="30" alt="..." > TRADUCCIONES</li>
-                  </ul> --}}
         </div>
     </div>
     <h3 class="text-center">Más Servicios</h3>
@@ -198,7 +188,6 @@ if(strpos($actual_link, 'localhost') === false){
                 </div>
                 <div class="card-body">
                   <h5 class="card-title text-center"><img width="25" height="25" src="{{asset('img/pencil.svg')}}" alt="poderes" > PODERES</h5>
-                  {{-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
                   <p class="card-text text-muted">
                       Gestione sus trámites legales sin estar presente por medio de un apoderado de confianza, una solución para gestionar bienes y trámites importantes
                   </p>
@@ -215,7 +204,6 @@ if(strpos($actual_link, 'localhost') === false){
                 </div>
                 <div class="card-body">
                   <h5 class="card-title text-center"><img width="25" height="25" src="{{asset('img/pencil.svg')}}" alt="apostillas" > APOSTILLAS</h5>
-                  {{-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
                   <p class="card-text text-muted">
                       Autentificación de documentos solicitados por entidades de otro país diferente al originario mediante la apostilla de los mismos
                   </p>
@@ -232,7 +220,6 @@ if(strpos($actual_link, 'localhost') === false){
                 </div>
                 <div class="card-body">
                   <h5 class="card-title text-center"><img width="25" height="25" src="{{asset('img/pencil.svg')}}" alt="poderes" > TRADUCCIONES</h5>
-                  {{-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
                   <p class="card-text text-muted">
                       Transcripción de documentos de un idioma a otro diferente, certificados por un notario para ser presentados frente a las entidades que lo soliciten
                   </p>
@@ -267,11 +254,6 @@ if(strpos($actual_link, 'localhost') === false){
 <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
-
-{{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> --}}
-    {{-- <script>
-    AOS.init();
-    </script> --}}
 
 </body>
 </html>

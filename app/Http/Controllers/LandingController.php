@@ -345,8 +345,9 @@ class LandingController extends Controller
     }
 
     public function thankpostnj (Request $request)
-    {
-
+    { 
+        //RECIBE EL REQUEST URL PARA VALIDAR EN LA PAGINA THANK Y SEGUN ESO CARGAR EL SCRIPT DE GOOGLE ADS
+        $segment = $request->url;
         //return $request;
 
         // $pais = $this->getCodPais($request->get('cod_pais'));
@@ -419,12 +420,14 @@ class LandingController extends Controller
             $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
             $header .= "MIME-Version: 1.0\r\n";
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
+            //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
             mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
             //'notariapublicalatina@gmail.com'.$sendoffices
         }
 
-        return view('landing.thank');
+        return view('landing.thank', compact('segment'));
+
+        //return view('landing.thank');
 
         //'notariapublicalatina@gmail.com'.$sendoffices
     }
@@ -605,7 +608,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://g.page/notariapublicalatina';
         $data['dirmap']  = 'img/maps-newyork-notaria.webp';
         $data['tlfhidden'] = '13474281520';
-        $data['tlfshow'] = '347 428-1520';
+        $data['tlfshow'] = '347-428-1520';
         $data['landing'] = 'General';
         $data['title'] = 'Notaría Latina en New York - Apostillas, Poderes y Traducciones';
         $data['tlfwpp'] = '13479739888';
@@ -627,7 +630,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://g.page/notariapublicalatina';
         $data['dirmap']  = 'img/maps-newyork-notaria.webp';
         $data['tlfhidden'] = '13474281519';
-        $data['tlfshow'] = '347 428-1519';
+        $data['tlfshow'] = '347-428-1519';
         $data['landing'] = 'General Web';
         $data['title'] = 'Apostillas, Poderes y Traducciones en New York | Notaría Latina';
         $data['tlfwpp'] = '13479739888';
@@ -649,7 +652,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://g.page/notariapublicalatina';
         $data['dirmap']  = 'img/maps-newyork-notaria.webp';
         $data['tlfhidden'] = '13474281517';
-        $data['tlfshow'] = '347 428-1517';
+        $data['tlfshow'] = '347-428-1517';
         $data['landing'] = 'Traducciones';
         $data['title'] = 'Traducir Documentos Notariales en New York | Notaría Latina';
         $data['tlfwpp'] = '13479739888';
@@ -671,7 +674,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://g.page/notariapublicalatina';
         $data['dirmap']  = 'img/maps-newyork-notaria.webp';
         $data['tlfhidden'] = '13474281516';
-        $data['tlfshow'] = '347 428-1516';
+        $data['tlfshow'] = '347-428-1516';
         $data['landing'] = 'Poderes';
         $data['title'] = 'Realizamos todo tipo de Poderes en New York | Notaria Latina'; 
         $data['tlfwpp'] = '13479739888';
@@ -693,7 +696,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://g.page/notariapublicalatina';
         $data['dirmap']  = 'img/maps-newyork-notaria.webp';
         $data['tlfhidden'] = '13474281518';
-        $data['tlfshow'] = '347 428-1518';
+        $data['tlfshow'] = '347-428-1518';
         $data['landing'] = 'Apostillas';
         $data['title'] = 'Apostillar Documentos en New York | Notaría Latina';
         $data['tlfwpp'] = '13479739888';

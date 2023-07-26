@@ -97,7 +97,7 @@
 ?>
 
   <!-- Google Tag Manager -->
-  <script>
+  {{-- <script>
     setTimeout(() => {
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -105,15 +105,14 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-NXP3WCV');
     }, 3000);
-  </script>
+  </script> --}}
   <!-- End Google Tag Manager -->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script id="script_analytics" async></script>
+{{-- <script id="script_analytics" async></script>
 <script>
   setTimeout(() => {
     document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
-    //console.log('cargando script de analytics despues de 3seg...');
   }, 3000);
 </script>
 <script>
@@ -121,7 +120,44 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-VJK9KRV3TL');
-</script>
+</script> --}}
+
+<!-- Google tag (gtag.js) --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-702844945"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-702844945'); </script>
+
+
+@if ($tlfhidden == '13474281520') 
+  <script> gtag('config', 'AW-702844945/Z8xoCIiZ98UYEJGgks8C', { 'phone_conversion_number': '3474281520' }); </script>
+  <!-- Event snippet for IDG_NEWYORK_GENERAL_LLAMADA_MOBIL_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
+  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/9vvNCNCl98UYEJGgks8C', 'event_callback': callback }); return false; } </script>
+  <!-- Event snippet for IDG_NEWYORK_GENERAL_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/1N_7CN3z9sUYEJGgks8C', 'event_callback': callback }); return false; } </script>
+@endif
+
+@if($tlfhidden == '13474281518')
+  <script> gtag('config', 'AW-702844945/VSKTCJ_d9sUYEJGgks8C', { 'phone_conversion_number': '3474281518' }); </script>
+  <!-- Event snippet for IDG_NEWYORK_APOSTILLA_LLAMADA_MOBIL_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
+  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/tf1JCIzi9sUYEJGgks8C', 'event_callback': callback }); return false; } </script>
+  <!-- Event snippet for IDG_NEWYORK_APOSTILLA_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
+  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/PIVnCM7l98UYEJGgks8C', 'event_callback': callback }); return false; } </script>
+@endif
+
+@if ($tlfhidden == "13474281517")
+    <script> gtag('config', 'AW-702844945/-EO9COrp9sUYEJGgks8C', { 'phone_conversion_number': '3474281517' }); </script>
+    <!-- Event snippet for IDG_NEWYORK_TRADUCCION_LLAMADA_MOBIL_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
+    <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/BQ14CPrt9sUYEJGgks8C', 'event_callback': callback }); return false; } </script>
+    <!-- Event snippet for IDG_NEWYORK_TRADUCCION_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
+    <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/DHAQCKGT68UYEJGgks8C', 'event_callback': callback }); return false; } </script>
+@endif
+
+@if($tlfhidden == "13474281516")
+  <script> gtag('config', 'AW-702844945/WpSgCPf66sUYEJGgks8C', { 'phone_conversion_number': '3474281516' }); </script>
+  <!-- Event snippet for IDG_NEWYORK_PODERES_LLAMADA_MOBIL_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
+  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/JU-VCO386sUYEJGgks8C', 'event_callback': callback }); return false; } </script>
+  <!-- Event snippet for IDG_NEWYORK_PODERES_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
+  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/GnWsCIzT98UYEJGgks8C', 'event_callback': callback }); return false; } </script>
+@endif
+
 <?php } ?>
   <style>
     html, body {max-width: 100% !important;overflow-x: hidden !important;}
@@ -159,13 +195,11 @@
 
 <header>
   <nav class="navbar navbar-dark navfoot">
-    {{-- <a class="navbar-brand pl-3" href="{{ route('web.index') }}"> --}}
       <img src="{{asset('img/marca-notaria-latina.png')}}" width="140" height="30" alt="@isset($title){{$title}} @else Notaria Latina en {{ $oficina }} - Apostillas, Poderes y Traducciones @endisset">
-    {{-- </a> --}}
       <div class="d-flex justify-content-end pr-3">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active ">
-                <a class="nav-link" href="tel:+{{$tlfhidden??'19082249594'}}" > <small>{{$oficina}}</small> <br> {{$tlfshow}}  </a>
+                <a class="nav-link" onclick="return gtag_report_conversion('tel:{{$tlfshow}}');" href="tel:+{{$tlfhidden??'19082249594'}}" > <small>{{$oficina}}</small> <br> {{$tlfshow}} </a>
             </li>
         </ul>
     </div>
@@ -176,9 +210,6 @@
 <section class="card text-white" style="border-radius:0;border:0" >
   <img id="prisection" src="" class="card-img" alt="@isset($title) {{ $title }} @else Notaria Latina en {{ $oficina }} - Apostillas, Poderes, Traducciones @endisset" style="max-height: 90vh;min-height: 40vh;  object-fit: cover; width: 100%; height: 100%">
   <div class="card-img-overlay my-auto d-flex align-items-center justify-content-center" style="background:rgba(2, 2, 2, 0.5)">
-    {{-- <div class="d-sm-block d-md-none text-center" style="margin-top: 20%;">
-        <div class="font-italic"><h1 style="font-size: 22px; font-weight: 600">{!!$header!!}</h1></div>
-    </div>     --}}
     <div class="text-center d-md-block">
       <div class="font-italic"><h1 style="font-size: 60px; font-weight: 600">{!!$header !!}</h1></div>
     </div>
@@ -187,7 +218,7 @@
 
 <section class="row quienes-somos text-white p-4 align-middle">
   <div class="col-12 text-center align-middle py-4">
-    <a href="tel:+{{$tlfhidden??'19082249594'}}" class="btn btn-lg btn-warning" >LLAMAR: <b>{{$tlfshow??'NJ (908) 224-9594'}}</b> </a>
+    <a onclick="return gtag_report_conversion('tel:{{$tlfshow}}');" href="tel:+{{$tlfhidden??'19082249594'}}" class="btn btn-lg btn-warning" >LLAMAR: <b>{{$tlfshow??'NJ (908) 224-9594'}}</b> </a>
   </div>
 </section>
 
@@ -351,46 +382,6 @@
                   <input id="bbb" name="bbb" type="number" class="form-control rounded-0" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required> 
                 </div>
               </div>
-              {{-- <div class="row">
-                <div class="col-sm-7">
-                  <div class="row">
-                    <div class="col-sm-7 mb-3">
-                      <select id="pais" name="pais" class="form-control" required>
-                        <option value="">País de residencia</option>
-                        <option value="Argentina">Argentina</option>
-                        <option value="Bolivia">Bolivia</option>
-                        <option value="Colombia">Colombia</option>
-                        <option value="Costa Rica">Costa Rica</option>
-                        <option value="Ecuador">Ecuador</option>
-                        <option value="El Salvador">El Salvador</option>
-                        <option value="España">España</option>
-                        <option value="Estados Unidos">Estados Unidos</option>
-                        <option value="Guatemala">Guatemala</option>
-                        <option value="Honduras">Honduras</option>
-                        <option value="México">México</option>
-                        <option value="Nicaragua">Nicaragua</option>
-                        <option value="Panamá">Panamá</option>
-                        <option value="Paraguay">Paraguay</option>
-                        <option value="Perú">Perú</option>
-                        <option value="Puerto Rico">Puerto Rico</option>
-                        <option value="República Dominicana">República Dominicana</option>
-                        <option value="Uruguay">Uruguay</option>
-                        <option value="Venezuela">Venezuela</option>                    
-                      </select>                                       
-                    </div>
-                    <div class="col-sm-5">
-                      <div class="form-group">
-                        <input type="text" id="telf" name="codpais" class="form-control" readonly/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-5">
-                  <div class="form-group">
-                    <input id="bbb" name="bbb" type="number" class="form-control" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" required>
-                  </div>
-                </div>
-              </div> --}}
               @if($service_aux == "General")
               <div class="form-group">
                 <select name="service" id="service" class="form-control rounded-0" required>
@@ -415,7 +406,9 @@
               <div class="form-group">
                 <input id="ddd" name="ddd" type="text" class="form-control rounded-0" placeholder="Mensaje - Ej: Necesito tramitar una carta poder..." autocomplete="off" required>
               </div>
-              <input type="hidden" name="aux" style="font-size: 10px" placeholder="Si puede ver este campo, por favor ignórelo" class="form-control" readonly>  
+              <input type="hidden" name="aux" style="font-size: 10px" placeholder="Si puede ver este campo, por favor ignórelo" class="form-control" readonly>
+              <input type="hidden" name="url" value="{{Request::segment(2)}}" class="form-control" readonly>
+
               <button class="btn btn-lg btn-warning btn-block rounded-0 shadow" type="submit">INICIAR TRAMITE</button>
             </form>
           </div> 
@@ -458,26 +451,16 @@
   </section>
 @endisset
 
-<a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}" target="_blank">
+{{-- onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" --}}
+<a onclick="return gtag_report_conversion('{{Request::url()}}')" href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}" target="_blank">
   <div class="d-flex justify-content-center align-items-center px-3 py-1 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
   {{-- Consultar en linea <i class="fab fa-whatsapp ml-1"></i> --}}
   Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
   </div>
 </a>
 
-{{-- <div id="divpreguntas" style="position: fixed; bottom: 48px; right: 60px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none">
-  <div style="position: relative">
-      <div style="position: absolute; right: -10px; top: -16px; background-color: #122944; color: #ffffff; padding: 0px 6px 3px 6px; border-radius: 25px; border: 2px solid #ffffff; font-size: 10px; font-weight: 500; cursor: pointer" onclick="document.getElementById('divpreguntas').style.display = 'none'">
-          x
-      </div>
-  </div>
-  <div style="font-size: 14px">
-      <b style="font-weight: 500">¿Tiene preguntas?</b> Llámenos ahora
-  </div>
-</div> --}}
-
 <div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px; position: fixed; bottom: 50px; right: 10px; background-color: #122944; border: 2px solid #ffffff;" class="d-flex">
-  <a href="tel:+{{$tlfhidden}}">
+  <a onclick="return gtag_report_conversion('tel:{{$tlfshow}}');" href="tel:+{{$tlfhidden}}">
     <img width="20" height="20" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina">
     {{-- <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i> --}}
   </a>
@@ -492,20 +475,6 @@
       console.log('ok');
       getstates();setcodcountry();
   });
-
-  //mostrando div que va al lado del icono de llamar
-  // setTimeout(() => {document.getElementById('divpreguntas').style.display='block';document.getElementById("divpreguntas").style.animation = "jump 1s ease";}, 5000);
-
-  // var pais = document.getElementById('pais');
-  // var telf = document.getElementById('telf');
-
-  // pais.onchange = function(e) {
-	//   telf.value = this.value;
-	//   if((this.value).trim() != '') {
-  //   telf.disabled = false;
-	// } else {
-	// 	telf.disabled = true;
-	// }
 
   let selectPaisResidencia = document.getElementById('pais');
   let inputCodPais = document.getElementById('telf');
