@@ -11,6 +11,8 @@
     <meta property="og:title" content="¿Necesita información sobre Servicios Notariales?">
     <meta property="og:description" content="En nuestra sección de Multimedia puede encontrar una variedad de videos sobre trámites notariales. Ingrese aquí para obtener más información">
     <meta property="og:image" content="{{ asset('img/partners/BANNER-PARTNERS.webp') }}">
+
+    <livewire:styles />
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -43,12 +45,16 @@
                 @endforeach
             </div>
         </div>
+
+        <livewire:partners-videos />
+
     </div>
 @endsection
 
 @section('numberWpp', '13479739888')
 
 @section('script')
+<livewire:scripts />
     <script>
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url('{{url('img/videos-notaria-latina.jpg')}}')";
