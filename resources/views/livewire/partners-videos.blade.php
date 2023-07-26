@@ -22,6 +22,6 @@
         @endforeach
     </section>
     <div class="d-flex justify-content-center py-5">
-        <button wire:click="getmore" class="btn btn-primary">Ver más</button>
+        <button wire:click="getmore" class="btn rounded-0" style="background-color: #122944; color: #ffffff">Cargar más videos</button>
     </div>
 </div>
