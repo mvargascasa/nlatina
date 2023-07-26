@@ -483,7 +483,7 @@
   </a>
 </div>
 
-<footer class="text-center navfoot text-white py-3">  Copyright ©2020 Notaria Latina. All rights reserved.  </footer>
+<footer class="text-center navfoot text-white py-3"> Copyright ©2020 Notaria Latina. All rights reserved. <a href="{{ route('web.politicas') }}">Politicas de Privacidad</a> </footer>
 
 <script>
   window.addEventListener('load', (event) => {
