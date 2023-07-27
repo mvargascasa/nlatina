@@ -501,6 +501,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '19088009046';
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046';
         return view('landing.general',$data);
     }
 
@@ -523,6 +524,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '19088009046';
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046';
         return view('landing.general',$data);
     }  
 
@@ -545,6 +547,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '19088009046';
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046';
         return view('landing.general',$data);
     }  
 
@@ -568,6 +571,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '19088009046';
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046';
         return view('landing.general',$data);
     }   
 
@@ -590,6 +594,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '19088009046';
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046';
         return view('landing.general',$data);
     }
 
@@ -614,6 +619,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13479739888';
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888';
         return view('landing.general',$data);
     }
 
@@ -636,6 +642,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13479739888';
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888';
         return view('landing.general',$data);
     }  
 
@@ -658,6 +665,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13479739888';
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888';
         return view('landing.general',$data);
     }  
 
@@ -680,6 +688,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13479739888';
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888';
         return view('landing.general',$data);
     }   
 
@@ -702,6 +711,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13479739888';
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888';
         return view('landing.general',$data);
     }  
 
@@ -735,6 +745,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13056003290';
         $data['reviews'] = $this->reviewsfl;
         $data['more_reviews'] = $this->more_reviewsfl;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290';
         return view('landing.general', $data);
     }
 
@@ -757,6 +768,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13056003290';
         $data['reviews'] = $this->reviewsfl;
         $data['more_reviews'] = $this->more_reviewsfl;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290';
         return view('landing.general',$data);
     }  
 
@@ -779,6 +791,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13056003290';
         $data['reviews'] = $this->reviewsfl;
         $data['more_reviews'] = $this->more_reviewsfl;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290';
         return view('landing.general',$data);
     }  
 
@@ -801,6 +814,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13056003290';
         $data['reviews'] = $this->reviewsfl;
         $data['more_reviews'] = $this->more_reviewsfl;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290';
         return view('landing.general',$data);
     }   
 
@@ -823,6 +837,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13056003290';
         $data['reviews'] = $this->reviewsfl;
         $data['more_reviews'] = $this->more_reviewsfl;
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290';
         return view('landing.general',$data);
     }
     
