@@ -494,7 +494,7 @@ class LandingController extends Controller
         $data['dirtext'] = '1146 East Jersey St <br> Elizabeth, NJ 07201 ';
         $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
         $data['dirmap']  = 'img/map-newjersey-notaria.webp';
-        $data['tlfhidden'] = '19082249594 ';
+        $data['tlfhidden'] = '19082249594';
         $data['tlfshow'] = '908-224-9594';
         $data['landing'] = 'General';
         $data['title'] = 'Notaría Latina en New Jersey | Apostillas, Poderes, Traducciones';
