@@ -35,7 +35,13 @@ if(strpos($actual_link, 'localhost') === false){
   gtag('config', 'UA-124437679-3');
 </script> --}}
 
-<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-702844945"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-702844945'); </script>
+<!--NEW YORK-->
+<!-- Google tag (gtag.js) --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-702844945"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-702844945'); </script>
+
+<!--NEW JERSEY-->
+<!-- Google tag (gtag.js) --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-306069230"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306069230'); </script>
 
 @isset($segment)
     @if ($segment == 'newyork')
@@ -57,6 +63,48 @@ if(strpos($actual_link, 'localhost') === false){
         {{-- IDG_NEWYORK_TRADUCCION_LEAD_GRACIAS --}}
         <script> gtag('event', 'conversion', {'send_to': 'AW-702844945/BZYnCJ6T68UYEJGgks8C'}); </script>
     @endif
+    
+    @if($segment == 'newjersey')
+        <!-- Event snippet for IDG_NEWJERSEY_GENERAL_LEAD_GRACIAS conversion page --> 
+        <script> gtag('event', 'conversion', {'send_to': 'AW-306069230/oqJ7CM3zpMkYEO79-JEB'}); </script>
+    @endif
+
+    @if ($segment == 'newjersey-apostillas')
+        <!-- Event snippet for IDG_NEWJERSEY_APOSTILLA_LEAD_GRACIAS conversion page --> 
+        <script> gtag('event', 'conversion', {'send_to': 'AW-306069230/OthqCOPRpMkYEO79-JEB'}); </script>
+    @endif
+
+
+    @if($segment == "newjersey-traducciones")
+        <!-- Event snippet for IDG_JERSEY_TRADUCCION_LEAD_GRACIAS conversion page --> 
+        <script> gtag('event', 'conversion', {'send_to': 'AW-306069230/ag21CJ3lpMkYEO79-JEB'}); </script>
+    @endif
+
+    @if($segment == "newjersey-poderes")
+        <!-- Event snippet for IDG_NEWJERSEY_PODERES_LEAD_GRACIAS conversion page --> 
+        <script> gtag('event', 'conversion', {'send_to': 'AW-306069230/rgBaCK2GpckYEO79-JEB'}); </script>
+    @endif
+
+    @if($segment == "florida")
+        <!-- Event snippet for IDG_FLORIDA_GENERAL_LEAD_GRACIAS conversion page --> 
+        <script> gtag('event', 'conversion', {'send_to': 'AW-306001515/ESLpCPjTnMkYEOvs9JEB'}); </script>
+    @endif
+
+    @if($segment == "florida-traducciones")
+        <!-- Event snippet for IDG_FLORIDA_TRADUCCION_LEAD_GRACIAS conversion page --> 
+        <script> gtag('event', 'conversion', {'send_to': 'AW-306001515/qMChCIHUnMkYEOvs9JEB'}); </script>
+    @endif
+
+    @if($segment == "florida-poderes")
+        <!-- Event snippet for IDG_FLORIDA_PODERES_LEAD_GRACIAS conversion page --> 
+        <script> gtag('event', 'conversion', {'send_to': 'AW-306001515/iG5qCPvTnMkYEOvs9JEB'}); </script>
+    @endif
+
+    @if($segment == "florida-apostillas")
+        <!-- Event snippet for IDG_FLORIDA_APOSTILLA_LEAD_GRACIAS conversion page --> 
+        <script> gtag('event', 'conversion', {'send_to': 'AW-306001515/A9ivCP7TnMkYEOvs9JEB'}); </script>
+    @endif
+
 @endisset
 
 <?php };// fin de if url localhost ?>
