@@ -495,7 +495,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
         $data['dirmap']  = 'img/map-newjersey-notaria.webp';
         $data['tlfhidden'] = '19082249594 ';
-        $data['tlfshow'] = '908 224-9594';
+        $data['tlfshow'] = '908-224-9594';
         $data['landing'] = 'General';
         $data['title'] = 'Notaría Latina en New Jersey | Apostillas, Poderes, Traducciones';
         $data['tlfwpp'] = '19088009046';
@@ -518,7 +518,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
         $data['dirmap']  = 'img/map-newjersey-notaria.webp';
         $data['tlfhidden'] = '19082249596';
-        $data['tlfshow'] = '908 224-9596';
+        $data['tlfshow'] = '908-224-9596';
         $data['landing'] = 'General Web';
         $data['title'] = 'Apostillas, Poderes, Traducciones | Notaría Latina en New Jersey';
         $data['tlfwpp'] = '19088009046';
@@ -541,7 +541,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
         $data['dirmap']  = 'img/map-newjersey-notaria.webp';
         $data['tlfhidden'] = '19082249259';
-        $data['tlfshow'] = '908 224-9259';
+        $data['tlfshow'] = '908-224-9259';
         $data['landing'] = 'Traducciones';
         $data['title'] = 'Traducir Documentos Notariales en New Jersey | Notaria Latina';
         $data['tlfwpp'] = '19088009046';
@@ -565,7 +565,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
         $data['dirmap']  = 'img/map-newjersey-notaria.webp';
         $data['tlfhidden'] = '19082249258';
-        $data['tlfshow'] = '908 224-9258';
+        $data['tlfshow'] = '908-224-9258';
         $data['landing'] = "Poderes"; 
         $data['title'] = 'Realizamos todo tipo de Poderes en New Jersey | Notaria Latina';
         $data['tlfwpp'] = '19088009046';
@@ -588,7 +588,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://goo.gl/maps/pyszsGuTmGpoWgXW8';
         $data['dirmap']  = 'img/map-newjersey-notaria.webp';
         $data['tlfhidden'] = '19082249552';
-        $data['tlfshow'] = '908 224-9552';
+        $data['tlfshow'] = '908-224-9552';
         $data['landing'] = 'Apostillas';
         $data['title'] = 'Apostillar Documentos en New Jersey | Notaria Latina';
         $data['tlfwpp'] = '19088009046';
@@ -739,7 +739,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://g.page/notarialatina';
         $data['dirmap']  = 'img/map-florida-notaria.webp';
         $data['tlfhidden'] = '13054229149';
-        $data['tlfshow'] = '305 422 9149';
+        $data['tlfshow'] = '305-422-9149';
         $data['landing'] = 'General';
         $data['title'] = 'Notaría Latina en Florida - Apostillas, Poderes y Traducciones';
         $data['tlfwpp'] = '13056003290';
@@ -762,7 +762,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://g.page/notarialatina';
         $data['dirmap']  = 'img/map-florida-notaria.webp';
         $data['tlfhidden'] = '13053177811';
-        $data['tlfshow'] = '305 317 7811';
+        $data['tlfshow'] = '305-317-7811';
         $data['landing'] = 'General Web';
         $data['title'] = 'Apostillas, Poderes y Traducciones en Florida | Notaría Latina';
         $data['tlfwpp'] = '13056003290';
@@ -785,7 +785,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://g.page/notarialatina';
         $data['dirmap']  = 'img/map-florida-notaria.webp';
         $data['tlfhidden'] = '13053177819';
-        $data['tlfshow'] = '305 317 7819';
+        $data['tlfshow'] = '305-317-7819';
         $data['landing'] = 'Traducciones';
         $data['title'] = 'Traducir Documentos Notariales en Florida | Notaria Latina';
         $data['tlfwpp'] = '13056003290';
@@ -808,7 +808,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://g.page/notarialatina';
         $data['dirmap']  = 'img/map-florida-notaria.webp';
         $data['tlfhidden'] = '13053177826';
-        $data['tlfshow'] = '305 317 7826';
+        $data['tlfshow'] = '305-317-7826';
         $data['landing'] = 'Poderes';
         $data['title'] = 'Tramitamos todo tipo de Poderes en Florida | Notaria Latina';
         $data['tlfwpp'] = '13056003290';
@@ -831,7 +831,7 @@ class LandingController extends Controller
         $data['dirlink'] = 'https://g.page/notarialatina';
         $data['dirmap']  = 'img/map-florida-notaria.webp';
         $data['tlfhidden'] = '13053177820';
-        $data['tlfshow'] = '305 317 7820';
+        $data['tlfshow'] = '305-317-7820';
         $data['landing'] = 'Apostillas';
         $data['title'] = 'Apostillar Documentos en Florida | Notaria Latina';
         $data['tlfwpp'] = '13056003290';

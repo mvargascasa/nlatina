@@ -134,6 +134,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306069230"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306069230'); </script>
 @endif
 
+@if($oficina == "Florida")
+  <!--FLORIDA-->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306001515"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306001515'); </script>
+@endif
+
 <!--NEW YORK-->
 @if ($tlfhidden == '13474281520') 
   <script> gtag('config', 'AW-702844945/Z8xoCIiZ98UYEJGgks8C', { 'phone_conversion_number': '3474281520' }); </script>
@@ -167,6 +173,7 @@
   <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/GnWsCIzT98UYEJGgks8C', 'event_callback': callback }); return false; } </script>
 @endif
 
+<!--NEW JERSEY-->
 @if($tlfhidden == "19082249552")
   <script> gtag('config', 'AW-306069230/hJ7GCNmgpckYEO79-JEB', { 'phone_conversion_number': '9082249552' }); </script>
   <!-- Event snippet for IDG_NEWJERSEY_APOSTILLA_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
@@ -199,6 +206,7 @@
   <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306069230/AJsVCM_YmskYEO79-JEB', 'event_callback': callback }); return false; } </script>
 @endif
 
+<!--FLORIDA-->
 @if($tlfhidden == "13054229149")
   <script> gtag('config', 'AW-306001515/kod7CPX0pskYEOvs9JEB', { 'phone_conversion_number': '3054229149' }); </script>
   <!-- Event snippet for IDG_FLORIDA_GENERAL_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 

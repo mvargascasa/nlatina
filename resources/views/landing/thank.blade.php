@@ -35,13 +35,29 @@ if(strpos($actual_link, 'localhost') === false){
   gtag('config', 'UA-124437679-3');
 </script> --}}
 
-<!--NEW YORK-->
-<!-- Google tag (gtag.js) --> 
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-702844945"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-702844945'); </script>
+@isset($segment)
+    @if($segment == "newyork" || $segment == "newyork-poderes" || $segment == "newyork-apostillas" || $segment == "newyork-traducciones")
+        <!--NEW YORK-->
+        <!-- Google tag (gtag.js) --> 
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-702844945"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-702844945'); </script>
+    @endif
+@endisset
 
-<!--NEW JERSEY-->
-<!-- Google tag (gtag.js) --> 
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-306069230"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306069230'); </script>
+@isset($segment)
+    @if($segment == "newjersey" || $segment == "newjersey-poderes" || $segment == "newjersey-apostillas" || $segment == "newjersey-traducciones")
+        <!--NEW JERSEY-->
+        <!-- Google tag (gtag.js) --> 
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306069230"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306069230'); </script>
+    @endif
+@endisset
+
+@isset($segment)
+    @if($segment == "florida" || $segment == "florida-poderes" || $segment == "florida-apostillas" || $segment == "florida-traducciones")
+        <!--FLORIDA-->
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306001515"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306001515'); </script>
+    @endif
+@endisset
 
 @isset($segment)
     @if ($segment == 'newyork')
@@ -63,7 +79,7 @@ if(strpos($actual_link, 'localhost') === false){
         {{-- IDG_NEWYORK_TRADUCCION_LEAD_GRACIAS --}}
         <script> gtag('event', 'conversion', {'send_to': 'AW-702844945/BZYnCJ6T68UYEJGgks8C'}); </script>
     @endif
-    
+
     @if($segment == 'newjersey')
         <!-- Event snippet for IDG_NEWJERSEY_GENERAL_LEAD_GRACIAS conversion page --> 
         <script> gtag('event', 'conversion', {'send_to': 'AW-306069230/oqJ7CM3zpMkYEO79-JEB'}); </script>
