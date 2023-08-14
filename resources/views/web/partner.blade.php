@@ -331,39 +331,35 @@
         </div>
     </section>
 
-    <section class="bg-light py-5 mt-5">
-        <section class="container">
-            <h2 class="txt-blue text-center pb-4"><span class="font-weight-bold">TESTIMONIOS</span></h2>
-            <div class="d-flex justify-content-center">
-                @if(count($testimonials) > 0)
-                    <div class="row">
-                        @foreach ($testimonials as $testimonial)
-                            <div class="col-12 col-sm-4 mb-3">
-                                <div class="mx-1 p-4 d-flex" style="border: 1px solid #FEC02F">
-                                    <div class="mr-1">
-                                        <img width="50px" height="50px" src="{{ asset('img/user1.png') }}" alt="">
-                                    </div>
-                                    <div class="ml-1">
-                                        <p class="h5">{{$testimonial->name_customer}}</p>
-                                        <p class="mt-3">{{$testimonial->country}} <img width="25px" src="{{ asset('img/partners/' . Str::lower(Str::studly($testimonial->country)) . '.png') }}" alt=""></p>
-                                        <p><i>{{$testimonial->comment}}</i></p>
-                                    </div>
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">TESTIMONIOS</h2>
+            <div class="row">
+                @if (count($testimonials) > 0)
+                    @foreach ($testimonials as $testimonial)
+                        <div class="col-sm-4">
+                            <div class="mx-1 p-4 d-flex" style="border: 1px solid #FEC02F">
+                                <div class="mr-1">
+                                    <img width="50px" height="50px" src="{{ asset('img/user1.png') }}" alt="">
+                                </div>
+                                <div class="ml-1">
+                                    <p class="h5">{{$testimonial->name_customer}}</p>
+                                    <p class="mt-3">{{$testimonial->country}} <img width="25px" src="{{ asset('img/partners/' . Str::lower(Str::studly($testimonial->country)) . '.png') }}" alt=""></p>
+                                    <p><i>{{$testimonial->comment}}</i></p>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
-                @endif
-            </section>
-            <section class="row">
-                <div class="col-sm-12 px-5 mt-5">
-                    @if (isset($partner->url_video))
-                        <div class="d-flex justify-content-center">
-                            <video class="lazy img-fluid" data-src="{{asset('storage/'.$partner->url_video)}}" controls></video>
                         </div>
-                    @endif
+                    @endforeach
+                @endif
+            </div>
+            @if(isset($partner->url_video))
+                <div class="row justify-content-center mt-5">
+                    <div>
+                        <video class="lazy img-fluid" data-src="{{asset('storage/'.$partner->url_video)}}" controls></video>
+                    </div>
                 </div>
-            </section>
-        </section>
+            @endif
+        </div>
     </section>
 
     {{-- <div class="row mt-4">
