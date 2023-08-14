@@ -77,6 +77,7 @@
             #img-logo{width: 190px !important; height: 60px !important;}
             .img-profile{justify-content: center !important}
         }
+        .biography{padding-right: 25rem !important}
         #nombre, #telefono, #mensaje{
             margin-bottom: 15px;
         }
@@ -307,8 +308,8 @@
                     <img width="350px" height="450px" class="lazy" data-src="{{asset('storage/' . $partner['img_profile'] )}}" alt="{{$partner->slug}}">
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-7 d-flex align-items-center pr-5">
-                <div class="bg-light w-100">
+            <div class="col-12 col-sm-12 col-md-7 d-flex align-items-center biography">
+                <div class="bg-light w-100 p-4">
                     {!! $partner->biography_html !!}
                 </div>
             </div>
