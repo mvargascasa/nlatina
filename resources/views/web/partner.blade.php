@@ -31,7 +31,7 @@
         .bg-header{
             /* background-color: #002542; */
             width: 100%;
-            min-height: 400px;
+            min-height: 500px;
         }
         .container{
             position: relative;
@@ -50,7 +50,7 @@
         #info_biografia{margin-top:4% !important}
         h1{font-size: 30px !important;}
 
-        @media screen and (max-width: 480px){
+        @media screen and (max-width: 768px){
             .info-header{
                 color: #000000 !important;
                 margin-top: 15% !important; 
@@ -75,7 +75,7 @@
             #info_biografia{margin-top: 0px !important;}
             .bg-header{min-height: 130px;}
             #img-logo{width: 190px !important; height: 60px !important;}
-            #prisection{display: none !important};
+            .img-profile{justify-content: center !important}
         }
         #nombre, #telefono, #mensaje{
             margin-bottom: 15px;
@@ -237,32 +237,136 @@
 @endsection
 
 @section('content')
-    <section id="prisection" class="bg-header pt-5 d-flex justify-content-center align-items-center" style="background-size: cover; background-position: left top; background-repeat: no-repeat;"></div>
+    <section id="prisection" class="bg-header pt-5 d-flex justify-content-center" style="background-size: cover; background-position: bottom center; background-repeat: no-repeat;"></div>
         <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
-        {{-- <div id="rowinfoheader" class="row mt-5">
-            <div class="col-sm-2"></div>
-            <div id="divImgPartner" class="col-sm-2">
-                <img id="imgPartner" src="{{asset('storage/' . $partner['img_profile'] )}}" alt="Abogado en {{ $partner->city }}, {{ $partner->state }}, {{ $partner->country_residence }}" width="200" height="260">
+        <div class="text-center">
+            <div id="divimglogo">
+                <img id="img-logo" width="500px" height="150px" class="lazy" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="partners notaria latina">
             </div>
-            <div class="col-sm-8 mt-5 info-header">
-                <h1><b>Abogado en {{$partner->city}}, {{$partner->state}}</b> <img width="25" height="25" src="{{asset('img/partners/'.Str::lower(Str::studly($partner->country_residence)).'.png')}}" alt="IMG_BAND_{{ $partner->country_residence }}">
-                </h1>
-                <p style="font-size: 20px; margin-top: 15px"><b style="font-weight: 100" id="txtnamelastname">{{$partner->name . " " . $partner->lastname}}</b></p>
-                @if ($partner->company == "Empresa")
-                    <p style="margin-top: 10px"><i class="fas fa-building"></i> {{ $partner->company_name }}</p>
-                @else
-                    <p style="margin-top: 10px"><i class="fas fa-user"></i> {{ $partner->company}}</p>
-                @endif
-                <br>
+            <p class="display-4 text-white tit-not">Abg. {{ $partner->name . " " . $partner->lastname}}</p>
+            <h1 class="tit-not"><span class="text-warning"> Abogado en {{ $partner->city }}, {{ $partner->state }}</span> <span class="text-white">a su alcance</span></h1>
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-sm-6 mb-3">
+                        <button class="btn btn-warning btn-block rounded-pill font-weight-bold" data-toggle="modal" data-target="#form_modal">CONTACTAR</button>
+                    </div>
+                    <div class="col-sm-6 mb-3 d-flex justify-content-center">
+                        <button id="divshowphone" class="btn btn-outline-warning btn-block rounded-pill text-white"></button>
+                    </div>
+                </div>
             </div>
-        </div> --}}
-        <div id="divimglogo">
-            <img id="img-logo" width="500px" height="150px" class="lazy" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="partners notaria latina">
         </div>
     </section>
     <div style="background-color: #FEC02F; height: 10px"></div>
 
-    <div class="row mt-4">
+    <section class="bg-light pt-4">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-xl-4 py-1">
+                <div class="d-flex justify-content-center">
+                    @php $rating = $partner->averageRating(); @endphp
+                    <div class="@if($mobile) text-center @else text-left @endif mr-1">
+                        <div data-toggle="modal" data-target="#exampleModalCenter" style="color: #FEC02F; cursor: pointer">
+                            @foreach(range(1,5) as $i)
+                                <span class="fa-stack" style="width:2em" onclick="openModalRating();">
+                                    <i class="far fa-star fa-stack-2x"></i>
+                                    @if($rating > 0)
+                                        @if($rating > 0.5)
+                                            <i class="fas fa-star fa-stack-2x"></i>
+                                        @else
+                                            <i class="fas fa-star-half fa-stack-2x"></i>
+                                        @endif
+                                    @endif
+                                @php $rating--; @endphp
+                                </span>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="ml-2">
+                        <p class="pt-1 font-weight-bold txt-blue @if($mobile) text-center @else text-right @endif" style="letter-spacing: 15px; font-size: 20px">REVIEWS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-xl-4 py-1">
+                <div class="d-flex justify-content-center">
+                    <p class="font-weight-bold" style="letter-spacing: 1px; color: #FEC02F; font-size: 20px"><i class="fas fa-eye"></i> {{$partner->views+1}} <span class="txt-blue">VISUALIZACIONES</span></p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-xl-4 py-1">
+                <div style="cursor: pointer" class="d-flex justify-content-center" data-toggle="modal" data-target="#modalcustomers">
+                    <p class="font-weight-bold" style="letter-spacing: 1px; color: #FEC02F; font-size: 20px"><i class="fas fa-search"></i> {{count($partner->customers)}} @if(count($partner->customers) == 1) <span class="txt-blue"> CONSULTA @else CONSULTAS </span> @endif</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="">
+        <h2 class="txt-blue text-center py-5">EXPERIENCIA Y <span class="font-weight-bold">TRAYECTORIA</span></h2>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-5">
+                <div class="d-flex justify-content-end img-profile">
+                    <img width="300px" height="450px" class="lazy" data-src="{{asset('storage/' . $partner['img_profile'] )}}" alt="{{$partner->slug}}">
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-7 d-flex align-items-center pr-5">
+                <div class="bg-light w-100">
+                    {!! $partner->biography_html !!}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <h2 class="txt-blue text-center py-5">ÁREA DE <span class="font-weight-bold">ESPECIALIZACIÓN</span></h2>
+        <div class="row">
+            @foreach ($partner->specialties as $specialty)
+                <div class="col-sm-4">
+                    <div class="d-flex @if($loop->index == 0 && !$mobile) justify-content-end @elseif($loop->index == 1 && !$mobile) justify-content-center @elseif($loop->index == 2 && !$mobile) justify-content-start @else justify-content-center @endif">
+                        <div class="text-center">
+                            <img src="{{ asset('img/partners/'.$specialty->name_specialty.'.png') }}" alt="">
+                            <p class="txt-blue mt-3">DERECHO <span class="font-weight-bold">{{ strtoupper($specialty->name_specialty) }}</span></p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </section>
+
+    <section class="bg-light py-5 mt-5">
+        <section class="container">
+            <section class="row justify-content-center">
+                <h2 class="txt-blue text-center pb-4"><span class="font-weight-bold">TESTIMONIOS</span></h2>
+                <div class="col-sm-12 px-5 d-flex align-items-center">
+                    <div class="d-flex justify-content-end">
+                        @if(count($testimonials) > 0)
+                            <div class="row">
+                                @foreach ($testimonials as $testimonial)
+                                    <div class="col-12 col-sm-4 mb-3">
+                                        <div class="mx-1 p-4 d-flex" style="border: 1px solid #FEC02F">
+                                            <div class="mr-1">
+                                                <img width="50px" height="50px" src="{{ asset('img/user1.png') }}" alt="">
+                                            </div>
+                                            <div class="ml-1">
+                                                <p class="h5">{{$testimonial->name_customer}}</p>
+                                                <p class="mt-3">{{$testimonial->country}} <img width="25px" src="{{ asset('img/partners/' . Str::lower(Str::studly($testimonial->country)) . '.png') }}" alt=""></p>
+                                                <p><i>{{$testimonial->comment}}</i></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-sm-12 px-5 mt-5">
+                    <div class="d-flex justify-content-center">
+                        <video class="lazy img-fluid" data-src="{{asset('storage/'.$partner->url_video)}}" controls></video>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    {{-- <div class="row mt-4">
         <div class="col-sm-6 d-flex justify-content-center align-items-center py-5 border-right border-warning">
             <img width="300px" height="390px" class="lazy" data-src="{{asset('storage/' . $partner['img_profile'] )}}" alt="{{$partner->slug}}">
         </div>
@@ -311,7 +415,7 @@
                     </div>
                     @endif
                 </div>
-                <div id="divshowphone" class="row d-flex justify-content-center" style="border-radius: 5px; padding-top: 2.5%;"> </div> 
+                <div id="divshowphonee" class="row d-flex justify-content-center" style="border-radius: 5px; padding-top: 2.5%;"> </div> 
             </div>
         </div>
     </div>
@@ -336,11 +440,6 @@
                         <video width="300px" class="lazy" data-src="{{asset('storage/'.$partner->url_video)}}" controls></video>
                     </div>   
                     @endif
-                    {{-- <div class="@if(isset($partner->url_video)) col-sm-6 @else col-sm-12 @endif txt-blue mt-3">
-                        <div @if(!isset($partner->url_video)) class="mx-4" @endif>
-                            {!! $partner->biography_html !!}
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -420,159 +519,7 @@
             </div>
         </div>
     </section>
-    @endif
-
-        {{-- <div id="info_biografia" class="row">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-6 border-right">
-                <div class="rowinfobody">
-                    <h2 style="font-size: 18px"><b>Biografía</b></h2>
-                    <div>
-                        {!! Purify::clean($partner->biography_html) !!}
-                    </div>
-                    @isset($partner->specialty)
-                        <div class="mt-3">
-                            <h2 style="font-weight: 600; font-size: 18px">Especialidades</h2>
-                            <p style="font-weight: 400">{{ Purify::clean($partner->specialty) }}</p>
-                        </div>
-                    @endisset
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="rowinfobody">
-                    <div style="color: #9A7A2E">
-                        @isset($partner->address)
-                            <h3 style="font-weight: bold; font-size: 18px"><i class="fas fa-map-marker-alt"></i> Dirección</h3>
-                            <p style="color: #9A7A2E">{{$partner->address}}</p>
-                        @endisset
-                        @if($partner->website != null && Str::startsWith($partner->website, 'https'))
-                            <h3 class="mt-2" style="font-weight: bold; font-size: 18px"><i class="fas fa-globe"></i> Sitio web</h3>
-                            <a target="_blank" rel="nofollow" style="color: #9A7A2E" href="{{$partner->website}}">{{ $partner->website }}</a>
-                        @endif
-                        @if(Str::startsWith($partner->link_facebook, 'https') || Str::startsWith($partner->link_instagram, 'https') || Str::startsWith($partner->link_linkedin, 'https'))
-                            <h3 style="font-weight: bold; margin-top: 10px; font-size: 18px">Redes Sociales</h3>
-                            <div style="margin-top: 20px">
-                                @if($partner->link_facebook != null && Str::startsWith($partner->link_facebook, 'https'))
-                                    <a target="_blank" rel="nofollow" class="social" href="{{$partner->link_facebook}}"><i class="fab fa-facebook-square fa-2x"></i></a>
-                                @endif
-                                @if($partner->link_instagram != null && Str::startsWith($partner->link_instagram, 'https'))
-                                    <a target="_blank" rel="nofollow" class="social" href="{{$partner->link_instagram}}"><i class="fab fa-instagram fa-2x"></i></a>
-                                @endif
-                                @if($partner->link_linkedin != null && Str::startsWith($partner->link_linkedin, 'https'))
-                                    <a target="_blank" rel="nofollow" class="social" href="{{ $partner->link_linkedin}}"><i class="fab fa-linkedin fa-2x"></i></a>
-                                @endif
-                            </div>
-                        @endif
-                    </div>
-                    <h3 style="font-weight: bold; margin-top: 10px; color: #9A7A2E; font-size: 18px">Reviews</h3>
-                        @php
-                          $rating = $partner->averageRating();
-                        @endphp
-                    <div data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 10px; color: #9A7A2E; cursor: pointer">
-                        @foreach(range(1,5) as $i)
-                            <span class="fa-stack" style="width:2em" onclick="openModalRating();">
-                                <i class="far fa-star fa-stack-2x"></i>
-                                @if($rating > 0)
-                                    @if($rating > 0.5)
-                                        <i class="fas fa-star fa-stack-2x"></i>
-                                    @else
-                                        <i class="fas fa-star-half fa-stack-2x"></i>
-                                    @endif
-                                @endif
-                            @php $rating--; @endphp
-                            </span>
-                        @endforeach
-                    </div>
-                    @php
-                        $bandera = false;
-                        foreach($partner->ratings as $rating){
-                            if($rating->comment != null){
-                                $bandera = true;
-                            }
-                        }   
-                    @endphp
-                    @if ($bandera)
-                        <div class="mt-2" style="color: #9A7A2E; cursor: pointer" data-toggle="modal" data-target="#modalComentarios">  
-                            <p>{{ $partner->timesRated()}} @if($partner->timesRated() > 1) comentarios @else comentario @endif</p>
-                        </div>
-                    @else
-                        <div class="mt-2" style="color: #9A7A2E">  
-                            <p>{{ $partner->timesRated()}} @if($partner->timesRated() > 1) comentarios @else comentario @endif</p>
-                        </div>
-                    @endif
-                    @if(count($partner->customers) > 0)
-                        <div style="color: #9A7A2E">
-                            <p class="font-weight-bold"><i class="fas fa-search"></i> {{count($partner->customers)}} @if(count($partner->customers) == 1) persona ha @else personas han @endif realizado una consulta</p>
-                        </div>
-                    @endif
-                    @if($partner->views > 0)
-                        <div style="color: #9A7A2E">
-                            <p class="font-weight-bold"><i class="fas fa-eye"></i> {{$partner->views+1}} visualizaciones al perfil</p>
-                        </div>
-                    @endif
-                </div>
-                <div class="formContact mt-4 rounded shadow">
-                    <h4 class="text-white text-center p-3">¿Necesita realizar una consulta?</h4>
-                    <p class="text-white px-3">Complete el formulario con su información y el partner <b class="text-warning">{{$partner->name . " " . $partner->lastname}}</b> se comunicará con usted</p>
-                    <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
-                        @csrf
-                        <div class="d-flex">
-                            <div class="w-100">
-                                <input class="form-control mr-1 rounded-0" style="font-size: 12px" type="text" id="nombre" placeholder="Nombre" name="name" autocomplete="off" required>
-                            </div>
-                            <div class="w-100">
-                                <input class="form-control ml-1 rounded-0" style="font-size: 12px" type="text" id="apellido" placeholder="Apellido" name="lastname" autocomplete="off" required>
-                            </div>
-                        </div>
-                        <input type="email" name="email" style="font-size:12px" id="email" placeholder="Correo electrónico" class="form-control rounded-0" autocomplete="off" required>
-                        <div class="d-flex mt-3">
-                            <div class="w-100">
-                                <select name="country_residence" id="country_residence" class="form-control mr-1 rounded-0" style="font-size: 12px" required>
-                                    <option value="">País de residencia</option>
-                                    <option value="Argentina">Argentina</option>
-                                    <option value="Bolivia">Bolivia</option>
-                                    <option value="Colombia">Colombia</option>
-                                    <option value="Costa Rica">Costa Rica</option>
-                                    <option value="Ecuador">Ecuador</option>
-                                    <option value="El Salvador">El Salvador</option>
-                                    <option value="Estados Unidos">Estados Unidos</option>
-                                    <option value="Guatemala">Guatemala</option>
-                                    <option value="Honduras">Honduras</option>
-                                    <option value="México">México</option>
-                                    <option value="Nicaragua">Nicaragua</option>
-                                    <option value="Panamá">Panamá</option>
-                                    <option value="Paraguay">Paraguay</option>
-                                    <option value="Perú">Perú</option>
-                                    <option value="Puerto Rico">Puerto Rico</option>
-                                    <option value="República Dominicana">República Dominicana</option>
-                                    <option value="Uruguay">Uruguay</option>
-                                    <option value="Venezuela">Venezuela</option>
-                                </select>
-                            </div>
-                            <div class="w-100">
-                                <input type="hidden" name="codpais" id="codTelfPais">
-                                <input class="form-control ml-1 rounded-0" style="font-size: 12px" type="text" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
-                            </div>
-                        </div>
-                        <textarea class="form-control rounded-0" style="font-size: 12px" id="mensaje" rows="4" placeholder="Ej: Hola, me interesa consultar por sus servicios y deseo que me contacten" name="mensaje" autocomplete="off" required></textarea>
-                        <div style="display: none">
-                            <input type="hidden" name="aux">
-                        </div>
-                        <button class="btn mb-3 rounded-0" style="background-color: #FEC02F;" type="submit"><i class="fas fa-envelope"></i> Enviar</button>
-                    </form>
-                </div>
-                @php
-                    if (Cache::has('partner'.$partner->id)) {
-                        $array = Cache::get('partner'.$partner->id);
-                        $partnerCache = $array['partner'];
-                        $ip = $array['ip'];
-                    }
-                @endphp
-                <div id="divshowphone" class="row d-flex mt-4 justify-content-center border shadow" style="border-radius: 5px; margin-left: 1%; margin-right: 1%; padding-top: 4%;"> </div>
-            </div>
-        </div> --}}
-        
+    @endif --}}
 
         {{--MODAL DE VALORACION DE PARTNER--}}
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -635,6 +582,70 @@
               </div>
             </div>
         </div>
+
+        <!--modal para contactar por formulario-->
+        <div class="modal fade" id="form_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="formContact rounded shadow h-100 d-flex align-items-center px-3">
+                    <div>
+                        <h4 class="text-white text-center p-3">¿Necesita realizar una consulta?</h4>
+                        <p class="text-white px-3">Complete el formulario con su información y el abogado <b class="text-warning">{{$partner->name . " " . $partner->lastname}}</b> se comunicará con usted</p>
+                        <form action="{{ route('web.send.email.socio', $partner) }}" method="POST">
+                            @csrf
+                            <div class="d-flex">
+                                <div class="w-100">
+                                    <input class="form-control mr-1 rounded-0" style="font-size: 12px" type="text" id="nombre" placeholder="Nombre" name="name" autocomplete="off" required>
+                                </div>
+                                <div class="w-100">
+                                    <input class="form-control ml-1 rounded-0" style="font-size: 12px" type="text" id="apellido" placeholder="Apellido" name="lastname" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <input type="email" name="email" style="font-size:12px" id="email" placeholder="Correo electrónico" class="form-control rounded-0" autocomplete="off" required>
+                            <div class="d-flex mt-3">
+                                <div class="w-100">
+                                    <select name="country_residence" id="country_residence" class="form-control mr-1 rounded-0" style="font-size: 12px" required>
+                                        <option value="">País de residencia</option>
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Bolivia">Bolivia</option>
+                                        <option value="Colombia">Colombia</option>
+                                        <option value="Costa Rica">Costa Rica</option>
+                                        <option value="Ecuador">Ecuador</option>
+                                        <option value="El Salvador">El Salvador</option>
+                                        <option value="Estados Unidos">Estados Unidos</option>
+                                        <option value="Guatemala">Guatemala</option>
+                                        <option value="Honduras">Honduras</option>
+                                        <option value="México">México</option>
+                                        <option value="Nicaragua">Nicaragua</option>
+                                        <option value="Panamá">Panamá</option>
+                                        <option value="Paraguay">Paraguay</option>
+                                        <option value="Perú">Perú</option>
+                                        <option value="Puerto Rico">Puerto Rico</option>
+                                        <option value="República Dominicana">República Dominicana</option>
+                                        <option value="Uruguay">Uruguay</option>
+                                        <option value="Venezuela">Venezuela</option>
+                                    </select>
+                                </div>
+                                <div class="w-100 d-flex ml-1">
+                                    <div class="d-flex" style="height: 20px">
+                                        <img id="img-flag-form" width="30px" height="30px" alt="" class="border-0 d-none mr-1">
+                                        <input type="text" style="font-size: 12px" class="form-control rounded-0 border-0 bg-white" name="codpais" id="codTelfPais" readonly>
+                                    </div>
+                                    <input class="form-control rounded-0" style="font-size: 12px" type="text" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <textarea class="form-control rounded-0" style="font-size: 12px" id="mensaje" rows="4" placeholder="Ej: Hola, me interesa consultar por sus servicios y deseo que me contacten" name="mensaje" autocomplete="off" required></textarea>
+                            <div style="display: none">
+                                <input type="hidden" name="aux">
+                            </div>
+                            <button class="btn mb-3 rounded-0" style="background-color: #FEC02F;" type="submit"><i class="fas fa-envelope"></i> Enviar</button>
+                        </form>
+                    </div>    
+                </div>
+              </div>
+            </div>
+        </div>
+        <!--termina modal-->
 
 
         {{--DIV PARA LLENAR FORMULARIO Y MOSTRAR EL NUMERO--}}
@@ -758,13 +769,6 @@
           </div>
           @endif
 
-        {{--ESTO ES PARA MI PERFIL--}}
-        @if ($partner->name . " " . $partner->lastname == "Sebastian Armijos")
-            <div class="mt-5">
-                <a href="{{ route('web.eliminar.cache.partner', $partner) }}">Eliminar cache Partner</a>
-            </div>
-        @endif
-
         {{-- SE MUESTRA CUANDO LLENA EL FORMULARIO DE CONTACTO --}}
         @if (session('report'))
             @php
@@ -820,15 +824,16 @@
 {{-- <script id="script_jquery"></script> --}}
 <script>
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('{{url('img/partners/FONDO-PARTNER-INDIVIDUAL.webp')}}')";
+        let img_name = "{{ Str::lower(Str::studly($partner->country_residence)) }}"
+        document.getElementById('prisection').style.backgroundImage = `url('{{url('img/partners/header-${img_name}.jpg')}}')`;
         const divshowphone = document.getElementById('divshowphone');
         let id = document.getElementById('txtpartnerid').textContent;
         if(!localStorage.getItem("prueba"+id)){
-            divshowphone.innerHTML = "<p class='pl-3 pr-3 shadow-sm' style='cursor: pointer; color: #002542; background-color: #FEC02F; height: 35px; padding: 5px; border-radius: 25px 0px 0px 25px;' data-toggle='modal' data-target='.bd-example-modal-sm'>Ver teléfono</p><p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 0px 25px 25px 0px' class='ml-1 pl-3 pr-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ Str::limit($partner->codigo_pais . ' ' . $partner->phone, 11, '...')  }}</p>";
+            divshowphone.innerHTML = "<span style='cursor: pointer;' class='font-weight-bold' data-toggle='modal' data-target='.bd-example-modal-sm'>VER TELÉFONO</span>";
         } else {
-            divshowphone.innerHTML = "<a class='pl-3 pr-3 shadow-sm' style='color: #002542; background-color: #FEC02F; padding: 5px; height: 35px; border-radius: 25px 0px 0px 25px; text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>Llamar</a><p style='background-color: #002542; color: #ffffff; padding: 5px; border-radius: 0px 25px 25px 0px' class='ml-1 pl-3 pr-3'><i class='fas fa-phone-alt' style='color: rgb(241, 132, 15)'></i>{{ $partner->codigo_pais . ' ' . $partner->phone}}</p>";
+            divshowphone.innerHTML = "<a class='text-white font-weight-bold' style='text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>LLAMAR {{ $partner->phone }}</a>";
         }
-        setTimeout(() => {setviewed();}, 3000);
+        //setTimeout(() => {setviewed();}, 3000);
     });
 
     //RETIRANDO CARGA DEL SCRIPT - NO SE OCUPA
