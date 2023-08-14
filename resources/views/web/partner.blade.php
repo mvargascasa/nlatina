@@ -358,9 +358,11 @@
                     </div>
                 </div>
                 <div class="col-sm-12 px-5 mt-5">
-                    <div class="d-flex justify-content-center">
-                        <video class="lazy img-fluid" data-src="{{asset('storage/'.$partner->url_video)}}" controls></video>
-                    </div>
+                    @if (isset($partner->url_video))
+                        <div class="d-flex justify-content-center">
+                            <video class="lazy img-fluid" data-src="{{asset('storage/'.$partner->url_video)}}" controls></video>
+                        </div>
+                    @endif
                 </div>
             </section>
         </section>
