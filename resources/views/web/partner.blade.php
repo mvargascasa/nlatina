@@ -76,8 +76,17 @@
             .bg-header{min-height: 130px;}
             #img-logo{width: 190px !important; height: 60px !important;}
             .img-profile{justify-content: center !important}
+            .biography{padding-right: 0rem !important}
         }
-        .biography{padding-right: 25rem !important}
+        @media screen and (max-width: 1600px){
+            .biography{padding-right: 15rem !important}
+        }
+        @media screen and (max-width: 1200px){
+            .biography{padding-right: 0rem !important}
+        }
+        @media screen and (min-width: 1600px){
+            .biography{padding-right: 25rem !important}
+        }
         #nombre, #telefono, #mensaje{
             margin-bottom: 15px;
         }
