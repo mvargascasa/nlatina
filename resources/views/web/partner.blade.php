@@ -13,6 +13,8 @@
     <meta property="og:image:height" content="400" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 @php
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
@@ -318,7 +320,7 @@
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-7 d-flex align-items-center biography">
-                <div class="bg-light w-100 p-4">
+                <div class="bg-light w-100 p-4" data-aos="fade-left" data-aos-duration="3000">
                     {!! $partner->biography_html !!}
                 </div>
             </div>
@@ -329,7 +331,7 @@
         <h2 class="txt-blue text-center py-5">ÁREA DE <span class="font-weight-bold">ESPECIALIZACIÓN</span></h2>
         <div class="row">
             @foreach ($partner->specialties as $specialty)
-                <div class="col-sm-4">
+                <div class="col-sm-4"  data-aos="fade-up" data-aos-duration="3000">
                     <div class="d-flex @if($loop->index == 0 && !$mobile) justify-content-end @elseif($loop->index == 1 && !$mobile) justify-content-center @elseif($loop->index == 2 && !$mobile) justify-content-start @else justify-content-center @endif">
                         <div class="text-center">
                             <img src="{{ asset('img/partners/'.$specialty->name_specialty.'.png') }}" alt="">
@@ -344,10 +346,10 @@
     <section class="bg-light py-5">
         <div class="container">
             @if (count($testimonials) > 0)
+            <h2 class="text-center mb-5">TESTIMONIOS</h2>
             <div class="row">
-                <h2 class="text-center mb-5">TESTIMONIOS</h2>
                     @foreach ($testimonials as $testimonial)
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 mb-3">
                             <div class="mx-1 p-4 d-flex" style="border: 1px solid #FEC02F">
                                 <div class="mr-1">
                                     <img width="50px" height="50px" src="{{ asset('img/user1.png') }}" alt="">
@@ -828,7 +830,9 @@
 
 @section('script')
 {{-- <script id="script_jquery"></script> --}}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+    AOS.init();
     window.addEventListener('load', (event) => {
         let img_name = "{{ Str::lower(Str::studly($partner->country_residence)) }}"
         document.getElementById('prisection').style.backgroundImage = `url('{{url('img/partners/header-${img_name}.jpg')}}')`;
