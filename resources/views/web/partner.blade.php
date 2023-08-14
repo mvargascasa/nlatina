@@ -343,9 +343,9 @@
 
     <section class="bg-light py-5">
         <div class="container">
-            @if (count($testimonials) > 0)
+            <h2 class="text-center mb-5">TESTIMONIOS</h2>
             <div class="row">
-                <h2 class="text-center mb-5">TESTIMONIOS</h2>
+                @if (count($testimonials) > 0)
                     @foreach ($testimonials as $testimonial)
                         <div class="col-sm-4">
                             <div class="mx-1 p-4 d-flex" style="border: 1px solid #FEC02F">
@@ -359,9 +359,9 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
-                </div>
-            @endforeach
+                    @endforeach
+                @endif
+            </div>
             @if(isset($partner->url_video))
                 <div class="row justify-content-center mt-5">
                     <div>
