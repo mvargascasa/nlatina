@@ -333,8 +333,8 @@
 
     <section class="bg-light py-5 mt-5">
         <section class="container">
+            <h2 class="txt-blue text-center pb-4"><span class="font-weight-bold">TESTIMONIOS</span></h2>
             <section class="row justify-content-center">
-                <h2 class="txt-blue text-center pb-4"><span class="font-weight-bold">TESTIMONIOS</span></h2>
                 <div class="col-sm-12 px-5 d-flex align-items-center">
                     <div class="d-flex justify-content-center">
                         @if(count($testimonials) > 0)
