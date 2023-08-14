@@ -304,7 +304,7 @@
         <div class="row">
             <div class="col-12 col-sm-12 col-md-5">
                 <div class="d-flex justify-content-end img-profile">
-                    <img width="300px" height="450px" class="lazy" data-src="{{asset('storage/' . $partner['img_profile'] )}}" alt="{{$partner->slug}}">
+                    <img width="350px" height="450px" class="lazy" data-src="{{asset('storage/' . $partner['img_profile'] )}}" alt="{{$partner->slug}}">
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-7 d-flex align-items-center pr-5">
