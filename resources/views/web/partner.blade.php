@@ -336,11 +336,11 @@
             <section class="row justify-content-center">
                 <h2 class="txt-blue text-center pb-4"><span class="font-weight-bold">TESTIMONIOS</span></h2>
                 <div class="col-sm-12 px-5 d-flex align-items-center">
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-center">
                         @if(count($testimonials) > 0)
                             <div class="row">
                                 @foreach ($testimonials as $testimonial)
-                                    <div class="col-12 col-sm-4 mb-3">
+                                    <div class="col-12 mb-3">
                                         <div class="mx-1 p-4 d-flex" style="border: 1px solid #FEC02F">
                                             <div class="mr-1">
                                                 <img width="50px" height="50px" src="{{ asset('img/user1.png') }}" alt="">
