@@ -79,6 +79,7 @@
             #img-logo{width: 190px !important; height: 60px !important;}
             .img-profile{justify-content: center !important}
             .biography{padding-right: 0rem !important}
+            .title{font-size: 1.8rem}
         }
         @media screen and (max-width: 1600px){
             .biography{padding-right: 15rem !important}
@@ -255,7 +256,7 @@
             <div id="divimglogo">
                 <img id="img-logo" width="500px" height="150px" class="lazy" data-src="{{asset('img/logo-notaria-latina.png')}}" alt="partners notaria latina">
             </div>
-            <p class="display-4 text-white tit-not">Abg. {{ $partner->name . " " . $partner->lastname}}</p>
+            <p class="display-4 text-white tit-not title">Abg. {{ $partner->name . " " . $partner->lastname}}</p>
             <h1 class="tit-not"><span class="text-warning"> Abogado en {{ $partner->city }}, {{ $partner->state }}</span> <span class="text-white">a su alcance</span></h1>
             <div class="container">
                 <div class="row mt-5">
