@@ -22,6 +22,9 @@
 @endphp
     <title>Abogado en {{ Str::ucfirst($partner->city)}}, {{ Str::ucfirst($partner->state)}} - #{{ $partner->id }} | Notaria Latina</title>
     <style>
+        #iconwpp{
+            display: none !important;
+        }
         body{font-family: Arial, Helvetica, sans-serif;}
         /* ocultar el icono de llamada en la parte inferior derecha */
         #iconcall{display:none}
