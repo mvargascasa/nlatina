@@ -512,7 +512,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             </div>
         @else
             <div style="position: relative">
-                <div id="chat" style="position: fixed; bottom: 130px; right: 10px; width: 140px; z-index: 10; display: none" class="border rounded">
+                <div id="chat" style="position: fixed; bottom: 150px; right: 10px; width: 200px; z-index: 10; display: none" class="border rounded">
                     <div>
                         <div style="background-color: #4eda5f; color: #ffffff" class="pl-2">
                             En línea
@@ -528,33 +528,44 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                         </div>
                     </div> 
                 </div>
-                <div onclick="openchat()" id="iconwpp" style="position: fixed; bottom: 75px; right: 10px; cursor: pointer; z-index: 3" class="border rounded-circle">
-                    <img src="{{asset('img/icon-wpp.svg')}}" alt="Whatsapp Notary Public Near Me" width="45" height="45">
+                <div onclick="openchat()" id="iconwpp" style="position: fixed; bottom: 85px; right: 10px; cursor: pointer; z-index: 3;" class="rounded-circle" title="Contactar por WhatsApp">
+                    <img src="{{asset('img/whatsapp.png')}}" alt="Whatsapp Notary Public Near Me" width="55" height="55">
                 </div>
             </div>
         @endif
 
-        <div style="position: relative">
+        {{-- <div style="position: relative">
             <div id="divpreguntas" style="position: fixed; bottom: 25px; right: 65px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none; z-index: 300">
-                {{-- <div style="position: absolute"> --}}
-                    <div style="position: absolute; right: -10px; top: -16px; background-color: #122944; color: #ffffff; padding: 0px 6px 3px 6px; border-radius: 25px; border: 2px solid #ffffff; font-size: 10px; font-weight: 500; cursor: pointer" onclick="document.getElementById('divpreguntas').style.display = 'none'">
-                        x
-                    </div>
-                {{-- </div> --}}
+                <div style="position: absolute; right: -10px; top: -16px; background-color: #122944; color: #ffffff; padding: 0px 6px 3px 6px; border-radius: 25px; border: 2px solid #ffffff; font-size: 10px; font-weight: 500; cursor: pointer" onclick="document.getElementById('divpreguntas').style.display = 'none'">
+                    x
+                </div>
                 <div style="font-size: 14px">
                     <b style="font-weight: 500">¿Tiene preguntas?</b> Llámenos ahora
                 </div>
             </div>
-        </div>
-        <div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 20px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
+        </div> --}}
+        <div id="iconcall" style="padding: 11px; border-radius: 30px 30px 30px 30px; position: fixed; bottom: 20px; right: 10px;background-color: #122944; border: 2px solid #ffffff;" title="Llamar por teléfono">
             <a href="tel:@yield('phoneNumberHidden')">
-                <img width="20px" height="20px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞">
+                <img width="30px" height="30px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞">
             </a>
         </div>
         {{-- <div style="padding: 8px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 130px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
             <p onclick="document.getElementById('chatbot').classList.remove('d-none')">abrir chat</p>
         </div> --}}
 </footer>
+
+<section class="position-fixed d-inline bg-light px-2 py-3 shadow" style="top: 45%; left: 0px; z-index: 3; border-radius: 0px 25px 25px 0px">
+    <div class="mb-3">
+        <a target="_blank" href="https://www.instagram.com/notarialatina" title="Visitar Instagram de Notaria Latina">
+            <img width="40px" src="{{ asset('img/icon-instagram.png') }}" alt="Instagram Notaria Latina">
+        </a>
+    </div>
+    <div>
+        <a target="_blank" href="https://www.facebook.com/notariapublicalatina" title="Visitar Facebook de Notaria Latina">
+            <img width="40px" src="{{ asset('img/icon-facebook.png') }}" alt="Facebook Notaria Latina">
+        </a>
+    </div>
+</section>
 
 <!-- Messenger Plugin de chat Code -->
 <div id="fb-root"></div>
