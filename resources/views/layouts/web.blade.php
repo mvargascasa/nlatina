@@ -203,6 +203,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         margin: auto;
     } */
 </style>
+{{-- <livewire:styles/> --}}
 
   @yield('header')
   </head>
@@ -554,11 +555,47 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             <p onclick="document.getElementById('chatbot').classList.remove('d-none')">abrir chat</p>
         </div> --}}
 </footer>
+
+<!-- Messenger Plugin de chat Code -->
+<div id="fb-root"></div>
+
+<!-- Your Plugin de chat code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "408436099982353");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v17.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+{{-- <div>
+    <livewire:chatbot>
+</div> --}}
 {{-- <script defer id="scriptjquery"></script>
 <script defer id="scriptpopper" ></script>
 <script defer id="scriptbootstrap" ></script> --}}
 
 @yield('script')
+{{-- <livewire:scripts/> --}}
 <script id="jquery363" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
 
