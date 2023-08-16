@@ -549,7 +549,7 @@
                   <p>Para valorar un abogado necesita completar los siguientes campos con su información y enviar la calificación</p>
                         <input class="form-control" type="text" id="nombre" placeholder="Nombre y Apellido" name="nameRating" autocomplete="off" required>
                         <div class="d-flex">
-                            <select name="country_residenceRating" id="country_residence" class="form-control" required>
+                            <select name="country_residenceRating" class="form-control" required>
                                 <option value="">País de residencia</option>
                                 <option value="Argentina">Argentina</option>
                                 <option value="Bolivia">Bolivia</option>
