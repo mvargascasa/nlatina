@@ -548,7 +548,7 @@
 
 {{-- onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" --}}
 <div class="d-flex justify-content-center align-items-center px-3 py-1 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
-  <a onclick="return gtag_report_conversion('{{$urlwpp}}')" href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio: *{{ $service_aux }}*" target="_blank" class="text-white">
+  <a onclick="return gtag_report_conversion('{{$urlwpp}}')" href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio: {{ $service_aux }}" target="_blank" class="text-white">
   {{-- Consultar en linea <i class="fab fa-whatsapp ml-1"></i> --}}
   Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
 </a>
