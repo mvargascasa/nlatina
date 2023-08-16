@@ -554,7 +554,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div> --}}
 </footer>
 
-<section class="position-fixed d-inline bg-light px-2 py-3 shadow" style="top: 45%; left: 0px; z-index: 3; border-radius: 0px 25px 25px 0px">
+<section class="position-fixed d-inline bg-light px-2 py-3 shadow" style="top: 45%; left: 0px; z-index: 3; border-radius: 0px 25px 25px 0px; z-index: 3">
     <div class="mb-3">
         <a target="_blank" href="https://www.instagram.com/notarialatina" title="Visitar Instagram de Notaria Latina">
             <img width="40px" src="{{ asset('img/icon-instagram.png') }}" alt="Instagram Notaria Latina">
