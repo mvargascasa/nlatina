@@ -528,7 +528,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                         </div>
                     </div> 
                 </div>
-                <div onclick="openchat()" id="iconwpp" style="position: fixed; bottom: 85px; right: 10px; cursor: pointer; z-index: 3;" class="rounded-circle" title="Contactar por WhatsApp">
+                <div onclick="openchat()" id="iconwpp" style="position: fixed; bottom: 160px; right: 30px; cursor: pointer; z-index: 3;" class="rounded-circle" title="Contactar por WhatsApp">
                     <img src="{{asset('img/whatsapp.png')}}" alt="Whatsapp Notary Public Near Me" width="55" height="55">
                 </div>
             </div>
@@ -544,7 +544,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                 </div>
             </div>
         </div> --}}
-        <div id="iconcall" style="padding: 11px; border-radius: 30px 30px 30px 30px; position: fixed; bottom: 20px; right: 10px;background-color: #122944; border: 2px solid #ffffff;" title="Llamar por teléfono">
+        <div id="iconcall" style="padding: 11px; border-radius: 30px 30px 30px 30px; position: fixed; bottom: 100px; right: 30px;background-color: #122944; border: 2px solid #ffffff;" title="Llamar por teléfono">
             <a href="tel:@yield('phoneNumberHidden')">
                 <img width="30px" height="30px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞">
             </a>
@@ -672,7 +672,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     }
 
     //mostrando div de preguntas despues de 5seg
-    setTimeout(() => {document.getElementById('divpreguntas').style.display='block';document.getElementById("divpreguntas").style.animation = "jump 1s ease";}, 7000);
+    //setTimeout(() => {document.getElementById('divpreguntas').style.display='block';document.getElementById("divpreguntas").style.animation = "jump 1s ease";}, 7000);
 
     //CARGAR EL SCRIPT DE PLUGIN DE FACEBOOK
     var scriptFacebookPlugin = document.createElement('script');
