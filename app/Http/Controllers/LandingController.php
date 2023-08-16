@@ -619,7 +619,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13479739888';
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
-        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888';
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         return view('landing.general',$data);
     }
 
@@ -642,7 +642,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13479739888';
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
-        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888';
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         return view('landing.general',$data);
     }  
 
@@ -665,7 +665,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13479739888';
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
-        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888';
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         return view('landing.general',$data);
     }  
 
@@ -688,7 +688,7 @@ class LandingController extends Controller
         $data['tlfwpp'] = '13479739888';
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
-        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888';
+        $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         return view('landing.general',$data);
     }   
 
