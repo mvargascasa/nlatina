@@ -350,8 +350,8 @@
   </div>
 
   <div class="p-2" style="position: absolute;right: 20px;top: 80px;z-index: 999">
-    <a class="text-warning h5" href="tel:+18007428602" style="font-weight: bols;" onclick="gtag_report_conversion('tel:+18007428602');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
-        <i class="fa fa-phone-square-alt"></i> 800-742-8602
+    <a class="h5" href="tel:+18007428602" style="font-weight: bols; color: #FFB832" onclick="gtag_report_conversion('tel:+18007428602');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
+      <i class="fas fa-phone-square-alt"></i> 800-742-8602
     </a>
   </div>
 
