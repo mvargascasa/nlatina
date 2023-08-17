@@ -118,10 +118,8 @@
       
       <h2 style="font-weight: 500; font-size: 28px">¿En que tiempo me entregan mi carta de invitación?</h2>
       <ul class="text-muted">
-          <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
-          <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
-          <li>El documento digital estará disponible en 24 horas.</li>
-          <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
+          <li>El tiempo de entrega normal es de 25 días laborables</li>
+          <li>Contamos con un servicio <strong>express</strong> de 5 días laborables</li>
       </ul>
       <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
           <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
