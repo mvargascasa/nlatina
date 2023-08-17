@@ -36,7 +36,7 @@
         .bg-header{
             /* background-color: #002542; */
             width: 100%;
-            min-height: 500px;
+            min-height: 400px;
         }
         .container{
             position: relative;
@@ -78,7 +78,7 @@
                 color: #000000 !important;
             }
             #info_biografia{margin-top: 0px !important;}
-            .bg-header{min-height: 130px;}
+            .bg-header{min-height: 130px; height: 250px}
             #img-logo{width: 190px !important; height: 60px !important;}
             .img-profile{justify-content: center !important}
             .biography{padding-right: 0rem !important}
@@ -89,6 +89,10 @@
         }
         @media screen and (max-width: 1200px){
             .biography{padding-right: 0rem !important}
+            .img-profile{width: 230px !important; height: 230px !important}
+            .first-section{padding-top: 10px !important; margin-top: 15px !important}
+            .container-fluid{margin-left: 0px !important; margin-right: 0px !important}
+            .title{margin-top: 15px !important}
         }
         @media screen and (min-width: 1600px){
             .biography{padding-right: 25rem !important}
@@ -199,6 +203,46 @@
         #divpreguntas{display: none !important}
         .color-warning{color: #FEC02F}
         .txt-blue{color: #2B384D}.bg-blue{background-color: #2B384D}
+       
+
+       @media only screen and (max-width:768px) {
+
+         }
+
+       
+
+       .card{
+
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 0 40px rgba(51, 51, 51, .1)
+       }
+
+       .card:hover{
+
+        background-color: #eee;
+
+       }
+
+       .ratings i{
+
+        color: orange;
+       }
+
+       .testimonial-list{
+
+        list-style: none;
+       }
+
+       .testimonial-list li{
+
+        margin-bottom: 20px;
+       }
+
+       .testimonials-margin{
+
+        margin-top: -19px;
+       }
     </style>
     <script type="text/javascript">
         function callbackThen(response){
@@ -253,7 +297,151 @@
 @endsection
 
 @section('content')
-    <section id="prisection" class="bg-header pt-5 d-flex justify-content-center" style="background-size: cover; background-position: bottom center; background-repeat: no-repeat;"></div>
+
+<p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
+
+<section id="prisection" class="bg-header pt-5 d-flex justify-content-center" style="background-size: cover; background-position: bottom center; background-repeat: no-repeat;"></section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-sm-12 col-12 col-md-5 col-xl-5">
+            <section class="rounded-circle shadow img-profile" style="border: 5px solid #ffffff; width: 400px; height: 400px; margin-top: -120px; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url('{{asset('storage/' . $partner['img_profile'] )}}');"></section>
+        </div>
+        <div class="col-sm-12 col-12 col-md-7 col-xl-7 d-flex justify-content-start align-items-center">
+            <div>
+                <p class="font-weight-bold h3 title">{{ $partner->name }} {{ $partner->lastname }}</p>
+                <h1 class="text-muted" style="font-size: 18px !important">Abogado en {{ $partner->city }}, {{ $partner->state }}</h1>
+                <div class="d-flex">
+                    <span class="text-muted mr-2" style="font-weight: 500"><i class="fas fa-map-marker-alt"></i> {{ $partner->address }}</span>
+                    @if($partner->link_facebook != null)
+                        <span class="text-muted mr-2" style="font-weight: 500"><i class="fab fa-facebook-f"></i></span>
+                    @endif
+                    @if($partner->link_linkedin != null)
+                        <span class="text-muted mr-2" style="font-weight: 500"><i class="fab fa-linkedin-in"></i></span>
+                    @endif
+                    @if($partner->link_instagram != null)
+                        <span class="text-muted" style="font-weight: 500"><i class="fab fa-instagram"></i></span>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light first-section py-5 mt-5">
+    <section class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-3 col-xl-3">
+                <div class="mb-4">
+                    <i class="fas fa-phone mr-1"></i><span id="divshowphone"></span>
+                </div>
+                <div class="mb-4">
+                    <a style="text-decoration: none; color: #000000" href="mailto:{{$partner->email}}">
+                        <i class="fas fa-envelope"></i> {{ $partner->email }}
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <button data-toggle="modal" data-target="#form_modal" class="btn btn-block btn-warning rounded-pill"><i class="fas fa-comment"></i> Contactar</button>
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    <div>
+                        @php $rating = $partner->averageRating(); @endphp
+                        <div class="@if($mobile) text-center @else text-left @endif mr-1">
+                            <div data-toggle="modal" data-target="#exampleModalCenter" style="color: #FEC02F; cursor: pointer">
+                                @foreach(range(1,5) as $i)
+                                    <span class="fa-stack" style="width:2em" onclick="openModalRating();">
+                                        <i class="far fa-star fa-stack-2x"></i>
+                                        @if($rating > 0)
+                                            @if($rating > 0.5)
+                                                <i class="fas fa-star fa-stack-2x"></i>
+                                            @else
+                                                <i class="fas fa-star-half fa-stack-2x"></i>
+                                            @endif
+                                        @endif
+                                    @php $rating--; @endphp
+                                    </span>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="ml-2 mt-1">
+                            <p class="pt-1 font-weight-bold txt-blue @if($mobile) text-center @else text-right @endif" style="letter-spacing: 15px; font-size: 20px">REVIEWS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-9 col-xl-9">
+                <div data-aos="fade-left" data-aos-duration="3000">
+                    {!! $partner->biography_html !!}
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<section class="container pb-5 pt-5">
+    <h2 class="txt-blue text-center py-5">ÁREA DE <span class="font-weight-bold">ESPECIALIZACIÓN</span></h2>
+    <div class="row justify-content-center">
+        @foreach ($partner->specialties as $specialty)
+            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="2000">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <img src="{{ asset('img/partners/'.$specialty->name_specialty.'.png') }}" alt="">
+                        <p class="txt-blue mt-3">DERECHO <span class="font-weight-bold">{{ strtoupper($specialty->name_specialty) }}</span></p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</section>
+
+@if(count($testimonials)>0)
+<section class="mt-5 bg-light pb-5">
+        <h2 class="txt-blue text-center py-5"><span class="font-weight-bold">REVIEWS</span></h2>
+        <section>
+            <div class="container container-fluid">
+                <div class="d-flex justify-content-center align-items-center" id="accordionExample">
+                    <div class="row w-100 justify-content-center">
+                        <div class="col-md-6">   
+                        <div class="d-flex">
+                            <ul class="testimonial-list justify-content-center w-100">
+                                @foreach ($testimonials as $testimonial)
+                                    <li>
+                                        <div class="card p-3" data-toggle="collapse" data-target="#collapse{{$loop->index+1}}" aria-expanded="true" aria-controls="collapse{{$loop->index+1}}">
+                                            <div class="d-flex flex-row align-items-center">
+                                            <img src="{{ asset('img/user1.png') }}" width="50" class="rounded-circle">
+                                            <div class="d-flex flex-column ml-2">
+                                                <span class="font-weight-normal">{{$testimonial->name_customer}}</span>
+                                                <span>{{$testimonial->country}} <img width="25px" src="{{ asset('img/partners/' . Str::lower(Str::studly($testimonial->country)) . '.png') }}" alt=""></span>    
+                                            </div>   
+                                            </div>   
+                                        </div>   
+                                    </li>
+                                @endforeach   
+                            </ul>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6 d-flex align-items-center">
+                        <div class="p-3 testimonials-margin">
+                            @foreach ($testimonials as $testimonial)
+                                <div id="collapse{{$loop->index+1}}" class="collapse @if($loop->index+1 == 1) show @endif" aria-labelledby="heading{{$loop->index+1}}" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <h4>Comentario</h4>
+                                        <p>{{ $testimonial->comment }}</p>
+                                    </div>
+                                </div>
+                            @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+@endif
+
+
+    {{-- <section class="bg-header pt-5 d-flex justify-content-center" style="background-size: cover; background-position: bottom center; background-repeat: no-repeat;"></div>
         <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
         <div class="text-center">
             <div id="divimglogo">
@@ -331,22 +519,6 @@
         </div>
     </section>
 
-    <section class="py-5">
-        <h2 class="txt-blue text-center py-5">ÁREA DE <span class="font-weight-bold">ESPECIALIZACIÓN</span></h2>
-        <div class="row">
-            @foreach ($partner->specialties as $specialty)
-                <div class="col-sm-4"  data-aos="fade-up" data-aos-duration="3000">
-                    <div class="d-flex @if($loop->index == 0 && !$mobile) justify-content-end @elseif($loop->index == 1 && !$mobile) justify-content-center @elseif($loop->index == 2 && !$mobile) justify-content-start @else justify-content-center @endif">
-                        <div class="text-center">
-                            <img src="{{ asset('img/partners/'.$specialty->name_specialty.'.png') }}" alt="">
-                            <p class="txt-blue mt-3">DERECHO <span class="font-weight-bold">{{ strtoupper($specialty->name_specialty) }}</span></p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </section>
-
     <section class="bg-light py-5">
         <div class="container">
             @if (count($testimonials) > 0)
@@ -376,7 +548,7 @@
                 </div>
             @endif
         </div>
-    </section>
+    </section> --}}
 
     {{-- <div class="row mt-4">
         <div class="col-sm-6 d-flex justify-content-center align-items-center py-5 border-right border-warning">
@@ -839,13 +1011,13 @@
     AOS.init();
     window.addEventListener('load', (event) => {
         let img_name = "{{ Str::lower(Str::studly($partner->country_residence)) }}"
-        document.getElementById('prisection').style.backgroundImage = `url('{{url('img/partners/header-${img_name}.jpg')}}')`;
+        document.getElementById('prisection').style.backgroundImage = `url('{{url('img/portada-header.jpg')}}')`;
         const divshowphone = document.getElementById('divshowphone');
         let id = document.getElementById('txtpartnerid').textContent;
         if(!localStorage.getItem("prueba"+id)){
-            divshowphone.innerHTML = "<span style='cursor: pointer;' class='font-weight-bold' data-toggle='modal' data-target='.bd-example-modal-sm'>VER TELÉFONO</span>";
+            divshowphone.innerHTML = "<span style='cursor: pointer;' data-toggle='modal' data-target='.bd-example-modal-sm'>{{ Str::limit($partner->phone, 7) }}</span>";
         } else {
-            divshowphone.innerHTML = "<a class='text-white font-weight-bold' style='text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>LLAMAR {{ $partner->phone }}</a>";
+            divshowphone.innerHTML = "<a class='text-dark' style='text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>{{ $partner->phone }}</a>";
         }
         //setTimeout(() => {setviewed();}, 3000);
     });
