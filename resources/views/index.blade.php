@@ -406,7 +406,7 @@
 
   <div class="row justify-content-center">
 
-    <div class="col-sm-4 col-12 mt-3">
+    <div class="col-12 col-sm-6 col-md-6 col-xl-4 mt-3">
       <a style="text-decoration: none" href="{{route('web.poderes')}}">
         <div class="card h-100 serviceBox sb1" id="linkServices">
             <div class="d-flex align-items-center h-100">
@@ -424,7 +424,7 @@
       </a>
   </div>
 
-  <div class="col-sm-4 col-12 mt-3">
+  <div class="col-12 col-sm-6 col-md-6 col-xl-4 mt-3">
     <a style="text-decoration: none" href="{{route('web.apostillas')}}">
       <div class="card h-100 serviceBox sb2" id="linkServices">
           <div class="d-flex align-items-center h-100">
@@ -441,7 +441,7 @@
     </a>
   </div>
 
-  <div class="col-sm-4 col-12 mt-3">
+  <div class="col-12 col-sm-6 col-md-6 col-xl-4 mt-3">
     <a style="text-decoration: none" href="{{route('web.traducciones')}}">
       <div class="card h-100 serviceBox sb3" id="linkServices">
           <div class="d-flex align-items-center h-100">
@@ -458,7 +458,7 @@
     </a>
   </div>
 
-    <div class="col-sm-4 col-6 mt-3">
+    <div class="col-6 col-sm-6 col-md-6 col-xl-4 mt-3">
       <a style="text-decoration: none" href="{{route('web.certificaciones')}}">
         <div class="card @if(!$mobile) h-100 @endif serviceBox sb4" id="linkServices">
             <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
@@ -475,7 +475,7 @@
       </a>
     </div>
 
-    <div class="col-sm-4 col-6 mt-3">
+    <div class="col-6 col-sm-6 col-md-6 col-xl-4 mt-3">
       <a style="text-decoration: none" href="{{route('web.affidavit')}}">
         <div class="card @if(!$mobile) h-100 @endif serviceBox sb5" id="linkServices">
             <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
@@ -492,7 +492,7 @@
       </a>
     </div>
 
-    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
+    <div class="col-6 col-sm-6 col-md-6 col-xl-4 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.revocatorias')}}">
         <div class="card @if(!$mobile) h-100 @endif serviceBox sb6" id="linkServices">
             <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
@@ -509,7 +509,7 @@
       </a>
     </div>
 
-    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
+    <div class="col-6 col-sm-6 col-md-6 col-xl-4 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.acuerdos')}}">
         <div class="card @if(!$mobile) h-100 @endif serviceBox sb7" id="linkServices">
             <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
@@ -526,7 +526,7 @@
       </a>
     </div>
 
-    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
+    <div class="col-6 col-sm-6 col-md-6 col-xl-4 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.invitacion')}}">
         <div class="card @if(!$mobile) h-100 @endif serviceBox sb8" id="linkServices">
             <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
@@ -543,7 +543,7 @@
       </a>
     </div>
 
-    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
+    <div class="col-6 col-sm-6 col-md-6 col-xl-4 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.autorizaciones')}}">
         <div class="card @if(!$mobile) h-100 @endif serviceBox sb9" id="linkServices">
             <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
@@ -560,7 +560,7 @@
       </a>
     </div>
 
-    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
+    <div class="col-6 col-sm-6 col-md-6 col-xl-4 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.contratos')}}">
         <div class="card @if(!$mobile) h-100 @endif serviceBox sb10" id="linkServices">
             <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
@@ -577,7 +577,7 @@
       </a>
     </div>
 
-    <div class="col-sm-4 col-6 @if(!$mobile) mt-3 @else mt-0 @endif">
+    <div class="col-6 col-sm-6 col-md-6 col-xl-4 @if(!$mobile) mt-3 @else mt-0 @endif">
       <a style="text-decoration: none" href="{{route('web.testamentos')}}">
         <div class="card @if(!$mobile) h-100 @endif serviceBox sb11" id="linkServices">
             <div class="@if(!$mobile) d-flex @endif align-items-center h-100">
