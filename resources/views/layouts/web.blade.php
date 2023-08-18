@@ -206,12 +206,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   width:100px;
   height:240px;
   position:fixed;
-  right:10px;
+  right:7px;
   bottom:80px;
 }
 .botonF1{
-  width:70px;
-  height:70px;
+  width:60px;
+  height:60px;
   border-radius:100%;
   background:#122944;
   right:0;
@@ -646,7 +646,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 
 <div class="contenedor">
     <button class="botonF1">
-      <span class="d-flex align-items-center justify-content-center"><img class="lazy" width="40px" height="40px" style="filter: invert(100%)" data-src="{{ asset('img/atencion-al-cliente.png') }}" alt="contactar a notaria latina" title="Contactar a Notaria Latina"></span>
+      <span class="d-flex align-items-center justify-content-center"><img class="lazy" width="35px" height="35px" style="filter: invert(100%)" data-src="{{ asset('img/atencion-al-cliente.png') }}" alt="contactar a notaria latina" title="Contactar a Notaria Latina"></span>
     </button>
     <button class="btncontact botonF2">
         <a href="tel:@yield('phoneNumberHidden')">
