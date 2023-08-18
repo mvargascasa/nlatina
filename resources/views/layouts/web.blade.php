@@ -202,6 +202,67 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         right: 0;
         margin: auto;
     } */
+    .contenedor{
+  width:100px;
+  height:240px;
+  position:fixed;
+  right:0px;
+  bottom:90px;
+}
+.botonF1{
+  width:70px;
+  height:70px;
+  border-radius:100%;
+  background:#122944;
+  right:0;
+  bottom:0;
+  position:absolute;
+  margin-right:16px;
+  margin-bottom:16px;
+  border:none;
+  outline:none;
+  color:#FFF;
+  font-size:36px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.3s;  
+}
+span{
+  transition:.5s;  
+}
+.botonF1:click span{
+  transform:rotate(360deg);
+}
+.botonF1:active{
+  transform:scale(1.1);
+}
+.btncontact{
+  width:50px;
+  height:50px;
+  border-radius:100%;
+  border:none;
+  color:#FFF;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  font-size:28px;
+  outline:none;
+  position:absolute;
+  right:0;
+  bottom:0;
+  margin-right:26px;
+  transform:scale(0);
+}
+.botonF2{
+  background:#122944;
+  margin-bottom:100px;
+  transition:0.5s;
+}
+.botonF3{
+  margin-bottom:160px;
+  transition:0.7s;
+}
+.animacionVer{
+  transform:scale(1);
+}
+
 </style>
 {{-- <livewire:styles/> --}}
 
@@ -499,7 +560,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </a> 
     </div> --}}
         {{--+13479739888--}}   
-        @php $segment = Request()->segment(1); @endphp  
+        {{-- @php $segment = Request()->segment(1); @endphp  
         @if($segment == "newjersey" || $segment == "newyork" || $segment == "florida")       
             <div id="iconwpp" style="position: relative">
                 <div style="position: fixed; bottom: 75px; right: 10px;" class="border rounded-circle">
@@ -532,7 +593,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                     <img src="{{asset('img/whatsapp.png')}}" alt="Whatsapp Notary Public Near Me" width="55" height="55">
                 </div>
             </div>
-        @endif
+        @endif --}}
 
         {{-- <div style="position: relative">
             <div id="divpreguntas" style="position: fixed; bottom: 25px; right: 65px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none; z-index: 300">
@@ -544,15 +605,58 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                 </div>
             </div>
         </div> --}}
-        <div id="iconcall" style="padding: 11px; border-radius: 30px 30px 30px 30px; position: fixed; bottom: 90px; right: 30px;background-color: #122944; border: 2px solid #ffffff;" title="Llamar por teléfono">
+        {{-- <div id="iconcall" style="padding: 11px; border-radius: 30px 30px 30px 30px; position: fixed; bottom: 90px; right: 30px;background-color: #122944; border: 2px solid #ffffff;" title="Llamar por teléfono">
             <a href="tel:@yield('phoneNumberHidden')">
                 <img width="30px" height="30px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞">
             </a>
-        </div>
+        </div> --}}
+
+        {{-- <div class="contenedor">
+            <button class="botonF1">
+              <span><img class="img-fluid" width="40px" style="filter: invert(100%)" src="{{ asset('img/atencion-al-cliente.png') }}" alt="contactar a notaria latina" title="Contactar a Notaria Latina"></span>
+            </button>
+            <button class="btncontact botonF2">
+              <span><img width="30px" height="30px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞"></span>
+            </button>
+            <button class="btncontact botonF3">
+              <span></span>
+            </button>
+        </div> --}}
         {{-- <div style="padding: 8px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 130px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
             <p onclick="document.getElementById('chatbot').classList.remove('d-none')">abrir chat</p>
         </div> --}}
 </footer>
+
+<div id="chat" style="position: fixed; bottom: 190px; right: 10px; width: 200px; z-index: 10; display: none" class="border rounded">
+    <div>
+        <div style="background-color: #4eda5f; color: #ffffff" class="pl-2">
+            En línea
+            <div class="float-right mr-1" onclick="openchat()" style="cursor: pointer"><i class="fas fa-times-circle"></i></div>
+        </div>
+        <div style="position: relative;">
+            <img class="img-fluid lazy" data-src="{{asset('img/whatsapp-wallpaper.jpg')}}" alt="whatsapp de notaria latina">
+            <div style="position: absolute; top: 0px; left: 0px; color: #000000" class="w-100 h-100 pl-2 mt-2">
+                <div><a href="https://api.whatsapp.com/send?phone=13479739888" class="bg-white px-2 rounded-pill">New York <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
+                <div class="mt-1"><a href="https://api.whatsapp.com/send?phone=19088009046" class="bg-white px-2 rounded-pill">New Jersey  <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
+                <div class="mt-1"><a href="https://api.whatsapp.com/send?phone=13056003290" class="bg-white px-2 rounded-pill">Florida  <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div class="contenedor">
+    <button class="botonF1">
+      <span class="d-flex align-items-center justify-content-center"><img class="img-fluid" width="40px" style="filter: invert(100%)" src="{{ asset('img/atencion-al-cliente.png') }}" alt="contactar a notaria latina" title="Contactar a Notaria Latina"></span>
+    </button>
+    <button class="btncontact botonF2">
+        <a href="tel:@yield('phoneNumberHidden')">
+            <span class="d-flex align-items-center justify-content-center"><img width="25px" height="25px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞"></span>
+        </a>
+    </button>
+    <button class="btncontact botonF3" onclick="openchat()" id="iconwpp">
+      <span class="d-flex" style="margin-left: -6px !important"><img class="lazy" data-src="{{asset('img/whatsapp.png')}}" alt="Whatsapp Notary Public Near Me" width="50px" height="50px"></span>
+    </button>
+</div>
 
 <!-- Messenger Plugin de chat Code -->
 <div id="fb-root"></div>
@@ -596,6 +700,26 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
 {{-- <livewire:scripts/> --}}
 <script id="jquery363" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
+
+document.querySelector('.botonF1').addEventListener('click', function (){
+    let btns = document.querySelectorAll('.btncontact');
+    btns.forEach(element => {
+
+        if(element.classList.contains('animacionVer')){
+            element.classList.remove('animacionVer')
+        } else {
+            element.classList.add('animacionVer')
+        }
+
+    })
+})
+
+document.querySelector('.contenedor').addEventListener('mouseleave', function(){
+    let btns = document.querySelectorAll('.btncontact');
+    btns.forEach(element => {
+        element.classList.remove('animacionVer');
+    })
+})
 
 // document.onreadystatechange = function() {
 //         if (document.readyState !== "complete") {
