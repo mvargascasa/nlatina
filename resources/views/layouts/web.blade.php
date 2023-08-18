@@ -224,7 +224,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   color:#FFF;
   font-size:36px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  transition:.3s;  
+  transition:.3s;
+  text-align: center;
 }
 span{
   transition:.5s;  
@@ -247,16 +248,16 @@ span{
   position:absolute;
   right:0;
   bottom:0;
-  margin-right:26px;
+  margin-right:22px;
   transform:scale(0);
 }
 .botonF2{
   background:#122944;
-  margin-bottom:100px;
+  margin-bottom:90px;
   transition:0.5s;
 }
 .botonF3{
-  margin-bottom:160px;
+  margin-bottom:150px;
   transition:0.7s;
 }
 .animacionVer{
@@ -644,18 +645,20 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
     </div> 
 </div>
 
-<div class="contenedor">
-    <button class="botonF1">
-      <span class="d-flex align-items-center justify-content-center"><img class="lazy" width="35px" height="35px" style="filter: invert(100%)" data-src="{{ asset('img/atencion-al-cliente.png') }}" alt="contactar a notaria latina" title="Contactar a Notaria Latina"></span>
-    </button>
-    <button class="btncontact botonF2">
-        <a href="tel:@yield('phoneNumberHidden')">
-            <span class="d-flex align-items-center justify-content-center"><img width="25px" height="25px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞"></span>
-        </a>
-    </button>
-    <button class="btncontact botonF3" onclick="openchat()" id="iconwpp">
-      <span class="d-flex" style="margin-left: -6px !important"><img class="lazy" data-src="{{asset('img/whatsapp.png')}}" alt="Whatsapp Notary Public Near Me" width="50px" height="50px"></span>
-    </button>
+<div class="contenedor d-flex justify-content-center">
+    <div>
+        <button class="botonF1">
+          <span class="d-flex align-items-center justify-content-center"><img class="lazy" width="35px" height="35px" style="filter: invert(100%)" data-src="{{ asset('img/atencion-al-cliente.png') }}" alt="contactar a notaria latina" title="Contactar a Notaria Latina"></span>
+        </button>
+        <button class="btncontact botonF2">
+            <a href="tel:@yield('phoneNumberHidden')">
+                <span class="d-flex align-items-center justify-content-center"><img width="25px" height="25px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞"></span>
+            </a>
+        </button>
+        <button class="btncontact botonF3" onclick="openchat()" id="iconwpp">
+          <span class="d-flex" style="margin-left: -6px !important"><img class="lazy" data-src="{{asset('img/whatsapp.png')}}" alt="Whatsapp Notary Public Near Me" width="50px" height="50px"></span>
+        </button>
+    </div>
 </div>
 
 <!-- Messenger Plugin de chat Code -->
