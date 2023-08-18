@@ -206,8 +206,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   width:100px;
   height:240px;
   position:fixed;
-  right:0px;
-  bottom:90px;
+  right:10px;
+  bottom:80px;
 }
 .botonF1{
   width:70px;
