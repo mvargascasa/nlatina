@@ -208,7 +208,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   position:fixed;
   right:7px;
   bottom:80px;
-  z-index: 1000 !important;
+  z-index: 3 !important;
 }
 .botonF1{
     width:60px;
@@ -629,7 +629,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
         </div> --}}
 </footer>
 
-<div id="chat" style="position: fixed; bottom: 190px; right: 10px; width: 200px; z-index: 10; display: none" class="border rounded">
+<div id="chat" style="position: fixed; bottom: 170px; right: 10px; width: 200px; z-index: 10; display: none" class="border rounded">
     <div>
         <div style="background-color: #4eda5f; color: #ffffff" class="pl-2">
             En línea
