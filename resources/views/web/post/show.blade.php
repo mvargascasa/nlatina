@@ -18,6 +18,7 @@
         /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap'); */
         body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
         h2{font-size: 25px !important}
+        h3{font-size: 20px !important; font-weight: 300 !important}
         #publishpoder{display: none} #publishcarta{display: none}
         @media screen and (max-width: 580px){
             #imgBlog{float: none !important;justify-content: center !important;padding: 0px !important;border-radius: 5px !important}
