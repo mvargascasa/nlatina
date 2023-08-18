@@ -208,24 +208,25 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   position:fixed;
   right:7px;
   bottom:80px;
+  z-index: 1000 !important;
 }
 .botonF1{
-  width:60px;
-  height:60px;
-  border-radius:100%;
-  background:#122944;
-  right:0;
-  bottom:0;
-  position:absolute;
-  margin-right:16px;
-  margin-bottom:16px;
-  border:none;
-  outline:none;
-  color:#FFF;
-  font-size:36px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  transition:.3s;
-  text-align: center;
+    width:60px;
+    height:60px;
+    border-radius:100%;
+    background:#122944;
+    right:0;
+    bottom:0;
+    position:absolute;
+    margin-right:16px;
+    margin-bottom:16px;
+    border:none;
+    outline:none;
+    color:#FFF;
+    font-size:36px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition:.3s;
+    text-align: center;
 }
 span{
   transition:.5s;  
