@@ -301,7 +301,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
       </nav>
         @if(Route::current()->getName() != "web.oficina.newjersey" && Route::current()->getName() != "web.oficina.newyork" && Route::current()->getName() != "web.oficina.florida" && Route::current()->getName() != "web.showpartner")
             <div id="etiquetaPhone" class="p-2" style="position: absolute;right: 20px;">
-                    <a class="h5" href="tel:@yield('phoneNumberHidden')" style="font-weight: bols; color: #FFBE32 !important"
+                    <a class="h5" href="tel:@yield('phoneNumberHidden')" style="color: #FFBE32 !important"
                     onclick="gtag_report_conversion('tel:+18007428602');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
                     <i class="fas fa-phone-square-alt"></i> @yield('phoneNumber')
                     </a>
