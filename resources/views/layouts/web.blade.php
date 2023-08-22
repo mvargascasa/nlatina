@@ -636,7 +636,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
             <div class="float-right mr-1" onclick="openchat()" style="cursor: pointer"><i class="fas fa-times-circle"></i></div>
         </div>
         <div style="position: relative;">
-            <img class="img-fluid lazy" data-src="{{asset('img/whatsapp-wallpaper.jpg')}}" alt="whatsapp de notaria latina">
+            <img class="img-fluid" src="{{asset('img/whatsapp-wallpaper.jpg')}}" alt="whatsapp de notaria latina">
             <div style="position: absolute; top: 0px; left: 0px; color: #000000" class="w-100 h-100 pl-2 mt-2">
                 <div><a href="https://api.whatsapp.com/send?phone=13479739888" class="bg-white px-2 rounded-pill">New York <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
                 <div class="mt-1"><a href="https://api.whatsapp.com/send?phone=19088009046" class="bg-white px-2 rounded-pill">New Jersey  <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
