@@ -506,7 +506,7 @@ $consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
                         <img data-src="{{asset('img/notary-public-near-me-messenger.svg')}}" class="lazy" alt="Messenger Notary Public Near Me" width="30" height="30">
                     </a>
 
-                    <a href="https://api.whatsapp.com/send?phone=+13479739888" class="lazy" target="_blank">
+                    <a href="https://api.whatsapp.com/send?phone=13479739888" class="lazy" target="_blank">
                         <img data-src="{{asset('img/notary-public-near-me-whatsapp.svg')}}" class="lazy" alt="Whatsapp Notary Public Near Me" width="30" height="30">
                     </a>
 
