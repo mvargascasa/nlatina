@@ -340,7 +340,7 @@ span{
                     </li>
                     
 @php
-$consuls = \App\Consulate::select('country', 'slug')->orderBy('country')->get();
+$consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Chile')->orderBy('country')->get();
 @endphp
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
