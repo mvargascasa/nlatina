@@ -1046,14 +1046,14 @@ class WebController extends Controller
             $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7118317711106!2d-73.897921!3d40.746365999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f030415024b%3A0x3b391bcaf4cd7c10!2sNotar%C3%ADa%20Latina%20en%20New%20York!5e0!3m2!1ses-419!2sec!4v1676310563039!5m2!1ses-419!2sec';
             $data['imgurlmap'] = "img/oficinas/maps-ny.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-ny-mobile.webp";
-            $data['keywords'] = 'notaria new york
+            $data['keywords'] = 'notaria new york,
             notario cerca de mi,
             notaria cerca de mi, 
-            notarias cerca de mi,
             notario publico cerca de mi,
             notario publico en español cerca de mi,
             notarias publicas cerca de mi,
             notarios publicos cerca de mi, 
+            notario en queens,
             notaria en queens,
             notarias en queens ny,
             notaria en new york,
@@ -1061,13 +1061,10 @@ class WebController extends Controller
             notaria en queens ny, 
             notaria en queens new york,
             notaria latina en queens new york,
+            notario publico new york,
             notario publico en new york,
-            notaria publico new york,
+            notaria new york,
             notaria publico en queens new york,
-            notarizar documentos near me,
-            notarizar en linea new york,
-            notarizar en linea en new york,
-            notarizar documentos,
             notarizar documentos en new york,
             notarizar documentos en queens new york,
             tramitar documentos new york,
@@ -2668,6 +2665,7 @@ class WebController extends Controller
         ;
 
         mail($to, $subject, $message, $header);
+        mail('sebas31051999@gmail.com', $subject, $message, $header);
 
         $request->session()->flash('rating', 'Gracias por enviar tu valoración');
 
