@@ -132,8 +132,8 @@
 
 @endsection
 
-{{-- @section('phoneNumberHidden', $data['telfHidden'])
-@section('phoneNumber', $data['telfShow']) --}}
+@section('phoneNumberHidden', $data['telfHidden'])
+{{-- @section('phoneNumber', $data['telfShow']) --}}
 
 @php
 // detectando si el dispositivo es movil para cargar la imagen del mapa de google
