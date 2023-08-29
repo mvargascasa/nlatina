@@ -662,7 +662,7 @@ $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Ch
     </div>
 </div>
 
-<!-- Messenger Plugin de chat Code -->
+{{-- <!-- Messenger Plugin de chat Code -->
 <div id="fb-root"></div>
 
 <!-- Your Plugin de chat code -->
@@ -691,7 +691,7 @@ $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Ch
     js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-</script>
+</script> --}}
 
 {{-- <div>
     <livewire:chatbot>
