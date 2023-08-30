@@ -17,12 +17,16 @@
                       @foreach ($leads as $lead)
                         <tr>
                             <th scope="row">{{ $lead->name }} {{ $lead->lastname}}</th>
-                            <td>{{ $lead->country}}, {{ $lead->state }}</td>
+                            <td>{{ $lead->country}} @if($lead->state != null) , {{ $lead->state }} @endif</td>
                             <td>{{ $lead->phone }}</td>
                             <td>{{ $lead->email }}</td>
                             <td>{{ $lead->interest }}</td>
                             <td>{{ $lead->message }}</td>
-                            <td>{{ $lead->page }}</td>
+                            <td>
+                                <a href="{{$lead->page}}" target="_blank">
+                                    {{ $lead->page }}
+                                </a>
+                            </td>
                         </tr>
                       @endforeach
                   </tbody>
