@@ -13,6 +13,7 @@ use App\Post;
 use App\Rating;
 use App\Specialty;
 use App\State;
+use App\Models\Lead;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Session;
@@ -2748,6 +2749,17 @@ class WebController extends Controller
         <br><b>Mensaje:</b> " . strip_tags($request->mensaje) . "
         "; //body of the email
 
+        Lead::create([
+            'name' => strip_tags($request->name),
+            'lastname' => strip_tags($request->lastname),
+            'country' => strip_tags($request->cod_pais),
+            'phone' => strip_tags($codigo_pais) . " " . strip_tags($request->phone),
+            'email' => strip_tags($request->email),
+            'interest' => strip_tags($request->document),
+            'message' => strip_tags($request->mensaje),
+            'page' => strip_tags(url()->previous())
+        ]);
+
         //<br><b>Página proveniente: </b> " . url()->previous() . "
 
         if ($request->file('adjunto') != null) {
@@ -2804,10 +2816,10 @@ class WebController extends Controller
         }
         
         if($request->file('adjunto') != null){
-            mail($recipient_email, $subject, $body, $headers);
+            //mail($recipient_email, $subject, $body, $headers);
             mail('sebas31051999@gmail.com', $subject, $body, $headers);
         } else {
-            mail($recipient_email, $subject, $message, $headers);
+            //mail($recipient_email, $subject, $message, $headers);
             mail('sebas31051999@gmail.com', $subject, $message, $headers);
         }
 
