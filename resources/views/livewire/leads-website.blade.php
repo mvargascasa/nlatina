@@ -1,7 +1,32 @@
 <div>
     <div>
-        @foreach ($leads as $lead)
-            <p>{{ $lead }}</p>
-        @endforeach
+        <div class="table-responsive-sm">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Ubicacion</th>
+                      <th scope="col">Telefono</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Interes</th>
+                      <th scope="col">Mensaje</th>
+                      <th scope="col">Proviene</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      @foreach ($leads as $lead)
+                        <tr>
+                            <th scope="row">{{ $lead->name }} {{ $lead->lastname}}</th>
+                            <td>{{ $lead->country}}, {{ $lead->state }}</td>
+                            <td>{{ $lead->phone }}</td>
+                            <td>{{ $lead->email }}</td>
+                            <td>{{ $lead->interest }}</td>
+                            <td>{{ $lead->message }}</td>
+                            <td>{{ $lead->page }}</td>
+                        </tr>
+                      @endforeach
+                  </tbody>
+            </table>
+          </div>
     </div>
 </div>
