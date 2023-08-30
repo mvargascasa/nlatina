@@ -200,6 +200,16 @@ class LandingController extends Controller
                 mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
                 //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
+                Lead::create([
+                    'name' => strip_tags($request->aaa),
+                    'country' => strip_tags($country),
+                    'state' => strip_tags($request->state),
+                    'phone' => strip_tags($request->get('cod_pais')) . "" . strip_tags($request->bbb),
+                    'email' => strip_tags($request->ccc),
+                    'interest' => strip_tags($request->service),
+                    'message' => strip_tags($request->ddd),
+                    'page' => strip_tags(url()->previous()),
+                ]);
             }
     
             if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
@@ -325,18 +335,6 @@ class LandingController extends Controller
                 // }
     
                 // <br> País: ". strip_tags($pais)."
-
-                Lead::create([
-                    'name' => strip_tags($request->fname),
-                    'lastname' => strip_tags($request->lname),
-                    'country' => strip_tags($country),
-                    'state' => strip_tags($request->state),
-                    'phone' => strip_tags($request->cod) . " " . strip_tags($request->tlf),
-                    'email' => strip_tags($request->email),
-                    'interest' => strip_tags($servicename),
-                    'message' => strip_tags($request->message),
-                    'page' => strip_tags(url()->previous()),
-                ]);
             
                 $header='';
                 // if(isset($request->service)) $fromheader = strtolower($request->service)."_home";    
@@ -350,6 +348,17 @@ class LandingController extends Controller
                 //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 // if($sended) return "se envio";
                 // else return "no se envio";
+                Lead::create([
+                    'name' => strip_tags($request->fname),
+                    'lastname' => strip_tags($request->lname),
+                    'country' => strip_tags($country),
+                    'state' => strip_tags($request->state),
+                    'phone' => strip_tags($request->cod) . "" . strip_tags($request->tlf),
+                    'email' => strip_tags($request->email),
+                    'interest' => strip_tags($servicename),
+                    'message' => strip_tags($request->message),
+                    'page' => strip_tags(url()->previous()),
+                ]);
             }
 
         }
