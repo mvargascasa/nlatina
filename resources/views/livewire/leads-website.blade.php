@@ -1,7 +1,7 @@
 <div>
     <div>
         <div class="table-responsive-sm">
-            <table class="table">
+            <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
                       <th scope="col">Nombre</th>
