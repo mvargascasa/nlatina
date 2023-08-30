@@ -17,7 +17,11 @@
                       @foreach ($leads as $lead)
                         <tr>
                             <th scope="row">{{ $lead->name }} {{ $lead->lastname}}</th>
-                            <td>{{ $lead->country}} @if($lead->state != null) , {{ $lead->state }} @endif</td>
+                            <td>
+                                <span>
+                                    {{ $lead->country}}@if($lead->state != null), {{ $lead->state }} @endif        
+                                </span>
+                            </td>
                             <td>{{ $lead->phone }}</td>
                             <td>{{ $lead->email }}</td>
                             <td>{{ $lead->interest }}</td>
