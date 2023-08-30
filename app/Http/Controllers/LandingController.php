@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 //use App\Conversion;
 use App\Http\Traits\GetCountryByCodTrait;
 use App\Post;
-// use App\Models\Lead;
+use App\Models\Lead;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
@@ -197,7 +197,7 @@ class LandingController extends Controller
                 $header .= 'From: <'.$from.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
                 //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
             }
@@ -325,6 +325,18 @@ class LandingController extends Controller
                 // }
     
                 // <br> País: ". strip_tags($pais)."
+
+                Lead::create([
+                    'name' => strip_tags($request->fname),
+                    'lastname' => strip_tags($request->lastname),
+                    'country' => strip_tags($country),
+                    'state' => strip_tags($request->state),
+                    'phone' => strip_tags($request->cod) . " " . strip_tags($request->tlf),
+                    'email' => strip_tags($request->email),
+                    'interest' => strip_tags($servicename),
+                    'message' => strip_tags($request->message),
+                    'page' => strip_tags(url()->previous()),
+                ]);
             
                 $header='';
                 // if(isset($request->service)) $fromheader = strtolower($request->service)."_home";    
@@ -333,7 +345,7 @@ class LandingController extends Controller
                 $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
                 $header .= "MIME-Version: 1.0\r\n";
                 $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                 mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 // if($sended) return "se envio";
@@ -422,6 +434,16 @@ class LandingController extends Controller
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
             mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
+
+            Lead::create([
+                'name' => strip_tags($request->aaa),
+                'country' => strip_tags($request->pais),
+                'state' => strip_tags($request->state),
+                'phone' => strip_tags($request->codpais) . " " . strip_tags($request->bbb),
+                'interest' => strip_tags($request->service_aux),
+                'message' => strip_tags($request->ddd),
+                'page' => strip_tags(url()->previous()),
+            ]);
             //'notariapublicalatina@gmail.com'.$sendoffices
         }
 
