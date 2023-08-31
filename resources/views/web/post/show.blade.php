@@ -67,11 +67,11 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-sm-12 col-md-12 col-xl-8 col-lg-8" style="text-align: justify">
-                <div class="d-flex justify-content-center float-right mb-2">
-                    <img id="imgBlog" class="p-4 img-fluid lazy" width="500px" height="400px" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
-                </div>
                 <div class="mt-3">
                     <?php echo htmlspecialchars_decode($post->body)?>
+                </div>
+                <div class="d-flex justify-content-center mb-2">
+                    <img id="imgBlog" class="p-4 img-fluid lazy" width="500px" height="400px" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
                 </div>
                 @isset($post->srcvideo)
                     <div class="row mt-5 mb-5">
