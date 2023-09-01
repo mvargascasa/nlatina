@@ -18,6 +18,15 @@
                         </div>
                       </div>
                 </div>
+                <div class="col-sm-4">
+                    <div class="card rounded-0 shadow-sm">
+                        <div class="card-body">
+                          <h5 class="card-title font-weight-bold">Leads Website</h5>
+                          <p class="card-text">Leads que han llegado por la página web </p>
+                          <a href="{{route('home.report.index.leads.web')}}" class="btn btn-primary rounded-0">Ver reporte</a>
+                        </div>
+                      </div>
+                </div>
             </div>
         </div>
     </div>
