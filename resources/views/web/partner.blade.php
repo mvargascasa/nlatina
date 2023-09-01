@@ -309,7 +309,7 @@
         </div>
         <div class="col-sm-12 col-12 col-md-7 col-xl-7 d-flex justify-content-start align-items-center">
             <div>
-                <p class="font-weight-bold h3 title">{{ $partner->name }} {{ $partner->lastname }}</p>
+                <p id="txtnamelastname" class="font-weight-bold h3 title">{{ $partner->name }} {{ $partner->lastname }}</p>
                 <h1 class="text-muted" style="font-size: 18px !important">Abogado en {{ $partner->city }}, {{ $partner->state }}</h1>
                 <div class="d-flex">
                     <span class="text-muted mr-2" style="font-weight: 500"><i class="fas fa-map-marker-alt"></i> {{ $partner->address }}</span>
