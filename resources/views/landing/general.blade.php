@@ -109,7 +109,7 @@
   <!-- End Google Tag Manager -->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-{{-- <script id="script_analytics" async></script>
+<script id="script_analytics" async></script>
 <script>
   setTimeout(() => {
     document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
@@ -120,133 +120,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-VJK9KRV3TL');
-</script> --}}
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KHSFW5X3');</script>
-  <!-- End Google Tag Manager -->
-  
-
-@if($oficina == "New York")
-  <!--NEW YORK-->
-  <!-- Google tag (gtag.js) --> 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-702844945"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-702844945'); </script>
-@endif
-
-@if($oficina == "New Jersey")
-  <!--NEW JERSEY-->
-  <!-- Google tag (gtag.js) --> 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306069230"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306069230'); </script>
-@endif
-
-@if($oficina == "Florida")
-  <!--FLORIDA-->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306001515"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306001515'); </script>
-@endif
-
-<!--NEW YORK-->
-@if ($tlfhidden == '13474281520') 
-  <script> gtag('config', 'AW-702844945/Z8xoCIiZ98UYEJGgks8C', { 'phone_conversion_number': '3474281520' }); </script>
-  <!-- Event snippet for IDG_NEWYORK_GENERAL_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/1N_7CN3z9sUYEJGgks8C', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_NEWYORK_GENERAL_LLAMADA_MOBIL_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/9vvNCNCl98UYEJGgks8C', 'event_callback': callback }); return false; } </script>
-@endif
-
-@if($tlfhidden == '13474281518')
-  <script> gtag('config', 'AW-702844945/VSKTCJ_d9sUYEJGgks8C', { 'phone_conversion_number': '3474281518' }); </script>
-  <!-- Event snippet for IDG_NEWYORK_APOSTILLA_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/PIVnCM7l98UYEJGgks8C', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_NEWYORK_APOSTILLA_LLAMADA_MOBIL_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/tf1JCIzi9sUYEJGgks8C', 'event_callback': callback }); return false; } </script>
-@endif
-
-@if ($tlfhidden == "13474281517")
-    <script> gtag('config', 'AW-702844945/-EO9COrp9sUYEJGgks8C', { 'phone_conversion_number': '3474281517' }); </script>
-    <!-- Event snippet for IDG_NEWYORK_TRADUCCION_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-    <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/DHAQCKGT68UYEJGgks8C', 'event_callback': callback }); return false; } </script>
-    <!-- Event snippet for IDG_NEWYORK_TRADUCCION_LLAMADA_MOBIL_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-    <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/BQ14CPrt9sUYEJGgks8C', 'event_callback': callback }); return false; } </script>
-@endif
-
-@if($tlfhidden == "13474281516")
-  <script> gtag('config', 'AW-702844945/WpSgCPf66sUYEJGgks8C', { 'phone_conversion_number': '3474281516' }); </script>
-  <!-- Event snippet for IDG_NEWYORK_PODERES_LLAMADA_MOBIL_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/JU-VCO386sUYEJGgks8C', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_NEWYORK_PODERES_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/GnWsCIzT98UYEJGgks8C', 'event_callback': callback }); return false; } </script>
-@endif
-
-<!--NEW JERSEY-->
-@if($tlfhidden == "19082249552")
-  <script> gtag('config', 'AW-306069230/hJ7GCNmgpckYEO79-JEB', { 'phone_conversion_number': '9082249552' }); </script>
-  <!-- Event snippet for IDG_NEWJERSEY_APOSTILLA_MOBIL_LLAMADA_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306069230/9AEOCL7rmskYEO79-JEB', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_NEWJERSEY_APOSTILLA_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306069230/I6UfCObRpMkYEO79-JEB', 'event_callback': callback }); return false; } </script>
-@endif
-
-@if($tlfhidden == "19082249594")
-  <script> gtag('config', 'AW-306069230/VvbbCJu2pMkYEO79-JEB', { 'phone_conversion_number': '9082249594' }); </script>
-  <!-- Event snippet for IDG_NEWJERSEY_GENERAL_MOBIL_LLAMADA_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306069230/7LulCOzFmskYEO79-JEB', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_NEWJERSEY_GENERAL_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306069230/CYO5CNDzpMkYEO79-JEB', 'event_callback': callback }); return false; } </script>
-@endif
-
-@if($tlfhidden == "19082249259")
-  <script> gtag('config', 'AW-306069230/Hz3ICPe-pckYEO79-JEB', { 'phone_conversion_number': '9082249259' }); </script>
-  <!-- Event snippet for IDG_NEWJERSEY_TRADUCCION_MOBIL_LLAMADA_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306069230/6_lFCJCupckYEO79-JEB', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_NEWJERSEY_TRADUCCION_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306069230/xtIpCKDlpMkYEO79-JEB', 'event_callback': callback }); return false; } </script>
-@endif
-
-@if($tlfhidden == "19082249258")
-  <script> gtag('config', 'AW-306069230/MMmWCJDJpMkYEO79-JEB', { 'phone_conversion_number': '9082249258'});</script>
-  <!-- Event snippet for IDG_NEWJERSEY_PODERES_MOBIL_LLAMADA_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306069230/AJsVCM_YmskYEO79-JEB', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_NEWJERSEY_PODERES_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306069230/Ft5PCLCGpckYEO79-JEB', 'event_callback': callback }); return false; } </script>
-@endif
-
-<!--FLORIDA-->
-@if($tlfhidden == "13054229149")
-  <script> gtag('config', 'AW-306001515/kod7CPX0pskYEOvs9JEB', { 'phone_conversion_number': '3054229149' }); </script>
-  <!-- Event snippet for IDG_FLORIDA_GENERAL_MOBIL_LLAMADA_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306001515/SbnDCOfppskYEOvs9JEB', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_FLORIDA_GENERAL_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306001515/Mbv3CITUnMkYEOvs9JEB', 'event_callback': callback }); return false; } </script>
-@endif
-
-@if($tlfhidden == "13053177819")
-  <script> gtag('config', 'AW-306001515/uNguCLXDp8kYEOvs9JEB', { 'phone_conversion_number': '3053177819' }); </script>
-  <!-- Event snippet for IDG_FLORIDA_TRADUCCION_MOBIL_LLAMADA_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306001515/exusCM_ypskYEOvs9JEB', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_FLORIDA_TRADUCCION_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306001515/x6R9CI3UnMkYEOvs9JEB', 'event_callback': callback }); return false; } </script>
-@endif
-
-@if($tlfhidden == "13053177826")
-  <script> gtag('config', 'AW-306001515/vydACJrhnMkYEOvs9JEB', { 'phone_conversion_number': '3053177826' }); </script>
-  <!-- Event snippet for IDG_FLORIDA_PODERES_MOBIL_LLAMADA_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306001515/Th2GCMLlpskYEOvs9JEB', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_FLORIDA_PODERES_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306001515/k8OdCIfUnMkYEOvs9JEB', 'event_callback': callback }); return false; } </script>
-@endif
-
-@if($tlfhidden == "13053177820")
-  <script> gtag('config', 'AW-306001515/f6kTCLjqnMkYEOvs9JEB', { 'phone_conversion_number': '3053177820' }); </script>
-  <!-- Event snippet for IDG_FLORIDA_APOSTILLA_MOBIL_LLAMADA_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306001515/K_GtCNztpskYEOvs9JEB', 'event_callback': callback }); return false; } </script>
-  <!-- Event snippet for IDG_FLORIDA_APOSTILLA_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306001515/gZZPCIrUnMkYEOvs9JEB', 'event_callback': callback }); return false; } </script>
-@endif
+</script>
 
 <?php } ?>
   <style>
@@ -294,7 +168,7 @@
       <div class="d-flex justify-content-end pr-3">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active ">
-                <a class="nav-link" onclick="return gtag_report_conversion('tel:{{$tlfshow}}');" href="tel:+{{$tlfhidden??'19082249594'}}" > <small>{{$oficina}}</small> <br> {{$tlfshow}} </a>
+                <a class="nav-link" href="tel:+{{$tlfhidden??'19082249594'}}" > <small>{{$oficina}}</small> <br> {{$tlfshow}} </a>
             </li>
         </ul>
     </div>
@@ -313,7 +187,7 @@
 
 <section class="row quienes-somos text-white p-4 align-middle">
   <div class="col-12 text-center align-middle py-4">
-    <a onclick="return gtag_report_conversion('tel:{{$tlfshow}}');" href="tel:+{{$tlfhidden??'19082249594'}}" class="btn btn-lg btn-warning" >LLAMAR: <b>{{$tlfshow??'NJ (908) 224-9594'}}</b> </a>
+    <a href="tel:+{{$tlfhidden??'19082249594'}}" class="btn btn-lg btn-warning" >LLAMAR: <b>{{$tlfshow??'NJ (908) 224-9594'}}</b> </a>
   </div>
 </section>
 
@@ -548,14 +422,14 @@
 
 {{-- onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" --}}
 <div class="d-flex justify-content-center align-items-center px-3 py-1 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
-  <a onclick="return gtag_report_conversion('{{$urlwpp}}')" href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *{{ $service_aux }}*" target="_blank" class="text-white">
+  <a href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *{{ $service_aux }}*" target="_blank" class="text-white">
   {{-- Consultar en linea <i class="fab fa-whatsapp ml-1"></i> --}}
   Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
 </a>
   </div>
 
 <div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px; position: fixed; bottom: 50px; right: 10px; background-color: #122944; border: 2px solid #ffffff;" class="d-flex">
-  <a onclick="return gtag_report_conversion('tel:{{$tlfshow}}');" href="tel:+{{$tlfhidden}}">
+  <a href="tel:+{{$tlfhidden}}">
     <img width="20" height="20" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina">
     {{-- <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i> --}}
   </a>
