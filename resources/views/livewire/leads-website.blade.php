@@ -3,7 +3,7 @@
         <div class="table-responsive-sm">
             <table class="table table-bordered table-hover">
                 <thead>
-                    <tr>
+                    <tr class="bg-white">
                       <th scope="col">Nombre</th>
                       <th scope="col">Ubicacion</th>
                       <th scope="col">Telefono</th>
@@ -35,9 +35,11 @@
                       @endforeach
                   </tbody>
             </table>
-            <div>
-                {{ $leads->links() }}
-            </div>
+            @if($pagination == 10)
+                <div>
+                    {{ $leads->links() }}
+                </div>
+            @endif
           </div>
     </div>
 </div>

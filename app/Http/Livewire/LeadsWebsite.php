@@ -12,12 +12,18 @@ class LeadsWebsite extends Component
 
     protected $paginationTheme = 'bootstrap';
 
+    public $pagination;
+
+    public function mount($take){
+        $this->pagination = $take;
+    }
+
     public function render()
     {
 
         $leads_filter = Lead::orderBy('id', 'desc');
 
-        $leads = $leads_filter->paginate(5);
+        $leads = $leads_filter->paginate($this->pagination);
 
         return view('livewire.leads-website', compact('leads'));
     }

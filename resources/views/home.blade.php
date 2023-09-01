@@ -27,7 +27,11 @@
                 </div>
             </div>
             <div class="mt-4">
-                <livewire:leads-website />
+                <p class="font-weight-bold">Ultimos 5 leads a la página</p>
+                <livewire:leads-website :take="5" />
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-info rounded-0" href="{{ route('home.report.index.leads.web') }}">Ver todo</a>
+                </div>
             </div>
         </div>
     </div>
