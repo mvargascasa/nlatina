@@ -40,4 +40,9 @@ class ReportController extends Controller
         })->get();
         return view('admin.report.leadspartner.showleads', compact('partner', 'customers'));
     }
+
+    //REPORTES DE LEADS QUE INGRESAN POR EL WEBSITE
+    public function indexleadsweb(){
+        return view('admin.report.leadsweb.index');
+    }
 }
