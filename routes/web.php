@@ -76,6 +76,8 @@ Route::get('home/reports', 'ReportController@index')->name('home.partner.report.
 Route::get('home/reports/leads-partner', 'ReportController@indexleads')->name('home.partner.report.index.leads');
 Route::get('home/reports/leads-partner/{id}', 'ReportController@showleadspartner')->name('home.report.show.leads.partner');
 
+Route::get('home/reports/leads-website', 'ReportController@indexleadsweb')->name('home.report.index.leads.web');
+
 //VIDEOS
 Route::get('home/videos', 'VideoController@index')->name('home.videos.index');
 Route::get('home/videos/create', 'VideoController@create')->name('admin.create.video');
