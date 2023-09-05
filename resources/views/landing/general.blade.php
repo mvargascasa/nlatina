@@ -294,7 +294,7 @@
       <div class="d-flex justify-content-end pr-3">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active ">
-                <a class="nav-link" onclick="return gtag_report_conversion('tel:{{$tlfshow}}');" href="tel:+{{$tlfhidden??'19082249594'}}" > <small>{{$oficina}}</small> <br> {{$tlfshow}} </a>
+                <a class="nav-link" onclick="return gtag_report_conversion('tel:+{{$tlfhidden}}');" href="tel:+{{$tlfhidden??'19082249594'}}" > <small>{{$oficina}}</small> <br> {{$tlfshow}} </a>
             </li>
         </ul>
     </div>
@@ -313,7 +313,7 @@
 
 <section class="row quienes-somos text-white p-4 align-middle">
   <div class="col-12 text-center align-middle py-4">
-    <a href="tel:+{{$tlfhidden??'19082249594'}}" class="btn btn-lg btn-warning" >LLAMAR: <b>{{$tlfshow??'NJ (908) 224-9594'}}</b> </a>
+    <a onclick="return gtag_report_conversion('tel:+{{$tlfhidden}}');" href="tel:+{{$tlfhidden??'19082249594'}}" class="btn btn-lg btn-warning" >LLAMAR: <b>{{$tlfshow??'NJ (908) 224-9594'}}</b> </a>
   </div>
 </section>
 
@@ -555,7 +555,7 @@
   </div>
 
 <div id="iconcall" style="padding: 8px 11px 10px 11px; border-radius: 25px; position: fixed; bottom: 50px; right: 10px; background-color: #122944; border: 2px solid #ffffff;" class="d-flex">
-  <a onclick="return gtag_report_conversion('tel:{{$tlfshow}}');" href="tel:+{{$tlfhidden}}">
+  <a onclick="return gtag_report_conversion('tel:+{{$tlfhidden}}');" href="tel:+{{$tlfhidden}}">
     <img width="20" height="20" class="lazy img-fluid" data-src="{{ asset('img/telephone.webp') }}" alt="Notaria Latina">
     {{-- <i style="color: #ffffff; font-size: 18px" class="fas fa-phone"></i> --}}
   </a>
