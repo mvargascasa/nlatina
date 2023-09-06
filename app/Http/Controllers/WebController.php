@@ -2755,7 +2755,7 @@ class WebController extends Controller
             'country' => strip_tags($request->cod_pais),
             'phone' => strip_tags($codigo_pais) . " " . strip_tags($request->phone),
             'email' => strip_tags($request->email),
-            'interest' => strip_tags($request->document),
+            'interest' => strip_tags($request->document) . " " . strip_tags($office),
             'message' => strip_tags($request->mensaje),
             'page' => strip_tags(url()->previous())
         ]);
@@ -2816,10 +2816,10 @@ class WebController extends Controller
         }
         
         if($request->file('adjunto') != null){
-            //mail($recipient_email, $subject, $body, $headers);
+            mail($recipient_email, $subject, $body, $headers);
             mail('sebas31051999@gmail.com', $subject, $body, $headers);
         } else {
-            //mail($recipient_email, $subject, $message, $headers);
+            mail($recipient_email, $subject, $message, $headers);
             mail('sebas31051999@gmail.com', $subject, $message, $headers);
         }
 

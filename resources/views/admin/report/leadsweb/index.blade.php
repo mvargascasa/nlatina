@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-    <div>
-        <h1>Leads Website</h1>
+    <section class="my-4 px-3">
+        <h1>Leads provenientes del Sitio Web</h1>
         <livewire:leads-website :take="10" />
-    </div>
+    </section>
 @endsection
 
 @section('end-scripts')
