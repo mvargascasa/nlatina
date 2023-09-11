@@ -412,7 +412,7 @@ class PartnerController extends Controller
 
     public function formassignlead(Request $request, $id){
 
-        $customer = Customer::where('id', $id)->first();
+        $customer = Customer::where('id', $id)->with('partners')->first();
 
         $countries = DB::table('countries')->get();
 
@@ -440,13 +440,36 @@ class PartnerController extends Controller
                     <br><b> País: </b>" .strip_tags($customer->pais)."
                     <br><b> Estado: </b>" . strip_tags($customer->estado) . "
                     <br><b> Caso: </b>". strip_tags($customer->mensaje)." 
-                    <br>Puede ingresar a su perfil en nuestro sitio web y visualizar más información.";
+                    <br><b>Puede ingresar a su perfil en nuestro sitio web y visualizar más información.</b>";
                             
         $header='';
         $header .= 'From: <partners@notarialatina.com>' . "\r\n";
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         mail($partner->email,'Cliente Asignado: '. strip_tags($customer->nombre), $message, $header);
+
+        if($request->last_partner){
+
+            $partner_dismiss = Partner::where('id', $request->last_partner)->first();
+            $partner_dismiss->customers()->detach($customer->id);
+            $partner_dismiss->save();
+
+            $newmessage = "<br><strong>Re-asignación de Cliente | Notaria Latina</strong>
+                    <br><p> Estimado usuario, queremos informarle que un cliente suyo (" . strip_tags($customer->nombre) . ") ha sido reasignado. </p>
+                    <br><p>Los motivos de esta re-asignación pueden ser los siguientes:</p>
+                    <br>
+                    <ul>
+                        <li>Falta de seguimiento del cliente</li>
+                        <li>Falta de respuesta del abogado</li>
+                        <li>Perfil deshabilitado por falta de información</li>
+                    </ul>
+                    <br><p>Si necesita saber más del tema, envíe un correo a la dirección desde la cual llego este email y atenderemos sus inquietudes con gusto</p>
+                    <br><p>Los clientes que sigan consultando por sus servicios se notificarán por correo electrónico al igual que podrán ser visualizados en su perfil de Notaria Latina. </p>
+                    <br><b>Un saludo del equipo de Notaria Latina</b>
+                    ";
+
+            mail($partner_dismiss->email, 'Cliente Re-asignado: '.strip_tags($customer->nombre), $newmessage, $header);
+        }
 
         return redirect()->route('partner.form.assign.lead', $customer->id)->with('status', 'Se asigno el lead: ' . $customer->nombre . ' al Abogado: ' . $partner->name . " " . $partner->lastname);
     }

@@ -44,7 +44,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <p class="@if($customer->tipo == "ASIGNADO") text-success @else text-info @endif">{{$customer->tipo}}</p>
+                                        <p class="@if($customer->tipo == "ASIGNADO") text-success @else text-info @endif">@if($customer->tipo == "ASIGNADO") <a href="{{ route('partner.form.assign.lead', $customer->id) }}">{{$customer->tipo}}</a> @else {{$customer->tipo}} @endif </p>
                                     </td>
                                 </tr>
                             @endforeach
