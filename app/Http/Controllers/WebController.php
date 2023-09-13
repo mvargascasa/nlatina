@@ -358,7 +358,7 @@ class WebController extends Controller
         $data['office'] = 'New York';
         $data['address'] = '67-03 Roosevelt Avenue, Woodside Queens, NY 11377';
         $data['location'] = 'https://g.page/notariapublicalatina';
-        $data['metadescription'] = "Notarizamos todo tipo de documentos en New York tales como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✔";
+        $data['metadescription'] = "Encuentre la mejor notaría en New York para sus necesidades legales | Expertos en trámites notariales y más | ¡Visítenos ahora! ✅";
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-york':
@@ -1047,52 +1047,23 @@ class WebController extends Controller
             $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7118317711106!2d-73.897921!3d40.746365999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f030415024b%3A0x3b391bcaf4cd7c10!2sNotar%C3%ADa%20Latina%20en%20New%20York!5e0!3m2!1ses-419!2sec!4v1676310563039!5m2!1ses-419!2sec';
             $data['imgurlmap'] = "img/oficinas/maps-ny.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-ny-mobile.webp";
-            $data['keywords'] = 'notaria new york,
-            notario cerca de mi,
-            notaria cerca de mi, 
-            notario publico cerca de mi,
-            notario publico en español cerca de mi,
-            notarias publicas cerca de mi,
-            notarios publicos cerca de mi, 
-            notario en queens,
-            notaria en queens,
-            notarias en queens ny,
-            notaria en new york,
-            notaria queens,
-            notaria en queens ny, 
-            notaria en queens new york,
-            notaria latina en queens new york,
-            notario publico new york,
-            notario publico en new york,
+            $data['keywords'] = '
+            notaria,
             notaria new york,
-            notaria publico en queens new york,
-            notarizar documentos en new york,
-            notarizar documentos en queens new york,
-            tramitar documentos new york,
-            tramitar documentos en new york,
-            donde puedo tramitar documentos en new york,
-            donde puedo tramitar un documento en new york,
-            tramitar documentos queens new york,
-            tramitar documentos en queens new york,
-            notarizar un documento,
-            notarizar un documento new york,
-            notarizar un documento en new york,
-            notarizar documentos new york,
-            notarizar documentos en new york,
-            realizar tramite notarial new york,
-            realizar tramite notarial en new york,
-            realizar un tramite notarial en new york,
-            donde puedo notarizar documentos en new york,
-            donde puedo notarizar un documento en new york,
-            donde puedo realizar un tramite notarial new york,
-            donde puedo realizar un tramite notarial en new york,
-            donde puedo notarizar un documento cerca de mi,
-            tramites notariales en new york,
-            tramites notariales new york,
-            tramites notariales queens new york,
-            tramites notariales en queens new york,
-            servicios notariales new york,
-            servicios notariales en new york';
+            notario publico en queens ny,
+            notario publico new york,
+            notaria cerca de mi,
+            notaria publico cerca de mi,
+            notario público cerca de mi,
+            notarias publicas cerca de mi,
+            notarios publicos cerca de mi,
+            un notario cerca de mí,
+            notarios cerca de mi,
+            notarios hispanos cerca de mi,
+            notarios públicos cerca de mi ubicación,
+            notarios publico cerca de mi,
+            notaria hispana cerca de mi
+            ';
             $data['reviews'] = $this->reviewsny;
             $data['more_reviews'] = $this->more_reviewsny;
             $data['urlindications'] = "https://www.google.com/maps/dir//Notar%C3%ADa+Latina+en+New+York+67-03+Roosevelt+Ave+Queens,+NY+11377+Estados+Unidos/@40.746366,-73.897921,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x89c25f030415024b:0x3b391bcaf4cd7c10";
