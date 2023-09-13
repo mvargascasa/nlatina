@@ -1,7 +1,7 @@
 @extends('layouts.web')
 
 @section('header')
-    <title>Notaría Pública Latina en {{ $data['office'] }} - Tramite sus documentos</title>
+    <title>Notaría Pública Latina en {{ $data['office'] }} - Servicios Profesionales</title>
     <meta name="description" content="{{ $data['metadescription'] }}">
     <meta name="keywords" content="{{ $data['keywords'] }}">
 
