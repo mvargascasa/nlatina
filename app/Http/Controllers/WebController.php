@@ -1081,7 +1081,7 @@ class WebController extends Controller
         $data['office'] = 'New Jersey';
         $data['address'] = '1146 East Jersey St Elizabeth, NJ 07201';
         $data['location'] = 'https://g.page/r/CVNRV-zNuJiZEAE';
-        $data['metadescription'] = "Notarizamos todo tipo de documentos en New Jersey 🗽 como apostillas, certificados, poderes, traducciones de una manera ágil y rápida. Solicítelo aquí! ✅";
+        $data['metadescription'] = "Descubra los servicios que notaría en New Jersey le ofrece. Expertos en trámites legales como Poderes, Apostillas y Traducciones. Visite nuestro sitio web ✅";
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-new-jersey':
@@ -1779,57 +1779,24 @@ class WebController extends Controller
             $data['urlmap'] = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.4152609855228!2d-74.2132981!3d40.6648184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24dde7100d355%3A0x9998b8cdec575153!2sNotar%C3%ADa%20Latina%20en%20New%20Jersey!5e0!3m2!1ses-419!2sec!4v1676308468772!5m2!1ses-419!2sec'; 
             $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
-            $data['keywords'] = 'notaria new jersey,
-                notario cerca de mi,
-                notaria cerca de mi, 
-                notaria publica latina nj,
-                notario publico cerca de mi,
-                notarias publicas cerca de mi,
-                notarios publicos cerca de mi, 
-                notaria en new jersey,
-                notaria elizabeth,
-                notaria en elizabeth nj, 
-                notaria en elizabeth new jersey,
-                notaria latina en new jersey,
-                notaria latina elizabeth nj,
-                notaria latina en elizabeth new jersey,
-                notario publico en new jersey,
-                notaria publico new jersey,
-                notaria publico en elizabeth new jersey,
-                notarizar documentos,
-                notarizar documentos near me,
-                notarizar en linea new jersey,
-                notarizar en linea en new jersey,
-                notarizar documentos en new jersey,
-                notarizar documentos en elizabeth new jersey,
-                tramitar documentos new jersey,
-                tramitar documentos en new jersey,
-                donde puedo tramitar documentos en new jersey,
-                donde puedo tramitar un documento en new jersey,
-                tramitar documentos elizabeth new jersey,
-                tramitar documentos en elizabeth new jersey,
-                notarizar documentos new jersey,
-                notarizar un documento,
-                notarizar un documento new jersey,
-                notarizar un documento en new jersey,
-                documento notarizado,
-                documento notarizado new jersey,
-                documento notarizado en new jersey,
-                notarizar documentos en new jersey,
-                realizar tramite notarial new jersey,
-                realizar tramite notarial en new jersey,
-                realizar un tramite notarial en new jersey,
-                donde puedo notarizar documentos en new jersey,
-                donde puedo notarizar un documento en new jersey,
-                donde puedo realizar un tramite notarial new jersey,
-                donde puedo realizar un tramite notarial en new jersey,
-                donde puedo notarizar un documento cerca de mi,
-                tramites notariales en new jersey,
-                tramites notariales new jersey,
-                tramites notariales elizabeth new jersey,
-                tramites notariales en elizabeth new jersey,
-                servicios notariales new jersey,
-                servicios notariales en new jersey';
+            $data['keywords'] = '
+            notaria,
+            notaria new jersey,
+            notaria en new jersey,
+            notario en new jersey,
+            notario publico new jersey,
+            notaria cerca de mi,
+            notaria publico cerca de mi,
+            notario público cerca de mi,
+            notarias publicas cerca de mi,
+            notarios publicos cerca de mi,
+            un notario cerca de mí,
+            notarios cerca de mi,
+            notarios hispanos cerca de mi,
+            notarios públicos cerca de mi ubicación,
+            notarios publico cerca de mi,
+            notaria hispana cerca de mi
+            ';
             $data['reviews'] = $this->reviewsnj;
             $data['more_reviews'] = $this->more_reviewsnj;
             $data['urlindications'] = "https://www.google.com/maps/dir//Notar%C3%ADa+Latina+en+New+Jersey+1146+E+Jersey+St+Elizabeth,+NJ+07201+Estados+Unidos/@40.6648184,-74.2132981,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c24dde7100d355:0x9998b8cdec575153!2m2!1d-74.2132981!2d40.6648184";
@@ -1847,7 +1814,7 @@ class WebController extends Controller
         $data['telfShow'] = '305-600-3290';
         $data['address'] = '2104 N University Dr, Sunrise Miami, FL 33322';
         $data['location'] = 'https://g.page/r/CeRrwPx_W2-xEAE';
-        $data['metadescription'] = "Realizamos Poderes Generales y Especiales, Apostilla y Traducción de todo tipo de documentos en Florida. ¿Desea saber más? ¡Contáctenos ahora! ✅";
+        $data['metadescription'] = "Encuentre la mejor notaría en Florida: expertos en asesoría legal a su disposición. ¡Ingrese ahora para obtener más información! ✅";
         if($service != null){
             switch ($service) {
                 case 'certificaciones-en-florida':
@@ -2359,51 +2326,24 @@ class WebController extends Controller
             $data['imgurlmap'] = "img/oficinas/maps-fl-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-fl-mobile-2.webp";
             $data['metadescription'] = 'Realizamos Poderes Generales y Especiales, Apostilla y Traducción de todo tipo de documentos en Florida. ¿Desea saber más? ¡Contáctenos ahora! ✅';
-            $data['keywords'] = 'notaria florida,
-                notario cerca de mi,
-                notaria cerca de mi, 
-                notario publico cerca de mi,
-                notarias publicas cerca de mi,
-                notarios publicos cerca de mi,
-                notaria en florida,  
-                notaria sunrise, 
-                notaria latina sunrise,
-                notaria en sunrise fl, 
-                notaria en sunrise florida, 
-                notaria latina en sunrise florida, 
-                notario publico en florida, 
-                notaria publico florida,
-                notaria publico en sunrise florida,
-                notarizar documentos near me,
-                notarizar en linea florida,
-                notarizar en linea en florida,
-                notarizar documentos,
-                notarizar documentos en florida,
-                notarizar documentos en sunrise florida, 
-                tramitar documentos florida,
-                tramitar documentos en florida,
-                donde puedo tramitar documentos en florida,
-                donde puedo tramitar un documento en florida,
-                tramitar documentos sunrise florida,
-                tramitar documentos en sunrise florida,
-                notarizar documentos florida,
-                notarizar documentos en florida,
-                realizar tramite notarial florida,
-                realizar tramite notarial en florida,
-                realizar un tramite notarial en florida,
-                donde puedo notarizar documentos en florida, 
-                notarizar un documento,
-                notarizar un documento florida,
-                donde puedo notarizar un documento en florida,
-                donde puedo realizar un tramite notarial florida,
-                donde puedo realizar un tramite notarial en florida,
-                donde puedo notarizar un documento cerca de mi,
-                tramites notariales en florida,
-                tramites notariales florida,
-                tramites notariales sunrise florida,
-                tramites notariales en sunrise florida,
-                servicios notariales florida,
-                servicios notariales en florida';
+            $data['keywords'] = '
+            notaria,
+            notaria florida,
+            notaria en florida,
+            notario en florida,
+            notario publico florida,
+            notario publico en florida,
+            notaria cerca de mi,
+            notaria publico cerca de mi,
+            notario público cerca de mi,
+            notarias publicas cerca de mi,
+            notarios publicos cerca de mi,
+            un notario cerca de mí,
+            notarios cerca de mi,
+            notarios hispanos cerca de mi,
+            notarios públicos cerca de mi ubicación,
+            notarios publico cerca de mi,
+            notaria hispana cerca de mi';
             $data['reviews'] = $this->reviewsfl;
             $data['more_reviews'] = $this->more_reviewsfl;
             $data['urlindications'] = "https://www.google.com/maps/dir//Notar%C3%ADa+Latina+en+Florida+2104+N+University+Dr+Sunrise,+FL+33322+Estados+Unidos/@26.1509895,-80.256546,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x88d9072fab0cb6ff:0xb16f5b7ffcc06be4";
