@@ -22,7 +22,11 @@
     
     <p>&nbsp;</p>
     
-    <p dir="ltr">La presente Pol&iacute;tica de Privacidad establece los t&eacute;rminos en que Notaría Latina &nbsp;usa y protege la informaci&oacute;n que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta empresa est&aacute; comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de informaci&oacute;n personal con la cual usted pueda ser identificado, lo hacemos asegurando que s&oacute;lo se emplear&aacute; de acuerdo con los t&eacute;rminos de este documento. Sin embargo esta Pol&iacute;tica de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le recomendamos y enfatizamos revisar continuamente esta p&aacute;gina para asegurarse que est&aacute; de acuerdo con dichos cambios.</p>
+    <p dir="ltr">La presente Pol&iacute;tica de Privacidad establece los t&eacute;rminos en que Notaría Pública Latina usa y protege la informaci&oacute;n que es proporcionada por sus usuarios al momento de utilizar su sitio web. </p>
+
+    <p dir="ltr">Esta Política de Privacidad se aplica a todas las entidades del grupo Notaria Latina, que incluyen Notaría Latina Pública Corp, Notaría Pública Latina LLC y Notaría Latina Corp (en adelante, "Notaria Latina", "nosotros" o "nuestra"). </p>
+
+    <p dir="ltr">Esta empresa est&aacute; comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de informaci&oacute;n personal con la cual usted pueda ser identificado, lo hacemos asegurando que s&oacute;lo se emplear&aacute; de acuerdo con los t&eacute;rminos de este documento. Sin embargo esta Pol&iacute;tica de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le recomendamos y enfatizamos revisar continuamente esta p&aacute;gina para asegurarse que est&aacute; de acuerdo con dichos cambios.</p>
     
     <p dir="ltr">&nbsp;</p>
     

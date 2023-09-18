@@ -358,6 +358,7 @@ $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Ch
                 <li class="nav-item"> <a class="nav-link @if(Request::is('nosotros')) text-warning @else text-white @endif" href="{{route('web.nosotros')}}">Nosotros</a> </li>
                 <li class="nav-item"> <a class="nav-link @if(Request::is('contactenos')) text-warning @else text-white @endif" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
                 <li class="nav-item"> <a class="nav-link @if(Request::is('abogados*') || Request::is('portal/*')) text-warning @else text-white @endif" href="{{ route('web.showallpartners') }}">Portal de Abogados</a></li>
+                {{-- <li class="nav-item"> <a class="nav-link text-white" type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchModal">Buscar</a></li> --}}
                   {{-- <li class="nav-item"><a class="nav-link" href="{{ route('partners.registro') }}">Registrarse</a></li> --}}
               </ul>
           </div>
@@ -524,7 +525,7 @@ $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Ch
             </div>
         </div>
     </div>
-    <div class="text-center navfoot py-3">Copyright ©2020 Notaria Latina. All rights reserved.
+    <div class="text-center navfoot py-3">Copyright ©2023 Notaria Pública Latina. All rights reserved.
         <br><a href="{{route('web.politicas')}}" class="text-muted">Políticas de Privacidad</a>
     </div>
 
@@ -628,6 +629,16 @@ $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Ch
             <p onclick="document.getElementById('chatbot').classList.remove('d-none')">abrir chat</p>
         </div> --}}
 </footer>
+
+{{-- <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-0">
+        <div class="modal-body">
+          <livewire:search />
+        </div>
+      </div>
+    </div>
+  </div> --}}
 
 <div id="chat" style="position: fixed; bottom: 170px; right: 10px; width: 200px; z-index: 10; display: none" class="border rounded">
     <div>
