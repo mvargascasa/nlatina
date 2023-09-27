@@ -31,7 +31,7 @@ class LeadsWebsite extends Component
     public function render()
     {
 
-        $leads_filter = Lead::orderBy('id', 'desc')->groupBy('email');
+        $leads_filter = Lead::orderBy('id', 'desc');
 
         if($this->names) $leads_filter->where('name', 'LIKE', '%'.$this->names.'%')->orWhere('lastname', 'LIKE', '%'.$this->names.'%');
         if($this->location) $leads_filter->where('country', 'LIKE', '%'.$this->location.'%')->orWhere('state', 'LIKE', '%'.$this->location.'%');
