@@ -162,7 +162,14 @@
 @if($oficina == "Florida")
   <!--FLORIDA-->
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306001515"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306001515'); </script>
+  <script id="gtag_fl"></script> 
+  <script>
+    setTimeout(() => {
+      document.getElementById('gtag_fl').src="https://www.googletagmanager.com/gtag/js?id=AW-306001515";
+      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306001515'); 
+      console.log('cargado script tag manager fl')
+    }, 3000);
+  </script>
 @endif
 
 <!--NEW YORK-->
