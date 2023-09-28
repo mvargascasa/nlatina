@@ -148,7 +148,13 @@
 @if($oficina == "New Jersey")
   <!--NEW JERSEY-->
   <!-- Google tag (gtag.js) --> 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306069230"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306069230'); </script>
+  <script id="gtag_nj"></script> 
+  <script>
+    setTimeout(() => {
+      document.getElementById('gtag_nj').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
+      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306069230'); 
+    }, 3000);
+  </script>
 @endif
 
 @if($oficina == "Florida")
