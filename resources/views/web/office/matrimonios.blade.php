@@ -2,8 +2,8 @@
 
 @section('header')
     <title>Matrimonios en {{ $data['office'] }} | Notaria Latina</title>
-    <meta name="description" content="Si desea dar este paso importante en su vida, que mejor para hacerlo que en Florida. ¿Necesita saber como realizar el proceso de matrimonio? Consulte aquí!">
-    <meta name="keywords" content="matrimonios, matrimonios florida, matrimonios miami, matrimonio en florida requisitos, boda en florida, como casarse en florida, requisitos para matrimonio en florida, requisitos para boda en florida, requisitos para casarse en florida, certificado de matrimonio florida, ">
+    <meta name="description" content="Convierta su sueño de casarse en Florida ante un notario. Descubra cómo planificar una boda legal y memorable  con la ayuda de un notario autorizado ✅">
+    <meta name="keywords" content="casarse en florida, matrimonios en florida, licencia para casarse en florida, requisitos para casarse en florida, matrimonio en la florida, matrimonio florida, notarios para bodas, notarios para bodas cerca de mi, notarios para bodas civiles, notarios para bodas civiles cerca de mi, casarse en florida requisitos, donde casarse en florida, casarse en florida ante notario, notario para casarse en florida">
 
     <meta property="og:url" content="{{ Request::url() }}">
     <meta property="og:type" content="article">
