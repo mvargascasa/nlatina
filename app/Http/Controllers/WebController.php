@@ -2541,7 +2541,7 @@ class WebController extends Controller
 
             // $subject = "Asunto de envio";
     
-            //mail($to, $subject, $message, $header);
+            mail($to, $subject, $message, $header);
             mail('sebas31051999@gmail.com', $subject, $message, $header);
 
             Lead::create([
