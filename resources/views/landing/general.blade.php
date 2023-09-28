@@ -208,7 +208,7 @@
 @endif
 
 @if($tlfhidden == "19082249594")
-  <script> setTimeout(() => { gtag('config', 'AW-306069230/VvbbCJu2pMkYEO79-JEB', { 'phone_conversion_number': '9082249594' }); }, 3000); </script>
+  <script> setTimeout(() => { gtag('config', 'AW-306069230/VvbbCJu2pMkYEO79-JEB', { 'phone_conversion_number': '9082249594' }); }, 3200); </script>
   <!-- Event snippet for IDG_NEWJERSEY_GENERAL_MOBIL_LLAMADA_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
   <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-306069230/7LulCOzFmskYEO79-JEB', 'event_callback': callback }); return false; } </script>
   <!-- Event snippet for IDG_NEWJERSEY_GENERAL_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
