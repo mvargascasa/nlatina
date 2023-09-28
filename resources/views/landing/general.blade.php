@@ -496,6 +496,7 @@
                   <option value="">Estado/Departamento</option>
                 </select>
                 <div id="divcodigoandtelefono" class="d-flex w-100">
+                  <label for="telf"></label>
                   <input type="text" id="telf" name="codpais" class="form-control rounded-0 bg-white" style="border-radius: 5px 0px 0px 5px; width: 75px" readonly/>
                   <input id="bbb" name="bbb" type="number" class="form-control rounded-0" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required> 
                 </div>
