@@ -2541,8 +2541,20 @@ class WebController extends Controller
 
             // $subject = "Asunto de envio";
     
-            mail($to, $subject, $message, $header);
+            //mail($to, $subject, $message, $header);
             mail('sebas31051999@gmail.com', $subject, $message, $header);
+
+            Lead::create([
+                'name' => strip_tags($request->aaa),
+                'lastname' => strip_tags($request->lastname),
+                'country' => strip_tags($request->pais),
+                'state' => "",
+                'phone' => strip_tags($request->codpais) . strip_tags($request->bbb),
+                'email' => strip_tags($request->email),
+                'interest' => strip_tags($request->service),
+                'message' => strip_tags($request->ddd),
+                'page' => strip_tags(url()->previous()),
+            ]);
         }
 
         //$request->session()->flash('report', 'Se ha enviado el correo');
