@@ -500,7 +500,7 @@
                     </select> 
                   </div>
                   <div class="mr-1 w-50 resize">
-                    <label for="state" class="labelstate">Estado</label>
+                    <label for="sel_state" class="labelstate">Estado</label>
                     <select name="state" id="sel_state" class="form-control rounded-0 w-100">
                       <option value="">Estado/Departamento</option>
                     </select>
