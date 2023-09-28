@@ -556,7 +556,7 @@
                 </p>
               </div>
               <div class="card-footer bg-white">
-                <a target="_blank" href="{{ $review['link']}}" class="card-link">Ver comentario</a>
+                <a class="text-dark" target="_blank" href="{{ $review['link']}}" class="card-link">Ver comentario</a>
               </div>
             </div>
           </div>
