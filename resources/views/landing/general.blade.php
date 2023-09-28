@@ -289,7 +289,7 @@
     input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
     @media screen and (max-width: 1000px){h1{font-size: 50px !important}}
     @media screen and (max-width: 800px){h1{font-size: 40px !important}}
-    @media screen and (max-width: 580px){#divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}#sel_state{margin-top: 16px}}
+    @media screen and (max-width: 580px){.divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}.resize{width: 100% !important}.labelstate{margin-top: 20px !important}}
     #iconcall{bottom: 40px !important; right: 10px !important;}
     .grecaptcha-badge { visibility: hidden; }
     .card-reviews{box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;}
@@ -457,52 +457,69 @@
 
 
 <section class="row quienes-somos text-white m-0">  
-      <div class="col-12 col-md-6 pb-5 px-3 mx-auto">
-          <div class="card-body text-center">  
-            <h2 class="font-italic font-weight-bold">Solicitar Tramite</h2>      
-            <small> Envíe el formulario y un asesor le contactará breve. </small>     
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 pb-5 px-3 mx-auto">
+          <div class="card-body">
+            <div class="text-center">
+              <h2 class="font-italic font-weight-bold">Solicitar Tramite</h2>      
+              <small class="text-center"> Envíe el formulario y un asesor le contactará breve. </small>     
+            </div>
             <form method="POST" action="{{route('landing.thankpostnj')}}" id="formlead">
                 @csrf
               <input type="hidden" id="interest" name="interest" value="Landing {{$oficina}}">
               <input type="hidden" id="service_aux" name="service_aux" value="{{$service_aux}} - {{$oficina}}">
               <div class="form-group pt-4">
+                <label for="aaa">Nombre y Apellido</label>
                 <input id="aaa" name="aaa" type="text" class="form-control rounded-0" placeholder="Nombre y Apellido"  maxlength="40" minlength="2" autocomplete="off" required>
               </div>            
-              <div id="divpais" class="form-group d-flex">
-                <select id="pais" name="pais" class="form-control mr-1 rounded-0 w-100" required>
-                  <option value="">País de residencia</option>
-                  <option value="Argentina">Argentina</option>
-                  <option value="Bolivia">Bolivia</option>
-                  <option value="Chile">Chile</option>
-                  <option value="Colombia">Colombia</option>
-                  <option value="Costa Rica">Costa Rica</option>
-                  <option value="Ecuador">Ecuador</option>
-                  <option value="El Salvador">El Salvador</option>
-                  <option value="España">España</option>
-                  <option value="Estados Unidos" selected>Estados Unidos</option>
-                  <option value="Guatemala">Guatemala</option>
-                  <option value="Honduras">Honduras</option>
-                  <option value="México">México</option>
-                  <option value="Nicaragua">Nicaragua</option>
-                  <option value="Panamá">Panamá</option>
-                  <option value="Paraguay">Paraguay</option>
-                  <option value="Perú">Perú</option>
-                  <option value="Puerto Rico">Puerto Rico</option>
-                  <option value="República Dominicana">República Dominicana</option>
-                  <option value="Uruguay">Uruguay</option>
-                  <option value="Venezuela">Venezuela</option>                    
-                </select> 
-                <select name="state" id="sel_state" class="form-control rounded-0 w-100 mr-1">
-                  <option value="">Estado/Departamento</option>
-                </select>
+              <div class="divpais form-group d-flex">
+                <div class="d-flex w-100 divpais">
+                  <div class="mr-1 w-50 resize">
+                    <label for="pais">País</label>
+                    <select id="pais" name="pais" class="form-control rounded-0 w-100" required>
+                      <option value="">País de residencia</option>
+                      <option value="Argentina">Argentina</option>
+                      <option value="Bolivia">Bolivia</option>
+                      <option value="Chile">Chile</option>
+                      <option value="Colombia">Colombia</option>
+                      <option value="Costa Rica">Costa Rica</option>
+                      <option value="Ecuador">Ecuador</option>
+                      <option value="El Salvador">El Salvador</option>
+                      <option value="España">España</option>
+                      <option value="Estados Unidos" selected>Estados Unidos</option>
+                      <option value="Guatemala">Guatemala</option>
+                      <option value="Honduras">Honduras</option>
+                      <option value="México">México</option>
+                      <option value="Nicaragua">Nicaragua</option>
+                      <option value="Panamá">Panamá</option>
+                      <option value="Paraguay">Paraguay</option>
+                      <option value="Perú">Perú</option>
+                      <option value="Puerto Rico">Puerto Rico</option>
+                      <option value="República Dominicana">República Dominicana</option>
+                      <option value="Uruguay">Uruguay</option>
+                      <option value="Venezuela">Venezuela</option>                    
+                    </select> 
+                  </div>
+                  <div class="mr-1 w-50 resize">
+                    <label for="state" class="labelstate">Estado</label>
+                    <select name="state" id="sel_state" class="form-control rounded-0 w-100">
+                      <option value="">Estado/Departamento</option>
+                    </select>
+                  </div>
+                </div>
                 <div id="divcodigoandtelefono" class="d-flex w-100">
-                  <label for="telf"></label>
-                  <input type="text" id="telf" name="codpais" class="form-control rounded-0 bg-white" style="border-radius: 5px 0px 0px 5px; width: 75px" readonly/>
-                  <input id="bbb" name="bbb" type="number" class="form-control rounded-0" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required> 
+                  <div style="width: 35%" class="mr-1">
+                    <label for="telf" class="text-left">Código</label>
+                    <input type="text" id="telf" name="codpais" class="form-control rounded-0 bg-white" style="border-radius: 5px 0px 0px 5px;" readonly/>
+                  </div>
+                  <div style="width: 65%">
+                    <label for="bbb" style="text-align: left !important">Teléfono</label>
+                    <input id="bbb" name="bbb" type="number" class="form-control rounded-0" placeholder="Teléfono" maxlength="14" minlength="8" autocomplete="off" style="border-radius: 0px 5px 5px 0px" required> 
+                  </div>
                 </div>
               </div>
               @if($service_aux == "General")
               <div class="form-group">
+                <label for="service">Servicio</label>
                 <select name="service" id="service" class="form-control rounded-0" required>
                   <option value="">Seleccione el trámite a realizar</option>
                   <option value="Apostilla">Apostilla</option>
@@ -523,7 +540,8 @@
                 <input type="hidden" name="service" value="{{$service_aux}}">
               @endif
               <div class="form-group">
-                <input id="ddd" name="ddd" type="text" class="form-control rounded-0" placeholder="Mensaje - Ej: Necesito tramitar una carta poder..." autocomplete="off" required>
+                <label for="ddd">Mensaje</label>
+                <input id="ddd" name="ddd" type="text" class="form-control rounded-0" placeholder="Ej: Necesito tramitar una carta poder..." autocomplete="off" required>
               </div>
               <input type="hidden" name="aux" style="font-size: 10px" placeholder="Si puede ver este campo, por favor ignórelo" class="form-control" readonly>
               <input type="hidden" name="url" value="{{Request::segment(2)}}" class="form-control" readonly>
