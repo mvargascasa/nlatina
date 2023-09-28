@@ -134,6 +134,7 @@
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-KHSFW5X3');
+      console.log('cargado script tag manager')
   }, 3000);
 </script>
   <!-- End Google Tag Manager -->
@@ -152,7 +153,8 @@
   <script>
     setTimeout(() => {
       document.getElementById('gtag_nj').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
-      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306069230'); 
+      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306069230');
+      console.log('cargado script tag manager nj'); 
     }, 3000);
   </script>
 @endif
