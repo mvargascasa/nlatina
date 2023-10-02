@@ -33,6 +33,7 @@
         .sticky {position: -webkit-sticky; position: sticky; top: 10px;}
         @media screen and (max-width: 580px){.personalized-container{padding-left: 1px !important; padding-right: 1px !important}}
         @media screen and (max-width: 1300px){.personalized-container{padding-left: 20px !important; padding-right: 20px !important}}
+        @media screen and (max-width: 991px){.social{display: none !important}}
         .personalized-container{padding-left: 150px; padding-right: 150px};
     </style>
 @endsection
@@ -50,8 +51,8 @@
         </div>
     </section>
 
-    <div class="pt-4 personalized-container">
-        <div class="row mt-2 mb-2 ml-1 justify-content-center">
+    <div class="pt-4">
+        <div class="row mt-2 mb-2 ml-1 justify-content-center infoblogmobile d-none">
             <div class="col-sm-8">
                 <div class="row">
                     <div class="col-sm-6 border-left">
@@ -65,29 +66,96 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-12 col-md-12 col-xl-8 col-lg-8" style="text-align: justify">
-                <div class="mt-3">
-                    <?php echo htmlspecialchars_decode($post->body)?>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-1 d-flex justify-content-end sticky-top h-100">
+                    <section class="d-inline px-3 py-4 bg-light shadow-sm rounded-pill mt-4 social" style="z-index: 3;">
+                        <div class="mb-3">
+                            <a target="_blank" href="https://www.instagram.com/notarialatina" title="Visitar Instagram de Notaria Latina">
+                                <img width="40px" src="{{ asset('img/icon-instagram.png') }}" alt="Instagram Notaria Latina">
+                            </a>
+                        </div>
+                        <div>
+                            <a target="_blank" href="https://www.facebook.com/notariapublicalatina" title="Visitar Facebook de Notaria Latina">
+                                <img width="40px" src="{{ asset('img/icon-facebook.png') }}" alt="Facebook Notaria Latina">
+                            </a>
+                        </div>
+                    </section>
                 </div>
-                <div class="d-flex justify-content-center mb-2">
-                    <img id="imgBlog" class="p-4 img-fluid lazy" width="500px" height="400px" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
+                <div class="col-12 col-sm-12 col-md-12 col-xl-8 col-lg-8 mb-4" style="text-align: justify">
+                    <div class="mt-3">
+                        <?php echo htmlspecialchars_decode($post->body)?>
+                    </div>
                 </div>
-                @isset($post->srcvideo)
-                    <div class="row mt-5 mb-5">
-                        <div class="col-12 d-flex justify-content-center">
-                            <iframe id="iframevideo" width="560" height="315" title="{{ $post->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="col-12 col-sm-10 col-md-10 col-lg-3 col-xl-3 text-center">
+                    <div class="border pb-4 shadow-sm">
+                        <p class="tit-not px-4 mt-4 h4">Información del artículo</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <img class="p-4 img-fluid lazy" width="500px" height="400px" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
+                        </div>
+                        @isset($post->srcvideo)
+                            <div class="row mt-5 mb-5">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <iframe id="iframevideo" width="560" height="315" title="{{ $post->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        @endisset
+                        <div class="row px-4 text-justify">
+                            <div class="col-sm-12">
+                                <span><b style="font-weight: 500;">Fecha de Publicación:</b></span><br>
+                                <span>{{ $post->created_at->format('M d, Y')}}</span>
+                            </div>
+                            @isset($post->reading_time)
+                            <div class="col-sm-12">
+                                <span class="d-flex align-items-center"><b style="font-weight: 500">Tiempo de Lectura:</b></span>
+                                <span>{{ $post->reading_time}} min.</span>
+                            </div>
+                            @endisset
                         </div>
                     </div>
-                @endisset
-            </div>
-            <div class="container my-3 rounded-0 py-3">
-                <h4 class="text-center">Compartir el artículo</h4>
-                <div class="row mt-3">
-                    <div class="col-sm-12 d-flex justify-content-center">
-                        <p title="Compartir en Facebook" style="cursor: pointer" id="shareToFacebook"><i class="fab fa-facebook fa-2x" style="color: #0165E1"></i></p>
-                        <p title="Compartir en Twitter" id="shareToTwitter" style="cursor: pointer"><i class="fab fa-twitter fa-2x ml-4" style="color: #1DA1F2"></i></p>
-                        <p title="Compartir por WhatsApp" id="shareToWpp" style="cursor: pointer"><i class="fab fa-whatsapp fa-2x ml-4" style="color: #25D366"></i></p>
+                    <div class="col-12 text-center mt-4">
+                        <h2 class="tit-not">Temas Relacionados</h2>
+                    </div>
+                    <div class="row mb-4 justify-content-center mx-1">
+                        <div class="col-12">
+                            <div class="row">
+                                @foreach ($posts as $lpost)
+                                    <div class="col-12">
+                                        <div class="card my-2">
+                                            <a href="{{route('post.slug',$lpost->slug)}}" class="stretched-link">
+                                                <div>
+                                                    <img data-src="{{url('uploads/i600_'.$lpost->imgdir)}}" class="lazy" height="140px" width="100%" alt="{{ $post->name }}" style="object-fit: cover;">
+                                                    <div>
+                                                        <div class="card-body p-2" style="position:relative;">
+                                                            <span class="d-block text-dark font-weight-bold card-title" style="font-size: medium">{{$lpost->name}}</span>
+                                                        </div>
+                                                        <div class="d-flex justify-content-center pb-3">
+                                                            <div>
+                                                                <div class="small text-muted float-left mt-3 mr-1"><i class="far fa-calendar-alt" style="font-size: 17px"></i> {{$lpost->created_at->format('M d, Y')}}</div>
+                                                                <div class="small text-muted float-right mt-3 ml-1"><i class="far fa-clock mr-1" style="font-size: 17px"></i> {{ $lpost->reading_time}} min.</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                                <div class="text-center mt-4">
+                                    <a class="btn rounded-pill shadow-sm" style="background-color: #2B384D; color: #ffffff" href="{{ route('post.blog') }}">Ver más artículos</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container my-3 rounded-0 py-3">
+                    <h4 class="text-center">Compartir el artículo</h4>
+                    <div class="row mt-3">
+                        <div class="col-sm-12 d-flex justify-content-center">
+                            <p title="Compartir en Facebook" style="cursor: pointer" id="shareToFacebook"><i class="fab fa-facebook fa-2x" style="color: #0165E1"></i></p>
+                            <p title="Compartir en Twitter" id="shareToTwitter" style="cursor: pointer"><i class="fab fa-twitter fa-2x ml-4" style="color: #1DA1F2"></i></p>
+                            <p title="Compartir por WhatsApp" id="shareToWpp" style="cursor: pointer"><i class="fab fa-whatsapp fa-2x ml-4" style="color: #25D366"></i></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,20 +180,43 @@
             </div> --}}
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-12 col-md-12 col-xl-5 col-lg-5">
-            <div class="px-3 py-3 text-white rounded-0 shadow" style="background-color: #2B384D; font-size: 13px;">
-                <p class="h6 text-center">¿Necesita realizar un trámite notarial?</p>
-                <p>Complete la información y un asesor se contactará con usted</p>
-                @include('z-form')
+    <section class="bg-light">
+        <section class="container">
+            <div class="row justify-content-center py-5">
+                <div class="col-12 col-sm-6 d-flex align-items-center pb-4">
+                    <div>
+                        <p class="h4 text-center">¿Necesita realizar un trámite notarial?</p>
+                        <p class="h6">En Notaria Latina contamos con los siguientes servicios:</p>
+                        <ul>
+                            <li>Poderes</li>
+                            <li>Apostillas</li>
+                            <li>Traducciones</li>
+                            <li>Certificaciones</li>
+                            <li>Affidavit</li>
+                            <li>Revocatorias</li>
+                            <li>Acuerdos</li>
+                            <li>Cartas de Invitación</li>
+                            <li>Travel Authorization</li>
+                            <li>Contratos</li>
+                            <li>Testamentos</li>
+                            <li>Entre otros</li>
+                        </ul>
+                    </div>
+                </div>
+                <article class="col-12 col-sm-12 col-md-12 col-xl-6 col-lg-6">
+                    <div class="px-3 py-3 text-white rounded-0 shadow" style="background-color: #2B384D; font-size: 13px;">
+                        <p class="h6 text-center py-4">Complete la información y un asesor se contactará con usted</p>
+                        @include('z-form')
+                    </div>
+                </article>
             </div>
-        </div>
-    </div>
+        </section>
+    </section>
     {{-- video row --}}
 
     {{-- share row --}}
 
-    <hr class="my-5">
+    {{-- <hr class="my-5">
     <div class="col-12 text-center">
         <h2 class="tit-not">Temas Relacionados</h2>
     </div>
@@ -152,7 +243,7 @@
                     @endforeach
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     {{-- @if(isset($post) && $post->id == 95)
         <div id="publishpoder">
@@ -170,20 +261,7 @@
                 <p>¿Necesita tramitar una Carta de Invitación? <a class="text-white" href="{{route('landing.notaria')}}"><b><br> Click aquí <i class="fas fa-arrow-circle-right"></i></b></a></p>
             </div>
         </div>
-    @endif --}}
-
-    <section class="position-fixed d-inline bg-light px-2 py-3 shadow" style="top: 45%; left: 0px; z-index: 3; border-radius: 0px 25px 25px 0px; z-index: 1000">
-        <div class="mb-3">
-            <a target="_blank" href="https://www.instagram.com/notarialatina" title="Visitar Instagram de Notaria Latina">
-                <img width="40px" src="{{ asset('img/icon-instagram.png') }}" alt="Instagram Notaria Latina">
-            </a>
-        </div>
-        <div>
-            <a target="_blank" href="https://www.facebook.com/notariapublicalatina" title="Visitar Facebook de Notaria Latina">
-                <img width="40px" src="{{ asset('img/icon-facebook.png') }}" alt="Facebook Notaria Latina">
-            </a>
-        </div>
-    </section>
+    @endif --}} 
 
     @if (session('sendcomment'))
         @php
