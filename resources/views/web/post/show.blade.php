@@ -102,8 +102,8 @@
                         @endisset
                         <div class="row px-4 text-justify">
                             <div class="col-sm-12">
-                                <span><b style="font-weight: 500;">Fecha de Publicación:</b></span><br>
-                                <span>{{ $post->created_at->format('M d, Y')}}</span>
+                                <span><b style="font-weight: 500;">Última actualización:</b></span><br>
+                                <span>{{ $post->updated_at->format('M d, Y')}}</span>
                             </div>
                             @isset($post->reading_time)
                             <div class="col-sm-12">
