@@ -46,14 +46,15 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        Livewire.hook('element.updated', (el, component) => {
-        setTimeout(() => {
+    document.addEventListener("livewire:load", function(event) {
+        window.livewire.hook('element.updated', () => {
+            setTimeout(() => {
                 let divscroll = document.getElementById('chatnl');
                 divscroll.scrollTop = divscroll.scrollHeight;
             }, 100);
-        })
-    })
+        });
+    });
+
 
     const closeChat = () => {
         document.getElementById('chatnotaria').classList.add('d-none');
