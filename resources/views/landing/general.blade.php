@@ -143,7 +143,6 @@
 @if($oficina == "New York")
   <!--NEW YORK-->
   <!-- Google tag (gtag.js) --> 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-702844945"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -165,36 +164,54 @@
 @if($oficina == "New Jersey")
   <!--NEW JERSEY-->
   <!-- Google tag (gtag.js) --> 
-  <script id="gtag_nj"></script> 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306069230"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-306069230');
+  </script>
+
+
+
+  {{-- <script id="gtag_nj"></script> 
   <script>
     setTimeout(() => {
       document.getElementById('gtag_nj').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
       window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306069230');
       console.log('cargado script tag manager nj'); 
     }, 3000);
-  </script>
+  </script> --}}
 @endif
 
 @if($oficina == "Florida")
   <!--FLORIDA-->
   <!-- Google tag (gtag.js) -->
-  <script id="gtag_fl"></script> 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306001515"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-306001515');
+  </script>
+
+  {{-- <script id="gtag_fl"></script> 
   <script>
     setTimeout(() => {
       document.getElementById('gtag_fl').src="https://www.googletagmanager.com/gtag/js?id=AW-306001515";
       window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-306001515'); 
       console.log('cargado script tag manager fl')
     }, 3000);
-  </script>
+  </script> --}}
 @endif
 
 <!--NEW YORK-->
 @if ($tlfhidden == '13474281520') 
-  <script>
-    // setTimeout(() => {
-      gtag('config', 'AW-702844945/Z8xoCIiZ98UYEJGgks8C', { 'phone_conversion_number': '3474281520' }); 
-    // }, 3500);
-  </script>
+  <script>gtag('config', 'AW-702844945/Z8xoCIiZ98UYEJGgks8C', { 'phone_conversion_number': '3474281520' }); </script>
   <!-- Event snippet for IDG_NEWYORK_GENERAL_LLAMADA_MOBIL_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
   <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/9vvNCNCl98UYEJGgks8C', 'event_callback': callback }); return false; } </script>
   <!-- Event snippet for IDG_NEWYORK_GENERAL_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
