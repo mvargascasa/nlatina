@@ -229,7 +229,7 @@
 @if ($tlfhidden == "13474281517")
     <script> gtag('config', 'AW-702844945/-EO9COrp9sUYEJGgks8C', { 'phone_conversion_number': '3474281517' }); </script>
     <!-- Event snippet for IDG_NEWYORK_TRADUCCION_WHATSAPP_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
-    <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/DHAQCKGT68UYEJGgks8C', 'event_callback': callback }); return false; } </script>
+    <script> function gtag_report_conversion_wpp(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/DHAQCKGT68UYEJGgks8C', 'event_callback': callback }); return false; } </script>
     <!-- Event snippet for IDG_NEWYORK_TRADUCCION_LLAMADA_MOBIL_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
     <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-702844945/BQ14CPrt9sUYEJGgks8C', 'event_callback': callback }); return false; } </script>
 @endif
@@ -627,7 +627,7 @@
 
 {{-- onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" --}}
 <div class="d-flex justify-content-center align-items-center px-3 py-1 text-white font-weight-bold" style="position: fixed; bottom: 0px; right: 10px; background-color: #0B6055; border-radius: 10px 10px 0px 0px">
-  <a onclick="return gtag_report_conversion('{{$urlwpp}}')" href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *{{ $service_aux }}*" target="_blank" class="text-white">
+  <a onclick="return gtag_report_conversion_wpp('{{$urlwpp}}')" href="https://api.whatsapp.com/send?phone={{ $tlfwpp }}&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *{{ $service_aux }}*" target="_blank" class="text-white">
   {{-- Consultar en linea <i class="fab fa-whatsapp ml-1"></i> --}}
   Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
 </a>
