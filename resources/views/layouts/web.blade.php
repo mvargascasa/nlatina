@@ -264,9 +264,11 @@ span{
 .animacionVer{
   transform:scale(1);
 }
-
+@media screen and (max-width: 580px){
+    .box-chat{width: 100vw !important;left: 0px !important; right: 0px !important; bottom: 0px !important}
+}
 </style>
-{{-- <livewire:styles/> --}}
+<livewire:styles/>
 
   @yield('header')
   </head>
@@ -373,7 +375,7 @@ $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Ch
         @endif
       </header>
 
-@yield('content')  
+@yield('content')
 
 {{-- @isset($indexPosts)
 <div class="container">
@@ -673,23 +675,31 @@ $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Ch
     </div>
 </div>
 
-<!-- Messenger Plugin de chat Code -->
-<div id="fb-root"></div>
-
-<!-- Your Plugin de chat code -->
-<div id="fb-customer-chat" class="fb-customerchat">
+<div class="position-fixed" style="bottom: 5px; right: 5px; cursor: pointer" onclick="document.getElementById('chatnotaria').classList.remove('d-none');">
+    <div>
+        <button class="botonF1">
+            <span class="d-flex align-items-center justify-content-center"><img class="lazy" width="35px" height="35px" data-src="{{ asset('img/chat-notaria-latina.png') }}" alt="contactar a notaria latina" title="Abrir Chat Notaria Latina"></span>
+        </button>
+    </div>
 </div>
 
-<script>
+<!-- Messenger Plugin de chat Code -->
+{{-- <div id="fb-root"></div> --}}
+
+<!-- Your Plugin de chat code -->
+{{-- <div id="fb-customer-chat" class="fb-customerchat">
+</div> --}}
+
+{{-- <script>
     setTimeout(() => {
         var chatbox = document.getElementById('fb-customer-chat');
         chatbox.setAttribute("page_id", "408436099982353");
         chatbox.setAttribute("attribution", "biz_inbox");
     }, 3000);
-</script>
+</script> --}}
 
 <!-- Your SDK code -->
-<script>
+{{-- <script>
     setTimeout(() => {
         window.fbAsyncInit = function() {
           FB.init({
@@ -706,17 +716,17 @@ $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Ch
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     }, 3000);
-</script>
+</script> --}}
 
-{{-- <div>
+<div id="chatnotaria" class="d-none">
     <livewire:chatbot>
-</div> --}}
+</div>
 {{-- <script defer id="scriptjquery"></script>
 <script defer id="scriptpopper" ></script>
 <script defer id="scriptbootstrap" ></script> --}}
 
 @yield('script')
-{{-- <livewire:scripts/> --}}
+<livewire:scripts/>
 <script id="jquery363" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
 
