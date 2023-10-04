@@ -47,7 +47,7 @@
 
 <script>
     document.addEventListener("livewire:load", function(event) {
-        window.livewire.hook('element.updated', () => {
+        window.livewire.hook('beforeDomUpdate', () => {
             setTimeout(() => {
                 let divscroll = document.getElementById('chatnl');
                 divscroll.scrollTop = divscroll.scrollHeight;
