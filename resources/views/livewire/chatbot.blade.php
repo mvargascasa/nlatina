@@ -1,10 +1,13 @@
 <div class="bg-white position-fixed shadow box-chat" style="height: 500px; width: 400px; bottom: 10px; right: 10px; z-index: 1000">
-    <div style="background-color: #2B384D" class="pl-3 py-2 text-white">Chat Notaria Latina <span class="float-right pr-3" style="cursor: pointer" onclick="closeChat()">x</span></div>
+    <div style="background-color: #2B384D" class="pl-3 py-3 text-white d-flex align-items-center w-100">
+        <div style="width: 10px; height: 10px; border-radius: 25px; background-color: rgb(30, 219, 30)"></div>
+        <div class="w-100 ml-2">Chat Notaria Latina <span class="float-right pr-3" style="cursor: pointer; font-weight: 500; font-size: 18px" onclick="closeChat()">x</span></div>    
+    </div>
     <div class="px-3 overflow-auto" id="chatnl" style="height: 450px; scroll-behavior: smooth">
         <div class="pt-3 pb-4">
             @for ($i = 0; $i < count($init); $i++)
                 <div class="pl-5 mb-1 float-right">
-                    <button class="btnoptions btn btn-outline-danger rounded-pill" style="font-size: 12px" wire:click="save('{{ $init[$i]['question'] }}')">{{ $init[$i]['question'] }}</button>    
+                    <button class="btnoptions btn btn-outline-danger rounded-pill" style="font-size: 13px" wire:click="save('{{ $init[$i]['question'] }}')">{{ $init[$i]['question'] }}</button>    
                 </div>
             @endfor
             @if(count($array_user_text)>0)
@@ -16,7 +19,7 @@
                     @for ($i = 0; $i < count($init); $i++)
                         @if(!$init[$i]['viewed'])
                             <div class="pl-5 mb-1 float-right">
-                                <button class="btnoptions btn btn-outline-danger rounded-pill" style="font-size: 12px" wire:click="save('{{ $init[$i]['question'] }}')">{{ $init[$i]['question'] }}</button>    
+                                <button class="btnoptions btn btn-outline-danger rounded-pill" style="font-size: 13px" wire:click="save('{{ $init[$i]['question'] }}')">{{ $init[$i]['question'] }}</button>    
                             </div>
                         @endif
                     @endfor
