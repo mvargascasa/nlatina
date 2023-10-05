@@ -200,16 +200,16 @@ class LandingController extends Controller
                 mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
                 mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
                 //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
-                Lead::create([
-                    'name' => Purify::clean($request->aaa),
-                    'country' => Purify::clean($country),
-                    'state' => Purify::clean($request->state),
-                    'phone' => Purify::clean($request->get('cod_pais')) . "" . Purify::clean($request->bbb),
-                    'email' => Purify::clean($request->ccc),
-                    'interest' => Purify::clean($request->service),
-                    'message' => Purify::clean($request->ddd),
-                    'page' => Purify::clean(url()->previous()),
-                ]);
+                // Lead::create([
+                //     'name' => Purify::clean($request->aaa),
+                //     'country' => Purify::clean($country),
+                //     'state' => Purify::clean($request->state),
+                //     'phone' => Purify::clean($request->get('cod_pais')) . "" . Purify::clean($request->bbb),
+                //     'email' => Purify::clean($request->ccc),
+                //     'interest' => Purify::clean($request->service),
+                //     'message' => Purify::clean($request->ddd),
+                //     'page' => Purify::clean(url()->previous()),
+                // ]);
             }
     
             if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
@@ -348,17 +348,17 @@ class LandingController extends Controller
                 //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                 // if($sended) return "se envio";
                 // else return "no se envio";
-                Lead::create([
-                    'name' => Purify::clean($request->fname),
-                    'lastname' => Purify::clean($request->lname),
-                    'country' => Purify::clean($country),
-                    'state' => Purify::clean($request->state),
-                    'phone' => Purify::clean($request->cod) . "" . Purify::clean($request->tlf),
-                    'email' => Purify::clean($request->email),
-                    'interest' => Purify::clean($servicename),
-                    'message' => Purify::clean($request->message),
-                    'page' => Purify::clean(url()->previous()),
-                ]);
+                // Lead::create([
+                //     'name' => Purify::clean($request->fname),
+                //     'lastname' => Purify::clean($request->lname),
+                //     'country' => Purify::clean($country),
+                //     'state' => Purify::clean($request->state),
+                //     'phone' => Purify::clean($request->cod) . "" . Purify::clean($request->tlf),
+                //     'email' => Purify::clean($request->email),
+                //     'interest' => Purify::clean($servicename),
+                //     'message' => Purify::clean($request->message),
+                //     'page' => Purify::clean(url()->previous()),
+                // ]);
             }
 
         }
@@ -444,15 +444,15 @@ class LandingController extends Controller
             mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
             mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
 
-            Lead::create([
-                'name' => Purify::clean($request->aaa),
-                'country' => Purify::clean($request->pais),
-                'state' => Purify::clean($request->state),
-                'phone' => Purify::clean($request->codpais) . " " . Purify::clean($request->bbb),
-                'interest' => Purify::clean($request->service_aux),
-                'message' => Purify::clean($request->ddd),
-                'page' => Purify::clean(url()->previous()),
-            ]);
+            // Lead::create([
+            //     'name' => Purify::clean($request->aaa),
+            //     'country' => Purify::clean($request->pais),
+            //     'state' => Purify::clean($request->state),
+            //     'phone' => Purify::clean($request->codpais) . " " . Purify::clean($request->bbb),
+            //     'interest' => Purify::clean($request->service_aux),
+            //     'message' => Purify::clean($request->ddd),
+            //     'page' => Purify::clean(url()->previous()),
+            // ]);
             //'notariapublicalatina@gmail.com'.$sendoffices
         }
 

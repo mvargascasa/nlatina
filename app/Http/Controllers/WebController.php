@@ -2544,17 +2544,17 @@ class WebController extends Controller
             mail($to, $subject, $message, $header);
             mail('sebas31051999@gmail.com', $subject, $message, $header);
 
-            Lead::create([
-                'name' => strip_tags($request->aaa),
-                'lastname' => strip_tags($request->lastname),
-                'country' => strip_tags($request->pais),
-                'state' => "",
-                'phone' => strip_tags($request->codpais) . strip_tags($request->bbb),
-                'email' => strip_tags($request->email),
-                'interest' => strip_tags($request->service),
-                'message' => strip_tags($request->ddd),
-                'page' => strip_tags(url()->previous()),
-            ]);
+            // Lead::create([
+            //     'name' => strip_tags($request->aaa),
+            //     'lastname' => strip_tags($request->lastname),
+            //     'country' => strip_tags($request->pais),
+            //     'state' => "",
+            //     'phone' => strip_tags($request->codpais) . strip_tags($request->bbb),
+            //     'email' => strip_tags($request->email),
+            //     'interest' => strip_tags($request->service),
+            //     'message' => strip_tags($request->ddd),
+            //     'page' => strip_tags(url()->previous()),
+            // ]);
         }
 
         //$request->session()->flash('report', 'Se ha enviado el correo');
@@ -2672,16 +2672,16 @@ class WebController extends Controller
         <br><b>Mensaje:</b> " . strip_tags($request->mensaje) . "
         "; //body of the email
 
-        Lead::create([
-            'name' => strip_tags($request->name),
-            'lastname' => strip_tags($request->lastname),
-            'country' => strip_tags($request->cod_pais),
-            'phone' => strip_tags($codigo_pais) . " " . strip_tags($request->phone),
-            'email' => strip_tags($request->email),
-            'interest' => strip_tags($request->document) . " " . strip_tags($office),
-            'message' => strip_tags($request->mensaje),
-            'page' => strip_tags(url()->previous())
-        ]);
+        // Lead::create([
+        //     'name' => strip_tags($request->name),
+        //     'lastname' => strip_tags($request->lastname),
+        //     'country' => strip_tags($request->cod_pais),
+        //     'phone' => strip_tags($codigo_pais) . " " . strip_tags($request->phone),
+        //     'email' => strip_tags($request->email),
+        //     'interest' => strip_tags($request->document) . " " . strip_tags($office),
+        //     'message' => strip_tags($request->mensaje),
+        //     'page' => strip_tags(url()->previous())
+        // ]);
 
         //<br><b>Página proveniente: </b> " . url()->previous() . "
 
