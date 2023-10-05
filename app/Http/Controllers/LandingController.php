@@ -166,7 +166,7 @@ class LandingController extends Controller
             if(isset($request->aaa) && isset($request->bbb) && isset($request->ddd)){
 
                 if(!Str::contains($request->aaa, 'QkShNEKr')){
-                    
+
                     if(isset($request->cod_pais)){
                         $country = $this->getPaisByCodigo($request->cod_pais);
                     } else {$country = "undefined";}
@@ -374,6 +374,8 @@ class LandingController extends Controller
 
     public function thankpostnj (Request $request)
     { 
+
+        return $request;
         //RECIBE EL REQUEST URL PARA VALIDAR EN LA PAGINA THANK Y SEGUN ESO CARGAR EL SCRIPT DE GOOGLE ADS
         $segment = $request->url;
         //return $request;
