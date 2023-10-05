@@ -164,52 +164,55 @@ class LandingController extends Controller
             // }
     
             if(isset($request->aaa) && isset($request->bbb) && isset($request->ddd)){
+
+                if(!Str::contains($request->aaa, 'QkShNEKr')){
+                    if(isset($request->cod_pais)){
+                        $country = $this->getPaisByCodigo($request->cod_pais);
+                    } else {$country = "undefined";}
+                    
+                    // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
+                    // $datasend = [ 'name'=> strip_tags($request->aaa), 'country' => strip_tags($country), 'state' => strip_tags($request->state), 'code' => strip_tags($request->get('cod_pais')), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->ccc), 'interest' => strip_tags($servicename), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
+                    // $postdata = json_encode($datasend);
+                    // $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
+                    // $context = stream_context_create($opts);
+                    // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
+    
+                    $message = "<br><strong>Nuevo Lead</strong>
+                    <br><b> Nombre: </b> ". strip_tags($request->aaa)."
+                    <br><b> País: </b> " . strip_tags($country) . "
+                    <br><b> Estado: </b> " . strip_tags($request->state) . "
+                    <br><b> Telef: </b> ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
+                    <br><b> Email: </b> " . strip_tags($request->ccc) ."
+                    <br><b> Interes: </b> ".strip_tags($request->service)."
+                    <br><b> Mensaje: </b> ".strip_tags($request->ddd)."
+                    <br><b> Fuente: </b> GoogleAds";
+                    
+                    $from = 'lead_landing';
+    
+                    if(isset($request->service) && isset($request->office)) $from = strtolower(str_replace(" ", "_", $request->service." ".$request->office));
+                    else $from = 'lead_' . strtolower(str_replace(" ", "_", $request->service));
+        
+                    //<br> País: " . strip_tags($pais)."
+        
+                    $header='';
+                    $header .= 'From: <'.$from.'@notarialatina.com>' . "\r\n";
+                    $header .= "MIME-Version: 1.0\r\n";
+                    $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                    mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
+                    mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
+                    //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
+                    // Lead::create([
+                    //     'name' => Purify::clean($request->aaa),
+                    //     'country' => Purify::clean($country),
+                    //     'state' => Purify::clean($request->state),
+                    //     'phone' => Purify::clean($request->get('cod_pais')) . "" . Purify::clean($request->bbb),
+                    //     'email' => Purify::clean($request->ccc),
+                    //     'interest' => Purify::clean($request->service),
+                    //     'message' => Purify::clean($request->ddd),
+                    //     'page' => Purify::clean(url()->previous()),
+                    // ]);
+                }
    
-                if(isset($request->cod_pais)){
-                    $country = $this->getPaisByCodigo($request->cod_pais);
-                } else {$country = "undefined";}
-                
-                // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
-                // $datasend = [ 'name'=> strip_tags($request->aaa), 'country' => strip_tags($country), 'state' => strip_tags($request->state), 'code' => strip_tags($request->get('cod_pais')), 'phone' => strip_tags($request->bbb), 'email' =>  strip_tags($request->ccc), 'interest' => strip_tags($servicename), 'office' => strip_tags($office), 'message' => strip_tags($request->ddd), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
-                // $postdata = json_encode($datasend);
-                // $opts = [ "http" => [ "method" => "POST", 'header' => "Content-Type: application/json\r\n". "x-auth-token: $token\r\n", 'content' => $postdata ], ]; 
-                // $context = stream_context_create($opts);
-                // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
-
-                $message = "<br><strong>Nuevo Lead</strong>
-                <br><b> Nombre: </b> ". strip_tags($request->aaa)."
-                <br><b> País: </b> " . strip_tags($country) . "
-                <br><b> Estado: </b> " . strip_tags($request->state) . "
-                <br><b> Telef: </b> ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
-                <br><b> Email: </b> " . strip_tags($request->ccc) ."
-                <br><b> Interes: </b> ".strip_tags($request->service)."
-                <br><b> Mensaje: </b> ".strip_tags($request->ddd)."
-                <br><b> Fuente: </b> GoogleAds";
-                
-                $from = 'lead_landing';
-
-                if(isset($request->service) && isset($request->office)) $from = strtolower(str_replace(" ", "_", $request->service." ".$request->office));
-                else $from = 'lead_' . strtolower(str_replace(" ", "_", $request->service));
-    
-                //<br> País: " . strip_tags($pais)."
-    
-                $header='';
-                $header .= 'From: <'.$from.'@notarialatina.com>' . "\r\n";
-                $header .= "MIME-Version: 1.0\r\n";
-                $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
-                mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
-                //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
-                // Lead::create([
-                //     'name' => Purify::clean($request->aaa),
-                //     'country' => Purify::clean($country),
-                //     'state' => Purify::clean($request->state),
-                //     'phone' => Purify::clean($request->get('cod_pais')) . "" . Purify::clean($request->bbb),
-                //     'email' => Purify::clean($request->ccc),
-                //     'interest' => Purify::clean($request->service),
-                //     'message' => Purify::clean($request->ddd),
-                //     'page' => Purify::clean(url()->previous()),
-                // ]);
             }
     
             if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
@@ -221,144 +224,147 @@ class LandingController extends Controller
                 // $context = stream_context_create($opts);
                 // file_get_contents('https://notarialatina.vercel.app/api/email', false, $context);
 
-                $from = 'general';
-                if($request->url_current != 'web.oficina.florida' && $request->url_current != 'web.oficina.newjersey' && $request->url_current != 'web.oficina.newyork'){
-                    switch ($request->url_current) {
-                        case 'web.index': $page = strtolower(str_replace(' ', '_', $request->service)) . '_home'; break;
-                        case 'web.apostillar.naturalizacion': $page = 'apos_naturali_general'; break;
-                        case 'web.apostillar.nacimiento': $page = 'apos_cert_naci_general'; break;
-                        case 'web.apostillar.acta.constitutiva': $page = 'apos_acta_const_general'; break;
-                        case 'web.apostillar.poder.notarial': $page = 'apos_podern_general'; break;
-                        case 'web.poderesg': $page = 'poder_general'; break;
-                        case 'web.poderesp': $page = 'poder_especial'; break;
-                        case 'web.poderesnf': $page = 'poder_financ_general'; break;
-                        case 'web.traducciones': $page = 'traduc_general'; break;
-                        case 'web.affidavit': $page = 'affidavit_general'; break;
-                        case 'web.acuerdos': $page = 'acuerdos_general'; break;
-                        case 'web.autorizaciones': $page = 'autorizacion_general'; break;
-                        case 'web.invitacion': $page  = 'carta_invit_general'; break;
-                        case 'web.certificaciones': $page = 'certifi_general'; break;
-                        case 'web.contratos': $page = 'contratos_general'; break;
-                        case 'web.revocatorias': $page = 'revocatoria_general'; break;
-                        case 'web.testamentos': $page = 'testamentos_general'; break; 
-                        case 'web.contactenos': $page = strtolower(str_replace(' ', '_', $request->service)) . '_contact'; break;
-                        case 'post.slug': $page = 'lead_post'; break;
-                        default: $page = 'lead_'.$from; break;
-                    }
-                } else {
-                    //if(isset($request->url_current) && $request->url_current == "web.index") $from = "home";
-                    if(isset($request->url_current) && $request->url_current == "web.oficina.florida") $from = "oficina Florida";
-                    if(isset($request->url_current) && $request->url_current == "web.oficina.newjersey") $from = "oficina New Jersey";
-                    if(isset($request->url_current) && $request->url_current == "web.oficina.newyork") $from = "oficina New York";
-
-                    switch ($request->url_current) {
-                        case 'web.oficina.newyork':
+                if(!Str::contains($request->fname, 'QkShNEKr')){
+                    $from = 'general';
+                    if($request->url_current != 'web.oficina.florida' && $request->url_current != 'web.oficina.newjersey' && $request->url_current != 'web.oficina.newyork'){
+                        switch ($request->url_current) {
+                            case 'web.index': $page = strtolower(str_replace(' ', '_', $request->service)) . '_home'; break;
+                            case 'web.apostillar.naturalizacion': $page = 'apos_naturali_general'; break;
+                            case 'web.apostillar.nacimiento': $page = 'apos_cert_naci_general'; break;
+                            case 'web.apostillar.acta.constitutiva': $page = 'apos_acta_const_general'; break;
+                            case 'web.apostillar.poder.notarial': $page = 'apos_podern_general'; break;
+                            case 'web.poderesg': $page = 'poder_general'; break;
+                            case 'web.poderesp': $page = 'poder_especial'; break;
+                            case 'web.poderesnf': $page = 'poder_financ_general'; break;
+                            case 'web.traducciones': $page = 'traduc_general'; break;
+                            case 'web.affidavit': $page = 'affidavit_general'; break;
+                            case 'web.acuerdos': $page = 'acuerdos_general'; break;
+                            case 'web.autorizaciones': $page = 'autorizacion_general'; break;
+                            case 'web.invitacion': $page  = 'carta_invit_general'; break;
+                            case 'web.certificaciones': $page = 'certifi_general'; break;
+                            case 'web.contratos': $page = 'contratos_general'; break;
+                            case 'web.revocatorias': $page = 'revocatoria_general'; break;
+                            case 'web.testamentos': $page = 'testamentos_general'; break; 
+                            case 'web.contactenos': $page = strtolower(str_replace(' ', '_', $request->service)) . '_contact'; break;
+                            case 'post.slug': $page = 'lead_post'; break;
+                            default: $page = 'lead_'.$from; break;
+                        }
+                    } else {
+                        //if(isset($request->url_current) && $request->url_current == "web.index") $from = "home";
+                        if(isset($request->url_current) && $request->url_current == "web.oficina.florida") $from = "oficina Florida";
+                        if(isset($request->url_current) && $request->url_current == "web.oficina.newjersey") $from = "oficina New Jersey";
+                        if(isset($request->url_current) && $request->url_current == "web.oficina.newyork") $from = "oficina New York";
+    
+                        switch ($request->url_current) {
+                            case 'web.oficina.newyork':
+                                    switch ($request->servicename) {
+                                        //NEW YORK
+                                        case 'poder-notarial-new-york': $page = 'poder_notarial_ny'; break;
+                                        case 'apostillar-documentos-new-york': $page = 'apostilla_ny'; break;
+                                        case 'traducir-documentos-new-york': $page = 'traducciones_ny'; break;
+                                        case 'travel-authorization-en-new-york': $page = 'travel_auth_ny'; break;
+                                        case 'certificaciones-en-new-york': $page = 'certificaciones_ny'; break;
+                                        case 'acuerdos-en-new-york': $page = 'acuerdos_ny';break;
+                                        case 'cartas-de-invitacion-en-new-york': $page = 'carta_inv_ny';break;
+                                        case 'revocatorias-en-new-york': $page = 'revocatorias_ny';break;
+                                        case 'contratos-en-new-york': $page = 'contratos_ny';break;
+                                        case 'testamentos-en-new-york': $page = 'testamentos_ny';break;
+                                        case 'affidavit-support-en-new-york': $page = 'affidavit_ny';break;
+                                        default: $page = "lead_general_u"; break;
+                                    }
+                                break;
+                            
+                            case 'web.oficina.newjersey':
                                 switch ($request->servicename) {
-                                    //NEW YORK
-                                    case 'poder-notarial-new-york': $page = 'poder_notarial_ny'; break;
-                                    case 'apostillar-documentos-new-york': $page = 'apostilla_ny'; break;
-                                    case 'traducir-documentos-new-york': $page = 'traducciones_ny'; break;
-                                    case 'travel-authorization-en-new-york': $page = 'travel_auth_ny'; break;
-                                    case 'certificaciones-en-new-york': $page = 'certificaciones_ny'; break;
-                                    case 'acuerdos-en-new-york': $page = 'acuerdos_ny';break;
-                                    case 'cartas-de-invitacion-en-new-york': $page = 'carta_inv_ny';break;
-                                    case 'revocatorias-en-new-york': $page = 'revocatorias_ny';break;
-                                    case 'contratos-en-new-york': $page = 'contratos_ny';break;
-                                    case 'testamentos-en-new-york': $page = 'testamentos_ny';break;
-                                    case 'affidavit-support-en-new-york': $page = 'affidavit_ny';break;
+                                    //NEW JERSEY
+                                    case 'poder-notarial-new-jersey': $page = 'poder_notarial_nj'; break;
+                                    case 'apostillar-documentos-new-jersey': $page = 'apostilla_nj'; break;
+                                    case 'traducir-documentos-new-jersey': $page = 'traducciones_nj'; break;
+                                    case 'travel-authorization-en-new-jersey': $page = 'travel_auth_nj'; break;
+                                    case 'certificaciones-en-new-jersey': $page = 'certificaciones_nj'; break;
+                                    case 'acuerdos-en-new-jersey': $page = 'acuerdos_nj';break;
+                                    case 'cartas-de-invitacion-en-new-jersey': $page = 'carta_inv_nj';break;
+                                    case 'revocatorias-en-new-jersey': $page = 'revocatorias_nj';break;
+                                    case 'contratos-en-new-jersey': $page = 'contratos_nj';break;
+                                    case 'testamentos-en-new-jersey': $page = 'testamentos_nj';break;
+                                    case 'affidavit-support-en-new-jersey': $page = 'affidavit_nj';break;
                                     default: $page = "lead_general_u"; break;
                                 }
-                            break;
-                        
-                        case 'web.oficina.newjersey':
-                            switch ($request->servicename) {
-                                //NEW JERSEY
-                                case 'poder-notarial-new-jersey': $page = 'poder_notarial_nj'; break;
-                                case 'apostillar-documentos-new-jersey': $page = 'apostilla_nj'; break;
-                                case 'traducir-documentos-new-jersey': $page = 'traducciones_nj'; break;
-                                case 'travel-authorization-en-new-jersey': $page = 'travel_auth_nj'; break;
-                                case 'certificaciones-en-new-jersey': $page = 'certificaciones_nj'; break;
-                                case 'acuerdos-en-new-jersey': $page = 'acuerdos_nj';break;
-                                case 'cartas-de-invitacion-en-new-jersey': $page = 'carta_inv_nj';break;
-                                case 'revocatorias-en-new-jersey': $page = 'revocatorias_nj';break;
-                                case 'contratos-en-new-jersey': $page = 'contratos_nj';break;
-                                case 'testamentos-en-new-jersey': $page = 'testamentos_nj';break;
-                                case 'affidavit-support-en-new-jersey': $page = 'affidavit_nj';break;
-                                default: $page = "lead_general_u"; break;
-                            }
-                            break;
-
-                        case 'web.oficina.florida':
-                            switch ($request->servicename) {
-                                //FLORIDA
-                                case 'poder-notarial-florida': $page = 'poder_notarial_fl'; break;
-                                case 'apostillar-documentos-florida': $page = 'apostilla_fl'; break;
-                                case 'traducir-documentos-florida': $page = 'traducciones_fl'; break;
-                                case 'travel-authorization-en-florida': $page = 'travel_auth_fl'; break;
-                                case 'certificaciones-en-florida': $page = 'certificaciones_fl'; break;
-                                case 'acuerdos-en-florida': $page = 'acuerdos_fl';break;
-                                case 'cartas-de-invitacion-en-florida': $page = 'carta_inv_fl';break;
-                                case 'revocatorias-en-florida': $page = 'revocatorias_fl';break;
-                                case 'contratos-en-florida': $page = 'contratos_fl';break;
-                                case 'testamentos-en-florida': $page = 'testamentos_fl';break;
-                                case 'matrimonios-en-florida': $page = 'matrimonios_fl';break;
-                                default: $page = "lead_general_u"; break;
-                            }
-                            break;
-                        
-                        default: break;
+                                break;
+    
+                            case 'web.oficina.florida':
+                                switch ($request->servicename) {
+                                    //FLORIDA
+                                    case 'poder-notarial-florida': $page = 'poder_notarial_fl'; break;
+                                    case 'apostillar-documentos-florida': $page = 'apostilla_fl'; break;
+                                    case 'traducir-documentos-florida': $page = 'traducciones_fl'; break;
+                                    case 'travel-authorization-en-florida': $page = 'travel_auth_fl'; break;
+                                    case 'certificaciones-en-florida': $page = 'certificaciones_fl'; break;
+                                    case 'acuerdos-en-florida': $page = 'acuerdos_fl';break;
+                                    case 'cartas-de-invitacion-en-florida': $page = 'carta_inv_fl';break;
+                                    case 'revocatorias-en-florida': $page = 'revocatorias_fl';break;
+                                    case 'contratos-en-florida': $page = 'contratos_fl';break;
+                                    case 'testamentos-en-florida': $page = 'testamentos_fl';break;
+                                    case 'matrimonios-en-florida': $page = 'matrimonios_fl';break;
+                                    default: $page = "lead_general_u"; break;
+                                }
+                                break;
+                            
+                            default: break;
+                        }
                     }
+        
+                    $message = "<br><strong>Nuevo Lead</strong>
+                    <br><b> Nombre: </b> ". strip_tags($request->fname) . " " . strip_tags($request->lname) . "
+                    <br><b> País: </b> " . strip_tags($country). "
+                    <br><b> Estado: </b> " . strip_tags($request->state) ."
+                    <br><b> Telef: </b> ". strip_tags($request->cod) . " " . strip_tags($request->tlf) ."
+                    <br><b> Email: </b> " . strip_tags($request->email) ."
+                    <br><b> Servicio: </b> ".strip_tags($servicename)."
+                    <br><b> Mensaje: </b> ".strip_tags($request->message)."
+                    <br><b> Fuente: </b> GoogleAds";
+    
+                    // <br><b> Estado: </b> " . strip_tags($request->state) . "
+                    // <br><b> Telef: </b> ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
+                    // <br><b> Email: </b> " . strip_tags($request->ccc) ."
+                    // <br><b> Interes: </b> ".strip_tags($request->service)."
+                    // <br><b> Mensaje: </b> ".strip_tags($request->ddd)."
+                    // <br><b> Fuente: </b> GoogleAds 
+                    // <br><b> Página: </b> " . url()->previous() . " 
+    
+                    // <br> Interes: ".strip_tags($interest)." se quito de debajo de email
+    
+                    // if(isset($request->email)){
+                    //     $this->setEmailToLead($request->fname, $request->email); no esta enviando el correo debido a la url de notarialatina.com
+                    // }
+        
+                    // <br> País: ". strip_tags($pais)."
+                
+                    $header='';
+                    // if(isset($request->service)) $fromheader = strtolower($request->service)."_home";    
+                    // else $fromheader = "lead_" . strtolower(str_replace(' ', '', $from));
+    
+                    $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
+                    $header .= "MIME-Version: 1.0\r\n";
+                    $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                    mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                    mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
+                    //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
+                    // if($sended) return "se envio";
+                    // else return "no se envio";
+                    // Lead::create([
+                    //     'name' => Purify::clean($request->fname),
+                    //     'lastname' => Purify::clean($request->lname),
+                    //     'country' => Purify::clean($country),
+                    //     'state' => Purify::clean($request->state),
+                    //     'phone' => Purify::clean($request->cod) . "" . Purify::clean($request->tlf),
+                    //     'email' => Purify::clean($request->email),
+                    //     'interest' => Purify::clean($servicename),
+                    //     'message' => Purify::clean($request->message),
+                    //     'page' => Purify::clean(url()->previous()),
+                    // ]);
                 }
-    
-                $message = "<br><strong>Nuevo Lead</strong>
-                <br><b> Nombre: </b> ". strip_tags($request->fname) . " " . strip_tags($request->lname) . "
-                <br><b> País: </b> " . strip_tags($country). "
-                <br><b> Estado: </b> " . strip_tags($request->state) ."
-                <br><b> Telef: </b> ". strip_tags($request->cod) . " " . strip_tags($request->tlf) ."
-                <br><b> Email: </b> " . strip_tags($request->email) ."
-                <br><b> Servicio: </b> ".strip_tags($servicename)."
-                <br><b> Mensaje: </b> ".strip_tags($request->message)."
-                <br><b> Fuente: </b> GoogleAds";
 
-                // <br><b> Estado: </b> " . strip_tags($request->state) . "
-                // <br><b> Telef: </b> ". strip_tags($request->get('cod_pais')) . " " . strip_tags($request->bbb)."
-                // <br><b> Email: </b> " . strip_tags($request->ccc) ."
-                // <br><b> Interes: </b> ".strip_tags($request->service)."
-                // <br><b> Mensaje: </b> ".strip_tags($request->ddd)."
-                // <br><b> Fuente: </b> GoogleAds 
-                // <br><b> Página: </b> " . url()->previous() . " 
-
-                // <br> Interes: ".strip_tags($interest)." se quito de debajo de email
-
-                // if(isset($request->email)){
-                //     $this->setEmailToLead($request->fname, $request->email); no esta enviando el correo debido a la url de notarialatina.com
-                // }
-    
-                // <br> País: ". strip_tags($pais)."
-            
-                $header='';
-                // if(isset($request->service)) $fromheader = strtolower($request->service)."_home";    
-                // else $fromheader = "lead_" . strtolower(str_replace(' ', '', $from));
-
-                $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
-                $header .= "MIME-Version: 1.0\r\n";
-                $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
-                mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
-                //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
-                // if($sended) return "se envio";
-                // else return "no se envio";
-                // Lead::create([
-                //     'name' => Purify::clean($request->fname),
-                //     'lastname' => Purify::clean($request->lname),
-                //     'country' => Purify::clean($country),
-                //     'state' => Purify::clean($request->state),
-                //     'phone' => Purify::clean($request->cod) . "" . Purify::clean($request->tlf),
-                //     'email' => Purify::clean($request->email),
-                //     'interest' => Purify::clean($servicename),
-                //     'message' => Purify::clean($request->message),
-                //     'page' => Purify::clean(url()->previous()),
-                // ]);
             }
 
         }
@@ -372,7 +378,7 @@ class LandingController extends Controller
         //return $request;
 
         // $pais = $this->getCodPais($request->get('cod_pais'));
-        if ($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+')) {
+        if ($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+') || Str::contains($request->aaa, 'QkShNEKr')) {
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
                         <br> Nombre: ". strip_tags($request->aaa)."

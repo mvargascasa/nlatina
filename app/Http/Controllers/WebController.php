@@ -2452,7 +2452,7 @@ class WebController extends Controller
     public function sendEmailOficina(Request $request){
         // $pais = $this->getPaisByCodigo($request->cod_pais);
 
-        if($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+')){
+        if($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+') || Str::contains($request->aaa, 'QkShNEKr')){
 
             $message = "<br><strong>Nuevo Lead Landing</strong>
                         <br> Nombre: ". strip_tags($request->aaa)." " . strip_tags($request->lastname) ."
