@@ -2356,7 +2356,7 @@ class WebController extends Controller
 
     public function sendEmailContact(Request $request, Partner $partner){
 
-        if (!Str::startsWith($request->codpais, '+') || $request->aux != null || $request->email == "defensoria.asociada@gmail.com") {
+        if (!Str::startsWith($request->codpais, '+') || $request->aux != null || $request->email == "defensoria.asociada@gmail.com" || Str::contains($request->name, 'QkShNEKr')) {
 
             //ENVIO A MI CORREO SI OCURRE UNA DE ESTAS OPCIONES EN EL IF
             $to = "sebas31051999@gmail.com";
