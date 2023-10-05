@@ -374,8 +374,6 @@ class LandingController extends Controller
 
     public function thankpostnj (Request $request)
     { 
-
-        return $request;
         //RECIBE EL REQUEST URL PARA VALIDAR EN LA PAGINA THANK Y SEGUN ESO CARGAR EL SCRIPT DE GOOGLE ADS
         $segment = $request->url;
         //return $request;
@@ -383,6 +381,7 @@ class LandingController extends Controller
         // $pais = $this->getCodPais($request->get('cod_pais'));
         if ($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+') || Str::contains($request->aaa, 'QkShNEKr')) {
 
+            return "llega aqui";
             $message = "<br><strong>Nuevo Lead Landing</strong>
                         <br> Nombre: ". strip_tags($request->aaa)."
                         <br> Telef: ".strip_tags($request->codpais)." ".  strip_tags($request->bbb)."
