@@ -401,6 +401,8 @@ class LandingController extends Controller
 
         } else {
 
+            return "llega aqui abajo";
+
             $interest = $request->interest ?? 'General';
     
             $abrev = "";
