@@ -381,7 +381,6 @@ class LandingController extends Controller
         // $pais = $this->getCodPais($request->get('cod_pais'));
         if ($request->aux != null || preg_match("/[a-zA-Z]/", $request->bbb) || !Str::startsWith($request->codpais, '+') || Str::contains($request->aaa, 'QkShNEKr')) {
 
-            return "llega aqui";
             $message = "<br><strong>Nuevo Lead Landing</strong>
                         <br> Nombre: ". strip_tags($request->aaa)."
                         <br> Telef: ".strip_tags($request->codpais)." ".  strip_tags($request->bbb)."
@@ -400,8 +399,6 @@ class LandingController extends Controller
             mail('sebas31051999@gmail.com','Bot Lead Landing: '.strip_tags($request->aaa), $message, $header);
 
         } else {
-
-            return "llega aqui abajo";
 
             $interest = $request->interest ?? 'General';
     
@@ -453,6 +450,8 @@ class LandingController extends Controller
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
             mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
+
+            return "Se debio enviar el mail";
 
             // Lead::create([
             //     'name' => Purify::clean($request->aaa),
