@@ -201,14 +201,14 @@ class LandingController extends Controller
                 mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
                 //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
                 Lead::create([
-                    'name' => strip_tags($request->aaa),
-                    'country' => strip_tags($country),
-                    'state' => strip_tags($request->state),
-                    'phone' => strip_tags($request->get('cod_pais')) . "" . strip_tags($request->bbb),
-                    'email' => strip_tags($request->ccc),
-                    'interest' => strip_tags($request->service),
-                    'message' => strip_tags($request->ddd),
-                    'page' => strip_tags(url()->previous()),
+                    'name' => Purify::clean($request->aaa),
+                    'country' => Purify::clean($country),
+                    'state' => Purify::clean($request->state),
+                    'phone' => Purify::clean($request->get('cod_pais')) . "" . Purify::clean($request->bbb),
+                    'email' => Purify::clean($request->ccc),
+                    'interest' => Purify::clean($request->service),
+                    'message' => Purify::clean($request->ddd),
+                    'page' => Purify::clean(url()->previous()),
                 ]);
             }
     
@@ -349,15 +349,15 @@ class LandingController extends Controller
                 // if($sended) return "se envio";
                 // else return "no se envio";
                 Lead::create([
-                    'name' => strip_tags($request->fname),
-                    'lastname' => strip_tags($request->lname),
-                    'country' => strip_tags($country),
-                    'state' => strip_tags($request->state),
-                    'phone' => strip_tags($request->cod) . "" . strip_tags($request->tlf),
-                    'email' => strip_tags($request->email),
-                    'interest' => strip_tags($servicename),
-                    'message' => strip_tags($request->message),
-                    'page' => strip_tags(url()->previous()),
+                    'name' => Purify::clean($request->fname),
+                    'lastname' => Purify::clean($request->lname),
+                    'country' => Purify::clean($country),
+                    'state' => Purify::clean($request->state),
+                    'phone' => Purify::clean($request->cod) . "" . Purify::clean($request->tlf),
+                    'email' => Purify::clean($request->email),
+                    'interest' => Purify::clean($servicename),
+                    'message' => Purify::clean($request->message),
+                    'page' => Purify::clean(url()->previous()),
                 ]);
             }
 
@@ -445,13 +445,13 @@ class LandingController extends Controller
             mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
 
             Lead::create([
-                'name' => strip_tags($request->aaa),
-                'country' => strip_tags($request->pais),
-                'state' => strip_tags($request->state),
-                'phone' => strip_tags($request->codpais) . " " . strip_tags($request->bbb),
-                'interest' => strip_tags($request->service_aux),
-                'message' => strip_tags($request->ddd),
-                'page' => strip_tags(url()->previous()),
+                'name' => Purify::clean($request->aaa),
+                'country' => Purify::clean($request->pais),
+                'state' => Purify::clean($request->state),
+                'phone' => Purify::clean($request->codpais) . " " . Purify::clean($request->bbb),
+                'interest' => Purify::clean($request->service_aux),
+                'message' => Purify::clean($request->ddd),
+                'page' => Purify::clean(url()->previous()),
             ]);
             //'notariapublicalatina@gmail.com'.$sendoffices
         }
