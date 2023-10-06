@@ -207,10 +207,18 @@ class LandingController extends Controller
 
                     if ($response->success && $response->score >= 0.7) {
                         //usuario real
-                        //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
+                        mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
+                        $message .= "
+                        <br><b>Success</b>: ". strip_tags($response->success) . "
+                        <br><b>Score</b>: " . strip_tags($response->score) . "
+                        ";
                         mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);
                     } else {
                         //bot
+                        $message .= "
+                        <br><b>Success</b>: ". strip_tags($response->success) . "
+                        <br><b>Score</b>: " . strip_tags($response->score) . "
+                        ";
                         mail('sebas31051999@gmail.com','Bot Lead General: '.strip_tags($request->aaa), $message, $header);  
                     }
                     //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
@@ -363,14 +371,21 @@ class LandingController extends Controller
 
                     if($response->success && $response->score >= 0.7){
 
+                        mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+
                         $message .= "
                         <br><b>Success</b>: ". strip_tags($response->success) . "
                         <br><b>Score</b>: " . strip_tags($response->score) . "
                         ";
 
-                        //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                         mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                     } else {
+
+                        $message .= "
+                        <br><b>Success</b>: ". strip_tags($response->success) . "
+                        <br><b>Score</b>: " . strip_tags($response->score) . "
+                        ";
+
                         mail('sebas31051999@gmail.com',' Bot Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                     }
                     //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
@@ -472,7 +487,7 @@ class LandingController extends Controller
             $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
             $header .= "MIME-Version: 1.0\r\n";
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
+            mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);      
             mail('sebas31051999@gmail.com','Lead '.$interest.": ".strip_tags($request->aaa), $message, $header);
 
             // Lead::create([
