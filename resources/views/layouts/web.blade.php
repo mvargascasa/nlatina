@@ -293,9 +293,9 @@ span{
 
               form.appendChild(input);
 
-              console.log(form);
+              //console.log(form);
 
-              //form.submit();
+              form.submit();
           });
         });
     });
