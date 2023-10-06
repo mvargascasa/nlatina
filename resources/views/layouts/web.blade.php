@@ -282,7 +282,7 @@ span{
     document.addEventListener('submit', function(e){
         e.preventDefault();
         grecaptcha.ready(function() {
-          grecaptcha.execute('reCAPTCHA_site_key', {action: 'submit'}).then(function(token) {
+          grecaptcha.execute('6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8', {action: 'submit'}).then(function(token) {
               
               let form = e.target; //accediendo al formulario
 
