@@ -293,7 +293,7 @@ span{
 
               form.appendChild(input);
 
-              
+              form.submit();
           });
         });
     });
