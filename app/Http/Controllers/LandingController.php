@@ -122,6 +122,11 @@ class LandingController extends Controller
     public function thankpost(Request $request)
     {
 
+        $response = Htpp::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => env('RECAPTCHA_SECRET_KEY'),
+            'response' => $request->input('g-recaptcha-response')
+        ])->object();
+
         if(isset($request->country)){
             $country = $this->getPaisByCodigo($request->country);
         }
@@ -199,8 +204,15 @@ class LandingController extends Controller
                     $header .= 'From: <'.$from.'@notarialatina.com>' . "\r\n";
                     $header .= "MIME-Version: 1.0\r\n";
                     $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                    //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
-                    mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);  
+
+                    if ($response->success && $response->score >= 0.7) {
+                        //usuario real
+                        //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
+                        mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);
+                    } else {
+                        //bot
+                        mail('sebas31051999@gmail.com','Bot Lead General: '.strip_tags($request->aaa), $message, $header);  
+                    }
                     //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
                     // Lead::create([
                     //     'name' => Purify::clean($request->aaa),
@@ -348,8 +360,19 @@ class LandingController extends Controller
                     $header .= 'From: <'.$page.'@notarialatina.com>' . "\r\n";
                     $header .= "MIME-Version: 1.0\r\n";
                     $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                    //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
-                    mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
+
+                    if($response->success && $response->score >= 0.7){
+                        
+                        $message .= "
+                        <br><b>Success</b>: ". strip_tags($response->success) . "
+                        <br><b>Score</b>: " . strip_tags($response->score) . "
+                        ";
+
+                        //mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                        mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
+                    } else {
+                        mail('sebas31051999@gmail.com',' Bot Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
+                    }
                     //mail($sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                     // if($sended) return "se envio";
                     // else return "no se envio";
@@ -369,6 +392,7 @@ class LandingController extends Controller
             }
 
         }
+
         return view('landing.thank');
     }
 

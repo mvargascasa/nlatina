@@ -274,7 +274,7 @@ span{
 <script>
     setTimeout(() => {
         document.getElementById('script-recaptcha').src="https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8";
-        console.log('cargando script recaptcha');
+        console.log('cargando script recaptcha nuevo');
     }, 3000);
 </script>
 
