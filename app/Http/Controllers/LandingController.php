@@ -122,7 +122,7 @@ class LandingController extends Controller
     public function thankpost(Request $request)
     {
 
-        $response = Htpp::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
             'secret' => env('RECAPTCHA_SECRET_KEY'),
             'response' => $request->input('g-recaptcha-response')
         ])->object();
@@ -362,7 +362,7 @@ class LandingController extends Controller
                     $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
                     if($response->success && $response->score >= 0.7){
-                        
+
                         $message .= "
                         <br><b>Success</b>: ". strip_tags($response->success) . "
                         <br><b>Score</b>: " . strip_tags($response->score) . "
