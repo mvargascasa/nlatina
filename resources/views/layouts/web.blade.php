@@ -293,7 +293,9 @@ span{
 
               form.appendChild(input);
 
-              form.submit();
+              console.log(form);
+
+              //form.submit();
           });
         });
     });
