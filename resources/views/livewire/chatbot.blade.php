@@ -15,7 +15,16 @@
             @endfor
             @if(count($array_user_text)>0)
                 @for($i = 0; $i < count($array_user_text); $i ++)
-                    <div class="my-2 @if($array_user_text[$i]['user'] == "client") text-left bg-light d-flex align-items-center pl-3 shadow-sm @else float-right text-white pl-4 pr-4 py-2 d-flex align-items-center shadow-sm @endif" style="width: 80%; border-radius: 25px; @if($array_user_text[$i]['user'] != "client") background-color: #2B384D @endif">{!! $array_user_text[$i]['content'] !!}</div>
+                    <div class="my-2 position-relative @if($array_user_text[$i]['user'] == "client") text-left bg-light d-flex align-items-center pl-3 shadow-sm @else float-right text-white pl-4 pr-4 py-2 d-flex align-items-center shadow-sm @endif" style="width: 80%; border-radius: 25px; @if($array_user_text[$i]['user'] != "client") background-color: #2B384D @endif">
+                        {!! $array_user_text[$i]['content'] !!}
+                        <div class="position-absolute" style="top: -13px; @if($array_user_text[$i]['user'] == "client") left: -10px; @else right:-5px @endif">
+                            @if($array_user_text[$i]['user'] == "client")
+                                <img width="20px" height="20px" src="{{ asset('img/user1.png') }}" alt="">
+                            @else
+                                <img width="25px" height="25px" src="{{ asset('faviconotarialatina-22.png') }}" alt="">
+                            @endif
+                        </div>
+                    </div>
                     {{-- <p>@if($array_user_text[$i]['user'] == "robot"){{ $array_user_text[$i]['content'] }}@endif</p> --}}
                 @endfor
                 @if($showThreeAnswers)
