@@ -1,4 +1,4 @@
-<div class="bg-white position-fixed shadow box-chat position-relative" style="height: 500px; width: 400px; bottom: 10px; right: 10px; z-index: 1000">
+<div class="bg-white position-fixed shadow box-chat position-relative pb-3" style="height: auto; width: 400px; bottom: 10px; right: 10px; z-index: 1000">
     <div class="position-absolute @if($sended) d-block @else d-none @endif" style="top: 75px; left: 15%;" id="alert">
         <p class="bg-white px-3 py-2 rounded-pill shadow position-relative">Información enviada con éxito <span class="font-weight-bold position-absolute bg-white rounded-circle border px-2" style="top: -7px; right: -7px; cursor: pointer;" onclick="this.parentElement.classList.add('d-none')">x</span></p>
     </div>
@@ -7,7 +7,7 @@
         <div class="w-100 ml-2">Chat Notaria Latina <span class="float-right pr-3" style="cursor: pointer; font-weight: 500; font-size: 18px" onclick="closeChat()">x</span></div>    
     </div>
     <div class="px-3 overflow-auto" id="chatnl" style="height: 450px; scroll-behavior: smooth">
-        <div class="pt-3 pb-4">
+        <div class="pt-3 pb-5">
             @for ($i = 0; $i < count($init); $i++)
                 <div class="pl-5 mb-1 float-right">
                     <button class="btnoptions btn btn-outline-danger rounded-pill" style="font-size: 13px" wire:click="save('{{ $init[$i]['question'] }}')">{{ $init[$i]['question'] }}</button>    
