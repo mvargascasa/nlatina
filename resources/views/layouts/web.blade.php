@@ -286,16 +286,21 @@ span{
               
               let form = e.target; //accediendo al formulario
 
-              let input = document.createElement('input');
-              input.type = "hidden";
-              input.name = "g-recaptcha-response";
-              input.value = token;
+              if(form.id != 'form-chat'){
 
-              form.appendChild(input);
+                let input = document.createElement('input');
+                input.type = "hidden";
+                input.name = "g-recaptcha-response";
+                input.value = token;
 
-              //console.log(form);
+                form.appendChild(input);
 
-              form.submit();
+                //console.log(form);
+
+                form.submit();
+
+              }
+
           });
         });
     });
