@@ -43,10 +43,10 @@ class Chatbot extends Component
     <p class='text-center mt-2 font-weight-bold'>Complete su información</p>
     <div class='d-flex justify-content-center'>
         <form wire:submit.prevent='sendform()' method='POST'>
-            <input wire:model='chatname' type='text' placeholder='Nombre y Apellido' class='form-control rounded-0 mb-2'>
-            <input wire:model='chatphone' type='number' placeholder='Número' class='form-control rounded-0 mb-2'>
-            <input wire:model='chatemail' type='email' placeholder='Correo eléctrónico' class='form-control rounded-0 mb-2'>
-            <select class='form-control rounded-0 mb-2' wire:model='chatcountry'>
+            <input wire:model='chatname' type='text' placeholder='Nombre y Apellido' class='form-control rounded-0 mb-2' required>
+            <input wire:model='chatphone' type='number' placeholder='Número' class='form-control rounded-0 mb-2' required>
+            <input wire:model='chatemail' type='email' placeholder='Correo eléctrónico' class='form-control rounded-0 mb-2' required>
+            <select class='form-control rounded-0 mb-2' wire:model='chatcountry' required>
               <option value=''>País de residencia</option>
               <option value='Argentina'>Argentina</option>
               <option value='Bolivia'>Bolivia</option>
@@ -68,7 +68,7 @@ class Chatbot extends Component
               <option value='Uruguay'>Uruguay</option>
               <option value='Venezuela'>Venezuela</option>
             </select>
-            <select class='form-control rounded-0 mb-2' wire:model='chatinterest'>
+            <select class='form-control rounded-0 mb-2' wire:model='chatinterest' required>
                 <option value=''>Tramite a realizar</option>
                 <option value='Poderes'>Poderes</option>
                 <option value='Apostillas'>Apostillas</option>
@@ -82,7 +82,7 @@ class Chatbot extends Component
                 <option value='Contratos'>Contratos</option>
                 <option value='Testamentos'>Testamentos</option>
             </select>
-            <input type='text' wire:model='chatmessage' placeholder='Mensaje' class='form-control rounded-0 mb-2'>
+            <input type='text' wire:model='chatmessage' placeholder='Mensaje' class='form-control rounded-0 mb-2' required>
             <div class='d-flex justify-content-center'>
                 <button class='btn btn-warning rounded-pill my-2'>Enviar</button>
             </div>
