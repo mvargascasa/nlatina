@@ -179,29 +179,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 }
 @keyframes slidein {from {margin-right: -200px;} to {margin-right: 0px;}}
 @keyframes slideout {from {margin-right: 0px;} to {margin-right: -200px}}
-/* #loader {
-        border: 12px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 12px solid #444444;
-        width: 70px;
-        height: 70px;
-        animation: spin 1s linear infinite;
-    }
-      
-    @keyframes spin {
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-      
-    .center {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-    } */
     .contenedor{
   width:100px;
   height:240px;
@@ -265,7 +242,8 @@ span{
   transform:scale(1);
 }
 @media screen and (max-width: 580px){
-    .box-chat{width: 100vw !important;left: 0px !important; right: 0px !important; bottom: 0px !important}
+    .box-chat{width: 100vw !important;left: 0px !important; right: 0px !important; bottom: 0px !important; height: 100vh !important;}
+    .chatnl{height: 92vh !important}
 }
 </style>
 <livewire:styles/>

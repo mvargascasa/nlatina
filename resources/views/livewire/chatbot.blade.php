@@ -6,7 +6,7 @@
         <div style="width: 10px; height: 10px; border-radius: 25px; background-color: rgb(30, 219, 30)"></div>
         <div class="w-100 ml-2">Chat Notaria Latina <span class="float-right pr-3" style="cursor: pointer; font-weight: 500; font-size: 18px" onclick="closeChat()">x</span></div>    
     </div>
-    <div class="px-3 overflow-auto" id="chatnl" style="height: 450px; scroll-behavior: smooth">
+    <div class="px-3 overflow-auto chatnl" id="chatnl" style="height: 450px; scroll-behavior: smooth">
         <div class="pt-3 pb-5">
             @for ($i = 0; $i < count($init); $i++)
                 <div class="pl-5 mb-1 float-right">
