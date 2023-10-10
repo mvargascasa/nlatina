@@ -98,7 +98,7 @@ class Chatbot extends Component
     public $abogados = "
         <div>
             Puede ingresar al siguiente enlace, elegir su país de residencia y seleccionar un abogado: <br>
-            <a href='https://notarialatina.com/abogados' class='btn btn-light rounded-pill shadow text-dark font-weight-bold'>Ver Abogados 🌐</a>
+            <a href='https://notarialatina.com/abogados' class='btn btn-light rounded-pill shadow text-dark font-weight-bold my-2'>Ver Abogados 🌐</a>
         </div>
     ";
 
