@@ -1048,7 +1048,6 @@ class WebController extends Controller
             $data['imgurlmap'] = "img/oficinas/maps-ny.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-ny-mobile.webp";
             $data['keywords'] = '
-            notaria,
             notaria new york,
             notario publico en queens ny,
             notario publico new york,
@@ -1062,7 +1061,9 @@ class WebController extends Controller
             notarios hispanos cerca de mi,
             notarios públicos cerca de mi ubicación,
             notarios publico cerca de mi,
-            notaria hispana cerca de mi
+            notaria hispana cerca de mi,
+            notaria latina queens,
+            notaría latina en new york
             ';
             $data['reviews'] = $this->reviewsny;
             $data['more_reviews'] = $this->more_reviewsny;
@@ -1780,11 +1781,14 @@ class WebController extends Controller
             $data['imgurlmap'] = "img/oficinas/maps-nj-2.webp";
             $data['imgurlmapmobile'] = "img/oficinas/maps-nj-mobile-2.webp";
             $data['keywords'] = '
-            notaria,
             notaria new jersey,
+            notaria latina nj,
+            notaria latina en new jersey,
+            notaría latina en new jersey,
             notaria en new jersey,
             notario en new jersey,
             notario publico new jersey,
+            notario publico en new jersey,
             notaria cerca de mi,
             notaria publico cerca de mi,
             notario público cerca de mi,
@@ -1795,7 +1799,9 @@ class WebController extends Controller
             notarios hispanos cerca de mi,
             notarios públicos cerca de mi ubicación,
             notarios publico cerca de mi,
-            notaria hispana cerca de mi
+            notaria hispana cerca de mi,
+            notaria latina elizabeth nj,
+            notaría latina en new jersey elizabeth
             ';
             $data['reviews'] = $this->reviewsnj;
             $data['more_reviews'] = $this->more_reviewsnj;
@@ -2327,7 +2333,6 @@ class WebController extends Controller
             $data['imgurlmapmobile'] = "img/oficinas/maps-fl-mobile-2.webp";
             $data['metadescription'] = 'Realizamos Poderes Generales y Especiales, Apostilla y Traducción de todo tipo de documentos en Florida. ¿Desea saber más? ¡Contáctenos ahora! ✅';
             $data['keywords'] = '
-            notaria,
             notaria florida,
             notaria en florida,
             notario en florida,
@@ -2343,7 +2348,11 @@ class WebController extends Controller
             notarios hispanos cerca de mi,
             notarios públicos cerca de mi ubicación,
             notarios publico cerca de mi,
-            notaria hispana cerca de mi';
+            notaria hispana cerca de mi,
+            notaría latina en florida,
+            notaria latina en florida,
+            notaria latina fl
+            ';
             $data['reviews'] = $this->reviewsfl;
             $data['more_reviews'] = $this->more_reviewsfl;
             $data['urlindications'] = "https://www.google.com/maps/dir//Notar%C3%ADa+Latina+en+Florida+2104+N+University+Dr+Sunrise,+FL+33322+Estados+Unidos/@26.1509895,-80.256546,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x88d9072fab0cb6ff:0xb16f5b7ffcc06be4";
