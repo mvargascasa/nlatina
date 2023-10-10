@@ -23,10 +23,15 @@ class Chatbot extends Component
 
     
     public $location = "
-    Contamos con tres oficinas: <br>
-    🚩 New York <br>
-    🚩 New Jersey <br>
-    🚩 Florida 
+    <div>
+        Contamos con tres oficinas: <br>
+        🚩 New York: <br>
+        <a class='text-white' target='_blank' href='https://g.page/notariapublicalatina'>67-03 Roosevelt Avenue, Woodside, NY 11377</a> <br>
+        🚩 New Jersey: <br>
+        <a class='text-white' target='_blank' href='https://g.page/r/CVNRV-zNuJiZEAE'>1146 East Jersey St Elizabeth, NJ 07201</a> <br>
+        🚩 Florida: <br>
+        <a class='text-white' target='_blank' href='https://g.page/r/CeRrwPx_W2-xEAE'>2104 N University Dr, Sunrise, FL 33322</a>
+    </div>
     ";
 
     public $contact = "
