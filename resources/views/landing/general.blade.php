@@ -577,6 +577,10 @@
                 <input type="hidden" name="service" value="{{$service_aux}}">
               @endif
               <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control rounded-0" placeholder="Ingrese su correo electrónico">
+              </div>
+              <div class="form-group">
                 <label for="ddd">Mensaje</label>
                 <input id="ddd" name="ddd" type="text" class="form-control rounded-0" placeholder="Ej: Necesito tramitar una carta poder..." autocomplete="off" required>
               </div>
