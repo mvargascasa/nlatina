@@ -78,6 +78,11 @@
       "name": "Notaria Latina",
       "logo": "https://notarialatina.com/img/marca-notaria-latina.webp"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 5.0,
+      "reviewCount": 1492
+    },
     "offers": {
       "@type": "AggregateOffer",
       "lowPrice": 110.00,
