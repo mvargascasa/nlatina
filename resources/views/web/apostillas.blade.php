@@ -71,15 +71,19 @@
     "@type": "Product",
     "name": "Apostillas",
     "image": "https://notarialatina.com/img/inicio.jpg",
-    "description": "La Apostilla, es la manera más simple de certificar la autenticidad de documentos públicos expedidos en otro país. Por lo tanto es un\n                requisito indispensable para gestionar trámites internacionales.",
+    "description": "La Apostilla, es la manera más simple de certificar la autenticidad de documentos públicos expedidos en otro país. Por lo tanto es un\n                requisito indispensable para gestionar trámites internacionales",
     "url": "https://notarialatina.com/apostillas",
     "brand": {
       "@type": "Brand",
       "name": "Notaria Latina",
       "logo": "https://notarialatina.com/img/marca-notaria-latina.webp"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "Precio variable"
     }
   }
-</script>
+  </script>
 
 @endsection
 @section('phoneNumberHidden', '+18007428602')
