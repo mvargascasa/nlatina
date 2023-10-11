@@ -14,6 +14,10 @@
                 <input type="date" class="form-control w-auto mx-1 rounded-0" wire:model="from_date">
                 <input type="date" class="form-control w-auto mx-1 rounded-0" wire:model="to_date">
                 <button class="btn btn-danger rounded-0 shadow-sm ml-1 rounded-0" wire:click="clean">Limpiar</button>
+
+                <div class="d-flex justify-content-end w-100">
+                    <button class="btn btn-success rounded-0 text-right" type="button" data-toggle="modal" data-target="#exampleModal">Crear Lead</button>
+                </div>
             </div>
         </div>
         <div class="position-absolute bg-white px-3 rounded-pill border" style="top: -13px; left: 15px">
@@ -69,4 +73,20 @@
             @endif
           </div>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear Lead</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <livewire:create-lead />
+                </div>
+          </div>
+        </div>
+      </div>
 </div>
