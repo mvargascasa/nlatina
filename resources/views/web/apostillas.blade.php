@@ -64,6 +64,23 @@
   }, 3500);
 </script>
 
+<!-- Marcado JSON-LD generado por el Asistente para el marcado de datos estructurados de Google. -->
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Product",
+    "name": "Apostillas",
+    "image": "https://notarialatina.com/img/inicio.jpg",
+    "description": "La Apostilla, es la manera más simple de certificar la autenticidad de documentos públicos expedidos en otro país. Por lo tanto es un\n                requisito indispensable para gestionar trámites internacionales.",
+    "url": "https://notarialatina.com/apostillas",
+    "brand": {
+      "@type": "Brand",
+      "name": "Notaria Latina",
+      "logo": "https://notarialatina.com/img/marca-notaria-latina.webp"
+    }
+  }
+</script>
+
 @endsection
 @section('phoneNumberHidden', '+18007428602')
 @section('phoneNumber', '800-742-8602')
