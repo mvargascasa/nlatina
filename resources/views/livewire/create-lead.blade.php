@@ -33,7 +33,7 @@
                 <input type="number" wire:model="inpPhone" placeholder="Telefono" class="form-control rounded-0" required>
           </div>
           <div class="col-sm-6 mb-3">
-                <input type="email" wire:model="inpEmail" placeholder="Email" class="form-control rounded-0" required>
+                <input type="email" wire:model="inpEmail" placeholder="Email" class="form-control rounded-0">
           </div>
         </div>
         <div class="row">
