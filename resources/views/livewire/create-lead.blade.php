@@ -52,6 +52,8 @@
                         <option value="Poderes Especiales">Poderes Especiales</option>
                         <option value="Revocatorias">Revocatorias</option>
                         <option value="Testamentos">Testamentos</option>
+                        <option value="Cita Consular">Cita Consular</option>
+                        <option value="Otro">Otro</option>
                   </select>
             </div>
         </div>
