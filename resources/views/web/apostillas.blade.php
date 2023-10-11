@@ -79,8 +79,10 @@
       "logo": "https://notarialatina.com/img/marca-notaria-latina.webp"
     },
     "offers": {
-      "@type": "Offer",
-      "price": "Precio variable"
+      "@type": "AggregateOffer",
+      "lowPrice": 110.00,
+      "highPrice": 225.00,
+      "priceCurrency": "USD"
     }
   }
   </script>
