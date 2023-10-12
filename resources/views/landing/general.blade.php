@@ -165,7 +165,7 @@
   <!--NEW JERSEY-->
   <!-- Google tag (gtag.js) --> 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306069230"></script>
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=AW-306069230"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
