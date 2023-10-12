@@ -58,7 +58,7 @@ if(strpos($actual_link, 'localhost') === false){
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script id="analytics_4"></script>
+{{-- <script id="analytics_4"></script>
 <script>
     setTimeout(() => {
         document.getElementById('analytics_4').src = 'https://www.googletagmanager.com/gtag/js?id=G-TFNJT2W9R9';
@@ -69,7 +69,7 @@ if(strpos($actual_link, 'localhost') === false){
 
         gtag('config', 'G-TFNJT2W9R9');
     }, 2000);
-</script>
+</script> --}}
 
 <!-- Event snippet for Enviar formulario de clientes potenciales conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
