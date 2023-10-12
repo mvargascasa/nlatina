@@ -143,8 +143,11 @@
 @if($oficina == "New York")
   <!--NEW YORK-->
   <!-- Google tag (gtag.js) --> 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-702844945"></script>
+  <script id="analytics-new-york"></script>
   <script>
+    setTimeout(() => {
+      document.getElementById('analytics-new-york').src="https://www.googletagmanager.com/gtag/js?id=AW-702844945";
+    }, 3000);
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -169,7 +172,6 @@
   <script>
     setTimeout(() => {
       document.getElementById('analytics-new-jersey').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
-      console.log('cargando script de analytics 4 nj');
     }, 3000);
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -194,8 +196,11 @@
   <!--FLORIDA-->
   <!-- Google tag (gtag.js) -->
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-306001515"></script>
+  <script id="analytics-florida"></script>
   <script>
+    setTimeout(() => {
+      document.getElementById('analytics-florida').src="https://www.googletagmanager.com/gtag/js?id=AW-306001515";
+    }, 3000);
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
