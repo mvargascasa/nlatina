@@ -265,7 +265,8 @@
 @if($tlfhidden == "19082249259")
   <script> 
     setTimeout(() => {
-      gtag('config', 'AW-306069230/Hz3ICPe-pckYEO79-JEB', { 'phone_conversion_number': '9082249259' }); 
+      gtag('config', 'AW-306069230/Hz3ICPe-pckYEO79-JEB', { 'phone_conversion_number': '9082249259' });
+      console.log('execute function');
     }, 3500);
   </script>
   <!-- Event snippet for IDG_NEWJERSEY_TRADUCCION_MOBIL_LLAMADA_BOTON conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> 
