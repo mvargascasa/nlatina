@@ -165,13 +165,16 @@
   <!--NEW JERSEY-->
   <!-- Google tag (gtag.js) --> 
   <!-- Google tag (gtag.js) -->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=AW-306069230"></script>
+  <script id="analytics-new-jersey"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    setTimeout(() => {
+      document.getElementById('analytics-new-jersey').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    gtag('config', 'AW-306069230');
+      gtag('config', 'AW-306069230');
+    }, 3000);
   </script>
 
 
