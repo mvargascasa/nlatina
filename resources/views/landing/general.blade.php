@@ -169,12 +169,13 @@
   <script>
     setTimeout(() => {
       document.getElementById('analytics-new-jersey').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-306069230');
+      console.log('cargando script de analytics 4 nj');
     }, 3000);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-306069230');
   </script>
 
 
