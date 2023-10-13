@@ -28,8 +28,8 @@
             <div class="col-12 text-white text-center">
               <h1 class="font-weight-bold heading-title" >Traducción de documentos en {{ $data['office'] }}</h1>
   
-              <a href="javascript:void(0)" class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
-              data-target="#exampleModal">INICIAR TRAMITE</a>
+              <button class="btn btn-warning btn-lg mt-4" data-toggle="modal" 
+              data-target="#exampleModal">INICIAR TRAMITE</button>
           </div>
 
       </div>
