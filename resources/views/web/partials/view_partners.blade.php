@@ -18,13 +18,14 @@
                             @foreach ($featured as $fmobile)
                                 <div class="card shadow-sm d-flex mb-2 bg-light rounded-0">
                                     <div class="card-body d-flex position-relative">
-                                        <img class="lazyload img-fluid" width="80px" data-src="{{ asset('storage/'.$fmobile->img_profile) }}" alt="">
+                                        <section style="height: 80px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url({{ asset('storage/'.$fmobile->img_profile) }})"></section>
+                                        {{-- <img class="lazyload img-fluid" width="80px" data-src="{{ asset() }}" alt=""> --}}
                                         <div class="ml-3 w-100">
                                             <h5 class="card-title">{{ $fmobile->name . " " . $fmobile->lastname }}</h5>
                                             <p class="card-text">{{ $fmobile->state . ", " . $fmobile->city }}</p>
                                             <a href="{{ route('web.showpartner', $fmobile->slug) }}" class="btn font-weight-bold float-right rounded-0 shadow-sm" style="background-color: #002542; color: #ffffff">Ver perfil</a>
                                         </div>
-                                        <div class="position-absolute" style="top: -4px; right: 0px">
+                                        <div class="position-absolute" style="top: -6px; right: 0px">
                                             <span class="bg-warning rounded-0 px-2 pb-1 text-white" style="font-size: small">Destacado</span>
                                         </div>
                                     </div>
