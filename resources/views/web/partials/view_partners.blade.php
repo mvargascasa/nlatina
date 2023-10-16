@@ -13,7 +13,7 @@
                 <div class="col-12 col-sm-12 col-md-9">
                     <div class="row justify-content-center">
 
-                        {{-- mobile --}}
+                        
                         <div class="cardsMobileFeatured container d-none">
                             @foreach ($featured as $fmobile)
                                 <div class="card shadow-sm d-flex mb-2 bg-light rounded-0">
