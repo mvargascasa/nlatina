@@ -323,9 +323,10 @@ class WebController extends Controller
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
 
         //return response()->json($partners);
+        $featured = Partner::with('customers')->whereHas('customers')->withCount('customers')->where('country_residence', 'LIKE', "%".$request->pais."%")->orderBy('customers_count', 'desc')->take(3)->get();
 
         return response()->json([
-            'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties', 'countryID', 'country_aux', 'count_partners'))->render()
+            'viewPartners' => view('web.partials.view_partners', compact('countries', 'states', 'partners', 'specialties', 'countryID', 'country_aux', 'count_partners', 'featured'))->render()
         ]);
     }
 
