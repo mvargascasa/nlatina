@@ -208,17 +208,17 @@ class LandingController extends Controller
                     if ($response->success && $response->score >= 0.7) {
                         //usuario real
                         mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead: ' . strip_tags($request->service) . " " .strip_tags($request->aaa), $message, $header);  
-                        $message .= "
-                        <br><b>Success</b>: ". strip_tags($response->success) . "
-                        <br><b>Score</b>: " . strip_tags($response->score) . "
-                        ";
+                        // $message .= "
+                        // <br><b>Success</b>: ". strip_tags($response->success) . "
+                        // <br><b>Score</b>: " . strip_tags($response->score) . "
+                        // ";
                         mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);
                     } else {
                         //bot
-                        $message .= "
-                        <br><b>Success</b>: ". strip_tags($response->success) . "
-                        <br><b>Score</b>: " . strip_tags($response->score) . "
-                        ";
+                        // $message .= "
+                        // <br><b>Success</b>: ". strip_tags($response->success) . "
+                        // <br><b>Score</b>: " . strip_tags($response->score) . "
+                        // ";
                         mail('sebas31051999@gmail.com','Bot Lead General: '.strip_tags($request->aaa), $message, $header);  
                     }
                     //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
