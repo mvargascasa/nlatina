@@ -18,8 +18,8 @@
                             @foreach ($featured as $fmobile)
                                 <div class="card shadow-sm d-flex mb-2 bg-light rounded-0">
                                     <div class="card-body d-flex position-relative">
-                                        <section style="height: 80px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url({{ asset('storage/'.$fmobile->img_profile) }})"></section>
-                                        {{-- <img class="lazyload img-fluid" width="80px" data-src="{{ asset() }}" alt=""> --}}
+                                        {{-- <section style="height: 80px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url({{ asset('storage/'.$fmobile->img_profile) }})"></section> --}}
+                                        <img class="lazyload img-fluid" width="80px" height="100px" data-src="{{ asset('storage/'.$fmobile->img_profile) }}" alt="">
                                         <div class="ml-3 w-100">
                                             <h5 class="card-title">{{ $fmobile->name . " " . $fmobile->lastname }}</h5>
                                             <p class="card-text">{{ $fmobile->state . ", " . $fmobile->city }}</p>
