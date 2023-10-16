@@ -1,7 +1,7 @@
 @include('web.partials.filters_partners')
 <div class="mt-5 contenido">
     @if (count($partners) > 0)
-        @if(count($featured)>0)
+        {{-- @if(count($featured)>0)
         <section>
             <section class="row">
                 <div class="col-12 col-sm-12 col-md-3 d-flex align-items-center">
@@ -53,11 +53,7 @@
                 </div>
             </section>
         </section>
-        @else
-        <section>
-            <p>No hay destacados</p>
-        </section>
-        @endif
+        @endif --}}
         <section class="mt-5 pl-3 shadow-sm" style="border-left: 5px solid #fec200;">
             <p class="py-2">Encontramos <span style="font-weight: 500">{{ $count_partners }}</span> abogados que residen en <span style="font-weight: 500">{{ $country_aux->name_country }}</span></p>
         </section>
