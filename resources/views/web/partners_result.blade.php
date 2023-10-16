@@ -8,6 +8,8 @@
     $currentURL = url()->full(); //Obtener toda la url para mandar og:url
 @endphp
 
+    <meta name="robots" content="noindex">
+
     <title>Abogados en {{ $country_aux->name_country }} a su alcance | Notaria Latina ⚖</title>
     <meta name="description" content="Contamos con un amplio directorio de abogados en {{$country_aux->name_country}} de diferentes áreas como Penal, Civil, Migratorio, Laboral, Familiar, entre otros, para ayudarlo a gestionar sus trámites legales | Notaria Latina 👨🏻‍⚖️">
     <meta name="keywords" content="abogados near me, abogados cerca de mi, abogado {{strtolower($country_aux->name_country)}}, abogados en {{strtolower($country_aux->name_country)}}, abogado en {{strtolower($country_aux->name_country)}}, abogados de {{strtolower($country_aux->name_country)}}, abogados migratorios {{strtolower($country_aux->name_country)}}, abogados migratorios en {{strtolower($country_aux->name_country)}}, abogados de familia {{strtolower($country_aux->name_country)}}, abogados de familia en {{strtolower($country_aux->name_country)}}, abogados de divorcio {{strtolower($country_aux->name_country)}}, abogados de inmigracion {{strtolower($country_aux->name_country)}}, abogados de inmigracion en {{strtolower($country_aux->name_country)}}, abogados familiar {{strtolower($country_aux->name_country)}}, abogados familiar en {{strtolower($country_aux->name_country)}}, abogados online {{strtolower($country_aux->name_country)}}, directorio de abogados en {{strtolower($country_aux->name_country)}}, abogados penalistas {{strtolower($country_aux->name_country)}}, abogados penalistas en {{strtolower($country_aux->name_country)}}, servicios de abogados en {{strtolower($country_aux->name_country)}}, abogados laborales {{strtolower($country_aux->name_country)}}, abogados de migracion {{strtolower($country_aux->name_country)}}, abogados de migracion en {{strtolower($country_aux->name_country)}}">
@@ -188,6 +190,10 @@
             }
             #titlepc{font-size: 18px !important}
         }
+        @media screen and (max-width: 1200px){
+            .cardsMobileFeatured{ display: block !important}
+            .cardsDesktopFeatured{display: none !important}
+        }
         .titulo{
             font-size: 30px;
         }
@@ -217,6 +223,19 @@
         #titlepc{
             display: block;
         }
+        .container-image::after {
+            content: "";
+            width: 100%;
+            /* El height controla el alto del degradado */
+            height: 350px;
+            position: absolute;
+            left: 0;
+            /* Puedes cambiar la posición del degrado desde aquí */
+            bottom: 0;
+            /* Si cambias la posición, reemplaza también la dirección en el gradiente */
+            background-image: linear-gradient(to top, #002542c7, transparent);
+        }
+
     </style>
     <script defer src="{{ asset('js/lazysizes.min.js') }}"></script>
 
@@ -340,6 +359,43 @@
 
         selectCountry(country_id, page);
     });
+
+//      selectCountry
+//      stateSelect
+//      specialty
+
+    let selCountryPartners = document.getElementById('pais');
+    selCountryPartners.addEventListener('change', function(){
+        if(selCountryPartners.value != ""){
+            selCountryPartners.style.backgroundColor = "#002542";
+            selCountryPartners.style.color = "#ffffff";
+        } else {
+            selCountryPartners.style.backgroundColor = "#ffffff";
+            selCountryPartners.style.color = "#000000";
+        }
+    })
+
+    let selectState = document.getElementById('stateSelect');
+    selectState.addEventListener('change', function(){
+        if(selectState.value != ""){
+            selectState.style.backgroundColor = "#002542";
+            selectState.style.color = "#ffffff";
+        } else {
+            selectState.style.backgroundColor = "#ffffff";
+            selectState.style.color = "#000000";
+        }
+    })
+
+    let specialty = document.getElementById('specialty');
+    specialty.addEventListener('change', function(){
+        if(specialty.value != ""){
+            specialty.style.backgroundColor = "#002542";
+            specialty.style.color = "#ffffff";
+        } else {
+            specialty.style.backgroundColor = "#ffffff";
+            specialty.style.color = "#000000";
+        }
+    })
 
     function changeurllocation(option){
         // debugger;

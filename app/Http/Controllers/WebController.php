@@ -277,7 +277,10 @@ class WebController extends Controller
         
         $specialties = Specialty::select(['id', 'name_specialty'])->get();
 
-        if($country_aux) return view('web.partners_result', compact('countries', 'states', 'partners', 'specialties', 'country_aux', 'count_partners', 'demonym'));
+        //destacados
+        $featured = Partner::with('customers')->whereHas('customers')->withCount('customers')->orderBy('customers_count', 'desc')->take(3)->get();
+
+        if($country_aux) return view('web.partners_result', compact('countries', 'states', 'partners', 'specialties', 'country_aux', 'count_partners', 'demonym', 'featured'));
         else return view('errors.404');
     }
 
