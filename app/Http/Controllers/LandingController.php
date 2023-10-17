@@ -373,18 +373,18 @@ class LandingController extends Controller
 
                         mail('notariapublicalatina@gmail.com'.$sendoffices,'Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
 
-                        $message .= "
-                        <br><b>Success</b>: ". strip_tags($response->success) . "
-                        <br><b>Score</b>: " . strip_tags($response->score) . "
-                        ";
+                        // $message .= "
+                        // <br><b>Success</b>: ". strip_tags($response->success) . "
+                        // <br><b>Score</b>: " . strip_tags($response->score) . "
+                        // ";
 
                         mail('sebas31051999@gmail.com','Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);   
                     } else {
 
-                        $message .= "
-                        <br><b>Success</b>: ". strip_tags($response->success) . "
-                        <br><b>Score</b>: " . strip_tags($response->score) . "
-                        ";
+                        // $message .= "
+                        // <br><b>Success</b>: ". strip_tags($response->success) . "
+                        // <br><b>Score</b>: " . strip_tags($response->score) . "
+                        // ";
 
                         mail('sebas31051999@gmail.com',' Bot Lead '.Str::ucfirst($from).': '.strip_tags($request->fname), $message, $header);
                     }
