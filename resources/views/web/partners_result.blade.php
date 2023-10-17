@@ -271,7 +271,7 @@
 
 .hover-2-title {
   position: absolute;
-  top: 85%;
+  top: 80%;
   left: 0;
   text-align: center;
   width: 100%;
