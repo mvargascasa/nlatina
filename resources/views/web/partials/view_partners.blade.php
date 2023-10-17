@@ -19,7 +19,9 @@
                                 <div class="card shadow-sm d-flex mb-2 bg-light rounded-0">
                                     <div class="card-body d-flex position-relative">
                                         {{-- <section style="height: 80px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url({{ asset('storage/'.$fmobile->img_profile) }})"></section> --}}
-                                        <img class="lazyload img-fluid" width="80px" height="100px" data-src="{{ asset('storage/'.$fmobile->img_profile) }}" alt="">
+                                        <div>
+                                            <img class="lazyload img-fluid" width="80px" height="100px" data-src="{{ asset('storage/'.$fmobile->img_profile) }}" alt="">
+                                        </div>
                                         <div class="ml-3 w-100">
                                             <h5 class="card-title">{{ $fmobile->name . " " . $fmobile->lastname }}</h5>
                                             <p class="card-text">{{ $fmobile->state . ", " . $fmobile->city }}</p>
@@ -37,15 +39,20 @@
                             <!-- desktop -->
                             <div class="col-sm-4 cardsDesktopFeatured">
                                 <div class="position-relative">
-                                    <section class="container-image">
+                                    <section class="hover hover-2" style="height: 350px">
                                         <section style="height: 350px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url({{asset('storage/'.$f->img_profile)}});"></section>
+                                        <div class="hover-overlay"></div>
+                                        <div class="hover-2-content px-5 py-4">
+                                            <p class="h5 hover-2-title font-weight-bold mb-0"> <span class="font-weight-light">{{ $fmobile->name}} </span>{{ $fmobile->lastname}}</p>
+                                            <p class="hover-2-description text-uppercase mb-0">{{ $fmobile->city }}, {{ $fmobile->state }}</p>
+                                        </div>
                                     </section>
-                                    <div 
+                                    {{-- <div 
                                         class="position-absolute d-flex justify-content-center" 
                                         style="width: 100%; bottom: 20px"
                                     >
                                         <p class="text-white font-weight-bold">{{ $f->name . " " . $f->lastname}} <br> {{ $f->state . ", " . $f->city}}</p>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <a class="btn btn-warning shadow-sm mt-3 btn-block font-weight-bold" href="{{ route('web.showpartner', $f->slug) }}">VER PERFIL</a>
                             </div>
