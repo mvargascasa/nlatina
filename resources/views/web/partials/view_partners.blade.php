@@ -43,8 +43,8 @@
                                         <section style="height: 350px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url({{asset('storage/'.$f->img_profile)}});"></section>
                                         <div class="hover-overlay"></div>
                                         <div class="hover-2-content px-5 py-4">
-                                            <p class="h5 hover-2-title font-weight-bold mb-0"> <span class="font-weight-light">{{ $fmobile->name}} </span>{{ $fmobile->lastname}}</p>
-                                            <p class="hover-2-description text-uppercase mb-0">{{ $fmobile->city }}, {{ $fmobile->state }}</p>
+                                            <p class="h5 hover-2-title font-weight-bold mb-0"> <span class="font-weight-light">{{ $f->name}} </span>{{ $f->lastname}}</p>
+                                            <p class="hover-2-description text-uppercase mb-0">{{ $f->city }}, {{ $f->state }}</p>
                                         </div>
                                     </section>
                                     {{-- <div 
