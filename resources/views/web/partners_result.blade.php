@@ -278,6 +278,8 @@
   z-index: 99;
   transition: all 0.3s;
   color: #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .hover-2-description {
