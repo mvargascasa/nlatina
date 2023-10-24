@@ -192,10 +192,10 @@ class Chatbot extends Component
     }
 
     public function sendform(){
-        
+
         $message = "<br><strong>Nuevo Lead</strong>
         <br><b> Nombre: </b> ". strip_tags($this->chatname)."
-        <br><b> País: </b> " . strip_tags($country->name_country) . "
+        <br><b> País: </b> " . strip_tags($this->chatcountry) . "
         <br><b> Estado: </b> " . strip_tags($this->chatstate)."
         <br><b> Telef: </b> ". strip_tags($this->chatphone) . "
         <br><b> Email: </b> " . strip_tags($this->chatemail) ."
