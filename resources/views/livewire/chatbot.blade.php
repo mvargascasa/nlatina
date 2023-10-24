@@ -58,6 +58,9 @@
 <script>
     document.addEventListener("livewire:load", function(event) {
         window.livewire.hook('beforeDomUpdate', () => {
+            // let sended = @this.sended;
+            // let selCountryChat = document.getElementById('selCountryChat');
+            // if(selCountryChat) changeState(selCountryChat);
             setTimeout(() => {
                 let divscroll = document.getElementById('chatnl');
                 divscroll.scrollTop = divscroll.scrollHeight;
@@ -69,4 +72,36 @@
     const closeChat = () => {
         document.getElementById('chatnotaria').classList.add('d-none');
     }
+
+    // function changeState(element){
+    //         let selStateChat = document.getElementById('selStateChat');
+    //         console.log(selStateChat.options.length);
+    //         getstateschat(element.value);
+    // }
+
+    // const getstateschat = async (id) => {
+        
+    //     let selStateChat = document.getElementById('selStateChat');
+
+    //     if(selStateChat){
+
+    //         selStateChat.options.length = 0;
+    //         const response = await fetch("{{url('getstates')}}/"+id );        
+    //         const states = await response.json();
+    //         console.log(states);
+    //         let opt = document.createElement('option');
+    //         opt.appendChild( document.createTextNode('Estado/Departamento') );
+    //         opt.value = '';
+    //         selStateChat.appendChild(opt);
+    //             states.forEach(state => {
+    //                 let opt = document.createElement('option');
+    //                 opt.appendChild( document.createTextNode(state.name_state) );
+    //                 opt.value = state.name_state;
+    //                 selStateChat.appendChild(opt);
+    //         });
+
+    //     }
+
+    // }
+
 </script>

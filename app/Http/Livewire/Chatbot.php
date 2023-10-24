@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Illuminate\Http\Request;
+use App\Country;
 
 class Chatbot extends Component
 {
@@ -17,7 +18,7 @@ class Chatbot extends Component
     public $locationview = false; public $contactview = false; public $abogadosview = false; public $tramitesview = false;
 
     //variables para formulario
-    public $chatname = "";public $chatphone = ""; public $chatemail = ""; public $chatcountry = ""; public $chatinterest = ""; public $chatmessage = "";
+    public $chatname = "";public $chatphone = ""; public $chatemail = ""; public $chatcountry = ""; public $chatstate = ""; public $chatinterest = ""; public $chatmessage = "";
 
     public $sended = false;
 
@@ -51,10 +52,11 @@ class Chatbot extends Component
             <input wire:model='chatname' type='text' placeholder='Nombre y Apellido' class='form-control rounded-0 mb-2' required>
             <input wire:model='chatphone' type='number' placeholder='Número' class='form-control rounded-0 mb-2' required>
             <input wire:model='chatemail' type='email' placeholder='Correo eléctrónico' class='form-control rounded-0 mb-2' required>
-            <select class='form-control rounded-0 mb-2' wire:model='chatcountry' required>
+            <select class='form-control rounded-0 mb-2' wire:model='chatcountry' id='selCountryChat' required>
               <option value=''>País de residencia</option>
               <option value='Argentina'>Argentina</option>
               <option value='Bolivia'>Bolivia</option>
+              <option value='Chile'>Chile</option>
               <option value='Colombia'>Colombia</option>
               <option value='Costa Rica'>Costa Rica</option>
               <option value='Ecuador'>Ecuador</option>
@@ -73,6 +75,7 @@ class Chatbot extends Component
               <option value='Uruguay'>Uruguay</option>
               <option value='Venezuela'>Venezuela</option>
             </select>
+            <input wire:model='chatstate' type='text' placeholder='Estado/Departamento' class='form-control rounded-0 mb-2' title='Ingrese el estado o departamento en donde reside' required>
             <select class='form-control rounded-0 mb-2' wire:model='chatinterest' required>
                 <option value=''>Tramite a realizar</option>
                 <option value='Poderes'>Poderes</option>
@@ -192,7 +195,8 @@ class Chatbot extends Component
         
         $message = "<br><strong>Nuevo Lead</strong>
         <br><b> Nombre: </b> ". strip_tags($this->chatname)."
-        <br><b> País: </b> " . strip_tags($this->chatcountry) . "
+        <br><b> País: </b> " . strip_tags($country->name_country) . "
+        <br><b> Estado: </b> " . strip_tags($this->chatstate)."
         <br><b> Telef: </b> ". strip_tags($this->chatphone) . "
         <br><b> Email: </b> " . strip_tags($this->chatemail) ."
         <br><b> Interes: </b> ".strip_tags($this->chatinterest)."
@@ -209,6 +213,7 @@ class Chatbot extends Component
         if($sendedmail){
             $this->chatname = "";
             $this->chatcountry = "";
+            $this->chatstate = "";
             $this->chatphone = "";
             $this->chatemail = "";
             $this->chatinterest = "";
