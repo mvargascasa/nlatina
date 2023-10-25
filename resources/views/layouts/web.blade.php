@@ -355,7 +355,7 @@ span{
                         </ul>
                     </li>
                     
-@php
+{{-- @php
 $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Chile')->orderBy('country')->get();
 @endphp
 <li class="nav-item dropdown">
@@ -368,7 +368,7 @@ $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Ch
             @endforeach
 
         </ul>
-</li> 
+</li>  --}}
                 <li class="nav-item"> <a class="nav-link @if(Request::is('blog') || Request::is('post/*')) text-warning @else text-white @endif" href="{{route('post.blog')}}">Blog</a> </li>
                 <li class="nav-item"> <a class="nav-link @if(Request::is('videos')) text-warning @else text-white @endif" href="{{route('web.videos')}}">Videos</a> </li>
                 <li class="nav-item"> <a class="nav-link @if(Request::is('nosotros')) text-warning @else text-white @endif" href="{{route('web.nosotros')}}">Nosotros</a> </li>
