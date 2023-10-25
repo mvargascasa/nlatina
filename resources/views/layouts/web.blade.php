@@ -244,6 +244,13 @@ span{
 @media screen and (max-width: 580px){
     .box-chat{width: 100vw !important;left: 0px !important; right: 0px !important; bottom: 0px !important; height: 100vh !important;}
     .chatnl{height: 92vh !important}
+    .dropdown-partners{margin-left: 0px !important;}
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-partners{
+    margin-left: -60px;
 }
 </style>
 <livewire:styles/>
@@ -373,7 +380,32 @@ $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Ch
                 <li class="nav-item"> <a class="nav-link @if(Request::is('videos')) text-warning @else text-white @endif" href="{{route('web.videos')}}">Videos</a> </li>
                 <li class="nav-item"> <a class="nav-link @if(Request::is('nosotros')) text-warning @else text-white @endif" href="{{route('web.nosotros')}}">Nosotros</a> </li>
                 <li class="nav-item"> <a class="nav-link @if(Request::is('contactenos')) text-warning @else text-white @endif" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
-                <li class="nav-item"> <a class="nav-link @if(Request::is('abogados*') || Request::is('portal/*')) text-warning @else text-white @endif" href="{{ route('web.showallpartners') }}">Portal de Abogados</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
+                      id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portal de Abogados</a>
+
+                      <ul class="dropdown-menu dropdown-partners" aria-labelledby="navbarDropdown">
+                        <li> <a class="dropdown-item" href="{{ route('web.showallpartners') }}">Ver todos los países</a></li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'argentina') }}"><img class="img-fluid" src="{{ asset('img/partners/argentina.png') }}" alt=""> Argentina </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'bolivia')}}"> <img src="{{ asset('img/partners/bolivia.png') }}" alt=""> Bolivia </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'chile')}}"> <img src="{{ asset('img/partners/chile.png') }}" alt=""> Chile </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'colombia')}}"> <img src="{{ asset('img/partners/colombia.png') }}" alt=""> Colombia </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'costa-rica')}}"> <img src="{{ asset('img/partners/costarica.png') }}" alt=""> Costa Rica </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'ecuador')}}"> <img src="{{ asset('img/partners/ecuador.png') }}" alt=""> Ecuador </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'el-salvador')}}"> <img src="{{ asset('img/partners/elsalvador.png') }}" alt=""> El Salvador </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'guatemala')}}"> <img src="{{ asset('img/partners/guatemala.png') }}" alt=""> Guatemala </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'honduras')}}"> <img src="{{ asset('img/partners/honduras.png') }}" alt=""> Honduras </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'mexico')}}"> <img src="{{ asset('img/partners/mexico.png') }}" alt=""> México </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'nicaragua')}}"> <img src="{{ asset('img/partners/nicaragua.png') }}" alt=""> Nicaragua </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'panama')}}"> <img src="{{ asset('img/partners/panama.png') }}" alt=""> Panamá </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'paraguay')}}"> <img src="{{ asset('img/partners/paraguay.png') }}" alt=""> Paraguay </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'peru')}}"> <img src="{{ asset('img/partners/peru.png') }}" alt=""> Perú </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'puerto-rico')}}"> <img src="{{ asset('img/partners/puertorico.png') }}" alt=""> Puerto Rico </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'republica-dominicana')}}"> <img src="{{ asset('img/partners/repúblicadominicana.png') }}" alt=""> República Dominicana </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'uruguay')}}"> <img src="{{ asset('img/partners/uruguay.png') }}" alt=""> Uruguay </a> </li>
+                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'venezuela')}}"> <img src="{{ asset('img/partners/venezuela.png') }}" alt=""> Venezuela </a> </li>  
+                      </ul>
+                  </li>
                 {{-- <li class="nav-item"> <a class="nav-link text-white" type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchModal">Buscar</a></li> --}}
                   {{-- <li class="nav-item"><a class="nav-link" href="{{ route('partners.registro') }}">Registrarse</a></li> --}}
               </ul>
