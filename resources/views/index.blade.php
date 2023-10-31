@@ -1258,7 +1258,7 @@
         //document.getElementById('prisection').style.backgroundImage = "url('img/inicio.jpg')";
         document.getElementById('imgdoc').src = "img/docverify-approved-enotary-small.webp";
         document.getElementById('imgnna').src = "img/national-notary-association.webp";
-        document.getElementById('services_section').style.backgroundImage = "url('img/fondo servicios.png')";
+        document.getElementById('services_section').style.backgroundImage = "url('img/fondo servicios.webp')";
         //document.getElementById('divtestimonials').style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
         // AOS.init();
     });
