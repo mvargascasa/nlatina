@@ -345,7 +345,7 @@
 <section>
   <section class="row" style="background-color: #122944">
     <div class="col-sm-12 col-md-6">
-      <img class="img-fluid" src="{{ asset('img/notarizando documento.png') }}" alt="notaria en newyork, newjersey y florida">
+      <img class="img-fluid" src="{{ asset('img/notarizando documento.webp') }}" alt="notaria en newyork, newjersey y florida">
     </div>
     <div class="col-sm-12 col-md-4 d-flex align-items-center p-5">
       <div>
