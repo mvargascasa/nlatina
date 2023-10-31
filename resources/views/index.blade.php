@@ -87,8 +87,8 @@
 
       @media screen and (max-width: 1200px){.links-offices{font-size: 30px !important}}
       @media screen and (max-width: 1000px){}
-      @media screen and (max-width: 800px){.links-offices{font-size: 25px !important;} .txt-gestion-facil{font-size: 15px !important;letter-spacing: 3px !important} .img-logo{width: 300px !important}}
-      @media screen and (max-width: 400px){.img-logo{width: 250px !important}}
+      @media screen and (max-width: 800px){.links-offices{font-size: 25px !important;} .txt-gestion-facil{font-size: 15px !important;letter-spacing: 3px !important} .img-logo{width: 300px !important}.title-h1{font-size: 2.5rem !important}}
+      @media screen and (max-width: 400px){.img-logo{width: 250px !important}.title-h1{font-size: 1.8rem !important}.img-header{height: 100vh !important}}
 
       .child-locations{
         background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #122944, #122944);
@@ -147,6 +147,7 @@
       .changebgcolor {background-color: #122944;}
       .changetxtcolor{color: #ffffff !important}
       .changeimgcolor{filter: brightness(0) invert(1);}
+      .card-hover:hover {border-bottom: .5rem solid #2B384D !important; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px !important;}
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -154,9 +155,220 @@
 
 @section('content')
 
+<section>
+    <section class="position-relative">
+      <img class="img-header" src="{{ asset('img/notaria-en-estados-unidos-min.webp') }}" alt="" style="height: 900px; width: 100%; object-fit: cover; object-position: center top;">
+      <section class="position-absolute" style="top: 30%; left: 15%">
+        <h1 class="title-h1" style="color: #122944; font-size: 3.5rem"><span style="font-weight: 400">Brindamos servicios <br> notariales para toda</span> <br><span style="font-weight: 700">Latinoamerica desde <br> los Estados Unidos</span></h1>
+        <button class="btn rounded-pill px-5 mt-4" style="background-color: #FFBE32; color: #122944; font-weight: 700; font-size: 1.2rem" data-toggle="modal" data-target="#exampleModal">INICIAR TRÁMITE</button>
+      </section>
+    </section>
+</section>
+
+<section class="text-white" style="background-color: #122944">
+  <section class="container">
+    <div class="row p-5">
+      <div class="col-sm-12 col-md-6 py-3">
+        <div class="d-flex">
+          <p class="mr-3" style="font-size: .9rem">SOBRE NOSOTROS</p><div style="width: 40%; height: 3px; background-color: #FFB832; margin-top: 10px"></div>
+        </div>
+        <h2 style="font-size: 2.5rem"><span style="font-weight: 100">Bienvenido/a a</span> <br> <span style="font-weight: 500">Notaría Pública <br> Latina</span></h2>
+      </div>
+      <div class="col-sm-12 col-md-6 py-3 text-justify">
+        <p>Somos una notaría autorizada, para autenticar documentos en Estados Unidos, por medio de una Apostilla. Nuestro servicio es realizado bajo normas y reglas estrictamente legales, para que su trabajo sea entregado con la mayor prontitud y satisfacción.</p>
+        <p style="font-weight: 500">Brindamos servicios notariales para toda Latinoamérica desde los Estados Unidos</p>
+        <a class="btn btn-sm rounded-pill px-4" style="background-color: #FFB832; color: #122944; font-weight: 600" href="{{ route('web.nosotros') }}">LEER MÁS</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="pt-5 pb-5" id="services_section" style="background-size: cover; background-position: center; background-repeat: no-repeat">
+  <section class="container">
+    <section>
+      <div class="d-flex justify-content-center align-items-center">
+        <div style="background-color: #FFB832; height: 3px; width: 5rem"></div>
+        <h2 class="mx-4" style="font-size: .9rem; margin-top: 6px; font-weight: 500">NUESTROS SERVICIOS</h2>
+        <div style="background-color: #FFB832; height: 3px; width: 5rem"></div>
+      </div>
+      <p class="text-center" style="font-size: 2.5rem"><span style="font-weight: 300">Áreas de</span> <span style="font-weight: 600">Experiencia</span></p>
+    </section>
+    <section class="row justify-content-center gax-4">
+      <div class="col-12 col-md-6 col-lg-4 mb-5">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.poderes') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Poderes</h3>
+              <p>Gestione sus trámites sin estar presente por medio de un apoderado</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-5">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.apostillas') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Apostillas</h3>
+              <p>Autentificamos sus documentos solicitados por entidades de otro país</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-5">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.traducciones') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Traducciones</h3>
+              <p>Transcripción de documentos de un idioma a otro diferente</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-5">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.certificaciones') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Certificaciones</h3>
+              <p>Demuestre que la copia realizada es veridica copia del documento original</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-5">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.affidavit') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Affidavit</h3>
+              <p>Asegure la veracidad de un documento mediante una declaracion juramentada</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-5">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.revocatorias') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Revocatoria</h3>
+              <p>Deje sin efecto un poder otorgado sin antelación</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-5">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.acuerdos') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Acuerdos</h3>
+              <p>Percátese de firmar un convenio entre dos o más personas</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-5">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.invitacion') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Cartas de Invitación</h3>
+              <p>Documento válido para la tramitación de una visa de turista</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-5">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.autorizaciones') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Travel Authorization</h3>
+              <p>Nombre a un titular quien será el encargado de viajar con un menor de edad</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-5">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.contratos') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Contratos</h3>
+              <p>Gestione sus documentos legales que reflejan los derechos y obligaciones</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <a style="text-decoration: none; color: #000000" href="{{ route('web.testamentos') }}">
+          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+            <div>
+              <img width="30rem" src="{{ asset('img/oficinas/ICONOS-09.webp') }}" alt="">
+            </div>
+            <div class="px-4">
+              <h3 style="font-size: 1.2rem; color: #122944">Testamentos</h3>
+              <p>Documento que refleja la voluntad de una persona de distribuir sus bienes</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </section>
+</section>
+
+<section>
+  <section class="row" style="background-color: #122944">
+    <div class="col-sm-12 col-md-6">
+      <img class="img-fluid" src="{{ asset('img/notarizando documento.png') }}" alt="notaria en newyork, newjersey y florida">
+    </div>
+    <div class="col-sm-12 col-md-4 d-flex align-items-center p-5">
+      <div>
+        <div class="d-flex align-items-center">
+          <h2 style="font-size: .8rem; font-weight: 400; " class="text-white mr-3 mt-1">¿POR QUÉ ELEGIRNOS?</h2>
+          <div style="background-color: #FFB832; width: 80px; height: 2px"></div>
+        </div>
+        <div>
+          <p class="text-white" style="font-size: 2rem">¿Qué nos hace <br><span style="color: #FFB832; font-weight: 700">diferentes?</span></p>
+          <p class="text-white">Contamos con <span style="font-weight: 500">más de 10 años de trayectoria</span> en el campo notarial, nuestro personal profesional y capacitado le brindará un servicio integral, rápido y eficaz</p>
+          <p class="text-white">Nuestra notaría está avalada por National Notary Association y Approved Electronic Notary</p>
+          <div class="d-flex">
+            <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
+            <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
 
 
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="3000">
+{{-- <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="3000">
     <ol class="carousel-indicators">
       <li style="width: 10px; height: 10px" data-target="#carouselExampleCaptions" data-slide-to="0" class="active rounded-circle"></li>
       <li style="width: 10px; height: 10px" data-target="#carouselExampleCaptions" data-slide-to="1" class="rounded-circle"></li>
@@ -166,31 +378,13 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
           <img data-src="@if($mobile) {{asset('img/5-mobile.webp')}} @else {{ asset('img/5.webp')}} @endif" class="lazy d-block w-100" alt="..." 
-          style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
+          style="height: 850px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="@if($mobile) {{asset('img/logo-notaria-latina-mobile.webp')}} @else {{asset('img/logo-notaria-latina.webp')}} @endif" alt="">
-              {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex ;justify-content: center;">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat text-center" style="background-color: #FFBE32; color: #2B384D; font-weight: semibold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">GESTIÓN RÁPIDA Y FÁCIL</p>
               </div>
-              {{-- <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
-                  </div>
-                </div>
-                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif" style="border-color: #FFBE32 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newjersey') }}"></i> New Jersey</a>
-                  </div>
-                </div>
-                <div class="col-sm-4 @if(!$mobile) border-left @endif" style="border-color: #FFBE32 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
-                  </div>
-                </div>
-              </div> --}}
               <div class="d-flex justify-content-center @if(!$mobile) mb-5 @else mb-4 @endif" style="margin-top: @if(!$mobile) -50px @else -30px @endif !important">
                 <div class="d-flex">
                     @foreach ($consulates as $consulate)
@@ -202,20 +396,15 @@
               </div>
               <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
             </div>
-              {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
-              {{-- <hr width="200" style="border-color: #fff"> --}}
-              {{-- href="javascript:void(0)" --}}
           </div>
         </div>
 
-{{-- @if(!$mobile) --}}
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
           <img data-src="@if($mobile) {{asset('img/4-mobile.webp')}} @else {{asset('img/4.webp')}} @endif" class="lazy d-block w-100" alt="..." 
-          style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
+          style="height: 850px;object-fit: cover; object-position: center center; filter: brightness(0.4);">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="@if($mobile) {{asset('img/logo-notaria-latina-mobile.webp')}} @else {{asset('img/logo-notaria-latina.webp')}} @endif" alt="">
-              {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex; justify-content: center; text-align: center !important">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">PODERES</p>
               </div>
@@ -229,36 +418,16 @@
                 </div>
               </div>
               <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
-              {{-- <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
-                  </div>
-                </div>
-                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif" style="border-color: #FFBE32 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newjersey') }}"></i> New Jersey</a>
-                  </div>
-                </div>
-                <div class="col-sm-4 @if(!$mobile) border-left @endif" style="border-color: #FFBE32 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
-                  </div>
-                </div>
-              </div> --}}
+
             </div>
-              {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
-              {{-- <hr width="200" style="border-color: #fff"> --}}
-              {{-- href="javascript:void(0)" --}}
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
           <img data-src="@if($mobile) {{asset('img/3-mobile.webp')}} @else {{asset('img/3.webp')}} @endif" class="lazy d-block w-100" alt="..." 
-          style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
+          style="height: 850px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="@if($mobile) {{asset('img/logo-notaria-latina-mobile.webp')}} @else {{asset('img/logo-notaria-latina.webp')}} @endif" alt="">
-              {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex ;justify-content: center">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFBE32; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">APOSTILLAS</p>
               </div>
@@ -272,36 +441,15 @@
                 </div>
               </div>
               <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
-              {{-- <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFBE32 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
-                  </div>
-                </div>
-                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif" style="border-color: #FFBE32 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newjersey') }}"></i> New Jersey</a>
-                  </div>
-                </div>
-                <div class="col-sm-4 @if(!$mobile) border-left @endif" style="border-color: #FFBE32 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFBE32"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
-                  </div>
-                </div>
-              </div> --}}
             </div>
-              {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
-              {{-- <hr width="200" style="border-color: #fff"> --}}
-              {{-- href="javascript:void(0)" --}}
           </div>
         </div>
         <div class="carousel-item"  style="background:rgba(2, 2, 2, 0.5);">
           <img data-src="@if($mobile) {{asset('img/2-mobile.webp')}} @else {{asset('img/2.webp')}} @endif" class="lazy d-block w-100" alt="..." 
-          style="height: 550px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
+          style="height: 850px;object-fit: cover; object-position: center center; filter: brightness(0.4)">
           <div class="carousel-caption">
             <div class="@if($mobile) mb-5 @endif">
               <img class="img-logo pb-5 img-fluid lazy" width="500px" height="250px" data-src="@if($mobile){{asset('img/logo-notaria-latina-mobile.webp')}} @else {{asset('img/logo-notaria-latina.webp')}} @endif" alt="">
-              {{-- <h1 class="tit-not">Notaría Pública</h1> --}}
               <div class="pb-5" style="display:flex ;justify-content: center">
                 <p class="txt-gestion-facil h4 w-auto rounded-pill pl-3 pr-1 py-1 font-family-montserrat" style="background-color: #FFB832; color: #2B384D; font-weight: bold; letter-spacing: 10px; font-size: 20px; margin-bottom: @if(!$mobile) 6% @else 2% @endif">TRADUCCIONES</p>
               </div>
@@ -315,30 +463,9 @@
                 </div>
               </div>
               <button class="btn btn-outline-warning btn-lg button rounded-pill text-white mb-5" data-toggle="modal" data-target="#exampleModal">INICIAR TRAMITE</button>
-              {{-- <div id="locations" class="row" style="margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
-                <div class="col-sm-4 @if(!$mobile) border-right @endif" style="border-color: #FFB832 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFB832"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newyork') }}"></i> New York</a>
-                  </div>
-                </div>
-                <div id="div2" class="col-sm-4 @if(!$mobile) border-left border-right @endif" style="border-color: #FFB832 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFB832"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.newjersey') }}"></i> New Jersey</a>
-                  </div>
-                </div>
-                <div class="col-sm-4 @if(!$mobile) border-left @endif" style="border-color: #FFB832 !important">
-                  <div class="child-locations mb-2 rounded-pill">
-                    <i class="fas fa-map-marker-alt links-offices" style="font-size: 40px; color: #FFB832"><a class="underline heading-title links-offices" style="color: #ffffff; text-decoration: none; font-size: 40px" href="{{ route('web.oficina.florida') }}"></i> Florida</a>
-                  </div>
-                </div>
-              </div> --}}
             </div>
-              {{-- <h5 class="heading-title">Notarizamos Documentos</h5> --}}
-              {{-- <hr width="200" style="border-color: #fff"> --}}
-              {{-- href="javascript:void(0)" --}}
           </div>
         </div>
-{{-- @endif --}}
 
     </div>
     <label style="cursor: pointer" class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -347,19 +474,20 @@
     <label style="cursor: pointer" class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </label>
-  </div>
+  </div> --}}
 
-  <div class="p-2" style="position: absolute;right: 20px;top: 80px;z-index: 999">
+  {{-- <div class="p-2" style="position: absolute;right: 20px;top: 80px;z-index: 999">
     <a class="h5" href="tel:+18007428602" style="color: #FFB832 !important" onclick="gtag_report_conversion('tel:+18007428602');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
       <i class="fas fa-phone-square-alt"></i> 800-742-8602
     </a>
-  </div>
+  </div> --}}
 
-<div class="container">
+{{-- <div class="container">
   <div class="col-12 text-center pt-4">
       <h2 class="tit-not">Nuestros Servicios</h2>
       <hr class="hrb">
-    </div>
+    </div> --}}
+
   {{-- <div class="row py-4">
       <div class="col-12 col-sm-12 col-md-4">
         <a style="text-decoration: none" href="{{route('web.apostillas')}}">
@@ -404,7 +532,7 @@
       </div>
   </div> --}}
 
-  <div class="row justify-content-center">
+  {{-- <div class="row justify-content-center">
 
     <div class="col-12 col-sm-6 col-md-6 col-xl-4 mt-3">
       <a style="text-decoration: none" href="{{route('web.poderes')}}">
@@ -417,7 +545,6 @@
                 <div class="pr-3">
                     <h3 class="title" style="font-weight: 600; font-size: 25px">PODERES</h3>
                     <p class="font-family-montserrat description" style="font-size: 20px">Gestione sus trámites sin estar presente por medio de un apoderado</p>
-                    {{-- @if($mobile) <p class="font-family-montserrat description" style="font-size: 16px">¿Cómo otorgar una carta poder?</p>@endif --}}
                 </div>
             </div>
         </div>
@@ -594,7 +721,7 @@
       </a>
     </div>
 
-</div>
+</div> --}}
 
   {{-- <div class="row mt-4">
     <div class="col-12 col-sm-12 col-md-4">
@@ -717,14 +844,13 @@
     </div>
   </div> --}}
 
-</div>
-</div>
+{{-- </div>
+</div> --}}
 
-<div class="@if($mobile) mt-1 @else mt-5 @endif">
+{{-- <div class="@if($mobile) mt-1 @else mt-5 @endif">
   <div>
       <div class="row">
           <div class="col-12 col-sm-6 p-4 my-2 text-white pt-5 pb-5 shadow" style="background-color: #2B384D; padding-left: 10% !important">
-              {{-- <span class="text-muted font-weight-bold">¿Por qué elegirnos?</span> <br><br> --}}
               <p class="heading-title pb-4 h3">Brindamos el mejor servicio y asesoramiento a latinos en Estados Unidos.</p>
               <hr class="hrwf">
               <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
@@ -740,9 +866,9 @@
           </div>
       </div>
   </div>
-</div>
+</div> --}}
 
-<div class="container">
+{{-- <div class="container">
 
 <div class="row">
 <hr>
@@ -753,7 +879,7 @@
   <div class="row @if($mobile) mt-1 mx-2 @else mt-4 mx-5 @endif">
     <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
       <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
-        {{-- <i class="fas fa-calendar-alt fa-3x" style="color: #FFBE32"></i> --}}
+        
         <img width="50px" height="50px" src="{{ asset('img/calendar-home.png') }}" alt="image calendar">
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white font-family-montserrat">Tenemos una trayectoria dentro del campo notarial por más de <b>10 años</b></p></i>
@@ -761,7 +887,7 @@
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
       <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
-        {{-- <i class="fas fa-university fa-3x" style="color: #FFBE32"></i> --}}
+        
         <img width="50px" height="50px" src="{{ asset('img/museo-home.png') }}" alt="image museum">
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white font-family-montserrat">Contamos con un <b>personal profesional y capacitado</b> para la realización de trámites</p></i>
@@ -769,7 +895,7 @@
     </div>
     <div data-aos="fade-up" class="col-sm-4 text-center pt-3">
       <div class="card-different border h-100 pt-4 px-5 py-3 shadow" style="background-color: #2B384D; border-radius: 20px">
-        {{-- <i class="fas fa-users fa-3x" style="color: #FFBE32"></i> --}}
+        
         <img width="50px" height="50px" src="{{ asset('img/users-home.png') }}" alt="image users">
         <hr class="w-50" style="background-color: #FFBE32">
         <i><p class="mt-2 text-white font-family-montserrat">Estamos comprometido con nuestros clientes brindándole un <b>servicio integral, rápido y eficaz</b></p></i>
@@ -780,15 +906,15 @@
 
 </div>
 
-</div>
+</div> --}}
 
-<div data-aos="flip-right" style="background-color: #12294409" class="row text-center py-5 mt-5 shadow">
+{{-- <div data-aos="flip-right" style="background-color: #12294409" class="row text-center py-5 mt-5 shadow">
   <div class="w-100">
     <h3 class="tit-not letter-color" style="font-weight: 600 !important">¿Tiene alguna pregunta?</h3>
     <i><p class="letter-color font-family-montserrat">No dude en contactarnos y uno de nuestros asesores lo ayudará</p></i>
     <a class="btn btn-warning py-3 shadow-sm" style="border-radius: 10px" href="{{route('web.contactenos')}}"><i class="font-weight-bold letter-color">CONTACTARME</i></a>
   </div>
-</div>
+</div> --}}
 
 {{-- <div class="container mt-5">
   <div class="row @if($mobile) pt-0 @else pt-4 @endif">
@@ -1132,6 +1258,7 @@
         //document.getElementById('prisection').style.backgroundImage = "url('img/inicio.jpg')";
         document.getElementById('imgdoc').src = "img/docverify-approved-enotary-small.webp";
         document.getElementById('imgnna').src = "img/national-notary-association.webp";
+        document.getElementById('services_section').style.backgroundImage = "url('img/fondo servicios.png')";
         //document.getElementById('divtestimonials').style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
         // AOS.init();
     });

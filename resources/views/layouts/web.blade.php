@@ -241,6 +241,9 @@ span{
 .animacionVer{
   transform:scale(1);
 }
+@media screen and (max-width: 1200px){
+    .navbar{padding-left: 5% !important; padding-right: 5% !important}
+}
 @media screen and (max-width: 580px){
     .box-chat{width: 100vw !important;left: 0px !important; right: 0px !important; bottom: 0px !important; height: 100vh !important;}
     .chatnl{height: 92vh !important}
@@ -252,6 +255,8 @@ span{
 .dropdown-partners{
     margin-left: -60px;
 }
+.color-links{color: #2B384D; text-decoration: none; font-weight: 500}
+.color-links-hover{background-color: #FFBE32; color: #122944; border-radius: 25px; font-weight: 500}
 </style>
 <livewire:styles/>
 
@@ -304,113 +309,120 @@ span{
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=757596345081494&ev=PageView&noscript=1"/>
     </noscript>
     <header>
-        <nav class="navbar navbar-expand-lg" style="background-color: #2B384D;">
-          <div class="d-flex flex-grow-1">
-              <span class="w-100 d-lg-none d-block">
-                  <a class="navbar-brand" href="{{route('web.index')}}">
-                      <img src="{{asset('img/marca-notaria-latina.webp')}}" width="140px" height="30px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
+        <section>
+            <nav class="navbar navbar-expand-lg position-fixed w-100" style="z-index: 2; padding-left: 15%; padding-right: 15%">
+              <div class="d-flex flex-grow-1">
+                  <span class="w-100 d-lg-none d-block">
+                      <a class="navbar-brand" href="{{route('web.index')}}">
+                          <img src="{{asset('img/notaria latina logo.png')}}" width="210px" height="50px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
+                        </a>
+                  </span>
+    
+                  <a class="navbar-brand d-none d-lg-inline-block " href="{{route('web.index')}}">
+                      <img src="{{asset('img/notaria latina logo.png')}}" width="230px" height="60px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
                     </a>
-              </span>
-
-              <a class="navbar-brand d-none d-lg-inline-block " href="{{route('web.index')}}">
-                  <img src="{{asset('img/marca-notaria-latina.webp')}}" width="140px" height="30px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
-                </a>
-              <div class="w-100 text-right mt-1">
-                  <button class="navbar-toggler bg-white" type="button" title="Barra de navegacion" data-toggle="collapse" data-target="#myNavbar">
-                    <i class="fas fa-bars" style="color: #122944;"></i>
-                      {{-- <span class="navbar-toggler-icon"></span> --}}
-                  </button>
+                  <div class="w-100 text-right mt-2">
+                      <button class="navbar-toggler" type="button" title="Barra de navegacion" data-toggle="collapse" data-target="#myNavbar">
+                        <i class="fas fa-bars" style="color: #122944;"></i>
+                          {{-- <span class="navbar-toggler-icon"></span> --}}
+                      </button>
+                  </div>
               </div>
-          </div>
-          <div class="collapse navbar-collapse text-right" id="myNavbar">
-              <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative; background-color: #2B384D;">
-                  <li class="nav-item"> <a class="nav-link @if(Request::is('/')) text-warning @else text-white @endif" href="{{route('web.index')}}">Inicio</a> </li>
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
-                        id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
-
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {{-- <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="#"> Apostillas</a> 
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item"><a href="{{route('web.apostillar.naturalizacion')}}">Carta de Naturalización</a></li>
-                                    <li class="dropdown-item"><a href="{{route('web.apostillar.nacimiento')}}">Certificado de Nacimiento</a></li>
-                                    <li class="dropdown-item"><a href="{{route('web.apostillar.acta.constitutiva')}}">Acta Constitutiva</a></li>
-                                    <li class="dropdown-item"><a href="{{route('web.apostillar.poder.notarial')}}">Poder Notarial</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu"> 
-                                <a class="dropdown-item dropdown-toggle" href="#"> Poderes </a> 
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item"><a href="{{route('web.poderesg')}}">Poderes Generales</a></li>
-                                    <li class="dropdown-item"><a href="{{route('web.poderesp')}}">Poderes Especiales</a></li>
-                                    <li class="dropdown-item"><a href="{{route('web.poderesnf')}}">Poder Notarial Financiero</a></li>
-                                </ul>
-                            </li> --}}
-                            <li> <a class="dropdown-item" href="{{route('web.apostillas')}}"> Apostillas </a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.poderes')}}"> Poderes </a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.traducciones')}}"> Traducciones </a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.affidavit')}}"> Affidavit </a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.acuerdos')}}"> Acuerdos </a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.autorizaciones')}}"> Autorizaciones de Viaje </a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.invitacion')}}"> Cartas de Invitación </a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.certificaciones')}}"> Certificaciones </a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.contratos')}}"> Contratos </a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.revocatorias')}}"> Revocatorias </a> </li>
-                            <li> <a class="dropdown-item" href="{{route('web.testamentos')}}"> Testamentos </a> </li>
-
-                        </ul>
-                    </li>
-                    
-{{-- @php
-$consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Chile')->orderBy('country')->get();
-@endphp
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
-        id="DropConsul" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulados en NY</a>
-
-        <ul class="dropdown-menu" aria-labelledby="DropConsul">
-            @foreach ($consuls as $consul)                
-            <li> <a class="dropdown-item" href="{{route('consul.slug',$consul->slug)}}"> {{$consul->country}} </a> </li>
-            @endforeach
-
-        </ul>
-</li>  --}}
-                <li class="nav-item"> <a class="nav-link @if(Request::is('blog') || Request::is('post/*')) text-warning @else text-white @endif" href="{{route('post.blog')}}">Blog</a> </li>
-                <li class="nav-item"> <a class="nav-link @if(Request::is('videos')) text-warning @else text-white @endif" href="{{route('web.videos')}}">Videos</a> </li>
-                <li class="nav-item"> <a class="nav-link @if(Request::is('nosotros')) text-warning @else text-white @endif" href="{{route('web.nosotros')}}">Nosotros</a> </li>
-                <li class="nav-item"> <a class="nav-link @if(Request::is('contactenos')) text-warning @else text-white @endif" href="{{route('web.contactenos')}}">Contáctenos</a> </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
-                      id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portal de Abogados</a>
-
-                      <ul class="dropdown-menu dropdown-partners" aria-labelledby="navbarDropdown">
-                        <li> <a class="dropdown-item" href="{{ route('web.showallpartners') }}">Ver todos los países</a></li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'argentina') }}"><img class="img-fluid" src="{{ asset('img/partners/argentina.png') }}" alt=""> Argentina </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'bolivia')}}"> <img src="{{ asset('img/partners/bolivia.png') }}" alt=""> Bolivia </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'chile')}}"> <img src="{{ asset('img/partners/chile.png') }}" alt=""> Chile </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'colombia')}}"> <img src="{{ asset('img/partners/colombia.png') }}" alt=""> Colombia </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'costa-rica')}}"> <img src="{{ asset('img/partners/costarica.png') }}" alt=""> Costa Rica </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'ecuador')}}"> <img src="{{ asset('img/partners/ecuador.png') }}" alt=""> Ecuador </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'el-salvador')}}"> <img src="{{ asset('img/partners/elsalvador.png') }}" alt=""> El Salvador </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'guatemala')}}"> <img src="{{ asset('img/partners/guatemala.png') }}" alt=""> Guatemala </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'honduras')}}"> <img src="{{ asset('img/partners/honduras.png') }}" alt=""> Honduras </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'mexico')}}"> <img src="{{ asset('img/partners/mexico.png') }}" alt=""> México </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'nicaragua')}}"> <img src="{{ asset('img/partners/nicaragua.png') }}" alt=""> Nicaragua </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'panama')}}"> <img src="{{ asset('img/partners/panama.png') }}" alt=""> Panamá </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'paraguay')}}"> <img src="{{ asset('img/partners/paraguay.png') }}" alt=""> Paraguay </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'peru')}}"> <img src="{{ asset('img/partners/peru.png') }}" alt=""> Perú </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'puerto-rico')}}"> <img src="{{ asset('img/partners/puertorico.png') }}" alt=""> Puerto Rico </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'republica-dominicana')}}"> <img src="{{ asset('img/partners/repúblicadominicana.png') }}" alt=""> República Dominicana </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'uruguay')}}"> <img src="{{ asset('img/partners/uruguay.png') }}" alt=""> Uruguay </a> </li>
-                        <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'venezuela')}}"> <img src="{{ asset('img/partners/venezuela.png') }}" alt=""> Venezuela </a> </li>  
-                      </ul>
-                  </li>
-                {{-- <li class="nav-item"> <a class="nav-link text-white" type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchModal">Buscar</a></li> --}}
-                  {{-- <li class="nav-item"><a class="nav-link" href="{{ route('partners.registro') }}">Registrarse</a></li> --}}
-              </ul>
-          </div>
-      </nav>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative;">
+                    {{-- @if(Request::is('/')) text-warning @else text-white @endif --}}
+                      <li class="nav-item px-2 @if(Request::is('/')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('web.index')}}">INICIO</a> </li>
+                      <li class="nav-item dropdown px-2 @if(Request::is('/traducciones')) color-links-hover @endif">
+                          <a class="nav-link dropdown-toggle @if(Route::currentRouteName() == 'web.apostillas' || Route::currentRouteName() == 'web.poderes' || Route::currentRouteName() == 'web.traducciones' || Route::currentRouteName() == 'web.affidavit' || Route::currentRouteName() == 'web.acuerdos' || Route::currentRouteName() == 'web.autorizaciones' || Route::currentRouteName() == 'web.invitacion' || Route::currentRouteName() == 'web.certificaciones' || Route::currentRouteName() == 'web.contratos' || Route::currentRouteName() == 'web.revocatorias' || Route::currentRouteName() == 'web.testamentos') color-links-hover @endif color-links" href="javascript:void(0)"
+                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICIOS</a>
+    
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {{-- <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#"> Apostillas</a> 
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-item"><a href="{{route('web.apostillar.naturalizacion')}}">Carta de Naturalización</a></li>
+                                        <li class="dropdown-item"><a href="{{route('web.apostillar.nacimiento')}}">Certificado de Nacimiento</a></li>
+                                        <li class="dropdown-item"><a href="{{route('web.apostillar.acta.constitutiva')}}">Acta Constitutiva</a></li>
+                                        <li class="dropdown-item"><a href="{{route('web.apostillar.poder.notarial')}}">Poder Notarial</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu"> 
+                                    <a class="dropdown-item dropdown-toggle" href="#"> Poderes </a> 
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-item"><a href="{{route('web.poderesg')}}">Poderes Generales</a></li>
+                                        <li class="dropdown-item"><a href="{{route('web.poderesp')}}">Poderes Especiales</a></li>
+                                        <li class="dropdown-item"><a href="{{route('web.poderesnf')}}">Poder Notarial Financiero</a></li>
+                                    </ul>
+                                </li> --}}
+                                <li> <a class="dropdown-item" href="{{route('web.apostillas')}}"> Apostillas </a> </li>
+                                <li> <a class="dropdown-item" href="{{route('web.poderes')}}"> Poderes </a> </li>
+                                <li> <a class="dropdown-item" href="{{route('web.traducciones')}}"> Traducciones </a> </li>
+                                <li> <a class="dropdown-item" href="{{route('web.affidavit')}}"> Affidavit </a> </li>
+                                <li> <a class="dropdown-item" href="{{route('web.acuerdos')}}"> Acuerdos </a> </li>
+                                <li> <a class="dropdown-item" href="{{route('web.autorizaciones')}}"> Autorizaciones de Viaje </a> </li>
+                                <li> <a class="dropdown-item" href="{{route('web.invitacion')}}"> Cartas de Invitación </a> </li>
+                                <li> <a class="dropdown-item" href="{{route('web.certificaciones')}}"> Certificaciones </a> </li>
+                                <li> <a class="dropdown-item" href="{{route('web.contratos')}}"> Contratos </a> </li>
+                                <li> <a class="dropdown-item" href="{{route('web.revocatorias')}}"> Revocatorias </a> </li>
+                                <li> <a class="dropdown-item" href="{{route('web.testamentos')}}"> Testamentos </a> </li>
+    
+                            </ul>
+                        </li>
+                        
+    {{-- @php
+    $consuls = \App\Consulate::select('country', 'slug')->where('country', '!=', 'Chile')->orderBy('country')->get();
+    @endphp
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="javascript:void(0)"
+            id="DropConsul" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulados en NY</a>
+    
+            <ul class="dropdown-menu" aria-labelledby="DropConsul">
+                @foreach ($consuls as $consul)                
+                <li> <a class="dropdown-item" href="{{route('consul.slug',$consul->slug)}}"> {{$consul->country}} </a> </li>
+                @endforeach
+    
+            </ul>
+    </li>  --}}
+                    {{-- @if(Request::is('blog') || Request::is('post/*')) text-warning @else text-white @endif --}}
+                    <li class="nav-item px-2 @if(Request::is('blog') || Request::is('post/*')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('post.blog')}}">BLOG</a> </li>
+                    {{-- @if(Request::is('videos')) text-warning @else text-white @endif --}}
+                    {{-- <li class="nav-item"> <a class="nav-link color-links" href="{{route('web.videos')}}">VIDEOS</a> </li> --}}
+                    {{-- @if(Request::is('nosotros')) text-warning @else text-white @endif --}}
+                    <li class="nav-item px-2 @if(Request::is('nosotros')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('web.nosotros')}}">NOSOTROS</a> </li>
+                    {{-- @if(Request::is('contactenos')) text-warning @else text-white @endif --}}
+                    <li class="nav-item px-2 @if(Request::is('contactenos')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('web.contactenos')}}">CONTACTENOS</a> </li>
+                    <li class="nav-item px-2 dropdown">
+                        <a class="nav-link dropdown-toggle @if(Route::currentRouteName() == 'partners.fetch.state' || Route::currentRouteName() == 'web.showallpartners') color-links-hover @endif color-links px-2" href="javascript:void(0)"
+                          id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PORTAL DE ABOGADOS</a>
+    
+                          <ul class="dropdown-menu dropdown-partners" aria-labelledby="navbarDropdown">
+                            <li> <a class="dropdown-item" href="{{ route('web.showallpartners') }}">Ver todos los países</a></li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'argentina') }}"><img class="img-fluid" src="{{ asset('img/partners/argentina.png') }}" alt=""> Argentina </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'bolivia')}}"> <img src="{{ asset('img/partners/bolivia.png') }}" alt=""> Bolivia </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'chile')}}"> <img src="{{ asset('img/partners/chile.png') }}" alt=""> Chile </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'colombia')}}"> <img src="{{ asset('img/partners/colombia.png') }}" alt=""> Colombia </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'costa-rica')}}"> <img src="{{ asset('img/partners/costarica.png') }}" alt=""> Costa Rica </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'ecuador')}}"> <img src="{{ asset('img/partners/ecuador.png') }}" alt=""> Ecuador </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'el-salvador')}}"> <img src="{{ asset('img/partners/elsalvador.png') }}" alt=""> El Salvador </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'guatemala')}}"> <img src="{{ asset('img/partners/guatemala.png') }}" alt=""> Guatemala </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'honduras')}}"> <img src="{{ asset('img/partners/honduras.png') }}" alt=""> Honduras </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'mexico')}}"> <img src="{{ asset('img/partners/mexico.png') }}" alt=""> México </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'nicaragua')}}"> <img src="{{ asset('img/partners/nicaragua.png') }}" alt=""> Nicaragua </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'panama')}}"> <img src="{{ asset('img/partners/panama.png') }}" alt=""> Panamá </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'paraguay')}}"> <img src="{{ asset('img/partners/paraguay.png') }}" alt=""> Paraguay </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'peru')}}"> <img src="{{ asset('img/partners/peru.png') }}" alt=""> Perú </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'puerto-rico')}}"> <img src="{{ asset('img/partners/puertorico.png') }}" alt=""> Puerto Rico </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'republica-dominicana')}}"> <img src="{{ asset('img/partners/repúblicadominicana.png') }}" alt=""> República Dominicana </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'uruguay')}}"> <img src="{{ asset('img/partners/uruguay.png') }}" alt=""> Uruguay </a> </li>
+                            <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'venezuela')}}"> <img src="{{ asset('img/partners/venezuela.png') }}" alt=""> Venezuela </a> </li>  
+                          </ul>
+                      </li>
+                    {{-- <li class="nav-item"> <a class="nav-link text-white" type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchModal">Buscar</a></li> --}}
+                      {{-- <li class="nav-item"><a class="nav-link" href="{{ route('partners.registro') }}">Registrarse</a></li> --}}
+                  </ul>
+              </div>
+          </nav>
+        </section>
         @if(Route::current()->getName() != "web.oficina.newjersey" && Route::current()->getName() != "web.oficina.newyork" && Route::current()->getName() != "web.oficina.florida" && Route::current()->getName() != "web.showpartner")
             <div id="etiquetaPhone" class="p-2" style="position: absolute;right: 20px;">
                     <a class="h5" href="tel:@yield('phoneNumberHidden')" style="color: #FFBE32 !important"
@@ -1076,6 +1088,26 @@ document.querySelector('.contenedor').addEventListener('mouseleave', function(){
             return false;
             });
         }, 3000);
+
+        window.addEventListener('scroll', function(){
+            if(window.scrollY == 0){
+                document.querySelector('.navbar').classList.remove('bg-white');
+                document.querySelector('.navbar').style.transition = 'all 0.5s ease';
+            } else {
+                document.querySelector('.navbar').classList.add('bg-white');
+                document.querySelector('.navbar').style.transition = 'all 0.5s ease';
+            }
+        });
+
+        window.addEventListener('load', function(){
+            if(window.scrollY == 0){
+                document.querySelector('.navbar').classList.remove('bg-white');
+                document.querySelector('.navbar').style.transition = 'all 0.5s ease';
+            } else {
+                document.querySelector('.navbar').classList.add('bg-white');
+                document.querySelector('.navbar').style.transition = 'all 0.5s ease';
+            }
+        })
 </script>
 </body>
 <div id="loader" class="center"></div>
