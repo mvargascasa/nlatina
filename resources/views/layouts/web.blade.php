@@ -1090,7 +1090,7 @@ document.querySelector('.contenedor').addEventListener('mouseleave', function(){
         }, 3000);
 
         window.addEventListener('scroll', function(){
-            if(window.scrollY == 0){
+            if(window.scrollY == 0 && screen.width > 992){
                 document.querySelector('.navbar').classList.remove('bg-white');
                 document.querySelector('.navbar').style.transition = 'all 0.5s ease';
             } else {
@@ -1100,10 +1100,7 @@ document.querySelector('.contenedor').addEventListener('mouseleave', function(){
         });
 
         window.addEventListener('load', function(){
-            if(window.scrollY == 0){
-                document.querySelector('.navbar').classList.remove('bg-white');
-                document.querySelector('.navbar').style.transition = 'all 0.5s ease';
-            } else {
+            if(window.scrollY == 0 && screen.width < 992){
                 document.querySelector('.navbar').classList.add('bg-white');
                 document.querySelector('.navbar').style.transition = 'all 0.5s ease';
             }
