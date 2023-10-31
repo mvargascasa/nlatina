@@ -159,7 +159,7 @@
     <section class="position-relative">
       <img class="img-header" src="{{ asset('img/notaria en estados unidos.webp') }}" alt="" style="height: 900px; width: 100%; object-fit: cover; object-position: center top;">
       <section class="position-absolute pattern-title-h1" style="top: 30%; left: 15%">
-        <h1 class="title-h1" style="color: #122944; font-size: 3.5rem"><span style="font-weight: 400">Brindamos servicios <br> notariales para toda</span> <br><span style="font-weight: 700">Latinoamerica desde <br> los Estados Unidos</span></h1>
+        <h1 class="title-h1" style="color: #122944; font-size: 3.5rem"><span style="font-weight: 400">Servicios Notariales para</span> <br><span style="font-weight: 700">Latinoamérica desde <br> Estados Unidos</span></h1>
         <button class="btn rounded-pill px-5 mt-4" style="background-color: #FFBE32; color: #122944; font-weight: 700; font-size: 1.2rem" data-toggle="modal" data-target="#exampleModal">INICIAR TRÁMITE</button>
       </section>
     </section>
@@ -172,11 +172,11 @@
         <div class="d-flex">
           <p class="mr-3" style="font-size: .9rem">SOBRE NOSOTROS</p><div style="width: 40%; height: 3px; background-color: #FFB832; margin-top: 10px"></div>
         </div>
-        <h2 style="font-size: 2.5rem"><span style="font-weight: 100">Bienvenido/a a</span> <br> <span style="font-weight: 500">Notaría Pública <br> Latina</span></h2>
+        <h2 style="font-size: 2.5rem"><span style="font-weight: 100">Bienvenido a</span> <br> <span style="font-weight: 500">Notaría Pública <br> Latina</span></h2>
       </div>
       <div class="col-sm-12 col-md-6 py-3 text-justify">
         <p>Somos una notaría autorizada, para autenticar documentos en Estados Unidos, por medio de una Apostilla. Nuestro servicio es realizado bajo normas y reglas estrictamente legales, para que su trabajo sea entregado con la mayor prontitud y satisfacción.</p>
-        <p style="font-weight: 500">Brindamos servicios notariales para toda Latinoamérica desde los Estados Unidos</p>
+        <p style="font-weight: 500">Brindamos servicios notariales para Latinoamérica desde Estados Unidos</p>
         <a class="btn btn-sm rounded-pill px-4" style="background-color: #FFB832; color: #122944; font-weight: 600" href="{{ route('web.nosotros') }}">LEER MÁS</a>
       </div>
     </div>
