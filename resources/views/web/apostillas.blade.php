@@ -12,6 +12,10 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<style>
+  .img-header{min-height: 75vh !important}
+</style>
+
 <script type="text/javascript">
   function callbackThen(response){
       // read HTTP status
@@ -98,10 +102,10 @@
 
 @section('content')
 
-<section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
+<section id="prisection" style="background-size: cover;background-position: right center; background-repeat: no-repeat;">
     <div>
 
-        <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
+        <div class="row align-items-center img-header" style="min-height: 650px;background:rgba(2, 2, 2, 0.301)">
 
             <div class="col-12 text-white text-center">
               <h1 class="font-weight-bold heading-title" >Apostillas</h1>
