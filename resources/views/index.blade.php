@@ -87,7 +87,7 @@
 
       @media screen and (max-width: 1200px){.links-offices{font-size: 30px !important}}
       @media screen and (max-width: 1000px){}
-      @media screen and (max-width: 800px){.links-offices{font-size: 25px !important;} .txt-gestion-facil{font-size: 15px !important;letter-spacing: 3px !important} .img-logo{width: 300px !important}.title-h1{font-size: 2.5rem !important}}
+      @media screen and (max-width: 800px){.links-offices{font-size: 25px !important;} .txt-gestion-facil{font-size: 15px !important;letter-spacing: 3px !important} .img-logo{width: 300px !important}.title-h1{font-size: 2.3rem !important}.pattern-title-h1{left: 5% !important}}
       @media screen and (max-width: 400px){.img-logo{width: 250px !important}.title-h1{font-size: 1.8rem !important}.img-header{height: 100vh !important}}
 
       .child-locations{
@@ -158,7 +158,7 @@
 <section>
     <section class="position-relative">
       <img class="img-header" src="{{ asset('img/notaria en estados unidos.webp') }}" alt="" style="height: 900px; width: 100%; object-fit: cover; object-position: center top;">
-      <section class="position-absolute" style="top: 30%; left: 15%">
+      <section class="position-absolute pattern-title-h1" style="top: 30%; left: 15%">
         <h1 class="title-h1" style="color: #122944; font-size: 3.5rem"><span style="font-weight: 400">Brindamos servicios <br> notariales para toda</span> <br><span style="font-weight: 700">Latinoamerica desde <br> los Estados Unidos</span></h1>
         <button class="btn rounded-pill px-5 mt-4" style="background-color: #FFBE32; color: #122944; font-weight: 700; font-size: 1.2rem" data-toggle="modal" data-target="#exampleModal">INICIAR TRÁMITE</button>
       </section>
