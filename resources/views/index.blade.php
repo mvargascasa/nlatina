@@ -198,7 +198,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.poderes') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-poderes.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-poderes.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Poderes</h3>
@@ -211,7 +211,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.apostillas') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-apostillas.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-apostillas.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Apostillas</h3>
@@ -224,7 +224,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.traducciones') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-traducciones.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-traducciones.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Traducciones</h3>
@@ -237,7 +237,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.certificaciones') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-certificaciones.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-certificaciones.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Certificaciones</h3>
@@ -250,7 +250,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.affidavit') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-affidavit.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-affidavit.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Affidavit</h3>
@@ -263,7 +263,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.revocatorias') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-revocatoria.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-revocatoria.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Revocatoria</h3>
@@ -277,7 +277,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.acuerdos') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-acuerdos.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-acuerdos.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Acuerdos</h3>
@@ -290,7 +290,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.invitacion') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-cartas-de-invitacion.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-cartas-de-invitacion.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Cartas de Invitación</h3>
@@ -303,7 +303,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.autorizaciones') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-travel-authorization.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-travel-authorization.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Travel Authorization</h3>
@@ -316,7 +316,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.contratos') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-contratos.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-contratos.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Contratos</h3>
@@ -329,7 +329,7 @@
         <a style="text-decoration: none; color: #000000" href="{{ route('web.testamentos') }}">
           <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
             <div>
-              <img width="40rem" src="{{ asset('img/icon-testamentos.png') }}" alt="">
+              <img width="40rem" src="{{ asset('img/icon-testamentos.webp') }}" alt="">
             </div>
             <div class="px-4">
               <h3 style="font-size: 1.2rem; color: #122944">Testamentos</h3>
