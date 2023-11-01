@@ -1102,7 +1102,7 @@ document.querySelector('.contenedor').addEventListener('mouseleave', function(){
         });
 
         window.addEventListener('load', function(){
-            if((window.scrollY == 0 && screen.width < 992) || window.location.href != 'http://localhost/awebnot-master/public/'){
+            if((window.scrollY == 0 && screen.width < 992) || (window.scrollY == 0 && screen.width < 992 && window.location.href != 'http://localhost/awebnot-master/public/')){
                 document.querySelector('.navbar').classList.add('bg-white');
                 document.querySelector('.navbar').style.transition = 'all 0.5s ease';
             }
