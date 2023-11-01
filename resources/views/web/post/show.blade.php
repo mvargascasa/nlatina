@@ -68,7 +68,7 @@
         </div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-sm-1 d-flex justify-content-end sticky-top h-100">
+                <div class="col-sm-1 d-flex justify-content-end sticky-top h-100" style="top: 60px">
                     <section class="d-inline px-3 py-4 bg-light shadow-sm rounded-pill mt-4 social" style="z-index: 3;">
                         <div class="mb-3">
                             <a target="_blank" href="https://www.instagram.com/notarialatina" title="Visitar Instagram de Notaria Latina">
@@ -86,6 +86,13 @@
                     <div class="mt-3">
                         <?php echo htmlspecialchars_decode($post->body)?>
                     </div>
+                    @isset($post->srcvideo)
+                        <div class="row mt-5 mb-5">
+                            <div class="col-12 d-flex justify-content-center">
+                                <iframe id="iframevideo" width="520" height="315" title="{{ $post->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    @endisset
                 </div>
                 <div class="col-12 col-sm-10 col-md-10 col-lg-3 col-xl-3 text-center">
                     <div class="border pb-4 shadow-sm">
@@ -93,13 +100,6 @@
                         <div class="d-flex justify-content-center mb-2">
                             <img class="p-4 img-fluid lazy" width="500px" height="400px" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
                         </div>
-                        @isset($post->srcvideo)
-                            <div class="row mt-5 mb-5">
-                                <div class="col-12 d-flex justify-content-center">
-                                    <iframe id="iframevideo" width="560" height="315" title="{{ $post->name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        @endisset
                         <div class="row px-4 text-justify">
                             <div class="col-sm-12">
                                 <span><b style="font-weight: 500;">Última actualización:</b></span><br>
