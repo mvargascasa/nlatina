@@ -248,6 +248,7 @@ span{
     .box-chat{width: 100vw !important;left: 0px !important; right: 0px !important; bottom: 0px !important; height: 100vh !important;}
     .chatnl{height: 92vh !important}
     .dropdown-partners{margin-left: 0px !important;}
+    .footer-padding{padding-left: 0px !important; padding-right: 0px !important}
 }
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -507,7 +508,64 @@ span{
     </div>
   </div> --}}
 
-<footer class="text-white" style="background-color: #122944;">
+  <footer style="background-color: #122944">
+    <section class="row p-5">
+        <div class="col-sm-12 col-md-1"></div>
+        <div class="col-sm-12 col-md-5 d-flex justify-content-center align-items-center">
+            <div class="p-5 footer-padding">
+                <img class="img-fluid" src="{{ asset('img/logo-notaria-latina.webp') }}" alt="">
+                <br><br>
+                <p class="text-white">Notaría Pública Latina, con 15 años de trayectoria en el campo notarial, ofrece servicios de alta calidad que abarcan los 50 estados de EE.UU</p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-1"></div>
+        <div class="col-sm-12 col-md-5 text-white d-flex align-items-center">
+            <div>
+                <div>
+                    <h4 style="color: #FFBE32; font-weight: 500">Contacto</h4>
+                    <p>
+                        <a class="text-white" href="tel:+18007428602"><i class="fab fa-whatsapp"></i> 800 742 8602</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="mailto:info@notarialatina.com"><i class="far fa-envelope"></i> info@notarialatina.com</a>
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color: #FFBE32; font-weight: 500">Horarios</h4>
+                    <p><span style="font-weight: 500">Lunes a Viernes:</span> 9:00 am - 6:00 pm</p>
+                    <p><span style="font-weight: 500">Sábado:</span> 9:00 am - 4:00 pm</p>
+                </div>
+                <div>
+                    <h4 style="color: #FFBE32; font-weight: 500">Social</h4>
+                    <div class="d-flex">
+                        <div class="bg-white p-2 mr-1" style="border-radius: 15px">
+                            <a target="_blank" href="https://www.facebook.com/notariapublicalatina">
+                                <img style="width: 30px" class="lazy" data-src="{{ asset('img/facebook-new-footer.png') }}" alt="">
+                            </a>
+                        </div>
+                        <div class="bg-white p-2 mr-1" style="border-radius: 15px">
+                            <a target="_blank" href="https://www.instagram.com/notarialatina">
+                                <img style="width: 30px" class="lazy" data-src="{{ asset('img/social-media-instagram.png') }}" alt="">
+                            </a>
+                        </div>
+                        <div class="bg-white p-2 mr-1" style="border-radius: 15px">
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=13479739888">
+                                <img style="width: 30px" class="lazy" data-src="{{ asset('img/social-media-wpp.png') }}" alt="">
+                            </a>
+                        </div>
+                        <div class="bg-white p-2 mr-1" style="border-radius: 15px">
+                            <a target="_blank" href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A">
+                                <img style="width: 30px" class="lazy" data-src="{{ asset('img/social-media-youtube.png') }}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </footer>
+
+{{-- <footer class="text-white" style="background-color: #122944;">
     <div class="container">
         <div class="row ">
             <div class="col-12 col-sm-6 col-md-3 pt-4">
@@ -524,7 +582,6 @@ span{
                     <span class="font-weight-bold" style="color: #FFBE32"> New York </span><br>
                     <a href="https://g.page/notariapublicalatina" target="_blank" class="text-white">
                         67-03 Roosevelt Avenue, Woodside, NY 11377 </a><br>
-                    {{-- <a href="tel:+17187665041" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 718 766 5041</a>  --}}
                     <a href="tel:+13479739888" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 347 973 9888</a> <br>
                     <br>
 
@@ -532,14 +589,12 @@ span{
                     <a href="https://g.page/r/CVNRV-zNuJiZEAE" target="_blank" class="text-white"> 
                         1146 East Jersey St Elizabeth, NJ 07201 </a><br>
                         <a href="tel:+19088009046" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 908 800 9046</a><br>
-                        {{-- 908 800 9046 --}}
                     <br> 
 
                     <span class="font-weight-bold" style="color: #FFBE32"> Florida </span><br>
                     <a href="https://g.page/r/CeRrwPx_W2-xEAE" target="_blank" class="text-white">
                         2104 N University Dr, Sunrise, FL 33322 </a><br>
                         <a href="tel:+13056003290" class="text-white pr-2"><i class="fa fa-phone-square-alt"></i> 305 600 3290</a> 
-                        <!-- <a href="tel:+13053948840" class="text-muted pr-2"><i class="fa fa-phone-square-alt"></i> 305 394 8840</a><br> -->
                     <br>
 
                     <a href="mailto:info@notarialatina.com" class="text-white"><i class="fas fa-envelope"></i> info@notarialatina.com</a>
@@ -580,7 +635,6 @@ span{
                     </a>
 
                     <div id="fb-root"></div>
-                    {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v13.0&appId=478871590548026&autoLogAppEvents=1" nonce="tBBwJ6yv"></script> --}}
                     <div class="fb-like" data-href="https://www.facebook.com/notariapublicalatina" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
             </div>
         </div>
@@ -588,107 +642,7 @@ span{
     <div class="text-center navfoot py-3">Copyright ©2023 Notaria Pública Latina. All rights reserved.
         <br><a href="{{route('web.politicas')}}" class="text-muted">Políticas de Privacidad</a>
     </div>
-
-    {{-- <div class="card card-whatsapp hide-card-whatsapp" id="card_whatsapp" style="z-index:950">
-        <div class="card-header bg-success text-white px-4">
-            <i class="fab fa-whatsapp"></i> Whatsapp 
-            <div class="float-right" onclick="closeWsapp()">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-          <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});"
-        href="https://api.whatsapp.com/send?phone=+@yield('numberWpp')" target="_blank"> 
-        telefono +13479739888
-        <div class="card-body py-4" style="background-image: url({{ asset('img/whatsapp-wallpaper.webp') }});">
-            <div class="card">
-                <div class="card-body p-2 text-dark">
-                    Hola! <br>
-                    En que podemos ayudarte?
-                </div>
-            </div>
-        </div>        
-      </div> --}}
-
-        {{-- <a id="divwpp" onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});" href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">
-            <div class="d-flex justify-content-center align-items-center px-3 py-1 text-white" style="position: fixed; bottom: 0px; right: 10px; background-color: #128C7E; border-radius: 10px 10px 0px 0px">
-            Consultar en linea <img width="25" height="25" class="lazy ml-1 mb-1" data-src="{{asset('img/notaria-latina-new-york.svg')}}" alt="Notaria Latina en Estados Unidos">
-            </div>
-        </a> --}}
-
-      {{-- <div id="svgwpp" style="width: 60px; position: fixed; bottom: 10px; right: 0px; height: 50px;">
-        <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});"
-        href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">
-            <img src="{{asset('img/icon-wpp.svg')}}" 
-            alt="Whatsapp Notary Public Near Me" width="45" height="45">
-        </a> 
-    </div> --}}
-        {{--+13479739888--}}   
-        {{-- @php $segment = Request()->segment(1); @endphp  
-        @if($segment == "newjersey" || $segment == "newyork" || $segment == "florida")       
-            <div id="iconwpp" style="position: relative">
-                <div style="position: fixed; bottom: 75px; right: 10px;" class="border rounded-circle">
-                    <a onclick="gtag('event', 'click', { 'event_category': 'Mensajes Whatsapp', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});"
-                    href="https://api.whatsapp.com/send?phone=@yield('numberWpp')" target="_blank">
-                        <img src="{{asset('img/icon-wpp.svg')}}" 
-                        alt="Whatsapp Notary Public Near Me" width="45" height="45">
-                    </a> 
-                </div>
-            </div>
-        @else
-            <div style="position: relative">
-                <div id="chat" style="position: fixed; bottom: 150px; right: 10px; width: 200px; z-index: 10; display: none" class="border rounded">
-                    <div>
-                        <div style="background-color: #4eda5f; color: #ffffff" class="pl-2">
-                            En línea
-                            <div class="float-right mr-1" onclick="openchat()" style="cursor: pointer"><i class="fas fa-times-circle"></i></div>
-                        </div>
-                        <div style="position: relative;">
-                            <img class="img-fluid lazy" data-src="{{asset('img/whatsapp-wallpaper.jpg')}}" alt="whatsapp de notaria latina">
-                            <div style="position: absolute; top: 0px; left: 0px; color: #000000" class="w-100 h-100 pl-2 mt-2">
-                                <div><a href="https://api.whatsapp.com/send?phone=13479739888" class="bg-white px-2 rounded-pill">New York <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
-                                <div class="mt-1"><a href="https://api.whatsapp.com/send?phone=19088009046" class="bg-white px-2 rounded-pill">New Jersey  <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
-                                <div class="mt-1"><a href="https://api.whatsapp.com/send?phone=13056003290" class="bg-white px-2 rounded-pill">Florida  <img style="margin-top: -5px" width="18px" src="{{asset('img/icon-send.svg')}}" alt=""></a></div>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-                <div onclick="openchat()" id="iconwpp" style="position: fixed; bottom: 150px; right: 30px; cursor: pointer; z-index: 3;" class="rounded-circle" title="Contactar por WhatsApp">
-                    <img src="{{asset('img/whatsapp.png')}}" alt="Whatsapp Notary Public Near Me" width="55" height="55">
-                </div>
-            </div>
-        @endif --}}
-
-        {{-- <div style="position: relative">
-            <div id="divpreguntas" style="position: fixed; bottom: 25px; right: 65px; background-color: #122944; color: #ffffff; border-radius: 10px 10px 10px 10px; padding: 2px 7px 2px 7px; border: 2px solid #ffffff; display: none; z-index: 300">
-                <div style="position: absolute; right: -10px; top: -16px; background-color: #122944; color: #ffffff; padding: 0px 6px 3px 6px; border-radius: 25px; border: 2px solid #ffffff; font-size: 10px; font-weight: 500; cursor: pointer" onclick="document.getElementById('divpreguntas').style.display = 'none'">
-                    x
-                </div>
-                <div style="font-size: 14px">
-                    <b style="font-weight: 500">¿Tiene preguntas?</b> Llámenos ahora
-                </div>
-            </div>
-        </div> --}}
-        {{-- <div id="iconcall" style="padding: 11px; border-radius: 30px 30px 30px 30px; position: fixed; bottom: 90px; right: 30px;background-color: #122944; border: 2px solid #ffffff;" title="Llamar por teléfono">
-            <a href="tel:@yield('phoneNumberHidden')">
-                <img width="30px" height="30px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞">
-            </a>
-        </div> --}}
-
-        {{-- <div class="contenedor">
-            <button class="botonF1">
-              <span><img class="img-fluid" width="40px" style="filter: invert(100%)" src="{{ asset('img/atencion-al-cliente.png') }}" alt="contactar a notaria latina" title="Contactar a Notaria Latina"></span>
-            </button>
-            <button class="btncontact botonF2">
-              <span><img width="30px" height="30px" class="lazy img-fluid" data-src="{{ asset('img/telephone.png') }}" alt="📞"></span>
-            </button>
-            <button class="btncontact botonF3">
-              <span></span>
-            </button>
-        </div> --}}
-        {{-- <div style="padding: 8px 11px 10px 11px; border-radius: 25px 25px 25px 25px; position: fixed; bottom: 130px; right: 10px;background-color: #122944; border: 2px solid #ffffff;">
-            <p onclick="document.getElementById('chatbot').classList.remove('d-none')">abrir chat</p>
-        </div> --}}
-</footer>
+</footer> --}}
 
 {{-- <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
