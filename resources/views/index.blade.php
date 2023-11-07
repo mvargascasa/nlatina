@@ -83,6 +83,10 @@
         #titleApostillas{margin-bottom: 15% !important;}
         #locations{margin-left: 0% !important;margin-right: 0% !important;}
         .child-locations{margin-top: 5% !important;border: none !important;}
+        .welcome-message{font-size: 1.5rem !important}
+        .about-message{font-size: 0.7rem !important}
+        .line-style{margin-top: 7px !important}
+        .txt-welcome{padding-left: 0px !important; padding-right: 0px !important}
       }
 
       @media screen and (max-width: 1200px){.links-offices{font-size: 30px !important}}
@@ -167,12 +171,12 @@
 
 <section class="text-white" style="background-color: #122944">
   <section class="container">
-    <div class="row p-5">
+    <div class="row p-5 txt-welcome">
       <div class="col-sm-12 col-md-6 py-3">
         <div class="d-flex">
-          <p class="mr-3" style="font-size: .9rem">SOBRE NOSOTROS</p><div style="width: 40%; height: 3px; background-color: #FFB832; margin-top: 10px"></div>
+          <p class="mr-3 about-message" style="font-size: .9rem">SOBRE NOSOTROS</p><div class="line-style" style="width: 40%; height: 3px; background-color: #FFB832; margin-top: 10px"></div>
         </div>
-        <h2 style="font-size: 2.5rem"><span style="font-weight: 100">Bienvenido a</span> <br> <span style="font-weight: 500">Notaría Pública <br> Latina</span></h2>
+        <h2 class="welcome-message" style="font-size: 2.5rem"><span style="font-weight: 100">Bienvenido a</span> <br> <span style="font-weight: 500">Notaría Pública <br> Latina</span></h2>
       </div>
       <div class="col-sm-12 col-md-6 py-3 text-justify">
         <p>Somos una notaría autorizada, para autenticar documentos en Estados Unidos, por medio de una Apostilla. Nuestro servicio es realizado bajo normas y reglas estrictamente legales, para que su trabajo sea entregado con la mayor prontitud y satisfacción.</p>
