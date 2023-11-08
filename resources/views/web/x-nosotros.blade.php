@@ -13,8 +13,13 @@
 <script defer src="{{ asset('js/navbar-style.js') }}"></script>
 
 <style>
-    .navbar-img{
-        filter: brightness(0) invert(1) !important;
+    .navbar-img{filter: brightness(0) invert(1) !important;}
+    @media screen and (max-width: 400px){
+        .img-header{height: 100vh !important}
+        .title{font-size: 1.4rem !important}
+        .padding-x-0{padding-left: 8% !important; padding-right: 8% !important; padding-top: 5% !important}
+        .order-1-row-2{order: 1 !important}
+        .order-2-row-2{order: 2 !important}  
     }
 </style>
 @endsection
@@ -24,20 +29,16 @@
 
 @section('content')
 
-<section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
-    <div>
-        <div class="row align-items-center" style="min-height: 850px;background:rgba(36, 36, 36, 0.5)">
-
-            <div class="col-12 text-white text-center">
-              <h1 style="font-weight: 400">Descubra nuestra <br> <span style="color: #FFBE32; font-weight: 700">historia y experiencia</span></h1>
-          </div>
-      </div>
+<section id="prisection" class="position-relative">
+    <img class="img-header" src="{{ asset('img/banner-nosotros.webp') }}" alt="" style="height: 900px; width: 100%; object-fit: cover; object-position: center top;">
+    <div class="position-absolute text-white text-center w-100" style="top: 50%; left: 50%; transform: translate(-50%, -50%)">
+        <h1 class="title" style="font-weight: 500; font-size: 3rem">Descubra nuestra <br> <span style="color: #FFBE32; font-weight: 700">historia y experiencia</span></h1>
     </div>
-  </section>
+</section>
 
   <section class="row">
     <article class="col-sm-7 d-flex align-items-center" style="padding-left: 0px !important; padding-right: 0px !important; background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url({{ asset('img/fondo-quienes-somos.png') }});">
-        <div style="padding-left: 25%; padding-right: 10%">
+        <div class="padding-x-0" style="padding-left: 25%; padding-right: 10%">
             <div>
                 <p class="d-flex align-items-center" style="font-size: 14px; color: #122944">NOSOTROS <span class="ml-2" style="background-color: #FFBE32; height: 1.8px; width: 70px"></span></p>
             </div>
@@ -57,11 +58,11 @@
   </section>
 
   <section class="row">
-    <article class="col-sm-5 pr-0 pl-0">
+    <article class="col-sm-5 pr-0 pl-0 order-2-row-2">
         <img class="img-fluid" src="{{ asset('img/img-nuestra-experiencia.png') }}" alt="">
     </article>
-    <article class="col-sm-7 pl-0 pr-0 d-flex align-items-center" style="background-color: #122944; color: #ffffff">
-        <div style="padding-left: 10%; padding-right: 25%">
+    <article class="col-sm-7 pl-0 pr-0 d-flex align-items-center order-1-row-2" style="background-color: #122944; color: #ffffff">
+        <div class="padding-x-0" style="padding-left: 10%; padding-right: 25%">
             <div>
                 <p class="d-flex align-items-center justify-content-end" style="font-size: 14px; color: #ffffff"><span class="mr-2" style="background-color: #FFBE32; height: 1.8px; width: 70px"></span> NOSOTROS</p>
             </div>
@@ -76,7 +77,7 @@
 
   <section class="row">
     <article class="col-sm-7 d-flex align-items-center" style="padding-left: 0px !important; padding-right: 0px !important; background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url({{ asset('img/fondo-nuestro-personal.png') }});">
-        <div style="padding-left: 25%; padding-right: 10%">
+        <div class="padding-x-0" style="padding-left: 25%; padding-right: 10%">
             <div>
                 <p class="d-flex align-items-center" style="font-size: 14px; color: #122944">NOSOTROS <span class="ml-2" style="background-color: #FFBE32; height: 1.8px; width: 70px"></span></p>
             </div>
@@ -124,9 +125,9 @@
 
 @section('script')
 <script>
-    window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('img/banner-nosotros.webp')";
-    });
+    // window.addEventListener('load', (event) => {
+    //     document.getElementById('prisection').style.backgroundImage = "url('img/banner-nosotros.webp')";
+    // });
   </script>
 @endsection
 
