@@ -249,10 +249,11 @@ span{
     .chatnl{height: 92vh !important}
     .dropdown-partners{margin-left: 0px !important;}
     .footer-padding{padding-left: 0px !important; padding-right: 0px !important}
+    .icon-footer{width: 40px !important}
 }
-.dropdown:hover .dropdown-menu {
+/* .dropdown:hover .dropdown-menu {
     display: block;
-}
+} */
 .dropdown-partners{
     margin-left: -60px;
 }
@@ -538,24 +539,29 @@ span{
                 <div>
                     <h4 style="color: #FFBE32; font-weight: 500">Social</h4>
                     <div class="d-flex">
-                        <div class="bg-white p-2 mr-1" style="border-radius: 15px">
+                        <div class="mr-1">
                             <a target="_blank" href="https://www.facebook.com/notariapublicalatina">
-                                <img style="width: 30px" class="lazy" data-src="{{ asset('img/facebook-new-footer.png') }}" alt="">
+                                <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/facebook-footer.png') }}" alt="Facebook Notaria Latina">
                             </a>
                         </div>
-                        <div class="bg-white p-2 mr-1" style="border-radius: 15px">
+                        <div class="mr-1">
                             <a target="_blank" href="https://www.instagram.com/notarialatina">
-                                <img style="width: 30px" class="lazy" data-src="{{ asset('img/social-media-instagram.png') }}" alt="">
+                                <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/instagram-footer.png') }}" alt="Instagram Notaria Latina">
                             </a>
                         </div>
-                        <div class="bg-white p-2 mr-1" style="border-radius: 15px">
+                        <div class="mr-1">
                             <a target="_blank" href="https://api.whatsapp.com/send?phone=13479739888">
-                                <img style="width: 30px" class="lazy" data-src="{{ asset('img/social-media-wpp.png') }}" alt="">
+                                <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/footer-whatsapp.png') }}" alt="Whatsapp Notaria Latina">
                             </a>
                         </div>
-                        <div class="bg-white p-2 mr-1" style="border-radius: 15px">
+                        <div class="mr-1">
                             <a target="_blank" href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A">
-                                <img style="width: 30px" class="lazy" data-src="{{ asset('img/social-media-youtube.png') }}" alt="">
+                                <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/youtube-footer.png') }}" alt="Youtube Notaria Latina">
+                            </a>
+                        </div>
+                        <div class="mr-1">
+                            <a target="_blank" href="https://www.linkedin.com/company/notaria-p%C3%BAblica-latina/">
+                                <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/linkedin-footer.png') }}" alt="Linkedin Notaria Latina">
                             </a>
                         </div>
                     </div>
