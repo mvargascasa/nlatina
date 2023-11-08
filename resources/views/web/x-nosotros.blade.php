@@ -17,7 +17,7 @@
     @media screen and (max-width: 575px){
         .img-header{height: 100vh !important}
         .title{font-size: 1.6rem !important}
-        .padding-x-0{padding-left: 8% !important; padding-right: 8% !important; padding-top: 5% !important}
+        .padding-x-0{padding-left: 8% !important; padding-right: 8% !important; padding-top: 5% !important; padding-bottom: 5% !important}
         .order-1-row-2{order: 1 !important}
         .order-2-row-2{order: 2 !important}  
     }
