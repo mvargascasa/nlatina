@@ -14,7 +14,7 @@
 
 <style>
     .navbar-img{filter: brightness(0) invert(1) !important;}
-    @media screen and (max-width: 400px){
+    @media screen and (max-width: 575px){
         .img-header{height: 100vh !important}
         .title{font-size: 1.4rem !important}
         .padding-x-0{padding-left: 8% !important; padding-right: 8% !important; padding-top: 5% !important}
