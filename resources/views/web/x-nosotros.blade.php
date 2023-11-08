@@ -53,13 +53,13 @@
         </div>
     </article>
     <article class="col-sm-5" style="padding-left: 0px !important; padding-right: 0px !important">
-        <img class="img-fluid" src="{{ asset('img/notaria-con-sello.png') }}" alt="">
+        <img class="img-fluid" src="{{ asset('img/notaria-con-sello.webp') }}" alt="">
     </article>
   </section>
 
   <section class="row">
     <article class="col-sm-5 pr-0 pl-0 order-2-row-2">
-        <img class="img-fluid" src="{{ asset('img/img-nuestra-experiencia.png') }}" alt="">
+        <img class="img-fluid" src="{{ asset('img/img-nuestra-experiencia.webp') }}" alt="">
     </article>
     <article class="col-sm-7 pl-0 pr-0 d-flex align-items-center order-1-row-2" style="background-color: #122944; color: #ffffff">
         <div class="padding-x-0" style="padding-left: 10%; padding-right: 25%">
@@ -92,7 +92,7 @@
         </div>
     </article>
     <article class="col-sm-5" style="padding-left: 0px !important; padding-right: 0px !important">
-        <img class="img-fluid" src="{{ asset('img/img-nuestro-personal.png') }}" alt="">
+        <img class="img-fluid" src="{{ asset('img/img-nuestro-personal.webp') }}" alt="">
     </article>
   </section>
 
