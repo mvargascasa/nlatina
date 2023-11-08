@@ -1050,7 +1050,7 @@ document.querySelector('.contenedor').addEventListener('mouseleave', function(){
         }, 3000);
 
         window.addEventListener('scroll', function(){
-            if(window.scrollY == 0 && screen.width > 992 && window.location.href == 'https://notarialatina.com'){
+            if(window.scrollY == 0 && screen.width > 992 && window.location.href == 'https://notarialatina.com/'){
                 document.querySelector('.navbar').classList.remove('bg-white');
                 document.querySelector('.navbar').style.transition = 'all 0.5s ease';
                 document.querySelector('.navbar').classList.remove('shadow');
