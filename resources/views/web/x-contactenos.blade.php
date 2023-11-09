@@ -68,6 +68,10 @@
   @media screen and (max-width: 580px){
     #prisection{min-height:500px !important}
     #cap{min-height:500px !important}
+    .img-header{height: 100vh !important;}
+    .padding-0{padding-left: 0% !important; padding-right: 0% !important; padding-bottom: 0% !important}
+    .first-mobile{order: 1 !important}
+    .second-mobile{order: 2 !important}
   }
 </style>
 @endsection
@@ -87,7 +91,7 @@
 <section id="prisection">
   <section class="container">
     <div class="row">
-      <div class="col-sm-6 mb-4 p-5 d-flex align-items-center">
+      <div class="col-sm-6 mb-4 p-5 d-flex align-items-center padding-0">
         <img class="img-fluid" src="{{ asset('img/oficinas/oficina-new-york-notaria-latina.jpg') }}" alt="Notaria Latina en New York">
       </div>
       <div class="col-sm-6 p-5">
@@ -125,7 +129,7 @@
     <hr style="height: 5px; background-color: #122944">
 
     <div class="row">
-      <div class="col-sm-6 mb-4 p-5 text-right">
+      <div class="col-sm-6 mb-4 p-5 text-right second-mobile">
         <h2 style="font-weight: 600">NEW JERSEY</h2>
         <a href="https://g.page/r/CVNRV-zNuJiZEAE" target="_blank" class="text-dark">
           <div class="d-flex align-items-center justify-content-end">
@@ -155,7 +159,7 @@
           <img class="img-fluid" src="{{ asset('img/map-nj-contact.webp') }}" alt="">
         </a>
       </div>
-      <div class="col-sm-6 p-5 d-flex align-items-center">
+      <div class="col-sm-6 p-5 d-flex align-items-center padding-0 first-mobile">
         <img class="img-fluid" src="{{ asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg') }}" alt="Notaria Latina en New Jersey">
       </div>
     </div>
@@ -163,7 +167,7 @@
     <hr style="height: 5px; background-color: #122944">
 
     <div class="row">
-      <div class="col-sm-6 mb-4 p-5 d-flex align-items-center">
+      <div class="col-sm-6 mb-4 p-5 d-flex align-items-center padding-0">
         <img class="img-fluid" src="{{ asset('img/oficinas/oficina-florida-notaria-latina.jpg') }}" alt="Notaria Latina en Florida">
       </div>
       <div class="col-sm-6 mb-4 p-5">
