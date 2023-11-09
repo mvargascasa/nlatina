@@ -77,9 +77,133 @@
 
 @section('content')
 
+<section class="position-relative">
+  <img class="img-header" src="{{ asset('img/banner-contactenos.webp') }}" alt="Imagen de notario certificando un documento" style="height: 900px; width: 100%; object-fit: cover; object-position: center top;">
+  <div class="position-absolute text-white text-center w-100" style="top: 50%; left: 50%; transform: translate(-50%, -50%)">
+      <h1 class="title" style="font-weight: 500; font-size: 3rem">Visítenos, estamos <br> <span style="color: #FFBE32; font-weight: 700">cerca de usted</span></h1>
+  </div>
+</section>
+
+<section id="prisection">
+  <section class="container">
+    <div class="row">
+      <div class="col-sm-6 mb-4 p-5 d-flex align-items-center">
+        <img class="img-fluid" src="{{ asset('img/oficinas/oficina-new-york-notaria-latina.jpg') }}" alt="Notaria Latina en New York">
+      </div>
+      <div class="col-sm-6 p-5">
+        <h2 style="font-weight: 600">NEW YORK</h2>
+        <a class="text-dark" href="https://g.page/notariapublicalatina" target="_blank">
+          <div class="d-flex align-items-center">
+            <p>
+              <i class="fas fa-map-marker-alt"></i>
+            </p>
+            <p class="ml-2" style="font-size: smaller">67-03 Roosevelt Avenue <br> Woodside, NY 11377</p>
+          </div>
+        </a>
+        <a href="tel:+13479739888" class="text-dark">
+          <div class="d-flex align-items-center">
+            <p>
+              <i class="fas fa-phone-alt"></i>
+            </p>
+            <p class="ml-2" style="font-size: smaller">347-973-9888</p>
+          </div>
+        </a>
+        <a class="text-dark" href="https://api.whatsapp.com/send?phone=13479739888&text=Hola, quiero consultar por sus servicios de Notaria ⚖" target="_blank">
+          <div class="d-flex align-items-center">
+            <p>
+              <i class="fab fa-whatsapp"></i>
+            </p>
+            <p class="ml-2" style="font-size: smaller">347-973-9888</p>
+          </div>
+        </a>
+        <a href="https://g.page/notariapublicalatina" target="_blank">
+          <img class="img-fluid" src="{{ asset('img/map-ny-contact.webp') }}" alt="">
+        </a>
+      </div>
+    </div>
+
+    <hr style="height: 5px; background-color: #122944">
+
+    <div class="row">
+      <div class="col-sm-6 mb-4 p-5 text-right">
+        <h2 style="font-weight: 600">NEW JERSEY</h2>
+        <a href="https://g.page/r/CVNRV-zNuJiZEAE" target="_blank" class="text-dark">
+          <div class="d-flex align-items-center justify-content-end">
+            <p class="mr-2" style="font-size: smaller">1146 East Jersey St <br> Elizabeth, NJ 07201</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i>
+            </p>
+          </div>
+        </a>
+        <a href="tel:+19088009046" class="text-dark">
+          <div class="d-flex align-items-center justify-content-end">
+            <p class="mr-2" style="font-size: smaller">908-800-9046</p>
+            <p>
+              <i class="fas fa-phone-alt"></i>
+            </p>
+          </div>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=19088009046&text=Hola, quiero consultar por sus servicios de Notaria ⚖" target="_blank" class="text-dark">
+          <div class="d-flex align-items-center justify-content-end">
+            <p class="mr-2" style="font-size: smaller">908-800-9046</p>
+            <p>
+              <i class="fab fa-whatsapp"></i>
+            </p>
+          </div>
+        </a>
+        <a href="https://g.page/r/CVNRV-zNuJiZEAE" target="_blank">
+          <img class="img-fluid" src="{{ asset('img/map-nj-contact.webp') }}" alt="">
+        </a>
+      </div>
+      <div class="col-sm-6 p-5 d-flex align-items-center">
+        <img class="img-fluid" src="{{ asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg') }}" alt="Notaria Latina en New Jersey">
+      </div>
+    </div>
+
+    <hr style="height: 5px; background-color: #122944">
+
+    <div class="row">
+      <div class="col-sm-6 mb-4 p-5 d-flex align-items-center">
+        <img class="img-fluid" src="{{ asset('img/oficinas/oficina-florida-notaria-latina.jpg') }}" alt="Notaria Latina en Florida">
+      </div>
+      <div class="col-sm-6 mb-4 p-5">
+        <h2 style="font-weight: 600">FLORIDA</h2>
+        <a href="https://g.page/r/CeRrwPx_W2-xEAE" target="_blank" class="text-dark">
+          <div class="d-flex align-items-center">
+            <p>
+              <i class="fas fa-map-marker-alt"></i>
+            </p>
+            <p class="ml-2" style="font-size: smaller">2104 N University Dr <br> Sunrise, FL 33322</p>
+          </div>
+        </a>
+        <a href="tel:+13056003290" class="text-dark">
+          <div class="d-flex align-items-center">
+            <p>
+              <i class="fas fa-phone-alt"></i>
+            </p>
+            <p class="ml-2" style="font-size: smaller">305-600-3290</p>
+          </div>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=13056003290&text=Hola, quiero consultar por sus servicios de Notaria ⚖" target="_blank" class="text-dark">
+          <div class="d-flex">
+            <p>
+              <i class="fab fa-whatsapp"></i>
+            </p>
+            <p class="ml-2" style="font-size: smaller">305-600-3290</p>
+          </div>
+        </a>
+        <a href="https://g.page/r/CeRrwPx_W2-xEAE" target="_blank">
+          <img class="img-fluid" src="{{ asset('img/map-fl-contact.webp') }}" alt="">
+        </a>
+      </div>
+    </div>
+  </section>
+  
+</section>
 
 
-<section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat; min-height: 550px">
+
+{{-- <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat; min-height: 550px">
   <div>
     <div id="cap" class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5);">
 
@@ -89,20 +213,19 @@
 
     </div>
   </div>
-</section>
+</section> --}}
 
-@php
-// detectando si el dispositivo es movil para cargar la imagen del mapa de google
+{{-- @php
     $detect = new \Detection\MobileDetect();
     $isMobile = FALSE;
 
     if($detect->isMobile()){
         $isMobile = TRUE;
     }
-@endphp
+@endphp --}}
 
 
-<div class="container">
+{{-- <div class="container">
     <div class="row py-4 justify-content-center">
       <h3 class="mt-1 mb-4 text-center">Contáctenos para servicios de Notaría Pública.</h3><br>
 
@@ -127,7 +250,6 @@
                             <span class="text-muted d-block">67-03 Roosevelt Avenue</span>
                             <span class="text-muted">Woodside, NY 11377</span>
                           </a> <br> 
-                          {{-- <a href="tel:+17187665041" class="text-muted"><i class="fa fa-phone-square-alt" style="color: #EF5261;"></i> 718-766-5041</a> <br>  --}}
                           <a href="tel:+13479739888" class="text-muted"><i class="fa fa-phone-square-alt" style="color: #EF5261"></i> 347-973-9888</a> <br>
                           <a href="https://api.whatsapp.com/send?phone=13479739888" class="text-muted" target="_blank"><i class="fab fa-whatsapp" style="color: #4CAF50"></i> 347-973-9888</a> <br>
                         </p>
@@ -136,8 +258,6 @@
                 <div class="col-12 col-sm-6">
                   <a target="_blank" href="https://g.page/notariapublicalatina"><img width="100%" height="100%" class="lazy img-fluid" data-src="{{ asset('img/map-ny-contact.webp') }}" alt="Notaria Latina en New York - Poderes, Apostillas, Traducciones"></a>
                 </div>
-                {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.711832710689!2d-73.90010968462246!3d40.746365979328054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f030415024b%3A0x3b391bcaf4cd7c10!2sNotaria%20Latina%20-%20Queens%20New%20York!5e0!3m2!1ses!2sec!4v1620329311697!5m2!1ses!2sec" 
-                class="col-12 col-sm-6" style="border:0;" allowfullscreen="" loading="lazy"></iframe>               --}}
             </div>         
 
             <div class="row py-4">
@@ -154,9 +274,6 @@
               <div class="col-12 col-sm-6">
                 <a target="_blank" href="https://g.page/r/CVNRV-zNuJiZEAE"><img width="100%" height="100%" class="lazy img-fluid" data-src="{{ asset('img/map-nj-contact.webp') }}" alt="Notaria Latina en New Jersey - Poderes, Apostillas, Traducciones"></a>
               </div>
-              {{-- https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.415072742891!2d-74.21549248479062!3d40.664822548437684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24d541387e7ff%3A0x335c07b09362e483!2s1146%20E%20Jersey%20St%2C%20Elizabeth%2C%20NJ%2007201%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1627749319027!5m2!1ses!2sec --}}
-              {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.4152619231436!2d-74.21548678459651!3d40.664818379336985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24dde7100d355%3A0x9998b8cdec575153!2sNotar%C3%ADa%20Latina%20en%20New%20Jersey!5e0!3m2!1ses-419!2sec!4v1650664174107!5m2!1ses-419!2sec" 
-              class="col-12 col-sm-6" style="border:0;" allowfullscreen="" loading="lazy"></iframe>               --}}
             </div>
 
 
@@ -172,9 +289,6 @@
                         <!-- <a href="tel:+13053948840" class="text-muted"><i class="fa fa-phone-square-alt"></i> 305-394-8840</a> <br> -->
                       </p>
               </div>
-              {{-- https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4043926136424!2d-80.25914568500467!3d26.15095628346161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90638fe895e7b%3A0xaa63cebf0d7899!2s2104%20N%20University%20Dr%2C%20Sunrise%2C%20FL%2033322%2C%20EE.%20UU.!5e0!3m2!1ses!2sec!4v1620329582622!5m2!1ses!2sec --}}
-              {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4033736727556!2d-80.25873468497107!3d26.150989483461544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9072fab0cb6ff%3A0xb16f5b7ffcc06be4!2sNotar%C3%ADa%20P%C3%BAblica%20Latina%20en%20Florida!5e0!3m2!1ses-419!2sec!4v1650664300481!5m2!1ses-419!2sec" 
-              class="col-12 col-sm-6" style="border:0;" allowfullscreen="" loading="lazy"></iframe>               --}}
               <div class="col-12 col-sm-6">
                 <a target="_blank" href="https://g.page/r/CeRrwPx_W2-xEAE"><img width="100%" height="100%" class="lazy img-fluid" data-src="{{ asset('img/map-fl-contact.webp') }}" alt="Notaria Latina en New Jersey - Poderes, Apostillas, Traducciones"></a>
               </div>
@@ -202,7 +316,7 @@
 
 </div>
 
-</div>
+</div> --}}
 @endsection
 
 @section('numberWpp', '13479739888')
@@ -210,9 +324,9 @@
 @section('script')
 <script>
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('img/contactenos.webp')";
+        document.getElementById('prisection').style.backgroundImage = "url('img/fondo-contactenos.png')";
     });
-    document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
+    //document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
   </script>
 @endsection
 
