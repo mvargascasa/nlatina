@@ -72,6 +72,7 @@
     .padding-0{padding-left: 0% !important; padding-right: 0% !important; padding-bottom: 0% !important}
     .first-mobile{order: 1 !important}
     .second-mobile{order: 2 !important}
+    .title{font-size: 1.5rem !important}
   }
 </style>
 @endsection
