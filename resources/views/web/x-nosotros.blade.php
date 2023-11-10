@@ -61,7 +61,7 @@
     <article class="col-sm-5 pr-0 pl-0 order-2-row-2">
         <img class="img-fluid" src="{{ asset('img/img-nuestra-experiencia.webp') }}" alt="">
     </article>
-    <article class="col-sm-7 pl-0 pr-0 d-flex align-items-center order-1-row-2" style="background-color: #122944; color: #ffffff">
+    <article class="col-sm-7 pl-0 pr-0 d-flex align-items-center order-1-row-2" style="background-color: #2B384D; color: #ffffff">
         <div class="padding-x-0" style="padding-left: 10%; padding-right: 25%">
             <div>
                 <p class="d-flex align-items-center justify-content-end" style="font-size: 14px; color: #ffffff"><span class="mr-2" style="background-color: #FFBE32; height: 1.8px; width: 70px"></span> NOSOTROS</p>

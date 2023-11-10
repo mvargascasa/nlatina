@@ -172,7 +172,7 @@
     </section>
 </section>
 
-<section class="text-white" style="background-color: #122944">
+<section class="text-white" style="background-color: #2B384D">
   <section class="container">
     <div class="row p-5 txt-welcome">
       <div class="col-sm-12 col-md-6 py-3">
@@ -350,7 +350,7 @@
 </section>
 
 <section>
-  <section class="row" style="background-color: #122944">
+  <section class="row" style="background-color: #2B384D">
     <div class="col-sm-12 col-md-6">
       <img class="img-fluid" src="{{ asset('img/notarizando documento.webp') }}" alt="notaria en newyork, newjersey y florida">
     </div>

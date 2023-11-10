@@ -510,7 +510,7 @@ span{
     </div>
   </div> --}}
 
-  <footer style="background-color: #122944">
+  <footer style="background-color: #2B384D">
     <section class="row p-5">
         <div class="col-sm-12 col-md-1"></div>
         <div class="col-sm-12 col-md-5 d-flex justify-content-center align-items-center">
