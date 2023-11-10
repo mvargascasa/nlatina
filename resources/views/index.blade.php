@@ -87,6 +87,8 @@
         .about-message{font-size: 0.7rem !important}
         .line-style{margin-top: 7px !important}
         .txt-welcome{padding-left: 0px !important; padding-right: 0px !important}
+        .card-hover{height: auto !important}
+        .cols-mb-3{margin-bottom: 4% !important}
       }
 
       @media screen and (max-width: 1200px){.links-offices{font-size: 30px !important}}
@@ -152,6 +154,7 @@
       .changetxtcolor{color: #ffffff !important}
       .changeimgcolor{filter: brightness(0) invert(1);}
       .card-hover:hover {border-bottom: .5rem solid #2B384D !important; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px !important;}
+      body{font-family: 'Montserrat'}
     </style>
 @endsection
 @section('phoneNumberHidden', '+18007428602')
@@ -192,28 +195,28 @@
     <section>
       <div class="d-flex justify-content-center align-items-center">
         <div style="background-color: #FFB832; height: 3px; width: 5rem"></div>
-        <h2 class="mx-4" style="font-size: .9rem; margin-top: 6px; font-weight: 500">NUESTROS SERVICIOS</h2>
+        <h2 class="mx-4 text-center" style="font-size: .9rem; margin-top: 6px; font-weight: 500">NUESTROS SERVICIOS</h2>
         <div style="background-color: #FFB832; height: 3px; width: 5rem"></div>
       </div>
       <p class="text-center" style="font-size: 2.5rem"><span style="font-weight: 300">Áreas de</span> <span style="font-weight: 600">Experiencia</span></p>
     </section>
-    <section class="row justify-content-center gax-4">
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
+    <section class="row justify-content-center gax-4 mt-4">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-5 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.poderes') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-poderes.webp') }}" alt="">
             </div>
             <div class="px-4">
-              <h3 style="font-size: 1.2rem; color: #122944">Poderes</h3>
+              <h3 style="font-size: 1.2rem; color: #122944;">Poderes</h3>
               <p>Gestione sus trámites sin estar presente por medio de un apoderado</p>
             </div>
           </div>
         </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-5 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.apostillas') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-apostillas.webp') }}" alt="">
             </div>
@@ -224,9 +227,9 @@
           </div>
         </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-5 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.traducciones') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-traducciones.webp') }}" alt="">
             </div>
@@ -237,9 +240,9 @@
           </div>
         </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-5 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.certificaciones') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-certificaciones.webp') }}" alt="">
             </div>
@@ -250,9 +253,9 @@
           </div>
         </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-5 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.affidavit') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-affidavit.webp') }}" alt="">
             </div>
@@ -263,23 +266,23 @@
           </div>
         </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-5 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.revocatorias') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-revocatoria.webp') }}" alt="">
             </div>
             <div class="px-4">
-              <h3 style="font-size: 1.2rem; color: #122944">Revocatoria</h3>
+              <h3 style="font-size: 1.2rem; color: #122944">Revocatorias</h3>
               <p>Deje sin efecto un poder otorgado sin antelación</p>
             </div>
           </div>
         </a>
       </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-5 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.acuerdos') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-acuerdos.webp') }}" alt="">
             </div>
@@ -290,9 +293,9 @@
           </div>
         </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-5 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.invitacion') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-cartas-de-invitacion.webp') }}" alt="">
             </div>
@@ -303,9 +306,9 @@
           </div>
         </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-5 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.autorizaciones') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-travel-authorization.webp') }}" alt="">
             </div>
@@ -316,9 +319,9 @@
           </div>
         </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-5 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.contratos') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-contratos.webp') }}" alt="">
             </div>
@@ -329,9 +332,9 @@
           </div>
         </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-3">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-3 cols-mb-3">
         <a style="text-decoration: none; color: #000000" href="{{ route('web.testamentos') }}">
-          <div class="d-flex card-hover" style="border-bottom: .5rem solid #FFB832; height: 8rem">
+          <div class="d-flex card-hover bg-white pt-3 pl-3 shadow-sm" style="border-bottom: .5rem solid #FFB832; height: 9rem">
             <div>
               <img width="40rem" src="{{ asset('img/icon-testamentos.webp') }}" alt="">
             </div>
@@ -1071,7 +1074,7 @@
 
 @if($mobile)
 <div class="bg-light py-5">
-  <h2 class="tit-not letter-color text-center">Testimonios</h2>
+  <h2 class="letter-color text-center">Testimonios</h2>
   <hr class="hrb letter-color">
   <div id="carouselExampleFade" class="carousel slide carousel-fade ml-3 mr-3" data-ride="carousel" data-interval="3000">
     <div class="carousel-inner">
@@ -1116,7 +1119,7 @@
 @else
 <div class="row d-inline text-center">
   <div class="bg-light pt-5">
-    <h2 class="tit-not letter-color">Testimonios</h2>
+    <h2 class="letter-color">Testimonios</h2>
     <hr class="hrb letter-color">
     <div id="carousel-thumbs" class="carousel slide mt-5 mb-5 text-left" data-ride="carousel" data-interval="3000">
       <div class="carousel-inner">

@@ -247,18 +247,19 @@ span{
 @media screen and (max-width: 580px){
     .box-chat{width: 100vw !important;left: 0px !important; right: 0px !important; bottom: 0px !important; height: 100vh !important;}
     .chatnl{height: 92vh !important}
-    .dropdown-partners{margin-left: 0px !important;}
+    /* .dropdown-partners{margin-left: 0px !important;} */
     .footer-padding{padding-left: 0px !important; padding-right: 0px !important}
     .icon-footer{width: 40px !important}
 }
 /* .dropdown:hover .dropdown-menu {
     display: block;
 } */
-.dropdown-partners{
-    margin-left: -60px;
-}
-.color-links{color: #2B384D; text-decoration: none; font-weight: 500}
+/* .dropdown-partners{
+    overflow-y: auto !important;
+} */
+.color-links{color: #2B384D; text-decoration: none; font-weight: 600}
 .color-links-hover{background-color: #FFBE32; color: #122944; border-radius: 25px; font-weight: 500}
+.font-family-montserrat{font-family: 'Montserrat'}
 </style>
 <livewire:styles/>
 
@@ -312,7 +313,7 @@ span{
     </noscript>
     <header>
         <section>
-            <nav class="navbar navbar-expand-lg position-fixed w-100" style="z-index: 2; padding-left: 15%; padding-right: 15%">
+            <nav class="navbar navbar-expand-lg position-fixed w-100 font-family-montserrat" style="z-index: 2; padding-left: 15%; padding-right: 15%">
               <div class="d-flex flex-grow-1">
                   <span class="w-100 d-lg-none d-block">
                       <a class="navbar-brand" href="{{route('web.index')}}">
@@ -333,8 +334,8 @@ span{
               <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="navbar-nav ml-auto flex-nowrap px-4" style=" z-index: 1000; position: relative;">
                     {{-- @if(Request::is('/')) text-warning @else text-white @endif --}}
-                      <li class="nav-item px-2 @if(Request::is('/')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('web.index')}}">INICIO</a> </li>
-                      <li class="nav-item dropdown px-2 @if(Request::is('/traducciones')) color-links-hover @endif">
+                      <li class="nav-item px-1 @if(Request::is('/')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('web.index')}}">INICIO</a> </li>
+                      <li class="nav-item dropdown px-1 @if(Request::is('/traducciones')) color-links-hover @endif">
                           <a class="nav-link dropdown-toggle @if(Route::currentRouteName() == 'web.apostillas' || Route::currentRouteName() == 'web.poderes' || Route::currentRouteName() == 'web.traducciones' || Route::currentRouteName() == 'web.affidavit' || Route::currentRouteName() == 'web.acuerdos' || Route::currentRouteName() == 'web.autorizaciones' || Route::currentRouteName() == 'web.invitacion' || Route::currentRouteName() == 'web.certificaciones' || Route::currentRouteName() == 'web.contratos' || Route::currentRouteName() == 'web.revocatorias' || Route::currentRouteName() == 'web.testamentos') color-links-hover @endif color-links" href="javascript:void(0)"
                             id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICIOS</a>
     
@@ -386,15 +387,13 @@ span{
             </ul>
     </li>  --}}
                     {{-- @if(Request::is('blog') || Request::is('post/*')) text-warning @else text-white @endif --}}
-                    <li class="nav-item px-2 @if(Request::is('blog') || Request::is('post/*')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('post.blog')}}">BLOG</a> </li>
                     {{-- @if(Request::is('videos')) text-warning @else text-white @endif --}}
                     {{-- <li class="nav-item"> <a class="nav-link color-links" href="{{route('web.videos')}}">VIDEOS</a> </li> --}}
                     {{-- @if(Request::is('nosotros')) text-warning @else text-white @endif --}}
-                    <li class="nav-item px-2 @if(Request::is('nosotros')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('web.nosotros')}}">NOSOTROS</a> </li>
+                    <li class="nav-item px-1 @if(Request::is('nosotros')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('web.nosotros')}}">NOSOTROS</a> </li>
                     {{-- @if(Request::is('contactenos')) text-warning @else text-white @endif --}}
-                    <li class="nav-item px-2 @if(Request::is('contactenos')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('web.contactenos')}}">CONTACTENOS</a> </li>
-                    <li class="nav-item px-2 dropdown">
-                        <a class="nav-link dropdown-toggle @if(Route::currentRouteName() == 'partners.fetch.state' || Route::currentRouteName() == 'web.showallpartners') color-links-hover @endif color-links px-2" href="javascript:void(0)"
+                    <li class="nav-item px-1 dropdown">
+                        <a class="nav-link dropdown-toggle @if(Route::currentRouteName() == 'partners.fetch.state' || Route::currentRouteName() == 'web.showallpartners') color-links-hover @endif color-links" href="javascript:void(0)"
                           id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PORTAL DE ABOGADOS</a>
     
                           <ul class="dropdown-menu dropdown-partners" aria-labelledby="navbarDropdown">
@@ -419,6 +418,8 @@ span{
                             <li> <a class="dropdown-item" href="{{ route('partners.fetch.state', 'venezuela')}}"> <img src="{{ asset('img/partners/venezuela.png') }}" alt=""> Venezuela </a> </li>  
                           </ul>
                       </li>
+                      <li class="nav-item px-1 @if(Request::is('blog') || Request::is('post/*')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('post.blog')}}">BLOG</a> </li>
+                      <li class="nav-item px-1 @if(Request::is('contactenos')) color-links-hover @endif"> <a class="nav-link color-links" href="{{route('web.contactenos')}}">OFICINAS</a> </li>
                     {{-- <li class="nav-item"> <a class="nav-link text-white" type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchModal">Buscar</a></li> --}}
                       {{-- <li class="nav-item"><a class="nav-link" href="{{ route('partners.registro') }}">Registrarse</a></li> --}}
                   </ul>

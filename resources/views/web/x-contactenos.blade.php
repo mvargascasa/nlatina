@@ -34,6 +34,8 @@
   }
   </script>
 
+<script defer src="{{ asset('js/navbar-style.js') }}"></script>
+
 <script id="scriptrecaptcha"></script>
 <script>
   setTimeout(() => {
@@ -65,6 +67,7 @@
 </script>
 
 <style>
+  .navbar-img{filter: brightness(0) invert(1) !important;}
   @media screen and (max-width: 580px){
     #prisection{min-height:500px !important}
     #cap{min-height:500px !important}
@@ -73,6 +76,14 @@
     .first-mobile{order: 1 !important}
     .second-mobile{order: 2 !important}
     .title{font-size: 1.5rem !important}
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+    input[type=number] {
+    -moz-appearance: textfield;
   }
 </style>
 @endsection
@@ -83,7 +94,7 @@
 @section('content')
 
 <section class="position-relative">
-  <img class="img-header" src="{{ asset('img/banner-contactenos.webp') }}" alt="Imagen de notario certificando un documento" style="height: 900px; width: 100%; object-fit: cover; object-position: center top;">
+  <img id="navbar-img" class="img-header" src="{{ asset('img/banner-contactenos.webp') }}" alt="Imagen de notario certificando un documento" style="height: 900px; width: 100%; object-fit: cover; object-position: center top;">
   <div class="position-absolute text-white text-center w-100" style="top: 50%; left: 50%; transform: translate(-50%, -50%)">
       <h1 class="title" style="font-weight: 500; font-size: 3rem">Visítenos, estamos <br> <span style="color: #FFBE32; font-weight: 700">cerca de usted</span></h1>
   </div>
@@ -204,6 +215,101 @@
     </div>
   </section>
   
+</section>
+
+<section style="background-color: #122944">
+  <section class="container">
+    <div class="d-flex align-items-center justify-content-center pt-5 pl-5 pr-5 pb-3">
+      <div style="height: 1px; background-color: #FFBE32; width: 40px" class="mr-2"></div>
+      <div class="text-white">
+        <p>
+          <h2 style="font-size: smaller">CONTACTO</h2>
+        </p>
+      </div>
+      <div class="ml-2" style="height: 1px; background-color: #FFBE32; width: 40px"></div>
+    </div>
+    <section>
+      <div class="text-center">
+        <span class="text-white">Proporcione sus <span style="font-weight: 600; color: #FFBE32">datos</span> y lo <span style="font-weight: 600; color: #FFBE32">contactaremos</span></span>
+      </div>
+      <div class="p-5 mt-5" style="border: .1rem solid #FFBE32; border-radius: 50px">
+        <form action="">
+          <div class="form-group text-white">
+            <label for="name">Nombre:</label>
+            <input type="text" style="width: 100%; color: #ffffff; background-color: #122944; border: none; border-bottom: 1px solid #ffffff">
+          </div>
+          <div class="form-group text-white">
+            <label for="lastname">Apellidos:</label>
+            <input type="text" style="width: 100%; color: #ffffff; background-color: #122944; border: none; border-bottom: 1px solid #ffffff">
+          </div>
+          <div class="form-group text-white">
+            <label for="country">País de residencia:</label>
+            <select name="country" id="sel_country" style="width: 100%; color: #ffffff; background-color: #122944; border: none; border-bottom: 1px solid #ffffff">
+              <option value="">Seleccione</option>
+              <option value="+54">Argentina</option>
+              <option value="+56">Chile</option>
+              <option value="+591">Bolivia</option>
+              <option value="+57">Colombia</option>
+              <option value="+506">Costa Rica</option>
+              <option value="+593">Ecuador</option>
+              <option value="+503">El Salvador</option>
+              <option value="+34">España</option>
+              <option value="+1">Estados Unidos</option>
+              <option value="+502">Guatemala</option>
+              <option value="+504">Honduras</option>
+              <option value="+52">México</option>
+              <option value="+505">Nicaragua</option>
+              <option value="+507">Panamá</option>
+              <option value="+595">Paraguay</option>
+              <option value="+51">Perú</option>
+              <option value="+1 787">Puerto Rico</option>
+              <option value="+1 809">República Dominicana</option>
+              <option value="+598">Uruguay</option>
+              <option value="+58">Venezuela</option>
+            </select>
+          </div>
+          <div class="form-group text-white">
+            <label for="state">Estado</label>
+            <select name="" id="sel_state" style="width: 100%; color: #ffffff; background-color: #122944; border: none; border-bottom: 1px solid #ffffff">
+              <option value="">Seleccione</option>
+            </select>
+          </div>
+          <div class="form-group text-white">
+            <label for="phone">Teléfono</label>
+            <input type="number" style="width: 100%; color: #ffffff; background-color: #122944; border: none; border-bottom: 1px solid #ffffff;">
+          </div>
+          <div class="form-group text-white">
+            <label for="email">Email</label>
+            <input type="email" style="width: 100%; color: #ffffff; background-color: #122944; border: none; border-bottom: 1px solid #ffffff;">
+          </div>
+          <div class="form-group text-white">
+            <label for="service">Servicio:</label>
+            <select name="service" style="width: 100%; color: #ffffff; background-color: #122944; border: none; border-bottom: 1px solid #ffffff">
+              <option value="">Seleccione</option>
+              <option value="Poderes">Poderes</option>
+              <option value="Apostillas">Apostillas</option>
+              <option value="Traducciones">Traducciones</option>
+              <option value="Affidavit">Affidavit</option>
+              <option value="Acuerdos">Acuerdos</option>
+              <option value="Autorizaciones de Viaje">Autorizaciones de Viaje</option>
+              <option value="Cartas de Invitación">Cartas de Invitación</option>
+              <option value="Certificaciones">Certificaciones</option>
+              <option value="Contratos">Contratos</option>
+              <option value="Revocatorias">Revocatorias</option>
+              <option value="Testamentos">Testamentos</option>
+            </select>
+          </div>
+          <div class="form-group text-white">
+            <label for="message">Mensaje</label>
+            <textarea name="" id="" rows="4" style="width: 100%; color: #ffffff; background-color: #122944; border: none; border-bottom: 1px solid #ffffff"></textarea>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-sm rounded-pill px-4 mt-3" style="background-color: #FFBE32">ENVIAR</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </section>
 </section>
 
 
