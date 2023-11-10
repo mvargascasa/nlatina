@@ -351,8 +351,8 @@
 
 <section>
   <section class="row" style="background-color: #2B384D">
-    <div class="col-sm-12 col-md-6">
-      <img class="img-fluid" src="{{ asset('img/notarizando documento.webp') }}" alt="notaria en newyork, newjersey y florida">
+    <div class="col-sm-12 col-md-6 text-center">
+      <img id="second-image" class="img-fluid" alt="notaria en newyork, newjersey y florida">
     </div>
     <div class="col-sm-12 col-md-4 d-flex align-items-center p-5">
       <div>
@@ -1268,6 +1268,8 @@
         document.getElementById('services_section').style.backgroundImage = "url('img/fondo servicios.webp')";
         //document.getElementById('divtestimonials').style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
         // AOS.init();
+        if(screen.width > 580) document.getElementById('second-image').src = "{{asset('img/notarizando documento.webp')}}";
+        else document.getElementById('second-image').src = "{{ asset('img/notarizando documento-mobile.webp') }}";
     });
 
     document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
