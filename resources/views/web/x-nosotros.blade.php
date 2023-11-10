@@ -21,6 +21,7 @@
         .order-1-row-2{order: 1 !important}
         .order-2-row-2{order: 2 !important}  
     }
+    body{font-family: 'Montserrat'}
 </style>
 @endsection
 
@@ -30,7 +31,7 @@
 @section('content')
 
 <section id="prisection" class="position-relative">
-    <img class="img-header" src="{{ asset('img/banner-nosotros.webp') }}" alt="" style="height: 900px; width: 100%; object-fit: cover; object-position: center top;">
+    <img class="img-header" src="{{ asset('img/banner-nosotros.webp') }}" alt="" style="height: 800px; width: 100%; object-fit: cover; object-position: center top;">
     <div class="position-absolute text-white text-center w-100" style="top: 50%; left: 50%; transform: translate(-50%, -50%)">
         <h1 class="title" style="font-weight: 500; font-size: 3rem">Descubra nuestra <br> <span style="color: #FFBE32; font-weight: 700">historia y experiencia</span></h1>
     </div>

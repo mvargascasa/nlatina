@@ -95,7 +95,7 @@
 @section('content')
 
 <section class="position-relative">
-  <img id="navbar-img" class="img-header" src="{{ asset('img/banner-contactenos.webp') }}" alt="Imagen de notario certificando un documento" style="height: 900px; width: 100%; object-fit: cover; object-position: center top;">
+  <img id="navbar-img" class="img-header" src="{{ asset('img/banner-contactenos.webp') }}" alt="Imagen de notario certificando un documento" style="height: 800px; width: 100%; object-fit: cover; object-position: center top;">
   <div class="position-absolute text-white text-center w-100" style="top: 50%; left: 50%; transform: translate(-50%, -50%)">
       <h1 class="title" style="font-weight: 500; font-size: 3rem">Visítenos, estamos <br> <span style="color: #FFBE32; font-weight: 700">cerca de usted</span></h1>
   </div>
