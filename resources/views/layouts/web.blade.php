@@ -515,7 +515,7 @@ span{
         <div class="col-sm-12 col-md-1"></div>
         <div class="col-sm-12 col-md-5 d-flex justify-content-center align-items-center">
             <div class="p-5 footer-padding">
-                <img class="img-fluid" src="{{ asset('img/logo-notaria-latina.webp') }}" alt="">
+                <img class="img-fluid lazy" data-src="{{ asset('img/logo-notaria-latina.webp') }}" alt="">
                 <br><br>
                 <p class="text-white">Notaría Pública Latina, con 15 años de trayectoria en el campo notarial, ofrece servicios de alta calidad que abarcan los 50 estados de EE.UU</p>
             </div>
