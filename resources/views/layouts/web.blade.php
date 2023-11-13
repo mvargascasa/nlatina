@@ -250,6 +250,7 @@ span{
     /* .dropdown-partners{margin-left: 0px !important;} */
     .footer-padding{padding-left: 0px !important; padding-right: 0px !important}
     .icon-footer{width: 40px !important}
+    .img-logo-footer{width: 15rem !important; height: 5rem !important}
 }
 /* .dropdown:hover .dropdown-menu {
     display: block;
@@ -515,7 +516,9 @@ span{
         <div class="col-sm-12 col-md-1"></div>
         <div class="col-sm-12 col-md-5 d-flex justify-content-center align-items-center">
             <div class="p-5 footer-padding">
-                <img class="img-fluid lazy" data-src="{{ asset('img/logo-notaria-latina.webp') }}" alt="">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img width="350rem" height="100rem" class="lazy img-logo-footer" data-src="{{ asset('img/logo-notaria-latina.webp') }}" alt="">
+                </div>
                 <br><br>
                 <p class="text-white">Notaría Pública Latina, con 15 años de trayectoria en el campo notarial, ofrece servicios de alta calidad que abarcan los 50 estados de EE.UU</p>
             </div>
