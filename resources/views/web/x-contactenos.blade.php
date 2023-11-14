@@ -109,7 +109,7 @@
       </div>
       <div class="col-sm-6 p-5">
         <h2 style="font-weight: 600">NEW YORK</h2>
-        <a class="text-dark" href="https://g.co/kgs/dAVoVX" target="_blank">
+        <a class="text-dark" href="https://maps.app.goo.gl/quwA24rdbkwoLJuk9" target="_blank">
           <div class="d-flex align-items-center">
             <p>
               <i class="fas fa-map-marker-alt"></i>
