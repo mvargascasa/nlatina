@@ -218,6 +218,10 @@
   
 </section>
 
+@php
+    $url_name = Route::current()->getName();  
+@endphp
+
 <section style="background-color: #2B384D">
   <section class="container">
     <div class="d-flex align-items-center justify-content-center pt-5 pl-5 pr-5">
@@ -234,18 +238,20 @@
         <span class="text-white" style="font-size: 1.7rem; line-height: 2rem !important">Proporcione sus <span style="font-weight: 600; color: #FFBE32;">datos</span> <br> y lo <span style="font-weight: 600; color: #FFBE32">contactaremos</span></span>
       </div>
       <div class="p-5 mt-5" style="border: .1rem solid #FFBE32; border-radius: 50px">
-        <form action="">
+        <form action="{{ route('landing.thankpost') }}" method="POST" id="formlead">
+          @csrf
+          <input type="hidden" name="url_current" value="{{ $url_name }}">
           <div class="form-group text-white">
-            <label for="name">Nombre:</label>
-            <input type="text" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff">
+            <label for="fname">Nombre:</label>
+            <input type="text" name="fname" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff" placeholder="Ej: Oscar" required>
           </div>
           <div class="form-group text-white">
             <label for="lastname">Apellidos:</label>
-            <input type="text" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff">
+            <input type="text" name="lname" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff" placeholder="Ej: Rodriguez" required>
           </div>
           <div class="form-group text-white">
             <label for="country">País de residencia:</label>
-            <select name="country" id="sel_country" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff; font-size: .9rem">
+            <select name="country" id="sel_country" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff; font-size: .9rem" required>
               <option value="">Seleccione</option>
               <option value="+54">Argentina</option>
               <option value="+56">Chile</option>
@@ -269,23 +275,24 @@
               <option value="+58">Venezuela</option>
             </select>
           </div>
+          <input type="hidden" name="cod" id="cod_country">
           <div class="form-group text-white">
             <label for="state">Estado</label>
-            <select name="" id="sel_state" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff; font-size: .9rem">
+            <select name="state" id="sel_state" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff; font-size: .9rem" required>
               <option value="">Seleccione</option>
             </select>
           </div>
           <div class="form-group text-white">
             <label for="phone">Teléfono</label>
-            <input type="number" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff;">
+            <input type="number" name="tlf" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff;" placeholder="Ingresar solo números" required>
           </div>
           <div class="form-group text-white">
             <label for="email">Email</label>
-            <input type="email" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff;">
+            <input type="email" name="email" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff;" placeholder="Ingresar un correo electrónico válido" required>
           </div>
           <div class="form-group text-white">
             <label for="service">Servicio:</label>
-            <select name="service" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff; font-size: .9rem">
+            <select name="service" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff; font-size: .9rem" required>
               <option value="">Seleccione</option>
               <option value="Poderes">Poderes</option>
               <option value="Apostillas">Apostillas</option>
@@ -299,10 +306,10 @@
               <option value="Revocatorias">Revocatorias</option>
               <option value="Testamentos">Testamentos</option>
             </select>
-          </div>
+          </div>          
           <div class="form-group text-white">
             <label for="message">Mensaje</label>
-            <textarea name="" id="" rows="4" style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff"></textarea>
+            <textarea name="message" rows="4" placeholder="Ej: Necesito tramitar una carta poder..." style="width: 100%; color: #ffffff; background-color: #2B384D; border: none; border-bottom: 1px solid #ffffff" required></textarea>
           </div>
           <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-sm rounded-pill px-4 mt-3" style="background-color: #FFBE32">ENVIAR</button>
