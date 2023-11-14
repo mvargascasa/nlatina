@@ -116,8 +116,8 @@
             </p>
             <p class="ml-2" style="font-size: smaller">67-03 Roosevelt Avenue <br> Woodside, NY 11377</p>
           </div>
-          <p class="ml-2" style="font-size: smaller"><a href="https://api.whatsapp.com/send?text=https://maps.app.goo.gl/quwA24rdbkwoLJuk9" target="_blank">Compartir ubicación</a></p>
         </a>
+        <p class="ml-2" style="font-size: smaller"><a href="https://api.whatsapp.com/send?text=https://maps.app.goo.gl/quwA24rdbkwoLJuk9" target="_blank">Compartir ubicación</a></p>
         <a href="tel:+13479739888" class="text-dark">
           <div class="d-flex align-items-center">
             <p>
