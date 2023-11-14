@@ -195,6 +195,7 @@
             <p class="ml-2" style="font-size: smaller">2104 N University Dr <br> Sunrise, FL 33322</p>
           </div>
         </a>
+        <p class="ml-2" style="font-size: smaller"><a href="https://api.whatsapp.com/send?text=https://maps.app.goo.gl/jLuceKKNjKFq1gyV9" target="_blank">Compartir ubicación</a></p>
         <a href="tel:+13056003290" class="text-dark">
           <div class="d-flex align-items-center">
             <p>
@@ -203,7 +204,6 @@
             <p class="ml-2" style="font-size: smaller">305-600-3290</p>
           </div>
         </a>
-        <p class="ml-2" style="font-size: smaller"><a href="https://api.whatsapp.com/send?text=https://maps.app.goo.gl/jLuceKKNjKFq1gyV9" target="_blank">Compartir ubicación</a></p>
         <a href="https://api.whatsapp.com/send?phone=13056003290&text=Hola, quiero consultar por sus servicios de Notaria ⚖" target="_blank" class="text-dark">
           <div class="d-flex">
             <p>
