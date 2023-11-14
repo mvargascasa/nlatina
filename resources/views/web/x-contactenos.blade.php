@@ -153,6 +153,7 @@
             </p>
           </div>
         </a>
+        <p class="ml-2" style="font-size: smaller"><a href="https://api.whatsapp.com/send?text=https://maps.app.goo.gl/2zP6Te4D98Gpd7Y8A" target="_blank">Compartir ubicación</a></p>
         <a href="tel:+19088009046" class="text-dark">
           <div class="d-flex align-items-center justify-content-end">
             <p class="mr-2" style="font-size: smaller">908-800-9046</p>
@@ -202,6 +203,7 @@
             <p class="ml-2" style="font-size: smaller">305-600-3290</p>
           </div>
         </a>
+        <p class="ml-2" style="font-size: smaller"><a href="https://api.whatsapp.com/send?text=https://maps.app.goo.gl/jLuceKKNjKFq1gyV9" target="_blank">Compartir ubicación</a></p>
         <a href="https://api.whatsapp.com/send?phone=13056003290&text=Hola, quiero consultar por sus servicios de Notaria ⚖" target="_blank" class="text-dark">
           <div class="d-flex">
             <p>
