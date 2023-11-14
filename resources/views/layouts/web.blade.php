@@ -544,7 +544,7 @@ span{
                     <h4 style="color: #FFBE32; font-weight: 500">Social</h4>
                     <div class="d-flex">
                         <div class="mr-1">
-                            <a target="_blank" href="https://www.facebook.com/notariapublicalatina">
+                            <a target="_blank" href="https://www.facebook.com/profile.php?id=61553644160037">
                                 <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/facebook-footer.png') }}" alt="Facebook Notaria Latina">
                             </a>
                         </div>
