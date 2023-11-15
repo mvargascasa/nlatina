@@ -188,7 +188,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   bottom:80px;
   z-index: 3 !important;
 }
-.botonF1{
+.botonF1v1{
     width:40px;
     height:60px;
     border-radius:100%;
@@ -209,10 +209,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 span{
   transition:.5s;  
 }
-.botonF1:click span{
+.botonF1v1:click span{
   transform:rotate(360deg);
 }
-.botonF1:active{
+.botonF1v1:active{
   transform:scale(1.1);
 }
 .btncontact{
@@ -684,7 +684,7 @@ span{
 
 <div class="contenedor d-flex justify-content-center">
     <div>
-        <button class="botonF1">
+        <button class="botonF1v1">
           <span class="d-flex align-items-center justify-content-center"><img class="lazy" width="15px" height="15px" style="filter: invert(100%)" data-src="{{ asset('img/atencion-al-cliente.png') }}" alt="contactar a notaria latina" title="Contactar a Notaria Latina"></span>
         </button>
         <button class="btncontact botonF2">
@@ -700,7 +700,7 @@ span{
 
 <div class="position-fixed" style="bottom: 5px; right: 5px; cursor: pointer" onclick="document.getElementById('chatnotaria').classList.remove('d-none');">
     <div>
-        <button class="botonF1">
+        <button class="botonF1v1">
             <span class="d-flex align-items-center justify-content-center"><img class="lazy" width="35px" height="35px" data-src="{{ asset('img/chat-notaria-latina.png') }}" alt="contactar a notaria latina" title="Abrir Chat Notaria Latina"></span>
         </button>
     </div>
@@ -753,7 +753,7 @@ span{
 <script id="jquery363" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
 
-document.querySelector('.botonF1').addEventListener('click', function (){
+document.querySelector('.botonF1v1').addEventListener('click', function (){
     let btns = document.querySelectorAll('.btncontact');
     btns.forEach(element => {
 
