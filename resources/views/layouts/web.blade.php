@@ -189,7 +189,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   z-index: 3 !important;
 }
 .botonF1{
-    width:60px;
+    width:50px;
     height:60px;
     border-radius:100%;
     background:#122944;
