@@ -14,12 +14,13 @@
 
 <style>
   .img-header{min-height: 75vh !important}
+  .navbar-img{filter: brightness(0) invert(1) !important;}
 </style>
 
 <script type="text/javascript">
   function callbackThen(response){
       // read HTTP status
-      console.log(response.status);
+      //console.log(response.status);
       // read Promise object
       response.json().then(function(data){
         if(data.success && data.score > 0.5){
@@ -37,7 +38,7 @@
       console.error('Error:', error)
   }
   </script>
-
+<script defer src="{{ asset('js/navbar-style.js') }}"></script>
 <script id="scriptrecaptcha"></script>
 <script>
   setTimeout(() => {
