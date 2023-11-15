@@ -318,12 +318,12 @@ span{
               <div class="d-flex flex-grow-1">
                   <span class="w-100 d-lg-none d-block">
                       <a class="navbar-brand" href="{{route('web.index')}}">
-                          <img src="{{asset('img/notaria latina logo.png')}}" width="210px" height="50px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
+                          <img id="navbar-img" class="img-navbar" src="{{asset('img/notaria latina logo.png')}}" width="210px" height="50px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
                         </a>
                   </span>
     
                   <a class="navbar-brand d-none d-lg-inline-block " href="{{route('web.index')}}">
-                      <img id="navbar-img" class="" src="{{asset('img/notaria latina logo.png')}}" width="210px" height="50px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
+                      <img id="navbar-img" class="img-navbar" src="{{asset('img/notaria latina logo.png')}}" width="210px" height="50px" alt="Notaria Latina en New York, New Jersey y Florida | Apostillas, Poderes y Traducciones">
                     </a>
                   <div class="w-100 text-right mt-2">
                       <button class="navbar-toggler" type="button" title="Barra de navegacion" data-toggle="collapse" data-target="#myNavbar">
@@ -1066,7 +1066,7 @@ document.querySelector('.contenedor').addEventListener('mouseleave', function(){
         });
 
         window.addEventListener('load', function(){
-            if((window.scrollY == 0 && screen.width < 992) || (window.scrollY == 0 && screen.width < 992 && window.location.href != 'http://localhost/awebnot-master/public/')){
+            if((window.scrollY == 0 && screen.width < 992) || (window.scrollY == 0 && screen.width < 992 && window.location.href != 'https://notarialatina.com/')){
                 document.querySelector('.navbar').classList.add('bg-white');
                 document.querySelector('.navbar').style.transition = 'all 0.5s ease';
             }
