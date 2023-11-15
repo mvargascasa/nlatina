@@ -35,6 +35,7 @@
   </script>
 
 <script id="scriptrecaptcha"></script>
+<script defer src="{{ asset('js/navbar-style.js') }}"></script>
 <script>
   setTimeout(() => {
      document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
