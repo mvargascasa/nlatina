@@ -14,7 +14,6 @@
 
 <style>
   .img-header{min-height: 75vh !important}
-  .navbar-img{filter: brightness(0) invert(1) !important;}
 </style>
 
 <script type="text/javascript">
@@ -98,8 +97,8 @@
   </script>
 
 @endsection
-@section('phoneNumberHidden', '+18007428602')
-@section('phoneNumber', '800-742-8602')
+{{-- @section('phoneNumberHidden', '+18007428602')
+@section('phoneNumber', '800-742-8602') --}}
 
 @section('content')
 
