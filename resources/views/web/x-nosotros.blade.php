@@ -10,7 +10,7 @@
 <meta property="og:description" content="Somos una Notaría en Queens New York que ofrece servicios de Apostillas, Poderes, Traducciones, Affidávit, Autorizaciones de Viaje, Cartas de Invitación." />
 <meta property="og:image"       content="{{asset('img/meta-notaria-latina-queens-new-york.jpg')}}" />
 
-<script defer src="{{ asset('js/navbar-style.js') }}"></script>
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
 
 <style>
     .navbar-img{filter: brightness(0) invert(1) !important;}
