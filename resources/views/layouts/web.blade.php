@@ -189,7 +189,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   z-index: 3 !important;
 }
 .botonF1v1{
-    width:40px;
+    width:60px;
     height:60px;
     border-radius:100%;
     background:#122944;
@@ -252,6 +252,10 @@ span{
     .footer-padding{padding-left: 0px !important; padding-right: 0px !important}
     .icon-footer{width: 40px !important}
     .img-logo-footer{width: 15rem !important; height: 5rem !important}
+}
+@media screen and (max-width: 992px){
+    .btn-flotantes-desktop{ display: none !important}
+    .btn-flotantes-mobile{ display: block !important}
 }
 /* .dropdown:hover .dropdown-menu {
     display: block;
@@ -682,10 +686,10 @@ span{
     </div> 
 </div>
 
-<div class="contenedor d-flex justify-content-center">
+<div class="contenedor d-flex justify-content-center btn-flotantes-desktop">
     <div>
         <button class="botonF1v1">
-          <span class="d-flex align-items-center justify-content-center"><img class="lazy" width="15px" height="15px" style="filter: invert(100%)" data-src="{{ asset('img/atencion-al-cliente.png') }}" alt="contactar a notaria latina" title="Contactar a Notaria Latina"></span>
+          <span class="d-flex align-items-center justify-content-center"><img class="lazy" width="35px" height="35px" style="filter: invert(100%)" data-src="{{ asset('img/atencion-al-cliente.png') }}" alt="contactar a notaria latina" title="Contactar a Notaria Latina"></span>
         </button>
         <button class="btncontact botonF2">
             <a href="tel:@yield('phoneNumberHidden')">
@@ -698,11 +702,44 @@ span{
     </div>
 </div>
 
-<div class="position-fixed" style="bottom: 5px; right: 5px; cursor: pointer" onclick="document.getElementById('chatnotaria').classList.remove('d-none');">
+<div class="position-fixed btn-flotantes-desktop" style="bottom: 5px; right: 5px; cursor: pointer" onclick="document.getElementById('chatnotaria').classList.remove('d-none');">
     <div>
         <button class="botonF1v1">
             <span class="d-flex align-items-center justify-content-center"><img class="lazy" width="35px" height="35px" data-src="{{ asset('img/chat-notaria-latina.png') }}" alt="contactar a notaria latina" title="Abrir Chat Notaria Latina"></span>
         </button>
+    </div>
+</div>
+
+<div class="position-fixed shadow btn-flotantes-mobile" style="bottom: 0px; width: 100vw; background-color: white; display: none">
+    <div class="row justify-content-center text-center">
+        <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center" onclick="opennewwhatsappsection()" style="background-color: #122944; color: #ffffff; height: 50px">
+            <div>
+                Whatsapp
+            </div>
+        </div>
+        <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center" style="background-color: #122944; color: #ffffff; height: 50px">
+            <div>
+                <a class="text-white" href="tel:@yield('phoneNumberHidden')">Llamar</a>
+            </div>
+        </div>
+        <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center" style="background-color: #122944; color: #ffffff; height: 50px" onclick="document.getElementById('chatnotaria').classList.remove('d-none');">
+            <div>
+                Chat
+            </div>
+        </div>
+    </div>
+    <div class="bg-white new-whatsapp-section" style="display: none">
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="col-sm-4 py-3">
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=13479739888&text=Hola, me interesa consultar por sus servicios de Notaría" class="btn btn-sm btn-block btn-success rounded-pill shadow-sm">New York</a>
+            </div>
+            <div class="col-sm-4 py-3">
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=19088009046&text=Hola, me interesa consultar por sus servicios de Notaría" class="btn btn-sm btn-block btn-success rounded-pill shadow-sm">New Jersey</a>
+            </div>
+            <div class="col-sm-4 py-3">
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=13056003290&text=Hola, me interesa consultar por sus servicios de Notaría" class="btn btn-sm btn-block btn-success rounded-pill shadow-sm">Florida</a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -1072,6 +1109,16 @@ document.querySelector('.contenedor').addEventListener('mouseleave', function(){
                 document.querySelector('.navbar').style.transition = 'all 0.5s ease';
             }
         })
+
+        function opennewwhatsappsection(){
+            let element = document.querySelector('.new-whatsapp-section');
+            if(element.style.display == "none"){
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+
 </script>
 </body>
 <div id="loader" class="center"></div>
