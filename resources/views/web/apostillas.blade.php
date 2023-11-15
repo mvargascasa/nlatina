@@ -37,7 +37,7 @@
       console.error('Error:', error)
   }
   </script>
-<script defer src="{{ asset('js/navbar-style.js') }}"></script>
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
 <script id="scriptrecaptcha"></script>
 <script>
   setTimeout(() => {
