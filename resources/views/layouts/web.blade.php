@@ -712,17 +712,17 @@ span{
 
 <div class="position-fixed shadow btn-flotantes-mobile" style="bottom: 0px; width: 100vw; background-color: white; display: none">
     <div class="row justify-content-center text-center">
-        <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center" onclick="opennewwhatsappsection()" style="background-color: #122944; color: #ffffff; height: 50px">
+        <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center border" onclick="opennewwhatsappsection()" style="background-color: #122944; color: #ffffff; height: 50px">
             <div>
                 Whatsapp
             </div>
         </div>
-        <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center" style="background-color: #122944; color: #ffffff; height: 50px">
+        <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center border" style="background-color: #122944; color: #ffffff; height: 50px">
             <div>
                 <a class="text-white" href="tel:@yield('phoneNumberHidden')">Llamar</a>
             </div>
         </div>
-        <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center" style="background-color: #122944; color: #ffffff; height: 50px" onclick="document.getElementById('chatnotaria').classList.remove('d-none');">
+        <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center border" style="background-color: #122944; color: #ffffff; height: 50px" onclick="document.getElementById('chatnotaria').classList.remove('d-none');">
             <div>
                 Chat
             </div>
