@@ -115,6 +115,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     html, body {max-width: 100% !important;overflow-x: clip}
     /* #iconcall {animation: wiggle 3s linear infinite;} */
     .grecaptcha-badge { visibility: hidden; }
+    .navbar-img{filter: brightness(0) invert(1) !important;}
     /* Keyframes */
     @keyframes wiggle {
         0%, 7% {transform: rotateZ(0);}
@@ -428,12 +429,12 @@ span{
           </nav>
         </section>
         @if(Route::current()->getName() != "web.oficina.newjersey" && Route::current()->getName() != "web.oficina.newyork" && Route::current()->getName() != "web.oficina.florida" && Route::current()->getName() != "web.showpartner")
-            <div id="etiquetaPhone" class="p-2" style="position: absolute;right: 20px;">
+            {{-- <div id="etiquetaPhone" class="p-2" style="position: absolute;right: 20px;">
                     <a class="h5" href="tel:@yield('phoneNumberHidden')" style="color: #FFBE32 !important"
                     onclick="gtag_report_conversion('tel:+18007428602');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
                     <i class="fas fa-phone-square-alt"></i> @yield('phoneNumber')
                     </a>
-            </div>
+            </div> --}}
         @endif
       </header>
 
