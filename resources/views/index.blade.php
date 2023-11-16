@@ -164,7 +164,7 @@
 
 <section>
     <section class="position-relative">
-      <img class="img-header lazy" data-src="{{ asset('img/notaria en estados unidos.webp') }}" alt="" style="height: 800px; width: 100%; object-fit: cover; object-position: center top;">
+      <img class="img-header" id="img_header" alt="Notaria en Estados Unidos" style="height: 800px; width: 100%; object-fit: cover; object-position: center top;">
       <section class="position-absolute pattern-title-h1" style="top: 30%; left: 15%">
         <h1 class="title-h1" style="color: #122944; font-size: 3.5rem"><span style="font-weight: 400">Servicios Notariales para</span> <br><span style="font-weight: 700">Latinoamérica desde <br> Estados Unidos</span></h1>
         <button class="btn rounded-pill px-5 mt-4" style="background-color: #FFBE32; color: #122944; font-weight: 700; font-size: 1.2rem" data-toggle="modal" data-target="#exampleModal">INICIAR TRÁMITE</button>
@@ -1268,8 +1268,13 @@
         document.getElementById('services_section').style.backgroundImage = "url('img/fondo servicios.webp')";
         //document.getElementById('divtestimonials').style.backgroundImage = "url({{asset('img/testimonios-notaria-latina.jpg')}})"
         // AOS.init();
-        if(screen.width > 580) document.getElementById('second-image').setAttribute('data-src', "{{asset('img/notarizando documento.webp')}}");
-        else document.getElementById('second-image').setAttribute('data-src', "{{ asset('img/notarizando documento-mobile.webp') }}");
+        if(screen.width > 580){
+          document.getElementById('second-image').setAttribute('data-src', "{{asset('img/notarizando documento.webp')}}");
+          console.log(document.getElementById('img_header').src = "{{ asset('img/notaria en estados unidos.webp') }}");
+        } else {
+          document.getElementById('second-image').setAttribute('data-src', "{{ asset('img/notarizando documento-mobile.webp') }}");
+          document.getElementById('img_header').src = "{{ asset('img/notaria en estados unidos mobile.webp') }}";
+        }
     });
 
     document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
