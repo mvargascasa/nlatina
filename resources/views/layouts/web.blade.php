@@ -3,14 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script>
-        let stylesheet = document.createElement('link');
-        stylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css";
-        stylesheet.rel = 'stylesheet';
-        setTimeout(function () {
-            document.getElementsByTagName('head')[0].appendChild(stylesheet);
-        }, 3500);
-    </script>
 
     <link rel="icon" href="{{asset('faviconotarialatina-22.png')}}" type="image/x-icon" />
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -788,6 +780,14 @@ span{
 @yield('script')
 <livewire:scripts/>
 <script id="jquery363" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    let stylesheet = document.createElement('link');
+    stylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css";
+    stylesheet.rel = 'stylesheet';
+    setTimeout(function () {
+        document.getElementsByTagName('head')[0].appendChild(stylesheet);
+    }, 4000);
+</script>
 <script type="text/javascript">
 
 document.querySelector('.botonF1v1').addEventListener('click', function (){
