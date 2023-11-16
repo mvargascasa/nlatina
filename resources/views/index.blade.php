@@ -1273,7 +1273,7 @@
           console.log(document.getElementById('img_header').src = "{{ asset('img/notaria en estados unidos.webp') }}");
         } else {
           document.getElementById('second-image').setAttribute('data-src', "{{ asset('img/notarizando documento-mobile.webp') }}");
-          document.getElementById('img_header').src = "{{ asset('img/notaria en estados unidos mobile.webp') }}";
+          document.getElementById('img_header').src = "{{ asset('img/notaria en estados unidos mobile 2.webp') }}";
         }
     });
 
