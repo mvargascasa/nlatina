@@ -550,27 +550,27 @@ span{
                     <div class="d-flex">
                         <div class="mr-1">
                             <a target="_blank" href="https://www.facebook.com/profile.php?id=61553644160037">
-                                <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/facebook-footer.png') }}" alt="Facebook Notaria Latina">
+                                <img width="50px" height="50px" class="lazy icon-footer" data-src="{{ asset('img/facebook-footer.png') }}" alt="Facebook Notaria Latina">
                             </a>
                         </div>
                         <div class="mr-1">
                             <a target="_blank" href="https://www.instagram.com/notarialatina">
-                                <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/instagram-footer.png') }}" alt="Instagram Notaria Latina">
+                                <img width="50px" height="50px" class="lazy icon-footer" data-src="{{ asset('img/instagram-footer.png') }}" alt="Instagram Notaria Latina">
                             </a>
                         </div>
                         <div class="mr-1">
                             <a target="_blank" href="https://api.whatsapp.com/send?phone=13479739888">
-                                <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/footer-whatsapp.png') }}" alt="Whatsapp Notaria Latina">
+                                <img width="50px" height="50px" class="lazy icon-footer" data-src="{{ asset('img/footer-whatsapp.png') }}" alt="Whatsapp Notaria Latina">
                             </a>
                         </div>
                         <div class="mr-1">
                             <a target="_blank" href="https://www.youtube.com/channel/UCK1XQrnc5uGP5KvXumMjo9A">
-                                <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/youtube-footer.png') }}" alt="Youtube Notaria Latina">
+                                <img width="50px" height="50px" class="lazy icon-footer" data-src="{{ asset('img/youtube-footer.png') }}" alt="Youtube Notaria Latina">
                             </a>
                         </div>
                         <div class="mr-1">
                             <a target="_blank" href="https://www.linkedin.com/company/notaria-p%C3%BAblica-latina/">
-                                <img style="width: 50px" class="lazy icon-footer" data-src="{{ asset('img/linkedin-footer.png') }}" alt="Linkedin Notaria Latina">
+                                <img width="50px" height="50px" class="lazy icon-footer" data-src="{{ asset('img/linkedin-footer.png') }}" alt="Linkedin Notaria Latina">
                             </a>
                         </div>
                     </div>
