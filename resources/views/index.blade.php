@@ -164,7 +164,7 @@
 
 <section>
     <section class="position-relative">
-      <img class="img-header lazy" data-src="@if($mobile) {{ asset('img/notaria en estados unidos mobile 2.webp') }} @else {{ asset('img/notaria en estados unidos.webp') }} @endif" alt="Notaria en Estados Unidos" style="height: 800px; width: 100%; object-fit: cover; object-position: center top;">
+      <img class="img-header" src="@if($mobile){{ asset('img/notaria en estados unidos mobile 2.webp') }}@else{{ asset('img/notaria en estados unidos.webp') }} @endif" alt="Notaria en Estados Unidos" style="height: 800px; width: 100%; object-fit: cover; object-position: center top;">
       <section class="position-absolute pattern-title-h1" style="top: 30%; left: 15%">
         <h1 class="title-h1" style="color: #122944; font-size: 3.5rem"><span style="font-weight: 400">Servicios Notariales para</span> <br><span style="font-weight: 700">Latinoamérica desde <br> Estados Unidos</span></h1>
         <button class="btn rounded-pill px-5 mt-4" style="background-color: #FFBE32; color: #122944; font-weight: 700; font-size: 1.2rem" data-toggle="modal" data-target="#exampleModal">INICIAR TRÁMITE</button>
