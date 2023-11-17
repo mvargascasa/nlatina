@@ -16,7 +16,7 @@
     .pagination li.active .page-link, .pagination li .page-link:hover {background-color: #122944;color: #ffffff;font-weight: bold;}
     .card:hover{box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;}
 </style>
-<livewire:styles />
+{{-- <livewire:styles /> --}}
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -41,7 +41,7 @@
 <div class="container pt-4">
     <div class="col-12 text-center">
         <h1>Últimas Publicaciones</h1>
-        <livewire:categories-blog />
+        {{-- <livewire:categories-blog /> --}}
     </div>
 
         <div class="row">
@@ -88,7 +88,7 @@
 @section('numberWpp', '13479739888')
 
 @section('script')
-<livewire:scripts />
+{{-- <livewire:scripts /> --}}
 <script>
     window.addEventListener('load', (event) => {
         document.getElementById('prisection').style.backgroundImage = "url('img/blog-notaria-latina-2021.webp')";
