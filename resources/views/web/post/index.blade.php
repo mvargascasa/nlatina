@@ -16,6 +16,7 @@
     .pagination li.active .page-link, .pagination li .page-link:hover {background-color: #122944;color: #ffffff;font-weight: bold;}
     .card:hover{box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;}
 </style>
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
 {{-- <livewire:styles /> --}}
 @endsection
 
