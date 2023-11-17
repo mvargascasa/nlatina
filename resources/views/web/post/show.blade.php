@@ -68,7 +68,7 @@
         </div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-sm-1 d-flex justify-content-end sticky-top h-100" style="top: 60px">
+                <div class="col-sm-1 d-flex justify-content-end sticky-top h-100" style="top: 60px; z-index: 0">
                     <section class="d-inline px-3 py-4 bg-light shadow-sm rounded-pill mt-4 social" style="z-index: 3;">
                         <div class="mb-3">
                             <a target="_blank" href="https://www.instagram.com/notarialatina" title="Visitar Instagram de Notaria Latina">
@@ -76,7 +76,7 @@
                             </a>
                         </div>
                         <div>
-                            <a target="_blank" href="https://www.facebook.com/notariapublicalatina" title="Visitar Facebook de Notaria Latina">
+                            <a target="_blank" href="https://www.facebook.com/profile.php?id=61553644160037" title="Visitar Facebook de Notaria Latina">
                                 <img width="40px" src="{{ asset('img/icon-facebook.png') }}" alt="Facebook Notaria Latina">
                             </a>
                         </div>
@@ -94,57 +94,68 @@
                         </div>
                     @endisset
                 </div>
-                <div class="col-12 col-sm-10 col-md-10 col-lg-3 col-xl-3 text-center">
-                    <div class="border pb-4 shadow-sm">
-                        <p class="tit-not px-4 mt-4 h4">Información del artículo</p>
-                        <div class="d-flex justify-content-center mb-2">
-                            <img class="p-4 img-fluid lazy" width="500px" height="400px" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
-                        </div>
-                        <div class="row px-4 text-justify">
-                            <div class="col-sm-12">
-                                <span><b style="font-weight: 500;">Última actualización:</b></span><br>
-                                <span>{{ $post->updated_at->format('M d, Y')}}</span>
+                @php
+                    $category = \App\Category::select('name')->where('id', $post->category_id)->first();
+                @endphp
+                <div class="col-12 col-sm-10 col-md-10 col-lg-3 col-xl-3">
+                    <div class="sticky-top" style="top: 90px; z-index: 0;">
+                        <div class="border pb-4 shadow-sm  bg-white">
+                            <p class="tit-not px-4 mt-4 h4">Información del artículo</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <img class="p-4 img-fluid lazy" width="500px" height="400px" alt="Imagen {{ $post->name }}" data-src='{{url('uploads/i600_'.$post->imgsmall)}}'>
                             </div>
-                            @isset($post->reading_time)
-                            <div class="col-sm-12">
-                                <span class="d-flex align-items-center"><b style="font-weight: 500">Tiempo de Lectura:</b></span>
-                                <span>{{ $post->reading_time}} min.</span>
+                            <div class="row px-4 text-justify" style="font-size: smaller">
+                                <div class="col-sm-12 d-flex">
+                                    <span><b style="font-weight: 500;">Autor:</b></span><br>
+                                    <span class="ml-1">Administrador</span>
+                                </div>
+                                <div class="col-sm-12 d-flex">
+                                    <span><b style="font-weight: 500;">Categoria:</b></span><br>
+                                    <span class="ml-1">{{ $category->name }}</span>
+                                </div>
+                                <div class="col-sm-12 d-flex">
+                                    <span><b style="font-weight: 500;">Publicado el:</b></span><br>
+                                    <span class="ml-1">{{ $post->created_at->format('M d, Y')}}</span>
+                                </div>
+                                <div class="col-sm-12 d-flex">
+                                    <span><b style="font-weight: 500;">Actualizado el:</b></span><br>
+                                    <span class="ml-1">{{ $post->updated_at->format('M d, Y')}}</span>
+                                </div>
+                                @isset($post->reading_time)
+                                <div class="col-sm-12 d-flex">
+                                    <span class="d-flex align-items-center"><b style="font-weight: 500">Tiempo de Lectura:</b></span>
+                                    <span class="ml-1">{{ $post->reading_time}} min.</span>
+                                </div>
+                                @endisset
                             </div>
-                            @endisset
                         </div>
-                    </div>
-                    <div class="col-12 text-center mt-4">
-                        <h2 class="tit-not">Temas Relacionados</h2>
-                    </div>
-                    <div class="row mb-4 justify-content-center mx-1">
-                        <div class="col-12">
-                            <div class="row">
-                                @foreach ($posts as $lpost)
-                                    <div class="col-12">
-                                        <div class="card my-2">
-                                            <a href="{{route('post.slug',$lpost->slug)}}" class="stretched-link">
-                                                <div>
-                                                    <img data-src="{{url('uploads/i600_'.$lpost->imgdir)}}" class="lazy" height="140px" width="100%" alt="{{ $post->name }}" style="object-fit: cover;">
-                                                    <div>
-                                                        <div class="card-body p-2" style="position:relative;">
-                                                            <span class="d-block text-dark font-weight-bold card-title" style="font-size: medium">{{$lpost->name}}</span>
-                                                        </div>
-                                                        <div class="d-flex justify-content-center pb-3">
-                                                            <div>
-                                                                <div class="small text-muted float-left mt-3 mr-1"><i class="far fa-calendar-alt" style="font-size: 17px"></i> {{$lpost->created_at->format('M d, Y')}}</div>
-                                                                <div class="small text-muted float-right mt-3 ml-1"><i class="far fa-clock mr-1" style="font-size: 17px"></i> {{ $lpost->reading_time}} min.</div>
+                        <div class="col-12 text-center mt-4">
+                            <h2 class="tit-not">Temas Relacionados</h2>
+                        </div>
+                        <div class="row mb-4 justify-content-center">
+                            <div class="col-12">
+                                <div class="row">
+                                    @foreach ($posts as $lpost)
+                                        <div class="col-12">
+                                            <div class="card my-1">
+                                                <a href="{{route('post.slug',$lpost->slug)}}">
+                                                    <div style="border-left: 3px solid #2B384D">
+                                                        {{-- <img data-src="{{url('uploads/i600_'.$lpost->imgdir)}}" class="lazy" height="90px" width="100%" alt="{{ $post->name }}" style="object-fit: cover;"> --}}
+                                                        <div>
+                                                            <div class="card-body p-1 ml-3">
+                                                                <span class="d-block text-dark card-title" style="font-size: smaller; font-weight: 600">{{$lpost->name}}</span>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </a>
+                                                </a>
+                                            </div>
                                         </div>
+                                        @endforeach
                                     </div>
-                                    @endforeach
-                                </div>
-                                <div class="text-center mt-4">
-                                    <a class="btn rounded-pill shadow-sm" style="background-color: #2B384D; color: #ffffff" href="{{ route('post.blog') }}">Ver más artículos</a>
-                                </div>
+                                    <div class="text-center mt-2">
+                                        <a class="btn rounded-pill shadow-sm" style="background-color: #2B384D; color: #ffffff" href="{{ route('post.blog') }}">Ver más artículos</a>
+                                    </div>
+                            </div>
                         </div>
                     </div>
                 </div>
