@@ -1,5 +1,9 @@
 @extends('layouts.web')
 
+@php
+    $category = \App\Category::select('name')->where('id', $post->category_id)->first();
+@endphp
+
 @section('header')
     <title>{{$post->name}}</title>
     <meta name="description" content="{{$post->metadescrip}}"/>
@@ -36,6 +40,28 @@
         @media screen and (max-width: 991px){.social{display: none !important}}
         .personalized-container{padding-left: 150px; padding-right: 150px};
     </style>
+    <!-- Marcado JSON-LD generado por el Asistente para el marcado de datos estructurados de Google. -->
+    <script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "name": "{{ $post->name }}",
+        "author": {
+            "@type": "Person",
+            "name": "Administrador"
+        },
+        "datePublished": "{{ $post->created_at->format('yy-m-d')}}",
+        "dateModified": "{{ $post->updated_at->format('yy-m-d')}}",
+        "image": "{{url('uploads/i600_'.$post->imgsmall)}}",
+        "articleSection": "{{ $category->name }}",
+        "articleBody": "{{ $post->metadescrip }}",
+        "url": "{{ Request::url() }}",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6"
+          }
+        }
+    </script>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
@@ -94,9 +120,6 @@
                         </div>
                     @endisset
                 </div>
-                @php
-                    $category = \App\Category::select('name')->where('id', $post->category_id)->first();
-                @endphp
                 <div class="col-12 col-sm-10 col-md-10 col-lg-3 col-xl-3">
                     <div class="sticky-top" style="top: 90px; z-index: 0;">
                         <div class="border pb-4 shadow-sm  bg-white">
