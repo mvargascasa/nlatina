@@ -91,10 +91,13 @@
         .cols-mb-3{margin-bottom: 4% !important}
       }
 
+      .title-desktop{display: block !important}
+      .title-mobile{display: none !important}
       @media screen and (max-width: 1200px){.links-offices{font-size: 30px !important}}
       @media screen and (max-width: 1000px){}
-      @media screen and (max-width: 800px){.links-offices{font-size: 25px !important;} .txt-gestion-facil{font-size: 15px !important;letter-spacing: 3px !important} .img-logo{width: 300px !important}.title-h1{font-size: 2.3rem !important}.pattern-title-h1{left: 5% !important}}
-      @media screen and (max-width: 400px){.img-logo{width: 250px !important}.title-h1{font-size: 1.8rem !important}.img-header{height: 100vh !important}}
+      @media screen and (max-width: 800px){.links-offices{font-size: 25px !important;} .txt-gestion-facil{font-size: 15px !important;letter-spacing: 3px !important} .img-logo{width: 300px !important}.title-h1{font-size: 2.3rem !important}.pattern-title-h1{left: 5% !important; top: 15% !important; text-align: center !important;}}
+      @media screen and (max-width: 580px){ .title-desktop{display: none !important} .title-mobile{display: block !important}}
+      @media screen and (max-width: 400px){.img-logo{width: 250px !important}.title-h1{font-size: 1.2rem !important}.img-header{height: 100vh !important}.btn-iniciar-tramite{font-size: smaller !important}}
 
       .child-locations{
         background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #122944, #122944);
@@ -164,10 +167,10 @@
 
 <section>
     <section class="position-relative">
-      <img class="img-header" src="@if($mobile){{ asset('img/notaria en estados unidos mobile 2.webp') }}@else{{ asset('img/notaria en estados unidos.webp') }} @endif" alt="Notaria en Estados Unidos" style="height: 800px; width: 100%; object-fit: cover; object-position: center top;">
+      <img class="img-header" src="@if($mobile){{ asset('img/notaria en estados unidos mobile 3.webp') }}@else{{ asset('img/notaria en estados unidos.webp') }} @endif" alt="Notaria en Estados Unidos" style="height: 800px; width: 100%; object-fit: cover; object-position: center top;">
       <section class="position-absolute pattern-title-h1" style="top: 30%; left: 15%">
-        <h1 class="title-h1" style="color: #122944; font-size: 3.5rem"><span style="font-weight: 400">Servicios Notariales para</span> <br><span style="font-weight: 700">Latinoamérica desde <br> Estados Unidos</span></h1>
-        <button class="btn rounded-pill px-5 mt-4" style="background-color: #FFBE32; color: #122944; font-weight: 700; font-size: 1.2rem" data-toggle="modal" data-target="#exampleModal">INICIAR TRÁMITE</button>
+        <h1 class="title-h1" style="color: #122944; font-size: 3.5rem"> <span class="title-desktop"> <span style="font-weight: 400">Servicios Notariales para</span> <br><span style="font-weight: 700">Latinoamérica desde <br> Estados Unidos</span> </span> <span class="title-mobile title-h1"> <span style="font-weight: 400">Servicios Notariales</span><span style="font-weight: 700"> para Latinoamérica</span> </span> </h1>
+        <button class="btn rounded-pill px-5 mt-2 btn-iniciar-tramite" style="background-color: #FFBE32; color: #122944; font-weight: 700; font-size: 1.2rem" data-toggle="modal" data-target="#exampleModal">INICIAR TRÁMITE</button>
       </section>
     </section>
 </section>
