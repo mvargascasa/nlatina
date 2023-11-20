@@ -249,6 +249,9 @@ span{
     .btn-flotantes-desktop{ display: none !important}
     .btn-flotantes-mobile{ display: block !important}
 }
+@media screen and (max-width: 335px){
+    .font-size-small{ font-size: small !important; }
+}
 /* .dropdown:hover .dropdown-menu {
     display: block;
 } */
@@ -705,17 +708,17 @@ span{
 <div class="position-fixed shadow btn-flotantes-mobile" style="bottom: 5px; left: 20px; right: 20px; min-height: 60px; width: auto; background-color: white; display: none; border-radius: 30px">
     <div class="row justify-content-center text-center bg-white" style="border-radius: 30px">
         <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center" onclick="opennewwhatsappsection()" style="background-color: #122944; color: #ffffff; height: 60px; border-radius: 30px 0px 0px 30px; border: 0.5px solid rgb(153, 153, 153)">
-            <div class="d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center font-size-small">
                 Whatsapp <i class="fab fa-whatsapp text-white ml-1"></i>
             </div>
         </div>
         <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center" style="background-color: #122944; color: #ffffff; height: 60px; border: 0.5px solid rgb(153, 153, 153)">
-            <div>
+            <div class="font-size-small">
                 <a class="text-white" href="tel:@yield('phoneNumberHidden')">Llamar <i class="fas fa-phone-alt text-white"></i></a>
             </div>
         </div>
         <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center" style="background-color: #122944; color: #ffffff; height: 60px;  border-radius: 0px 30px 30px 0px; border: 0.5px solid rgb(153, 153, 153)" onclick="document.getElementById('chatnotaria').classList.remove('d-none');">
-            <div class="d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center font-size-small">
                 Chat <i class="fas fa-comment-alt text-white ml-1"></i>
             </div>
         </div>
