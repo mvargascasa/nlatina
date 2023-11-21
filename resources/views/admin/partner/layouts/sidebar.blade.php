@@ -106,7 +106,7 @@
         <a class="nav-link text-truncate" href="{{ route('socios.index') }}"><img width="25" height="25" src="{{ asset('img/partners/home_logo.png') }}" alt=""> Inicio</a>
         <a class="nav-link text-truncate" href="{{ route('socios.edit', Auth::guard('partner')->user()) }}"><img width="25" height="25" src="{{ asset('img/partners/user.png') }}" alt=""> Editar Perfil</a>
         <a class="nav-link text-truncate" href="{{ route('partner.get.customers', Auth::guard('partner')->user()) }}"><img style="filter: invert(1);" src="{{ asset('img/partners/notebook.png') }}" alt=""> Mis clientes</a>
-        {{-- <a class="nav-link text-truncate" href="{{route('partner.upload.form')}}"><i class="fas fa-play"></i> Multimedia</a> --}}
+        <a class="nav-link text-truncate" href="{{route('partner.upload.form')}}"><i class="fas fa-play"></i> Multimedia</a>
     </li>
     {{-- <li class="nav-item">
         <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i> <span class="d-sm-inline">Trámites</span></a>
