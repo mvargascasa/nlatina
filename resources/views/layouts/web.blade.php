@@ -314,7 +314,7 @@ span{
     </noscript>
     <header>
         <section>
-            <nav class="navbar navbar-expand-lg position-fixed w-100 font-family-montserrat" style="z-index: 2; padding-left: 15%; padding-right: 15%">
+            <nav class="navbar navbar-expand-lg position-fixed w-100 font-family-montserrat" style="z-index: 100; padding-left: 15%; padding-right: 15%">
               <div class="d-flex flex-grow-1">
                   <span class="w-100 d-lg-none d-block">
                       <a class="navbar-brand" href="{{route('web.index')}}">
