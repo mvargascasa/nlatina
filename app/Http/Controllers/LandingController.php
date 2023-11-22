@@ -213,6 +213,18 @@ class LandingController extends Controller
                         // <br><b>Score</b>: " . strip_tags($response->score) . "
                         // ";
                         mail('sebas31051999@gmail.com','Lead General: '.strip_tags($request->aaa), $message, $header);
+
+                        //Creamos el lead si pasa la verificacion de recaptcha, despues de enviar los correos
+                        Lead::create([
+                            'name' => Purify::clean($request->aaa),
+                            'country' => Purify::clean($country),
+                            'state' => Purify::clean($request->state),
+                            'phone' => Purify::clean($request->get('cod_pais')) . "" . Purify::clean($request->bbb),
+                            'email' => Purify::clean($request->ccc),
+                            'interest' => Purify::clean($request->service),
+                            'message' => Purify::clean($request->ddd),
+                            'page' => Purify::clean(url()->previous()),
+                        ]);
                     } else {
                         //bot
                         // $message .= "
@@ -222,16 +234,6 @@ class LandingController extends Controller
                         mail('sebas31051999@gmail.com','Bot Lead General: '.strip_tags($request->aaa), $message, $header);  
                     }
                     //mail($sendoffices,'Lead General: '.strip_tags($request->aaa), $message, $header);  
-                    Lead::create([
-                        'name' => Purify::clean($request->aaa),
-                        'country' => Purify::clean($country),
-                        'state' => Purify::clean($request->state),
-                        'phone' => Purify::clean($request->get('cod_pais')) . "" . Purify::clean($request->bbb),
-                        'email' => Purify::clean($request->ccc),
-                        'interest' => Purify::clean($request->service),
-                        'message' => Purify::clean($request->ddd),
-                        'page' => Purify::clean(url()->previous()),
-                    ]);
                 }
    
             }

@@ -38,6 +38,43 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
       return false;
     }
 </script>
+
+<script id="script-recaptcha"></script>
+<script>
+    setTimeout(() => {
+        document.getElementById('script-recaptcha').src="https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8";
+        console.log('cargando script recaptcha nuevo');
+    }, 3000);
+</script>
+
+<script>
+    document.addEventListener('submit', function(e){
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8', {action: 'submit'}).then(function(token) {
+              
+              let form = e.target; //accediendo al formulario
+
+              if(form.id != 'form-chat'){
+
+                let input = document.createElement('input');
+                input.type = "hidden";
+                input.name = "g-recaptcha-response";
+                input.value = token;
+
+                form.appendChild(input);
+
+                //console.log(form);
+
+                form.submit();
+
+              }
+
+          });
+        });
+    });
+</script>
+
 <?php };// fin de if url localhost ?>
 
   <style>
