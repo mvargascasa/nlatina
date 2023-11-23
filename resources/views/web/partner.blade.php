@@ -390,7 +390,7 @@
                     @if($partner->updated_count != null)
                         <div class="col-sm-6 text-center">
                             <p class="h6">Visualizaciones de perfil</p>
-                            <p class="h5">{{ $partner->updated_count }}</p>
+                            <p class="h5">{{ $partner->views + 1 }}</p>
                         </div>
                     @endif
                     <div class="col-sm-6 text-center">
@@ -1075,7 +1075,7 @@
         } else {
             divshowphone.innerHTML = "<a class='text-dark' style='text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>{{ $partner->phone }}</a>";
         }
-        //setTimeout(() => {setviewed();}, 3000);
+        setTimeout(() => {setviewed();}, 3000);
     });
 
     //RETIRANDO CARGA DEL SCRIPT - NO SE OCUPA
