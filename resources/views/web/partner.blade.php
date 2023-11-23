@@ -36,7 +36,7 @@
         .bg-header{
             /* background-color: #002542; */
             width: 100%;
-            min-height: 400px;
+            min-height: 600px;
         }
         .container{
             position: relative;
@@ -78,18 +78,19 @@
                 color: #000000 !important;
             }
             #info_biografia{margin-top: 0px !important;}
-            .bg-header{min-height: 130px; height: 250px}
+            .bg-header{min-height: 130px; height: 350px}
             #img-logo{width: 190px !important; height: 60px !important;}
             .img-profile{justify-content: center !important}
             .biography{padding-right: 0rem !important}
             .title{font-size: 1.8rem}
+            .mark{display: none}
         }
         @media screen and (max-width: 1600px){
             .biography{padding-right: 15rem !important}
         }
         @media screen and (max-width: 1200px){
             .biography{padding-right: 0rem !important}
-            .img-profile{width: 230px !important; height: 230px !important}
+            /* .img-profile{width: 230px !important; height: 230px !important} */
             .first-section{padding-top: 10px !important; margin-top: 15px !important}
             .container-fluid{margin-left: 0px !important; margin-right: 0px !important}
             .title{margin-top: 15px !important}
@@ -205,9 +206,17 @@
         .txt-blue{color: #2B384D}.bg-blue{background-color: #2B384D}
        
 
-       @media only screen and (max-width:768px) {
-
-         }
+        @media only screen and (max-width:768px) {
+            .sm-mt-5{
+                margin-top: 5% !important;
+            }
+            .border-radius-25{
+                border-radius: 25px !important;
+            }
+            .sm-justify-content-center{
+                justify-content: center !important;
+            }
+        }
 
        
 
@@ -300,54 +309,98 @@
 
 <p id="txtpartnerid" style="display: none">{{ $partner->id }}</p>
 
-<section id="prisection" class="bg-header pt-5 d-flex justify-content-center" style="background-size: cover; background-position: bottom center; background-repeat: no-repeat;"></section>
-
-<section class="container">
-    <div class="row">
-        <div class="col-sm-12 col-12 col-md-5 col-xl-5">
-            <section class="rounded-circle shadow img-profile" style="border: 5px solid #ffffff; width: 400px; height: 400px; margin-top: -120px; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url('{{asset('storage/' . $partner['img_profile'] )}}');"></section>
+<section id="prisection" class="bg-header pt-5 d-flex justify-content-start align-items-center" style="background-size: cover; background-position: bottom center; background-repeat: no-repeat; ">
+    <div class="container">
+        <div>
+            <p class="text-white">Abogado de Notaria Latina</p>
+            <h1 class="font-weight-bolder text-white">Abogado en {{ $partner->city }}, {{ $partner->country_residence }}</h1>
+            <button class="btn btn-lg rounded-0 mt-2" style="background-color: #002542; color: #ffffff" data-toggle="modal" data-target="#form_modal">Realizar una consulta</button>
         </div>
-        <div class="col-sm-12 col-12 col-md-7 col-xl-7 d-flex justify-content-start align-items-center">
-            <div>
+    </div>
+
+</section>
+
+<section class="container my-5">
+    <div class="row">
+        <div class="col-sm-12 col-12 col-md-6 col-xl-6 d-flex justify-content-end sm-justify-content-center">
+            <section class="shadow-sm img-profile position-relative border-radius-25" style="width: 400px; height: 500px; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url('{{asset('storage/' . $partner['img_profile'] )}}');">
+                <div class="position-absolute mark" style="width: 350px; height: 450px; border: 10px solid #124973; top: 80px; right: 80px; z-index: -1; background-color: #ffffff"></div>
+            </section>
+        </div>
+        <div class="col-sm-12 col-12 col-md-6 col-xl-6 d-flex justify-content-start align-items-center">
+            <div class="sm-mt-5">
+                <span class="font-weight-bold" style="font-size: medium; color: #999999; font-family: revert">ABOGADO</span>
                 <p id="txtnamelastname" class="font-weight-bold h3 title">{{ $partner->name }} {{ $partner->lastname }}</p>
-                <h1 class="text-muted" style="font-size: 18px !important">Abogado en {{ $partner->city }}, {{ $partner->state }}</h1>
-                <div class="d-flex">
-                    <span class="text-muted mr-2" style="font-weight: 500"><i class="fas fa-map-marker-alt"></i> {{ $partner->address }}</span>
-                    @if($partner->link_facebook != null)
-                        <span class="text-muted mr-2" style="font-weight: 500"><i class="fab fa-facebook-f"></i></span>
-                    @endif
-                    @if($partner->link_linkedin != null)
-                        <span class="text-muted mr-2" style="font-weight: 500"><i class="fab fa-linkedin-in"></i></span>
-                    @endif
-                    @if($partner->link_instagram != null)
-                        <span class="text-muted" style="font-weight: 500"><i class="fab fa-instagram"></i></span>
-                    @endif
+                <div style="width: 50px; height: 4px; background-color: #002542"></div>
+                <div class="mt-3 text-muted" data-aos="fade-left" data-aos-duration="3000">
+                    {!! $partner->biography_html !!}
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="bg-light first-section py-5 mt-5">
-    <section class="container">
+<section class="bg-light" style="margin-top: 5%">
+    <section class="container pb-5">
+        <h2 class="txt-blue text-center py-5">ÁREAS DE <span class="font-weight-bold">ESPECIALIZACIÓN</span></h2>
+        <div class="row justify-content-center">
+            @foreach ($partner->specialties as $specialty)
+                <div class="col-sm-4" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center">
+                            <div class="d-flex justify-content-center">
+                                <div class="border rounded-circle shadow-sm text-center p-4 bg-white" style="width: max-content">
+                                    <img src="{{ asset('img/partners/'.$specialty->name_specialty.'.png') }}" alt="">
+                                </div>
+                            </div>
+                            <p class="txt-blue mt-3">DERECHO <span class="font-weight-bold">{{ strtoupper($specialty->name_specialty) }}</span></p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </section>
+</section>
+
+<section class="first-section py-5">
+    <h2 class="text-center mb-5">INFORMACION DE <strong>CONTACTO</strong></h2>
+    <section class="container py-5">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-3 col-xl-3">
+            <div class="col-12 col-sm-12 col-md-6 col-xl-6 border-right">
                 <div class="mb-4">
-                    <i class="fas fa-phone mr-1"></i><span id="divshowphone"></span>
+                    <span><i class="fas fa-phone mr-1"></i>{{ Str::limit($partner->phone, 7) }}</span>
+                    <button id="divshowphone" class="btn rounded-pill ml-2 btn-warning">Ver telefono y llamar</button>
                 </div>
                 <div class="mb-4">
                     <a style="text-decoration: none; color: #000000" href="mailto:{{$partner->email}}">
                         <i class="fas fa-envelope"></i> {{ $partner->email }}
                     </a>
                 </div>
+                @if($partner->address)
+                    <div class="mb-4">
+                        <i class="fas fa-map-marker-alt"></i> {{ $partner->address }}
+                    </div>
+                @endif
                 <div class="mt-4">
-                    <button data-toggle="modal" data-target="#form_modal" class="btn btn-block btn-warning rounded-pill"><i class="fas fa-comment"></i> Contactar</button>
+                    <button data-toggle="modal" data-target="#form_modal" class="btn btn-block btn-warning rounded-pill"><i class="fas fa-comment"></i> Realizar una consulta</button>
                 </div>
-                <div class="d-flex justify-content-center mt-4">
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-xl-6 border-left sm-mt-5">
+                <div class="row">
+                    <div class="col-sm-6 text-center">
+                        <p class="h6">Visualizaciones de perfil</p>
+                        <p class="h5">{{ $partner->updated_count }}</p>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <p class="h6">Consultas realizadas</p>
+                        <p class="h5">3</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
                     <div>
                         @php $rating = $partner->averageRating(); @endphp
                         <div class="@if($mobile) text-center @else text-left @endif mr-1">
-                            <div data-toggle="modal" data-target="#exampleModalCenter" style="color: #FEC02F; cursor: pointer">
+                            <div style="color: #FEC02F; cursor: pointer">
                                 @foreach(range(1,5) as $i)
                                     <span class="fa-stack" style="width:2em" onclick="openModalRating();">
                                         <i class="far fa-star fa-stack-2x"></i>
@@ -366,32 +419,30 @@
                         <div class="ml-2 mt-1">
                             <p class="pt-1 font-weight-bold txt-blue @if($mobile) text-center @else text-right @endif" style="letter-spacing: 15px; font-size: 20px">REVIEWS</p>
                         </div>
+                        <div class="text-center">
+                            <button class="btn btn-warning rounded-pill" data-toggle="modal" data-target="#exampleModalCenter">Dejar una opinión</button>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-9 col-xl-9">
-                <div data-aos="fade-left" data-aos-duration="3000">
-                    {!! $partner->biography_html !!}
                 </div>
             </div>
         </div>
     </section>
 </section>
 
-<section class="container pb-5 pt-5">
-    <h2 class="txt-blue text-center py-5">ÁREA DE <span class="font-weight-bold">ESPECIALIZACIÓN</span></h2>
-    <div class="row justify-content-center">
-        @foreach ($partner->specialties as $specialty)
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="2000">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <img src="{{ asset('img/partners/'.$specialty->name_specialty.'.png') }}" alt="">
-                        <p class="txt-blue mt-3">DERECHO <span class="font-weight-bold">{{ strtoupper($specialty->name_specialty) }}</span></p>
-                    </div>
+<section style="background-color: #002542">
+    <section class="container py-5">
+        <div class="row justify-content-center text-white py-4">
+            <div class="text-center">
+                <p style="font-size: medium; font-weight: 600">¿NECESITA AYUDA DE UN ABOGADO?</p>
+                <h2>Realice una consulta aquí</h2>
+                <div class="d-flex justify-content-center mt-3 mb-4">
+                    <div class="bg-warning" style="width: 50px; height: 4px"></div>
                 </div>
+                <p style="color: #DBDBDC">Si tiene alguna pregunta para nuestros abogados, deje su consulta o duda</p>
+                <button class="btn btn-warning btn-lg rounded-0" data-toggle="modal" data-target="#form_modal">Realizar una consulta</button>
             </div>
-        @endforeach
-    </div>
+        </div>
+    </section>
 </section>
 
 @if(count($testimonials)>0)
@@ -837,7 +888,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header text-white" style="background-color: #002542">
-                        <p style="font-weight: bold"><b style="color: #fec02f">Complete el formulario</b> para ver el número telefónico del partner</p>
+                        <p style="font-weight: bold">Para<b style="color: #fec02f"> visualizar </b>el número de teléfono del Abogado, por favor complete su información</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span style="color: #ffffff" aria-hidden="true">&times;</span>
                         </button>
@@ -881,6 +932,9 @@
                             </div>
                             <div class="mb-3">
                                 <input class="form-control rounded-0" name="phone" id="phoneformphone" type="text" placeholder="Teléfono" required>
+                            </div>
+                            <div class="mb-3">
+                                <p style="font-size: small; font-weight: 500">*Al enviar su información, sus datos solamente serán procesados para visualización del Abogado. No serán compartidos ni ocupados por terceros</p>
                             </div>
                         </div>
                         <div class="modal-footer justify-content-center" style="margin-bottom: -15px;">
@@ -1015,7 +1069,7 @@
         const divshowphone = document.getElementById('divshowphone');
         let id = document.getElementById('txtpartnerid').textContent;
         if(!localStorage.getItem("prueba"+id)){
-            divshowphone.innerHTML = "<span style='cursor: pointer;' data-toggle='modal' data-target='.bd-example-modal-sm'>{{ Str::limit($partner->phone, 7) }}</span>";
+            divshowphone.innerHTML = "<span style='cursor: pointer;' data-toggle='modal' data-target='.bd-example-modal-sm'>Ver teléfono y llamar</span>";
         } else {
             divshowphone.innerHTML = "<a class='text-dark' style='text-decoration: none' href='tel:{{$partner->codigo_pais}}{{$partner->phone}}'>{{ $partner->phone }}</a>";
         }
