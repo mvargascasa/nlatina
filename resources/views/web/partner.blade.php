@@ -395,7 +395,7 @@
                     @endif
                     <div class="col-sm-6 text-center">
                         <p class="h6">Consultas realizadas</p>
-                        <p class="h5">3</p>
+                        <p class="h5">{{ count($partner->customers) }}</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mt-2">
