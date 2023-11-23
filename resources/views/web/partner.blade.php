@@ -311,13 +311,11 @@
 
 <section id="prisection" class="bg-header pt-5 d-flex justify-content-start align-items-center" style="background-size: cover; background-position: bottom center; background-repeat: no-repeat; ">
     <div class="container">
-        <div>
-            <p class="text-white">Abogado de Notaria Latina</p>
-            <h1 class="font-weight-bolder text-white">Abogado en {{ $partner->city }}, {{ $partner->country_residence }}</h1>
+        <div>                
+            <h1 class="font-weight-bolder text-white h1">Abogado en {{ $partner->city }}, {{ $partner->country_residence }}</h1>
             <button class="btn btn-lg rounded-0 mt-2" style="background-color: #002542; color: #ffffff" data-toggle="modal" data-target="#form_modal">Realizar una consulta</button>
         </div>
     </div>
-
 </section>
 
 <section class="container my-5">
@@ -329,7 +327,7 @@
         </div>
         <div class="col-sm-12 col-12 col-md-6 col-xl-6 d-flex justify-content-start align-items-center">
             <div class="sm-mt-5">
-                <span class="font-weight-bold" style="font-size: medium; color: #999999; font-family: revert">ABOGADO</span>
+                <p class="font-weight-bold" style="font-size: medium; color: #999999; font-family: revert">ABOGADO EN {{ strtoupper($partner->city)}}, {{ strtoupper($partner->country_residence) }}</p>
                 <p id="txtnamelastname" class="font-weight-bold h3 title">{{ $partner->name }} {{ $partner->lastname }}</p>
                 <div style="width: 50px; height: 4px; background-color: #002542"></div>
                 <div class="mt-3 text-muted" data-aos="fade-left" data-aos-duration="3000">
