@@ -386,11 +386,13 @@
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-xl-6 border-left sm-mt-5">
-                <div class="row">
-                    <div class="col-sm-6 text-center">
-                        <p class="h6">Visualizaciones de perfil</p>
-                        <p class="h5">{{ $partner->updated_count }}</p>
-                    </div>
+                <div class="row justify-content-center">
+                    @if($partner->updated_count != null)
+                        <div class="col-sm-6 text-center">
+                            <p class="h6">Visualizaciones de perfil</p>
+                            <p class="h5">{{ $partner->updated_count }}</p>
+                        </div>
+                    @endif
                     <div class="col-sm-6 text-center">
                         <p class="h6">Consultas realizadas</p>
                         <p class="h5">3</p>
