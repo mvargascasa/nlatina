@@ -298,6 +298,7 @@
             }, 3500);
         </script>
     
+    <script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
     
         {{-- {!! htmlScriptTagJsApi([
         'callback_then' => 'callbackThen',
@@ -830,10 +831,10 @@
                             @csrf
                             <div class="d-flex">
                                 <div class="w-100">
-                                    <input class="form-control mr-1 rounded-0" style="font-size: 12px" type="text" id="nombre" placeholder="Nombre" name="name" autocomplete="off" required>
+                                    <input class="form-control mr-1 rounded-0" style="font-size: 12px" type="text" id="nombre" placeholder="Nombre" name="name" autocomplete="off" onkeyup="validate(this)" required>
                                 </div>
                                 <div class="w-100">
-                                    <input class="form-control ml-1 rounded-0" style="font-size: 12px" type="text" id="apellido" placeholder="Apellido" name="lastname" autocomplete="off" required>
+                                    <input class="form-control ml-1 rounded-0" style="font-size: 12px" type="text" id="apellido" placeholder="Apellido" name="lastname" autocomplete="off" onkeyup="validate(this)" required>
                                 </div>
                             </div>
                             <input type="email" name="email" style="font-size:12px" id="email" placeholder="Correo electrónico" class="form-control rounded-0" autocomplete="off" required>
@@ -866,14 +867,14 @@
                                         <img id="img-flag-form" width="30px" height="30px" alt="" class="border-0 d-none mr-1">
                                         <input type="text" style="font-size: 12px" class="form-control rounded-0 border-0 bg-white" name="codpais" id="codTelfPais" readonly>
                                     </div>
-                                    <input class="form-control rounded-0" style="font-size: 12px" type="text" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
+                                    <input class="form-control rounded-0" style="font-size: 12px" type="number" id="telefono" placeholder="Teléfono" name="phone" autocomplete="off" required>
                                 </div>
                             </div>
                             <textarea class="form-control rounded-0" style="font-size: 12px" id="mensaje" rows="4" placeholder="Ej: Hola, me interesa consultar por sus servicios y deseo que me contacten" name="mensaje" autocomplete="off" required></textarea>
                             <div style="display: none">
                                 <input type="hidden" name="aux">
                             </div>
-                            <button class="btn mb-3 rounded-0" style="background-color: #FEC02F;" type="submit"><i class="fas fa-envelope"></i> Enviar</button>
+                            <button id="submit_contact_partner" class="btn mb-3 rounded-0" style="background-color: #FEC02F;" type="submit"><i class="fas fa-envelope"></i> Enviar</button>
                         </form>
                     </div>    
                 </div>
@@ -1075,6 +1076,40 @@
         }
         setTimeout(() => {setviewed();}, 3000);
     });
+
+    function validate(input){
+
+        let validate = false;
+        let message = "";
+
+        switch (input.id) {
+            case 'nombre':
+                if(input.value.match(/\d/)){
+                    validate = false;
+                    message = "El nombre solo se debe completar con letras";
+                } else {
+                    validate = true;
+                }
+                break;
+            case 'apellido':
+                if(input.value.match(/\d/)){
+                    validate = false;
+                    message = "El apellido solo se debe completar con letras";
+                } else {
+                    validate = true;
+                }
+                break;
+            default:
+                break;
+        }
+
+        if(!validate){
+            document.getElementById('submit_contact_partner').disabled = true;
+            alert(message);
+        } else {
+            document.getElementById('submit_contact_partner').disabled = false;
+        }
+    }
 
     //RETIRANDO CARGA DEL SCRIPT - NO SE OCUPA
     // setTimeout(() => {
