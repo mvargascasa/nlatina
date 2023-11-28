@@ -4,7 +4,7 @@
 $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 @endphp --}}
 
-<title>Abogados en Latinoamérica a su alcance | Registro</title>
+<title>Regístrese en nuestro portal de Abogados | Notaria Latina</title>
 <meta name="description" content="Regístrese gratis y forme parte de nuestro directorio de Partners en Latinoamérica 👨‍⚖️ Ofrezca sus servicios a clientes potenciales | Notaria Latina ⚖">
 <meta name="keywords" content="legislacion, judicial, abogados en latinoamerica, abogados near me, abogados cerca de mi, abogados de accidentes, abogados de familia, abogados de divorcio, abogados de inmigracion, abogado inmobiliario, abogados de trabajo, abogados testamentos y herencias, notario near me, notario cerca de mi, abogado notaria near me, abogado penalista, abogado civil">
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -133,6 +133,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
             margin-top: 15%;
             margin-left: 0px !important;
             text-align: center;
+            padding-top: 25% !important;
         }
         .subtitle{
             margin-left: 0px !important;
@@ -201,10 +202,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
         }
         #titlemovil{
             display: block !important;
-        }
-        #titlepc{
-            display: none !important;
-        }
+        } 
         .parrafoBeneficios{
             margin: 0px !important;
         }
@@ -250,9 +248,6 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
     }
     #titlemovil{
         display: none;
-    }
-    #titlepc{
-        display: block;
     }
     .parrafoBeneficios{
         margin: 5px;
@@ -320,13 +315,13 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 @section('content')
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
-        <div class="row justify-content-center align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
+        <div class="row justify-content-center align-items-center" style="min-height: 350px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-sm-6 col-12 text-white">
-                <h1 id="titlemovil" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> <br> en los <b>ESTADOS UNIDOS</b></h1>
-                <h1 id="titlepc" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> en los <b>ESTADOS UNIDOS</b></h1>
+                {{-- <h1 id="titlemovil" style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> <br> en los <b>ESTADOS UNIDOS</b></h1> --}}
+                <h1 style="margin-left: 25%" class="titulo">Anúnciese <b>GRATIS</b> en los <b>ESTADOS UNIDOS</b></h1>
                 <h4 style="margin-left: 25%; color: #fec02f" class="font-weight-bold subtitle"><i>Regístrese ahora..!</i></h4>
             </div>
-            <div id="colRegisterForm" class="col-sm-6">
+            <div id="colRegisterForm" class="col-sm-6 pt-5">
                 @include('admin.partner.layouts.form_register')
             </div>
         </div>
@@ -395,6 +390,7 @@ $countriesmeta = \App\Partner::select('country_residence')->distinct()->get();
 
 @section('script')
 <script id="script-jquery" defer></script>
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
 {{-- <script src="https://www.google.com/recaptcha/api.js"></script> --}}
 <script>
 

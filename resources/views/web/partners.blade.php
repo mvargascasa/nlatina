@@ -93,7 +93,7 @@
                 margin-bottom: -10px !important;
             }
             #rowImage{
-                min-height: 250px !important;
+                min-height: 350px !important;
             }
             #formulario{
                 margin-bottom: -10px !important;
@@ -191,8 +191,8 @@
 <section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
     <div>
         <div id="rowImage" class="row align-items-center justify-content-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
-            <div class="col-sm-12 col-md-12 col-xl-12 col-lg-12 col-12 text-white text-center">
-                <img width="60px" height="60px" class="mb-3" src="{{asset('faviconotarialatina-22.png')}}" alt="">
+            <div class="col-sm-12 col-md-12 col-xl-12 col-lg-12 col-12 text-white text-center mt-5">
+                {{-- <img width="60px" height="60px" class="mb-3" src="{{asset('faviconotarialatina-22.png')}}" alt=""> --}}
                 <h1 id="titlemovil" class="font-weight-bold heading-title titulo text-center mb-3"><b style="color: #fec02f">¡Abogados </b> <br> en Latinoamérica a su alcance!</h1>
                 {{-- <h1 id="titlepc" class="font-weight-bold heading-title titulo"><b style="color: #fec02f">¡Abogados y Notarías</b> en Latinoamérica <br> a su alcance!</h1> --}}
                 <a href="#search-partner" class="btn btn-outline-warning rounded-pill text-white">ENCUENTRE SU ABOGADO</a>
@@ -311,6 +311,7 @@
 @section('script')
 <script id="script-jquery" defer></script>
 <script src="{{ asset('js/Country.js') }}"></script>
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
 <script>
 
     setTimeout(() => {
