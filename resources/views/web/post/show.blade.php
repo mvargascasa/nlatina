@@ -58,6 +58,7 @@
         "url": "{{ Request::url() }}",
         "aggregateRating": {
             "@type": "AggregateRating",
+            "ratingCount": "{{ isset($post->ratingCount) ? $post->ratingCount : 1785}}"
             "ratingValue": "4.6"
           }
         }

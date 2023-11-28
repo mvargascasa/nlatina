@@ -705,7 +705,7 @@ span{
     </div>
 </div>
 
-<div class="position-fixed shadow btn-flotantes-mobile" style="bottom: 5px; left: 20px; right: 20px; min-height: 60px; width: auto; background-color: white; display: none; border-radius: 30px">
+<div class="position-fixed shadow btn-flotantes-mobile" style="bottom: 5px; left: 20px; right: 20px; min-height: 60px; width: auto; background-color: white; display: none; border-radius: 30px; z-index: 5">
     <div class="row justify-content-center text-center bg-white" style="border-radius: 30px">
         <div class="col-sm-4 col-4 d-flex align-items-center justify-content-center" onclick="opennewwhatsappsection()" style="background-color: #122944; color: #ffffff; height: 60px; border-radius: 30px 0px 0px 30px; border: 0.5px solid rgb(153, 153, 153)">
             <div class="d-flex align-items-center justify-content-center font-size-small">
