@@ -133,7 +133,7 @@ aria-hidden="true">
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-<script defer src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+{{-- <script defer src="{{asset('js/jquery-3.4.1.min.js')}}"></script> --}}
 <script>
   let scriptBootstrap = document.createElement('script');
   scriptBootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
