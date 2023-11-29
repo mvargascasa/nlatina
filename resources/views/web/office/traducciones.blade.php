@@ -134,6 +134,7 @@ aria-hidden="true">
 
 @section('script')
 {{-- <script defer src="{{asset('js/jquery-3.4.1.min.js')}}"></script> --}}
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
 <script>
   let scriptBootstrap = document.createElement('script');
   scriptBootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
