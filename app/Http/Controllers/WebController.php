@@ -1900,13 +1900,13 @@ class WebController extends Controller
                     $posts = Post::where('name', 'LIKE', '%autorizacion%')->limit(3)->get();
                     $data['imgback'] = "img/oficinas/permiso-de-viaje-menores-2.webp";
                     $data['body'] = "
-                    <h2 style='font-size: 25px'>La Autorización de Viaje permitirá que su hijo(a) menor edad pueda viajar a otro país sin la compañia de sus padres en caso que no puedan hacerlo.</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>La Autorización de Viaje permitirá que su hijo(a) menor edad pueda viajar a otro país sin la compañia de sus padres en caso que no puedan hacerlo.</h2>
                     <p class='text-muted'>Este escrito acredita a una tercera persona como el encargado de viajar con el menor. Dicho individuo puede ser un miembro de la familia,
                         un amigo o alguna auxiliar de viaje, por ejemplo una azafata de la misma aerolinea (personal de la tripulación de un avión que tiene como función atender a los pasajeros prestándoles servicios para su comodidad y seguridad).</p>
                     <p class='text-muted'>Esta carta de autorización debe manifestar la aprobación, por parte de los progenitores del menor, la salida del país del mismo acompañado de la persona hecha a cargo.
                         También se puede realizar este permiso si el menor necesita viajar solo con uno de los padres. </p>
 
-                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué necesito para realizar una autorización de viaje?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Qué necesito para realizar una autorización de viaje?</h2>
                     <p class='text-muted'>Entre los requisitos necesarios para realizar este proceso se encuentran los siguientes:</p>
                     <ul class='text-muted'>
                         <li>Documento de identidad de los padres.</li>
@@ -1917,13 +1917,13 @@ class WebController extends Controller
                     </ul>
                     <p class='text-muted'>Es posible que en algunas situaciones requieran más información para realizar el permiso de viaje del niño/a, por ejemplo el país al que realiza el viaje, período en el que se encontrara fuera del país, entre otros.</p>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuál es la duración de esta carta de autorización?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Cuál es la duración de esta carta de autorización?</h2>
                     <p class='text-muted'>Este permiso, emitido por una autoridad competente, solo es válido durante el tiempo en que el menor se encuentre fuera del país. Al terminar este período, la autorización deja de ser válida automáticamente.</p>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿En donde puedo realizar el trámite?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿En donde puedo realizar el trámite?</h2>
                     <p class='text-muted'>Contáctenos completando un formulario en línea, mediante una llamada o acercándose personalmente a nuestra oficina en New Jersey con los requisitos necesarios y un asesor lo guiará para que realice el trámite de manera correcta y segura.</p>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuál es el tiempo de entrega del documento?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Cuál es el tiempo de entrega del documento?</h2>
                     <p class='text-muted'>
                         La entrega de la autorizacion es de inmediato, siempre y cuando la persona que realiza el trámite cuente con los requisitos respectivos y en orden.
                     </p>
