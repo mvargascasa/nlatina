@@ -118,7 +118,7 @@
 @endsection
 
 @section('script')
-<script async src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
     <script>
       var scriptBootstrap = document.createElement('script');
       scriptBootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
