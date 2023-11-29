@@ -32,14 +32,14 @@
   </section>
 
   <div class="container pt-4">
-    <h2 style="font-size: 25px">¿Quién puede emitir el certificado de matrimonio?</h2>
+    <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿Quién puede emitir el certificado de matrimonio?</h2>
     <p class="text-muted text-justify">
         Hace ya más de un año que los notarios pueden certificar el matrimonio en Florida, 
         al igual que tramitar el expediente previo a la celebración del matrimonio mediante un acta notarial.
         El fin de esta acta es para constatar que ambos contribuyentes cumplan los requisitos de capacidad, 
         además de que no existan impedimentos legales de cualquier otro tipo de matrimonio.  
     </p>
-    <h2 style="font-size: 25px">¿Qué requisitos se necesitan?</h2>
+    <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿Qué requisitos se necesitan?</h2>
     <p class="text-muted text-justify">Ante un notario público tendrás que tener la siguiente documentación:</p>
     <ul class="text-muted">
         <li>Documento de identidad, pasaporte o un tipo de ID.</li>
@@ -48,7 +48,7 @@
         <li>Si su pareja estaba casado antes necesitara brindar la acta de matrimonio anulada, o certificado de defunción del primer cónyuge. </li>
         <li>Los extranjero deberán presentar un certificado de capacidad matrimonio o certificado de soltería para poderse casar en florida. </li>
     </ul>
-    <h2 style="font-size: 25px">¿Cómo se lleva a cabo el matrimonio?</h2>
+    <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿Cómo se lleva a cabo el matrimonio?</h2>
     <p class="text-muted text-justify">
         Para la tramitación del acta el notario publico le preguntará a los futuros 
         esposos si reúnen los requisitos necesarios para contraer matrimonio. Así el notario publico escuchará a cada uno
@@ -58,16 +58,15 @@
         del acta de los contrayentes quienes podrán contraer el matrimonio ante el mismo notario. 
     </p>
     
-    <h2 style="font-size: 25px">¿En que tiempo me entregan mis documentos traducidos?</h2>
+    <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿En que tiempo me entregan mis documentos traducidos?</h2>
     <ul class="text-muted">
         <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
         <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
         <li>El documento digital estará disponible en 24 horas.</li>
-        <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
     </ul>
     <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-        <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
-        <div class="d-flex justify-content-center">
+        <a href="https://www.facebook.com/profile.php?id=61553644160037"><em>FanPage de Facebook</em></a><em>.</em></p>
+        <div class="d-flex justify-content-center pb-4">
           <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
         </div>
 
