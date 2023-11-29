@@ -24,7 +24,7 @@
 
 @section('content')
 
-<section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
+<section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat; background-image: url('{{asset($data['imgback'])}}')">
     <div>
 
         <div id="rowimage" class="row align-items-center" style="min-height: 500px;background:rgba(2, 2, 2, 0.5)">
@@ -90,9 +90,9 @@
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
             @endisset
-            <div class="d-flex justify-content-center">
-              <a class="btn btn-warning text-white m-1" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
-              <a class="btn btn-danger m-1" href="tel:{{$data['telfHidden']}}">Llamar ahora ☎</a>
+            <div class="d-flex justify-content-center pb-4">
+              <a class="btn btn-warning rounded-pill m-1 shadow-sm" href="{{route('web.contactenos')}}">Solicitar Trámite</a>
+              <a class="btn btn-danger m-1 rounded-pill shadow-sm" href="tel:{{$data['telfHidden']}}">Llamar ahora</a>
             </div>
 
             @if(!sizeof($posts) == 0)
@@ -144,15 +144,15 @@ aria-hidden="true">
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-<script async src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
 <script>
-  var scriptBootstrap = document.createElement('script');
+  let scriptBootstrap = document.createElement('script');
   scriptBootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
 
-  var scriptPopper = document.createElement('script');
+  let scriptPopper = document.createElement('script');
   scriptPopper.src = "{{ asset('js/popper.min.js') }}";
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgback'])}})";
+        //document.getElementById('prisection').style.backgroundImage = "url({{asset($data['imgback'])}})";
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
     });
