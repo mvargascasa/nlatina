@@ -569,7 +569,7 @@ class WebController extends Controller
                         <li>El documento digital estará disponible en 24 horas.</li>
                     </ul>
                     <p class='text-muted'><b><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></b></p>
+                        <a href='https://www.facebook.com/profile.php?id=61553644160037'><em>FanPage de Facebook</em></a><em>.</em></b></p>
                     ";
                     $posts = Post::where('name', 'LIKE', '%poder')->limit(3)->get();
                     return view('web.office.poderes', compact('data', 'posts'));
