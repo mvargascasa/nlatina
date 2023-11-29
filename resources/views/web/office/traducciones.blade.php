@@ -141,7 +141,7 @@ aria-hidden="true">
   var scriptPopper = document.createElement('script');
   scriptPopper.src = "{{ asset('js/popper.min.js') }}";
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('../img/traducciones.jpg')";
+        document.getElementById('prisection').style.backgroundImage = "url('../img/traducciones.webp')";
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
     });
