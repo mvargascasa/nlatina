@@ -16,7 +16,7 @@
     @endsection
 
 @section('content')
-<section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
+<section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat; background-image: url('{{ asset('img/matrimonios.webp') }}')">
     <div>
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
 
@@ -120,13 +120,13 @@
 @section('script')
 <script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
     <script>
-      var scriptBootstrap = document.createElement('script');
+      let scriptBootstrap = document.createElement('script');
       scriptBootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
 
-      var scriptPopper = document.createElement('script');
+      let scriptPopper = document.createElement('script');
       scriptPopper.src = "{{ asset('js/popper.min.js') }}";
         window.addEventListener('load', (event) => {
-            document.getElementById('prisection').style.backgroundImage = "url('../img/matrimonios.webp')";
+            //document.getElementById('prisection').style.backgroundImage = "url('../img/matrimonios.webp')";
         //     document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
         });
