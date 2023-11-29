@@ -41,28 +41,6 @@
         .personalized-container{padding-left: 150px; padding-right: 150px};
     </style>
     <!-- Marcado JSON-LD generado por el Asistente para el marcado de datos estructurados de Google. -->
-    <script type="application/ld+json">
-        {
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "name": "{{ $post->name }}",
-        "author": {
-            "@type": "Person",
-            "name": "Administrador"
-        },
-        "datePublished": "{{ $post->created_at->format('yy-m-d')}}",
-        "dateModified": "{{ $post->updated_at->format('yy-m-d')}}",
-        "image": "{{url('uploads/i600_'.$post->imgsmall)}}",
-        "articleSection": "{{ $category->name }}",
-        "articleBody": "{{ $post->metadescrip }}",
-        "url": "{{ Request::url() }}",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingCount": "{{ isset($post->ratingCount) ? $post->ratingCount : 1785}}"
-            "ratingValue": "4.6"
-          }
-        }
-    </script>
 @endsection
 
 @section('phoneNumberHidden', '+18007428602')
