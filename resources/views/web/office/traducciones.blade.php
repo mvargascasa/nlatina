@@ -76,7 +76,6 @@
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
             <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
