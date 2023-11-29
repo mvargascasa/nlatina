@@ -73,9 +73,9 @@
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
           @endisset
-            <div class="d-flex justify-content-center">
-              <a class="btn btn-warning text-white m-1" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
-              <a class="btn btn-danger m-1" href="tel:{{$data['telfHidden']}}">Llamar ahora ☎</a>
+            <div class="d-flex justify-content-center pb-4">
+              <a class="btn btn-warning rounded-pill m-1" href="{{route('web.contactenos')}}">Solicitar Trámite</a>
+              <a class="btn btn-danger m-1 rounded-pill" href="tel:{{$data['telfHidden']}}">Llamar ahora</a>
             </div>
 
             @if(!sizeof($posts) == 0)

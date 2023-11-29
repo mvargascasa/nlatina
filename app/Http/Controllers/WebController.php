@@ -1928,7 +1928,7 @@ class WebController extends Controller
                         La entrega de la autorizacion es de inmediato, siempre y cuando la persona que realiza el trámite cuente con los requisitos respectivos y en orden.
                     </p>
                     <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede seguirnos en nuestra </em>
-                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                        <a href='https://www.facebook.com/profile.php?id=61553644160037'><em>FanPage de Facebook</em></a><em>.</em></p>
                     ";
                     return view('web.office.authorization', compact('data', 'posts'));
                     break;
