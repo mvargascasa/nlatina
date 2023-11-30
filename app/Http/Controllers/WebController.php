@@ -1161,14 +1161,15 @@ class WebController extends Controller
                     $posts = Post::where('name', 'LIKE', '%autorizacion%')->limit(3)->get();
                     $data['imgback'] = "img/oficinas/permiso-de-viaje-para-menores.webp";
                     $data['body'] = "
-                    <h2 style='font-size: 25px'>El Permiso de Viaje es un documento que autoriza a su hijo/a menor edad viajar fuera del país en caso de que los padres no puedan acompañarlo(a).</h2>
-                    <p class='text-muted'>Consta de una carta o escrito que se le otorga a una persona como el delegado de viajar con el menor. Este sujeto puede tratarse de un familiar,
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Qué es una Autorización de Viaje?</h2>
+                    <p class='text-muted'>El Permiso de Viaje es un documento que autoriza a su hijo/a menor edad viajar fuera del país en caso de que los padres no puedan acompañarlo(a).
+                        Consta de una carta o escrito que se le otorga a una persona como el delegado de viajar con el menor. Este sujeto puede tratarse de un familiar,
                         algún amigo o ayudante de viaje, por ejemplo una azafata de la aerolínea por la cual va a viajar (personal de un avión que tiene como objetivo atender a los pasajeros prestándoles servicios para su comodidad y seguridad).</p>
                     <p class='text-muted'>Este permiso para viajar debe constar con la aprobación de los padres para que su hijo salga del país con el acompañante designado.
                         Incluso puede realizar este trámite si el menor va a realizar el viaje con solo uno de sus padres.
                     </p>
 
-                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>Requisitos para obtener la autorización de viaje</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>Requisitos para obtener la autorización de viaje</h2>
                     <ul class='text-muted'>
                         <li>Identificación de los padres.</li>
                         <li>Nombres completos y fecha de nacimiento del menor</li>
@@ -1177,18 +1178,18 @@ class WebController extends Controller
                     </ul>
                     <p class='text-muted'>Puede que se requiera de más información para realizar la carta de autorización para el niño/a, por ejemplo el país de destino al que va a viajar, lapso de tiempo que estará fuera del país, entre otros.</p>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué tiempo es válido este documento?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Qué tiempo es válido este documento?</h2>
                     <p class='text-muted'>Una vez emitida la autorización por una autoridad competente, el tiempo de validez comprenderá el período en que el menor se encuentre fuera del país. Es decir, la autorización deja de ser válida automáticamente cuando el menor regrese a su país natal de residencia.</p>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Donde puedo obtener este permiso?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Donde puedo obtener este permiso?</h2>
                     <p class='text-muted'>Puede contactarse con nosotros mediante un formulario en línea, una llamada o acercándose personalmente a nuestra oficina en Florida con los requisitos correspondientes y un asesor lo ayudará en el proceso de una manera correcta y segura.</p>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuánto tiempo se demora en realizar este documento?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Cuánto tiempo se demora en realizar este documento?</h2>
                     <p class='text-muted'>
                         La entrega de esta carta permiso es de inmediata, claro deberá contar con los requisitos respectivos y en orden mencionados anteriormente.
                     </p>
                     <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede seguirnos en nuestra </em>
-                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                        <a href='https://www.facebook.com/profile.php?id=61553644160037'><em>FanPage de Facebook</em></a><em>.</em></p>
                     ";
                     return view('web.office.authorization', compact('data', 'posts'));
                     break;
