@@ -19,7 +19,7 @@
 
 @section('content')
 
-<section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat;">
+<section id="prisection" style="background-size: cover;background-position: left top; background-repeat: no-repeat; background-image: url('{{ asset('img/testamento.webp') }}')">
     <div>
 
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
@@ -36,12 +36,12 @@
   </section>
 
 <div class="container pt-4">
-        <h2 style="font-size: 25px">¿Qué son los testamentos y para qué sirven?</h2>
+        <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿Qué son los testamentos y para qué sirven?</h2>
         <p class="text-muted">Los testamentos son documentos legales que reflejan la voluntad de una persona de distribuir sus bienes entre las personas que él considere después de su muerte.</p>
         <p class="text-muted">El documento tiene que realizarse en una notaría para que tenga validez y pueda ejecutarse de acuerdo a la voluntad del testador.</p>
         <p class="text-muted">Con la creación de su testamento usted puede evitar futuros inconvenientes familiares en la división de bienes ya que en éste documento usted define la división a su voluntad y este debe respetarse.</p>
 
-        <h2 style="font-size: 25px">¿Que requisitos se necesita para realizar testamentos?</h2>
+        <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿Que requisitos se necesita para realizar testamentos?</h2>
         <ul class="text-muted">
             <li>Presentar una identificación válida del testador.</li>
             <li>Nombres y apellidos del albacea.</li>
@@ -50,16 +50,15 @@
             <li>Información de los herederos.</li>
         </ul>
 
-        <h2 style="font-size: 25px">¿En donde puedo realizar un testamento?</h2>
+        <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿En donde puedo realizar un testamento?</h2>
         <p class="text-muted">Acérquese a nuestra oficina y solicite empezar su proceso, nuestro personal le va asesorar de la mejor manera para que éste trámite se lleve a cabo de manera correcta y segura.</p>
 
 
-        <h2 style="font-size: 25px">¿En que tiempo me entregan un testamento?</h2>
+        <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿En que tiempo me entregan un testamento?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
             <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
             <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
@@ -116,7 +115,7 @@ aria-hidden="true">
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-<script async src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
 <script>
   var scriptBootstrap = document.createElement('script');
   scriptBootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
@@ -124,7 +123,7 @@ aria-hidden="true">
   var scriptPopper = document.createElement('script');
   scriptPopper.src = "{{ asset('js/popper.min.js') }}";
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('../img/testamento.jpg')";
+        //document.getElementById('prisection').style.backgroundImage = "url('../img/testamento.jpg')";
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
     });
