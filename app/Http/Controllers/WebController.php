@@ -1094,18 +1094,18 @@ class WebController extends Controller
                     $posts = Post::where('name', 'LIKE', '%certificacion%')->limit(3)->get();
                     $data['imgback'] = "img/oficinas/copia-certificada-de-documentos-1.webp";
                     $data['body'] = "
-                    <h2 style='font-size: 25px;'>Copia Certificada de su documento en New Jersey</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>Copia Certificada de su documento en New Jersey</h2>
                     <p class='text-muted'>
                         Como su nombre lo menciona, la copia certificada de un documento es un impreso exacto del escrito que va a certificar el cual va sellado por un notario constatando que es una copia fidedigna del documento.
                     </p>
                     <p class='text-muted'>Este certificado es emitido por el notario que verifica que el duplicado sea una copia exacta del documento principal.</p>
 
-                    <h2 style='font-size: 25px;background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Para que se utiliza un certificado?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Para que se utiliza un certificado?</h2>
                     <p class='text-muted'>El uso principal de este documento es demostrar la legitimidad de nuestra documentación personal al momento de gestionar cualquier tipo de trámite, 
                     como puede ser un proceso judicial, para algún tipo de comercio en su negocio, o por razones profesionales en cuanto a un empleo.</p>
                     <p class='text-muted'>Este documento es válido para gestionar cualquier tipo de diligencia ya sea nacional o internacionalmente.</p>
                     
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Por qué es fundamental certificar un documento?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Por qué es fundamental certificar un documento?</h2>
                     <p class='text-muted'>Una de las razones, y quizás la más importante, es al momento
                         que necesite enviar sus documentos personales como pasaporte, partida de nacimiento, acta de matrimonio, etc., para efectuar cualquier tipo de diligencia que este tramitando.
                         La opción más viable para no perder los documentos originales o evitar daños es decidir hacer una copia certificada.
@@ -1113,7 +1113,7 @@ class WebController extends Controller
                     <p class='text-muted'>Otra motivo puede ser que nuestra documentación se encuentra en mal estado físico y esto podría causar que las entidades que lo solicitan no lo acepten como válido. Para prevenir
                      estos incidentes y tener que conseguir nuevamente estos papeles, una buena idea sería obtener el certificado del documento a solicitar. Esto evitará cualquier inconveniente que se le presente a última hora.</p>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué documentos se pueden certificar?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Qué documentos se pueden certificar?</h2>
                     <ul class='text-muted'>
                         <li>Actas de nacimiento, matrimonio, etc.</li>
                         <li>Cartas</li>
@@ -1123,14 +1123,14 @@ class WebController extends Controller
                         <li>Entre otros</li>
                     </ul>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuánto tiempo es válido la copia certificada?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Cuánto tiempo es válido la copia certificada?</h2>
                     <p class='text-muted'>
                         Cualquier certificado que haya sido expedido se mantiene en rigor del mismo modo que lo hace el documento original, no tiene un período determinado de validez 
                         y su uso puede llevarse a cabo bajo cualquier tramitación. Por eso lo preferible es realizarlo con una autoridad con las facultades pertinentes para eludir
                         cualquier tipo de violación de autoridad, falsificación o contratiempo que puede surgir con este documento a futuro.
                     </p>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Qué requirimiento es necesario para empezar con el procedimiento?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Qué requirimiento es necesario para empezar con el procedimiento?</h2>
                     <p class='text-muted'>El único requisito indispensable para adquirir una copia certificada es disponer del documento original. El notario comprobará que es verídico
                     y continuará realizando la certificación de dicho documento. Existen dos formas en que se puede certificar un documento:
                         <ul class='text-muted'>
@@ -1139,11 +1139,11 @@ class WebController extends Controller
                         </ul> 
                     </p>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Donde puedo conseguir este documento?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Donde puedo conseguir este documento?</h2>
                     <p class='text-muted'>Contáctenos agendando una cita mediante nuestro sitio web, por medio de una llamada o acercándose a nuestra oficina en New Jersey con su documento a certificar. Un asesor lo guiará para que realice el trámite de manera correcta y segura.
                     </p>
 
-                    <h2 style='font-size: 25px; background-color: #F5F8FA; padding:7px; border-radius: 5px'>¿Cuánto se demoran en entregar el documento?</h2>
+                    <h2 class='px-2 py-1' style='font-size: 1.6rem; border-left: 3px solid #FFBE3E;'>¿Cuánto se demoran en entregar el documento?</h2>
                     <ul class='text-muted'>
                         <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
                         <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
@@ -1151,7 +1151,7 @@ class WebController extends Controller
                         <li class='text-danger'>Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
                     </ul>
                     <p class='text-muted'><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-                        <a href='https://www.facebook.com/notariapublicalatina/'><em>FanPage de Facebook</em></a><em>.</em></p>
+                        <a href='https://www.facebook.com/profile.php?id=61553644160037'><em>FanPage de Facebook</em></a><em>.</em></p>
                     ";
                     return view('web.office.certificaciones', compact('data', 'posts'));
                     break;
