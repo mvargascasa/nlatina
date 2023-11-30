@@ -115,7 +115,7 @@ aria-hidden="true">
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-<script defer src="{{ asset(js/navbar-style-v1.1.js) }}"></script>
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
 <script>
   var scriptBootstrap = document.createElement('script');
   scriptBootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
