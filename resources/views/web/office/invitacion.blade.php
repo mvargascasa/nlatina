@@ -19,7 +19,7 @@
 
 @section('content')
 
-<section id="prisection" style="background-size: cover;background-position: left center; background-repeat: no-repeat;">
+<section id="prisection" style="background-size: cover;background-position: left center; background-repeat: no-repeat; background-image: url('{{ asset('img/cartas-de-invitacion.webp') }}')">
     <div>
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-12 text-white text-center">
@@ -32,36 +32,35 @@
   </section>
 
 <div class="container pt-4">
-            <h2 style="font-size: 25px">Realizamos cartas de invitación de forma segura y efectiva en {{ $data['office'] }}</h2>
+            <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">Realizamos cartas de invitación de forma segura y efectiva en {{ $data['office'] }}</h2>
             <p class="text-muted">Las cartas de invitación son un requisito válido que se presenta ante el consulado que lo requiera para la
                 gestión de la visa de turista; la carta tiene que ser genuina y contener datos reales de la persona que va a realizarla.</p>
 
-            <h2 style="font-size: 25px">¿Para que me sirven las cartas de invitación?</h2>
+            <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿Para que me sirven las cartas de invitación?</h2>
             <p class="text-muted">Puede ser utilizada para acompañar una solicitud de visa como turista para visitar a un familiar o amigo
                 que reside en otro país. Es así que esta carta es un documento de presentación voluntaria que puede ayudar a obtener la visa.</p>
             <p class="text-muted">Por lo tanto, la persona que realiza la invitación tiene que ser un ciudadano que goce de todos los
                 privilegios de su país y que además pueda soportar los gastos del viaje y estadía de la persona a la que invita.</p>
 
-            <h2 style="font-size: 25px">¿Que requisitos necesito para hacer una carta de invitación?</h2>
+            <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿Que requisitos necesito para hacer una carta de invitación?</h2>
             <ul class="text-muted">
                 <li>Identificación válida de la persona que realiza la invitación.</li>
                 <li>Nombres y apellidos de la persona a la que se quiere invitar.</li>
                 <li>Presentar soporte de ingresos.</li>
             </ul>
 
-        <h2 style="font-size: 25px">¿En donde puedo realizar una carta de invitación?</h2>
+        <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿En donde puedo realizar una carta de invitación?</h2>
         <p class="text-muted">Acérquese a nuestra oficina con los requisitos necesarios y nuestros asesores le guiarán en la redacción de su carta y en la certificación de la misma.</p>
 
 
-        <h2 style="font-size: 25px">¿En que tiempo me entregan mi carta de invitación?</h2>
+        <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿En que tiempo me entregan mi carta de invitación?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
             <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+            <a href="https://www.facebook.com/profile.php?id=61553644160037"><em>FanPage de Facebook</em></a><em>.</em></p>
             <div class="d-flex justify-content-center">
               <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
             </div>
@@ -115,7 +114,7 @@ aria-hidden="true">
 @section('numberWpp', '13479739888')
 
 @section('script')
-<script async src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
 <script>
   var scriptBootstrap = document.createElement('script');
   scriptBootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
@@ -123,7 +122,7 @@ aria-hidden="true">
   var scriptPopper = document.createElement('script');
   scriptPopper.src = "{{ asset('js/popper.min.js') }}";
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('../img/cartas-de-invitacion.jpg')";
+        //document.getElementById('prisection').style.backgroundImage = "url('../img/cartas-de-invitacion.jpg')";
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
     });
