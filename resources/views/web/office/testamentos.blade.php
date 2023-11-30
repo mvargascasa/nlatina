@@ -61,7 +61,7 @@
             <li>El documento digital estará disponible en 24 horas.</li>
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+            <a href="https://www.facebook.com/profile.php?id=61553644160037"><em>FanPage de Facebook</em></a><em>.</em></p>
             <div class="d-flex justify-content-center">
               <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
             </div>

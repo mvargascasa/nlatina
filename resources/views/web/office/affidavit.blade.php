@@ -20,7 +20,7 @@
 
 @section('content')
 
-<section id="prisection" style="background-size: cover;background-position: left center; background-repeat: no-repeat;">
+<section id="prisection" style="background-size: cover;background-position: left center; background-repeat: no-repeat;background-image: url('{{ asset('img/affidavit.webp') }}')">
     <div>
         <div class="row align-items-center" style="min-height: 550px;background:rgba(2, 2, 2, 0.5)">
             <div class="col-12 text-white text-center">
@@ -33,36 +33,35 @@
   </section>
 
 <div class="container pt-4">
-            <h2 style="font-size: 25px">Realizamos Declaraciones Juradas (Affidávit)</h2>
+            <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">Realizamos Declaraciones Juradas (Affidávit)</h2>
             <p class="text-muted">Una declaración jurada o Affidávit es una manifestación escrita o verbal cuya veracidad es asegurada mediante un juramento
                 ante una autoridad judicial o administrativa.</p>
             <p class="text-muted">Esto hace que el contenido de la declaración sea tomado como cierto hasta que se demuestre lo contrario.</p>
 
-            <h2 style="font-size: 25px">¿Para que sirve un Affidávit?</h2>
+            <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿Para que sirve un Affidávit?</h2>
             <p class="text-muted">Este documento es necesario para algunos trámites de inmigración cuando quieres solicitar que un familiar obtenga la visa o
                 residencia en Estados Unidos.</p>
             <p class="text-muted">Este documento del affidavit también se conoce entre los migrantes como declaración jurada de sostenimiento, mantenimiento o
                 solvencia económica.</p>
 
-            <h2 style="font-size: 25px">¿Que requisitos necesito para realizar los acuerdos?</h2>
+            <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿Que requisitos necesito para realizar los acuerdos?</h2>
             <ul class="text-muted">
                 <li>Identificación válida de la persona que va a realizar la declaración jurada.</li>
                 <li>Información de lo que se quiere dejar estipulado en el documento.</li>
             </ul>
 
-            <h2 style="font-size: 25px">¿Donde puedo realizar un acuerdo?</h2>
+            <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿Donde puedo realizar un acuerdo?</h2>
             <p class="text-muted">Acérquese a nuestra oficina y un asesor lo guiará en la gestión del documento para que realice el trámite de manera correcta y segura.</p>
 
 
-        <h2 style="font-size: 25px">¿En que tiempo me entregan un Affidávit?</h2>
+        <h2 class="px-2 py-1" style="font-size: 1.6rem; border-left: 3px solid #FFBE3E;">¿En que tiempo me entregan un Affidávit?</h2>
         <ul class="text-muted">
             <li>El tiempo de entrega dentro de los Estados Unidos es de 24 horas.</li>
             <li>El tiempo de entrega fuera de los Estados Unidos es de 3 días laborables.</li>
             <li>El documento digital estará disponible en 24 horas.</li>
-            <li class="text-danger">Por motivos de codiv-19 puede existir retraso en los tiempos de entrega.</li>
         </ul>
         <p class="text-muted"><em>Si desea mantenerse actualizado sobre nuestros servicios puede visitar nuestra </em>
-            <a href="https://www.facebook.com/notariapublicalatina/"><em>FanPage de Facebook</em></a><em>.</em></p>
+            <a href="https://www.facebook.com/profile.php?id=61553644160037"><em>FanPage de Facebook</em></a><em>.</em></p>
             <div class="d-flex justify-content-center">
               <a class="btn btn-lg btn-warning" href="{{route('web.contactenos')}}">Solicite su Trámite</a>
             </div>
@@ -116,7 +115,7 @@ aria-hidden="true">
 @section('numberWpp', $data['telfWpp'])
 
 @section('script')
-<script async src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+<script defer src="{{ asset(js/navbar-style-v1.1.js) }}"></script>
 <script>
   var scriptBootstrap = document.createElement('script');
   scriptBootstrap.src = "{{ asset('js/bootstrap.min.js') }}";
@@ -124,7 +123,7 @@ aria-hidden="true">
   var scriptPopper = document.createElement('script');
   scriptPopper.src = "{{ asset('js/popper.min.js') }}";
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('../img/affidavit.jpg')";
+        //document.getElementById('prisection').style.backgroundImage = "url('../img/affidavit.jpg')";
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptPopper);
         // document.getElementsByTagName("script")[0].parentNode.appendChild(scriptBootstrap);
     });
