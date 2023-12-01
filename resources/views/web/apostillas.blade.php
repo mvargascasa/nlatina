@@ -102,7 +102,7 @@
 
 @section('content')
 
-<section id="prisection" style="background-size: cover;background-position: right center; background-repeat: no-repeat;">
+<section id="prisection" style="background-size: cover;background-position: right center; background-repeat: no-repeat; background-image: url('{{ asset('img/inicio.webp') }}')">
     <div>
 
         <div class="row align-items-center img-header" style="min-height: 650px;background:rgba(2, 2, 2, 0.301)">
@@ -190,7 +190,7 @@ aria-hidden="true">
 @section('script')
 <script>
     window.addEventListener('load', (event) => {
-        document.getElementById('prisection').style.backgroundImage = "url('img/inicio.jpg')";
+        //document.getElementById('prisection').style.backgroundImage = "url('img/inicio.jpg')";
     });
   </script>
 @endsection
