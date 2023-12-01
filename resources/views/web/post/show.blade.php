@@ -291,6 +291,7 @@
 @section('numberWpp', '13479739888')
 
 @section('script')
+<script defer src="{{ asset('js/navbar-style-v1.1.js') }}"></script>
     <script>
         window.addEventListener('load', (event) => {
             document.getElementById('prisection').style.backgroundImage = "url('{{url('uploads/i900_'.$post->imgdir)}}')";
