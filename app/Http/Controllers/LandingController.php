@@ -1001,13 +1001,17 @@ class LandingController extends Controller
                         <br><b> Email: </b>" . strip_tags($request->email) ."
                         <br><b> País: </b>" .strip_tags($request->country)."
                         <br><b> Estado: </b>" . strip_tags($request->state) . "
-                        <br><b> Caso: </b>". strip_tags($request->comment)." 
+                        <br><b> Caso: </b>". strip_tags($request->comment)."
+                        <br><b> En donde solicita el abogado:</b>
+                        <br><b> Pais: " . strip_tags($request->countrya) . "
+                        <br><b> Estado: " . strip_tags($request->statea) . "
                         ";
                             
             $header='';
             $header .= 'From: <lead_partners@notarialatina.com>' . "\r\n";
             $header .= "MIME-Version: 1.0\r\n";
             $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
             mail('partners@notarialatina.com', 'Lead Partner: '. strip_tags($request->name), $message, $header);
             mail('sebas31051999@gmail.com','Lead Partner: '. strip_tags($request->name), $message, $header);
     
