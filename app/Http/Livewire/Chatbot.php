@@ -91,8 +91,12 @@ class Chatbot extends Component
                 <option value='Testamentos'>Testamentos</option>
             </select>
             <input type='text' wire:model='chatmessage' placeholder='Mensaje' class='form-control rounded-0 mb-2' required>
+            <div class='d-flex align-items-start mb-3 text-white'>
+                <input type='checkbox' name='acceptedchat' id='acceptedchat' class='mr-2 mt-1' onclick='validateCheckChat()'>
+                <label for='acceptedchat' style='font-size: small; font-weight: 500'>Deseo ser contactado y entiendo como van a ser manipulados mis datos según los <a href='https://notarialatina.com/terminos-y-condiciones' target='_blank'>Términos y Condiciones</a></label>
+            </div>
             <div class='d-flex justify-content-center'>
-                <button class='btn btn-warning rounded-pill my-2'>Enviar</button>
+                <button class='btn btn-warning rounded-pill my-2 btnsubmitchat' disabled>Enviar</button>
             </div>
         </form>
     </div>
@@ -116,7 +120,7 @@ class Chatbot extends Component
     ]; 
 
     public function getTextBotProperty(){
-        return $text_bot;
+        return $this->text_bot;
     }
 
     public function getRequestUserProperty(Request $request){

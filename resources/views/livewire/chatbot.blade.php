@@ -73,6 +73,22 @@
         document.getElementById('chatnotaria').classList.add('d-none');
     }
 
+    
+    const validateCheckChat = () => {
+        
+        let check_accept_term_chat = document.getElementById('acceptedchat');
+        let btnsubmitchat = document.querySelector('.btnsubmitchat');
+        
+        if(check_accept_term_chat && check_accept_term_chat.checked == true){ btnsubmitchat.disabled = false; }
+        else { 
+            if(btnsubmitchat){
+                btnsubmitchat.disabled = true;
+            }
+        }
+    }
+
+    validateCheckChat();
+
     // function changeState(element){
     //         let selStateChat = document.getElementById('selStateChat');
     //         console.log(selStateChat.options.length);
