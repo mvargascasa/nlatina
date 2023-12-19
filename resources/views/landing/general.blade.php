@@ -683,9 +683,11 @@
 
   validateCheck();
 
-  check_accept_term.addEventListener('click', function(){
-      validateCheck();
-  });
+  if(check_accept_term){
+    check_accept_term.addEventListener('click', function(){
+        validateCheck();
+    });
+  }
 
   let selectPaisResidencia = document.getElementById('pais');
   let inputCodPais = document.getElementById('telf');

@@ -892,9 +892,11 @@ document.querySelector('.contenedor').addEventListener('mouseleave', function(){
 
     validateCheck();
 
-    check_accept_term.addEventListener('click', function(){
-        validateCheck();
-    });
+    if(check_accept_term){
+        check_accept_term.addEventListener('click', function(){
+            validateCheck();
+        });
+    }
 
     //mostrando div de preguntas despues de 5seg
     //setTimeout(() => {document.getElementById('divpreguntas').style.display='block';document.getElementById("divpreguntas").style.animation = "jump 1s ease";}, 7000);
