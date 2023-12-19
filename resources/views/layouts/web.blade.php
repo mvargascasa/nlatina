@@ -573,6 +573,9 @@ span{
             </div>
         </div>
     </section>
+    <section class="d-flex justify-content-center align-items-center p-2">
+        <p class="text-white">Notaria Pública Latina - <a class="font-weight-bold text-warning" href="{{ route('web.politicas') }}">Políticas de Privacidad</a></p>
+    </section>
   </footer>
 
 {{-- <footer class="text-white" style="background-color: #122944;">
@@ -873,6 +876,21 @@ document.querySelector('.contenedor').addEventListener('mouseleave', function(){
             }
         });
     }
+
+    let check_accept_term = document.getElementById('accepted');
+    let btnsubmit = document.querySelector('.btnsubmit');
+
+
+    const validateCheck = () => {
+        if(check_accept_term && check_accept_term.checked == true) btnsubmit.disabled = false;
+        else btnsubmit.disabled = true;
+    }
+
+    validateCheck();
+
+    check_accept_term.addEventListener('click', function(){
+        validateCheck();
+    });
 
     //mostrando div de preguntas despues de 5seg
     //setTimeout(() => {document.getElementById('divpreguntas').style.display='block';document.getElementById("divpreguntas").style.animation = "jump 1s ease";}, 7000);

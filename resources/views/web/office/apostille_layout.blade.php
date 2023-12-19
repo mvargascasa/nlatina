@@ -114,8 +114,14 @@
                                 <div class="mb-5 d-flex">
                                     <input type="file" name="adjunto" id="adjunto" class="form-control inputs">
                                 </div>
+
+                                <div class="d-flex align-items-start mb-3">
+                                    <input type="checkbox" name="accepted" id="accepted" class="mr-2 mt-1">
+                                    <label for="accepted" style="font-size: small; font-weight: 600">Deseo ser contactado y entiendo como van a ser manipulados mis datos según las <a href="{{ route('web.terminos') }}" target="_blank">Términos y Condiciones</a></label>
+                                </div>
+
                                 <div class="mb-5 d-flex justify-content-center">
-                                    <input style="background-color: #ffc107; color: #000000; border: none" type="submit" value="Enviar" class="btn btn-primary btn-block">
+                                    <input style="background-color: #ffc107; color: #000000; border: none" type="submit" value="Enviar" class="btn btn-primary btn-block btnsubmit">
                                 </div>
                             {!! Form::close() !!}
                         </div>

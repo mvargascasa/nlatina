@@ -4,7 +4,7 @@
     <meta name="description" content="Políticas de Privacidad - Notaría Latina - Términos y Condiciones - Notario Público en Queens New York. Gestión en Línea en todo EE.UU. Poderes, Apostillas, Traducciones, Autorizaciones de Viaje, Affidavit."/>
     <meta name="keywords" content="políticas de privacidad, terminos y condiciones, notaria latina, notario publico, notario cerca de mi, notario publico near me, traducción de documentos near me, apostillar documentos near me, notaría nueva york, notary public queens" />
 
-    <meta property="og:url"                content="{{route('web.index')}}" />
+    <meta property="og:url"                content="{{route('web.politicas')}}" />
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="Políticas de Privacidad - Notaría Latina - Notario Público en Queens New York." />
     <meta property="og:description"        content="Gestión en Línea en todo EE.UU. Poderes, Apostillas, Traducciones, Autorizaciones de Viaje, Affidavit." />
@@ -18,11 +18,11 @@
 
 
 <div class="container p-4">
-    <h1 dir="ltr"><strong>POL&Iacute;TICAS DE PRIVACIDAD</strong></h1>
+    <h1 style="padding-top: 7%" dir="ltr"><strong>POL&Iacute;TICAS DE PRIVACIDAD</strong></h1>
     
     <p>&nbsp;</p>
     
-    <p dir="ltr">La presente Pol&iacute;tica de Privacidad establece los t&eacute;rminos en que Notaría Pública Latina usa y protege la informaci&oacute;n que es proporcionada por sus usuarios al momento de utilizar su sitio web. </p>
+    <p dir="ltr">La presente Pol&iacute;tica de Privacidad establece los t&eacute;rminos en que Notaría Pública Latina protege la informaci&oacute;n que es proporcionada por sus usuarios al momento de utilizar su sitio web. </p>
 
     <p dir="ltr">Esta Política de Privacidad se aplica a todas las entidades del grupo Notaria Latina, que incluyen Notaría Latina Pública Corp, Notaría Pública Latina LLC y Notaría Latina Corp (en adelante, "Notaria Latina", "nosotros" o "nuestra"). </p>
 
@@ -36,9 +36,8 @@
     
     <p dir="ltr"><strong>2 Uso de la informaci&oacute;n recogida.-</strong> Nuestro sitio web emplea la informaci&oacute;n con el fin de proporcionar el mejor servicio posible, particularmente para mantener un registro de usuarios, de solicitudes en caso que aplique, y mejorar nuestros servicios. &nbsp;Es posible que sean enviados correos electr&oacute;nicos peri&oacute;dicamente a trav&eacute;s de nuestro sitio con ofertas especiales, nuevos productos y otra informaci&oacute;n publicitaria que consideremos relevante para usted o que pueda brindarle alg&uacute;n beneficio, estos correos electr&oacute;nicos ser&aacute;n enviados a la direcci&oacute;n que usted proporcione y podr&aacute;n ser cancelados en cualquier momento.</p>
     
-    <p dir="ltr">&nbsp;</p>
     
-    <p dir="ltr">Notaría Latina est&aacute; altamente comprometida para&nbsp;mantener su informaci&oacute;n segura. Usamos los sistemas m&aacute;s avanzados y los actualizamos constantemente para asegurarnos que no exista ning&uacute;n acceso no autorizado.</p>
+    <p dir="ltr">Notaría Latina est&aacute; altamente comprometida para&nbsp;mantener su informaci&oacute;n segura. Usamos los sistemas m&aacute;s avanzados y los actualizamos constantemente para asegurarnos que no exista ning&uacute;n acceso no autorizado. <b>Bajo ninguna circunstancia Notaria Latina utilizará los datos para compartir o vender la información del usuario a terceros y/o afiliados para el beneficio propio.</b></p>
     
     <p dir="ltr">&nbsp;</p>
     

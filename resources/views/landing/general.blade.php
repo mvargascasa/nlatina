@@ -596,7 +596,12 @@
               <input type="hidden" name="aux" style="font-size: 10px" placeholder="Si puede ver este campo, por favor ignórelo" class="form-control" readonly>
               <input type="hidden" name="url" value="{{Request::segment(2)}}" class="form-control" readonly>
 
-              <button class="btn btn-lg btn-warning btn-block rounded-0 shadow" type="submit">INICIAR TRAMITE</button>
+              <div class="d-flex align-items-start mb-3 text-white">
+                <input type="checkbox" name="accepted" id="accepted" class="mr-2 mt-1">
+                <label for="accepted" style="font-size: small; font-weight: 500">Deseo ser contactado y entiendo como van a ser manipulados mis datos según las <a href="{{ route('web.terminos') }}" target="_blank">Términos y Condiciones</a></label>
+              </div>
+
+              <button class="btn btn-lg btn-warning btn-block rounded-0 shadow btnsubmit" type="submit">INICIAR TRAMITE</button>
             </form>
           </div> 
       </div>
@@ -661,6 +666,21 @@
       document.getElementById('dirmap').src = "{{asset($dirmap)}}";
       console.log('ok');
       getstates();setcodcountry();
+  });
+
+  let check_accept_term = document.getElementById('accepted');
+  let btnsubmit = document.querySelector('.btnsubmit');
+
+
+  const validateCheck = () => {
+    if(check_accept_term && check_accept_term.checked == true) btnsubmit.disabled = false;
+    else btnsubmit.disabled = true;
+  }
+
+  validateCheck();
+
+  check_accept_term.addEventListener('click', function(){
+      validateCheck();
   });
 
   let selectPaisResidencia = document.getElementById('pais');

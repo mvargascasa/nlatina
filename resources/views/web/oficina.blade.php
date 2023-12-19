@@ -734,8 +734,14 @@
                 <div class="form-group">
                   <input id="ddd" name="ddd" type="text" class="form-control rounded-0" placeholder="Mensaje"  maxlength="100" autocomplete="off" required>
                 </div>
+
+                <div class="d-flex align-items-start mb-3 text-white">
+                    <input type="checkbox" name="accepted" id="accepted" class="mr-2 mt-1">
+                    <label for="accepted" style="font-size: small; font-weight: 500">Deseo ser contactado y entiendo como van a ser manipulados mis datos según las <a href="{{ route('web.terminos') }}" target="_blank">Términos y Condiciones</a></label>
+                </div>
+
                 <input type="hidden" style="font-size: 10px" placeholder="Si puede ver este campo, por favor ignórelo" name="aux" class="form-control" readonly>  
-                <button class="btn btn-lg btn-warning rounded-0" type="submit">INICIAR TRAMITE</button>
+                <button class="btn btn-lg btn-warning rounded-0 btnsubmit" type="submit">INICIAR TRAMITE</button>
               </form>
             </div> 
         </div>

@@ -253,6 +253,7 @@ Route::get('/suscripcion', function () {    return view('web.x-contactenos');   
 Route::get('/contactenos', function () {    return view('web.x-contactenos');    })->name('web.contactenos');
 Route::get('/nosotros', function () {    return view('web.x-nosotros');    })->name('web.nosotros');
 Route::get('/politicas-de-privacidad', function () {    return view('web.politicas');    })->name('web.politicas');
+Route::get('/terminos-y-condiciones', function(){ return view('web.terminos');})->name('web.terminos');
 
 Route::get('/argentina', function () {    return redirect()->route('consul.slug', 'argentina');/*view('web.consul.argentina');*/ })->name('web.argentina');
 Route::get('/bolivia', function () {    return redirect()->route('consul.slug', 'bolivia'); /*view('web.consul.bolivia');*/    })->name('web.bolivia');

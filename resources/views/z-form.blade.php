@@ -108,11 +108,16 @@
     {!! Form::textarea('message', null, ['class' => 'form-control rounded-0', 'maxlength'=>"100", 'rows' => '2', 'id' => 'message', 'required']) !!}
 </div>
 
+<div class="d-flex align-items-start mb-3">
+    <input type="checkbox" name="accepted" id="accepted" class="mr-2 mt-1">
+    <label for="accepted" style="font-size: small; font-weight: 600">Deseo ser contactado y entiendo como van a ser manipulados mis datos según las <a href="{{ route('web.terminos') }}" target="_blank">Términos y Condiciones</a></label>
+</div>
+
 <div class="form-group">
     @if (str_contains(url()->current(), '/post'))
-        {!! Form::submit('Solicitar Trámite',  ['class' => 'btn btn-lg btn-warning btn-block']) !!}
+        {!! Form::submit('Solicitar Trámite',  ['class' => 'btn btn-lg btn-warning btn-block btnsubmit']) !!}
     @else
-        {!! Form::submit('Enviar',  ['class' => 'btn btn-lg btn-warning btn-block']) !!}
+        {!! Form::submit('Enviar',  ['class' => 'btn btn-lg btn-warning btn-block btnsubmit']) !!}
     @endif
 </div>
 
