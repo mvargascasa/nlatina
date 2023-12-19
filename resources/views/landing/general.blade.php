@@ -598,7 +598,7 @@
 
               <div class="d-flex align-items-start mb-3 text-white">
                 <input type="checkbox" name="accepted" id="accepted" class="mr-2 mt-1">
-                <label for="accepted" style="font-size: small; font-weight: 500">Deseo ser contactado y entiendo como van a ser manipulados mis datos según las <a href="{{ route('web.terminos') }}" target="_blank">Términos y Condiciones</a></label>
+                <label for="accepted" style="font-size: small; font-weight: 500">Deseo ser contactado y entiendo como van a ser manipulados mis datos según los <a href="{{ route('web.terminos') }}" target="_blank">Términos y Condiciones</a></label>
               </div>
 
               <button class="btn btn-lg btn-warning btn-block rounded-0 shadow btnsubmit" type="submit">INICIAR TRAMITE</button>
