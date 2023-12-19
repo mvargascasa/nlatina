@@ -673,8 +673,12 @@
 
 
   const validateCheck = () => {
-    if(check_accept_term && check_accept_term.checked == true) btnsubmit.disabled = false;
-    else btnsubmit.disabled = true;
+    if(check_accept_term && check_accept_term.checked == true){ btnsubmit.disabled = false; }
+        else { 
+            if(btnsubmit){
+                btnsubmit.disabled = true;
+            }
+        }
   }
 
   validateCheck();
