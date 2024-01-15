@@ -180,7 +180,7 @@ class WebController extends Controller
         $posts = Post::where('status','PUBLICADO')->orderBy('id','desc')->limit(3)->get();
 
         if($consul){
-            return view('web.consul.a-show',compact('consul','posts',));
+            return view('web.consul.a-show',compact('consul','posts'));
         }else{
             return redirect()->route('consul.index');
         }
