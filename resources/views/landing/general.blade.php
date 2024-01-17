@@ -15,6 +15,12 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="robots" content="index,follow,snippet">
 
+  @php
+    $detect = new \Detection\MobileDetect();
+    $mobile = FALSE;
+    if($detect->isMobile()) $mobile = TRUE;
+  @endphp
+
   <meta property="og:url" content="{{ Request::url() }}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="@isset($title){{$title}}@else Notaria Latina en {{ $oficina }} - Apostillas, Poderes y Traducciones @endisset">
@@ -375,7 +381,7 @@
     @endphp
 
     <section>
-        <div id="prisection" style="height: 800px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('{{asset($imgbanner)}}')">
+        <div id="prisection" style="height: 800px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('@if($mobile) {{ asset($imgbannermobile) }} @else{{asset($imgbanner)}}@endif')">
           {{-- <img id="prisection" src="" style="max-height: 90vh;min-height: 40vh;  object-fit: cover; width: 100%; height: 100%;" alt=""> --}}
           <div style="width: 100%; height: 800px;" class="d-flex align-items-center justify-content-center position-relative">
             <div>

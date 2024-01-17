@@ -590,6 +590,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframenj;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
         $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
         $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
@@ -618,6 +619,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframenj;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
         $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
         $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
@@ -646,6 +648,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframenj;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
         $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
         $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
@@ -675,6 +678,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframenj;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
         $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
         $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
@@ -702,8 +706,8 @@ class LandingController extends Controller
         $data['more_reviews'] = $this->more_reviewsnj;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframenj;
-        $data['imgbanner'] = "img/landing-apostillas-aux-min.webp";
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
         $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
         $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
@@ -734,6 +738,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframeny;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-new-york.jpg";
         $data['imgoffice2'] = "img/oficinas-new-york.jpg";
         $data['imgoffice3'] = "img/oficinas-new-york-2.jpg";
@@ -762,6 +767,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframeny;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-new-york.jpg";
         $data['imgoffice2'] = "img/oficinas-new-york.jpg";
         $data['imgoffice3'] = "img/oficinas-new-york-2.jpg";
@@ -790,6 +796,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframeny;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-new-york.jpg";
         $data['imgoffice2'] = "img/oficinas-new-york.jpg";
         $data['imgoffice3'] = "img/oficinas-new-york-2.jpg";
@@ -818,6 +825,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframeny;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-new-york.jpg";
         $data['imgoffice2'] = "img/oficinas-new-york.jpg";
         $data['imgoffice3'] = "img/oficinas-new-york-2.jpg";
@@ -846,6 +854,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframeny;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-new-york.jpg";
         $data['imgoffice2'] = "img/oficinas-new-york.jpg";
         $data['imgoffice3'] = "img/oficinas-new-york-2.jpg";
@@ -885,6 +894,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframefl;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-florida-1.jpg";
         $data['imgoffice2'] = "img/oficinas-florida-1.png";
         $data['imgoffice3'] = "img/oficinas-florida-2.jpg";
@@ -913,6 +923,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframefl;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-florida-1.jpg";
         $data['imgoffice2'] = "img/oficinas-florida-1.png";
         $data['imgoffice3'] = "img/oficinas-florida-2.jpg";
@@ -941,6 +952,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframefl;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-florida-1.jpg";
         $data['imgoffice2'] = "img/oficinas-florida-1.png";
         $data['imgoffice3'] = "img/oficinas-florida-2.jpg";
@@ -969,6 +981,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframefl;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-florida-1.jpg";
         $data['imgoffice2'] = "img/oficinas-florida-1.png";
         $data['imgoffice3'] = "img/oficinas-florida-2.jpg";
@@ -997,9 +1010,7 @@ class LandingController extends Controller
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
         $data['iframesrc'] = $this->iframefl;
         $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
-        $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
-        $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
-        $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
+        $data['imgbannermobile'] = "img/nueva-landing-general-aux-min-mobile.webp";
         $data['imgoffice1'] = "img/notaria-en-florida-1.jpg";
         $data['imgoffice2'] = "img/oficinas-florida-1.png";
         $data['imgoffice3'] = "img/oficinas-florida-2.jpg";
