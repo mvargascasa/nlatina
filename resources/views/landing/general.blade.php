@@ -380,7 +380,7 @@
     @endphp
 
     <section>
-        <div id="prisection" style="height: 800px; background-position: center; background-repeat: no-repeat; background-size: cover">
+        <div id="prisection" style="height: 800px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('{{asset($imgbanner)}}')">
           {{-- <img id="prisection" src="" style="max-height: 90vh;min-height: 40vh;  object-fit: cover; width: 100%; height: 100%;" alt=""> --}}
           <div style="width: 100%; height: 800px;" class="d-flex align-items-center justify-content-center position-relative">
             <div>
@@ -1206,7 +1206,7 @@
 <script>
   window.addEventListener('load', (event) => {
       //{{asset($imgup)}}
-      document.getElementById('prisection').style.backgroundImage = "url('{{asset($imgbanner)}}')";
+      //document.getElementById('prisection').style.backgroundImage = "url('{{asset($imgbanner)}}')";
       //document.getElementById('dirmap').src = "{{asset($dirmap)}}";
       document.getElementById('iframemap').src = "{{ $iframesrc }}";
       console.log('ok');
