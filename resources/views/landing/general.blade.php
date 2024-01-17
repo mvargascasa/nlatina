@@ -764,7 +764,7 @@
       <h3 class="text-center mt-3" style="color: #2B384D"><span style="font-weight: 300">CLIENTES</span> <span style="font-weight: 600">SATISFECHOS</span></h3>
       <section class="row justify-content-center mt-5">
           <section>
-              <div class="row justify-content-center">
+              <div class="row justify-content-center px-2">
                 @foreach ($reviews as $review)
                   <div class="col-sm-4 d-flex justify-content-center mb-3">
                     <div class="card card-reviews" style="height: 100%">
