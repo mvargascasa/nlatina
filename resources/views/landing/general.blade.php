@@ -58,7 +58,7 @@
     }
     </script>
 
-<script id="scriptrecaptcha" defer></script>
+{{-- <script id="scriptrecaptcha" defer></script>
 <script>
     setTimeout(() => {
        document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
@@ -85,7 +85,7 @@
             });
             //console.log('ejecutando codigo del recaptcha...');
     }, 4000);
-</script>
+</script> --}}
 
     {{-- {!! htmlScriptTagJsApi([
       'callback_then' => 'callbackThen',
