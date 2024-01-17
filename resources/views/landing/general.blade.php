@@ -58,11 +58,10 @@
     }
     </script>
 
-<script id="scriptrecaptcha"></script>
+<script defer src="https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"></script>
 <script>
     // setTimeout(() => {
-       
-    //     //console.log('cargando script recaptcha...');
+    //    document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
     // }, 3500);
 
     setTimeout(() => {
@@ -113,33 +112,33 @@
   <!-- End Google Tag Manager -->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script id="script_analytics" defer></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL"></script>
+{{-- <script>
+  setTimeout(() => {
+    document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
+  }, 3000);
+</script> --}}
 <script>
   // setTimeout(() => {
-  //   document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
-  // }, 3000);
-</script>
-<script>
-  setTimeout(() => {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-VJK9KRV3TL');
-  }, 3000);
+  // }, 3000);
 </script>
 
 
 
 <!-- Google Tag Manager -->
 <script>
-  setTimeout(() => {
+  // setTimeout(() => {
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-KHSFW5X3');
       console.log('cargado script tag manager')
-  }, 3000);
+  // }, 3000);
 </script>
   <!-- End Google Tag Manager -->
 
@@ -147,7 +146,7 @@
 @if($oficina == "New York")
   <!--NEW YORK-->
   <!-- Google tag (gtag.js) --> 
-  <script id="analytics-new-york"></script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=AW-702844945" defer></script>
   <script>
     // setTimeout(() => {
     //   document.getElementById('analytics-new-york').src="https://www.googletagmanager.com/gtag/js?id=AW-702844945";
@@ -172,7 +171,7 @@
   <!--NEW JERSEY-->
   <!-- Google tag (gtag.js) --> 
   <!-- Google tag (gtag.js) -->
-  <script id="analytics-new-jersey"></script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=AW-306069230" defer></script>
   <script>
     // setTimeout(() => {
     //   document.getElementById('analytics-new-jersey').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
@@ -200,7 +199,7 @@
   <!--FLORIDA-->
   <!-- Google tag (gtag.js) -->
   <!-- Google tag (gtag.js) -->
-  <script id="analytics-florida"></script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=AW-306001515" defer></script>
   <script>
     // setTimeout(() => {
     //   document.getElementById('analytics-florida').src="https://www.googletagmanager.com/gtag/js?id=AW-306001515";
@@ -1224,13 +1223,6 @@
         document.getElementById('second-image').setAttribute('data-src', "{{ asset('img/notarizando documento-mobile.webp') }}");
           //document.getElementById('img_header').src = "{{ asset('img/notaria en estados unidos mobile 2.webp') }}";
       }
-
-      //cargando scripts de analytics
-      document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8";
-      document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
-      document.getElementById('analytics-new-york').src="https://www.googletagmanager.com/gtag/js?id=AW-702844945";
-      document.getElementById('analytics-new-jersey').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
-      document.getElementById('analytics-florida').src="https://www.googletagmanager.com/gtag/js?id=AW-306001515";
   });
 
   let check_accept_term = document.getElementById('accepted');
