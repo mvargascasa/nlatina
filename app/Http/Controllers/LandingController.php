@@ -571,6 +571,9 @@ class LandingController extends Controller
     public function newjersey() {
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Servicios Notariales en';
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "+20 servicios";
+        $data['txt3'] = "Calidad y eficiencia";
         $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Notarizamos todo tipo de Documentos en New Jersey 🗽 como Apostillas, Poderes, Traducciones de una manera rápida y segura. ¡Contáctenos ahora! ✅';
@@ -600,6 +603,9 @@ class LandingController extends Controller
     public function njweb() {
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Notaría Pública <br> New Jersey <br> Gestión Fácil y Rápida';
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "+20 servicios";
+        $data['txt3'] = "Calidad y eficiencia";
         $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Tramitamos todo tipo de Documentos en New Jersey como Apostillas, Poderes, Traducciones 📃 de una manera rápida y segura. ¡Contáctenos ahora! ✅';
@@ -628,7 +634,10 @@ class LandingController extends Controller
 
     public function njtrad() {
         $data['oficina'] = 'New Jersey';
-        $data['header'] = 'Traduccion de documentos en';  
+        $data['header'] = 'Traduccion de documentos en';
+        $data['txt1'] = "Traducciones certificadas";
+        $data['txt2'] = "Entrega 24h";
+        $data['txt3'] = "Precisas y Profesionales";
         $data['service_aux'] = 'Traduccion';
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español'; 
         $data['meta_description'] = '📄 ¿Necesita Traducir un Documento en New Jersey? Lo ayudamos con la Traducción de Certificados, Diplomas, Acuerdos, entre otros. ¡Agende su cita aquí! ✅';
@@ -659,6 +668,9 @@ class LandingController extends Controller
     public function njpod() {
         $data['oficina'] = 'New Jersey';
         $data['header']  = 'Poderes notariales en'; 
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "Poder Express";
+        $data['txt3'] = "Poderes a su medida";
         $data['service_aux'] = 'Poderes';
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = '📄 ¿Necesita realizar un Poder Notarial en New Jersey? Contáctenos y lo ayudamos con el trámite de un Poder Especial o General de una manera segura ✅';
@@ -688,6 +700,9 @@ class LandingController extends Controller
     public function njapos() {
         $data['oficina'] = 'New Jersey';
         $data['header'] = 'Apostillar documentos en';
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "Apostilla Express";
+        $data['txt3'] = "Validez Internacional";
         $data['service_aux'] = 'Apostilla';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
         $data['meta_description'] = '📄 ¿Necesita Apostillar un Documento en New Jersey? Lo ayudamos con la Apostilla de Certificados, Poderes, Traducciones, entre otros. ¡Solicítelo aquí! ✅';
@@ -719,6 +734,9 @@ class LandingController extends Controller
     public function newyork() {
         $data['oficina'] = 'New York';
         $data['header'] = 'Servicios Notariales en';
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "+20 servicios";
+        $data['txt3'] = "Calidad y eficiencia";
         $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Realizamos todo tipo de Trámites Notariales en New York tales como Apostillas, Certificados, Poderes, Traducciones de una manera segura. ¡Contáctenos! ✅';
@@ -748,6 +766,9 @@ class LandingController extends Controller
     public function nyweb() {
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "+20 servicios";
+        $data['txt3'] = "Calidad y eficiencia";
         $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Tramitamos todo tipo de Documentos en New York 🗽 como Apostillas, Certificados, Poderes, Traducciones de una manera rápida y segura. ¡Iniciar trámite! ✅';
@@ -776,7 +797,10 @@ class LandingController extends Controller
 
     public function nytrad() {
         $data['oficina'] = 'New York';
-        $data['header'] = 'Traduccion de documentos en';  
+        $data['header'] = 'Traduccion de documentos en';
+        $data['txt1'] = "Traducciones certificadas";
+        $data['txt2'] = "Entrega 24h";
+        $data['txt3'] = "Precisas y Profesionales";
         $data['service_aux'] = 'Traduccion';
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
         $data['meta_description'] = '¿Necesita Traducir un Documento en New York? 📄 Lo ayudamos con la Traducción de Certificados, Diplomas, Acuerdos, entre otros. ¡Escríbanos ahora! ✅';
@@ -805,7 +829,10 @@ class LandingController extends Controller
 
     public function nypod() {
         $data['oficina'] = 'New York';
-        $data['header']  = 'Poderes Notariales en'; 
+        $data['header']  = 'Poderes Notariales en';
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "Poder Express";
+        $data['txt3'] = "Poderes a su medida";
         $data['service_aux'] = 'Poderes';
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = '¿Necesita realizar un Poder Notarial en New York? 📃 Contáctese con nosotros y lo ayudamos con el trámite para realizar un Poder General o Especial ✅';
@@ -835,6 +862,9 @@ class LandingController extends Controller
     public function nyapos() {
         $data['oficina'] = 'New York';
         $data['header'] = 'Apostillar documentos en';
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "Apostilla Express";
+        $data['txt3'] = "Validez Internacional";
         $data['service_aux'] = 'Apostilla';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
         $data['meta_description'] = '¿Necesita Apostillar un Documento en New York? 📃 Nuestro servicio de Apostilla en Certificados, Poderes, Traducciones a su alcance. ¡Solicitar ahora! ✅';
@@ -873,6 +903,9 @@ class LandingController extends Controller
 
         $data['oficina'] = 'Florida';
         $data['header'] = 'Servicios notariales en';
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "+20 servicios";
+        $data['txt3'] = "Calidad y eficiencia";
         $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Realizamos todo tipo de Trámites Notariales en Florida 📃 como Apostillas, Certificados, Poderes, Traducciones de una manera segura ✅';
@@ -904,6 +937,9 @@ class LandingController extends Controller
     public function flweb() {
         $data['oficina'] = 'Florida';
         $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "+20 servicios";
+        $data['txt3'] = "Calidad y eficiencia";
         $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Tramitamos todo tipo de Documentos en Florida 🗽 como Apostillas, Certificados, Poderes, Traducciones de una manera ágil y segura ¡Contáctenos ahora! ✅';
@@ -933,6 +969,9 @@ class LandingController extends Controller
     public function fltrad() {
         $data['oficina'] = 'Florida';
         $data['header'] = 'Traduccion de documentos en';  
+        $data['txt1'] = "Traducciones certificadas";
+        $data['txt2'] = "Entrega 24h";
+        $data['txt3'] = "Precisas y Profesionales";
         $data['service_aux'] = 'Traduccion';
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
         $data['meta_description'] = '¿Necesita Traducir un Documento en Florida? 🗽 Lo ayudamos con la Traducción de Certificados, Poderes, Acuerdos, entre otros. ¡Solicitar traducción! ✅';
@@ -962,6 +1001,9 @@ class LandingController extends Controller
     public function flpod() {
         $data['oficina'] = 'Florida';
         $data['header']  = 'Poderes notariales en'; 
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "Poder Express";
+        $data['txt3'] = "Poderes a su medida";
         $data['service_aux'] = 'Poderes';
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = '¿Necesita realizar un Poder Notarial en Florida? 🗽 Nos especializamos en el Trámite de Poderes Generales y Especiales. ¡Solicitar Poder ahora! ✅';
@@ -991,6 +1033,9 @@ class LandingController extends Controller
     public function flapos() {
         $data['oficina'] = 'Florida';
         $data['header'] = 'Apostillar documentos en';
+        $data['txt1'] = "Enviamos a otros países";
+        $data['txt2'] = "Apostilla Express";
+        $data['txt3'] = "Validez Internacional";
         $data['service_aux'] = 'Apostilla';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
         $data['meta_description'] = '¿Necesita Apostillar un Documento en Florida? 📃 Nuestro servicio de apostilla en Certificados, Poderes, Traducciones a su alcance. ¡Solicítelo ahora! ✅';

@@ -388,9 +388,9 @@
               <h1 class="text-white text-center"><span style="font-weight: 200">{{ strtoupper($header) }}</span> <br> <span style="font-size: 3.2rem">{{ strtoupper($oficina) }}</span></h1>
               <div class="row mt-4">
                 <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">15 años de trayectoria</span></div>
-                <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">Enviamos sus documentos</span></div>
-                <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">+20 servicios</span></div>
-                <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">Calidad y eficiencia</span></div>
+                <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">{{ $txt1 }}</span></div>
+                <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">{{ $txt2 }}</span></div>
+                <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">{{ $txt3 }}</span></div>
               </div>
               <div class="mt-5 w-100 d-flex justify-content-center">
                 <div class="text-center">
