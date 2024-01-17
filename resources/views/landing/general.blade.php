@@ -344,9 +344,9 @@
     @media screen and (max-width: 580px){.divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}.resize{width: 100% !important}.labelstate{margin-top: 20px !important}#iframemap{height: 400px !important}}
     #iconcall{bottom: 40px !important; right: 10px !important;}
     .grecaptcha-badge { visibility: hidden; }
-    .card-reviews{box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;}
+    .card-reviews{box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; border-radius: 25px}
     .card-reviews:hover{
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+      box-shadow: rgba(0, 0, 0, 0.15) 4.4px 4.4px 5.2px;
     }
   </style>
 </head>
@@ -594,28 +594,32 @@
             <summary class="border shadow py-2 pl-3">Documentos que se pueden apostillar</summary>
             <div class="row">
               <div class="col-sm-6" style="height: 210px">
-                <div class="my-4 p-3 h-100" style="border-bottom: 10px solid #FFB832; box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;">
-                  <h3 style="font-size: medium; font-weight: 400; font-size: small">Documentos Personales</h3>
-                  <ul style="font-size: small">
-                    <li>Actas de nacimiento</li>
-                    <li>Actas de divorcio</li>
-                    <li>Certificados de matrimonio</li>
-                    <li>Certificados de defunción</li>
-                    <li>Testamentos</li>
-                    <li>Otro</li>
-                  </ul>
+                <div class="my-4 p-3 h-100 d-flex align-items-center" style="border-bottom: 10px solid #FFB832; box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;">
+                  <div>
+                    <h3 style="font-size: medium; font-weight: 400; font-size: small">Documentos Personales</h3>
+                    <ul style="font-size: small">
+                      <li>Actas de nacimiento</li>
+                      <li>Actas de divorcio</li>
+                      <li>Certificados de matrimonio</li>
+                      <li>Certificados de defunción</li>
+                      <li>Testamentos</li>
+                      <li>Otro</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div class="col-sm-6" style="height: 210px">
-                <div class="my-4 p-3 h-100" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; border-bottom: 10px solid #FFB832">
-                  <h3 style="font-size: medium; font-weight: 400; font-size: small">Documentos Académicos</h3>
-                  <ul style="font-size: small">
-                    <li>Diplomas</li>
-                    <li>Título Universitario</li>
-                    <li>Calificaciones Escolares</li>
-                    <li>Transcripciones Detalladas</li>
-                    <li>Otros</li>
-                  </ul>
+                <div class="my-4 p-3 h-100 d-flex align-items-center" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; border-bottom: 10px solid #FFB832">
+                  <div>
+                    <h3 style="font-size: medium; font-weight: 400; font-size: small">Documentos Académicos</h3>
+                    <ul style="font-size: small">
+                      <li>Diplomas</li>
+                      <li>Título Universitario</li>
+                      <li>Calificaciones Escolares</li>
+                      <li>Transcripciones Detalladas</li>
+                      <li>Otros</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -628,27 +632,31 @@
             <div class="row">
               <div class="row">
                 <div class="col-sm-6" style="height: 210px">
-                  <div class="my-4 p-3 h-100" style="border-bottom: 10px solid #FFB832; box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;">
-                    <h3 style="font-size: medium; font-weight: 400; font-size: small">Documentos Personales</h3>
-                    <ul style="font-size: small">
-                      <li>Representación legal</li>
-                      <li>Transacciones financieras</li>
-                      <li>Venta de propiedades</li>
-                      <li>Gestión de negocios</li>
-                      <li>Asuntos inmobiliarios</li>
-                      <li>Cuidado de menores</li>
-                    </ul>
+                  <div class="my-4 p-3 h-100 d-flex align-items-center" style="border-bottom: 10px solid #FFB832; box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;">
+                    <div>
+                      <h3 style="font-size: medium; font-weight: 400; font-size: small">Documentos Personales</h3>
+                      <ul style="font-size: small">
+                        <li>Representación legal</li>
+                        <li>Transacciones financieras</li>
+                        <li>Venta de propiedades</li>
+                        <li>Gestión de negocios</li>
+                        <li>Asuntos inmobiliarios</li>
+                        <li>Cuidado de menores</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 <div class="col-sm-6" style="height: 210px">
-                  <div class="my-4 p-3 h-100" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; border-bottom: 10px solid #FFB832">
-                    <ul style="font-size: small">
-                      <li>Trámites legales</li>
-                      <li>Viajes internacionales</li>
-                      <li>Recoger documentos importantes</li>
-                      <li>Gestión de asuntos personales</li>
-                      <li>Otros</li>
-                    </ul>
+                  <div class="my-4 p-3 h-100 d-flex align-items-center" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; border-bottom: 10px solid #FFB832">
+                    <div>
+                      <ul style="font-size: small">
+                        <li>Trámites legales</li>
+                        <li>Viajes internacionales</li>
+                        <li>Recoger documentos importantes</li>
+                        <li>Gestión de asuntos personales</li>
+                        <li>Otros</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -656,7 +664,7 @@
           </details>
         </article>
         <article class="col-sm-6 mb-5">
-          <h2 class="text-center mb-4" style="color: #2B384D; font-weight: 700">TRADUCCIONES</h2>
+          <h2 class="text-center mb-4 mt-4" style="color: #2B384D; font-weight: 700">TRADUCCIONES</h2>
           <details open>
             <summary class="border shadow py-2 pl-3">Documentos que se pueden traducir</summary>
             <div class="row">
@@ -687,7 +695,7 @@
         </article>
         @if($oficina == "New Jersey" || $oficina == "Florida")
           <article class="col-sm-6 mb-5">
-            <h2 class="text-center mb-4" style="color: #2B384D; font-weight: 700">MATRIMONIOS</h2>
+            <h2 class="text-center mb-4 mt-4" style="color: #2B384D; font-weight: 700">MATRIMONIOS</h2>
             <details open>
               <summary class="border shadow py-2 pl-3">Ceremonias matrimoniales</summary>
               <div class="row">
@@ -759,28 +767,29 @@
               <div class="row justify-content-center">
                 @foreach ($reviews as $review)
                   <div class="col-sm-4 d-flex justify-content-center mb-3">
-                    <div class="card card-reviews" style="width: 18rem; height: 100%">
-                      <div class="card-body text-center">
-                        <h5 class="card-title">{{ $review['name'] }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-center">
+                    <div class="card card-reviews" style="height: 100%">
+                      <div class="card-body">
+                        <div class="d-flex">
+                          <div class="d-flex justify-content-center align-items-center" style="width: 25px; height: 25px; border-radius: 25px; background-color: {{ $review['bgcolor']}}">
+                            <span class="text-white" style="font-size: small">{{ strtoupper($review['name'][0]) }}</span>
+                          </div>
+                          <div class="ml-2">
+                            <p class="mt-1" style="font-size: small; line-height: 0px" class="card-title">{{ $review['name'] }}</p>
+                            <p style="font-size: x-small; line-height: 0px" class="text-muted">1 opinión</p>
+                          </div>
+                        </div>
+                        <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-start mt-1">
                           @for ($i = 0; $i < $review['stars']; $i++)
                             <img width="15" height="15" data-src="{{ asset('img/estrella.webp') }}" class="lazy img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="⭐">
                           @endfor
                         </h6>
-                        <p class="card-text">
-                          <i>
-                            "{{ $review['message']}}"
-                          </i>
-                        </p>
-                      </div>
-                      <div class="card-footer bg-white">
-                        <a class="text-dark" target="_blank" href="{{ $review['link']}}" class="card-link">Ver comentario</a>
+                        <p class="card-text" style="font-size: small">{{ $review['message']}}</p>
                       </div>
                     </div>
                   </div>
                 @endforeach
                 <div class="mt-5 mb-5">
-                  <a target="_blank" href="{{ $more_reviews }}" style="color: #192939;" class="btn btn-warning"><b style="font-weight: 500; font-size: 17px">Ver más reseñas</b> <i class="fas fa-long-arrow-alt-right"></i></a>
+                  <a target="_blank" href="{{ $more_reviews }}" style="color: #192939;" class="btn btn-warning rounded-pill"><b style="font-weight: 500; font-size: 17px">Ver más reseñas</b> <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
               </div>
           </section>

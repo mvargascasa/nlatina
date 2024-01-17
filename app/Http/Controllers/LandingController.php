@@ -30,19 +30,22 @@ class LandingController extends Controller
             'name' => 'Ronald Pacheco',
             'stars' => 5,
             'message' => 'Rápida y muy amable. He ido para traducir una licencia de conducir y poder presentarla a la NJMVC  y en apenas unos minutos pudieron hacerlo. Cuando vuelva a necesitar hacer algún otro trámite seguro que volveré allí. Muchas Gracias',
-            'link' => 'https://goo.gl/maps/qB6rXkmXYBwkD25v5'
+            'link' => 'https://goo.gl/maps/qB6rXkmXYBwkD25v5',
+            'bgcolor' => '#5578CE'
         ],
         [
             'name' => 'Linda Madrid',
             'stars' => 5,
             'message' => 'Excelente servicio el que se me brindo el dia de hoy. Su personal es atento y logro solventar todas mis gestiones en un buen tiempo y con mucha cortesía. Recomiendo el lugar',
-            'link' => 'https://goo.gl/maps/7D4uE3NVJXP6oY2g7'
+            'link' => 'https://goo.gl/maps/7D4uE3NVJXP6oY2g7',
+            'bgcolor' => '#228C67'
         ],
         [
             'name' => 'Gabriela Anchaluisa',
             'stars' => 5,
             'message' => 'Excelente atención!!! El servicio es muy eficiente y las personas muy amables en la atención. Felicitaciones 👏',
-            'link' => 'https://goo.gl/maps/VLUsbPvBEi6ZwyA99'
+            'link' => 'https://goo.gl/maps/VLUsbPvBEi6ZwyA99',
+            'bgcolor' => '#A52851'
         ]
     ];
 
@@ -52,19 +55,22 @@ class LandingController extends Controller
             'name' => 'Cesar Augusto Tonuzco',
             'stars' => 5,
             'message' => 'Excelente servicio me hicieron la traducción  en un momento 🤩',
-            'link' => 'https://goo.gl/maps/bPRSyrCHDkBpF7cU8'
+            'link' => 'https://goo.gl/maps/bPRSyrCHDkBpF7cU8',
+            'bgcolor' => '#5578CE'
         ],
         [
             'name' => 'Yessenia Hernandez',
             'stars' => 5,
             'message' => 'Servicios muy buenos y super atentos a las necesidades del cliente. Profesionales en todo momento.',
-            'link' => 'https://goo.gl/maps/kQTmXqC9oQRCBhZr9'
+            'link' => 'https://goo.gl/maps/kQTmXqC9oQRCBhZr9',
+            'bgcolor' => '#228C67'
         ],
         [
             'name' => 'Vladimir Paccha',
             'stars' => 5,
             'message' => 'Quedo muy agradecido por el servicio de la Notaria Latina son muy buenos en su trabajo y también los recomiendo.',
-            'link' => 'https://goo.gl/maps/MyFgAdFhdZa959sf8'
+            'link' => 'https://goo.gl/maps/MyFgAdFhdZa959sf8',
+            'bgcolor' => '#A52851'
         ]
     ];
 
@@ -74,19 +80,22 @@ class LandingController extends Controller
             'name' => 'Maria Sampayo',
             'stars' => 5,
             'message' => 'Quiero resaltar el excelente servicio de la Notaría Pública Latina. Llegue a ellos a través de Google porque necesitaba traducir y apostillar mi licencia de maternidad y el certificado de nacimiento de mi hija. [...] Si ustedes requieren traducir y apostillar documentos, no duden en hacerlo con esta notaría. Son los mejores.',
-            'link' => 'https://goo.gl/maps/J8uRSU1H2JG4oLaT6'
+            'link' => 'https://goo.gl/maps/J8uRSU1H2JG4oLaT6',
+            'bgcolor' => '#5578CE'
         ],
         [
             'name' => 'Vangie Vazquez',
             'stars' => 5,
             'message' => 'Son los mejores y más diligentes! Hicieron que este proceso fuera fácil. Apostillar express un documento en la Florida no es fácil pero con este equipo de trabajo nada es imposible. No se preocupe deje que ellos les oriente y tendrán unos resultados positivos tal como todo lo que uno sueña con la tranquilidad del deber cumplido.',
-            'link' => 'https://goo.gl/maps/D6m7fLHLuZXXDSLj7'
+            'link' => 'https://goo.gl/maps/D6m7fLHLuZXXDSLj7',
+            'bgcolor' => '#228C67'
         ],
         [
             'name' => 'Melba Gomes',
             'stars' => 5,
             'message' => 'Super recomendable y segura me ayudaron con todos los trámites, me hicieron más fácil todo mil gracias no sabía que existía esta oficina y me la recomendaron desde Colombia',
-            'link' => 'https://goo.gl/maps/gXmSRnL8Yy8Nb3DE9'
+            'link' => 'https://goo.gl/maps/gXmSRnL8Yy8Nb3DE9',
+            'bgcolor' => '#A52851'
         ]
     ];
 
