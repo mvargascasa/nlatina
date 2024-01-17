@@ -113,11 +113,11 @@
   <!-- End Google Tag Manager -->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script id="script_analytics" async></script>
+<script id="script_analytics" defer></script>
 <script>
-  setTimeout(() => {
-    document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
-  }, 3000);
+  // setTimeout(() => {
+  //   document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
+  // }, 3000);
 </script>
 <script>
   setTimeout(() => {
@@ -149,9 +149,9 @@
   <!-- Google tag (gtag.js) --> 
   <script id="analytics-new-york"></script>
   <script>
-    setTimeout(() => {
-      document.getElementById('analytics-new-york').src="https://www.googletagmanager.com/gtag/js?id=AW-702844945";
-    }, 3000);
+    // setTimeout(() => {
+    //   document.getElementById('analytics-new-york').src="https://www.googletagmanager.com/gtag/js?id=AW-702844945";
+    // }, 3000);
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -174,9 +174,9 @@
   <!-- Google tag (gtag.js) -->
   <script id="analytics-new-jersey"></script>
   <script>
-    setTimeout(() => {
-      document.getElementById('analytics-new-jersey').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
-    }, 3000);
+    // setTimeout(() => {
+    //   document.getElementById('analytics-new-jersey').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
+    // }, 3000);
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -202,9 +202,9 @@
   <!-- Google tag (gtag.js) -->
   <script id="analytics-florida"></script>
   <script>
-    setTimeout(() => {
-      document.getElementById('analytics-florida').src="https://www.googletagmanager.com/gtag/js?id=AW-306001515";
-    }, 3000);
+    // setTimeout(() => {
+    //   document.getElementById('analytics-florida').src="https://www.googletagmanager.com/gtag/js?id=AW-306001515";
+    // }, 3000);
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -1226,7 +1226,11 @@
       }
 
       //cargando scripts de analytics
-      document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
+      document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8";
+      document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
+      document.getElementById('analytics-new-york').src="https://www.googletagmanager.com/gtag/js?id=AW-702844945";
+      document.getElementById('analytics-new-jersey').src="https://www.googletagmanager.com/gtag/js?id=AW-306069230";
+      document.getElementById('analytics-florida').src="https://www.googletagmanager.com/gtag/js?id=AW-306001515";
   });
 
   let check_accept_term = document.getElementById('accepted');
