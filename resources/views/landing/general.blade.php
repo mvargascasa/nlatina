@@ -1203,7 +1203,9 @@
       //{{asset($imgup)}}
       //document.getElementById('prisection').style.backgroundImage = "url('{{asset($imgbanner)}}')";
       //document.getElementById('dirmap').src = "{{asset($dirmap)}}";
-      document.getElementById('iframemap').src = "{{ $iframesrc }}";
+      setTimeout(() => {
+        document.getElementById('iframemap').src = "{{ $iframesrc }}";
+      }, 3000);
       console.log('ok');
       getstates();setcodcountry();
 
