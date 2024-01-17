@@ -60,10 +60,10 @@
 
 <script id="scriptrecaptcha"></script>
 <script>
-    setTimeout(() => {
-       document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
-        //console.log('cargando script recaptcha...');
-    }, 3500);
+    // setTimeout(() => {
+       
+    //     //console.log('cargando script recaptcha...');
+    // }, 3500);
 
     setTimeout(() => {
         var csrfToken = document.head.querySelector('meta[name="csrf-token"]');
@@ -117,7 +117,7 @@
 <script>
   setTimeout(() => {
     document.getElementById('script_analytics').src = 'https://www.googletagmanager.com/gtag/js?id=G-VJK9KRV3TL';
-  }, 3500);
+  }, 3000);
 </script>
 <script>
   setTimeout(() => {
@@ -125,7 +125,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-VJK9KRV3TL');
-  }, 3500);
+  }, 3000);
 </script>
 
 
@@ -139,7 +139,7 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-KHSFW5X3');
       console.log('cargado script tag manager')
-  }, 3500);
+  }, 3000);
 </script>
   <!-- End Google Tag Manager -->
 
@@ -1224,6 +1224,9 @@
         document.getElementById('second-image').setAttribute('data-src', "{{ asset('img/notarizando documento-mobile.webp') }}");
           //document.getElementById('img_header').src = "{{ asset('img/notaria en estados unidos mobile 2.webp') }}";
       }
+
+      //cargando scripts de analytics
+      document.getElementById('scriptrecaptcha').src = "https://www.google.com/recaptcha/api.js?render=6LdI9cMeAAAAALgxUrh7mzlzFBlIV-F4Gzvbp2D8"; 
   });
 
   let check_accept_term = document.getElementById('accepted');
