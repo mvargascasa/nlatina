@@ -90,6 +90,10 @@ class LandingController extends Controller
         ]
     ];
 
+    public $iframeny = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7118330769827!2d-73.90050128814156!3d40.74636597126913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f030415024b%3A0x3b391bcaf4cd7c10!2sNotar%C3%ADa%20Latina%20en%20New%20York!5e0!3m2!1ses-419!2sec!4v1705426742665!5m2!1ses-419!2sec";
+    public $iframenj = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.4152622886777!2d-74.21587838814536!3d40.66481837128145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24dde7100d355%3A0x9998b8cdec575153!2sNotar%C3%ADa%20Latina%20en%20New%20Jersey!5e0!3m2!1ses-419!2sec!4v1705426791550!5m2!1ses-419!2sec";
+    public $iframefl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57315.008582856804!2d-80.35255624391797!3d26.125411319378088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9072fab0cb6ff%3A0xb16f5b7ffcc06be4!2sNotar%C3%ADa%20Latina%20en%20Florida!5e0!3m2!1ses-419!2sec!4v1705426821721!5m2!1ses-419!2sec";
+
     public function apostilla(){
         $data['oficina'] = 'New York';
         $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
@@ -239,6 +243,8 @@ class LandingController extends Controller
             }
     
             if(isset($request->fname) && isset($request->cod) && Str::startsWith($request->cod, '+')){
+
+                return $request;
 
                 // $token = 'KEY017C562DF36C32F89898F8D77773A25F_mu0OEZ7QDrNc2WRWCEgaHG';
                 // $datasend = [ 'name'=> strip_tags($request->fname)." ". strip_tags($request->lname), 'country' => strip_tags($country), 'state' => strip_tags($request->state), 'code' => strip_tags($request->cod), 'phone' => strip_tags($request->tlf), 'email' =>  strip_tags($request->email), 'interest' => strip_tags($servicename), 'office' => strip_tags($office), 'message' => strip_tags($request->message), 'from' => url()->previous(), 'created_at'=> Carbon::now()->subHour(5)->format('Y-m-d H:i:s') ];    
@@ -564,7 +570,7 @@ class LandingController extends Controller
     // New Jersey
     public function newjersey() {
         $data['oficina'] = 'New Jersey';
-        $data['header'] = 'Notaría Pública <br> <b>New Jersey</b> <br> Gestión Fácil y Rápida';
+        $data['header'] = 'Servicios Notariales en';
         $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Notarizamos todo tipo de Documentos en New Jersey 🗽 como Apostillas, Poderes, Traducciones de una manera rápida y segura. ¡Contáctenos ahora! ✅';
@@ -582,6 +588,11 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframenj;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
         return view('landing.general',$data);
     }
 
@@ -605,12 +616,17 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframenj;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
         return view('landing.general',$data);
     }  
 
     public function njtrad() {
         $data['oficina'] = 'New Jersey';
-        $data['header'] = 'Traducción de documentos <br> en New Jersey';  
+        $data['header'] = 'Traduccion de documentos en';  
         $data['service_aux'] = 'Traduccion';
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español'; 
         $data['meta_description'] = '📄 ¿Necesita Traducir un Documento en New Jersey? Lo ayudamos con la Traducción de Certificados, Diplomas, Acuerdos, entre otros. ¡Agende su cita aquí! ✅';
@@ -628,13 +644,18 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframenj;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
         return view('landing.general',$data);
     }  
 
     //Me quedo hasta aqui
     public function njpod() {
         $data['oficina'] = 'New Jersey';
-        $data['header']  = 'Poder Especial o General <br> en New Jersey'; 
+        $data['header']  = 'Poderes notariales en'; 
         $data['service_aux'] = 'Poderes';
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = '📄 ¿Necesita realizar un Poder Notarial en New Jersey? Contáctenos y lo ayudamos con el trámite de un Poder Especial o General de una manera segura ✅';
@@ -652,12 +673,17 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframenj;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
         return view('landing.general',$data);
     }   
 
     public function njapos() {
         $data['oficina'] = 'New Jersey';
-        $data['header'] = 'Apostilla de documentos <br> en New Jersey';
+        $data['header'] = 'Apostillar documentos en';
         $data['service_aux'] = 'Apostilla';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';  
         $data['meta_description'] = '📄 ¿Necesita Apostillar un Documento en New Jersey? Lo ayudamos con la Apostilla de Certificados, Poderes, Traducciones, entre otros. ¡Solicítelo aquí! ✅';
@@ -675,6 +701,12 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsnj;
         $data['more_reviews'] = $this->more_reviewsnj;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=19088009046&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframenj;
+        $data['imgbanner'] = "img/landing-apostillas-aux-min.webp";
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
         return view('landing.general',$data);
     }
 
@@ -682,7 +714,7 @@ class LandingController extends Controller
     // New York
     public function newyork() {
         $data['oficina'] = 'New York';
-        $data['header'] = 'Notaría Pública <br> <b>New York</b> <br> Gestión Fácil y Rápida';
+        $data['header'] = 'Servicios Notariales en';
         $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Realizamos todo tipo de Trámites Notariales en New York tales como Apostillas, Certificados, Poderes, Traducciones de una manera segura. ¡Contáctenos! ✅';
@@ -700,6 +732,11 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframeny;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-york.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-york.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-york-2.jpg";
         return view('landing.general',$data);
     }
 
@@ -723,12 +760,17 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframeny;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-york.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-york.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-york-2.jpg";
         return view('landing.general',$data);
     }  
 
     public function nytrad() {
         $data['oficina'] = 'New York';
-        $data['header'] = 'Traducción de documentos <br> en New York';  
+        $data['header'] = 'Traduccion de documentos en';  
         $data['service_aux'] = 'Traduccion';
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
         $data['meta_description'] = '¿Necesita Traducir un Documento en New York? 📄 Lo ayudamos con la Traducción de Certificados, Diplomas, Acuerdos, entre otros. ¡Escríbanos ahora! ✅';
@@ -746,12 +788,17 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframeny;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-york.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-york.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-york-2.jpg";
         return view('landing.general',$data);
     }  
 
     public function nypod() {
         $data['oficina'] = 'New York';
-        $data['header']  = 'Poder Especial o General <br> en New York'; 
+        $data['header']  = 'Poderes Notariales en'; 
         $data['service_aux'] = 'Poderes';
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = '¿Necesita realizar un Poder Notarial en New York? 📃 Contáctese con nosotros y lo ayudamos con el trámite para realizar un Poder General o Especial ✅';
@@ -769,12 +816,17 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframeny;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-york.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-york.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-york-2.jpg";
         return view('landing.general',$data);
     }   
 
     public function nyapos() {
         $data['oficina'] = 'New York';
-        $data['header'] = 'Apostilla de documentos <br> en New York';
+        $data['header'] = 'Apostillar documentos en';
         $data['service_aux'] = 'Apostilla';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
         $data['meta_description'] = '¿Necesita Apostillar un Documento en New York? 📃 Nuestro servicio de Apostilla en Certificados, Poderes, Traducciones a su alcance. ¡Solicitar ahora! ✅';
@@ -792,6 +844,11 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsny;
         $data['more_reviews'] = $this->more_reviewsny;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13479739888&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframeny;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-york.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-york.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-york-2.jpg";
         return view('landing.general',$data);
     }  
 
@@ -806,7 +863,7 @@ class LandingController extends Controller
         if($detect->isMobile()) $mobile = TRUE;
 
         $data['oficina'] = 'Florida';
-        $data['header'] = 'Notaría Pública <br> <b>Florida</b> <br> Gestión Fácil y Rápida';
+        $data['header'] = 'Servicios notariales en';
         $data['service_aux'] = 'General';
         $data['service'] = 'General';// General Imprime todos los servicios
         $data['meta_description'] = 'Realizamos todo tipo de Trámites Notariales en Florida 📃 como Apostillas, Certificados, Poderes, Traducciones de una manera segura ✅';
@@ -826,6 +883,11 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsfl;
         $data['more_reviews'] = $this->more_reviewsfl;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframefl;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-florida-1.jpg";
+        $data['imgoffice2'] = "img/oficinas-florida-1.png";
+        $data['imgoffice3'] = "img/oficinas-florida-2.jpg";
         return view('landing.general', $data);
     }
 
@@ -849,12 +911,17 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsfl;
         $data['more_reviews'] = $this->more_reviewsfl;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframefl;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-florida-1.jpg";
+        $data['imgoffice2'] = "img/oficinas-florida-1.png";
+        $data['imgoffice3'] = "img/oficinas-florida-2.jpg";
         return view('landing.general',$data);
     }  
 
     public function fltrad() {
         $data['oficina'] = 'Florida';
-        $data['header'] = 'Traducción de documentos <br> en Florida';  
+        $data['header'] = 'Traduccion de documentos en';  
         $data['service_aux'] = 'Traduccion';
         $data['service'] = 'Realizamos todo tipo de traducciones <br> en Ingles y Español';      
         $data['meta_description'] = '¿Necesita Traducir un Documento en Florida? 🗽 Lo ayudamos con la Traducción de Certificados, Poderes, Acuerdos, entre otros. ¡Solicitar traducción! ✅';
@@ -872,12 +939,17 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsfl;
         $data['more_reviews'] = $this->more_reviewsfl;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframefl;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-florida-1.jpg";
+        $data['imgoffice2'] = "img/oficinas-florida-1.png";
+        $data['imgoffice3'] = "img/oficinas-florida-2.jpg";
         return view('landing.general',$data);
     }  
 
     public function flpod() {
         $data['oficina'] = 'Florida';
-        $data['header']  = 'Poder Especial o General <br> en Florida'; 
+        $data['header']  = 'Poderes notariales en'; 
         $data['service_aux'] = 'Poderes';
         $data['service'] = 'Realizamos todo tipo de Poderes Generales y Poderes Especiales';
         $data['meta_description'] = '¿Necesita realizar un Poder Notarial en Florida? 🗽 Nos especializamos en el Trámite de Poderes Generales y Especiales. ¡Solicitar Poder ahora! ✅';
@@ -895,12 +967,17 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsfl;
         $data['more_reviews'] = $this->more_reviewsfl;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframefl;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-florida-1.jpg";
+        $data['imgoffice2'] = "img/oficinas-florida-1.png";
+        $data['imgoffice3'] = "img/oficinas-florida-2.jpg";
         return view('landing.general',$data);
     }   
 
     public function flapos() {
         $data['oficina'] = 'Florida';
-        $data['header'] = 'Apostilla de documentos <br> en Florida';
+        $data['header'] = 'Apostillar documentos en';
         $data['service_aux'] = 'Apostilla';
         $data['service'] = 'Apostillamos todo tipo de documentos como: <br> Certificados, Poderes, Traducciones, Diplomas, Contratos, Testamentos';
         $data['meta_description'] = '¿Necesita Apostillar un Documento en Florida? 📃 Nuestro servicio de apostilla en Certificados, Poderes, Traducciones a su alcance. ¡Solicítelo ahora! ✅';
@@ -918,6 +995,14 @@ class LandingController extends Controller
         $data['reviews'] = $this->reviewsfl;
         $data['more_reviews'] = $this->more_reviewsfl;
         $data['urlwpp'] = 'https://api.whatsapp.com/send?phone=13056003290&text=Hola Notaria Publica Latina, les escribo ya que estoy interesado en el servicio de *' . $data['service_aux'] . '*';
+        $data['iframesrc'] = $this->iframefl;
+        $data['imgbanner'] = "img/nueva-landing-general-aux.webp";
+        $data['imgoffice1'] = "img/notaria-en-new-jersey.jpg";
+        $data['imgoffice2'] = "img/oficinas-new-jersey.jpg";
+        $data['imgoffice3'] = "img/oficinas-new-jersey-2.jpg";
+        $data['imgoffice1'] = "img/notaria-en-florida-1.jpg";
+        $data['imgoffice2'] = "img/oficinas-florida-1.png";
+        $data['imgoffice3'] = "img/oficinas-florida-2.jpg";
         return view('landing.general',$data);
     }
     
