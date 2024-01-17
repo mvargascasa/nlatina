@@ -792,7 +792,7 @@
       <section class="row">
         <article class="col-sm-6">
           <article class="h-100">
-            <iframe id="iframemap" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe title="Direccion de las oficinas en {{ $oficina }}" id="iframemap" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </article>
         </article>
         <article class="col-sm-6" id="form">
