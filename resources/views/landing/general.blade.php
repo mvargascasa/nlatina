@@ -21,9 +21,9 @@
   <meta property="og:description" content="@isset($meta_description){{$meta_description}}@else Realizamos todo tipo de notarización de documentos en New Jersey como apostillas, poderes, traducciones de una manera rápida y segura. Contáctenos ahora! ✔ @endisset">
   <meta property="og:image" content="{{asset($imgup)}}">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet"> --}}
 
   <title>@isset($title) {{ $title }} @else Notaria Latina en {{$oficina}} - Apostillas, Poderes y Traducciones @endisset</title>
 
@@ -323,6 +323,10 @@
 
 <?php } ?>
   <style>
+    @font-face{
+      font-family: 'Montserrat';
+      src: url("{{ asset('fonts/MontserratFont.ttf') }}")
+    }
     html, body {max-width: 100% !important;overflow-x: hidden !important; font-family: 'Montserrat'; scroll-behavior: smooth}
     .quienes-somos{      background: rgb(24,55,84);      background: radial-gradient(circle, rgba(24,55,84,1) 0%, rgba(26,29,34,1) 100%);    }
     .f-blue{      background-color: #122944;    }
