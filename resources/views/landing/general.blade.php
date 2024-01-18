@@ -341,7 +341,7 @@
     .logo{width: 300px; height: 75px}
     @media screen and (max-width: 1000px){h1{font-size: 50px !important}}
     @media screen and (max-width: 800px){h1{font-size: 40px !important}.logo{width: 130px !important; height: 30px}.img-oficinas{width: 100% !important}.btn-phone{font-size: small !important}}
-    @media screen and (max-width: 580px){.divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}.resize{width: 100% !important}.labelstate{margin-top: 20px !important}#iframemap{height: 400px !important}}
+    @media screen and (max-width: 580px){.divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}.resize{width: 100% !important}.labelstate{margin-top: 20px !important}#iframemap{height: 400px !important}.header-txt{ font-size: 2.3rem !important}.office-txt{font-size: 2.5rem !important}.min-height{height: 800px !important}}
     #iconcall{bottom: 40px !important; right: 10px !important;}
     .grecaptcha-badge { visibility: hidden; }
     .card-reviews{box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; border-radius: 25px}
@@ -381,28 +381,28 @@
     @endphp
 
     <section>
-        <div id="prisection" style="height: 800px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('@if($mobile) {{ asset($imgbannermobile) }} @else{{asset($imgbanner)}}@endif')">
+        <div id="prisection" class="min-height" style="height: 650px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('@if($mobile) {{ asset($imgbannermobile) }} @else{{asset($imgbanner)}}@endif')">
           {{-- <img id="prisection" src="" style="max-height: 90vh;min-height: 40vh;  object-fit: cover; width: 100%; height: 100%;" alt=""> --}}
-          <div style="width: 100%; height: 800px;" class="d-flex align-items-center justify-content-center position-relative">
+          <div style="width: 100%; height: 650px;" class="d-flex align-items-center justify-content-center position-relative min-height">
             <div>
-              <h1 class="text-white text-center"><span style="font-weight: 200">{{ strtoupper($header) }}</span> <br> <span style="font-size: 3.2rem">{{ strtoupper($oficina) }}</span></h1>
-              <div class="row mt-4">
-                <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">15 años de trayectoria</span></div>
-                <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">{{ $txt1 }}</span></div>
-                <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">{{ $txt2 }}</span></div>
-                <div class="col-sm-6 text-center"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">{{ $txt3 }}</span></div>
+              <h1 class="text-white text-center"><span style="font-weight: 200; font-size: 3.3rem header-txt">{{ strtoupper($header) }}</span> <br> <span class="office-txt" style="font-size: 3.5rem; font-weight: 700">{{ strtoupper($oficina) }}</span></h1>
+              <div class="row mt-5 justify-content-center margin-office">
+                <div class="col-sm-6 text-center" style="font-size: 1.3rem"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">15 años de trayectoria</span></div>
+                <div class="col-sm-6 text-center" style="font-size: 1.3rem"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">{{ $txt1 }}</span></div>
+                <div class="col-sm-6 text-center" style="font-size: 1.3rem"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">{{ $txt2 }}</span></div>
+                <div class="col-sm-6 text-center" style="font-size: 1.3rem"><i class="far fa-check-circle" style="color: #FFB832"></i> <span class="text-white">{{ $txt3 }}</span></div>
               </div>
               <div class="mt-5 w-100 d-flex justify-content-center">
                 <div class="text-center">
                   @foreach ($consulates as $consulate)
                     @if ($consulate->slug != "espana")
-                      <img class="mx-1" width="25px" height="25px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.png')}}" alt="">
+                      <img class="mx-1" width="30px" height="30px" src="{{asset('img/partners/'.str_replace("-", "", $consulate->slug).'.webp')}}" alt="">
                     @endif
                   @endforeach
                 </div>
               </div>
-              <div class="w-100 d-flex justify-content-center">
-                <a class="btn mt-4" href="#form" style="background-color: #FFB832; color: #2B384D; border-radius: 15px; font-weight: 700">CONSULTAR</a>
+              <div class="w-100 d-flex justify-content-center mt-3">
+                <a class="btn mt-4" href="#form" style="background-color: #FFB832; color: #2B384D; border-radius: 15px; font-weight: 800">CONSULTAR</a>
               </div>
             </div>
             <div class="position-absolute" style="bottom: 10px; right: 10px">
