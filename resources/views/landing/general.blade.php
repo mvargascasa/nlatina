@@ -383,7 +383,7 @@
     <section>
         <div id="prisection" class="min-height" style="height: 650px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('@if($mobile) {{ asset($imgbannermobile) }} @else{{asset($imgbanner)}}@endif')">
           {{-- <img id="prisection" src="" style="max-height: 90vh;min-height: 40vh;  object-fit: cover; width: 100%; height: 100%;" alt=""> --}}
-          <div style="width: 100%; height: 650px;" class="d-flex align-items-center justify-content-center position-relative min-height">
+          <div style="width: 100%; height: 650px;" class="d-flex align-items-center justify-content-center position-relative min-height pt-5">
             <div>
               <h1 class="text-white text-center"><span style="font-weight: 200; font-size: 3.3rem header-txt">{{ strtoupper($header) }}</span> <br> <span class="office-txt" style="font-size: 3.5rem; font-weight: 700">{{ strtoupper($oficina) }}</span></h1>
               <div class="row mt-5 justify-content-center margin-office">
