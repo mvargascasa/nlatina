@@ -60,7 +60,7 @@
 
   <section class="row">
     <article class="col-sm-5 pr-0 pl-0 order-2-row-2">
-        <img class="lazy img-fluid" data-src="{{ asset('img/img-nuestra-experiencia.webp') }}" alt="">
+        <img class="img-fluid" src="{{ asset('img/img-nuestra-experiencia.webp') }}" alt="">
     </article>
     <article class="col-sm-7 pl-0 pr-0 d-flex align-items-center order-1-row-2" style="background-color: #2B384D; color: #ffffff">
         <div class="padding-x-0" style="padding-left: 10%; padding-right: 25%">
