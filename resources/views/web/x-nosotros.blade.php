@@ -112,7 +112,7 @@
                 <div style="height: 5px; width: 60px; background-color: #4284f4"></div>
             </div>
             <h2 style="color: 122944" class="text-center my-4"><span>Google</span> <span style="font-weight: 900">Partner</span></h2>
-            <p class="text-justify">Nuestra notaría ha sido reconocida y certificada como Google Partner. Este prestigioso programa de asociación confirma nuestro compromiso con la excelencia y la innivación en el ámbito legal.</p>
+            <p class="text-justify">Nuestra notaría ha sido reconocida y certificada como Google Partner. Este prestigioso programa de asociación confirma nuestro compromiso con la excelencia y la innovación en el ámbito legal.</p>
             <p class="text-justify">Como Google Partner, tenemos acceso a recursos exclusivos y estamos respaldados por la experiencia de Google en el mundo digital. Esta asociación fortalece nuestra capacidad para ofrecer servicios notariales de calidad, respaldados por las últimas herramientas y mejores prácticas en marketing en línea.</p>
             <p class="text-justify">Nuestra notaría se compromete a seguir proporcionando un servicio excepcional, ahora respaldado por la distinción de ser un Google Partner. Esto significa que nuestros clientes pueden confiar en nosotros no solo por nuestra experiencia notarial, sino también por nuestra capacidad para aprovechar las últimas tecnologías y estrategias digitales.</p>
             <div class="d-flex justify-content-center w-100 pt-4">
