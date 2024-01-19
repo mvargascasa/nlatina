@@ -54,13 +54,13 @@
         </div>
     </article>
     <article class="col-sm-5" style="padding-left: 0px !important; padding-right: 0px !important">
-        <img class="img-fluid" src="{{ asset('img/notaria-con-sello.webp') }}" alt="">
+        <img class="lazy img-fluid" data-src="{{ asset('img/notaria-con-sello.webp') }}" alt="">
     </article>
   </section>
 
   <section class="row">
     <article class="col-sm-5 pr-0 pl-0 order-2-row-2">
-        <img class="img-fluid" src="{{ asset('img/img-nuestra-experiencia.webp') }}" alt="">
+        <img class="lazy img-fluid" data-src="{{ asset('img/img-nuestra-experiencia.webp') }}" alt="">
     </article>
     <article class="col-sm-7 pl-0 pr-0 d-flex align-items-center order-1-row-2" style="background-color: #2B384D; color: #ffffff">
         <div class="padding-x-0" style="padding-left: 10%; padding-right: 25%">
@@ -93,7 +93,35 @@
         </div>
     </article>
     <article class="col-sm-5" style="padding-left: 0px !important; padding-right: 0px !important">
-        <img class="img-fluid" src="{{ asset('img/img-nuestro-personal.webp') }}" alt="">
+        <img class="lazy img-fluid" data-src="{{ asset('img/img-nuestro-personal.webp') }}" alt="">
+    </article>
+  </section>
+
+  <section class="row">
+    <article class="col-sm-5 pr-0 pl-0 order-2-row-2 d-flex align-items-center justify-content-center mb-4">
+        <a href="https://www.google.com/partners/agency?id=4256628430" target="_blank">
+            <img width="300px" height="300px" class="lazy" data-src="https://www.gstatic.com/partners/badge/images/2023/PartnerBadgeClickable.svg"/>
+        </a>
+    </article>
+    <article class="col-sm-7 pl-0 pr-0 d-flex align-items-center order-1-row-2">
+        <div class="padding-x-0 py-5" style="padding-right: 15%">
+            <div class="d-flex justify-content-center w-100">
+                <div style="height: 5px; width: 60px; background-color: #ea4335"></div>
+                <div style="height: 5px; width: 60px; background-color: #fbbc04"></div>
+                <div style="height: 5px; width: 60px; background-color: #34a853"></div>
+                <div style="height: 5px; width: 60px; background-color: #4284f4"></div>
+            </div>
+            <h2 style="color: 122944" class="text-center my-4"><span>Google</span> <span style="font-weight: 900">Partner</span></h2>
+            <p class="text-justify">Nuestra notaría ha sido reconocida y certificada como Google Partner. Este prestigioso programa de asociación confirma nuestro compromiso con la excelencia y la innivación en el ámbito legal.</p>
+            <p class="text-justify">Como Google Partner, tenemos acceso a recursos exclusivos y estamos respaldados por la experiencia de Google en el mundo digital. Esta asociación fortalece nuestra capacidad para ofrecer servicios notariales de calidad, respaldados por las últimas herramientas y mejores prácticas en marketing en línea.</p>
+            <p class="text-justify">Nuestra notaría se compromete a seguir proporcionando un servicio excepcional, ahora respaldado por la distinción de ser un Google Partner. Esto significa que nuestros clientes pueden confiar en nosotros no solo por nuestra experiencia notarial, sino también por nuestra capacidad para aprovechar las últimas tecnologías y estrategias digitales.</p>
+            <div class="d-flex justify-content-center w-100 pt-4">
+                <div style="height: 5px; width: 60px; background-color: #ea4335"></div>
+                <div style="height: 5px; width: 60px; background-color: #fbbc04"></div>
+                <div style="height: 5px; width: 60px; background-color: #34a853"></div>
+                <div style="height: 5px; width: 60px; background-color: #4284f4"></div>
+            </div>
+        </div>
     </article>
   </section>
 
