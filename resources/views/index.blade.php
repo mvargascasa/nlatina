@@ -356,7 +356,7 @@
 <section>
   <section class="row" style="background-color: #2B384D">
     <div class="col-sm-12 col-md-6 text-center">
-      <img id="second-image" width="100%" height="100%" class="img-fluid lazy" alt="notaria en newyork, newjersey y florida">
+      <img id="second-image" width="100%" class="img-fluid lazy" style="object-fit: cover" alt="notaria en newyork, newjersey y florida">
     </div>
     <div class="col-sm-12 col-md-4 d-flex align-items-center p-5">
       <div>
@@ -366,8 +366,9 @@
         </div>
         <div>
           <p class="text-white" style="font-size: 2rem">¿Qué nos hace <br><span style="color: #FFB832; font-weight: 700">diferentes?</span></p>
-          <p class="text-white">Contamos con <span style="font-weight: 500">más de 10 años de trayectoria</span> en el campo notarial, nuestro personal profesional y capacitado le brindará un servicio integral, rápido y eficaz</p>
+          <p class="text-white">Contamos con <span style="font-weight: 500">más de 15 años de trayectoria</span> en el campo notarial, nuestro personal profesional y capacitado le brindará un servicio integral, rápido y eficaz</p>
           <p class="text-white">Nuestra notaría está avalada por National Notary Association y Approved Electronic Notary</p>
+          {{-- <p class="text-white">Reconocida como Google Partner, Notaria Latina demuestra compromiso con la excelencia legal e innovación digital. Esta distinción respalda nuestra calidad notarial y capacidad tecnológica.</p> --}}
           <div class="d-flex">
             <img id="imgdoc" class="lazy margin-x" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
             <img id="imgnna" class="lazy margin-x" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
