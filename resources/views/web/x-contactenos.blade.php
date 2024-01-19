@@ -105,7 +105,7 @@
   <section class="container">
     <div class="row">
       <div class="col-sm-6 mb-4 p-5 d-flex align-items-center padding-0">
-        <img class="img-fluid" src="{{ asset('img/oficinas/oficina-new-york-notaria-latina.jpg') }}" alt="Notaria Latina en New York">
+        <img class="lazy img-fluid" data-src="{{ asset('img/oficinas/oficina-new-york-notaria-latina.jpg') }}" alt="Notaria Latina en New York">
       </div>
       <div class="col-sm-6 p-5">
         <h2 style="font-weight: 600">NEW YORK</h2>
@@ -135,8 +135,11 @@
           </div>
         </a>
         <a href="https://g.page/notariapublicalatina" target="_blank">
-          <img class="img-fluid" src="{{ asset('img/map-ny-contact.webp') }}" alt="">
+          <img class="lazy img-fluid" data-src="{{ asset('img/map-ny-contact.webp') }}" alt="">
         </a>
+        <div class="d-flex justify-content-center mt-5">
+          <a class="btn rounded-pill shadow-sm" style="background-color: #FFBE32; color: #2B384D; font-weight: 600" href="https://g.page/r/CRB8zfTKGzk7EB0/review" target="_blank">Publique una opinión <i class="fas fa-check"></i></a>
+        </div>
       </div>
     </div>
 
@@ -171,11 +174,14 @@
           </div>
         </a>
         <a href="https://g.page/r/CVNRV-zNuJiZEAE" target="_blank">
-          <img class="img-fluid" src="{{ asset('img/map-nj-contact.webp') }}" alt="">
+          <img class="lazy img-fluid" data-src="{{ asset('img/map-nj-contact.webp') }}" alt="">
         </a>
+        <div class="d-flex justify-content-center mt-5">
+          <a class="btn rounded-pill shadow-sm" style="background-color: #FFBE32; color: #2B384D; font-weight: 600" href="https://g.page/r/CVNRV-zNuJiZEB0/review" target="_blank">Publique una opinión <i class="fas fa-check"></i></a>
+        </div>
       </div>
       <div class="col-sm-6 p-5 d-flex align-items-center padding-0 first-mobile">
-        <img class="img-fluid" src="{{ asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg') }}" alt="Notaria Latina en New Jersey">
+        <img class="lazy img-fluid" data-src="{{ asset('img/oficinas/oficina-new-jersey-notaria-latina.jpg') }}" alt="Notaria Latina en New Jersey">
       </div>
     </div>
 
@@ -183,7 +189,7 @@
 
     <div class="row">
       <div class="col-sm-6 mb-4 p-5 d-flex align-items-center padding-0">
-        <img class="img-fluid" src="{{ asset('img/oficinas/oficina-florida-notaria-latina.jpg') }}" alt="Notaria Latina en Florida">
+        <img class="lazy img-fluid" data-src="{{ asset('img/oficinas/oficina-florida-notaria-latina.jpg') }}" alt="Notaria Latina en Florida">
       </div>
       <div class="col-sm-6 mb-4 p-5">
         <h2 style="font-weight: 600">FLORIDA</h2>
@@ -213,8 +219,11 @@
           </div>
         </a>
         <a href="https://g.page/r/CeRrwPx_W2-xEAE" target="_blank">
-          <img class="img-fluid" src="{{ asset('img/map-fl-contact.webp') }}" alt="">
+          <img class="lazy img-fluid" data-src="{{ asset('img/map-fl-contact.webp') }}" alt="">
         </a>
+        <div class="d-flex justify-content-center mt-5">
+          <a class="btn rounded-pill shadow-sm" style="background-color: #FFBE32; color: #2B384D; font-weight: 600" href="https://g.page/r/CeRrwPx_W2-xEB0/review" target="_blank">Publique una opinión <i class="fas fa-check"></i></a>
+        </div>
       </div>
     </div>
   </section>
