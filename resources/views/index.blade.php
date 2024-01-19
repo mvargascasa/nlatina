@@ -95,10 +95,11 @@
       .title-mobile{display: none !important}
       @media screen and (max-width: 1200px){.links-offices{font-size: 30px !important}}
       @media screen and (max-width: 1000px){}
-      @media screen and (max-width: 800px){.links-offices{font-size: 25px !important;} .txt-gestion-facil{font-size: 15px !important;letter-spacing: 3px !important} .img-logo{width: 300px !important}.title-h1{font-size: 2.3rem !important}.pattern-title-h1{left: 5% !important; top: 15% !important; text-align: center !important;}}
+      @media screen and (max-width: 800px){.links-offices{font-size: 25px !important;} .txt-gestion-facil{font-size: 15px !important;letter-spacing: 3px !important} .img-logo{width: 300px !important}.title-h1{font-size: 2.3rem !important}.pattern-title-h1{left: 5% !important; top: 15% !important; text-align: center !important;}.margin-x{margin-left: 0px !important; margin-right: 0px !important}}
       @media screen and (max-width: 580px){ .title-desktop{display: none !important} .title-mobile{display: block !important}}
       @media screen and (max-width: 400px){.img-logo{width: 250px !important}.title-h1{font-size: 1.2rem !important}.img-header{height: 100vh !important}.btn-iniciar-tramite{font-size: smaller !important}}
 
+      .margin-x{margin-left: 10px; margin-right: 10px}
       .child-locations{
         background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #122944, #122944);
         background-position: right bottom;
@@ -368,8 +369,11 @@
           <p class="text-white">Contamos con <span style="font-weight: 500">más de 10 años de trayectoria</span> en el campo notarial, nuestro personal profesional y capacitado le brindará un servicio integral, rápido y eficaz</p>
           <p class="text-white">Nuestra notaría está avalada por National Notary Association y Approved Electronic Notary</p>
           <div class="d-flex">
-            <img id="imgdoc" class="lazy mx-4" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
-            <img id="imgnna" class="lazy mx-4" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
+            <img id="imgdoc" class="lazy margin-x" data-src="{{asset('img/docverify-approved-enotary-small.webp')}}" width="60" height="80" alt="">
+            <img id="imgnna" class="lazy margin-x" data-src="{{asset('img/national-notary-association.webp')}}" width="190" height="80" alt="">
+            <a href="https://www.google.com/partners/agency?id=4256628430" target="_blank">
+              <img class="lazy margin-x" width="80px" height="80px" data-src="https://www.gstatic.com/partners/badge/images/2023/PartnerBadgeClickable.svg"/>
+            </a>
           </div>
         </div>
       </div>
