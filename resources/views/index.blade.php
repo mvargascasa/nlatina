@@ -356,7 +356,7 @@
 <section>
   <section class="row" style="background-color: #2B384D">
     <div class="col-sm-12 col-md-6 text-center">
-      <img id="second-image" width="100%" height="100%" class="img-fluid lazy" style="object-fit: cover" alt="notaria en newyork, newjersey y florida">
+      <img id="second-image" width="100%" height="100%" class="lazy" style="object-fit: cover" alt="notaria en newyork, newjersey y florida">
     </div>
     <div class="col-sm-12 col-md-4 d-flex align-items-center p-5">
       <div>
