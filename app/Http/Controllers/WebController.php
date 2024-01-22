@@ -2585,7 +2585,7 @@ class WebController extends Controller
             $rating->country = $request->country_residenceRating;
             $partner->ratings()->save($rating);
     
-            $to = "notariapublicalatina@gmail.com," . $partner->email;
+            $to = "partners@notarialatina.com," . $partner->email;
             $subject = "Valoración de Partner: " . strip_tags($partner->name) . " " . strip_tags($partner->lastname);
             $message = "<br><strong><h3>Datos del cliente que lo evalúa</h3></strong>
                     <br>Nombre: " . strip_tags($request->nameRating). "
