@@ -134,7 +134,7 @@ Route::get('blog/abogados', 'WebController@postspartners')->name('posts.partners
 Route::post('post/send-comment/{slug}', 'WebController@commentpost')->name('send.comment.post');
 
 Route::get('consulados','WebController@consulados')->name('consul.index');
-Route::get('consulado/{slug}','WebController@consulado')->name('consul.slug');
+Route::get('consulado/{slug}', function(){ return redirect()->route('web.index'); })->name('consul.slug');
 Route::post('consulado/cita', 'WebController@cita')->name('consul.send.cite');
 
 Route::get('socios/login', function(){ return redirect()->route('partner.showform');});
