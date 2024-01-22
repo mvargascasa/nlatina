@@ -242,8 +242,8 @@ span{
     .chatnl{height: 92vh !important}
     /* .dropdown-partners{margin-left: 0px !important;} */
     .footer-padding{padding-left: 0px !important; padding-right: 0px !important}
-    .icon-footer{width: 40px !important}
-    .img-logo-footer{width: 15rem !important; height: 5rem !important}
+    .icon-footer{width: 40px !important; height: 40px !important}
+    .img-logo-footer{width: 15rem !important; height: 4rem !important}
 }
 @media screen and (max-width: 992px){
     .btn-flotantes-desktop{ display: none !important}
