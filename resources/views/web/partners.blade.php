@@ -300,11 +300,11 @@
     <x-blog.list-post />
 </section>
 
-<div class="position-fixed" style="bottom: 15px; right: 15px">
+{{-- <div class="position-fixed" style="bottom: 15px; right: 15px">
     <a target="_blank" href="https://api.whatsapp.com/send?phone=13474283543">
         <img width="50px" src="{{ asset('img/whatsapp.png') }}" alt="">
     </a>
-</div>
+</div> --}}
 
 @section('numberWpp', '13474283543') @endsection
 

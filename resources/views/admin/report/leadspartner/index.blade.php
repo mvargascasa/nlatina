@@ -8,6 +8,9 @@
     <div class="container col-md-10 mt-3">
         <div>
             <h1>Leads asignados a los Partners</h1>
+
+            <a href="{{ route('home.partner.report.index.leads', '2023') }}">2023</a>
+            <a href="{{ route('home.partner.report.index.leads', '2024') }}">2024</a>
             {{-- chartjs --}}
             <div>
               <div class="row">

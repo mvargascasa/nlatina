@@ -18,15 +18,20 @@ class ReportController extends Controller
         return view('admin.report.index');
     }
 
-    public function indexleads(){
+    public function indexleads($year = null){
+
+        $year == null ? $year = date('Y') : $year = $year;
 
         $customers = Customer::select(DB::raw("COUNT(*) as count"), DB::raw("MONTHNAME(created_at) as month_name"))
-                    ->whereYear('created_at', date('Y'))
+                    // ->whereYear('created_at', date('Y'))
+                    ->whereYear('created_at', $year)
                     ->groupBy(DB::raw("Month(created_at)"))
                     ->pluck('count', 'month_name');
 
+        //dd($customers);
+
         $labels = $customers->keys();
-        $data = $customers->values();
+        $data = $customers->values(); 
 
         $partners = Partner::with('customers')->whereHas('customers')->withCount('customers')->orderBy('customers_count', 'desc')->get();
 

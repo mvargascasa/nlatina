@@ -73,7 +73,7 @@ Route::get('/home/partners/setslug/{partner}', 'PartnerController@setslug')->nam
 
 //REPORTS
 Route::get('home/reports', 'ReportController@index')->name('home.partner.report.index');
-Route::get('home/reports/leads-partner', 'ReportController@indexleads')->name('home.partner.report.index.leads');
+Route::get('home/reports/leads-partner/{year?}', 'ReportController@indexleads')->name('home.partner.report.index.leads');
 Route::get('home/reports/leads-partner/{id}', 'ReportController@showleadspartner')->name('home.report.show.leads.partner');
 
 Route::get('home/reports/leads-website', 'ReportController@indexleadsweb')->name('home.report.index.leads.web');
