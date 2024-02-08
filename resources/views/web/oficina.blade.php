@@ -132,7 +132,7 @@
 
 @endsection
 
-@section('phoneNumberHidden', $data['telfHidden'])
+{{-- @section('phoneNumberHidden', $data['telfHidden']) --}}
 {{-- @section('phoneNumber', $data['telfShow']) --}}
 
 @php
@@ -167,11 +167,11 @@
                     </div>
                 </div>
             </div>
-            <div class="position-absolute" style="top: 8px; right: 43px !important;">
+            {{-- <div class="position-absolute" style="top: 8px; right: 43px !important;">
                 <a class="text-warning h5" href="tel:{{$data['telfHidden']}}" style="font-weight: bols;" onclick="gtag_report_conversion('tel:{{$data['telfHidden']}}');gtag('event', 'click', { 'event_category': 'Seguimiento de llamadas', 'event_label': 'HomePage:{{Request::segment(1)}}', 'value': '0'});">
                     <i class="fa fa-phone-square-alt" style="color: #FFB832"></i> {{$data['telfShow']}}
                 </a>
-            </div>
+            </div> --}}
         </div>
     </section>
     <div style="background-color: #FFB832; height: 10px"></div>
@@ -532,7 +532,7 @@
         </div>
         <div class="row">
             <hr>
-            <a class="btn btn-warning rounded-pill" style="font-weight: bold" href="tel:{{$data['telfHidden']}}"><i style="color: #000000" class="fas fa-phone"></i> <i>LLAMAR <br> {{$data['telfShow']}}</i> </a>
+            <a class="btn btn-warning rounded-pill" style="font-weight: bold" href="tel:{{$data['telfHidden']}}"><i style="color: #000000" class="fas fa-phone"></i> <i>LLAMAR {{$data['telfShow']}}</i> </a>
             <hr>
         </div>
     </div>
