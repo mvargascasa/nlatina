@@ -239,7 +239,8 @@ span{
 }
 @media screen and (max-width: 580px){
     .box-chat{width: 100vw !important;left: 0px !important; right: 0px !important; bottom: 0px !important; height: 100vh !important;}
-    .chatnl{height: 92vh !important}
+    .chatnl{height: 83vh !important}
+    .top-70{top: 70px !important}
     /* .dropdown-partners{margin-left: 0px !important;} */
     .footer-padding{padding-left: 0px !important; padding-right: 0px !important}
     .icon-footer{width: 40px !important; height: 40px !important}
