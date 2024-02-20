@@ -58,7 +58,7 @@
                             <td>{{ $lead->message }}</td>
                             <td>
                                 <a href="{{$lead->page}}" target="_blank">
-                                    {{ $lead->page }}
+                                    <p>@if(str_contains($lead->page, 'landing')) Landing  @else General @endif</p>
                                 </a>
                             </td>
                             <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $lead->created_at)->subHour(5) }}</td>
