@@ -1,4 +1,4 @@
-<div class="bg-white position-fixed shadow box-chat position-relative pb-3" style="height: auto; width: 400px; bottom: 10px; right: 10px; z-index: 1000">
+<div class="bg-white position-fixed shadow box-chat position-relative pb-3" style="height: auto; width: 400px; bottom: 10px; right: 10px; top: 70px; z-index: 1000">
     <div class="position-absolute @if($sended) d-block @else d-none @endif" style="top: 75px; left: 15%; z-index: 3" id="alert">
         <p class="bg-white px-3 py-2 rounded-pill shadow position-relative">Información enviada con éxito ✅ <span class="font-weight-bold position-absolute bg-white rounded-circle border px-2" style="top: -7px; right: -10px; cursor: pointer;" onclick="this.parentElement.classList.add('d-none')">x</span></p>
     </div>
