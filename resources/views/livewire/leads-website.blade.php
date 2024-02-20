@@ -30,7 +30,7 @@
     @endif
     <div>
         <div class="table-responsive-sm">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover" style="table-layout: fixed !important">
                 <thead>
                     <tr class="bg-white">
                       <th scope="col">Nombre</th>
