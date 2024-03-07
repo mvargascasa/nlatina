@@ -340,8 +340,8 @@
     input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
     .logo{width: 300px; height: 75px}
     @media screen and (max-width: 1000px){h1{font-size: 50px !important}}
-    @media screen and (max-width: 800px){h1{font-size: 40px !important}.logo{width: 130px !important; height: 30px}.img-oficinas{width: 100% !important}.btn-phone{font-size: small !important}}
-    @media screen and (max-width: 580px){.divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}.resize{width: 100% !important}.labelstate{margin-top: 20px !important}#iframemap{height: 400px !important}.header-txt{ font-size: 2.3rem !important}.office-txt{font-size: 2.5rem !important}.min-height{height: 800px !important}.justify-center-txt{justify-content: center !important}}
+    @media screen and (max-width: 800px){h1{font-size: 40px !important}.logo{width: 190px !important; height: 50px}.img-oficinas{width: 100% !important}.btn-phone{font-size: small !important}}
+    @media screen and (max-width: 580px){.divpais{display: inline !important;}#divcodigoandtelefono{width: 100% !important;margin-top: 16px;margin-bottom: 16px;}#pais{width: 100% !important;}h1{font-size: 30px !important}.resize{width: 100% !important}.labelstate{margin-top: 20px !important}#iframemap{height: 400px !important}.header-txt{ font-size: 1.5rem !important}.office-txt{font-size: 2rem !important}.min-height{height: 800px !important}.justify-center-txt{justify-content: center !important}.container-checks{padding-left: 0px !important; padding-right: 0px !important}}
     #iconcall{bottom: 40px !important; right: 10px !important;}
     .grecaptcha-badge { visibility: hidden; }
     .card-reviews{box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; border-radius: 25px}
@@ -385,8 +385,9 @@
           {{-- <img id="prisection" src="" style="max-height: 90vh;min-height: 40vh;  object-fit: cover; width: 100%; height: 100%;" alt=""> --}}
           <div style="width: 100%; height: 650px;" class="d-flex align-items-center justify-content-center position-relative min-height pt-5">
             <div>
-              <h1 class="text-white text-center"><span style="font-weight: 200; font-size: 3.3rem header-txt">{{ strtoupper($header) }}</span> <br> <span class="office-txt" style="font-size: 3.5rem; font-weight: 700">{{ strtoupper($oficina) }}</span></h1>
-              <div class="container">
+              <h1 class="text-white text-center"><span style="font-weight: 200; font-size: 3.3rem" class="header-txt">{{ strtoupper($header) }}</span> <br> <span class="office-txt" style="font-size: 3.5rem; font-weight: 700">{{ strtoupper($oficina) }}</span></h1>
+              <h2 class="text-white text-center">Notary Services</h2>
+              <div class="container container-checks">
                 <div class="row mt-5 justify-content-center margin-office">
                   <div class="col-sm-6 d-flex justify-content-end justify-center-txt" style="font-size: 1.3rem">
                     <div class="w-75">
